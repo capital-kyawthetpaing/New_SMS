@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.expense_timeto = new CKM_Controls.CKM_TextBox();
+            this.expense_timefrom = new CKM_Controls.CKM_TextBox();
             this.cboStoreName = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.rdb_all = new CKM_Controls.CKM_RadioButton();
-            this.expense_timeto = new CKM_Controls.CKM_TextBox();
-            this.expense_timefrom = new CKM_Controls.CKM_TextBox();
             this.txtExpenseTo = new CKM_Controls.CKM_TextBox();
             this.txtPaymentTo = new CKM_Controls.CKM_TextBox();
             this.txtRecordTo = new CKM_Controls.CKM_TextBox();
@@ -56,13 +56,21 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 24);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.expense_timeto);
+            this.panelDetail.Controls.Add(this.expense_timefrom);
             this.panelDetail.Controls.Add(this.cboStoreName);
             this.panelDetail.Controls.Add(this.ckM_Label1);
             this.panelDetail.Controls.Add(this.rdb_all);
-            this.panelDetail.Controls.Add(this.expense_timeto);
-            this.panelDetail.Controls.Add(this.expense_timefrom);
             this.panelDetail.Controls.Add(this.txtExpenseTo);
             this.panelDetail.Controls.Add(this.txtPaymentTo);
             this.panelDetail.Controls.Add(this.txtRecordTo);
@@ -83,12 +91,76 @@
             this.panelDetail.Size = new System.Drawing.Size(1700, 650);
             this.panelDetail.TabIndex = 30;
             // 
+            // expense_timeto
+            // 
+            this.expense_timeto.AllowMinus = false;
+            this.expense_timeto.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.expense_timeto.BackColor = System.Drawing.Color.White;
+            this.expense_timeto.BorderColor = false;
+            this.expense_timeto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.expense_timeto.ClientColor = System.Drawing.SystemColors.Window;
+            this.expense_timeto.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.expense_timeto.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Time;
+            this.expense_timeto.DecimalPlace = 0;
+            this.expense_timeto.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.expense_timeto.IntegerPart = 0;
+            this.expense_timeto.IsCorrectDate = true;
+            this.expense_timeto.isEnterKeyDown = false;
+            this.expense_timeto.IsFirstTime = true;
+            this.expense_timeto.isMaxLengthErr = false;
+            this.expense_timeto.IsNumber = true;
+            this.expense_timeto.IsShop = false;
+            this.expense_timeto.Length = 8;
+            this.expense_timeto.Location = new System.Drawing.Point(421, 73);
+            this.expense_timeto.MaxLength = 8;
+            this.expense_timeto.MoveNext = true;
+            this.expense_timeto.Name = "expense_timeto";
+            this.expense_timeto.Size = new System.Drawing.Size(50, 19);
+            this.expense_timeto.TabIndex = 7;
+            this.expense_timeto.Text = "00:00";
+            this.expense_timeto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.expense_timeto.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.expense_timeto.UseColorSizMode = false;
+            this.expense_timeto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.expense_timeto_KeyDown);
+            // 
+            // expense_timefrom
+            // 
+            this.expense_timefrom.AllowMinus = false;
+            this.expense_timefrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.expense_timefrom.BackColor = System.Drawing.Color.White;
+            this.expense_timefrom.BorderColor = false;
+            this.expense_timefrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.expense_timefrom.ClientColor = System.Drawing.SystemColors.Window;
+            this.expense_timefrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.expense_timefrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Time;
+            this.expense_timefrom.DecimalPlace = 0;
+            this.expense_timefrom.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.expense_timefrom.IntegerPart = 0;
+            this.expense_timefrom.IsCorrectDate = true;
+            this.expense_timefrom.isEnterKeyDown = false;
+            this.expense_timefrom.IsFirstTime = true;
+            this.expense_timefrom.isMaxLengthErr = false;
+            this.expense_timefrom.IsNumber = true;
+            this.expense_timefrom.IsShop = false;
+            this.expense_timefrom.Length = 8;
+            this.expense_timefrom.Location = new System.Drawing.Point(203, 73);
+            this.expense_timefrom.MaxLength = 8;
+            this.expense_timefrom.MoveNext = true;
+            this.expense_timefrom.Name = "expense_timefrom";
+            this.expense_timefrom.Size = new System.Drawing.Size(50, 19);
+            this.expense_timefrom.TabIndex = 5;
+            this.expense_timefrom.Text = "00:00";
+            this.expense_timefrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.expense_timefrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.expense_timefrom.UseColorSizMode = false;
+            // 
             // cboStoreName
             // 
             this.cboStoreName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboStoreName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStoreName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStoreName.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStoreName.Flag = 0;
             this.cboStoreName.FormattingEnabled = true;
             this.cboStoreName.Length = 6;
             this.cboStoreName.Location = new System.Drawing.Point(1542, 11);
@@ -96,7 +168,7 @@
             this.cboStoreName.MoveNext = true;
             this.cboStoreName.Name = "cboStoreName";
             this.cboStoreName.Size = new System.Drawing.Size(150, 20);
-            this.cboStoreName.TabIndex = 8;
+            this.cboStoreName.TabIndex = 9;
             // 
             // ckM_Label1
             // 
@@ -127,62 +199,14 @@
             this.rdb_all.Text = "全て";
             this.rdb_all.UseVisualStyleBackColor = true;
             // 
-            // expense_timeto
-            // 
-            this.expense_timeto.AllowMinus = false;
-            this.expense_timeto.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.expense_timeto.BackColor = System.Drawing.Color.White;
-            this.expense_timeto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.expense_timeto.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.expense_timeto.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Time;
-            this.expense_timeto.DecimalPlace = 0;
-            this.expense_timeto.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.expense_timeto.IntegerPart = 0;
-            this.expense_timeto.IsCorrectDate = true;
-            this.expense_timeto.isEnterKeyDown = false;
-            this.expense_timeto.IsNumber = true;
-            this.expense_timeto.IsShop = false;
-            this.expense_timeto.Length = 5;
-            this.expense_timeto.Location = new System.Drawing.Point(420, 73);
-            this.expense_timeto.MaxLength = 5;
-            this.expense_timeto.MoveNext = true;
-            this.expense_timeto.Name = "expense_timeto";
-            this.expense_timeto.Size = new System.Drawing.Size(50, 19);
-            this.expense_timeto.TabIndex = 7;
-            this.expense_timeto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.expense_timeto.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // expense_timefrom
-            // 
-            this.expense_timefrom.AllowMinus = false;
-            this.expense_timefrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.expense_timefrom.BackColor = System.Drawing.Color.White;
-            this.expense_timefrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.expense_timefrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.expense_timefrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Time;
-            this.expense_timefrom.DecimalPlace = 0;
-            this.expense_timefrom.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.expense_timefrom.IntegerPart = 0;
-            this.expense_timefrom.IsCorrectDate = true;
-            this.expense_timefrom.isEnterKeyDown = false;
-            this.expense_timefrom.IsNumber = true;
-            this.expense_timefrom.IsShop = false;
-            this.expense_timefrom.Length = 5;
-            this.expense_timefrom.Location = new System.Drawing.Point(202, 73);
-            this.expense_timefrom.MaxLength = 8;
-            this.expense_timefrom.MoveNext = true;
-            this.expense_timefrom.Name = "expense_timefrom";
-            this.expense_timefrom.Size = new System.Drawing.Size(50, 19);
-            this.expense_timefrom.TabIndex = 5;
-            this.expense_timefrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.expense_timefrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // txtExpenseTo
             // 
             this.txtExpenseTo.AllowMinus = false;
             this.txtExpenseTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtExpenseTo.BackColor = System.Drawing.Color.White;
+            this.txtExpenseTo.BorderColor = false;
             this.txtExpenseTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExpenseTo.ClientColor = System.Drawing.Color.White;
             this.txtExpenseTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtExpenseTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtExpenseTo.DecimalPlace = 0;
@@ -190,6 +214,8 @@
             this.txtExpenseTo.IntegerPart = 0;
             this.txtExpenseTo.IsCorrectDate = true;
             this.txtExpenseTo.isEnterKeyDown = false;
+            this.txtExpenseTo.IsFirstTime = true;
+            this.txtExpenseTo.isMaxLengthErr = false;
             this.txtExpenseTo.IsNumber = true;
             this.txtExpenseTo.IsShop = false;
             this.txtExpenseTo.Length = 10;
@@ -201,13 +227,17 @@
             this.txtExpenseTo.TabIndex = 6;
             this.txtExpenseTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtExpenseTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtExpenseTo.UseColorSizMode = false;
+            this.txtExpenseTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExpenseTo_KeyDown);
             // 
             // txtPaymentTo
             // 
             this.txtPaymentTo.AllowMinus = false;
             this.txtPaymentTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentTo.BackColor = System.Drawing.Color.White;
+            this.txtPaymentTo.BorderColor = false;
             this.txtPaymentTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentTo.DecimalPlace = 0;
@@ -215,6 +245,8 @@
             this.txtPaymentTo.IntegerPart = 0;
             this.txtPaymentTo.IsCorrectDate = true;
             this.txtPaymentTo.isEnterKeyDown = false;
+            this.txtPaymentTo.IsFirstTime = true;
+            this.txtPaymentTo.isMaxLengthErr = false;
             this.txtPaymentTo.IsNumber = true;
             this.txtPaymentTo.IsShop = false;
             this.txtPaymentTo.Length = 10;
@@ -226,13 +258,17 @@
             this.txtPaymentTo.TabIndex = 3;
             this.txtPaymentTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentTo.UseColorSizMode = false;
+            this.txtPaymentTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentTo_KeyDown);
             // 
             // txtRecordTo
             // 
             this.txtRecordTo.AllowMinus = false;
             this.txtRecordTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRecordTo.BackColor = System.Drawing.Color.White;
+            this.txtRecordTo.BorderColor = false;
             this.txtRecordTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecordTo.ClientColor = System.Drawing.Color.White;
             this.txtRecordTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRecordTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtRecordTo.DecimalPlace = 0;
@@ -240,6 +276,8 @@
             this.txtRecordTo.IntegerPart = 0;
             this.txtRecordTo.IsCorrectDate = true;
             this.txtRecordTo.isEnterKeyDown = false;
+            this.txtRecordTo.IsFirstTime = true;
+            this.txtRecordTo.isMaxLengthErr = false;
             this.txtRecordTo.IsNumber = true;
             this.txtRecordTo.IsShop = false;
             this.txtRecordTo.Length = 10;
@@ -251,6 +289,8 @@
             this.txtRecordTo.TabIndex = 1;
             this.txtRecordTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRecordTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRecordTo.UseColorSizMode = false;
+            this.txtRecordTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRecordTo_KeyDown);
             // 
             // ckM_Label9
             // 
@@ -308,7 +348,9 @@
             this.txtRecordFrom.AllowMinus = false;
             this.txtRecordFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRecordFrom.BackColor = System.Drawing.Color.White;
+            this.txtRecordFrom.BorderColor = false;
             this.txtRecordFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecordFrom.ClientColor = System.Drawing.Color.White;
             this.txtRecordFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRecordFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtRecordFrom.DecimalPlace = 0;
@@ -316,6 +358,8 @@
             this.txtRecordFrom.IntegerPart = 0;
             this.txtRecordFrom.IsCorrectDate = true;
             this.txtRecordFrom.isEnterKeyDown = false;
+            this.txtRecordFrom.IsFirstTime = true;
+            this.txtRecordFrom.isMaxLengthErr = false;
             this.txtRecordFrom.IsNumber = true;
             this.txtRecordFrom.IsShop = false;
             this.txtRecordFrom.Length = 10;
@@ -327,13 +371,16 @@
             this.txtRecordFrom.TabIndex = 0;
             this.txtRecordFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRecordFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRecordFrom.UseColorSizMode = false;
             // 
             // txtPaymentFrom
             // 
             this.txtPaymentFrom.AllowMinus = false;
             this.txtPaymentFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentFrom.BackColor = System.Drawing.Color.White;
+            this.txtPaymentFrom.BorderColor = false;
             this.txtPaymentFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentFrom.DecimalPlace = 0;
@@ -341,6 +388,8 @@
             this.txtPaymentFrom.IntegerPart = 0;
             this.txtPaymentFrom.IsCorrectDate = true;
             this.txtPaymentFrom.isEnterKeyDown = false;
+            this.txtPaymentFrom.IsFirstTime = true;
+            this.txtPaymentFrom.isMaxLengthErr = false;
             this.txtPaymentFrom.IsNumber = true;
             this.txtPaymentFrom.IsShop = false;
             this.txtPaymentFrom.Length = 10;
@@ -352,13 +401,16 @@
             this.txtPaymentFrom.TabIndex = 2;
             this.txtPaymentFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentFrom.UseColorSizMode = false;
             // 
             // txtExpenseFrom
             // 
             this.txtExpenseFrom.AllowMinus = false;
             this.txtExpenseFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtExpenseFrom.BackColor = System.Drawing.Color.White;
+            this.txtExpenseFrom.BorderColor = false;
             this.txtExpenseFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExpenseFrom.ClientColor = System.Drawing.Color.White;
             this.txtExpenseFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtExpenseFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtExpenseFrom.DecimalPlace = 0;
@@ -366,6 +418,8 @@
             this.txtExpenseFrom.IntegerPart = 0;
             this.txtExpenseFrom.IsCorrectDate = true;
             this.txtExpenseFrom.isEnterKeyDown = false;
+            this.txtExpenseFrom.IsFirstTime = true;
+            this.txtExpenseFrom.isMaxLengthErr = false;
             this.txtExpenseFrom.IsNumber = true;
             this.txtExpenseFrom.IsShop = false;
             this.txtExpenseFrom.Length = 10;
@@ -377,6 +431,7 @@
             this.txtExpenseFrom.TabIndex = 4;
             this.txtExpenseFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtExpenseFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtExpenseFrom.UseColorSizMode = false;
             // 
             // rdb_paid
             // 
@@ -415,7 +470,7 @@
             this.ckM_Label12.Location = new System.Drawing.Point(41, 101);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label12.TabIndex = 30;
+            this.ckM_Label12.TabIndex = 8;
             this.ckM_Label12.Text = "印刷対象";
             this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -496,8 +551,6 @@
         private CKM_Controls.CKM_ComboBox cboStoreName;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_RadioButton rdb_all;
-        private CKM_Controls.CKM_TextBox expense_timeto;
-        private CKM_Controls.CKM_TextBox expense_timefrom;
         private CKM_Controls.CKM_TextBox txtExpenseTo;
         private CKM_Controls.CKM_TextBox txtPaymentTo;
         private CKM_Controls.CKM_TextBox txtRecordTo;
@@ -513,5 +566,7 @@
         private CKM_Controls.CKM_Label ckM_Label13;
         private CKM_Controls.CKM_Label ckM_Label14;
         private CKM_Controls.CKM_Label ckM_Label15;
+        private CKM_Controls.CKM_TextBox expense_timefrom;
+        private CKM_Controls.CKM_TextBox expense_timeto;
     }
 }

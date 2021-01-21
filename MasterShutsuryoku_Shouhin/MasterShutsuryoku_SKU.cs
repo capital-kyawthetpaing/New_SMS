@@ -306,11 +306,11 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("商品情報アドレス");
                           
                         }
-                        if(checkflg !=1 && checkflg !=2)
-                        {
-                            dt.Columns.Remove("構成数");
-                            dt.Columns.Remove("発注ロット");
-                        }
+                        ////if (checkflg != 1 && checkflg != 2)
+                        ////{
+                        ////    dt.Columns.Remove("構成数");
+                        ////    dt.Columns.Remove("発注ロット");
+                        ////}
                         if (checkflg == 0)
                         {
                             dt.Columns.Remove("AdminNO");
@@ -356,7 +356,6 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("ブランドCD");
                             dt.Columns.Remove("ブランド名");
                             dt.Columns.Remove("メーカー商品CD");
-
                             dt.Columns.Remove("単位CD");
                             dt.Columns.Remove("単位名");
                             dt.Columns.Remove("競技CD");
@@ -373,6 +372,8 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("管理用備考");
                             dt.Columns.Remove("表示用備考");
                             dt.Columns.Remove("棚番");
+                            dt.Columns.Remove("構成数");
+                            dt.Columns.Remove("発注ロット");
                         }
 
                         if (checkflg != 1 && checkflg != 3)
@@ -543,7 +544,6 @@ namespace MasterShutsuryoku_Shouhin
                         //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
                         //Shiiresaki.Value2 = Shiiresaki.LabelText;
                     }
-                   
                 }
             }
         }
@@ -560,7 +560,6 @@ namespace MasterShutsuryoku_Shouhin
                         bbl.ShowMessage("E101");
                         SC_makervendor.SetFocus(1);
                     }
-
                 }
             }
         }
@@ -577,7 +576,6 @@ namespace MasterShutsuryoku_Shouhin
                         bbl.ShowMessage("E101");
                         SC_Brand.SetFocus(1);
                     }
-                    
                 }
             }
         }
@@ -598,7 +596,6 @@ namespace MasterShutsuryoku_Shouhin
         {
             if (!String.IsNullOrEmpty(SC_SKUCD.TxtCode.Text))
             {
-
                 if (!SC_SKUCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
