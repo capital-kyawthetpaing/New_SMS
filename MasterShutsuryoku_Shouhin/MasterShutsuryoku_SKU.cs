@@ -292,9 +292,9 @@ namespace MasterShutsuryoku_Shouhin
                 if (bbl.ShowMessage("Q203") == DialogResult.Yes)
                 {
                     type = (CK_suru.Checked && RB_Item.Checked) ? 1 : (CK_suru.Checked == true && RB_Item.Checked == true) ? 2 : 3;
-                   
+
                     chkUnapprove = CK_UnApprove.Checked ? 1 : 0;
-                    checkflg = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked?6 : RB_JanCD.Checked?7:RB_SizeURL.Checked ?8 :0;
+                    checkflg = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
 
                     msku = GetData();
                     DataTable dt = new DataTable();
@@ -303,11 +303,14 @@ namespace MasterShutsuryoku_Shouhin
                     {
                         if (checkflg != 1)
                         {
-                            
                             dt.Columns.Remove("商品情報アドレス");
-                            dt.Columns.Remove("構成数");
-                            dt.Columns.Remove("発注ロット");
+                          
                         }
+                        ////if (checkflg != 1 && checkflg != 2)
+                        ////{
+                        ////    dt.Columns.Remove("構成数");
+                        ////    dt.Columns.Remove("発注ロット");
+                        ////}
                         if (checkflg == 0)
                         {
                             dt.Columns.Remove("AdminNO");
@@ -324,7 +327,7 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("サイズ名");
                             dt.Columns.Remove("カラー名");
                         }
-                        if (checkflg == 5 || checkflg == 6 || checkflg ==7 ||checkflg ==8)
+                        if (checkflg == 5 || checkflg == 6 || checkflg == 7 || checkflg == 8)
                         {
                             dt.Columns.Remove("標準原価");
                             dt.Columns.Remove("税込定価");
@@ -353,7 +356,6 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("ブランドCD");
                             dt.Columns.Remove("ブランド名");
                             dt.Columns.Remove("メーカー商品CD");
-
                             dt.Columns.Remove("単位CD");
                             dt.Columns.Remove("単位名");
                             dt.Columns.Remove("競技CD");
@@ -370,6 +372,8 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("管理用備考");
                             dt.Columns.Remove("表示用備考");
                             dt.Columns.Remove("棚番");
+                            dt.Columns.Remove("構成数");
+                            dt.Columns.Remove("発注ロット");
                         }
 
                         if (checkflg != 1 && checkflg != 3)
@@ -470,7 +474,7 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("タグ9");
                             dt.Columns.Remove("タグ10");
                         }
-                        if(checkflg !=1 && checkflg!=2 )
+                        if (checkflg != 1 && checkflg != 2 && checkflg != 7)
                         {
                             dt.Columns.Remove("カナ名");
                             dt.Columns.Remove("略名");
@@ -540,7 +544,6 @@ namespace MasterShutsuryoku_Shouhin
                         //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
                         //Shiiresaki.Value2 = Shiiresaki.LabelText;
                     }
-                   
                 }
             }
         }
@@ -557,7 +560,6 @@ namespace MasterShutsuryoku_Shouhin
                         bbl.ShowMessage("E101");
                         SC_makervendor.SetFocus(1);
                     }
-
                 }
             }
         }
@@ -574,7 +576,6 @@ namespace MasterShutsuryoku_Shouhin
                         bbl.ShowMessage("E101");
                         SC_Brand.SetFocus(1);
                     }
-                    
                 }
             }
         }
@@ -595,7 +596,6 @@ namespace MasterShutsuryoku_Shouhin
         {
             if (!String.IsNullOrEmpty(SC_SKUCD.TxtCode.Text))
             {
-
                 if (!SC_SKUCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");

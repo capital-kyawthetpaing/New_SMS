@@ -65,7 +65,7 @@ namespace Search
             {
                 dt = new DataTable();
                 dt = trkkkBL.M_Customer_Display(Customer);
-                if (dt != null)
+                if (dt.Rows.Count > 0) //2021-01-22
                 {
                     dgvKaniiKensaku.DataSource = dt;
                     dgvKaniiKensaku.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect; //2020-10-07

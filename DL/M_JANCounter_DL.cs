@@ -32,6 +32,16 @@ namespace DL
             //return InsertUpdateDeleteData(dic, "M_JANCounter_Update");
             return SelectData(dic, sp);
         }
+
+        public DataTable M_JANCounter_JanContUpdate()
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+            };
+            return SelectData(dic, "M_JANCounter_JanContUpdate");
+        }
+
+
     }
 
 }

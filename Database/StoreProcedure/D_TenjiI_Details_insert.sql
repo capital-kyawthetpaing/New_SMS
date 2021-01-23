@@ -372,8 +372,8 @@ BEGIN
 		)
 		 	declare @TenjiCD1 as varchar(20), @LastRow as int, @LastTenjiRow as int;
 		--set @TenjiCD1 = (select dbo.[Fnc_TenjiGetNumber](13,getdate(),'0001'));
-		set @LastRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails);
-		set @LastTenjiRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails);
+		set @LastRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails where TenzikaiJuchuuNO = @TenjiCD);
+		set @LastTenjiRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails where TenzikaiJuchuuNO = @TenjiCD);
 		--select @TenjiCD,@LastRow
 		-----------------------------------------------------------------------------------B-D_TenzikaiJuchuuDetails
 		insert into D_TenzikaiJuchuuDetails(
@@ -415,7 +415,7 @@ BEGIN
 						)
 						select 
 						@TenjiCD			
-						,@LastRow + [No]
+						 ,[No]--,@LastRow + [No]  -- 2021/01/15
 						,[No]				
 						,[SCJAN]				
 						,[AdminNo]			
@@ -452,11 +452,13 @@ BEGIN
 						
 		-----------------------------------------------------------------------------------D-L_TenzikaiJuchuuDetailsHistory
 			declare @LastRowLog as int,@LastRowSeq as int;
-						set @LastRowLog = (select Isnull(Max(HistorySEQ),0)  from  L_TenzikaiJuchuuHistory);
-						set @LastRowSeq = (select Isnull(Max(HistorySEQRows),0)  from  L_TenzikaiJuchuuDetailsHistory);
-						insert Into L_TenzikaiJuchuuDetailsHistory select 
+						set @LastRowLog = (select Isnull(Max(HistorySEQ),0)  from  L_TenzikaiJuchuuHistory );
+						set @LastRowSeq = (select Isnull(Max(HistorySEQRows),0)  from  L_TenzikaiJuchuuDetailsHistory );
+						insert Into L_TenzikaiJuchuuDetailsHistory 
+						select 
 						Case When @LastRowLog =0  then 1 else @LastRowLog end--(select Max(HistorySEQ) from L_TenzikaiJuchuuHistory),
-						, @LastRowSeq+ D_TenzikaiJuchuuDetails.DisplayRows, * from D_TenzikaiJuchuuDetails where TenzikaiJuchuuRows>@LastTenjiRow
+						, @LastRowSeq+ D_TenzikaiJuchuuDetails.DisplayRows
+						,* from D_TenzikaiJuchuuDetails where  D_TenzikaiJuchuuDetails.TenzikaiJuchuuNO=@TenjiCD order by D_TenzikaiJuchuuDetails.DisplayRows asc
 		--				declare @LastRowLog as int;
 		--				set @LastRowLog = (select Isnull(Max(DisplayRows),-1)  from  L_TenzikaiJuchuuDetailsHistory);
 		--insert Into L_TenzikaiJuchuuDetailsHistory select (select Max(HistorySEQ) from L_TenzikaiJuchuuHistory),D_TenzikaiJuchuuDetails.DisplayRows, * from D_TenzikaiJuchuuDetails

@@ -38,5 +38,10 @@ namespace BL
         {
             return dmdl.M_ReceiveMailServer_Select();
         }
-}
+
+        public DataTable ReceiveOfVendorMail(string AddressFrom)
+        {
+            return dmdl.M_ReceiveOfVendorMail_Select(AddressFrom);
+        }
+    }
 }

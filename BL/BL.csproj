@@ -91,6 +91,7 @@
     <Compile Include="MakerBrand_BL.cs" />
     <Compile Include="MarkDownIchiran_BL.cs" />
     <Compile Include="MarkDownNyuuryoku_BL.cs" />
+    <Compile Include="MasterTorikomi_SKU_BL.cs" />
     <Compile Include="MasterToroku_Ginkou_BL.cs" />
     <Compile Include="MasterTouroku_Brand_BL.cs" />
     <Compile Include="MasterTouroku_Calendar_BL.cs" />
