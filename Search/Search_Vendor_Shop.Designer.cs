@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblChangeDate = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
@@ -51,15 +51,15 @@
             this.txtVendorKana = new CKM_Controls.CKM_TextBox();
             this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
             this.dgvVendor = new CKM_Controls.CKMShop_GridView();
+            this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label8 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
             this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorKana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label8 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendor)).BeginInit();
             this.SuspendLayout();
@@ -392,18 +392,18 @@
             this.dgvVendor.AllowUserToDeleteRows = false;
             this.dgvVendor.AllowUserToResizeRows = false;
             this.dgvVendor.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.Control;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            this.dgvVendor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvVendor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVendor.BackgroundColor = System.Drawing.Color.White;
             this.dgvVendor.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVendor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVendor.ColumnHeadersHeight = 42;
             this.dgvVendor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVendor.ColumnHeadersVisible = false;
@@ -413,14 +413,14 @@
             this.colVendorKana,
             this.col4,
             this.colChangeDate});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVendor.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVendor.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvVendor.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.dgvVendor.EnableHeadersVisualStyles = false;
             this.dgvVendor.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -442,59 +442,6 @@
             this.dgvVendor.UseSetting = true;
             this.dgvVendor.Width_ = 1880;
             this.dgvVendor.DoubleClick += new System.EventHandler(this.dgvVendor_DoubleClick);
-            // 
-            // colVendorCD
-            // 
-            this.colVendorCD.DataPropertyName = "VendorCD";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colVendorCD.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colVendorCD.HeaderText = "仕入先番号";
-            this.colVendorCD.Name = "colVendorCD";
-            this.colVendorCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colVendorCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colVendorCD.Width = 280;
-            // 
-            // colVendorName
-            // 
-            this.colVendorName.DataPropertyName = "VendorName";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colVendorName.DefaultCellStyle = dataGridViewCellStyle11;
-            this.colVendorName.HeaderText = "仕入先名";
-            this.colVendorName.Name = "colVendorName";
-            this.colVendorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colVendorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colVendorName.Width = 615;
-            // 
-            // colVendorKana
-            // 
-            this.colVendorKana.DataPropertyName = "VendorKana";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colVendorKana.DefaultCellStyle = dataGridViewCellStyle12;
-            this.colVendorKana.HeaderText = "カナ名";
-            this.colVendorKana.Name = "colVendorKana";
-            this.colVendorKana.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colVendorKana.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colVendorKana.Width = 400;
-            // 
-            // col4
-            // 
-            this.col4.DataPropertyName = "NotDisplyNote";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col4.DefaultCellStyle = dataGridViewCellStyle13;
-            this.col4.HeaderText = "備考";
-            this.col4.Name = "col4";
-            this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.col4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.col4.Width = 495;
-            // 
-            // colChangeDate
-            // 
-            this.colChangeDate.DataPropertyName = "ChangeDate";
-            this.colChangeDate.HeaderText = "ChangeDate";
-            this.colChangeDate.Name = "colChangeDate";
-            this.colChangeDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colChangeDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colChangeDate.Visible = false;
             // 
             // ckmShop_Label7
             // 
@@ -559,6 +506,59 @@
             this.ckmShop_Label10.TabIndex = 54;
             this.ckmShop_Label10.Text = "備考";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            // 
+            // colVendorCD
+            // 
+            this.colVendorCD.DataPropertyName = "VendorCD";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colVendorCD.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colVendorCD.HeaderText = "仕入先番号";
+            this.colVendorCD.Name = "colVendorCD";
+            this.colVendorCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colVendorCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colVendorCD.Width = 280;
+            // 
+            // colVendorName
+            // 
+            this.colVendorName.DataPropertyName = "VendorName";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colVendorName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colVendorName.HeaderText = "仕入先名";
+            this.colVendorName.Name = "colVendorName";
+            this.colVendorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colVendorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colVendorName.Width = 615;
+            // 
+            // colVendorKana
+            // 
+            this.colVendorKana.DataPropertyName = "VendorKana";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colVendorKana.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colVendorKana.HeaderText = "カナ名";
+            this.colVendorKana.Name = "colVendorKana";
+            this.colVendorKana.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colVendorKana.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colVendorKana.Width = 400;
+            // 
+            // col4
+            // 
+            this.col4.DataPropertyName = "NotDisplyNote";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.col4.DefaultCellStyle = dataGridViewCellStyle6;
+            this.col4.HeaderText = "備考";
+            this.col4.Name = "col4";
+            this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.col4.Width = 495;
+            // 
+            // colChangeDate
+            // 
+            this.colChangeDate.DataPropertyName = "ChangeDate";
+            this.colChangeDate.HeaderText = "ChangeDate";
+            this.colChangeDate.Name = "colChangeDate";
+            this.colChangeDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colChangeDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colChangeDate.Visible = false;
             // 
             // Search_Vendor_Shop
             // 

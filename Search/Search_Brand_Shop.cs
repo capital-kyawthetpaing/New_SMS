@@ -88,7 +88,7 @@ namespace Search
 
         private void InitialControlArray()
         {
-            detailControls = new Control[] { ckM_TextBox2, ckM_TextBox3 };
+            detailControls = new Control[] { ckM_TextBox2, txtMakerCD };
 
             foreach (Control ctl in detailControls)
             {
@@ -345,7 +345,15 @@ namespace Search
             }
         }
 
-
-
+        private void btnMaker_Click(object sender, EventArgs e)
+        {
+            Search_Vendor_Shop frmVendor = new Search_Vendor_Shop(bbl.GetDate(), "1");
+            frmVendor.ShowDialog();
+            if (!frmVendor.flgCancel)
+            {
+                txtMakerCD.Text = frmVendor.VendorCD;
+                lblMakerName.Text = frmVendor.VendorName;
+            }
+        }
     }
 }

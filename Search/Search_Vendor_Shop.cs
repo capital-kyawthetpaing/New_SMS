@@ -91,6 +91,7 @@ namespace Search
 
         private bool ErrorCheck()
         {
+            
             if (!string.IsNullOrWhiteSpace(txtSupplierNoFrom.Text) && !string.IsNullOrWhiteSpace(txtSupplierNoTo.Text))
             {
                 if (string.Compare(txtSupplierNoFrom.Text, txtSupplierNoTo.Text) == 1)
