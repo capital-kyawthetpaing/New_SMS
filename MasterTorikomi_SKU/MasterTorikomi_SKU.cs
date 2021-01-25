@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BL;
 using System.IO;
 using ExcelDataReader;
+using System.Web.UI.WebControls;
 
 namespace MasterTorikomi_SKU
 {
@@ -21,6 +22,7 @@ namespace MasterTorikomi_SKU
         DataTable dtAdmin = new DataTable();
         SKU_BL sbl;
         MasterTorikomi_SKU_BL mtbl;
+        bool checkerr = false;
 
         public MasterTorikomi_SKU()
         {
@@ -75,6 +77,11 @@ namespace MasterTorikomi_SKU
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
+                            if(checkerr)
+                            {
+                                var xml = bbl.DataTableToXml(dt);
+
+                            }
                             GV_SKU.DataSource = null;
                             GV_SKU.DataSource = dt;
                             bbl.ShowMessage("I101");
@@ -387,41 +394,49 @@ namespace MasterTorikomi_SKU
                
                 if (RB_all.Checked)
                 {
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["商品情報アドレス"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["商品情報アドレス"].ToString()))
                     {
-                        
+                        dt.Rows[i]["商品情報アドレス"] = dt.Rows[i]["ITEMCD"].ToString();
                     }
                 }
                 if (RB_all.Checked || RB_attributeinfo.Checked || RB_BaseInfo.Checked || RB_priceinfo.Checked)
                 {
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["標準原価"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["標準原価"].ToString()))
+                    {
+                        dt.Rows[i]["標準原価"] = 0;
+                    }
+                    if (String.IsNullOrEmpty(dt.Rows[i]["税込定価"].ToString()))
+                    {
+                        dt.Rows[i]["税込定価"] = 0;
+                    }
+                    if (String.IsNullOrEmpty(dt.Rows[i]["税抜定価"].ToString()))
                     {
                         
+                        dt.Rows[i]["税抜定価"] = 0;
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["税込定価"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["発注税込価格"].ToString()))
                     {
-                       
+                        dt.Rows[i]["発注税込価格"] = 0;
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["税抜定価"].ToString()))
+
+                    if (String.IsNullOrEmpty(dt.Rows[i]["発注税抜価格"].ToString()))
                     {
-                        
+                        dt.Rows[i]["発注税抜価格"] = 0;
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["発注税込価格"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["掛率"].ToString()))
                     {
-                        
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["掛率"].ToString()))
-                    {
-                        
+                        dt.Rows[i]["掛率"] = 0;
                     }
                 }
                 if (RB_all.Checked || RB_BaseInfo.Checked)
                 {
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["構成数"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["構成数"].ToString()))
                     {
+                        dt.Rows[i]["構成数"] = 0;
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["発注ロット"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["発注ロット"].ToString()))
                     {
+                        dt.Rows[i]["発注ロット"] = 1;
                     }
                     if (String.IsNullOrEmpty(dt.Rows[i]["諸口区分"].ToString()))
                     {
@@ -579,7 +594,7 @@ namespace MasterTorikomi_SKU
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["サンプル品区分"].ToString()))
                     {
-                        if (dt.Rows[i]["サンプル品区分"].ToString() != "1" && dt.Rows[i]["サンプル品区分"].ToString() != "2")
+                        if (dt.Rows[i]["サンプル品区分"].ToString() != "1" && dt.Rows[i]["サンプル品区分"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "サンプル品区分";
                             dt.Rows[i]["Error"] = "E190";
@@ -877,40 +892,38 @@ namespace MasterTorikomi_SKU
 
                 if (RB_all.Checked || RB_Catloginfo.Checked)
                 {
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["年度"].ToString()))
-                    {
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["年度"].ToString()))
+                    //{
 
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["シーズン"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["シーズン"].ToString()))
+                    //{
 
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ番号"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ番号"].ToString()))
+                    //{
 
-                    }
+                    //}
 
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["カタログページ"].ToString()))
-                    {
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["カタログページ"].ToString()))
+                    //{
 
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ番号Long"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ番号Long"].ToString()))
+                    //{
 
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["カタログページLong"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["カタログページLong"].ToString()))
+                    //{
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ情報"].ToString()))
+                    //{
 
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ情報"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["指示書番号"].ToString()))
+                    //{
 
-                    }
-
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["指示書番号"].ToString()))
-                    {
-
-                    }
+                    //}
                     if (!String.IsNullOrEmpty(dt.Rows[i]["指示書発行日"].ToString()))
                     {
                         string date = bbl.FormatDate(dt.Rows[i]["指示書発行日"].ToString());
@@ -926,50 +939,46 @@ namespace MasterTorikomi_SKU
 
                 if (RB_all.Checked || RB_tagInfo.Checked)
                 {
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ1"].ToString()))
-                    {
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ1"].ToString()))
+                    //{
                         
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ2"].ToString()))
-                    {
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ3"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ2"].ToString()))
+                    //{
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ3"].ToString()))
+                    //{
                        
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ4"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ4"].ToString()))
+                    //{
                        
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ5"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ5"].ToString()))
+                    //{
                       
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ6"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ6"].ToString()))
+                    //{
                        
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ7"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ7"].ToString()))
+                    //{
                         
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ8"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ8"].ToString()))
+                    //{
                        
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ9"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ9"].ToString()))
+                    //{
                        
-                    }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["タグ10"].ToString()))
-                    {
+                    //}
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["タグ10"].ToString()))
+                    //{
                         
-                    }
+                    //}
                 }
-
-               
-               
-
                 if (RB_all.Checked || RB_BaseInfo.Checked || RB_JanCD.Checked)
                 {
 
@@ -978,8 +987,8 @@ namespace MasterTorikomi_SKU
                     }
                     if (String.IsNullOrEmpty(dt.Rows[i]["略名"].ToString()))
                     {
-                        string itemcd = dt.Rows[i]["商品名"].ToString();
-                        dt.Rows[i]["略名"] = itemcd.Substring(0,20);
+                        string shohinN = dt.Rows[i]["商品名"].ToString();
+                        dt.Rows[i]["略名"] = shohinN.Substring(0,20);
                        
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["英語名"].ToString()))
@@ -990,7 +999,7 @@ namespace MasterTorikomi_SKU
                 {
                     if (!String.IsNullOrEmpty(dt.Rows[i]["Sale対象外区分"].ToString()))
                     {
-                        if(dt.Rows[i]["Sale対象外区分"].ToString() !="1" && dt.Rows[i]["Sale対象外区分"].ToString() !="2")
+                        if(dt.Rows[i]["Sale対象外区分"].ToString() !="0" && dt.Rows[i]["Sale対象外区分"].ToString() !="1")
                         {
                             dt.Rows[i]["EItem"] = "Sale対象外区分";
                             dt.Rows[i]["Error"] = "E190";
@@ -1010,13 +1019,16 @@ namespace MasterTorikomi_SKU
                     }
                 }
 
-
+                if(String.IsNullOrEmpty(dt.Rows[i]["EItem"].ToString()))
+                  {
+                    checkerr = true;
+                   }
             }
            
         }
 
 
-      private  DataTable ExcelToDatatable(string filePath)
+        private  DataTable ExcelToDatatable(string filePath)
         {
             try
             {
