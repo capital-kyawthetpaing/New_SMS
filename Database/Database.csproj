@@ -150,6 +150,7 @@
     <Content Include="StoreProcedure\D_Juchu_SelectDataForTempoUriage.sql" />
     <Content Include="StoreProcedure\D_KeihiPrint.sql" />
     <Content Include="StoreProcedure\D_keihiPrint_Log.sql" />
+    <Content Include="StoreProcedure\D_MailAddress_SelectAll.sql" />
     <Content Include="StoreProcedure\D_MailSend_Update.sql" />
     <Content Include="StoreProcedure\D_Mail_Select.sql" />
     <Content Include="StoreProcedure\D_Mail_SelectAll.sql" />
@@ -443,6 +444,7 @@
     <Content Include="StoreProcedure\M_Program_Delete.sql" />
     <Content Include="StoreProcedure\M_Program_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Program_Select.sql" />
+    <Content Include="StoreProcedure\M_ReceiveMailServer_Select.sql" />
     <Content Include="StoreProcedure\M_Renban_Delete.sql" />
     <Content Include="StoreProcedure\M_Renban_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Renban_IsExist.sql" />
@@ -463,6 +465,7 @@
     <Content Include="StoreProcedure\M_SKUPrice_Select.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_SelectData.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_SelectTanka.sql" />
+    <Content Include="StoreProcedure\M_SKUSelectAll.sql" />
     <Content Include="StoreProcedure\M_SKUSelectDataForHanbaiTankaKakeritu.sql" />
     <Content Include="StoreProcedure\M_SKU_Export.sql" />
     <Content Include="StoreProcedure\M_Sku_henkouSelect.sql" />
