@@ -96,5 +96,107 @@ namespace Base.Client
         {
 
         }
+
+        public void MoveNextControl(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (ActiveControl is CKM_TextBox)
+                {
+                    if ((ActiveControl as CKM_TextBox).MoveNext)
+                    {
+                        if (this.Parent != null)
+                            this.Parent.SelectNextControl(ActiveControl, true, true, true, true);
+                        else
+                        {
+                            (ActiveControl as CKM_TextBox).MoveNext = false;
+                            this.SelectNextControl(ActiveControl, true, true, true, true);
+                        }
+                    }
+                }
+                else if (ActiveControl is CKM_ComboBox)
+                {
+                    if ((ActiveControl as CKM_ComboBox).MoveNext)
+                    {
+                        if (this.Parent != null)
+                            this.Parent.SelectNextControl(ActiveControl, true, true, true, true);
+                        else
+                        {
+                            (ActiveControl as CKM_ComboBox).MoveNext = false;
+                            this.SelectNextControl(ActiveControl, true, true, true, true);
+                        }
+                    }
+                }
+                else if (ActiveControl is UserControl)
+                {
+                    UserControl sc = ActiveControl as UserControl;
+                    Control ctrl = sc.Controls.Find("txtChangeDate", true)[0];
+                    if ((sc.ActiveControl as CKM_TextBox).MoveNext)
+                    {
+                        if (sc.ActiveControl == ctrl)
+                            sc.SelectNextControl(sc.ActiveControl, true, true, true, true);
+                        else
+                        {
+                            if (!ctrl.Visible)
+                                this.SelectNextControl(ActiveControl, true, true, true, true);
+                            else
+                                sc.SelectNextControl(sc.ActiveControl, true, true, true, true);
+                        }
+                    }
+                }
+                else if (ActiveControl is CKM_GridView)
+                { }
+
+                else if (ActiveControl is Panel)
+                {
+
+                }
+                else if (ActiveControl is CKMShop_ComboBox cb)
+                {
+
+                }
+                else
+                {
+                    if (!CheckHyoujiError(ActiveControl))
+                        return;
+                    if (this.Parent != null)
+                        this.Parent.SelectNextControl(ActiveControl, true, true, true, true);
+                    else
+                        this.SelectNextControl(ActiveControl, true, true, true, true);
+                }
+            }
+            
+        }
+
+        private bool CheckHyoujiError(Control ctr)
+        {
+            //
+            if (ctr.Text.Contains("表示"))
+            {
+                var ctrl = GetAllControls(this);
+                foreach (var ctrlTxt in ctrl)
+                {
+                    if (ctrlTxt is CKM_GridView cg)
+                    {
+                        if (cg.DataSource == null)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
+        }
     }
 }

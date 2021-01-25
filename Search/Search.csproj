@@ -322,6 +322,12 @@
     <Compile Include="Search_Vendor.Designer.cs">
       <DependentUpon>Search_Vendor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_Vendor_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Vendor_Shop.Designer.cs">
+      <DependentUpon>Search_Vendor_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_ZaikoIdouIraiNo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -499,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Vendor.resx">
       <DependentUpon>Search_Vendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Vendor_Shop.resx">
+      <DependentUpon>Search_Vendor_Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_ZaikoIdouIraiNo.resx">
       <DependentUpon>Search_ZaikoIdouIraiNo.cs</DependentUpon>

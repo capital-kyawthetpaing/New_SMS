@@ -36,6 +36,11 @@ namespace Search
             StartProgramForForm();
 
             txtBrandCD.Text = "";
+            lblBrandName.Text = "";
+            txtTanni.Text = "";
+            lblTanniName.Text = "";
+            txtMakerCD.Text = "";
+            lblMakerName.Text = "";
             txtSKUName.Text = "";
             txtJanCD.Text = "";
             txtBrandCD.Focus();
@@ -160,5 +165,49 @@ namespace Search
                 MessageBox.Show(ex.Message);
             }
         }
+        
+        private void btnTanni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMaker_Click(object sender, EventArgs e)
+        {
+            Search_Vendor_Shop frmVendor = new Search_Vendor_Shop(bbl.GetDate(), "1");
+            //Search_Vendor frmVendor = new Search_Vendor(bbl.GetDate(), "1");
+            frmVendor.ShowDialog();
+            if (!frmVendor.flgCancel)
+            {
+                txtMakerCD.Text = frmVendor.VendorCD;
+                lblMakerName.Text = frmVendor.VendorName;
+            }
+        }
+
+        private void btnBrand_Click(object sender, EventArgs e)
+        {
+            Search_Brand_Shop frmbrand = new Search_Brand_Shop();
+            frmbrand.ShowDialog();
+            if (!frmbrand.flgCancel)
+            {
+                txtBrandCD.Text = frmbrand.parBrandCD;
+                lblBrandName.Text = frmbrand.parBrandName;
+            }
+        }
+
+        private void txtTanni_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtMakerCD_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtBrandCD_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
     }
 }
