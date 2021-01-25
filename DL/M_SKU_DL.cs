@@ -145,8 +145,10 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                 {
                     { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.BrandCD } },
+                    { "@SportsCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SportsCD } },
                     { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },
                     { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                    { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.MainVendorCD } },
                     { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
                 };
             return SelectData(dic, sp);

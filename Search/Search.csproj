@@ -141,6 +141,12 @@
     <Compile Include="Search_HanyouKey.Designer.cs">
       <DependentUpon>Search_HanyouKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_HanyouKey_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_HanyouKey_Shop.Designer.cs">
+      <DependentUpon>Search_HanyouKey_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_ID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_HanyouKey.resx">
       <DependentUpon>Search_HanyouKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_HanyouKey_Shop.resx">
+      <DependentUpon>Search_HanyouKey_Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_ID.resx">
       <DependentUpon>Search_ID.cs</DependentUpon>

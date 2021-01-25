@@ -182,7 +182,7 @@ namespace Search
                         else
                         {
                             //Ｅ１３６
-                            mbl.ShowMessage("E136");
+                            mbl.ShowMessage("E101");
                             lblMakerName.Text = "";
                             return false;
                         }

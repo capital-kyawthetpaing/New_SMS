@@ -42,7 +42,7 @@ namespace Search
 
         public override void FunctionProcess(int index)
         {
-            if (index + 1 == 12)
+            if (index + 11 == 12)
             {
                 GetData();
             }
