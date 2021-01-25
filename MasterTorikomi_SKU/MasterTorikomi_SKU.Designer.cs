@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_SKU));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
@@ -50,12 +47,12 @@
             this.BT_Torikomi = new CKM_Controls.CKM_Button();
             this.GV_SKU = new CKM_Controls.CKM_GridView();
             this.colSKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Colmarkar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colErrCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colskuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colColr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colError = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_SKU)).BeginInit();
@@ -263,10 +260,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GV_SKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_SKU.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.GV_SKU.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_SKU.CheckCol")));
+            this.GV_SKU.CheckCol = null;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -275,36 +272,28 @@
             this.GV_SKU.ColumnHeadersHeight = 25;
             this.GV_SKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKU,
-            this.colJAN,
-            this.colSKUName,
-            this.colColor,
-            this.colSize,
-            this.Colmarkar,
-            this.colErrCode,
+            this.colJan,
+            this.colskuname,
+            this.colColr,
+            this.Column1,
+            this.Column2,
+            this.Column3,
             this.colError});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_SKU.DefaultCellStyle = dataGridViewCellStyle4;
             this.GV_SKU.EnableHeadersVisualStyles = false;
             this.GV_SKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_SKU.Location = new System.Drawing.Point(33, 116);
             this.GV_SKU.Name = "GV_SKU";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_SKU.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_SKU.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GV_SKU.RowHeight_ = 20;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.GV_SKU.RowTemplate.Height = 20;
             this.GV_SKU.Size = new System.Drawing.Size(1170, 500);
             this.GV_SKU.TabIndex = 108;
@@ -315,63 +304,55 @@
             // colSKU
             // 
             this.colSKU.DataPropertyName = "SKUCD";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.colSKU.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSKU.HeaderText = "SKUCD";
-            this.colSKU.MaxInputLength = 30;
             this.colSKU.Name = "colSKU";
-            this.colSKU.Width = 200;
+            this.colSKU.Width = 150;
             // 
-            // colJAN
+            // colJan
             // 
-            this.colJAN.DataPropertyName = "JANCD";
-            this.colJAN.HeaderText = "JANCD";
-            this.colJAN.MaxInputLength = 13;
-            this.colJAN.Name = "colJAN";
-            this.colJAN.Width = 140;
+            this.colJan.DataPropertyName = "JANCD";
+            this.colJan.HeaderText = "JANCD";
+            this.colJan.MaxInputLength = 13;
+            this.colJan.Name = "colJan";
+            this.colJan.Width = 120;
             // 
-            // colSKUName
+            // colskuname
             // 
-            this.colSKUName.DataPropertyName = "商品名";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.MaxInputLength = 80;
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.Width = 220;
+            this.colskuname.DataPropertyName = "商品名";
+            this.colskuname.HeaderText = "商品名";
+            this.colskuname.Name = "colskuname";
+            this.colskuname.Width = 250;
             // 
-            // colColor
+            // colColr
             // 
-            this.colColor.DataPropertyName = "カラー名";
-            this.colColor.HeaderText = "カラー";
-            this.colColor.MaxInputLength = 10;
-            this.colColor.Name = "colColor";
+            this.colColr.DataPropertyName = "カラー";
+            this.colColr.HeaderText = "カラー";
+            this.colColr.Name = "colColr";
+            this.colColr.Width = 120;
             // 
-            // colSize
+            // Column1
             // 
-            this.colSize.DataPropertyName = "サイズ名";
-            this.colSize.HeaderText = "セイズ";
-            this.colSize.MaxInputLength = 10;
-            this.colSize.Name = "colSize";
+            this.Column1.DataPropertyName = "セイズ";
+            this.Column1.HeaderText = "セイズ";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 120;
             // 
-            // Colmarkar
+            // Column2
             // 
-            this.Colmarkar.DataPropertyName = "メーカー商品CD";
-            this.Colmarkar.HeaderText = "メーカー商品CD";
-            this.Colmarkar.MaxInputLength = 23;
-            this.Colmarkar.Name = "Colmarkar";
-            this.Colmarkar.Width = 130;
+            this.Column2.DataPropertyName = "メーカー商品CD";
+            this.Column2.HeaderText = "メーカー商品CD";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
             // 
-            // colErrCode
+            // Column3
             // 
-            this.colErrCode.DataPropertyName = "EItem";
-            this.colErrCode.HeaderText = "エラー";
-            this.colErrCode.MaxInputLength = 5;
-            this.colErrCode.Name = "colErrCode";
+            this.Column3.DataPropertyName = "EItem";
+            this.Column3.HeaderText = "エラー";
+            this.Column3.Name = "Column3";
             // 
             // colError
             // 
-            this.colError.DataPropertyName = "Error";
             this.colError.HeaderText = "";
-            this.colError.MaxInputLength = 20;
             this.colError.Name = "colError";
             this.colError.Width = 150;
             // 
@@ -433,12 +414,12 @@
         private CKM_Controls.CKM_Button BT_Torikomi;
         private CKM_Controls.CKM_GridView GV_SKU;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colJAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSKUName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colColor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Colmarkar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colErrCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colJan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colskuname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colColr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colError;
     }
 }
