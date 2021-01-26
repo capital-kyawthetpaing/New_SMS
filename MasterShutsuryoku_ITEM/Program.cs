@@ -16,7 +16,7 @@ namespace MasterShutsuryoku_ITEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new programID());
+            Application.Run(new MasterShutsuryoku_ITEM());
         }
     }
 }
