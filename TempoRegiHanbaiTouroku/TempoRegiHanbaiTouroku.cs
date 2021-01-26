@@ -483,7 +483,7 @@ namespace TempoRegiHanbaiTouroku
                         lblDtColorSize1.Text = row["ColorSizeName"].ToString();
                         lblDtKSu1.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu1.Text = bbl.Z_SetStr(row["SalesSU"]);
-                        lblDtKin1.Text = bbl.Z_SetStr(row["SalesGaku"]);
+                        lblDtKin1.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
                         break;
 
                     case 1:
@@ -492,7 +492,7 @@ namespace TempoRegiHanbaiTouroku
                         lblDtColorSize2.Text = row["ColorSizeName"].ToString();
                         lblDtKSu2.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu2.Text = bbl.Z_SetStr(row["SalesSU"]);
-                        lblDtKin2.Text = bbl.Z_SetStr(row["SalesGaku"]);
+                        lblDtKin2.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
                         break;
 
                     case 2:
@@ -501,7 +501,7 @@ namespace TempoRegiHanbaiTouroku
                         lblDtColorSize3.Text = row["ColorSizeName"].ToString();
                         lblDtKSu3.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu3.Text = bbl.Z_SetStr(row["SalesSU"]);
-                        lblDtKin3.Text =  bbl.Z_SetStr(row["SalesGaku"]);
+                        lblDtKin3.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
                         break;
                 }
             }

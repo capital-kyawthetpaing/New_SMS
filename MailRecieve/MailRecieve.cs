@@ -34,9 +34,10 @@ namespace MailRecieve
         public void MailRead(DataTable dtMailAddress, string filepath)
         {
 
-            int readCount =  0; int startIndex = 1;
+            
             for (int i = 0; i < dtMailAddress.Rows.Count; i++)
              {
+                int readCount = 0; int startIndex = 1;
                 ///Read mail
                 using (Pop3 pop3 = new Pop3())
                   {

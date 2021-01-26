@@ -75,6 +75,12 @@
     <Compile Include="Search_Brand.designer.cs">
       <DependentUpon>Search_Brand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_Brand_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Brand_Shop.Designer.cs">
+      <DependentUpon>Search_Brand_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_Carrier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="Search_HanyouKey.Designer.cs">
       <DependentUpon>Search_HanyouKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_HanyouKey_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_HanyouKey_Shop.Designer.cs">
+      <DependentUpon>Search_HanyouKey_Shop.cs</DependentUpon>
     </Compile>
     <Compile Include="Search_ID.cs">
       <SubType>Form</SubType>
@@ -316,6 +328,12 @@
     <Compile Include="Search_Vendor.Designer.cs">
       <DependentUpon>Search_Vendor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_Vendor_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Vendor_Shop.Designer.cs">
+      <DependentUpon>Search_Vendor_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_ZaikoIdouIraiNo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +388,9 @@
     <EmbeddedResource Include="Search_Brand.resx">
       <DependentUpon>Search_Brand.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Search_Brand_Shop.resx">
+      <DependentUpon>Search_Brand_Shop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search_Carrier.resx">
       <DependentUpon>Search_Carrier.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_HanyouKey.resx">
       <DependentUpon>Search_HanyouKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_HanyouKey_Shop.resx">
+      <DependentUpon>Search_HanyouKey_Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_ID.resx">
       <DependentUpon>Search_ID.cs</DependentUpon>
@@ -490,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Vendor.resx">
       <DependentUpon>Search_Vendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Vendor_Shop.resx">
+      <DependentUpon>Search_Vendor_Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_ZaikoIdouIraiNo.resx">
       <DependentUpon>Search_ZaikoIdouIraiNo.cs</DependentUpon>

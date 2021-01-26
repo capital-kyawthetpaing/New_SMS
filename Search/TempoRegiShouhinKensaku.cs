@@ -16,7 +16,10 @@ namespace Search
     public partial class TempoRegiShouhinKensaku : ShopBaseForm
     {
         SKU_BL skuBL = new SKU_BL();
+        MasterTouroku_Brand_BL mbl = new MasterTouroku_Brand_BL();
         M_SKU_Entity mse = new M_SKU_Entity();
+        M_Brand_Entity mbe = new M_Brand_Entity();
+
         DataTable dt;
         public string AdminNO = "";
         public string JANCD = "";
@@ -36,6 +39,11 @@ namespace Search
             StartProgramForForm();
 
             txtBrandCD.Text = "";
+            lblBrandName.Text = "";
+            txtTanni.Text = "";
+            lblTanniName.Text = "";
+            txtMakerCD.Text = "";
+            lblMakerName.Text = "";
             txtSKUName.Text = "";
             txtJanCD.Text = "";
             txtBrandCD.Focus();
@@ -83,8 +91,10 @@ namespace Search
         {
             mse = new M_SKU_Entity();
             mse.BrandCD = txtBrandCD.Text;
+            mse.SportsCD = txtTanni.Text;
             mse.SKUName = txtSKUName.Text;
             mse.JanCD = txtJanCD.Text;
+            mse.MainVendorCD = txtMakerCD.Text;
             mse.ChangeDate = skuBL.GetDate();
 
             return mse;
@@ -160,5 +170,139 @@ namespace Search
                 MessageBox.Show(ex.Message);
             }
         }
+        
+        private void btnTanni_Click(object sender, EventArgs e)
+        {
+            Search_HanyouKey_Shop frmTanni = new Search_HanyouKey_Shop();
+            frmTanni.parID = "202";
+            frmTanni.ShowDialog();
+            if (!frmTanni.flgCancel)
+            {
+                txtTanni.Text = frmTanni.parKey;
+                lblTanniName.Text = frmTanni.parChar1;
+                txtSKUName.Focus();
+            }
+        }
+
+        private void btnMaker_Click(object sender, EventArgs e)
+        {
+            Search_Vendor_Shop frmVendor = new Search_Vendor_Shop(bbl.GetDate(), "1");
+            //Search_Vendor frmVendor = new Search_Vendor(bbl.GetDate(), "1");
+            frmVendor.ShowDialog();
+            if (!frmVendor.flgCancel)
+            {
+                txtMakerCD.Text = frmVendor.VendorCD;
+                lblMakerName.Text = frmVendor.VendorName;
+                
+            }
+        }
+
+        private void btnBrand_Click(object sender, EventArgs e)
+        {
+            Search_Brand_Shop frmbrand = new Search_Brand_Shop();
+            frmbrand.ShowDialog();
+            if (!frmbrand.flgCancel)
+            {
+                txtBrandCD.Text = frmbrand.parBrandCD;
+                lblBrandName.Text = frmbrand.parBrandName;
+                txtTanni.Focus();
+            }
+        }
+
+        private void txtTanni_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrWhiteSpace(txtTanni.Text.ToString()))
+                {
+                    lblTanniName.Text = "";
+                }
+                else
+                {
+                    M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity
+                    {
+                        ID = MultiPorpose_BL.ID_SPORTS,
+                        Key = txtTanni.Text,
+                        ChangeDate = string.IsNullOrWhiteSpace(this.ChangeDate) ? bbl.GetDate() : this.ChangeDate
+                    };
+                    MultiPorpose_BL mbl = new MultiPorpose_BL();
+                    DataTable dt = mbl.M_MultiPorpose_Select(mme);
+                    if (dt.Rows.Count > 0)
+                    {
+                        lblTanniName.Text = dt.Rows[0]["Char1"].ToString();
+                    }
+                    else
+                    {
+                        //Ｅ１０１
+                        bbl.ShowMessage("E101");
+                        lblTanniName.Text = "";
+                        txtTanni.Focus();
+                    }
+                }
+               
+            }
+        }
+
+        private void txtMakerCD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrWhiteSpace(txtMakerCD.Text))
+                {
+                    lblMakerName.Text = "";
+                }
+                else
+                {
+                    M_Vendor_Entity mve = new M_Vendor_Entity
+                    {
+                        VendorCD = txtMakerCD.Text,
+                        ChangeDate = string.IsNullOrWhiteSpace(this.ChangeDate) ? bbl.GetDate() : this.ChangeDate,
+                        DeleteFlg = "0"
+                    };
+                    Vendor_BL vbl = new Vendor_BL();
+                    bool ret = vbl.M_Vendor_SelectTop1(mve);
+                    if (ret)
+                    {
+                        lblMakerName.Text = mve.VendorName;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        lblMakerName.Text = "";
+                        txtMakerCD.Focus();
+                    }
+                }
+            }
+        }
+
+        private void txtBrandCD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtBrandCD.Text))
+                {
+                    DataTable dtbrand = new DataTable();
+                    mbe.BrandCD = txtBrandCD.Text;
+                    dtbrand = mbl.Brand_Select(mbe);
+                    if (dtbrand.Rows.Count == 0)
+                    {
+                        mbl.ShowMessage("E101");
+                        lblBrandName.Text = "";
+                        txtBrandCD.Focus();
+                    }
+                    else
+                    {
+                        lblBrandName.Text = dtbrand.Rows[0]["BrandName"].ToString();
+                    }
+                }
+                else
+                {
+                    lblBrandName.Text = "";
+                }
+            }
+                
+           
+        }
+
     }
 }
