@@ -557,7 +557,15 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var all in (Subete[])Enum.GetValues(typeof(Subete)))
                 {
                     if (all != Subete.Count)
-                        dt.Columns.Add(all.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(all.ToString()))
+                        {
+                            dt.Columns.Add(all.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(all.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt, Source,"1");
             }
@@ -566,7 +574,15 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var basic in (Kihon[])Enum.GetValues(typeof(Kihon)))
                 {
                     if (basic != Kihon.Count)
-                        dt.Columns.Add(basic.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(basic.ToString()))
+                        {
+                            dt.Columns.Add(basic.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(basic.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt,Source,"2");
             }
@@ -575,7 +591,15 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var attribute in (Zokusei[])Enum.GetValues(typeof(Zokusei)))
                 {
                     if (attribute != Zokusei.Count)
-                        dt.Columns.Add(attribute.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(attribute.ToString()))
+                        {
+                            dt.Columns.Add(attribute.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(attribute.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt, Source,"3");
             }
@@ -584,7 +608,15 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var attribute in (Kakaku[])Enum.GetValues(typeof(Kakaku)))
                 {
                     if (attribute != Kakaku.Count)
-                        dt.Columns.Add(attribute.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(attribute.ToString()))
+                        {
+                            dt.Columns.Add(attribute.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(attribute.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt, Source,"4");
             }
@@ -593,7 +625,15 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var attribute in (Kataroku[])Enum.GetValues(typeof(Kataroku)))
                 {
                     if (attribute != Kataroku.Count)
-                        dt.Columns.Add(attribute.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(attribute.ToString()))
+                        {
+                            dt.Columns.Add(attribute.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(attribute.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt, Source,"5");
             }
@@ -602,7 +642,15 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var attribute in (Taggu[])Enum.GetValues(typeof(Taggu)))
                 {
                     if (attribute != Taggu.Count)
-                        dt.Columns.Add(attribute.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(attribute.ToString()))
+                        {
+                            dt.Columns.Add(attribute.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(attribute.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt, Source,"6");
             }
@@ -611,13 +659,28 @@ namespace MasterShutsuryoku_ITEM
                 foreach (var attribute in (SaitoURL[])Enum.GetValues(typeof(SaitoURL)))
                 {
                     if (attribute != SaitoURL.Count)
-                        dt.Columns.Add(attribute.ToString(), typeof(string));
+                    {
+                        var IntCol = IntColName().Split(',');
+                        if (IntCol.Contains(attribute.ToString()))
+                        {
+                            dt.Columns.Add(attribute.ToString(), typeof(int));
+                        }
+                        else
+                            dt.Columns.Add(attribute.ToString(), typeof(string));
+                    }
                 }
                 return GetResultant(dt, Source,"8");
             }
             return null;
         }
+        private string IntColName()
+        {
+            var lst = "データ区分,削除,諸口区分,主要仕入先CD,展開サイズ数,展開カラー数,セット品区分,プレゼント品区分,サンプル品区分,値引商品区分,Webストア取扱区分,実店舗取扱区分,在庫管理対象区分,架空商品区分,直送品区分,予約品区分,特記区分," +
+                "送料区分,要加工品区分,要確認品区分,Web在庫連携区分,販売停止品区分,廃番品区分,完売品区分,自社在庫連携対象,メーカー在庫連携対象,店舗在庫連携対象,Net発注不可区分,EDI発注可能区分,自動発注対象区分,カタログ掲載有無,小包梱包可能区分,税率区分," +
+                "小包梱包可能,税率区分,原価計算方法,Sale対象外区分,標準原価,税込定価,税抜定価,発注税込価格,発注税抜価格,掛率,年度,発注ロット";
 
+            return lst;
+        }
         private DataTable GetResultant(DataTable dt , DataTable Source, string Kubon)
         {
             try
@@ -864,7 +927,7 @@ namespace MasterShutsuryoku_ITEM
         }
         private enum SaitoURL : int
         {
-             データ区分 ,  ITEMCD , 改定日, 承認日 ,削除,  商品名 ,サイト商品CD , Count
+             データ区分 ,  ITEMCD , 改定日, 承認日 ,削除,  商品名 , 商品情報アドレス, Count
 
         }
         private enum Taggu : int
@@ -874,7 +937,7 @@ namespace MasterShutsuryoku_ITEM
         }
         private enum Kataroku : int
         {
-             データ区分 ,  ITEMCD , 改定日 ,承認日, 削除 , 商品名, 年度 , シーズン  ,  カタログ番号 , カタログページ ,カタログ番号Long , カタログページLong, カタログ情報, 指示書番号  , 指示書発行日 ,Count
+             データ区分 ,  ITEMCD , 改定日 ,承認日, 削除 , 商品名, 年度 , シーズン  ,  カタログ番号 , カタログページ  , カタログ情報, 指示書番号  , 指示書発行日 ,Count
         }
         private enum Kakaku : int
         {
@@ -888,7 +951,7 @@ namespace MasterShutsuryoku_ITEM
                 ,Webストア取扱区分名, 実店舗取扱区分, 実店舗取扱区分名  ,  在庫管理対象区分 ,   在庫管理対象区分名 ,  架空商品区分 , 架空商品区分名 ,直送品区分,   直送品区分名 , 予約品区分名 , 予約品区分   ,特記区分 ,   特記区分名 
                 ,送料区分 ,   送料区分名 ,  要加工品区分 , 要加工品区分名 ,要確認品区分,  要確認品区分名 ,Web在庫連携区分,   Web在庫連携区分名 , 販売停止品区分, 販売停止品区分名  ,  廃番品区分 ,  廃番品区分名,  完売品区分  , 完売品区分名
                 ,自社在庫連携対象  ,  自社在庫連携対象名  , メーカー在庫連携対象 , メーカー在庫連携対象名, 店舗在庫連携対象  ,  店舗在庫連携対象名,   Net発注不可区分  , Net発注不可区分名 , EDI発注可能区分 ,  EDI発注可能区分名 , 自動発注対象区分  
-                ,自動発注対象  ,カタログ掲載有無区分 , カタログ掲載有無 ,   小包梱包可能区分   , 小包梱包可能 , Sale対象外区分  , Sale対象外区分名 , 標準原価  ,  税込定価,    税抜定価  ,  発注税込価格 , 発注税抜価格 , 掛率
+                , 自動発注対象名, カタログ掲載有無 , カタログ掲載有無名,   小包梱包可能区分   , 小包梱包可能名, Sale対象外区分  , Sale対象外区分名 , 標準原価  ,  税込定価,    税抜定価  ,  発注税込価格 , 発注税抜価格 , 掛率
                 ,Count
         }
         private enum Kihon : int {
@@ -970,9 +1033,15 @@ namespace MasterShutsuryoku_ITEM
                 ,Net発注不可区分名  
                 ,EDI発注可能区分   
                 ,EDI発注可能区分名  
-                ,自動発注対象  
-                ,カタログ掲載有無    
-                ,小包梱包可能    ,税率区分    ,税率区分名   ,原価計算方法  ,原価計算方法名 ,Sale対象外区分   ,Sale対象外区分名  ,標準原価    ,税込定価    ,税抜定価    ,発注税込価格  ,発注税抜価格  ,掛率  ,発売開始日  , Web掲載開始日    
+
+                , 自動発注対象区分
+                , 自動発注対象名
+                , カタログ掲載有無  
+                , カタログ掲載有無名
+
+                ,小包梱包可能区分
+                , 小包梱包可能名
+                , 税率区分    ,税率区分名   ,原価計算方法  ,原価計算方法名 ,Sale対象外区分   ,Sale対象外区分名  ,標準原価    ,税込定価    ,税抜定価    ,発注税込価格  ,発注税抜価格  ,掛率  ,発売開始日  , Web掲載開始日    
                 ,発注注意区分 , 発注注意区分名
                 , 発注注意事項   , 管理用備考   ,表示用備考   ,棚番  ,年度  ,シーズン   , カタログ番号  ,カタログページ   ,カタログ情報  ,指示書番号 ,  指示書発行日,  商品情報アドレス ,   発注ロット
            , ITEMタグ1, ITEMタグ2, ITEMタグ3 ,ITEMタグ4 ,ITEMタグ5 ,ITEMタグ6 ,ITEMタグ7 ,ITEMタグ8 ,ITEMタグ9 ,ITEMタグ10
