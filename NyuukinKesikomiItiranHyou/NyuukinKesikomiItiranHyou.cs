@@ -94,21 +94,48 @@ namespace NyuukinKesikomiItiranHyou
         {
             if (!RequireCheck(new Control[] { cboStoreAuthorizations }))
                 return false;
-
-            if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
-            {
-                nkih_bl.ShowMessage("E103");
-                txtCollectDateF.Focus();
+            if (!txtCollectDateF.DateCheck())
                 return false;
+            if (!txtCollectDateT.DateCheck())
+                return false;
+            
+            //if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+            //{
+            //    nkih_bl.ShowMessage("E103");
+            //    txtCollectDateF.Focus();
+            //    return false;
+            //}
+
+            //if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+            //{
+            //    nkih_bl.ShowMessage("E103");
+            //    txtInputDateF.Focus();
+            //    return false;
+            //}
+
+
+            if (!string.IsNullOrWhiteSpace(txtCollectDateF.Text) && !string.IsNullOrWhiteSpace(txtCollectDateT.Text))
+            {
+                if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                {
+                    nkih_bl.ShowMessage("E104");
+                    txtCollectDateT.Focus();
+                }
             }
 
-            if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
-            {
-                nkih_bl.ShowMessage("E103");
-                txtInputDateF.Focus();
+            if (!txtInputDateF.DateCheck())
                 return false;
-            }
+            if (!txtInputDateT.DateCheck())
+                return false;
 
+            if (!string.IsNullOrWhiteSpace(txtInputDateF.Text) && !string.IsNullOrWhiteSpace(txtInputDateT.Text))
+            {
+                if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                {
+                    nkih_bl.ShowMessage("E104");
+                    txtInputDateT.Focus();
+                }
+            }
             if (!string.IsNullOrEmpty(ScCollectCustomerCD.Code))
             {
                 if (!ScCollectCustomerCD.IsExists())
@@ -129,7 +156,7 @@ namespace NyuukinKesikomiItiranHyou
                 {
                     if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                     {
-                        nkih_bl.ShowMessage("E103");
+                        nkih_bl.ShowMessage("E104");
                         txtCollectDateT.Focus();
                     }
                 }
@@ -144,7 +171,7 @@ namespace NyuukinKesikomiItiranHyou
                 {
                     if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                     {
-                        nkih_bl.ShowMessage("E103");
+                        nkih_bl.ShowMessage("E104");
                         txtInputDateT.Focus();
                     }
                 }
@@ -282,7 +309,7 @@ namespace NyuukinKesikomiItiranHyou
                 CollectDateTo = txtCollectDateT.Text,
                 InputDateFrom = txtInputDateF.Text,
                 InputDateTo = txtInputDateT.Text,
-                WebCollectType = cboWebCollectType.SelectedValue.ToString(),
+                WebCollectType = cboWebCollectType.SelectedValue.ToString() == "-1" ? "": cboWebCollectType.SelectedValue.ToString(),
                 CollectCustomerCD = ScCollectCustomerCD.Code
             };
             return dce;
