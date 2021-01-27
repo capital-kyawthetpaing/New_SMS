@@ -17,6 +17,10 @@ namespace BL
         {
             return zaidl.ZaikoShoukai_Search(msku, msInfo, mstag, ds_Entity,Type,chktype,chkunchekApprove);
         }
+        public DataTable M_ItemSelectOutput(M_SKU_Entity msku, M_SKUInfo_Entity msInfo, M_SKUTag_Entity mstag, D_Stock_Entity ds_Entity, int Type, int chktype, int chkunchekApprove)
+        {
+            return zaidl.M_ItemSelectOutput(msku, msInfo, mstag, ds_Entity, Type, chktype, chkunchekApprove);
+        }
 
         public DataTable M_Souko_BindForZaikoshoukai(M_Souko_Entity ms)
         {
