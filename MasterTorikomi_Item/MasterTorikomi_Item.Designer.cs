@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_Item));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BT_Torikomi = new CKM_Controls.CKM_Button();
             this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -44,17 +43,18 @@
             this.RB_attributeinfo = new CKM_Controls.CKM_RadioButton();
             this.RB_all = new CKM_Controls.CKM_RadioButton();
             this.RB_BaseInfo = new CKM_Controls.CKM_RadioButton();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
+            this.inputPath = new CKM_Controls.CKM_TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
+            this.gvItem = new CKM_Controls.CKM_GridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.メーカー商品CD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.エラー = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.エラー1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ErrorItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorMessage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvItem)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -86,6 +86,7 @@
             this.BT_Torikomi.TabIndex = 2;
             this.BT_Torikomi.Text = "取込(F12)";
             this.BT_Torikomi.UseVisualStyleBackColor = false;
+            this.BT_Torikomi.Click += new System.EventHandler(this.BT_Torikomi_Click);
             // 
             // ckM_ComboBox1
             // 
@@ -235,34 +236,35 @@
             this.RB_BaseInfo.Text = "基本情報";
             this.RB_BaseInfo.UseVisualStyleBackColor = true;
             // 
-            // ckM_TextBox1
+            // inputPath
             // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderColor = false;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsFirstTime = true;
-            this.ckM_TextBox1.isMaxLengthErr = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.IsTimemmss = false;
-            this.ckM_TextBox1.Length = 32767;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(88, 111);
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(500, 19);
-            this.ckM_TextBox1.TabIndex = 1;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox1.UseColorSizMode = false;
+            this.inputPath.AllowMinus = false;
+            this.inputPath.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.inputPath.BackColor = System.Drawing.Color.White;
+            this.inputPath.BorderColor = false;
+            this.inputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inputPath.ClientColor = System.Drawing.SystemColors.Window;
+            this.inputPath.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.inputPath.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.inputPath.DecimalPlace = 0;
+            this.inputPath.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.inputPath.IntegerPart = 0;
+            this.inputPath.IsCorrectDate = true;
+            this.inputPath.isEnterKeyDown = false;
+            this.inputPath.IsFirstTime = true;
+            this.inputPath.isMaxLengthErr = false;
+            this.inputPath.IsNumber = true;
+            this.inputPath.IsShop = false;
+            this.inputPath.IsTimemmss = false;
+            this.inputPath.Length = 32767;
+            this.inputPath.Location = new System.Drawing.Point(88, 111);
+            this.inputPath.MoveNext = true;
+            this.inputPath.Name = "inputPath";
+            this.inputPath.ReadOnly = true;
+            this.inputPath.Size = new System.Drawing.Size(500, 19);
+            this.inputPath.TabIndex = 1;
+            this.inputPath.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.inputPath.UseColorSizMode = false;
             // 
             // ckM_Label3
             // 
@@ -281,49 +283,52 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_GridView1
+            // gvItem
             // 
-            this.ckM_GridView1.AllowUserToAddRows = false;
-            this.ckM_GridView1.AllowUserToDeleteRows = false;
-            this.ckM_GridView1.AllowUserToResizeColumns = false;
-            this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("ckM_GridView1.CheckCol")));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.ckM_GridView1.ColumnHeadersHeight = 25;
-            this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvItem.AllowUserToAddRows = false;
+            this.gvItem.AllowUserToDeleteRows = false;
+            this.gvItem.AllowUserToResizeColumns = false;
+            this.gvItem.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvItem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.gvItem.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gvItem.CheckCol")));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gvItem.ColumnHeadersHeight = 25;
+            this.gvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ITEM,
+            this.colDate,
             this.商品名,
             this.メーカー商品CD,
-            this.エラー,
-            this.エラー1});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ckM_GridView1.EnableHeadersVisualStyles = false;
-            this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.Location = new System.Drawing.Point(17, 136);
-            this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.RowHeight_ = 20;
-            this.ckM_GridView1.RowTemplate.Height = 20;
-            this.ckM_GridView1.Size = new System.Drawing.Size(1850, 755);
-            this.ckM_GridView1.TabIndex = 3;
-            this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = false;
+            this.ErrorItem,
+            this.ErrorMessage});
+            this.gvItem.EnableHeadersVisualStyles = false;
+            this.gvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.gvItem.Location = new System.Drawing.Point(17, 136);
+            this.gvItem.Name = "gvItem";
+            this.gvItem.RowHeight_ = 20;
+            this.gvItem.RowTemplate.Height = 20;
+            this.gvItem.Size = new System.Drawing.Size(1850, 755);
+            this.gvItem.TabIndex = 3;
+            this.gvItem.UseRowNo = true;
+            this.gvItem.UseSetting = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 112;
+            this.button1.Text = "▼";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ITEM
             // 
@@ -331,6 +336,11 @@
             this.ITEM.Name = "ITEM";
             this.ITEM.ReadOnly = true;
             this.ITEM.Width = 300;
+            // 
+            // colDate
+            // 
+            this.colDate.HeaderText = "改定日";
+            this.colDate.Name = "colDate";
             // 
             // 商品名
             // 
@@ -346,27 +356,20 @@
             this.メーカー商品CD.ReadOnly = true;
             this.メーカー商品CD.Width = 300;
             // 
-            // エラー
+            // ErrorItem
             // 
-            this.エラー.HeaderText = "エラー";
-            this.エラー.Name = "エラー";
-            this.エラー.ReadOnly = true;
+            this.ErrorItem.DataPropertyName = "ErrorItem";
+            this.ErrorItem.HeaderText = "エラー";
+            this.ErrorItem.Name = "ErrorItem";
+            this.ErrorItem.ReadOnly = true;
             // 
-            // エラー1
+            // ErrorMessage
             // 
-            this.エラー1.HeaderText = "エラー1";
-            this.エラー1.Name = "エラー1";
-            this.エラー1.ReadOnly = true;
-            this.エラー1.Width = 300;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "▼";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ErrorMessage.DataPropertyName = "ErrorMessage";
+            this.ErrorMessage.HeaderText = "エラー1";
+            this.ErrorMessage.Name = "ErrorMessage";
+            this.ErrorMessage.ReadOnly = true;
+            this.ErrorMessage.Width = 300;
             // 
             // MasterTorikomi_Item
             // 
@@ -374,9 +377,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1884, 931);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.ckM_GridView1);
+            this.Controls.Add(this.gvItem);
             this.Controls.Add(this.ckM_Label3);
-            this.Controls.Add(this.ckM_TextBox1);
+            this.Controls.Add(this.inputPath);
             this.Controls.Add(this.BT_Torikomi);
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.panel3);
@@ -389,13 +392,13 @@
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.Controls.SetChildIndex(this.BT_Torikomi, 0);
-            this.Controls.SetChildIndex(this.ckM_TextBox1, 0);
+            this.Controls.SetChildIndex(this.inputPath, 0);
             this.Controls.SetChildIndex(this.ckM_Label3, 0);
-            this.Controls.SetChildIndex(this.ckM_GridView1, 0);
+            this.Controls.SetChildIndex(this.gvItem, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,15 +418,16 @@
         private CKM_Controls.CKM_Button BT_Torikomi;
         private CKM_Controls.CKM_ComboBox ckM_ComboBox1;
         private CKM_Controls.CKM_Label ckM_Label2;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
+        private CKM_Controls.CKM_TextBox inputPath;
         private CKM_Controls.CKM_Label ckM_Label3;
-        private CKM_Controls.CKM_GridView ckM_GridView1;
+        private CKM_Controls.CKM_GridView gvItem;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品名;
         private System.Windows.Forms.DataGridViewTextBoxColumn メーカー商品CD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn エラー;
-        private System.Windows.Forms.DataGridViewTextBoxColumn エラー1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorMessage;
     }
 }
 
