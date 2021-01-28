@@ -695,7 +695,16 @@ namespace MasterShutsuryoku_ITEM
                         if (i == 0)
                             dt.Rows[j][i] = Kubon;
                         else
-                            dt.Rows[j][i] = Source.Rows[j][dt.Columns[i].ColumnName].ToString();
+                            try
+                            {
+                                dt.Rows[j][i] = Source.Rows[j][dt.Columns[i].ColumnName].ToString();
+                            }
+                            catch (Exception ex)
+                            {
+                                dt.Rows[j][i] = "";
+                                var msg = ex.Message;
+
+                            }
                     }
                 }
                 return dt;
@@ -957,7 +966,9 @@ namespace MasterShutsuryoku_ITEM
         private enum Kihon : int {
               データ区分,   ITEMCD , 改定日, 承認日, 削除, 諸口区分 ,   商品名 ,カナ名, 略名,  英語名, 主要仕入先CD, 主要仕入先名,  ブランドCD,  ブランド名  , メーカー商品CD ,  展開サイズ数  ,展開カラー数 , 単位CD,    単位名, 競技CD 
                 ,  競技名 ,商品分類CD , 分類名, セグメントCD ,セグメント名 , 標準原価   , 税込定価  ,  税抜定価 ,   発注税込価格,  発注税抜価格 , 掛率 , 発売開始日  , Web掲載開始日  ,  発注注意区分  ,発注注意区分名, 発注注意事項,  管理用備考
-                ,   表示用備考  , 棚番 , 発注ロット, Count
+                ,   表示用備考  , 棚番 
+                //, 発注ロット
+                , Count
 
         }
         private enum Subete :int

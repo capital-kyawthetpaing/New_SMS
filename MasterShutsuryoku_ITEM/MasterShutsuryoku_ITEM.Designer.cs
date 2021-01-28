@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterShutsuryoku_ITEM));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -1720,7 +1721,7 @@
             this.GV_Zaiko.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_Zaiko.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1750,6 +1751,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(22, 443);
@@ -1763,6 +1772,7 @@
             this.GV_Zaiko.TabIndex = 100;
             this.GV_Zaiko.UseRowNo = true;
             this.GV_Zaiko.UseSetting = false;
+            this.GV_Zaiko.Visible = false;
             this.GV_Zaiko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_Zaiko_CellContentClick);
             // 
             // AdNO
@@ -1989,6 +1999,7 @@
             this.ckM_BT_hyoji.TabIndex = 0;
             this.ckM_BT_hyoji.Text = "表示(F11)";
             this.ckM_BT_hyoji.UseVisualStyleBackColor = false;
+            this.ckM_BT_hyoji.Visible = false;
             this.ckM_BT_hyoji.Click += new System.EventHandler(this.ckM_BT_hyoji_Click);
             // 
             // panel2
@@ -2309,6 +2320,7 @@
             this.ClientSize = new System.Drawing.Size(1684, 911);
             this.Controls.Add(this.GV_Zaiko);
             this.F10Visible = false;
+            this.F11Visible = false;
             this.F2Visible = false;
             this.F3Visible = false;
             this.F4Visible = false;
