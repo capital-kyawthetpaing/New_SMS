@@ -221,6 +221,7 @@
     <Compile Include="Vendor_BL.cs" />
     <Compile Include="WowmaAPI_BL.cs" />
     <Compile Include="YahooAPI_BL.cs" />
+    <Compile Include="YamatoOkurijou_BL.cs" />
     <Compile Include="ZaikoIdouIraiNyuuryoku_BL.cs" />
     <Compile Include="ZaikoIdouIraiUkeNyuuryoku_BL.cs" />
     <Compile Include="ZaikoIdouNyuuryoku_BL.cs" />
