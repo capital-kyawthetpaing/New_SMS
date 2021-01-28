@@ -15,6 +15,7 @@ using Search;
 using System.Diagnostics;
 using System.IO;
 using CrystalDecisions.Shared;
+using ClosedXML.Excel;
 
 namespace ZaikoKanriHyou
 {
@@ -46,7 +47,7 @@ namespace ZaikoKanriHyou
             cboSouko.SelectedValue = SoukoCD;
             scMakerShohinCD.CodeWidth = 600;
             txtTargetDate.Text = DateTime.Now.ToString("yyyy/MM");
-            Btn_F11.Text = "";
+            Btn_F11.Text = "Excel(F11)";
         }
 
         private void SetRequiredField()
@@ -75,6 +76,9 @@ namespace ZaikoKanriHyou
                     {
                         Clear();
                     }
+                    break;
+                case 11: //F11
+                    ExcelExport();
                     break;
             }
         }
@@ -320,5 +324,89 @@ namespace ZaikoKanriHyou
                 rdoProductCD.Checked = false;
             }
         }
-    }
+
+        public void ExcelExport()
+        {
+            if (ErrorCheck())
+            {
+                if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                {
+                    dpde = new D_Purchase_Details_Entity();
+                    dmse = new D_MonthlyStock_Entity();
+                    dpde = PurchaseDetailInfo();
+                    dmse = MonthlyStockInfo();
+                    if (chkRelatedPrinting.Checked == true)
+                    {
+                        if (rdoITEM.Checked == true)
+                        {
+                            chk = 1;
+                        }
+                        else if (rdoProductCD.Checked == true)
+                        {
+                            chk = 2;
+                        }
+                    }
+                    else
+                    {
+                        chk = 3;
+                    }
+                    DataTable dt = zkhbl.ZaikoKanriHyou_Export(dpde, dmse, chk);
+
+                    if(dt.Rows.Count>0)
+                    {
+                        DataTable dtExport = dt;
+                        string folderPath = "C:\\SMS\\";
+                        if (!Directory.Exists(folderPath))
+                        {
+                            Directory.CreateDirectory(folderPath);
+                        }
+                        SaveFileDialog savedialog = new SaveFileDialog();
+                        savedialog.Filter = "Excel Files|*.xlsx;";
+                        savedialog.Title = "Save";
+                        savedialog.FileName = "在庫管理表印刷";
+                        savedialog.InitialDirectory = folderPath;
+
+                        savedialog.RestoreDirectory = true;
+                        if (savedialog.ShowDialog() == DialogResult.OK)
+                        {
+                            if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                            {
+                                Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                                Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                                worksheet = workbook.ActiveSheet;
+                                worksheet.Name = "worksheet";
+                                Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                                //excelRange.Cells[6, 13].NumberFormat = "\"$\" #,##0.00";
+
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dtExport, "worksheet");
+                                    wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                    wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                    wb.Worksheet("worksheet").Cell(1, 1).Value = "年月：";
+                                    wb.Worksheet("worksheet").Cell(2, 1).Value = "倉庫：";
+                                    wb.Worksheet("worksheet").Cell(1, 2).Value = "'" + txtTargetDate.Text;
+                                    wb.Worksheet("worksheet").Cell(2, 2).Value = "'" + cboSouko.SelectedValue.ToString();
+                                    wb.Worksheet("worksheet").Cell(2, 3).Value = cboSouko.Text.ToString();
+                                    wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+
+                                    wb.SaveAs(savedialog.FileName);
+                                    bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                                }
+                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E128");
+                        txtTargetDate.Focus();
+                    }
+
+                }
+            }
+        }
+     }
 }
