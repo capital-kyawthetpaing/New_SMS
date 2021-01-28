@@ -298,7 +298,7 @@ select msku.ITemCD, msku.AdminNO
 					and (@TagName4 is Null or  TagName =@TagName4)
 					and (@TagName5 is Null or  TagName =@TagName5) )  Main left Outer join 
 
-					 F_ITEM(GETDATE()) fim on Main.ITemCD = fim.ITemCD
+					 F_ITEM(GETDATE()) fim on Main.ITemCD = fim.ITemCD where fim.ITemCD is not null
 					 Order by fim.ITemCD asc
 
  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
