@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_Item));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BT_Torikomi = new CKM_Controls.CKM_Button();
             this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -47,12 +48,12 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.gvItem = new CKM_Controls.CKM_GridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.メーカー商品CD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrorItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrorMessage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCDShow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemMakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvItem)).BeginInit();
             this.SuspendLayout();
@@ -295,7 +296,7 @@
             this.gvItem.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gvItem.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -303,12 +304,20 @@
             this.gvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvItem.ColumnHeadersHeight = 25;
             this.gvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ITEM,
-            this.colDate,
-            this.商品名,
-            this.メーカー商品CD,
-            this.ErrorItem,
-            this.ErrorMessage});
+            this.ItemCDShow,
+            this.ItemDate,
+            this.ItemName,
+            this.ItemMakerCD,
+            this.EItem,
+            this.Error});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvItem.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvItem.EnableHeadersVisualStyles = false;
             this.gvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvItem.Location = new System.Drawing.Point(17, 136);
@@ -330,46 +339,50 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ITEM
+            // ItemCDShow
             // 
-            this.ITEM.HeaderText = "ITEM";
-            this.ITEM.Name = "ITEM";
-            this.ITEM.ReadOnly = true;
-            this.ITEM.Width = 300;
+            this.ItemCDShow.DataPropertyName = "ItemCDShow";
+            this.ItemCDShow.HeaderText = "ITEM";
+            this.ItemCDShow.Name = "ItemCDShow";
+            this.ItemCDShow.ReadOnly = true;
+            this.ItemCDShow.Width = 300;
             // 
-            // colDate
+            // ItemDate
             // 
-            this.colDate.HeaderText = "改定日";
-            this.colDate.Name = "colDate";
+            this.ItemDate.DataPropertyName = "ItemDate";
+            this.ItemDate.HeaderText = "改定日";
+            this.ItemDate.Name = "ItemDate";
             // 
-            // 商品名
+            // ItemName
             // 
-            this.商品名.HeaderText = "商品名";
-            this.商品名.Name = "商品名";
-            this.商品名.ReadOnly = true;
-            this.商品名.Width = 800;
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "商品名";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 800;
             // 
-            // メーカー商品CD
+            // ItemMakerCD
             // 
-            this.メーカー商品CD.HeaderText = "メーカー商品CD";
-            this.メーカー商品CD.Name = "メーカー商品CD";
-            this.メーカー商品CD.ReadOnly = true;
-            this.メーカー商品CD.Width = 300;
+            this.ItemMakerCD.DataPropertyName = "ItemMakerCD";
+            this.ItemMakerCD.HeaderText = "メーカー商品CD";
+            this.ItemMakerCD.Name = "ItemMakerCD";
+            this.ItemMakerCD.ReadOnly = true;
+            this.ItemMakerCD.Width = 300;
             // 
-            // ErrorItem
+            // EItem
             // 
-            this.ErrorItem.DataPropertyName = "ErrorItem";
-            this.ErrorItem.HeaderText = "エラー";
-            this.ErrorItem.Name = "ErrorItem";
-            this.ErrorItem.ReadOnly = true;
+            this.EItem.DataPropertyName = "EItem";
+            this.EItem.HeaderText = "エラー";
+            this.EItem.Name = "EItem";
+            this.EItem.ReadOnly = true;
             // 
-            // ErrorMessage
+            // Error
             // 
-            this.ErrorMessage.DataPropertyName = "ErrorMessage";
-            this.ErrorMessage.HeaderText = "エラー1";
-            this.ErrorMessage.Name = "ErrorMessage";
-            this.ErrorMessage.ReadOnly = true;
-            this.ErrorMessage.Width = 300;
+            this.Error.DataPropertyName = "Error";
+            this.Error.HeaderText = "エラー1";
+            this.Error.Name = "Error";
+            this.Error.ReadOnly = true;
+            this.Error.Width = 300;
             // 
             // MasterTorikomi_Item
             // 
@@ -422,12 +435,12 @@
         private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_GridView gvItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名;
-        private System.Windows.Forms.DataGridViewTextBoxColumn メーカー商品CD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorMessage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCDShow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemMakerCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Error;
     }
 }
 

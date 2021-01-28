@@ -76,14 +76,16 @@ namespace MasterTorikomi_Item
                 {
                     if (ErrorCheck(dt))
                     {
-                        //    ExcelErrorCheck(dt);
-                        //    if (checkerr)
-                        //    {
-                        //        var xml = bbl.DataTableToXml(dt);
-                        // }
-                        gvItem.DataSource = null;
-                        gvItem.DataSource = dt;
-                        bbl.ShowMessage("I101");
+                        ExcelErrorCheck(dt);
+                        var dtres = dt.Select("ItemCDShow <> ''");
+                        if (dtres != null)
+                        {
+                            //  var xml = bbl.DataTableToXml(dt);
+
+                            gvItem.DataSource = null;
+                            gvItem.DataSource = dtres.CopyToDataTable();
+                            bbl.ShowMessage("I101");
+                        }
                     }
                 }
                 else
@@ -95,7 +97,10 @@ namespace MasterTorikomi_Item
             //}
 
         }
-
+        protected override void EndSec()
+        {
+            this.Close();
+        }
         private bool ErrorCheck(DataTable dt)
         {
             string kibun = dt.Rows[0]["データ区分"].ToString();
@@ -241,18 +246,22 @@ namespace MasterTorikomi_Item
                         return false;
                     }
                 }
-
             }
             return true;
         }
-        
+
         private void ExcelErrorCheck(DataTable dt)
         {
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
+            dt.Columns.Add("ItemCDShow");
+            dt.Columns.Add("ItemName");
+            dt.Columns.Add("ItemMakerCD");
+            dt.Columns.Add("ItemDate");
+
             string kibun = dt.Rows[1]["データ区分"].ToString();
 
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < 50; i++)
             {
                 if (!Is102(dt.Rows[i]["データ区分"].ToString()))
                 {
@@ -276,7 +285,7 @@ namespace MasterTorikomi_Item
                 }
                 if (!Is103(dt.Rows[i]["改定日"].ToString()))
                 {
-                   
+
                     dt.Rows[i]["EItem"] = "改定日";
                     dt.Rows[i]["Error"] = "E103";
                     goto SkippedLine;
@@ -284,8 +293,8 @@ namespace MasterTorikomi_Item
 
                 if (!Is103(dt.Rows[i]["承認日"].ToString()))
                 {
-                        dt.Rows[i]["EItem"] = "承認日";
-                        dt.Rows[i]["Error"] = "E103";
+                    dt.Rows[i]["EItem"] = "承認日";
+                    dt.Rows[i]["Error"] = "E103";
                     goto SkippedLine;
                 }
 
@@ -313,8 +322,8 @@ namespace MasterTorikomi_Item
 
                 if (!Is102(dt.Rows[i]["商品名"].ToString()))
                 {
-                        dt.Rows[i]["EItem"] = "商品名";
-                        dt.Rows[i]["Error"] = "E102";
+                    dt.Rows[i]["EItem"] = "商品名";
+                    dt.Rows[i]["Error"] = "E102";
                     goto SkippedLine;
                 }
 
@@ -332,9 +341,9 @@ namespace MasterTorikomi_Item
                     goto SkippedLine;
                 }
 
-                if (!Is101("M_Brand", dt.Rows[i]["主要仕入先CD"].ToString()))
+                if (!Is101("M_Brand", dt.Rows[i]["ブランドCD"].ToString()))
                 {
-                    dt.Rows[i]["EItem"] = "主要仕入先CD";
+                    dt.Rows[i]["EItem"] = "ブランドCD";
                     dt.Rows[i]["Error"] = "E101";
                     goto SkippedLine;
                 }
@@ -350,7 +359,7 @@ namespace MasterTorikomi_Item
                     dt.Rows[i]["Error"] = "E102";
                     goto SkippedLine;
                 }
-                IsNoB(dt,i, "展開サイズ数", "1");
+                IsNoB(dt, i, "展開サイズ数", "1");
 
                 if (!Is102(dt.Rows[i]["展開カラー数"].ToString()))
                 {
@@ -360,7 +369,7 @@ namespace MasterTorikomi_Item
                 }
                 IsNoB(dt, i, "展開カラー数", "1");
 
-                if (!Is101("M_MultiPorpose", dt.Rows[i]["単位CD"].ToString(),"201"))
+                if (!Is101("M_MultiPorpose", dt.Rows[i]["単位CD"].ToString(), "201"))
                 {
                     dt.Rows[i]["EItem"] = "単位CD";
                     dt.Rows[i]["Error"] = "E101";
@@ -394,7 +403,7 @@ namespace MasterTorikomi_Item
                     dt.Rows[i]["Error"] = "E190";
                     goto SkippedLine;
                 }
-                IsNoB(dt,i, "セット品区分", "M_SKUInitial");
+                IsNoB(dt, i, "セット品区分", "M_SKUInitial");
 
                 if (!Is190(dt.Rows[i]["プレゼント品区分"].ToString()))
                 {
@@ -576,14 +585,14 @@ namespace MasterTorikomi_Item
                 }
                 IsNoB(dt, i, "EDI発注可能区分", "M_SKUInitial");
 
-                if (!Is190(dt.Rows[i]["自動発注対象"].ToString()))
+                if (!Is190(dt.Rows[i]["自動発注対象区分"].ToString()))
                 {
-                    dt.Rows[i]["EItem"] = "自動発注対象";
+                    dt.Rows[i]["EItem"] = "自動発注対象区分";
                     dt.Rows[i]["Error"] = "E190";
                     goto SkippedLine;
                 }
-                IsNoB(dt, i, "自動発注対象", "M_SKUInitial");
-                
+                IsNoB(dt, i, "自動発注対象区分", "M_SKUInitial");
+
                 if (!Is190(dt.Rows[i]["カタログ掲載有無"].ToString()))
                 {
                     dt.Rows[i]["EItem"] = "カタログ掲載有無";
@@ -592,21 +601,13 @@ namespace MasterTorikomi_Item
                 }
                 IsNoB(dt, i, "カタログ掲載有無", "M_SKUInitial");
 
-                if (!Is190(dt.Rows[i]["小包梱包可能"].ToString()))
+                if (!Is190(dt.Rows[i]["小包梱包可能区分"].ToString()))
                 {
-                    dt.Rows[i]["EItem"] = "小包梱包可能";
+                    dt.Rows[i]["EItem"] = "小包梱包可能区分";
                     dt.Rows[i]["Error"] = "E190";
                     goto SkippedLine;
                 }
-                IsNoB(dt, i, "小包梱包可能", "M_SKUInitial");
-
-                if (!Is190(dt.Rows[i]["小包梱包可能"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "小包梱包可能";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
-                IsNoB(dt, i, "小包梱包可能", "M_SKUInitial");
+                IsNoB(dt, i, "小包梱包可能区分", "M_SKUInitial");
 
                 if (!Is190(dt.Rows[i]["税率区分"].ToString()))
                 {
@@ -633,7 +634,7 @@ namespace MasterTorikomi_Item
                 }
                 IsNoB(dt, i, "Sale対象外区分", "M_SKUInitial");
 
-                IsNoB(dt,i, "標準原価");
+                IsNoB(dt, i, "標準原価");
 
                 IsNoB(dt, i, "税込定価");
 
@@ -658,7 +659,7 @@ namespace MasterTorikomi_Item
                     goto SkippedLine;
                 }
 
-                if (!Is101("M_MultiPorpose", dt.Rows[i]["発注注意区分"].ToString(),"316"))
+                if (!Is101("M_MultiPorpose", dt.Rows[i]["発注注意区分"].ToString(), "316"))
                 {
                     dt.Rows[i]["EItem"] = "発注注意区分";
                     dt.Rows[i]["Error"] = "E103";
@@ -676,9 +677,14 @@ namespace MasterTorikomi_Item
 
                 IsNoB(dt, i, "発注ロット", "1");
 
-                IsNoB(dt, i, "ITEMタグ2","1");
+                IsNoB(dt, i, "ITEMタグ2", "1");
 
             SkippedLine:
+                dt.Rows[i]["ItemCDShow"] = dt.Rows[i]["ITEMCD"].ToString(); 
+                dt.Rows[i]["ItemName"] = dt.Rows[i]["商品名"].ToString(); 
+                dt.Rows[i]["ItemDate"] = dt.Rows[i]["改定日"].ToString(); 
+                dt.Rows[i]["ItemMakerCD"] = dt.Rows[i]["メーカー商品CD"].ToString();
+
                 int g = 0;
             }
         }
@@ -689,16 +695,40 @@ namespace MasterTorikomi_Item
                 dt.Rows[i][col] =(Value ==null) ? "0" : Value;
             }
         }
-        private bool Is103(string date)
+        private bool Is103(string date)  // date
         {
             return bbl.CheckDate(bbl.FormatDate(date));
         }
-        private bool Is101(string tableName, string param, string paramID=null)
+        private bool Is101(string tableName, string param, string paramID=null)  // Master
         {
-            //if (value.ToString() == "0" || value.ToString() == "1" || string.IsNullOrEmpty(value))
-            //{
-            //    return true;
-            //}
+            var data = new DataTable();
+            if (paramID == null)
+            {
+                if (tableName == "M_Vendor")
+                {
+                    data = bbl.SimpleSelect1("75", bbl.GetDate(), param);
+                }
+                if (tableName == "M_Brand")
+                {
+                    data = bbl.SimpleSelect1("56", bbl.GetDate(), param);
+                }
+              
+                //if (tableName == "M_MultiPorpose")
+                //{
+                //     data = bbl.SimpleSelect1("14", bbl.GetDate(), param);
+                //}
+                return (data.Rows.Count > 0);
+            }
+            else if (paramID != null)
+            {
+                if (tableName == "M_MultiPorpose")
+                {
+                    data = bbl.SimpleSelect1("42", bbl.GetDate(), paramID, param);
+                }
+
+                return (data.Rows.Count > 0);
+            }
+          
             return false;
         }
         private bool Is190(string value)
@@ -712,7 +742,7 @@ namespace MasterTorikomi_Item
 
         private bool Is102(string value)
         {
-            if ( string.IsNullOrEmpty(value))
+            if ( !string.IsNullOrEmpty(value))
             {
                 return true;
             }
