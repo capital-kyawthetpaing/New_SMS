@@ -60,6 +60,7 @@ namespace MasterTouroku_Tempo
             Print5,
             Print6,
             MoveMailPatternCD,
+            InvoiceNotation,
             Remarks,
             DeleteFlg
         }
@@ -109,6 +110,24 @@ namespace MasterTouroku_Tempo
                 //起動時共通処理
                 base.StartProgram();
 
+                M_MultiPorpose_Entity me = new M_MultiPorpose_Entity();
+                me.ID = MultiPorpose_BL.ID_TempoKbn;
+
+                Control[] ctls = {  radioButton4, radioButton5, radioButton6, radioButton7, radioButton8, radioButton9 };
+                for (int i = 1; i <= 6; i++)
+                {
+                    ctls[i - 1].Visible = false;
+                    me.Key = i.ToString();
+
+                    MultiPorpose_BL bl = new MultiPorpose_BL();
+                    DataTable dt = bl.M_MultiPorpose_Select(me);
+                    if (dt.Rows.Count > 0)
+                    {
+                        ctls[i - 1].Visible = true;
+                        ctls[i - 1].Text = bbl.LeftB(dt.Rows[0]["Char1"].ToString(),6);
+                    }
+                }
+
                 ScStore.SetFocus(1);
             }
             catch (Exception ex)
@@ -130,7 +149,7 @@ namespace MasterTouroku_Tempo
                                     , ScStaff12.TxtCode, ScStaff21.TxtCode, ScStaff22.TxtCode, ScStaff31.TxtCode, ScStaff32.TxtCode
                                     , ckM_TextBox18, ckM_TextBox17, ckM_TextBox16, ckM_TextBox15
                                     , ckM_TextBox8, ckM_TextBox9, ckM_TextBox11, ckM_TextBox10, ckM_TextBox13, ckM_TextBox12
-                                    ,ScMailPatternCD.TxtCode, TxtRemark};
+                                    ,ScMailPatternCD.TxtCode, ckM_TextBox3, TxtRemark};
             detailLabels = new CKM_SearchControl[] { ScMall, ScKouza, ScStaff11, ScStaff12
                                 , ScStaff21, ScStaff22, ScStaff31, ScStaff32, ScMailPatternCD};
             searchButtons = new Control[] { ScMall.BtnSearch,ScKouza.BtnSearch, ScStaff11.BtnSearch,ScStaff12.BtnSearch,ScStaff22.BtnSearch,
@@ -835,6 +854,7 @@ namespace MasterTouroku_Tempo
             mse.KouzaCD = detailControls[index + (int)EIndex.KouzaCD].Text;
             mse.ReceiptPrint = detailControls[index + (int)EIndex.ReceiptPrint].Text;
             mse.MoveMailPatternCD = detailControls[index + (int)EIndex.MoveMailPatternCD].Text;
+            mse.InvoiceNotation = detailControls[index + (int)EIndex.InvoiceNotation].Text;
             mse.Remarks = detailControls[index + (int)EIndex.Remarks].Text;
             //チェックボックス
             if (checkDeleteFlg.Checked)
@@ -864,6 +884,20 @@ namespace MasterTouroku_Tempo
                     detailControls[i].Focus();
                     return;
                 }
+
+            Control[] ctls = { radioButton4, radioButton5, radioButton6, radioButton7, radioButton8, radioButton9 };
+            for (int i = 1; i <= 6; i++)
+            {
+                if (((RadioButton)ctls[i - 1]).Checked)
+                {
+                    if (!ctls[i - 1].Visible)
+                    {
+                        bbl.ShowMessage("E111");
+                        ctls[0].Focus();
+                        return;
+                    }
+                }
+            }
 
             //更新処理
             mse = GetEntity(0);
@@ -1528,7 +1562,10 @@ namespace MasterTouroku_Tempo
                     //実店舗場所：店舗区分＝「実店舗」の時のみ入力可能。
                     panel2.Enabled = true;
                     detailControls[(int)EIndex.ReceiptPrint].Enabled = true;
+                    detailControls[(int)EIndex.ReceiptPrint].Text = "";
                     ScMailPatternCD.Enabled = true;
+                    detailControls[(int)EIndex.InvoiceNotation].Enabled = true;
+                    detailControls[(int)EIndex.InvoiceNotation].Text = "";
 
                     //実店舗を選択した場合(When 実店舗 is selected)、以下の項目を入力不可にする (Input is possible)
 
@@ -1560,6 +1597,7 @@ namespace MasterTouroku_Tempo
                     panel2.Enabled = false;
                     detailControls[(int)EIndex.ReceiptPrint].Enabled = false;
                     ScMailPatternCD.Enabled = false;
+                    detailControls[(int)EIndex.InvoiceNotation].Enabled = false;
 
                     //Web店舗、Webまとめ店舗を選択した場合(When Web店舗 or Webまとめ店舗 is selected)、以下の項目を入力不可にする
                     //実店舗場所
