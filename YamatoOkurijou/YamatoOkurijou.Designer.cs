@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new CKM_Controls.CKM_Label();
             this.label1 = new CKM_Controls.CKM_Label();
             this.label27 = new CKM_Controls.CKM_Label();
-            this.CboStoreCD = new CKM_Controls.CKM_ComboBox();
             this.ckM_SearchControl2 = new Search.CKM_SearchControl();
             this.ckM_SearchControl3 = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -46,23 +44,6 @@
             // PanelSearch
             // 
             this.PanelSearch.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.DefaultlabelSize = true;
-            this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(67, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 12);
-            this.label4.TabIndex = 255;
-            this.label4.Text = "店舗";
-            this.label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -99,23 +80,6 @@
             this.label27.Text = "複写見積番号";
             this.label27.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CboStoreCD
-            // 
-            this.CboStoreCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CboStoreCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_見積;
-            this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CboStoreCD.Flag = 0;
-            this.CboStoreCD.FormattingEnabled = true;
-            this.CboStoreCD.Length = 40;
-            this.CboStoreCD.Location = new System.Drawing.Point(102, 111);
-            this.CboStoreCD.MaxLength = 20;
-            this.CboStoreCD.MoveNext = true;
-            this.CboStoreCD.Name = "CboStoreCD";
-            this.CboStoreCD.Size = new System.Drawing.Size(280, 20);
-            this.CboStoreCD.TabIndex = 0;
             // 
             // ckM_SearchControl2
             // 
@@ -224,15 +188,11 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.ScShippingNO);
             this.Controls.Add(this.ckM_Label2);
-            this.Controls.Add(this.CboStoreCD);
-            this.Controls.Add(this.label4);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "YamatoOkurijou";
             this.PanelHeaderHeight = 90;
             this.Load += new System.EventHandler(this.Form_Load);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.CboStoreCD, 0);
             this.Controls.SetChildIndex(this.ckM_Label2, 0);
             this.Controls.SetChildIndex(this.ScShippingNO, 0);
             this.ResumeLayout(false);
@@ -241,10 +201,8 @@
         }
 
         #endregion
-        private CKM_Controls.CKM_Label label4;
         private CKM_Controls.CKM_Label label27;
         private CKM_Controls.CKM_Label label1;
-        private CKM_Controls.CKM_ComboBox CboStoreCD;
         private Search.CKM_SearchControl ckM_SearchControl2;
         private Search.CKM_SearchControl ckM_SearchControl3;
         private CKM_Controls.CKM_Label ckM_Label2;

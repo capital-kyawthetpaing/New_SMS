@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Linq;
 using System.IO;
 
 using BL;
@@ -29,8 +28,9 @@ namespace YamatoOkurijou
         private YamatoOkurijou_BL mibl;
         private D_Shipping_Entity dee;
         private DataTable dtCSV;
+        private bool mEndFlg = false;
 
-        public YamatoOkurijou         ()
+        public YamatoOkurijou()
         {
             InitializeComponent();
         }
@@ -51,7 +51,6 @@ namespace YamatoOkurijou
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
-                CboStoreCD.Bind(ymd);
 
                 mibl = new YamatoOkurijou_BL();
 
@@ -60,31 +59,18 @@ namespace YamatoOkurijou
                 ScShippingNO.Value1 = InOperatorCD;
                 ScShippingNO.Value2 = stores;
 
-                //スタッフマスター(M_Staff)に存在すること
-                //[M_Staff]
-                M_Staff_Entity mse = new M_Staff_Entity
-                {
-                    StaffCD = InOperatorCD,
-                    ChangeDate = ymd
-                };
-                Staff_BL bl = new Staff_BL();
-                bool ret = bl.M_Staff_Select(mse);
-                if (ret)
-                {
-                    CboStoreCD.SelectedValue = mse.StoreCD;
-                }
-
-
                 //Parameter.出荷番号 is not null の場合	（出荷入力からの起動を想定）
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
+                    mEndFlg = true;
+
                     string ShippingNO = cmds[(int)ECmdLine.PcID + 1];
-                    ScShippingNO.Text = ShippingNO;
+                    ScShippingNO.TxtCode.Text = ShippingNO;
 
                     //画面を表示しない
                     //データ出力処理へ
-                    ExecSec();
+                        ExecSec();
 
                     //データ作成後、そのままプログラム終了
                     EndSec();
@@ -105,7 +91,7 @@ namespace YamatoOkurijou
 
         private void InitialControlArray()
         {
-            detailControls = new Control[] { CboStoreCD, ScShippingNO.TxtCode };
+            detailControls = new Control[] { ScShippingNO.TxtCode };
             searchButtons = new Control[] { ScShippingNO.BtnSearch };
 
             foreach (Control ctl in detailControls)
@@ -130,27 +116,7 @@ namespace YamatoOkurijou
                     detailControls[i].Focus();
                     return false;
                 }
-            }
-            
-            dee = new D_Shipping_Entity();
-            dee.ShippingNO = ScShippingNO.TxtCode.Text;
-            dee.Operator = this.InOperatorCD;
-            dee.PC = this.InPcID;
-            dtCSV = mibl.D_Shipping_SelectForYamato(dee);
-
-            //以下の条件でデータが存在しなければエラー (Error if record does not exist)Ｅ１３３
-            if (dtCSV.Rows.Count == 0)
-            {
-                bbl.ShowMessage("E133");
-                PreviousCtrl.Focus();
-                return false;
-            }
-
-
-
-
-
-
+            }   
 
             return true;
         }
@@ -164,12 +130,15 @@ namespace YamatoOkurijou
 
             this.Cursor = Cursors.WaitCursor;
 
+            //データ出力処理へ
             ExportCsv(dtCSV);
 
-
-            //ret = mibl.PRC_EDIOrder_Insert(doe,dee);
+            //更新処理
+            ret = mibl.D_Shipping_Update(dee);
 
             this.Cursor = Cursors.Default;
+
+            if (mEndFlg) return;
 
             if (ret == false)
             {
@@ -210,13 +179,13 @@ namespace YamatoOkurijou
                 DataTable data= mibl.M_Control_Select(mce);
                 if (data.Rows.Count > 0)
                 {
-                    //サーバ名
-                    strPath = data.Rows[0]["CreateServer"].ToString();
+                    ////サーバ名
+                    //strPath = data.Rows[0]["CreateServer"].ToString();
 
-                    if (!strPath.EndsWith(@"\"))
-                    {
-                        strPath += @"\";
-                    }
+                    //if (!strPath.EndsWith(@"\"))
+                    //{
+                    //    strPath += @"\";
+                    //}
                     //フォルダ名
                     strPath += data.Rows[0]["CreateFolder"].ToString();
                     if (!Directory.Exists(strPath))
@@ -271,10 +240,21 @@ namespace YamatoOkurijou
                         for (int count = 2; count < colCount - 1; count++)
                         {
                             //書き込み
-                            switch (count)
+                            switch (count-1)
                             {
+                                case 45: //45	お届け先住所	
+                                case 57://57	依頼主住所
+                                    string field =EncloseDoubleQuotesIfNeed(bbl.LeftB(row[count].ToString(), 96));
+                                    sw.Write(field);
+                                    break;
+
+                                case 51://51	お届け先名
+                                    field = EncloseDoubleQuotesIfNeed(bbl.LeftB(row[count].ToString(), 32));
+                                    sw.Write(field);
+                                    break;
+
                                 default:
-                                    string field = EncloseDoubleQuotesIfNeed(row[count].ToString());
+                                    field = EncloseDoubleQuotesIfNeed(row[count].ToString());
                                     //sw.Write(row[count]);
                                     sw.Write(field);
                                     break;
@@ -347,80 +327,43 @@ namespace YamatoOkurijou
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
-            bool ret;
-            DataTable dt;
-            YamatoOkurijou_BL ble = new YamatoOkurijou_BL();
 
             switch (index)
             {
-                //case (int)EIndex.SyoriNO:
-                //    //入力不可の場合チェックなし
-                //    if (!detailControls[index].Enabled)
-                //    {
-                //        return true;
-                //    }
-
-                //    //必須入力
-                //    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                //    {
-                //        bbl.ShowMessage("E102");
-                //        return false;
-                //    }
-
-                //    //ヤマト送り状(D_EDIOrder)に存在すること
-                //    //[D_EDIOrder]
-                //    dee = GetEntityForEDIOrder();
-                //    dt = ble.D_EDIOrder_Select(dee);
-                //    if (dt.Rows.Count == 0)
-                //    {
-                //        bbl.ShowMessage("E138", "EDI処理番号");
-                //        return false;
-                //    }
-                //    else
-                //    {
-                //        //権限がない場合（以下のSelectができない場合）Error　「権限のないヤマト送り状番号」
-                //        if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
-                //        {
-                //            bbl.ShowMessage("E139", "EDI処理番号");
-                //            return false;
-                //        }
-                //        break;
-                //    }
-            
                 case (int)EIndex.ShippingNO:
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        return true;
+                        return false;
                     }
 
                     //存在する出荷番号であること
-                    //[D_Order]
-                    string orderNo = detailControls[index].Text;
-                    dt = ble.D_Order_SelectForEDIHacchuu(orderNo);
-                    if (dt.Rows.Count == 0)
+                    dee = new D_Shipping_Entity();
+                    dee.ShippingNO = ScShippingNO.TxtCode.Text;
+                    dee.Operator = this.InOperatorCD;
+                    dee.PC = this.InPcID;
+                    dtCSV = mibl.D_Shipping_SelectForYamato(dee);
+                    
+                    if (dtCSV.Rows.Count == 0)
                     {
-                        bbl.ShowMessage("E138", "発注番号");
+                        bbl.ShowMessage("E274");
                         return false;
                     }
                     else
                     {
-                        //DeleteDateTime 「削除された発注番号」
-                        if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
-                        {
-                            bbl.ShowMessage("E140", "発注番号");
-                            return false;
-                        }
-
                         //権限がない場合（以下のSelectができない場合）Error　「権限のないヤマト送り状番号」
-                        if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
+                        if (!base.CheckAvailableStores(dtCSV.Rows[0]["StoreCD"].ToString()))
                         {
-                            bbl.ShowMessage("E139", "発注番号");
+                            bbl.ShowMessage("E275");
                             return false;
                         }
-                        
+                        //初回発行でなければ警告
+                        if (!string.IsNullOrWhiteSpace(dtCSV.Rows[0]["LinkageDateTime"].ToString()))
+                        {
+                            if (bbl.ShowMessage("Q327") != DialogResult.Yes)
+                            return false;
+                        }
                         break;
                     }
-
             }
 
             return true;
@@ -451,44 +394,6 @@ namespace YamatoOkurijou
                     ctl.Text = "";
                 }
             }
-            
-            //初期値セット
-            string ymd = mibl.GetDate();
-
-            //スタッフマスター(M_Staff)に存在すること
-            //[M_Staff]
-            M_Staff_Entity mse = new M_Staff_Entity
-            {
-                StaffCD = InOperatorCD,
-                ChangeDate = ymd
-            };
-            Staff_BL bl = new Staff_BL();
-            bool ret = bl.M_Staff_Select(mse);
-            if (ret)
-            {
-                CboStoreCD.SelectedValue = mse.StoreCD;
-            }
-
-            //[M_Store]
-            M_Store_Entity mse2 = new M_Store_Entity
-            {
-                StoreCD = mse.StoreCD,
-                ChangeDate = ymd
-            };
-            Store_BL sbl = new Store_BL();
-            DataTable dt = sbl.M_Store_Select(mse2);
-            if (dt.Rows.Count > 0)
-            {
-            }
-            else
-            {
-                bbl.ShowMessage("E133");
-                EndSec();
-            }
-
-            //出力対象
-            ScShippingNO.Enabled = false;
-
             detailControls[0].Focus();
         }
 
