@@ -23,6 +23,17 @@ namespace BL
         {
             return zkhdl.RPC_ZaikoKanriHyou(dpde,dmse,chk);
         }
+        /// <summary>
+        /// Added by ETZ
+        /// </summary>
+        /// <param name="dpde"></param>
+        /// <param name="dmse"></param>
+        /// <param name="chk"></param>
+        /// <returns></returns>
+        public DataTable ZaikoKanriHyou_Export(D_Purchase_Details_Entity dpde, D_MonthlyStock_Entity dmse, int chk)
+        {
+            return zkhdl.ZaikoKanriHyou_Export(dpde, dmse, chk);
+        }
         public DataTable M_StoreClose_Check(M_StoreClose_Entity msce, string mode)
         {
             return mscdl.M_StoreClose_Check(msce, mode);

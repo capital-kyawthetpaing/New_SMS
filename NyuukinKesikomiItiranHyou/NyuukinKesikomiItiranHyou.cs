@@ -226,7 +226,7 @@ namespace NyuukinKesikomiItiranHyou
                                 Nkh_report.SetDataSource(dtReport);
                                 Nkh_report.Refresh();
                                 Nkh_report.SetParameterValue("lblStore", cboStoreAuthorizations.SelectedValue.ToString() + " " + cboStoreAuthorizations.Text);
-                                Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "C  " + DateTime.Now.ToString("HH:mm"));
                                 Nkh_report.SetParameterValue("lblWebCollectType", cboWebCollectType.Text);
                                 vr.CrystalReportViewer1.ReportSource = Nkh_report;
                                

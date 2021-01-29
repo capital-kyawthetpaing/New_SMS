@@ -679,6 +679,7 @@
     <Content Include="StoreProcedure\UPDATE_D_PaymentConfirm_9_9.sql" />
     <Content Include="StoreProcedure\WowmaDetail_Insert.sql" />
     <Content Include="StoreProcedure\WowmaOrder_InsertSelect.sql" />
+    <Content Include="StoreProcedure\ZaikoKanriHyou_Export.sql" />
     <Content Include="StoreProcedure\ZaikoMotochoulnsatsu_Report.sql" />
     <Content Include="StoreProcedure\ZaikoShoukai_Search.sql" />
     <Content Include="StoreProcedure\_Ponpare_Allow_Check.sql" />
