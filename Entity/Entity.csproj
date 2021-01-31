@@ -121,6 +121,8 @@
     <Compile Include="M_Bank_Entity.cs" />
     <Compile Include="M_Brand_Entity.cs" />
     <Compile Include="M_Calendar_Entity.cs" />
+    <Compile Include="M_CarrierBoxSize_Entity.cs" />
+    <Compile Include="M_CarrierDeliveryTime_Entity.cs" />
     <Compile Include="M_Carrier_Entity.cs" />
     <Compile Include="M_Control_Entity.cs" />
     <Compile Include="M_Conversion_Entity.cs" />
