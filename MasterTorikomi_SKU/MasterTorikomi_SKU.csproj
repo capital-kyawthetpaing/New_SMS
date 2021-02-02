@@ -101,6 +101,10 @@
       <Project>{79af5f26-a50b-433c-9f87-c9173b9efe04}</Project>
       <Name>Base.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9DD6C82A-1899-478F-BC18-524AD0B0DCC8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

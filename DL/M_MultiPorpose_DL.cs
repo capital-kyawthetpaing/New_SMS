@@ -164,6 +164,14 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-
+        public DataTable M_Multipurpose_SelectAll()
+        {
+            string sp = "M_Multipurpose_SelectAll";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                
+            };
+            return SelectData(dic, sp);
+        }
     }
 }

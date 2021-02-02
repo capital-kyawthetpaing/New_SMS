@@ -115,6 +115,7 @@
     <Compile Include="IniFile.cs" />
     <Compile Include="IniFile_DL.cs" />
     <Compile Include="L_Log_DL.cs" />
+    <Compile Include="MasterTorikomi_SKU_DL.cs" />
     <Compile Include="MasterTouroku_HacchuuPrice_DL.cs" />
     <Compile Include="MasterTouroku_ShiireKakeritsu_DL.cs" />
     <Compile Include="MasterTouroku_ShiireTanka_DL.cs" />
