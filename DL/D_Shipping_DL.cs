@@ -147,6 +147,33 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+        /// <summary>
+        /// ヤマト送り状データ抽出時に使用
+        /// </summary>
+        /// <param name="de"></param>
+        /// <returns></returns>
+        public DataTable D_Shipping_SelectForYamato(D_Shipping_Entity de)
+        {
+            string sp = "D_Shipping_SelectForYamato";
 
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ShippingNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.ShippingNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
+        public bool D_Shipping_Update(D_Shipping_Entity de)
+        {
+            string sp = "D_Shipping_Update";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator }},
+                { "@ShippingNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.ShippingNO } },
+            };
+
+            return InsertUpdateDeleteData(dic, sp);
+        }
     }
 }

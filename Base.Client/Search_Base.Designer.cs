@@ -59,11 +59,11 @@
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 709);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 909);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1684, 52);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1913, 52);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ckM_Button2
@@ -77,13 +77,13 @@
             this.ckM_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ckM_Button2.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.ckM_Button2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.ckM_Button2.Location = new System.Drawing.Point(845, 1);
+            this.ckM_Button2.Location = new System.Drawing.Point(960, 1);
             this.ckM_Button2.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button2.Name = "ckM_Button2";
-            this.ckM_Button2.Size = new System.Drawing.Size(838, 50);
+            this.ckM_Button2.Size = new System.Drawing.Size(952, 50);
             this.ckM_Button2.TabIndex = 2;
             this.ckM_Button2.Tag = "1";
-            this.ckM_Button2.Text = "決定";
+            this.ckM_Button2.Text = "決 定";
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.Btn_Click);
             // 
@@ -101,10 +101,10 @@
             this.ckM_Button1.Location = new System.Drawing.Point(1, 1);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(842, 50);
+            this.ckM_Button1.Size = new System.Drawing.Size(957, 50);
             this.ckM_Button1.TabIndex = 0;
             this.ckM_Button1.Tag = "0";
-            this.ckM_Button1.Text = "戻る";
+            this.ckM_Button1.Text = "戻 る";
             this.ckM_Button1.UseVisualStyleBackColor = false;
             this.ckM_Button1.Click += new System.EventHandler(this.Btn_Click);
             // 
@@ -113,7 +113,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1684, 761);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblSearch_Name);
             this.Name = "Search_Base";

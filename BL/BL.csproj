@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Amazon__BL.cs" />
     <Compile Include="Brand_BL.cs" />
+    <Compile Include="CarrierBoxSize_BL.cs" />
+    <Compile Include="CarrierDeliveryTime_BL.cs" />
     <Compile Include="Carrier_BL.cs" />
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
@@ -221,6 +223,7 @@
     <Compile Include="Vendor_BL.cs" />
     <Compile Include="WowmaAPI_BL.cs" />
     <Compile Include="YahooAPI_BL.cs" />
+    <Compile Include="YamatoOkurijou_BL.cs" />
     <Compile Include="ZaikoIdouIraiNyuuryoku_BL.cs" />
     <Compile Include="ZaikoIdouIraiUkeNyuuryoku_BL.cs" />
     <Compile Include="ZaikoIdouNyuuryoku_BL.cs" />

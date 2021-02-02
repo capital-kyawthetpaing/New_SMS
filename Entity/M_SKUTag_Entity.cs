@@ -14,5 +14,11 @@ namespace Entity
         public string TagName3 { get; set; }
         public string TagName4 { get; set; }
         public string TagName5 { get; set; }
+        public string CheckInfo { get; set; }
+
+        public string ItemOpt { get; set; }
+        public string ItemPC { get; set; }
+
+        public string ItemProgram { get; set; }
     }
 }

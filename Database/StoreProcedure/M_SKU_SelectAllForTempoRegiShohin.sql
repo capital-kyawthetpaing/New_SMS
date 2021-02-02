@@ -12,10 +12,12 @@ GO
 
 /****** Object:  StoredProcedure [M_SKU_SelectAllForTempoRegiShohin]    */
 
-CREATE PROCEDURE M_SKU_SelectAllForTempoRegiShohin(
+CREATE PROCEDURE [dbo].[M_SKU_SelectAllForTempoRegiShohin](
     @BrandCD varchar(20),
+	@SportsCD varchar(20),
     @SKUName varchar(80),
     @JanCD varchar(13),
+	@VendorCD varchar(20),
     @ChangeDate varchar(10)
 )AS
 BEGIN
@@ -117,19 +119,22 @@ BEGIN
     --)
     --OR
     AND EXISTS (SELECT A.ITemCD FROM F_SKU(@ChangeDate) AS A
-                        LEFT OUTER JOIN M_Brand AS MB
-                        ON  MB.BrandCD= A.BrandCD
-                        WHERE A.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE A.JanCD END)
-                        AND A.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE A.SKUName END) + '%'
-                        AND ISNULL(MB.BrandKana,'') LIKE '%' + (CASE WHEN @BrandCD <> '' THEN @BrandCD ELSE ISNULL(MB.BrandKana,'') END) + '%'
-                        AND A.DeleteFlg = 0
-                        --AND A.ChangeDate <= CONVERT(DATE, @ChangeDate)
-                        AND A.ITemCD = MS.ITemCD
+                        /*LEFT OUTER JOIN M_Brand AS MB  
+                        --ON  MB.BrandCD= A.BrandCD  */ --close for task 2522
+                         WHERE (@BrandCD is null  OR (A.BrandCD=@BrandCD))
+							And (@VendorCD is null  OR (A.MainVendorCD=@VendorCD))
+							And (@SportsCD is null  OR (A.SportsCD=@SportsCD))
+							And (A.JanCD is null or A.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE A.JanCD END))
+							AND (A.SKUName is null or A.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE A.SKUName END) + '%')
+							--AND ISNULL(MB.BrandKana,'') LIKE '%' + (CASE WHEN @BrandCD <> '' THEN @BrandCD ELSE ISNULL(MB.BrandKana,'') END) + '%'  --close for task 2522
+							AND A.DeleteFlg = 0
+							AND A.ITemCD = MS.ITemCD
                          )
     ORDER BY MS.SKUName, MS.JANCD
     ;
     
 END
+
 
 GO
 
