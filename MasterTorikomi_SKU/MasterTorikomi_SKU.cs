@@ -22,25 +22,25 @@ namespace MasterTorikomi_SKU
         DataTable dtSKU = new DataTable();
         DataTable dtAdmin = new DataTable();
         DataTable dtBrand = new DataTable();
-        DataTable dtSegment = new DataTable();
-        DataTable dtTani = new DataTable();
         DataTable dtMultiP = new DataTable();
         DataTable dtVendor = new DataTable();
+        DataTable dtskuintial = new DataTable();
         SKU_BL sbl;
         MasterTorikomi_SKU_BL mtbl;
+        M_SKUInitial_BL msIbl;
         bool checkerr = false;
         int type = 0;
         M_SKU_Entity mE;
+        string filePath = string.Empty;
+        string fileExt = string.Empty;
         public MasterTorikomi_SKU()
         {
             InitializeComponent();
             bbl = new Base_BL();
             sbl = new SKU_BL();
             mtbl = new MasterTorikomi_SKU_BL();
+            msIbl = new M_SKUInitial_BL();
         }
-
-
-
         private void MasterTorikomi_SKU_Load(object sender, EventArgs e)
         {
             InProgramID = "MasterTorikomi_SKU";
@@ -48,10 +48,9 @@ namespace MasterTorikomi_SKU
             RB_all.Checked = true;
             dtSKU = sbl.M_SKU_SelectAll_NOPara();
             dtBrand = mtbl.M_Brand_SelectAll_NoPara();
-            dtSegment = mtbl.M_Multipurpose_SelectAll_ByID(1);
-            dtTani = mtbl.M_Multipurpose_SelectAll_ByID(2);
             dtMultiP = mtbl.M_Multipurpose_SelectAll();
             dtVendor = mtbl.M_Vendor_SelectAll();
+            dtskuintial = msIbl.M_SKUInitial_SelectAll();
         }
         public override void FunctionProcess(int index)
         {
@@ -74,38 +73,44 @@ namespace MasterTorikomi_SKU
 
         private void InputExcel()
         {
-            if (bbl.ShowMessage("Q001") == DialogResult.Yes)
+            if(String.IsNullOrEmpty(TB_FileName.Text))
             {
-                string filePath = string.Empty;
-                string fileExt = string.Empty;
-                //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
-                //{
-                //    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
-                //}
-                OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file 
-                                                            // file.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
-                                                            // file.RestoreDirectory = true;
-                if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
+                bbl.ShowMessage("E121");
+            }
+            else
+            {
+                if (bbl.ShowMessage("Q001", "取込処理") == DialogResult.Yes)
                 {
-                    filePath = file.FileName; //get the path of the file  
-                    fileExt = Path.GetExtension(filePath); //get the file extension  
-                    if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
-                    {
-                        bbl.ShowMessage("E137");
-                        return;
-                    }
-                    DataTable dt = new DataTable();
-                    dt = ExcelToDatatable(filePath);
-                    //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
-                    //if (ColumnCheck(colname, dtExcel))
+                    //string filePath = string.Empty;
+                    //string fileExt = string.Empty;
+                    ////if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
+                    ////{
+                    ////    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
+                    ////}
+                    //OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file 
+                    //                                            // file.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
+                    //                                            // file.RestoreDirectory = true;
+                    //if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
                     //{
-
-                    //}
-                    if (dt != null)
-                    {
-                        if (ErrorCheck(dt))
+                     //   filePath = file.FileName; //get the path of the file  
+                        fileExt = Path.GetExtension(filePath); //get the file extension  
+                        if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
                         {
-                            ExcelErrorCheck(dt);
+                            bbl.ShowMessage("E137");
+                            return;
+                        }
+                        DataTable dt = new DataTable();
+                        dt = ExcelToDatatable(filePath);
+                        //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
+                        //if (ColumnCheck(colname, dtExcel))
+                        //{
+
+                        //}
+                        if (dt != null)
+                        {
+                            if (ErrorCheck(dt))
+                            {
+                                ExcelErrorCheck(dt);
                             if (checkerr)
                             {
                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
@@ -117,62 +122,16 @@ namespace MasterTorikomi_SKU
                                 }
                             }
                             GV_SKU.DataSource = null;
-                            GV_SKU.DataSource = dt;
+                                GV_SKU.DataSource = dt;
+                            }
                         }
-                    }
-                }
+                    //}
+               }
             }
         }
         private void BT_Torikomi_Click(object sender, EventArgs e)
         {
-            if (bbl.ShowMessage("Q001", "取込処理") == DialogResult.Yes)
-            {
-                string filePath = string.Empty;
-                string fileExt = string.Empty;
-                //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
-                //{
-                //    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
-                //}
-                OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file 
-                                                            // file.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
-                                                            // file.RestoreDirectory = true;
-                if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
-                {
-                    filePath = file.FileName; //get the path of the file  
-                    fileExt = Path.GetExtension(filePath); //get the file extension  
-                    if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
-                    {
-                        bbl.ShowMessage("E137");
-                        return;
-                    }
-                    DataTable dt = new DataTable();
-                    dt = ExcelToDatatable(filePath);
-                    //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
-                    //if (ColumnCheck(colname, dtExcel))
-                    //{
-
-                    //}
-                    if (dt != null)
-                    {
-                        if (ErrorCheck(dt))
-                        {
-                            ExcelErrorCheck(dt);
-                            if (checkerr)
-                            {
-                                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                dt = ChangeColName(dt, type);
-                                mE = GetEntity(dt);
-                                if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
-                                {
-                                    bbl.ShowMessage("I101");
-                                }
-                            }
-                            GV_SKU.DataSource = null;
-                            GV_SKU.DataSource = dt;
-                        }
-                    }
-                }
-            }
+            InputExcel();
         }
         protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
         {
@@ -186,7 +145,6 @@ namespace MasterTorikomi_SKU
             }
             return true;
         }
-
         private bool ErrorCheck(DataTable dt)
         {
             string kibun = dt.Rows[0]["データ区分"].ToString();
@@ -206,7 +164,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
             }
             else if (RB_BaseInfo.Checked)
             {
@@ -215,7 +172,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "2")
@@ -224,7 +180,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
             }
             else if (RB_attributeinfo.Checked)
             {
@@ -242,7 +197,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
             }
             else if (RB_priceinfo.Checked)
             {
@@ -260,7 +214,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
             }
             else if (RB_Catloginfo.Checked)
             {
@@ -269,7 +222,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "5")
@@ -278,7 +230,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
             }
             else if (RB_tagInfo.Checked)
             {
@@ -570,6 +521,13 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if(dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["セット品区分"] = dtskuintial.Rows[0]["SetKBN"];
+                        }
+                    }
 
                     if (!String.IsNullOrEmpty(dt.Rows[i]["プレゼント品区分"].ToString()))
                     {
@@ -579,12 +537,26 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["プレゼント品区分"] = dtskuintial.Rows[0]["PresentKBN"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["サンプル品区分"].ToString()))
                     {
                         if (dt.Rows[i]["サンプル品区分"].ToString() != "1" && dt.Rows[i]["サンプル品区分"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "サンプル品区分";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["サンプル品区分"] = dtskuintial.Rows[0]["SampleKBN"];
                         }
                     }
 
@@ -596,6 +568,14 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["値引商品区分"] = dtskuintial.Rows[0]["DiscountKBN"];
+                        }
+                    }
+
 
                     if (!String.IsNullOrEmpty(dt.Rows[i]["Webストア取扱区分"].ToString()))
                     {
@@ -606,6 +586,13 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["Webストア取扱区分"] = dtskuintial.Rows[0]["WebFlg"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["実店舗取扱区分"].ToString()))
                     {
                         if (dt.Rows[i]["実店舗取扱区分"].ToString() != "1" && dt.Rows[i]["実店舗取扱区分"].ToString() != "0")
@@ -614,10 +601,14 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["実店舗取扱区分名"].ToString()))
+                    else
                     {
-
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["実店舗取扱区分"] = dtskuintial.Rows[0]["RealStoreFlg"];
+                        }
                     }
+
                     if (!String.IsNullOrEmpty(dt.Rows[i]["在庫管理対象区分"].ToString()))
                     {
                         if (dt.Rows[i]["在庫管理対象区分"].ToString() != "1" && dt.Rows[i]["在庫管理対象区分"].ToString() != "0")
@@ -626,10 +617,14 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["在庫管理対象区分名"].ToString()))
+                    else
                     {
-
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["在庫管理対象区分"] = dtskuintial.Rows[0]["ZaikoKBN"];
+                        }
                     }
+                   
                     if (!String.IsNullOrEmpty(dt.Rows[i]["架空商品区分"].ToString()))
                     {
                         if (dt.Rows[i]["架空商品区分"].ToString() != "1" && dt.Rows[i]["架空商品区分"].ToString() != "0")
@@ -638,12 +633,26 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["架空商品区分"] = dtskuintial.Rows[0]["VirtualFlg"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["直送品区分"].ToString()))
                     {
                         if (dt.Rows[i]["直送品区分"].ToString() != "1" && dt.Rows[i]["直送品区分"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "直送品区分";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["直送品区分"] = dtskuintial.Rows[0]["DirectFlg"];
                         }
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["予約品区分"].ToString()))
@@ -655,6 +664,13 @@ namespace MasterTorikomi_SKU
                         {
                             dt.Rows[i]["EItem"] = "予約品区分";
                             dt.Rows[i]["Error"] = "E101";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["予約品区分"] = dtskuintial.Rows[0]["ReserveCD"];
                         }
                     }
 
@@ -669,7 +685,13 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
-
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["特記区分"] = dtskuintial.Rows[0]["NoticesCD"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["送料区分"].ToString()))
                     {
                         String Bq = " [Key] ='" + dt.Rows[i]["送料区分"].ToString() + "'" +
@@ -679,6 +701,13 @@ namespace MasterTorikomi_SKU
                         {
                             dt.Rows[i]["EItem"] = "送料区分";
                             dt.Rows[i]["Error"] = "E101";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["送料区分"] = dtskuintial.Rows[0]["PostageCD"];
                         }
                     }
 
@@ -693,6 +722,13 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["要加工品区分"] = dtskuintial.Rows[0]["ManufactCD"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["要確認品区分"].ToString()))
                     {
                         String Bq = " [Key] ='" + dt.Rows[i]["要確認品区分"].ToString() + "'" +
@@ -704,12 +740,26 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["要確認品区分"] = dtskuintial.Rows[0]["ConfirmCD"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["廃番品区分"].ToString()))
                     {
                         if (dt.Rows[i]["廃番品区分"].ToString() != "1" && dt.Rows[i]["廃番品区分"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "廃番品区分";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["廃番品区分"] = dtskuintial.Rows[0]["DiscontinueFlg"];
                         }
                     }
 
@@ -721,12 +771,26 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["完売品区分"] = dtskuintial.Rows[0]["SoldoutFlg"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["自社在庫連携対象"].ToString()))
                     {
                         if (dt.Rows[i]["自社在庫連携対象"].ToString() != "1" && dt.Rows[i]["自社在庫連携対象"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "自社在庫連携対象";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["自社在庫連携対象"] = dtskuintial.Rows[0]["InventoryAddFlg"];
                         }
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["メーカー在庫連携対象"].ToString()))
@@ -737,12 +801,26 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["メーカー在庫連携対象"] = dtskuintial.Rows[0]["MakerAddFlg"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["Net発注不可区分"].ToString()))
                     {
                         if (dt.Rows[i]["Net発注不可区分"].ToString() != "1" && dt.Rows[i]["Net発注不可区分"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "Net発注不可区分";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["Net発注不可区分"] = dtskuintial.Rows[0]["NoNetOrderFlg"];
                         }
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["EDI発注可能区分"].ToString()))
@@ -754,12 +832,26 @@ namespace MasterTorikomi_SKU
                         }
 
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["EDI発注可能区分"] = dtskuintial.Rows[0]["EDIorderFlg"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["自動発注対象区分"].ToString()))
                     {
                         if (dt.Rows[i]["自動発注対象区分"].ToString() != "1" && dt.Rows[i]["自動発注対象区分"].ToString() != "0")
                         {
                             dt.Rows[i]["EItem"] = "自動発注対象区分";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["自動発注対象区分"] = dtskuintial.Rows[0]["AutoOrderFlg"];
                         }
                     }
 
@@ -771,9 +863,12 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["カタログ掲載有無"].ToString()))
+                    else
                     {
-
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["カタログ掲載有無区分"] = dtskuintial.Rows[0]["CatalogFlg"];
+                        }
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["小包梱包可能区分"].ToString()))
                     {
@@ -781,6 +876,13 @@ namespace MasterTorikomi_SKU
                         {
                             dt.Rows[i]["EItem"] = "小包梱包可能区分";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["小包梱包可能区分"] = dtskuintial.Rows[0]["ParcelFlg"];
                         }
                     }
 
@@ -797,12 +899,26 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["税率区分"] = dtskuintial.Rows[0]["TaxRateFLG"];
+                        }
+                    }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["原価計算方法"].ToString()))
                     {
                         if (dt.Rows[i]["原価計算方法"].ToString() != "1" && dt.Rows[i]["原価計算方法"].ToString() != "2")
                         {
                             dt.Rows[i]["EItem"] = "原価計算方法";
                             dt.Rows[i]["Error"] = "E190";
+                        }
+                    }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["原価計算方法"] = dtskuintial.Rows[0]["CostingKBN"];
                         }
                     }
                 }
@@ -832,6 +948,13 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E190";
                         }
                     }
+                    else
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["Sale対象外区分"] = dtskuintial.Rows[0]["SaleExcludedFlg"];
+                        }
+                    }
                 }
                 else if (RB_SizeURL.Checked)
                 {
@@ -850,7 +973,6 @@ namespace MasterTorikomi_SKU
             }
 
         }
-
         private DataTable ChangeColName(DataTable dt, int type)
         {
 
@@ -1132,12 +1254,11 @@ namespace MasterTorikomi_SKU
             }
             return dt;
         }
-
-
         private void CleanData()
         {
             RB_all.Checked = true;
             GV_SKU.DataSource = null;
+            TB_FileName.Text = "";
             
         }
         private DataTable ExcelToDatatable(string filePath)
@@ -1176,19 +1297,7 @@ namespace MasterTorikomi_SKU
                 bbl.ShowMessage("E137");
                 return null;
             }
-
         }
-
-        private void RB_attributeinfo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RB_priceinfo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void GV_SKU_Paint(object sender, PaintEventArgs e)
         {
             for (int j = 6; j < 8;)
@@ -1208,10 +1317,9 @@ namespace MasterTorikomi_SKU
             mE = new M_SKU_Entity
             {
                 dt1 = dtT,
-                ProcessMode = ModeText,
                 Operator = InOperatorCD,
                 ProgramID = InProgramID,
-                Key = InPcID + bbl.GetDate(),
+                Key = filePath,
                 PC = InPcID,
             };
             return mE;
@@ -1219,9 +1327,6 @@ namespace MasterTorikomi_SKU
 
         private void BT_FileName_Click(object sender, EventArgs e)
         {
-
-            string filePath = string.Empty;
-            string fileExt = string.Empty;
             //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
             //{
             //    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");

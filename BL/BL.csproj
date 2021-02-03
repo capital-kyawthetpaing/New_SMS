@@ -122,6 +122,7 @@
     <Compile Include="MultiPorpose_BL.cs" />
     <Compile Include="JuchuuTorikomiAPI_BL.cs" />
     <Compile Include="MasterTouroku_Program_BL.cs" />
+    <Compile Include="M_SKUInitial_BL.cs" />
     <Compile Include="NyuukaNyuuryoku_BL.cs" />
     <Compile Include="NyuukaShoukai_BL.cs" />
     <Compile Include="NyuukinKesikomiItiranHyou_BL.cs" />

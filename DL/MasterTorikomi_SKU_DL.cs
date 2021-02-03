@@ -16,11 +16,22 @@ namespace DL
             {
                 { "@type", new ValuePair { value1 = SqlDbType.Int, value2 =type.ToString()  } },
                 { "@xml", new ValuePair { value1 = SqlDbType.Xml, value2 = mE.xml1 } },
-                { "@OperatorCD",new ValuePair { value1 = SqlDbType.TinyInt, value2 = mE.Operator} },
-                { "@ProgramID",new ValuePair { value1 = SqlDbType.TinyInt, value2 = mE.ProgramID} }
+                { "@OperatorCD",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.Operator} },
+                { "@ProgramID",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.ProgramID} },
+                { "@PC",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.PC} },
+                { "@KeyItem",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.Key} }
+               
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, "MasterTorikomi_SKU_Insert_Update");
+        }
+
+        public DataTable M_SKUInitial_SelectAll()
+        {
+            Dictionary<String, ValuePair> dic = new Dictionary<string, ValuePair>
+            {};
+            
+            return SelectData(dic, "M_SKUInitial_SelectAll");
         }
     }
 }
