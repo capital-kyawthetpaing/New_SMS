@@ -47,13 +47,13 @@
             this.inputPath = new CKM_Controls.CKM_TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.gvItem = new CKM_Controls.CKM_GridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.ItemCDShow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemMakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvItem)).BeginInit();
             this.SuspendLayout();
@@ -329,16 +329,6 @@
             this.gvItem.UseRowNo = true;
             this.gvItem.UseSetting = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "▼";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ItemCDShow
             // 
             this.ItemCDShow.DataPropertyName = "ItemCDShow";
@@ -352,6 +342,7 @@
             this.ItemDate.DataPropertyName = "ItemDate";
             this.ItemDate.HeaderText = "改定日";
             this.ItemDate.Name = "ItemDate";
+            this.ItemDate.ReadOnly = true;
             // 
             // ItemName
             // 
@@ -372,17 +363,27 @@
             // EItem
             // 
             this.EItem.DataPropertyName = "EItem";
-            this.EItem.HeaderText = "エラー";
+            this.EItem.HeaderText = "エラー項目名";
             this.EItem.Name = "EItem";
             this.EItem.ReadOnly = true;
             // 
             // Error
             // 
             this.Error.DataPropertyName = "Error";
-            this.Error.HeaderText = "エラー1";
+            this.Error.HeaderText = "エラー名";
             this.Error.Name = "Error";
             this.Error.ReadOnly = true;
-            this.Error.Width = 300;
+            this.Error.Width = 150;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 112;
+            this.button1.Text = "▼";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MasterTorikomi_Item
             // 
@@ -397,7 +398,6 @@
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.panel3);
             this.Location = new System.Drawing.Point(0, 0);
-            this.ModeVisible = true;
             this.Name = "MasterTorikomi_Item";
             this.PanelHeaderHeight = 60;
             this.Text = "MasterTorikomi_Item";

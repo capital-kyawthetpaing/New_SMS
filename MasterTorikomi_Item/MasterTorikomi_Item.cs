@@ -16,6 +16,7 @@ namespace MasterTorikomi_Item
 {
     public partial class MasterTorikomi_Item : Base.Client.FrmMainForm
     {
+        ITEM_BL ibl;
         Base_BL bbl;
         public MasterTorikomi_Item()
         {
@@ -23,6 +24,7 @@ namespace MasterTorikomi_Item
         }
         private void MasterTorikomi_Item_Load(object sender, EventArgs e)
         {
+            ibl = new ITEM_BL();
             bbl = new Base_BL();
             InProgramID = "MasterTorikomi_Item";
             StartProgram();
@@ -39,7 +41,7 @@ namespace MasterTorikomi_Item
 
         private void FalseKey()
         {
-            F2Visible = F3Visible=  F4Visible= F5Visible=F7Visible=F8Visible=F9Visible=F10Visible= F11Visible= false;
+            F2Visible = F3Visible = F4Visible = F5Visible = F7Visible = F8Visible = F9Visible = F10Visible = F11Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,11 +69,6 @@ namespace MasterTorikomi_Item
                 inputPath.Text = filePath;
                 DataTable dt = new DataTable();
                 dt = ExcelToDatatable(filePath);
-                //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
-                //if (ColumnCheck(colname, dtExcel))
-                //{
-
-                //}
                 if (dt != null)
                 {
                     if (ErrorCheck(dt))
@@ -80,8 +77,6 @@ namespace MasterTorikomi_Item
                         var dtres = dt.Select("ItemCDShow <> ''");
                         if (dtres != null)
                         {
-                            //  var xml = bbl.DataTableToXml(dt);
-
                             gvItem.DataSource = null;
                             gvItem.DataSource = dtres.CopyToDataTable();
                             bbl.ShowMessage("I101");
@@ -90,7 +85,7 @@ namespace MasterTorikomi_Item
                 }
                 else
                 {
-                    MessageBox.Show("No data was set to datatable");
+                    MessageBox.Show("No row data was found or import excel is opening in different location");
                     return;
                 }
             }
@@ -390,7 +385,7 @@ namespace MasterTorikomi_Item
                     goto SkippedLine;
                 }
 
-                if (!Is101("M_MultiPorpose", dt.Rows[i]["セグメントCD"].ToString(), "206"))
+                if (!Is101("M_MultiPorpose", dt.Rows[i]["セグメントCD"].ToString(), "226"))
                 {
                     dt.Rows[i]["EItem"] = "セグメントCD";
                     dt.Rows[i]["Error"] = "E101";
@@ -536,13 +531,13 @@ namespace MasterTorikomi_Item
                 IsNoB(dt, i, "完売品区分", "M_SKUInitial");
 
 
-                if (!Is190(dt.Rows[i]["完売品区分名"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "完売品区分名";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
-                IsNoB(dt, i, "完売品区分名", "M_SKUInitial");
+                //if (!Is190(dt.Rows[i]["完売品区分名"].ToString()))
+                //{
+                //    dt.Rows[i]["EItem"] = "完売品区分名";
+                //    dt.Rows[i]["Error"] = "E190";
+                //    goto SkippedLine;
+                //}
+                //IsNoB(dt, i, "完売品区分名", "M_SKUInitial");
 
                 if (!Is190(dt.Rows[i]["自社在庫連携対象"].ToString()))
                 {
@@ -662,7 +657,7 @@ namespace MasterTorikomi_Item
                 if (!Is101("M_MultiPorpose", dt.Rows[i]["発注注意区分"].ToString(), "316"))
                 {
                     dt.Rows[i]["EItem"] = "発注注意区分";
-                    dt.Rows[i]["Error"] = "E103";
+                    dt.Rows[i]["Error"] = "E101";
                     goto SkippedLine;
                 }
 
@@ -680,26 +675,26 @@ namespace MasterTorikomi_Item
                 IsNoB(dt, i, "ITEMタグ2", "1");
 
             SkippedLine:
-                dt.Rows[i]["ItemCDShow"] = dt.Rows[i]["ITEMCD"].ToString(); 
-                dt.Rows[i]["ItemName"] = dt.Rows[i]["商品名"].ToString(); 
-                dt.Rows[i]["ItemDate"] = dt.Rows[i]["改定日"].ToString(); 
+                dt.Rows[i]["ItemCDShow"] = dt.Rows[i]["ITEMCD"].ToString();
+                dt.Rows[i]["ItemName"] = dt.Rows[i]["商品名"].ToString();
+                dt.Rows[i]["ItemDate"] = dt.Rows[i]["改定日"].ToString();
                 dt.Rows[i]["ItemMakerCD"] = dt.Rows[i]["メーカー商品CD"].ToString();
 
                 int g = 0;
             }
         }
-        private void IsNoB(DataTable dt, int i ,string col,string Value =null)
+        private void IsNoB(DataTable dt, int i, string col, string Value = null)
         {
             if (string.IsNullOrEmpty(dt.Rows[i][col].ToString()))
             {
-                dt.Rows[i][col] =(Value ==null) ? "0" : Value;
+                dt.Rows[i][col] = (Value == null) ? "0" : Value;
             }
         }
         private bool Is103(string date)  // date
         {
-            return bbl.CheckDate(bbl.FormatDate(date));
+            return bbl.CheckDate(bbl.FormatDate(date.Contains(" ") ? date.Split(' ').First() : date));
         }
-        private bool Is101(string tableName, string param, string paramID=null)  // Master
+        private bool Is101(string tableName, string param, string paramID = null)  // Master
         {
             var data = new DataTable();
             if (paramID == null)
@@ -712,7 +707,7 @@ namespace MasterTorikomi_Item
                 {
                     data = bbl.SimpleSelect1("56", bbl.GetDate(), param);
                 }
-              
+
                 //if (tableName == "M_MultiPorpose")
                 //{
                 //     data = bbl.SimpleSelect1("14", bbl.GetDate(), param);
@@ -728,7 +723,7 @@ namespace MasterTorikomi_Item
 
                 return (data.Rows.Count > 0);
             }
-          
+
             return false;
         }
         private bool Is190(string value)
@@ -742,7 +737,7 @@ namespace MasterTorikomi_Item
 
         private bool Is102(string value)
         {
-            if ( !string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value))
             {
                 return true;
             }
@@ -789,7 +784,55 @@ namespace MasterTorikomi_Item
 
         private void BT_Torikomi_Click(object sender, EventArgs e)
         {
+            F12();
+        }
+        public override void FunctionProcess(int index)
+        {
+            switch (index + 1)
+            {
+                case 0: // F1:終了
+                    {
+                        break;
+                    }
+                case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    {
+                        Cancel();
+                    }
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    F12();
+                    break;
+            }
+        }
+        private void F12()
+        {
+             ibl = new ITEM_BL();
+            if (bbl.ShowMessage("Q101") == DialogResult.Yes)
+            {
+                var dt = gvItem.DataSource as DataTable;
+                var xml = bbl.DataTableToXml(dt);
+                var res = ibl.ImportItem(xml);
+                if (res)
+                {
+                    bbl.ShowMessage("I101");
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");   // Changed please
+                }
 
+            }
+        }
+        private void Cancel()
+        {
+            RB_attributeinfo.Checked = RB_BaseInfo.Checked = RB_Catloginfo.Checked = RB_priceinfo.Checked = RB_SizeURL.Checked = RB_tagInfo.Checked = false;
+            RB_all.Checked = true;
+            inputPath.Clear();
+            gvItem.DataSource = null;
+            gvItem.Refresh();
         }
     }
 }

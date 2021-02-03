@@ -50,6 +50,21 @@ namespace DL
 
         //    return SelectData(dic,sp);
         //}
+
+        public bool ImportItem(string xml)
+        {
+            string sp = "M_ItemImport";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@xml", SqlDbType.Xml,xml);
+            string outPutParam = "";
+            UseTransaction = true;
+            return InsertUpdateDeleteData(sp, ref outPutParam);
+        }
+
         /// <summary>
         /// 商品マスタ更新処理
         /// MasterTouroku_Syohinより更新時に使用

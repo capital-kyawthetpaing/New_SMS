@@ -564,5 +564,10 @@ namespace BL
                 return false;
             }
         }
+
+        public bool ImportItem(string xml)
+        {
+            return mdl.ImportItem(xml);
+        }
     }
 }
