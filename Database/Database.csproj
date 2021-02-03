@@ -338,6 +338,7 @@
     <Content Include="StoreProcedure\L_Log_Insert_SP.sql" />
     <Content Include="StoreProcedure\L_PayHistory_Insert.sql" />
     <Content Include="StoreProcedure\L_StockHistory_Insert.sql" />
+    <Content Include="StoreProcedure\MasterTorikomi_SKU_Insert_Update.sql" />
     <Content Include="StoreProcedure\Mastertoroku_Shiretanka_Insert.sql" />
     <Content Include="StoreProcedure\Mastertoroku_Tenzikaishouhin_Select.sql" />
     <Content Include="StoreProcedure\MasterTouroku_ShiireKakeritsu.sql" />

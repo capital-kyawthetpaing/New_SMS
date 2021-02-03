@@ -114,7 +114,9 @@ namespace CKM_Controls
             配送会社,
             マークダウン倉庫,   
             在庫情報,
-            出荷倉庫
+            出荷倉庫,
+            箱サイズ,
+            希望時間帯
         }
 
         private int length = 10;
@@ -573,6 +575,26 @@ namespace CKM_Controls
                     mdbl = new MarkDownNyuuryoku_BL();
                     DataTable dtzi = mdbl.D_StockReplica_Bind();
                     BindCombo("ReplicaNO", "DateTime", dtzi);
+                    break;
+
+                case CboType.箱サイズ:
+                    CarrierBoxSize_BL cbbl = new CarrierBoxSize_BL();
+                    M_CarrierBoxSize_Entity mcbe = new M_CarrierBoxSize_Entity();
+                    mcbe.CarrierCD = type;          //CarrierCd
+                    mcbe.DeleteFlg = "0";
+                    mcbe.ChangeDate = changeDate;
+                    DataTable dtSize = cbbl.M_CarrierBoxSize_Bind(mcbe);
+                    BindCombo("BoxSize", "BoxSizeName", dtSize);
+                    break;
+
+                case CboType.希望時間帯:
+                    CarrierDeliveryTime_BL cbtl = new CarrierDeliveryTime_BL();
+                    M_CarrierDeliveryTime_Entity mcte = new M_CarrierDeliveryTime_Entity();
+                    mcte.CarrierCD = type;          //CarrierCd
+                    mcte.DeleteFlg = "0";
+                    mcte.ChangeDate = changeDate;
+                    DataTable dtTime = cbtl.M_CarrierDeliveryTime_Bind(mcte);
+                    BindCombo("DeliveryTimeCD", "DeliveryTime", dtTime);
                     break;
             }
         }

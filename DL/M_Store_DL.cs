@@ -208,6 +208,7 @@ namespace DL
                 { "@KouzaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.KouzaCD} },
                 { "@ReceiptPrint", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ReceiptPrint} },
                 { "@MoveMailPatternCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MoveMailPatternCD} },
+                { "@InvoiceNotation", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.InvoiceNotation} },
                 { "@Remarks", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.Remarks} },
                 { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.DeleteFlg} },
                 { "@UsedFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.UsedFlg} },

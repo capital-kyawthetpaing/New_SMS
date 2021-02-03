@@ -163,5 +163,17 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public bool D_Shipping_Update(D_Shipping_Entity de)
+        {
+            string sp = "D_Shipping_Update";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator }},
+                { "@ShippingNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.ShippingNO } },
+            };
+
+            return InsertUpdateDeleteData(dic, sp);
+        }
     }
 }

@@ -275,6 +275,12 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
+        public DataTable M_Vendor_SelectAll()
+        {
+            Dictionary<String, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+            };
+            return SelectData(dic, "M_Vendor_SelectAll");
+        }
     }
 }

@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Amazon__BL.cs" />
     <Compile Include="Brand_BL.cs" />
+    <Compile Include="CarrierBoxSize_BL.cs" />
+    <Compile Include="CarrierDeliveryTime_BL.cs" />
     <Compile Include="Carrier_BL.cs" />
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
