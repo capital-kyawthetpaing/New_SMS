@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using ExcelDataReader;
+using Entity;
 
 namespace MasterTorikomi_Item
 {
@@ -95,7 +96,7 @@ namespace MasterTorikomi_Item
                         {
                             gvItem.DataSource = null;
                             gvItem.DataSource = dtres.CopyToDataTable();
-                            bbl.ShowMessage("I101");
+                            
                         }
                     }
                 }
@@ -114,6 +115,11 @@ namespace MasterTorikomi_Item
         }
         private bool ErrorCheck(DataTable dt)
         {
+            if (String.IsNullOrEmpty(inputPath.Text))
+            {
+                MessageBox.Show("E121");
+                return false;
+            }
             string kibun = dt.Rows[0]["データ区分"].ToString();
             if (RB_all.Checked)
             {
@@ -902,7 +908,7 @@ namespace MasterTorikomi_Item
         private bool Is101(string tableName, string param, string paramID = null)  // Master
         {
             var data = new DataTable();
-            
+
             if (paramID == null)
             {
                 if (tableName == "M_Vendor")
@@ -925,7 +931,7 @@ namespace MasterTorikomi_Item
                 //{
                 //     data = bbl.SimpleSelect1("14", bbl.GetDate(), param);
                 //}
-               
+
             }
             else if (paramID != null)
             {
@@ -938,7 +944,7 @@ namespace MasterTorikomi_Item
                     //data = bbl.SimpleSelect1("42", bbl.GetDate(), paramID, param);
                 }
 
-               // return (data.Rows.Count > 0);
+                // return (data.Rows.Count > 0);
             }
 
             return false;
@@ -1026,22 +1032,57 @@ namespace MasterTorikomi_Item
         }
         private void F12()
         {
-             ibl = new ITEM_BL();
+            ibl = new ITEM_BL();
             if (bbl.ShowMessage("Q101") == DialogResult.Yes)
             {
+                if (String.IsNullOrEmpty(inputPath.Text))
+                {
+                    bbl.ShowMessage("E121");
+                    return ;
+                }
                 var dt = gvItem.DataSource as DataTable;
-                var xml = bbl.DataTableToXml(dt);
-                var res = ibl.ImportItem(xml);
-                if (res)
+                if (dt == null)
                 {
-                    bbl.ShowMessage("I101");
+                    MessageBox.Show("Please import first");
+                    return;
                 }
-                else
-                {
-                    bbl.ShowMessage("E101");   // Changed please
-                }
+                //if (ErrorCheck(dt))
+                //{
+                    if (CheckPartial(dt))
+                    {
+                    M_ITEM_Entity mie = new M_ITEM_Entity();
+                    
+                    mie.PC = Environment.MachineName;
+                    mie.ProgramID = "MasterTorikomi_Item";
+                    mie.ProcessMode = null;
+                    mie.Key = inputPath.Text;
+                    mie.MainFlg = RB_all.Checked ? "1": RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked?"3" :RB_priceinfo.Checked ? "4": RB_Catloginfo.Checked ?"5": RB_tagInfo.Checked ? "6" :"8";
+                        var xml = bbl.DataTableToXml(dt);
+                    mie.xml1 = xml;
 
+                        var res = ibl.ImportItem(mie);
+                        if (res)
+                        {
+                            bbl.ShowMessage("I101");
+                        }
+                        else
+                        {
+                            bbl.ShowMessage("E101");   // Changed please
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fix the error from the imported file.");
+                    }
+                //}
             }
+        }
+        private bool CheckPartial(DataTable dt)
+        {
+            var query = "Error <> ''";
+            if (dt.Select(query).Count() > 0)
+                return false;
+            return true;
         }
         private void Cancel()
         {

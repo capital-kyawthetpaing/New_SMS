@@ -565,9 +565,9 @@ namespace BL
             }
         }
 
-        public bool ImportItem(string xml)
+        public bool ImportItem(M_ITEM_Entity mie)
         {
-            return mdl.ImportItem(xml);
+            return mdl.ImportItem(mie);
         }
     }
 }

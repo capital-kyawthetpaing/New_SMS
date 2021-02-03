@@ -51,15 +51,27 @@ namespace DL
         //    return SelectData(dic,sp);
         //}
 
-        public bool ImportItem(string xml)
+        public bool ImportItem(M_ITEM_Entity mie)
         {
-            string sp = "M_ItemImport";
+ //           @xml as xml
+	//,@Opt as varchar(20)
+	//,@PG as varchar(100)
+	//,@PC as varchar(20)
+	//,@Mode as varchar(20)
+	//,@KeyItem as varchar(200)
+	//,@MainFlg as tinyint
+            string sp = "_M_ItemImport";
 
             command = new SqlCommand(sp, GetConnection());
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
 
-            AddParam(command, "@xml", SqlDbType.Xml,xml);
+            AddParam(command, "@xml", SqlDbType.Xml,mie.xml1);
+            AddParam(command, "@PG", SqlDbType.VarChar, mie.ProgramID);
+            AddParam(command, "@PC", SqlDbType.VarChar, mie.PC);
+            AddParam(command, "@Mode", SqlDbType.VarChar,mie.ProcessMode);
+            AddParam(command, "@KeyItem", SqlDbType.VarChar, mie.Key);
+            AddParam(command, "@MainFlg", SqlDbType.TinyInt, mie.MainFlg);
             string outPutParam = "";
             UseTransaction = true;
             return InsertUpdateDeleteData(sp, ref outPutParam);

@@ -8,6 +8,8 @@ namespace Entity
 {
     public class M_ITEM_Entity : Base_Entity
     {
+        
+        public string MainFlg { get; set; }
         public string ITemCD { get; set; }
         public string VariousFLG { get; set; }
         public string ITemName { get; set; }
