@@ -338,6 +338,7 @@
     <Content Include="StoreProcedure\L_Log_Insert_SP.sql" />
     <Content Include="StoreProcedure\L_PayHistory_Insert.sql" />
     <Content Include="StoreProcedure\L_StockHistory_Insert.sql" />
+    <Content Include="StoreProcedure\MasterTorikomi_SKU_Insert_Update.sql" />
     <Content Include="StoreProcedure\Mastertoroku_Shiretanka_Insert.sql" />
     <Content Include="StoreProcedure\Mastertoroku_Tenzikaishouhin_Select.sql" />
     <Content Include="StoreProcedure\MasterTouroku_ShiireKakeritsu.sql" />
@@ -460,6 +461,7 @@
     <Content Include="StoreProcedure\M_SKUCounter_Update.sql" />
     <Content Include="StoreProcedure\M_SKUHenKou.sql" />
     <Content Include="StoreProcedure\M_SKUHenkou_Insert.sql" />
+    <Content Include="StoreProcedure\M_SKUInitial_SelectAll.sql" />
     <Content Include="StoreProcedure\M_SKULastCost_Select.sql" />
     <Content Include="StoreProcedure\M_SKUMakerVendor_Select.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_DataSelect.Sql" />
@@ -679,6 +681,7 @@
     <Content Include="StoreProcedure\UPDATE_D_PaymentConfirm_9_9.sql" />
     <Content Include="StoreProcedure\WowmaDetail_Insert.sql" />
     <Content Include="StoreProcedure\WowmaOrder_InsertSelect.sql" />
+    <Content Include="StoreProcedure\ZaikoKanriHyou_Export.sql" />
     <Content Include="StoreProcedure\ZaikoMotochoulnsatsu_Report.sql" />
     <Content Include="StoreProcedure\ZaikoShoukai_Search.sql" />
     <Content Include="StoreProcedure\_Ponpare_Allow_Check.sql" />

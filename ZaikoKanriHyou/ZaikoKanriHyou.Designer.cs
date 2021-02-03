@@ -97,7 +97,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckM_Label8.Location = new System.Drawing.Point(542, 299);
+            this.ckM_Label8.Location = new System.Drawing.Point(542, 271);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(397, 12);
             this.ckM_Label8.TabIndex = 17;
@@ -139,7 +139,7 @@
             // 
             this.rdoProductCD.AutoSize = true;
             this.rdoProductCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoProductCD.Location = new System.Drawing.Point(403, 297);
+            this.rdoProductCD.Location = new System.Drawing.Point(403, 270);
             this.rdoProductCD.Name = "rdoProductCD";
             this.rdoProductCD.Size = new System.Drawing.Size(115, 16);
             this.rdoProductCD.TabIndex = 16;
@@ -151,7 +151,7 @@
             // 
             this.rdoITEM.AutoSize = true;
             this.rdoITEM.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoITEM.Location = new System.Drawing.Point(303, 297);
+            this.rdoITEM.Location = new System.Drawing.Point(303, 270);
             this.rdoITEM.Name = "rdoITEM";
             this.rdoITEM.Size = new System.Drawing.Size(51, 16);
             this.rdoITEM.TabIndex = 15;
@@ -163,7 +163,7 @@
             // 
             this.chkRelatedPrinting.AutoSize = true;
             this.chkRelatedPrinting.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkRelatedPrinting.Location = new System.Drawing.Point(146, 297);
+            this.chkRelatedPrinting.Location = new System.Drawing.Point(146, 268);
             this.chkRelatedPrinting.Name = "chkRelatedPrinting";
             this.chkRelatedPrinting.Size = new System.Drawing.Size(102, 16);
             this.chkRelatedPrinting.TabIndex = 14;
@@ -191,8 +191,9 @@
             this.txtSKUName.isMaxLengthErr = false;
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
+            this.txtSKUName.IsTimemmss = false;
             this.txtSKUName.Length = 40;
-            this.txtSKUName.Location = new System.Drawing.Point(146, 262);
+            this.txtSKUName.Location = new System.Drawing.Point(146, 235);
             this.txtSKUName.MaxLength = 40;
             this.txtSKUName.MoveNext = true;
             this.txtSKUName.Name = "txtSKUName";
@@ -301,7 +302,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(101, 266);
+            this.ckM_Label7.Location = new System.Drawing.Point(101, 238);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label7.TabIndex = 8;
@@ -429,6 +430,7 @@
             this.txtTargetDate.isMaxLengthErr = false;
             this.txtTargetDate.IsNumber = true;
             this.txtTargetDate.IsShop = false;
+            this.txtTargetDate.IsTimemmss = false;
             this.txtTargetDate.Length = 10;
             this.txtTargetDate.Location = new System.Drawing.Point(146, 26);
             this.txtTargetDate.MaxLength = 10;
@@ -463,7 +465,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panelDetail);
-            this.F11Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "ZaikoKanriHyou";

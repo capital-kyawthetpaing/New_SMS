@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,6 +53,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colError = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TB_FileName = new CKM_Controls.CKM_TextBox();
+            this.BT_FileName = new CKM_Controls.CKM_Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_SKU)).BeginInit();
             this.SuspendLayout();
@@ -70,22 +71,6 @@
             // 
             this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
-            // ckM_ComboBox1
-            // 
-            this.ckM_ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.ckM_ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ckM_ComboBox1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.ckM_ComboBox1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.ckM_ComboBox1.Flag = 0;
-            this.ckM_ComboBox1.FormattingEnabled = true;
-            this.ckM_ComboBox1.Length = 10;
-            this.ckM_ComboBox1.Location = new System.Drawing.Point(118, 76);
-            this.ckM_ComboBox1.MaxLength = 10;
-            this.ckM_ComboBox1.MoveNext = true;
-            this.ckM_ComboBox1.Name = "ckM_ComboBox1";
-            this.ckM_ComboBox1.Size = new System.Drawing.Size(370, 20);
-            this.ckM_ComboBox1.TabIndex = 1;
-            // 
             // ckM_Label2
             // 
             this.ckM_Label2.AutoSize = true;
@@ -95,7 +80,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(20, 79);
+            this.ckM_Label2.Location = new System.Drawing.Point(32, 78);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label2.TabIndex = 105;
@@ -112,7 +97,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(12, 53);
+            this.ckM_Label1.Location = new System.Drawing.Point(32, 54);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label1.TabIndex = 104;
@@ -194,7 +179,6 @@
             this.RB_priceinfo.TabStop = true;
             this.RB_priceinfo.Text = "価格情報";
             this.RB_priceinfo.UseVisualStyleBackColor = true;
-            this.RB_priceinfo.CheckedChanged += new System.EventHandler(this.RB_priceinfo_CheckedChanged);
             // 
             // RB_attributeinfo
             // 
@@ -207,7 +191,6 @@
             this.RB_attributeinfo.TabStop = true;
             this.RB_attributeinfo.Text = "属性情報";
             this.RB_attributeinfo.UseVisualStyleBackColor = true;
-            this.RB_attributeinfo.CheckedChanged += new System.EventHandler(this.RB_attributeinfo_CheckedChanged);
             // 
             // RB_all
             // 
@@ -295,7 +278,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.GV_SKU.RowTemplate.Height = 20;
-            this.GV_SKU.Size = new System.Drawing.Size(1170, 500);
+            this.GV_SKU.Size = new System.Drawing.Size(1170, 650);
             this.GV_SKU.TabIndex = 108;
             this.GV_SKU.UseRowNo = true;
             this.GV_SKU.UseSetting = false;
@@ -356,14 +339,63 @@
             this.colError.Name = "colError";
             this.colError.Width = 150;
             // 
+            // TB_FileName
+            // 
+            this.TB_FileName.AllowMinus = false;
+            this.TB_FileName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_FileName.BackColor = System.Drawing.Color.White;
+            this.TB_FileName.BorderColor = false;
+            this.TB_FileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_FileName.ClientColor = System.Drawing.SystemColors.Window;
+            this.TB_FileName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TB_FileName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_FileName.DecimalPlace = 0;
+            this.TB_FileName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_FileName.IntegerPart = 0;
+            this.TB_FileName.IsCorrectDate = true;
+            this.TB_FileName.isEnterKeyDown = false;
+            this.TB_FileName.IsFirstTime = true;
+            this.TB_FileName.isMaxLengthErr = false;
+            this.TB_FileName.IsNumber = true;
+            this.TB_FileName.IsShop = false;
+            this.TB_FileName.IsTimemmss = false;
+            this.TB_FileName.Length = 32767;
+            this.TB_FileName.Location = new System.Drawing.Point(117, 75);
+            this.TB_FileName.MoveNext = true;
+            this.TB_FileName.Name = "TB_FileName";
+            this.TB_FileName.Size = new System.Drawing.Size(480, 19);
+            this.TB_FileName.TabIndex = 109;
+            this.TB_FileName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_FileName.UseColorSizMode = false;
+            // 
+            // BT_FileName
+            // 
+            this.BT_FileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BT_FileName.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.BT_FileName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BT_FileName.DefaultBtnSize = false;
+            this.BT_FileName.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BT_FileName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_FileName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.BT_FileName.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.BT_FileName.Location = new System.Drawing.Point(597, 75);
+            this.BT_FileName.Margin = new System.Windows.Forms.Padding(1);
+            this.BT_FileName.Name = "BT_FileName";
+            this.BT_FileName.Size = new System.Drawing.Size(35, 19);
+            this.BT_FileName.TabIndex = 110;
+            this.BT_FileName.Text = "▼";
+            this.BT_FileName.UseVisualStyleBackColor = false;
+            this.BT_FileName.Click += new System.EventHandler(this.BT_FileName_Click);
+            // 
             // MasterTorikomi_SKU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.ClientSize = new System.Drawing.Size(1284, 811);
+            this.Controls.Add(this.BT_FileName);
+            this.Controls.Add(this.TB_FileName);
             this.Controls.Add(this.GV_SKU);
             this.Controls.Add(this.BT_Torikomi);
-            this.Controls.Add(this.ckM_ComboBox1);
             this.Controls.Add(this.ckM_Label2);
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.panel3);
@@ -373,7 +405,6 @@
             this.F3Visible = false;
             this.F4Visible = false;
             this.F5Visible = false;
-            this.F6Visible = false;
             this.F7Visible = false;
             this.F8Visible = false;
             this.F9Visible = false;
@@ -386,9 +417,10 @@
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.Controls.SetChildIndex(this.ckM_Label2, 0);
-            this.Controls.SetChildIndex(this.ckM_ComboBox1, 0);
             this.Controls.SetChildIndex(this.BT_Torikomi, 0);
             this.Controls.SetChildIndex(this.GV_SKU, 0);
+            this.Controls.SetChildIndex(this.TB_FileName, 0);
+            this.Controls.SetChildIndex(this.BT_FileName, 0);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_SKU)).EndInit();
@@ -398,8 +430,6 @@
         }
 
         #endregion
-
-        private CKM_Controls.CKM_ComboBox ckM_ComboBox1;
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_Label ckM_Label1;
         private System.Windows.Forms.Panel panel3;
@@ -421,5 +451,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colError;
+        private CKM_Controls.CKM_TextBox TB_FileName;
+        private CKM_Controls.CKM_Button BT_FileName;
     }
 }

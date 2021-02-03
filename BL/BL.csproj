@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Amazon__BL.cs" />
     <Compile Include="Brand_BL.cs" />
+    <Compile Include="CarrierBoxSize_BL.cs" />
+    <Compile Include="CarrierDeliveryTime_BL.cs" />
     <Compile Include="Carrier_BL.cs" />
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="MultiPorpose_BL.cs" />
     <Compile Include="JuchuuTorikomiAPI_BL.cs" />
     <Compile Include="MasterTouroku_Program_BL.cs" />
+    <Compile Include="M_SKUInitial_BL.cs" />
     <Compile Include="NyuukaNyuuryoku_BL.cs" />
     <Compile Include="NyuukaShoukai_BL.cs" />
     <Compile Include="NyuukinKesikomiItiranHyou_BL.cs" />
