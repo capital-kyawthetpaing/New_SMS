@@ -119,8 +119,8 @@ namespace KeihiltiranHyou
         {
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
-            // cboStoreName.Bind(date, data);
-            cboStoreName.Bind(string.Empty, "2");
+            string ymd = bbl.GetDate();
+            cboStoreName.Bind(ymd);
             cboStoreName.SelectedValue = StoreCD;
             SetRequireField();
            

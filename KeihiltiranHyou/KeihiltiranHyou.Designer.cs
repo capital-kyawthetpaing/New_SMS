@@ -110,6 +110,7 @@
             this.expense_timeto.isMaxLengthErr = false;
             this.expense_timeto.IsNumber = true;
             this.expense_timeto.IsShop = false;
+            this.expense_timeto.IsTimemmss = false;
             this.expense_timeto.Length = 8;
             this.expense_timeto.Location = new System.Drawing.Point(421, 73);
             this.expense_timeto.MaxLength = 8;
@@ -142,6 +143,7 @@
             this.expense_timefrom.isMaxLengthErr = false;
             this.expense_timefrom.IsNumber = true;
             this.expense_timefrom.IsShop = false;
+            this.expense_timefrom.IsTimemmss = false;
             this.expense_timefrom.Length = 8;
             this.expense_timefrom.Location = new System.Drawing.Point(203, 73);
             this.expense_timefrom.MaxLength = 8;
@@ -158,7 +160,7 @@
             // 
             this.cboStoreName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboStoreName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboStoreName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
+            this.cboStoreName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_受注;
             this.cboStoreName.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cboStoreName.Flag = 0;
             this.cboStoreName.FormattingEnabled = true;
@@ -218,6 +220,7 @@
             this.txtExpenseTo.isMaxLengthErr = false;
             this.txtExpenseTo.IsNumber = true;
             this.txtExpenseTo.IsShop = false;
+            this.txtExpenseTo.IsTimemmss = false;
             this.txtExpenseTo.Length = 10;
             this.txtExpenseTo.Location = new System.Drawing.Point(321, 73);
             this.txtExpenseTo.MaxLength = 10;
@@ -249,6 +252,7 @@
             this.txtPaymentTo.isMaxLengthErr = false;
             this.txtPaymentTo.IsNumber = true;
             this.txtPaymentTo.IsShop = false;
+            this.txtPaymentTo.IsTimemmss = false;
             this.txtPaymentTo.Length = 10;
             this.txtPaymentTo.Location = new System.Drawing.Point(260, 46);
             this.txtPaymentTo.MaxLength = 10;
@@ -280,6 +284,7 @@
             this.txtRecordTo.isMaxLengthErr = false;
             this.txtRecordTo.IsNumber = true;
             this.txtRecordTo.IsShop = false;
+            this.txtRecordTo.IsTimemmss = false;
             this.txtRecordTo.Length = 10;
             this.txtRecordTo.Location = new System.Drawing.Point(261, 16);
             this.txtRecordTo.MaxLength = 10;
@@ -362,6 +367,7 @@
             this.txtRecordFrom.isMaxLengthErr = false;
             this.txtRecordFrom.IsNumber = true;
             this.txtRecordFrom.IsShop = false;
+            this.txtRecordFrom.IsTimemmss = false;
             this.txtRecordFrom.Length = 10;
             this.txtRecordFrom.Location = new System.Drawing.Point(103, 16);
             this.txtRecordFrom.MaxLength = 10;
@@ -392,6 +398,7 @@
             this.txtPaymentFrom.isMaxLengthErr = false;
             this.txtPaymentFrom.IsNumber = true;
             this.txtPaymentFrom.IsShop = false;
+            this.txtPaymentFrom.IsTimemmss = false;
             this.txtPaymentFrom.Length = 10;
             this.txtPaymentFrom.Location = new System.Drawing.Point(103, 45);
             this.txtPaymentFrom.MaxLength = 10;
@@ -422,6 +429,7 @@
             this.txtExpenseFrom.isMaxLengthErr = false;
             this.txtExpenseFrom.IsNumber = true;
             this.txtExpenseFrom.IsShop = false;
+            this.txtExpenseFrom.IsTimemmss = false;
             this.txtExpenseFrom.Length = 10;
             this.txtExpenseFrom.Location = new System.Drawing.Point(103, 73);
             this.txtExpenseFrom.MaxLength = 10;
