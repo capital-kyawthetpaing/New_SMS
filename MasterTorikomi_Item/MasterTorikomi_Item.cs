@@ -410,11 +410,11 @@ namespace MasterTorikomi_Item
                 try
                 {
                     if (!Is101("M_Vendor", dt.Rows[i]["主要仕入先CD"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "主要仕入先CD";
-                    dt.Rows[i]["Error"] = "E101";
-                    goto SkippedLine;
-                }
+                    {
+                        dt.Rows[i]["EItem"] = "主要仕入先CD";
+                        dt.Rows[i]["Error"] = "E101";
+                        goto SkippedLine;
+                    }
                 }
                 catch { }
                 try
@@ -500,127 +500,99 @@ namespace MasterTorikomi_Item
                 }
                 }
                 catch { }
+
+
+
                 try
                 {
+                    if (!Is190(dt.Rows[i]["セット品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "セット品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     var val = dt.Rows[i]["セット品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "セット品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["セット品区分"] = dtskuintial.Rows[0]["SetKBN"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["セット品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["セット品区分"] = dtskuintial.Rows[0]["SetKBN"];
-                    //    }
-                    //}
-
-                     if (!Is190(dt.Rows[i]["セット品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "セット品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+             
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["プレゼント品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "プレゼント品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "セット品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["プレゼント品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "プレゼント品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["プレゼント品区分"] = dtskuintial.Rows[0]["PresentKBN"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["プレゼント品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["プレゼント品区分"] = dtskuintial.Rows[0]["PresentKBN"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["プレゼント品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "プレゼント品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["サンプル品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "サンプル品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "プレゼント品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["サンプル品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "サンプル品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["サンプル品区分"] = dtskuintial.Rows[0]["SampleKBN"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["サンプル品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["サンプル品区分"] = dtskuintial.Rows[0]["SampleKBN"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["サンプル品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "サンプル品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["値引商品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "値引商品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "サンプル品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["値引商品区分"].ToString();
                     if (string.IsNullOrWhiteSpace(val) || val == "0")
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "値引商品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["値引商品区分"] = dtskuintial.Rows[0]["DiscountKBN"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["値引商品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["値引商品区分"] = dtskuintial.Rows[0]["DiscountKBN"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["値引商品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "値引商品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["実店舗取扱区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "実店舗取扱区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "値引商品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["実店舗取扱区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
@@ -630,459 +602,305 @@ namespace MasterTorikomi_Item
                             goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["実店舗取扱区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["実店舗取扱区分"] = dtskuintial.Rows[0]["RealStoreFlg"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["実店舗取扱区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "実店舗取扱区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["在庫管理対象区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "在庫管理対象区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "実店舗取扱区分", "M_SKUInitial");
                     var val = dt.Rows[i]["在庫管理対象区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "在庫管理対象区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["在庫管理対象区分"] = dtskuintial.Rows[0]["ZaikoKBN"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["在庫管理対象区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["在庫管理対象区分"] = dtskuintial.Rows[0]["ZaikoKBN"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["在庫管理対象区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "在庫管理対象区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["架空商品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "架空商品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "在庫管理対象区分", "M_SKUInitial");
                     var val = dt.Rows[i]["架空商品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "架空商品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["架空商品区分"] = dtskuintial.Rows[0]["VirtualFlg"];
-                            goto SkippedLine;
                         }
                     }
-
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["架空商品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["架空商品区分"] = dtskuintial.Rows[0]["VirtualFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["架空商品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "架空商品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
                     //IsNoB(dt, i, "架空商品区分", "M_SKUInitial");
-
+                    if (!Is190(dt.Rows[i]["直送品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "直送品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     var val = dt.Rows[i]["直送品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "直送品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["直送品区分"] = dtskuintial.Rows[0]["DirectFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["直送品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["直送品区分"] = dtskuintial.Rows[0]["DirectFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["直送品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "直送品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+              
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["予約品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "予約品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "直送品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["予約品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "予約品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["予約品区分"] = dtskuintial.Rows[0]["ReserveCD"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["予約品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["予約品区分"] = dtskuintial.Rows[0]["ReserveCD"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["予約品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "予約品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["特記区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "特記区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "予約品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["特記区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "特記区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["特記区分"] = dtskuintial.Rows[0]["NoticesCD"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["特記区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["特記区分"] = dtskuintial.Rows[0]["NoticesCD"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["特記区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "特記区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                 
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["送料区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "送料区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "特記区分", "M_SKUInitial");
                     var val = dt.Rows[i]["送料区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "送料区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["送料区分"] = dtskuintial.Rows[0]["PostageCD"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["送料区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["送料区分"] = dtskuintial.Rows[0]["PostageCD"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["送料区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "送料区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["要加工品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "要加工品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "送料区分", "M_SKUInitial");
                     var val = dt.Rows[i]["要加工品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "要加工品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["要加工品区分"] = dtskuintial.Rows[0]["ManufactCD"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["要加工品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["要加工品区分"] = dtskuintial.Rows[0]["ManufactCD"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["要加工品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "要加工品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                  
                 }
                 catch { }
                 try
                 {
                     //IsNoB(dt, i, "要加工品区分", "M_SKUInitial");
-
+                    if (!Is190(dt.Rows[i]["要確認品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "要確認品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     var val = dt.Rows[i]["要確認品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "要確認品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["要確認品区分"] = dtskuintial.Rows[0]["ConfirmCD"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["要確認品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["要確認品区分"] = dtskuintial.Rows[0]["ConfirmCD"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["要確認品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "要確認品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["Web在庫連携区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "Web在庫連携区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     // IsNoB(dt, i, "要確認品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["Web在庫連携区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "Web在庫連携区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["Web在庫連携区分"] = dtskuintial.Rows[0]["WebStockFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["Web在庫連携区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["Web在庫連携区分"] = dtskuintial.Rows[0]["WebStockFlg"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["Web在庫連携区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "Web在庫連携区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+              
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["販売停止品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "販売停止品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "Web在庫連携区分", "M_SKUInitial");
                     var val = dt.Rows[i]["販売停止品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "販売停止品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["販売停止品区分"] = dtskuintial.Rows[0]["StopFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["販売停止品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["販売停止品区分"] = dtskuintial.Rows[0]["StopFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["販売停止品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "販売停止品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                 
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["廃番品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "廃番品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "販売停止品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["廃番品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "廃番品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["廃番品区分"] = dtskuintial.Rows[0]["DiscontinueFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["廃番品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["廃番品区分"] = dtskuintial.Rows[0]["DiscontinueFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["廃番品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "廃番品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["完売品区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "完売品区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "廃番品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["完売品区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "完売品区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["完売品区分"] = dtskuintial.Rows[0]["SoldoutFlg"];
-                            goto SkippedLine;
                         }
                     }
-
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["完売品区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["完売品区分"] = dtskuintial.Rows[0]["SoldoutFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["完売品区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "完売品区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                 
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["自社在庫連携対象"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "自社在庫連携対象";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "完売品区分", "M_SKUInitial");
                     var val = dt.Rows[i]["自社在庫連携対象"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "自社在庫連携対象";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["自社在庫連携対象"] = dtskuintial.Rows[0]["InventoryAddFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["自社在庫連携対象"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["自社在庫連携対象"] = dtskuintial.Rows[0]["InventoryAddFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["自社在庫連携対象"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "自社在庫連携対象";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                 
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["メーカー在庫連携対象"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "メーカー在庫連携対象";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     var val = dt.Rows[i]["メーカー在庫連携対象"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "メーカー在庫連携対象";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["メーカー在庫連携対象"] = dtskuintial.Rows[0]["MakerAddFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    // IsNoB(dt, i, "自社在庫連携対象", "M_SKUInitial");
-
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["メーカー在庫連携対象"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["メーカー在庫連携対象"] = dtskuintial.Rows[0]["MakerAddFlg"];
-                    //    }
-                    //}
-                    if (!Is190(dt.Rows[i]["メーカー在庫連携対象"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "メーカー在庫連携対象";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+              
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["店舗在庫連携対象"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "店舗在庫連携対象";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "メーカー在庫連携対象", "M_SKUInitial");
                     var val = dt.Rows[i]["店舗在庫連携対象"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "店舗在庫連携対象";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["店舗在庫連携対象"] = dtskuintial.Rows[0]["StoreAddFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["店舗在庫連携対象"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["店舗在庫連携対象"] = dtskuintial.Rows[0]["StoreAddFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["店舗在庫連携対象"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "店舗在庫連携対象";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+               
                 }
                 catch { }
                 try
@@ -1116,91 +934,61 @@ namespace MasterTorikomi_Item
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["EDI発注可能区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "EDI発注可能区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "Net発注不可区分", "M_SKUInitial");
                     var val = dt.Rows[i]["EDI発注可能区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val) )
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "EDI発注可能区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["EDI発注可能区分"] = dtskuintial.Rows[0]["EDIorderFlg"];
-                            goto SkippedLine;
                         }
                     }
-
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["EDI発注可能区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["EDI発注可能区分"] = dtskuintial.Rows[0]["EDIorderFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["EDI発注可能区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "EDI発注可能区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                 
                 }
                 catch { }
                 try
                 {
                     //IsNoB(dt, i, "EDI発注可能区分", "M_SKUInitial");
-
+                    if (!Is190(dt.Rows[i]["自動発注対象区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "自動発注対象区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     var val = dt.Rows[i]["自動発注対象区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "自動発注対象区分";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["自動発注対象区分"] = dtskuintial.Rows[0]["AutoOrderFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["自動発注対象区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["自動発注対象区分"] = dtskuintial.Rows[0]["AutoOrderFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["自動発注対象区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "自動発注対象区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
                 }
                 catch { }
                 try
                 {
+                    if (!Is190(dt.Rows[i]["カタログ掲載有無"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "カタログ掲載有無";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                     //IsNoB(dt, i, "自動発注対象区分", "M_SKUInitial");
                     var val = dt.Rows[i]["カタログ掲載有無"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
+                    if (string.IsNullOrWhiteSpace(val))
                     {
                         if (dtskuintial.Rows.Count > 0)
                         {
-                            dt.Rows[i]["EItem"] = "カタログ掲載有無";
-                            dt.Rows[i]["Error"] = "E190";
                             dt.Rows[i]["カタログ掲載有無"] = dtskuintial.Rows[0]["CatalogFlg"];
-                            goto SkippedLine;
                         }
                     }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["カタログ掲載有無"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["カタログ掲載有無"] = dtskuintial.Rows[0]["CatalogFlg"];
-                    //    }
-                    //}
-                     if (!Is190(dt.Rows[i]["カタログ掲載有無"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "カタログ掲載有無";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
+                    
                 }
                 catch { }
                 try
@@ -1234,74 +1022,65 @@ namespace MasterTorikomi_Item
                 catch { }
                 try
                 {
-                    //IsNoB(dt, i, "小包梱包可能区分", "M_SKUInitial");
-                    var val = dt.Rows[i]["税率区分"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
-                    {
-                        if (dtskuintial.Rows.Count > 0)
-                        {
-                            dt.Rows[i]["EItem"] = "税率区分";
-                            dt.Rows[i]["Error"] = "E190";
-                            dt.Rows[i]["税率区分"] = dtskuintial.Rows[0]["TaxRateFLG"];
-                            goto SkippedLine;
-                        }
-                    }
-                    //    if (string.IsNullOrWhiteSpace(dt.Rows[i]["税率区分"].ToString()))
-                    //{
-                    //    if (dtskuintial.Rows.Count > 0)
-                    //    {
-                    //        dt.Rows[i]["税率区分"] = dtskuintial.Rows[0]["TaxRateFLG"];
-                    //    }
-                    //}
                     if (!Is190(dt.Rows[i]["税率区分"].ToString()))
                     {
                         dt.Rows[i]["EItem"] = "税率区分";
                         dt.Rows[i]["Error"] = "E190";
                         goto SkippedLine;
                     }
+                    //IsNoB(dt, i, "小包梱包可能区分", "M_SKUInitial");
+                    var val = dt.Rows[i]["税率区分"].ToString();
+                    if (string.IsNullOrWhiteSpace(val))
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["税率区分"] = dtskuintial.Rows[0]["TaxRateFLG"];
+                        }
+                    }
+                    
                 }
                 catch { }
                 try
                 {
-                    //IsNoB(dt, i, "税率区分", "M_SKUInitial");
-                    var val = dt.Rows[i]["原価計算方法"].ToString();
-                    if (string.IsNullOrWhiteSpace(val) || val == "0")
-                    {
-                        if (dtskuintial.Rows.Count > 0)
-                        {
-                            dt.Rows[i]["EItem"] = "原価計算方法";
-                            dt.Rows[i]["Error"] = "E190";
-                            dt.Rows[i]["原価計算方法"] = dtskuintial.Rows[0]["CostingKBN"];
-                            goto SkippedLine;
-                        }
-                    }
                     if (!Is190(dt.Rows[i]["原価計算方法"].ToString()))
                     {
                         dt.Rows[i]["EItem"] = "原価計算方法";
                         dt.Rows[i]["Error"] = "E190";
                         goto SkippedLine;
                     }
+                    //IsNoB(dt, i, "税率区分", "M_SKUInitial");
+                    var val = dt.Rows[i]["原価計算方法"].ToString();
+                    if (string.IsNullOrWhiteSpace(val) )
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["原価計算方法"] = dtskuintial.Rows[0]["CostingKBN"];
+                        }
+                    }
+                  
                 }
                 catch { }
                 try
                 {
                     //IsNoB(dt, i, "原価計算方法", "M_SKUInitial");
-
-                    if (string.IsNullOrWhiteSpace(dt.Rows[i]["Sale対象外区分"].ToString()))
-                {
-                    if (dtskuintial.Rows.Count > 0)
+                    if (!Is190(dt.Rows[i]["Sale対象外区分"].ToString()))
                     {
-                        dt.Rows[i]["Sale対象外区分"] = dtskuintial.Rows[0]["SaleExcludedFlg"];
+                        dt.Rows[i]["EItem"] = "Sale対象外区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
+                    var val = dt.Rows[i]["Sale対象外区分"].ToString();
+                    if (string.IsNullOrWhiteSpace(val))
+                    {
+                        if (dtskuintial.Rows.Count > 0)
+                        {
+                            dt.Rows[i]["Sale対象外区分"] = dtskuintial.Rows[0]["SaleExcludedFlg"];
+                        }
                     }
                 }
-                else if (!Is190(dt.Rows[i]["Sale対象外区分"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "Sale対象外区分";
-                    dt.Rows[i]["Error"] = "E190";
-                    goto SkippedLine;
-                }
-                }
                 catch { }
+
+
                 try
                 {
                     //IsNoB(dt, i, "Sale対象外区分", "M_SKUInitial");
@@ -1441,6 +1220,10 @@ namespace MasterTorikomi_Item
 
             if (paramID == null)
             {
+                if (string.IsNullOrEmpty(param.Trim()) || param.Trim() == "" )
+                {
+                    return true;
+                }
                 if (tableName == "M_Vendor")
                 {
                     string query = " VendorCD = '" + param + "'";
@@ -1465,6 +1248,10 @@ namespace MasterTorikomi_Item
             }
             else if (paramID != null)
             {
+                if (string.IsNullOrEmpty(param.Trim()) || param.Trim() == "")
+                {
+                    return true;
+                }
                 if (tableName == "M_MultiPorpose")
                 {
                     string str = " [Key] ='" + param + "'" +
