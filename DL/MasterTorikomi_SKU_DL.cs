@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DL
 {
-   public class MasterTorikomi_SKU_DL:Base_DL
+    public class MasterTorikomi_SKU_DL : Base_DL
     {
         public Boolean MasterTorikomi_SKU_Insert_Update(int type, M_SKU_Entity mE)
         {
@@ -20,7 +20,7 @@ namespace DL
                 { "@ProgramID",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.ProgramID} },
                 { "@PC",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.PC} },
                 { "@KeyItem",new ValuePair { value1 = SqlDbType.VarChar, value2 = mE.Key} }
-               
+
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, "MasterTorikomi_SKU_Insert_Update");
@@ -29,9 +29,16 @@ namespace DL
         public DataTable M_SKUInitial_SelectAll()
         {
             Dictionary<String, ValuePair> dic = new Dictionary<string, ValuePair>
-            {};
-            
+            { };
+
             return SelectData(dic, "M_SKUInitial_SelectAll");
+        }
+        public DataTable M_MessageSelectAll()
+        {
+            Dictionary<String, ValuePair> dic = new Dictionary<string, ValuePair>
+            { };
+
+            return SelectData(dic, "M_Message_SelectAll");
         }
     }
 }
