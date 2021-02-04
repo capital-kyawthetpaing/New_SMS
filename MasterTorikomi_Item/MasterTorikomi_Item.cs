@@ -1090,12 +1090,12 @@ namespace MasterTorikomi_Item
                         }
                         else
                         {
-                            bbl.ShowMessage("E101");   // Changed please
+                            MessageBox.Show("Failed to Import");   // Changed please
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please fix the error from the imported file.");
+                        MessageBox.Show("Please fix the error of the imported file shown on screen and then try to import. . .");
                     }
                 }
                 //}
