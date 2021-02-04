@@ -95,11 +95,11 @@ namespace MasterTorikomi_Item
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
-                            var dtres = dt.Select("ItemCDShow <> ''");
-                            if (dtres != null)
+                            //var dtres = dt.Select("ItemCDShow <> ''");
+                            if (dt != null)
                             {
                                 gvItem.DataSource = null;
-                                gvItem.DataSource = dtres.CopyToDataTable();
+                                gvItem.DataSource = dt;
                                 //Cursor = Cursors.WaitCursor;
                             }
 
@@ -1220,7 +1220,7 @@ namespace MasterTorikomi_Item
 
         private bool Is102(string value)
         {
-            if (!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value.Trim()))
             {
                 return true;
             }
