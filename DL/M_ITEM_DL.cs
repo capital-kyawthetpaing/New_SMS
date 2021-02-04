@@ -67,6 +67,7 @@ namespace DL
             command.CommandTimeout = 0;
 
             AddParam(command, "@xml", SqlDbType.Xml,mie.xml1);
+            AddParam(command, "@Opt", SqlDbType.VarChar, mie.Operator);
             AddParam(command, "@PG", SqlDbType.VarChar, mie.ProgramID);
             AddParam(command, "@PC", SqlDbType.VarChar, mie.PC);
             AddParam(command, "@Mode", SqlDbType.VarChar,mie.ProcessMode);

@@ -76,35 +76,52 @@ namespace MasterTorikomi_Item
             file.InitialDirectory = "C:\\SMS\\MasterShutsuryoku_ITEM\\";                             // file.RestoreDirectory = true;
             if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
             {
-                filePath = file.FileName; ; //get the path of the file  
-                fileExt = Path.GetExtension(filePath); //get the file extension  
-                if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
+                
+                Cursor = Cursors.WaitCursor;
+                try
                 {
-                    bbl.ShowMessage("E137");
-                    return;
-                }
-                inputPath.Text = filePath;
-                DataTable dt = new DataTable();
-                dt = ExcelToDatatable(filePath);
-                if (dt != null)
-                {
-                    if (ErrorCheck(dt))
+                    filePath = file.FileName; ; //get the path of the file  
+                    fileExt = Path.GetExtension(filePath); //get the file extension  
+                    if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
                     {
-                        ExcelErrorCheck(dt);
-                        var dtres = dt.Select("ItemCDShow <> ''");
-                        if (dtres != null)
+                        bbl.ShowMessage("E137");
+                        return;
+                    }
+                    inputPath.Text = filePath;
+                    DataTable dt = new DataTable();
+                    dt = ExcelToDatatable(filePath);
+                    if (dt != null)
+                    {
+                        if (ErrorCheck(dt))
                         {
-                            gvItem.DataSource = null;
-                            gvItem.DataSource = dtres.CopyToDataTable();
-                            
+                            ExcelErrorCheck(dt);
+                            var dtres = dt.Select("ItemCDShow <> ''");
+                            if (dtres != null)
+                            {
+                                gvItem.DataSource = null;
+                                gvItem.DataSource = dtres.CopyToDataTable();
+                                //Cursor = Cursors.WaitCursor;
+                            }
+
                         }
+                        else
+                        {
+                            inputPath.Focus();
+                        }
+                        Cursor = Cursors.Default; ;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No row data was found or import excel is opening in different location");
+                        Cursor = Cursors.WaitCursor;
+                        return;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No row data was found or import excel is opening in different location");
-                    return;
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
                 }
+
+                Cursor = Cursors.Default;
             }
             //}
 
@@ -1032,33 +1049,39 @@ namespace MasterTorikomi_Item
         }
         private void F12()
         {
+            try { 
+
             ibl = new ITEM_BL();
-            if (bbl.ShowMessage("Q101") == DialogResult.Yes)
-            {
-                if (String.IsNullOrEmpty(inputPath.Text))
+                if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    bbl.ShowMessage("E121");
-                    return ;
-                }
-                var dt = gvItem.DataSource as DataTable;
-                if (dt == null)
-                {
-                    MessageBox.Show("Please import first");
-                    return;
-                }
-                //if (ErrorCheck(dt))
-                //{
+                    Cursor = Cursors.WaitCursor;
+                    if (String.IsNullOrEmpty(inputPath.Text))
+                    {
+                        bbl.ShowMessage("E121");
+                        inputPath.Focus();
+                        Cursor = Cursors.Default;
+                        return;
+                    }
+                    var dt = gvItem.DataSource as DataTable;
+                    if (dt == null)
+                    {
+                        MessageBox.Show("Please import first");
+                        Cursor = Cursors.Default;
+                        return;
+                    }
+                    //if (ErrorCheck(dt))
+                    //{
                     if (CheckPartial(dt))
                     {
-                    M_ITEM_Entity mie = new M_ITEM_Entity();
-                    
-                    mie.PC = Environment.MachineName;
-                    mie.ProgramID = "MasterTorikomi_Item";
-                    mie.ProcessMode = null;
-                    mie.Key = inputPath.Text;
-                    mie.MainFlg = RB_all.Checked ? "1": RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked?"3" :RB_priceinfo.Checked ? "4": RB_Catloginfo.Checked ?"5": RB_tagInfo.Checked ? "6" :"8";
+                        M_ITEM_Entity mie = new M_ITEM_Entity();
+                        mie.Operator = InOperatorCD;
+                        mie.PC = Environment.MachineName;
+                        mie.ProgramID = "MasterTorikomi_Item";
+                        mie.ProcessMode = null;
+                        mie.Key = inputPath.Text;
+                        mie.MainFlg = RB_all.Checked ? "1" : RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked ? "3" : RB_priceinfo.Checked ? "4" : RB_Catloginfo.Checked ? "5" : RB_tagInfo.Checked ? "6" : "8";
                         var xml = bbl.DataTableToXml(dt);
-                    mie.xml1 = xml;
+                        mie.xml1 = xml;
 
                         var res = ibl.ImportItem(mie);
                         if (res)
@@ -1074,8 +1097,13 @@ namespace MasterTorikomi_Item
                     {
                         MessageBox.Show("Please fix the error from the imported file.");
                     }
+                }
                 //}
             }
+            catch(Exception ex){
+                MessageBox.Show(ex.Message);
+            }
+            Cursor = Cursors.Default;
         }
         private bool CheckPartial(DataTable dt)
         {
@@ -1086,11 +1114,24 @@ namespace MasterTorikomi_Item
         }
         private void Cancel()
         {
-            RB_attributeinfo.Checked = RB_BaseInfo.Checked = RB_Catloginfo.Checked = RB_priceinfo.Checked = RB_SizeURL.Checked = RB_tagInfo.Checked = false;
-            RB_all.Checked = true;
-            inputPath.Clear();
-            gvItem.DataSource = null;
-            gvItem.Refresh();
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                RB_attributeinfo.Checked = RB_BaseInfo.Checked = RB_Catloginfo.Checked = RB_priceinfo.Checked = RB_SizeURL.Checked = RB_tagInfo.Checked = false;
+                RB_all.Checked = true;
+                inputPath.Clear();
+                gvItem.DataSource = null;
+                gvItem.Refresh();
+                dtBrand = mtbl.M_Brand_SelectAll_NoPara();
+                dtMultiP = mtbl.M_Multipurpose_SelectAll();
+                dtVendor = mtbl.M_Vendor_SelectAll();
+                dtskuintial = msIbl.M_SKUInitial_SelectAll();
+            }
+            catch {
+
+            }
+            Cursor = Cursors.Default; ;
         }
     }
 }

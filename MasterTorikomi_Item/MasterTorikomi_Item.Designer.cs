@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_Item));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BT_Torikomi = new CKM_Controls.CKM_Button();
             this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -46,13 +48,13 @@
             this.inputPath = new CKM_Controls.CKM_TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.gvItem = new CKM_Controls.CKM_GridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.ItemCDShow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemMakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvItem)).BeginInit();
             this.SuspendLayout();
@@ -295,7 +297,7 @@
             this.gvItem.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gvItem.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -309,6 +311,14 @@
             this.ItemMakerCD,
             this.EItem,
             this.Error});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvItem.DefaultCellStyle = dataGridViewCellStyle4;
             this.gvItem.EnableHeadersVisualStyles = false;
             this.gvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvItem.Location = new System.Drawing.Point(17, 136);
@@ -319,6 +329,16 @@
             this.gvItem.TabIndex = 3;
             this.gvItem.UseRowNo = true;
             this.gvItem.UseSetting = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 112;
+            this.button1.Text = "▼";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ItemCDShow
             // 
@@ -331,6 +351,8 @@
             // ItemDate
             // 
             this.ItemDate.DataPropertyName = "ItemDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ItemDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ItemDate.HeaderText = "改定日";
             this.ItemDate.Name = "ItemDate";
             this.ItemDate.ReadOnly = true;
@@ -357,6 +379,7 @@
             this.EItem.HeaderText = "エラー項目名";
             this.EItem.Name = "EItem";
             this.EItem.ReadOnly = true;
+            this.EItem.Width = 150;
             // 
             // Error
             // 
@@ -365,16 +388,6 @@
             this.Error.Name = "Error";
             this.Error.ReadOnly = true;
             this.Error.Width = 150;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "▼";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MasterTorikomi_Item
             // 
