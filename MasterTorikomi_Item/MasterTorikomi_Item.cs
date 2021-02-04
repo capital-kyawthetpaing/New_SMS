@@ -113,7 +113,7 @@ namespace MasterTorikomi_Item
                     else
                     {
                         MessageBox.Show("No row data was found or import excel is opening in different location");
-                        Cursor = Cursors.WaitCursor;
+                        Cursor = Cursors.Default;
                         return;
                     }
                 }
@@ -1125,8 +1125,11 @@ namespace MasterTorikomi_Item
                 dt.Rows[i]["ItemCDShow"] = dt.Rows[i]["ITEMCD"].ToString();
                 dt.Rows[i]["ItemName"] = dt.Rows[i]["商品名"].ToString();
                 dt.Rows[i]["ItemDate"] = dt.Rows[i]["改定日"].ToString();
-                dt.Rows[i]["ItemMakerCD"] = dt.Rows[i]["メーカー商品CD"].ToString();
-
+                try
+                {
+                    dt.Rows[i]["ItemMakerCD"] = dt.Rows[i]["メーカー商品CD"].ToString();
+                }
+                catch { }
                 int g = 0;
             }
         }
