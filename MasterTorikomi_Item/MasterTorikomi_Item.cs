@@ -26,7 +26,7 @@ namespace MasterTorikomi_Item
         DataTable dtMultiP = new DataTable();
         DataTable dtVendor = new DataTable();
         DataTable dtskuintial = new DataTable();
-
+        DataTable dtMessage = new DataTable();
         public MasterTorikomi_Item()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace MasterTorikomi_Item
             dtMultiP = mtbl.M_Multipurpose_SelectAll();
             dtVendor = mtbl.M_Vendor_SelectAll();
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
-
+            dtMessage = msIbl.M_MessageSelectAll();
         }
 
         private void MasterTorikomi_Item_KeyUp(object sender, KeyEventArgs e)
@@ -1132,6 +1132,27 @@ namespace MasterTorikomi_Item
                 catch { }
                 int g = 0;
             }
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+              
+                var row = dt.Rows[i]["Error"].ToString();
+                if (!string.IsNullOrEmpty(row) && row != "")
+                {
+                    var msg = "";
+                    var query="";
+                    try
+                    {
+                        query = "MessageID = '" + row + "'";
+                    }
+                    catch { }
+                    if (dtMessage.Select(query) != null)
+                    {
+                        msg = dtMessage.Select(query).CopyToDataTable().Rows[0]["MessageText1"].ToString();
+                        dt.Rows[i]["Error"] = msg;
+                    }
+                }
+            }
         }
         private void IsNoB(DataTable dt, int i, string col, string Value = null)
         {
@@ -1349,6 +1370,7 @@ namespace MasterTorikomi_Item
                 dtMultiP = mtbl.M_Multipurpose_SelectAll();
                 dtVendor = mtbl.M_Vendor_SelectAll();
                 dtskuintial = msIbl.M_SKUInitial_SelectAll();
+                dtMessage = msIbl.M_MessageSelectAll();
             }
             catch {
 

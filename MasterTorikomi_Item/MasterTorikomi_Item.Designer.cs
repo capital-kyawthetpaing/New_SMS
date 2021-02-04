@@ -363,7 +363,7 @@
             this.ItemName.HeaderText = "商品名";
             this.ItemName.Name = "ItemName";
             this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 800;
+            this.ItemName.Width = 500;
             // 
             // ItemMakerCD
             // 
@@ -387,7 +387,7 @@
             this.Error.HeaderText = "エラー名";
             this.Error.Name = "Error";
             this.Error.ReadOnly = true;
-            this.Error.Width = 150;
+            this.Error.Width = 440;
             // 
             // MasterTorikomi_Item
             // 
@@ -402,7 +402,6 @@
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.panel3);
             this.Location = new System.Drawing.Point(0, 0);
-            this.ModeVisible = true;
             this.Name = "MasterTorikomi_Item";
             this.PanelHeaderHeight = 60;
             this.Text = "MasterTorikomi_Item";

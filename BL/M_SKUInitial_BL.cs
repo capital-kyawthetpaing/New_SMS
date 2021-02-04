@@ -22,5 +22,10 @@ namespace BL
         {
              return mdl.M_SKUInitial_SelectAll();
         }
+
+        public DataTable M_MessageSelectAll()
+        {
+            return mdl.M_MessageSelectAll();
+        }
    }
 }
