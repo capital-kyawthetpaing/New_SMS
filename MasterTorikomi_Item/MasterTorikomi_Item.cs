@@ -306,6 +306,12 @@ namespace MasterTorikomi_Item
                         dt.Rows[i]["Error"] = "E102";
                         goto SkippedLine;
                     }
+                    if (!Is190(dt.Rows[i]["データ区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "データ区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
                 }
                 catch { }
                 try { 
@@ -1211,7 +1217,7 @@ namespace MasterTorikomi_Item
         }
         private bool Is190(string value)
         {
-            if (value.ToString() == "0" || value.ToString() == "1" || string.IsNullOrEmpty(value))
+            if (value.Trim().ToString() == "0" || value.Trim().ToString() == "1" || string.IsNullOrEmpty(value))
             {
                 return true;
             }
