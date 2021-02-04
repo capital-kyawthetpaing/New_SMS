@@ -486,6 +486,12 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("Sale対象外区分名");
                         }
 
+                        if(checkflg !=1 && checkflg !=2 && checkflg !=3 && checkflg !=4)
+                        {
+                            dt.Columns.Remove("主要仕入先CD");
+                            dt.Columns.Remove("主要仕入先名");
+                        }
+
                         DataTable dtnew = dt;
                         string folderPath = "C:\\Excel\\";
                         if (!Directory.Exists(folderPath))
