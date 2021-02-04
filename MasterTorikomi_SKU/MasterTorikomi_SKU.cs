@@ -95,14 +95,14 @@ namespace MasterTorikomi_SKU
                     //if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
                     //{
                      //   filePath = file.FileName; //get the path of the file  
-                        fileExt = Path.GetExtension(filePath); //get the file extension  
-                        if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
-                        {
-                            bbl.ShowMessage("E137");
-                            return;
-                        }
+                        //fileExt = Path.GetExtension(filePath); //get the file extension  
+                        //if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
+                        //{
+                        //    bbl.ShowMessage("E137");
+                        //    return;
+                        //}
                       
-                        dt = ExcelToDatatable(filePath);
+                        //dt = ExcelToDatatable(filePath);
                         //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
                         //if (ColumnCheck(colname, dtExcel))
                         //{
@@ -112,11 +112,11 @@ namespace MasterTorikomi_SKU
                         {
                             if (ErrorCheck(dt))
                             {
-                                ExcelErrorCheck(dt);
+                            ExcelErrorCheck(dt);
                             if (checkerr)
                             {
                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                             //   dtmain = ChangeColName(dtmain, type);
+                              
                                 mE = GetEntity(dtmain);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
@@ -1365,7 +1365,15 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return;
                 }
-                dtmain = ChangeColName(dt, type);
+
+                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                dt = ExcelToDatatable(filePath);
+                dtmain = dt.Copy();
+                if(dtmain!=null)
+                {
+                    dtmain = ChangeColName(dtmain, type);
+                }
+               
             }
         }
     }
