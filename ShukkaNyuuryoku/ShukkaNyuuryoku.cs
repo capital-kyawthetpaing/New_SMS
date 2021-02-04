@@ -31,7 +31,10 @@ namespace ShukkaNyuuryoku
 
             ShippingDate = 0,
             CarrierName ,
+            CarrierBoxSize,
             UnitsCount,
+            DecidedDeliveryDate,
+            CarrierDeliveryTime,
 
             JANCD　= 0,
             ShippingSu,
@@ -76,6 +79,7 @@ namespace ShukkaNyuuryoku
         private string mOldShippingNO = "";         //排他処理のため使用
         private string mOldInstructionNO = "";      //排他処理のため使用
         private string mOldShippingDate = "";
+        private string mOldCarrierCd = "";
 
         public ShukkaNyuuryoku()
         {
@@ -105,6 +109,8 @@ namespace ShukkaNyuuryoku
                 snbl = new ShukkaNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
                 CboCarrierName.Bind(ymd);
+                CboCarrierBoxSize.Bind(ymd);
+                CboCarrierDeliveryTime.Bind(ymd);
 
                 //検索用のパラメータ設定
                 string stores = GetAllAvailableStores();
@@ -160,21 +166,55 @@ namespace ShukkaNyuuryoku
             if (sdt.Rows.Count > 0)
             {
                 CboCarrierName.SelectedValue = sdt.Rows[0]["CarrierCD"];
+                mOldCarrierCd = sdt.Rows[0]["CarrierCD"].ToString();
             }
             else
             {
                 CboCarrierName.SelectedValue = "";
+                mOldCarrierCd = "";
             }
 
             //個口
             headControls[(int)EIndex.UnitsCount].Text = "1";
+
+            //箱サイズ
+            M_CarrierBoxSize_Entity mbe = new M_CarrierBoxSize_Entity
+            {
+                ChangeDate = bbl.GetDate(),
+            };
+            CarrierBoxSize_BL cbbl = new CarrierBoxSize_BL();
+            DataTable sbdt = cbbl.M_CarrierBoxSize_Bind(mbe);
+            if (sbdt.Rows.Count > 0)
+            {
+                CboCarrierBoxSize.SelectedValue = sdt.Rows[0]["BoxSizeCD"];
+            }
+            else
+            {
+                CboCarrierBoxSize.SelectedValue = "";
+            }
+
+            //希望時間帯
+            M_CarrierDeliveryTime_Entity mte = new M_CarrierDeliveryTime_Entity
+            {
+                ChangeDate = bbl.GetDate(),
+            };
+            CarrierDeliveryTime_BL cbtl = new CarrierDeliveryTime_BL();
+            DataTable stdt = cbtl.M_CarrierDeliveryTime_Bind(mte);
+            if (stdt.Rows.Count > 0)
+            {
+                CboCarrierDeliveryTime.SelectedValue = sdt.Rows[0]["DeliveryTimeCD"];
+            }
+            else
+            {
+                CboCarrierDeliveryTime.SelectedValue = "";
+            }
         }
 
         private void InitialControlArray()
         {
             keyControls = new Control[] {  ScShippingNO.TxtCode, ScInstructionNO.TxtCode,  CboStoreCD };
             keyLabels = new Control[] {  };
-            headControls = new Control[] { txtShippingDate, CboCarrierName, txtUnitCount };
+            headControls = new Control[] { txtShippingDate, CboCarrierName, CboCarrierBoxSize, txtUnitCount , txtDecidedDeliveryDate, CboCarrierDeliveryTime };
             headLabels = new Control[] { lblDelivery};
             headLabels2 = new Control[] { lblChange, lblSameDay, lblDecidedDelivery, lblDeliveryNote, lblDaibiki };
             detailControls = new Control[] { txtJANCD, txtShippingSu };
@@ -795,7 +835,7 @@ namespace ShukkaNyuuryoku
                     {
                         CboCarrierName.Bind(headControls[index].Text);
                         CboCarrierName.SelectedValue = carrierCd;
-
+                        
                         ////for (int RW = 0; RW <= GvDetail.RowCount - 1; RW++)
                         ////{
                         ////    M_SKU_Entity mse = new M_SKU_Entity
@@ -882,6 +922,24 @@ namespace ShukkaNyuuryoku
                         return false;
                     }
 
+                    // 配送会社が変更されたら、箱サイズ・希望時間帯のコンボボックスを再取得
+                    if (mOldCarrierCd != CboCarrierName.SelectedValue.ToString())
+                    {
+                        CboCarrierBoxSize.Bind(changeDate, me.CarrierCD);
+                        CboCarrierDeliveryTime.Bind(changeDate, me.CarrierCD);
+                    }
+
+
+                    break;
+
+                case (int)EIndex.CarrierBoxSize:
+                    //入力必須(Entry required)
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { headControls[index] }))
+                    {
+                        return false;
+                    }
+                    
                     break;
 
                 case (int)EIndex.UnitsCount:
@@ -900,7 +958,41 @@ namespace ShukkaNyuuryoku
                         bbl.ShowMessage("E108");
                         return false;
                     }                    
-                    break;                
+                    break;
+
+                case (int)EIndex.DecidedDeliveryDate:
+                    //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                    if (!string.IsNullOrWhiteSpace(headControls[index].Text))
+                    {
+                        headControls[index].Text = bbl.FormatDate(headControls[index].Text);
+
+                        //日付として正しいこと(Be on the correct date)Ｅ１０３
+                        if (!bbl.CheckDate(headControls[index].Text))
+                        {
+                            //Ｅ１０３
+                            bbl.ShowMessage("E103");
+                            return false;
+                        }
+                        //入力できる範囲内の日付であること
+                        if (string.Compare(headControls[index].Text, bbl.GetDate()) < -1)
+                        {
+                            //Ｅ１１５
+                            bbl.ShowMessage("E276");
+                            return false;
+                        }
+                    }
+                    
+                    break;
+
+                case (int)EIndex.CarrierDeliveryTime:
+                    //入力必須(Entry required)
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { headControls[index] }))
+                    {
+                        return false;
+                    }
+
+                    break;
             }
 
             return true;
@@ -1830,7 +1922,7 @@ namespace ShukkaNyuuryoku
             {
                 previousCtrl = this.ActiveControl;
 
-                int index = Array.IndexOf(detailControls, sender);
+                int index = Array.IndexOf(headControls, sender);
                 //if (index == (int)EIndex.JANCD)
                 //{
                 //    F9Visible = true;
