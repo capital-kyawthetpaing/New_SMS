@@ -61,6 +61,7 @@ namespace BL
 
         public bool MasterTorikomi_SKU_Insert_Update(int type,M_SKU_Entity mE)
         {
+            mE.xml1 = DataTableToXml(mE.dt1);
             return mtdl.MasterTorikomi_SKU_Insert_Update(type,mE);
         }
     }

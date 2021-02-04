@@ -33,6 +33,8 @@ namespace MasterTorikomi_SKU
         M_SKU_Entity mE;
         string filePath = string.Empty;
         string fileExt = string.Empty;
+        DataTable dt = new DataTable();
+        DataTable dtmain = new DataTable();
         public MasterTorikomi_SKU()
         {
             InitializeComponent();
@@ -99,7 +101,7 @@ namespace MasterTorikomi_SKU
                             bbl.ShowMessage("E137");
                             return;
                         }
-                        DataTable dt = new DataTable();
+                      
                         dt = ExcelToDatatable(filePath);
                         //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
                         //if (ColumnCheck(colname, dtExcel))
@@ -110,19 +112,19 @@ namespace MasterTorikomi_SKU
                         {
                             if (ErrorCheck(dt))
                             {
-                            ExcelErrorCheck(dt);
+                                ExcelErrorCheck(dt);
                             if (checkerr)
                             {
                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                dt = ChangeColName(dt, type);
-                                mE = GetEntity(dt);
+                             //   dtmain = ChangeColName(dtmain, type);
+                                mE = GetEntity(dtmain);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
                                     bbl.ShowMessage("I101");
                                 }
                             }
                             GV_SKU.DataSource = null;
-                            GV_SKU.DataSource = dt;
+                            GV_SKU.DataSource = dtmain;
                             }
                         }
                     //}
@@ -420,21 +422,21 @@ namespace MasterTorikomi_SKU
                     dt.Rows[i]["EItem"] = "サイズ名";
                     dt.Rows[i]["Error"] = "E102";
                 }
-                #region test
+               
 
-                if (RB_all.Checked || RB_BaseInfo.Checked)
+                if (RB_all.Checked || RB_BaseInfo.Checked )
                 {
 
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["主要仕入先CD"].ToString()))
-                    {
-                        string query = " VendorCD = '" + dt.Rows[i]["主要仕入先CD"].ToString() + "'";
-                        var result = dtVendor.Select(query);
-                        if (result.Count() == 0)
-                        {
-                            dt.Rows[i]["EItem"] = "主要仕入先CD";
-                            dt.Rows[i]["Error"] = "E101";
-                        }
-                    }
+                    //if (!String.IsNullOrEmpty(dt.Rows[i]["主要仕入先CD"].ToString()))
+                    //{
+                    //    string query = " VendorCD = '" + dt.Rows[i]["主要仕入先CD"].ToString() + "'";
+                    //    var result = dtVendor.Select(query);
+                    //    if (result.Count() == 0)
+                    //    {
+                    //        dt.Rows[i]["EItem"] = "主要仕入先CD";
+                    //        dt.Rows[i]["Error"] = "E101";
+                    //    }
+                    //}
 
                     if (!String.IsNullOrEmpty(dt.Rows[i]["ブランドCD"].ToString()))
                     {
@@ -955,6 +957,21 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Sale対象外区分"] = dtskuintial.Rows[0]["SaleExcludedFlg"];
                         }
                     }
+                }  
+
+                else if(RB_all.Checked || RB_attributeinfo.Checked || RB_BaseInfo.Checked || RB_priceinfo.Checked)
+                {
+                    if (!String.IsNullOrEmpty(dt.Rows[i]["主要仕入先CD"].ToString()))
+                    {
+                        string query = " VendorCD = '" + dt.Rows[i]["主要仕入先CD"].ToString() + "'";
+                        var result = dtVendor.Select(query);
+                        if (result.Count() == 0)
+                        {
+                            dt.Rows[i]["EItem"] = "主要仕入先CD";
+                            dt.Rows[i]["Error"] = "E101";
+                        }
+                    }
+
                 }
                 else if (RB_SizeURL.Checked)
                 {
@@ -965,7 +982,7 @@ namespace MasterTorikomi_SKU
                     {
                     }
                 }
-                #endregion
+               
                 if (String.IsNullOrEmpty(dt.Rows[i]["EItem"].ToString()))
                 {
                     checkerr = true;
@@ -1132,6 +1149,8 @@ namespace MasterTorikomi_SKU
                 dt.Columns["プレゼント品区分"].ColumnName = "PresentKBN";
                 dt.Columns["サンプル品区分"].ColumnName = "SampleKBN";
                 dt.Columns["値引商品区分"].ColumnName = "DiscountKBN";
+                dt.Columns["主要仕入先CD"].ColumnName = "MainVendorCD";
+                dt.Columns["主要仕入先名"].ColumnName = "VendorName";
                 dt.Columns["Webストア取扱区分"].ColumnName = "WebFlg";
                 dt.Columns["実店舗取扱区分"].ColumnName = "RealStoreFlg";
                 dt.Columns["在庫管理対象区分"].ColumnName = "ZaikoKBN";
@@ -1171,6 +1190,8 @@ namespace MasterTorikomi_SKU
                 dt.Columns["サイズ名"].ColumnName = "SizeName";
                 dt.Columns["カラー名"].ColumnName = "ColorName";
                 dt.Columns["商品名"].ColumnName = "SKUName";
+                dt.Columns["主要仕入先CD"].ColumnName = "MainVendorCD";
+                dt.Columns["主要仕入先名"].ColumnName = "VendorName";
                 dt.Columns["税率区分"].ColumnName = "TaxRateFlg";
                 dt.Columns["Sale対象外区分"].ColumnName = "SaleExcludedFlg";
                 dt.Columns["原価計算方法"].ColumnName = "CostingKBN";
@@ -1344,6 +1365,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return;
                 }
+                dtmain = ChangeColName(dt, type);
             }
         }
     }
