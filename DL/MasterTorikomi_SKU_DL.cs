@@ -33,6 +33,14 @@ namespace DL
 
             return SelectData(dic, "M_SKUInitial_SelectAll");
         }
+
+        public DataTable M_API_Select()
+        {
+            Dictionary<String, ValuePair> dic = new Dictionary<string, ValuePair>
+            { };
+
+            return SelectData(dic, "M_API_Select");
+        }
         public DataTable M_MessageSelectAll()
         {
             Dictionary<String, ValuePair> dic = new Dictionary<string, ValuePair>

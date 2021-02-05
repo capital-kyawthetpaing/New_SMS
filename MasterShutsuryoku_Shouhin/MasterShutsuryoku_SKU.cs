@@ -348,9 +348,9 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("諸口区分");
                             //dt.Columns.Remove("カナ名");
                             //dt.Columns.Remove("略名");
-                            //dt.Columns.Remove("英語名");
-                            dt.Columns.Remove("主要仕入先CD");
-                            dt.Columns.Remove("主要仕入先名");
+                            ////dt.Columns.Remove("英語名");
+                            //dt.Columns.Remove("主要仕入先CD");
+                            //dt.Columns.Remove("主要仕入先名");
                             dt.Columns.Remove("メーカー仕入先CD");
                             dt.Columns.Remove("メーカー仕入先名");
                             dt.Columns.Remove("ブランドCD");
@@ -486,7 +486,7 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("Sale対象外区分名");
                         }
 
-                        if(checkflg !=1 && checkflg !=2 && checkflg !=3 && checkflg !=4)
+                        if(checkflg != 1 && checkflg != 2  && checkflg !=3 && checkflg !=4)
                         {
                             dt.Columns.Remove("主要仕入先CD");
                             dt.Columns.Remove("主要仕入先名");
