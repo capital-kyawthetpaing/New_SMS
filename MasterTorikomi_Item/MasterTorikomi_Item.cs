@@ -1601,9 +1601,9 @@ namespace MasterTorikomi_Item
             string[] val = null;
             if (a == 1)
             {
+                val = new string[(int)Subete.Count];
                 foreach (var attribute in (Subete[])Enum.GetValues(typeof(Subete)))
                 {
-                    val = new string[(int)Subete.Count] ;
                     if (attribute != Subete.Count)
                     {
                         val[(int)attribute] =  attribute.ToString();
@@ -1612,9 +1612,9 @@ namespace MasterTorikomi_Item
             }
             else if (a == 2)
             {
+                val = new string[(int)Kihon.Count];
                 foreach (var attribute in (Kihon[])Enum.GetValues(typeof(Kihon)))
                 {
-                    val = new string[(int)Kihon.Count];
                     if (attribute != Kihon.Count)
                     {
                         val[(int)attribute] = attribute.ToString();
@@ -1623,9 +1623,9 @@ namespace MasterTorikomi_Item
             }
             else if (a == 3)
             {
+                val = new string[(int)Zokusei.Count];
                 foreach (var attribute in (Zokusei[])Enum.GetValues(typeof(Zokusei)))
                 {
-                    val = new string[(int)Zokusei.Count];
                     if (attribute != Zokusei.Count)
                     {
                         val[(int)attribute] = attribute.ToString();
@@ -1634,9 +1634,9 @@ namespace MasterTorikomi_Item
             }
             else if (a == 4)
             {
+                val = new string[(int)Kakaku.Count];
                 foreach (var attribute in (Kakaku[])Enum.GetValues(typeof(Kakaku)))
                 {
-                    val = new string[(int)Kakaku.Count];
                     if (attribute != Kakaku.Count)
                     {
                         val[(int)attribute] = attribute.ToString();
@@ -1645,9 +1645,9 @@ namespace MasterTorikomi_Item
             }
             else if (a == 5)
             {
+                val = new string[(int)Kataroku.Count];
                 foreach (var attribute in (Kataroku[])Enum.GetValues(typeof(Kataroku)))
                 {
-                    val = new string[(int)Kataroku.Count];
                     if (attribute != Kataroku.Count)
                     {
                         val[(int)attribute] = attribute.ToString();
@@ -1657,9 +1657,9 @@ namespace MasterTorikomi_Item
 
             else if (a == 6)
             {
+                val = new string[(int)Taggu.Count];
                 foreach (var attribute in (Taggu[])Enum.GetValues(typeof(Taggu)))
                 {
-                    val = new string[(int)Taggu.Count];
                     if (attribute != Taggu.Count)
                     {
                         val[(int)attribute] = attribute.ToString();
@@ -1668,9 +1668,9 @@ namespace MasterTorikomi_Item
             }
             else if (a == 8)
             {
+                val = new string[(int)SaitoURL.Count];
                 foreach (var attribute in (SaitoURL[])Enum.GetValues(typeof(SaitoURL)))
                 {
-                    val = new string[(int)SaitoURL.Count];
                     if (attribute != SaitoURL.Count)
                     {
                         val[(int)attribute] = attribute.ToString();
