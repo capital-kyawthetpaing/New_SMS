@@ -253,7 +253,7 @@
             this.BtnSubF12.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF12.Name = "BtnSubF12";
             this.BtnSubF12.Size = new System.Drawing.Size(110, 110);
-            this.BtnSubF12.TabIndex = 7;
+            this.BtnSubF12.TabIndex = 10;
             this.BtnSubF12.Text = "登録(F12)";
             this.BtnSubF12.UseVisualStyleBackColor = false;
             this.BtnSubF12.Click += new System.EventHandler(this.BtnF12_Click);
@@ -285,7 +285,7 @@
             this.txtShippingSu.MoveNext = true;
             this.txtShippingSu.Name = "txtShippingSu";
             this.txtShippingSu.Size = new System.Drawing.Size(97, 29);
-            this.txtShippingSu.TabIndex = 6;
+            this.txtShippingSu.TabIndex = 9;
             this.txtShippingSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtShippingSu.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             this.txtShippingSu.UseColorSizMode = false;
@@ -413,7 +413,7 @@
             this.txtJANCD.MoveNext = true;
             this.txtJANCD.Name = "txtJANCD";
             this.txtJANCD.Size = new System.Drawing.Size(176, 29);
-            this.txtJANCD.TabIndex = 5;
+            this.txtJANCD.TabIndex = 8;
             this.txtJANCD.Text = "XXXXXXXXXXX13";
             this.txtJANCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             this.txtJANCD.UseColorSizMode = false;
@@ -753,6 +753,7 @@
             this.CboCarrierName.Name = "CboCarrierName";
             this.CboCarrierName.Size = new System.Drawing.Size(300, 29);
             this.CboCarrierName.TabIndex = 3;
+            this.CboCarrierName.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // GvDetail
             // 
@@ -1165,6 +1166,7 @@
             this.CboCarrierBoxSize.Name = "CboCarrierBoxSize";
             this.CboCarrierBoxSize.Size = new System.Drawing.Size(200, 29);
             this.CboCarrierBoxSize.TabIndex = 4;
+            this.CboCarrierBoxSize.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // ckmShop_Label6
             // 
@@ -1234,6 +1236,7 @@
             this.CboCarrierDeliveryTime.Name = "CboCarrierDeliveryTime";
             this.CboCarrierDeliveryTime.Size = new System.Drawing.Size(200, 29);
             this.CboCarrierDeliveryTime.TabIndex = 7;
+            this.CboCarrierDeliveryTime.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // ShukkaNyuuryoku
             // 

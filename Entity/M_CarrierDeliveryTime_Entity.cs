@@ -9,7 +9,7 @@ namespace Entity
     public class M_CarrierDeliveryTime_Entity : Base_Entity
     {
         public string CarrierCD {get;set;}
-        public string DeliveryTimeCD { get; set; }
         public string DeliveryTime { get; set; }
+        public string DeliveryTimeName { get; set; }
     }
 }

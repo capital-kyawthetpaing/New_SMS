@@ -3,6 +3,8 @@
 DROP PROCEDURE [dbo].[PRC_ShukkaNyuuryoku]
 GO
 
+DROP TYPE [dbo].[T_ShukkaF]
+
 /****** Object:  StoredProcedure [dbo].[PRC_ShukkaNyuuryoku]    Script Date: 2020/10/01 19:38:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -10,6 +12,32 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 
+CREATE TYPE T_ShukkaF AS TABLE
+    (
+    [ShippingRows] [int],    
+    [InstructionRows] [int],
+    [Number] [varchar](11) ,
+    [NumberRows] [int],
+    [ReserveNO] [varchar](11) ,
+    [ReserveKBN] [tinyint] ,
+    [SKUCD] [varchar](30),
+    [AdminNO] [int],
+    [JanCD] [varchar](13),
+    [SKUName] [varchar](80),
+    [ColorName] [varchar](20),
+    [SizeName] [varchar](20),
+    [ShippingSu] [int] ,
+    [StockNO] [varchar](11) ,
+    [ToStoreCD] [varchar](4),
+    [ToSoukoCD] [varchar](6),
+    [ToRackNO] [varchar](11),
+    [ToStockNO] [varchar](11),
+    [FromStoreCD] [varchar](4),
+    [FromSoukoCD] [varchar](6),
+    [FromRackNO] [varchar](11),
+    [CustomerCD] [varchar](13)
+    )
+GO
 
 --********************************************--
 --                                            --
@@ -27,6 +55,9 @@ CREATE PROCEDURE [dbo].[PRC_ShukkaNyuuryoku]
      @CarrierCD   varchar(3),
      @StaffCD   varchar(10),
      @UnitsCount   tinyint,
+     @BoxSize   varchar(6),
+     @DecidedDeliveryDate   varchar(10),
+     @DecidedDeliveryTime   varchar(4),
     
      @Table  T_ShukkaF READONLY,
      @Operator  varchar(10),
@@ -78,10 +109,13 @@ BEGIN
            ,[ShippingKBN]
            ,[InstructionNO]
            ,[CarrierCD]
+           ,[DecidedDeliveryDate]
+           ,[DecidedDeliveryTime]
            ,[ShippingDate]
            ,[InputDateTime]
            ,[StaffCD]
            ,[UnitsCount]
+           ,[BoxSize]
            ,[PrintDate]
            ,[PrintStaffCD]
            ,[LinkageDateTime]
@@ -103,10 +137,13 @@ BEGIN
            ,@ShippingKBN
            ,@InstructionNO
            ,@CarrierCD
+           ,@DecidedDeliveryDate
+           ,@DecidedDeliveryTime
            ,@ShippingDate
            ,@SYSDATETIME           
            ,@StaffCD           
            ,@UnitsCount           
+           ,@BoxSize
            ,NULL
            ,NULL
            ,NULL
