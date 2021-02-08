@@ -1446,6 +1446,8 @@ namespace MasterTorikomi_Item
         }
         private bool Is103(string date)  // date
         {
+            if (String.IsNullOrEmpty(date.Trim()))
+                return true;
             return bbl.CheckDate(bbl.FormatDate(date.Contains(" ") ? date.Split(' ').First() : date));
         }
         private bool Is101(string tableName, string param, string paramID = null)  // Master
@@ -1632,6 +1634,7 @@ namespace MasterTorikomi_Item
                         if (res)
                         {
                             bbl.ShowMessage("I101");
+                            Cancel();
                         }
                         else
                         {
@@ -1646,7 +1649,7 @@ namespace MasterTorikomi_Item
                 //}
             }
             catch(Exception ex){
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             Cursor = Cursors.Default;
         }
@@ -1673,6 +1676,7 @@ namespace MasterTorikomi_Item
                 dtVendor = mtbl.M_Vendor_SelectAll();
                 dtskuintial = msIbl.M_SKUInitial_SelectAll();
                 dtMessage = msIbl.M_MessageSelectAll();
+                button1.Focus();
             }
             catch {
 

@@ -1529,7 +1529,9 @@ namespace Base.Client
             
             Base_BL bbl = new Base_BL();
             UserControl sc = ActiveControl as UserControl;
-
+            if (this.Name == "MasterTorikomi_Item")
+            { return true;
+            }
             var c = GetAllControls(this);
             for (int i = 0; i < c.Count(); i++)
             {
