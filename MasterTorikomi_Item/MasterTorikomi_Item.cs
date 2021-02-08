@@ -12,6 +12,8 @@ using Base.Client;
 using BL;
 using ExcelDataReader;
 using Entity;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MasterTorikomi_Item
 {
@@ -49,6 +51,7 @@ namespace MasterTorikomi_Item
             dtVendor = mtbl.M_Vendor_SelectAll();
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
             dtMessage = msIbl.M_MessageSelectAll();
+            this.ModeVisible = false;
         }
 
         private void MasterTorikomi_Item_KeyUp(object sender, KeyEventArgs e)
@@ -283,9 +286,33 @@ namespace MasterTorikomi_Item
             }
             return true;
         }
+        public async void TestAsyncAwaitMethods()
+        {
+            await LongRunningMethod();
+        }
+        public void Run()
+        {
+            //for (int i = 0; i < 5; i++)
+            //{
 
+            //label4.Text ="23432434" ;
+            // Thread.Sleep(1000);
+            //}
+            //Action<int> wr = Write;
+            //wr(5);
+
+
+        }
+        public async Task<int> LongRunningMethod()
+        {
+            label2.Text = " Starting ...";
+          //  await Task.Run(Func<Run>);
+            //label2.Text = "End...";
+            return 1;
+        }
         private void ExcelErrorCheck(DataTable dt)
         {
+            tick = 0;
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
             dt.Columns.Add("ItemCDShow");
@@ -295,10 +322,14 @@ namespace MasterTorikomi_Item
             string currentType =  RB_all.Checked ? "1" : RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked ? "3" : RB_priceinfo.Checked ? "4" : RB_Catloginfo.Checked ? "5" : RB_tagInfo.Checked ? "6" : "8";
             string[] Cols = GetCurrentType(Convert.ToInt32(currentType)); 
             string kibun = dt.Rows[1]["データ区分"].ToString();
-
+            label2.Visible = true;
+            var cou = dt.Rows.Count.ToString() + "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-
+                try { tick = i;
+                  //  timer1.Start();
+                }
+                catch { }
                 try
                 {
                     if (Cols.Contains("データ区分"))
@@ -1352,6 +1383,13 @@ namespace MasterTorikomi_Item
                     }
                 }
             }
+            try
+            {
+                timer1.Stop();
+                label2.Visible = false;
+                
+            }
+            catch { }
         }
         private void IsNoB(DataTable dt, int i, string col, string Value = null)
         {
@@ -1839,5 +1877,15 @@ namespace MasterTorikomi_Item
           , Count
         }
 
+        private void RB_all_CheckedChanged(object sender, EventArgs e)
+        {
+            inputPath.Clear();
+        }
+        int tick = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // tick++;
+           // label2.Text = tick.ToString(); ;
+        }
     }
 }
