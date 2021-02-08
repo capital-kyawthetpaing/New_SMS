@@ -581,8 +581,6 @@ namespace CKM_Controls
                     CarrierBoxSize_BL cbbl = new CarrierBoxSize_BL();
                     M_CarrierBoxSize_Entity mcbe = new M_CarrierBoxSize_Entity();
                     mcbe.CarrierCD = type;          //CarrierCd
-                    mcbe.DeleteFlg = "0";
-                    mcbe.ChangeDate = changeDate;
                     DataTable dtSize = cbbl.M_CarrierBoxSize_Bind(mcbe);
                     BindCombo("BoxSize", "BoxSizeName", dtSize);
                     break;
@@ -591,10 +589,8 @@ namespace CKM_Controls
                     CarrierDeliveryTime_BL cbtl = new CarrierDeliveryTime_BL();
                     M_CarrierDeliveryTime_Entity mcte = new M_CarrierDeliveryTime_Entity();
                     mcte.CarrierCD = type;          //CarrierCd
-                    mcte.DeleteFlg = "0";
-                    mcte.ChangeDate = changeDate;
                     DataTable dtTime = cbtl.M_CarrierDeliveryTime_Bind(mcte);
-                    BindCombo("DeliveryTimeCD", "DeliveryTime", dtTime);
+                    BindCombo("DeliveryTime", "DeliveryTimeName", dtTime);
                     break;
             }
         }

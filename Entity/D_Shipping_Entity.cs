@@ -25,6 +25,9 @@ namespace Entity
         public string InputDateTime { get; set; }
         public string StaffCD { get; set; }
         public string UnitsCount { get; set; }
+        public string DecidedDeliveryDate { get; set; }
+        public string DecidedDeliveryTime { get; set; }
+        public string BoxSize { get; set; }
         public string PrintDate { get; set; }
         public string PrintStaffCD { get; set; }
         public string LinkageDateTime { get; set; }

@@ -75,11 +75,11 @@ namespace ShukkaNyuuryoku
         private string mJANCD;
         private string mAdminNO;
         private bool mFlgCancel;
+        private string mSCatKBN2;
 
         private string mOldShippingNO = "";         //排他処理のため使用
         private string mOldInstructionNO = "";      //排他処理のため使用
         private string mOldShippingDate = "";
-        private string mOldCarrierCd = "";
 
         public ShukkaNyuuryoku()
         {
@@ -109,8 +109,8 @@ namespace ShukkaNyuuryoku
                 snbl = new ShukkaNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
                 CboCarrierName.Bind(ymd);
-                CboCarrierBoxSize.Bind(ymd);
-                CboCarrierDeliveryTime.Bind(ymd);
+                CboCarrierBoxSize.Bind(ymd,"");
+                CboCarrierDeliveryTime.Bind(ymd,"");
 
                 //検索用のパラメータ設定
                 string stores = GetAllAvailableStores();
@@ -166,48 +166,51 @@ namespace ShukkaNyuuryoku
             if (sdt.Rows.Count > 0)
             {
                 CboCarrierName.SelectedValue = sdt.Rows[0]["CarrierCD"];
-                mOldCarrierCd = sdt.Rows[0]["CarrierCD"].ToString();
             }
             else
             {
                 CboCarrierName.SelectedValue = "";
-                mOldCarrierCd = "";
             }
+            mSCatKBN2 = "";
 
             //個口
             headControls[(int)EIndex.UnitsCount].Text = "1";
 
-            //箱サイズ
-            M_CarrierBoxSize_Entity mbe = new M_CarrierBoxSize_Entity
+            if (CboCarrierName.SelectedIndex > 0)
             {
-                ChangeDate = bbl.GetDate(),
-            };
-            CarrierBoxSize_BL cbbl = new CarrierBoxSize_BL();
-            DataTable sbdt = cbbl.M_CarrierBoxSize_Bind(mbe);
-            if (sbdt.Rows.Count > 0)
-            {
-                CboCarrierBoxSize.SelectedValue = sdt.Rows[0]["BoxSizeCD"];
-            }
-            else
-            {
-                CboCarrierBoxSize.SelectedValue = "";
-            }
+                //箱サイズ
+                M_CarrierBoxSize_Entity mbe = new M_CarrierBoxSize_Entity
+                {
+                    CarrierCD = CboCarrierName.SelectedValue.ToString(),
+                };
+                CarrierBoxSize_BL cbbl = new CarrierBoxSize_BL();
+                DataTable sbdt = cbbl.M_CarrierBoxSize_Bind(mbe);
+                if (sbdt.Rows.Count > 0)
+                {
+                    CboCarrierBoxSize.SelectedValue = sbdt.Rows[0]["BoxSize"];
+                }
+                else
+                {
+                    CboCarrierBoxSize.SelectedValue = "";
+                }
 
-            //希望時間帯
-            M_CarrierDeliveryTime_Entity mte = new M_CarrierDeliveryTime_Entity
-            {
-                ChangeDate = bbl.GetDate(),
-            };
-            CarrierDeliveryTime_BL cbtl = new CarrierDeliveryTime_BL();
-            DataTable stdt = cbtl.M_CarrierDeliveryTime_Bind(mte);
-            if (stdt.Rows.Count > 0)
-            {
-                CboCarrierDeliveryTime.SelectedValue = sdt.Rows[0]["DeliveryTimeCD"];
+                //希望時間帯
+                M_CarrierDeliveryTime_Entity mte = new M_CarrierDeliveryTime_Entity
+                {
+                    CarrierCD = CboCarrierName.SelectedValue.ToString(),
+                };
+                CarrierDeliveryTime_BL cbtl = new CarrierDeliveryTime_BL();
+                DataTable stdt = cbtl.M_CarrierDeliveryTime_Bind(mte);
+                if (stdt.Rows.Count > 0)
+                {
+                    CboCarrierDeliveryTime.SelectedValue = stdt.Rows[0]["DeliveryTime"];
+                }
+                else
+                {
+                    CboCarrierDeliveryTime.SelectedValue = "";
+                }
             }
-            else
-            {
-                CboCarrierDeliveryTime.SelectedValue = "";
-            }
+            
         }
 
         private void InitialControlArray()
@@ -532,8 +535,16 @@ namespace ShukkaNyuuryoku
                     lblDelivery.Text = row["DeliveryName"].ToString();
                     //運送会社
                     CboCarrierName.SelectedValue = row["CarrierCD"];
+                    CboCarrierBoxSize.Bind(changeDate, row["CarrierCD"].ToString());
+                    CboCarrierDeliveryTime.Bind(changeDate, row["CarrierCD"].ToString());
+                    //箱サイズ
+                    CboCarrierBoxSize.SelectedIndex = 1;
                     //個口
                     headControls[(int)EIndex.UnitsCount].Text = bbl.Z_SetStr(row["UnitsCount"]);
+                    //配達希望日
+                    headControls[(int)EIndex.DecidedDeliveryDate].Text = row["DecidedDeliveryDate"].ToString();
+                    //希望時間帯
+                    CboCarrierDeliveryTime.SelectedValue = row["DecidedDeliveryTime"];
 
                     //出荷備考
                     lblBikou.Text = row["CommentInStore"].ToString();
@@ -734,8 +745,16 @@ namespace ShukkaNyuuryoku
                         lblDelivery.Text = row["DeliveryName"].ToString();
                         //運送会社
                         CboCarrierName.SelectedValue = row["CarrierCD"];
+                        CboCarrierBoxSize.Bind(mOldShippingDate, row["CarrierCD"].ToString());
+                        CboCarrierDeliveryTime.Bind(mOldShippingDate, row["CarrierCD"].ToString());
+                        //箱サイズ
+                        CboCarrierBoxSize.SelectedValue = row["BoxSize"].ToString();
                         //個口
                         headControls[(int)EIndex.UnitsCount].Text = bbl.Z_SetStr(row["UnitsCount"]);
+                        //配達希望日
+                        headControls[(int)EIndex.DecidedDeliveryDate].Text = row["DecidedDeliveryDate"].ToString();
+                        //希望時間帯
+                        CboCarrierDeliveryTime.SelectedValue = row["DecidedDeliveryTime"];
 
                         //出荷備考
                         lblBikou.Text = row["CommentInStore"].ToString();
@@ -922,13 +941,10 @@ namespace ShukkaNyuuryoku
                         return false;
                     }
 
-                    // 配送会社が変更されたら、箱サイズ・希望時間帯のコンボボックスを再取得
-                    if (mOldCarrierCd != CboCarrierName.SelectedValue.ToString())
-                    {
-                        CboCarrierBoxSize.Bind(changeDate, me.CarrierCD);
-                        CboCarrierDeliveryTime.Bind(changeDate, me.CarrierCD);
-                    }
-
+                    mSCatKBN2 = mdt.Rows[0]["NormalFLG"].ToString();
+                    CboCarrierBoxSize.Bind(changeDate, me.CarrierCD);
+                    CboCarrierBoxSize.SelectedIndex = 1;
+                    CboCarrierDeliveryTime.Bind(changeDate, me.CarrierCD);
 
                     break;
 
@@ -974,7 +990,7 @@ namespace ShukkaNyuuryoku
                             return false;
                         }
                         //入力できる範囲内の日付であること
-                        if (string.Compare(headControls[index].Text, bbl.GetDate()) < -1)
+                        if (string.Compare(headControls[index].Text, bbl.GetDate()) < 0)
                         {
                             //Ｅ１１５
                             bbl.ShowMessage("E276");
@@ -1256,6 +1272,9 @@ namespace ShukkaNyuuryoku
                 SoukoCD = mSoukoCD,
                 CarrierCD = CboCarrierName.SelectedValue.ToString(),
                 StaffCD = InOperatorCD,
+                BoxSize = CboCarrierBoxSize.SelectedValue.ToString(),
+                DecidedDeliveryDate = headControls[(int)EIndex.DecidedDeliveryDate].Text,
+                DecidedDeliveryTime = CboCarrierDeliveryTime.SelectedValue.ToString(),
                 UnitsCount = headControls[(int)EIndex.UnitsCount].Text,
                 
                 InsertOperator = InOperatorCD,
@@ -1284,12 +1303,12 @@ namespace ShukkaNyuuryoku
                        , bbl.Z_Set(GvDetail.Rows[RW].Cells["colNumberRows"].Value)
                        , GvDetail.Rows[RW].Cells["colReserveNO"].Value.ToString()
                        , bbl.Z_Set(GvDetail.Rows[RW].Cells["colReserveKBN"].Value)
-                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colSKUCD"].Value.ToString()) ? null : GvDetail.Rows[RW].Cells["colSKUCD"].Value.ToString()
+                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colSKUCD"].Value.ToString()) ? null : bbl.LeftB(GvDetail.Rows[RW].Cells["colSKUCD"].Value.ToString(),30)
                        , bbl.Z_Set(GvDetail.Rows[RW].Cells["colAdminNO"].Value)
                        , GvDetail.Rows[RW].Cells["colJANCD"].Value.ToString()
-                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colSKUName"].Value.ToString()) ? null : GvDetail.Rows[RW].Cells["colSKUName"].Value.ToString()
-                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colColorName"].Value.ToString()) ? null : GvDetail.Rows[RW].Cells["colColorName"].Value.ToString()
-                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colSizeName"].Value.ToString()) ? null : GvDetail.Rows[RW].Cells["colSizeName"].Value.ToString()
+                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colSKUName"].Value.ToString()) ? null : bbl.LeftB(GvDetail.Rows[RW].Cells["colSKUName"].Value.ToString(),80)
+                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colColorName"].Value.ToString()) ? null : bbl.LeftB(GvDetail.Rows[RW].Cells["colColorName"].Value.ToString(),20)
+                       , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colSizeName"].Value.ToString()) ? null : bbl.LeftB(GvDetail.Rows[RW].Cells["colSizeName"].Value.ToString(),20)
                        , bbl.Z_Set(GvDetail.Rows[RW].Cells["colShippingSu"].Value)
                        , string.IsNullOrWhiteSpace(GvDetail.Rows[RW].Cells["colStockNO"].Value.ToString()) ? null : GvDetail.Rows[RW].Cells["colStockNO"].Value.ToString()
                        , GvDetail.Rows[RW].Cells["colToStoreCD"].Value.ToString()
@@ -1830,7 +1849,6 @@ namespace ShukkaNyuuryoku
                 //EndSec();
             }
         }
-        
 
         private void DetailControl_KeyDown(object sender, KeyEventArgs e)
         {
@@ -2037,6 +2055,35 @@ namespace ShukkaNyuuryoku
 
                 detailControls[(int)EIndex.ShippingSu].Focus();
                 
+            }
+        }
+
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ComboBox ctrl = (ComboBox)sender;
+                if (ctrl.SelectedIndex > 0)
+                {
+                    int index = Array.IndexOf(detailControls, sender);
+                    bool ret = CheckHead(index);
+                    if (ret)
+                    {
+                        //あたかもTabキーが押されたかのようにする
+                        ProcessTabKey(true);
+                    }
+                    else
+                    {
+                        ctrl.Focus();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
     }

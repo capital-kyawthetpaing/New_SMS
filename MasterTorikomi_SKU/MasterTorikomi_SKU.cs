@@ -25,9 +25,11 @@ namespace MasterTorikomi_SKU
         DataTable dtMultiP = new DataTable();
         DataTable dtVendor = new DataTable();
         DataTable dtskuintial = new DataTable();
+        DataTable dtAPI = new DataTable();
         SKU_BL sbl;
         MasterTorikomi_SKU_BL mtbl;
         M_SKUInitial_BL msIbl;
+        API_BL apbl;
         bool checkerr = false;
         int type = 0;
         M_SKU_Entity mE;
@@ -42,6 +44,7 @@ namespace MasterTorikomi_SKU
             sbl = new SKU_BL();
             mtbl = new MasterTorikomi_SKU_BL();
             msIbl = new M_SKUInitial_BL();
+            apbl = new API_BL();
         }
         private void MasterTorikomi_SKU_Load(object sender, EventArgs e)
         {
@@ -53,6 +56,7 @@ namespace MasterTorikomi_SKU
             dtMultiP = mtbl.M_Multipurpose_SelectAll();
             dtVendor = mtbl.M_Vendor_SelectAll();
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
+            //dtAPI = apbl.M_API_Select();
         }
         public override void FunctionProcess(int index)
         {
@@ -94,29 +98,31 @@ namespace MasterTorikomi_SKU
                     //                                            // file.RestoreDirectory = true;
                     //if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
                     //{
-                     //   filePath = file.FileName; //get the path of the file  
-                        //fileExt = Path.GetExtension(filePath); //get the file extension  
-                        //if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
-                        //{
-                        //    bbl.ShowMessage("E137");
-                        //    return;
-                        //}
-                      
-                        //dt = ExcelToDatatable(filePath);
-                        //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
-                        //if (ColumnCheck(colname, dtExcel))
-                        //{
+                    //   filePath = file.FileName; //get the path of the file  
+                    //fileExt = Path.GetExtension(filePath); //get the file extension  
+                    //if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
+                    //{
+                    //    bbl.ShowMessage("E137");
+                    //    return;
+                    //}
 
-                        //}
-                        if (dt != null)
+                    //dt = ExcelToDatatable(filePath);
+                    //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
+                    //if (ColumnCheck(colname, dtExcel))
+                    //{
+
+                    //}
+                    if (dt != null)
+                    {
+                      
+                        if (ErrorCheck(dt))
                         {
-                            if (ErrorCheck(dt))
-                            {
                             ExcelErrorCheck(dt);
                             if (checkerr)
                             {
-                                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                              
+                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                                dtmain = dt.Copy();  
+                                dtmain = ChangeColName(dtmain, type);
                                 mE = GetEntity(dtmain);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
@@ -124,11 +130,16 @@ namespace MasterTorikomi_SKU
                                 }
                             }
                             GV_SKU.DataSource = null;
-                            GV_SKU.DataSource = dtmain;
-                            }
+                            GV_SKU.DataSource = dt;
+                          
                         }
-                    //}
-               }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No row data was found or import excel is opening in different location");
+
+                    }
+                }
             }
         }
         private void BT_Torikomi_Click(object sender, EventArgs e)
@@ -149,6 +160,11 @@ namespace MasterTorikomi_SKU
         }
         private bool ErrorCheck(DataTable dt)
         {
+            if (dt.Columns.Contains("EItem") && dt.Columns.Contains("Error"))
+            {
+                dt.Columns.Remove("EItem");
+                dt.Columns.Remove("Error");
+            }
             string kibun = dt.Rows[0]["データ区分"].ToString();
             if (RB_all.Checked)
             {
@@ -185,7 +201,8 @@ namespace MasterTorikomi_SKU
             }
             else if (RB_attributeinfo.Checked)
             {
-                if (dt.Columns.Count != 73)
+
+                if (dt.Columns.Count != 75)
                 {
                     bbl.ShowMessage("E137");
                     return false;
@@ -202,7 +219,7 @@ namespace MasterTorikomi_SKU
             }
             else if (RB_priceinfo.Checked)
             {
-                if (dt.Columns.Count != 25)
+                if (dt.Columns.Count != 27)
                 {
                     bbl.ShowMessage("E137");
                     return false;
@@ -293,6 +310,10 @@ namespace MasterTorikomi_SKU
         {
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
+            if(RB_SizeURL.Checked)
+            {
+                dtAPI = apbl.M_API_Select();
+            }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
@@ -975,8 +996,21 @@ namespace MasterTorikomi_SKU
                 }
                 else if (RB_SizeURL.Checked)
                 {
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["APIKey"].ToString()))
+                    if (String.IsNullOrEmpty(dt.Rows[i]["APIKey"].ToString()))
                     {
+                        dt.Rows[i]["EItem"] = "APIKey";
+                        dt.Rows[i]["Error"] = "E102";
+                    }
+                    else
+                    {
+                        String query = " APIKey = '" + dt.Rows[i]["APIKey"].ToString() + "'";
+
+                        var result = dtAPI.Select(query);
+                        if (result.Count() == 0)
+                        {
+                            dt.Rows[i]["EItem"] = "APIKey";
+                            dt.Rows[i]["Error"] = "E101";
+                        }
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["サイト商品CD"].ToString()))
                     {
@@ -1362,18 +1396,23 @@ namespace MasterTorikomi_SKU
                 fileExt = Path.GetExtension(filePath); //get the file extension  
                 if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
                 {
-                    bbl.ShowMessage("E137");
+                    // bbl.ShowMessage("E137");
+                    MessageBox.Show("No row data was found or import excel is opening in different location");
                     return;
                 }
 
-                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+              //  type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
                 dt = ExcelToDatatable(filePath);
-                dtmain = dt.Copy();
-                if(dtmain!=null)
-                {
-                    dtmain = ChangeColName(dtmain, type);
-                }
-               
+                //if (dt != null)
+                //{
+                //    dtmain = dt.Copy();
+                //   -- dtmain = ChangeColName(dtmain, type);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("No row data was found or import excel is opening in different location");
+
+                //}
             }
         }
     }
