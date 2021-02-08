@@ -52,6 +52,7 @@ namespace MasterTorikomi_Item
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
             dtMessage = msIbl.M_MessageSelectAll();
             this.ModeVisible = false;
+            this.Text = "Itemマスター取込	";
         }
 
         private void MasterTorikomi_Item_KeyUp(object sender, KeyEventArgs e)
@@ -1931,6 +1932,11 @@ namespace MasterTorikomi_Item
         {
             // tick++;
            // label2.Text = tick.ToString(); ;
+        }
+
+        private void gvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

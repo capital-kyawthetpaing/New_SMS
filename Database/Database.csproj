@@ -437,6 +437,7 @@
     <Content Include="StoreProcedure\M_MultiPurpose_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_MultiPurpose_KeySearch.sql" />
     <Content Include="StoreProcedure\M_MultiPurpose_KeySelect.sql" />
+    <Content Include="StoreProcedure\M_Multipurpose_SelectAll_.sql" />
     <Content Include="StoreProcedure\M_Multipurpose_SelectAll_ByID.sql" />
     <Content Include="StoreProcedure\M_Multipurpose_SelectIDName.sql" />
     <Content Include="StoreProcedure\M_OrderRate_Update.sql" />
@@ -560,6 +561,7 @@
     <Content Include="StoreProcedure\M_Tenzikai_Search.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_Select.sql" />
+    <Content Include="StoreProcedure\M_Vendorselect_All.sql" />
     <Content Include="StoreProcedure\M_Vendor_BankShiten_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_Bank_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_DataSelect.sql" />

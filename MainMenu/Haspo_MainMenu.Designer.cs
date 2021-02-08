@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Haspo_MainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLoginDate = new System.Windows.Forms.Label();
+            this.lblOperatorName = new System.Windows.Forms.Label();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -80,9 +83,6 @@
             this.btnProj10 = new CKM_Controls.CKM_Button();
             this.btnProj14 = new CKM_Controls.CKM_Button();
             this.btnProj4 = new CKM_Controls.CKM_Button();
-            this.lblLoginDate = new System.Windows.Forms.Label();
-            this.lblOperatorName = new System.Windows.Forms.Label();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelRight.SuspendLayout();
@@ -103,6 +103,47 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1119, 80);
             this.panel1.TabIndex = 1;
+            // 
+            // lblLoginDate
+            // 
+            this.lblLoginDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblLoginDate.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.lblLoginDate.Location = new System.Drawing.Point(973, 24);
+            this.lblLoginDate.Name = "lblLoginDate";
+            this.lblLoginDate.Size = new System.Drawing.Size(125, 33);
+            this.lblLoginDate.TabIndex = 66;
+            this.lblLoginDate.Text = "9999/99/99";
+            this.lblLoginDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblOperatorName
+            // 
+            this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
+            this.lblOperatorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.lblOperatorName.Location = new System.Drawing.Point(763, 24);
+            this.lblOperatorName.Name = "lblOperatorName";
+            this.lblOperatorName.Size = new System.Drawing.Size(212, 33);
+            this.lblOperatorName.TabIndex = 65;
+            this.lblOperatorName.Text = "0001";
+            this.lblOperatorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ckM_Label1
+            // 
+            this.ckM_Label1.AutoSize = true;
+            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label1.DefaultlabelSize = true;
+            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
+            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label1.Location = new System.Drawing.Point(630, 30);
+            this.ckM_Label1.Name = "ckM_Label1";
+            this.ckM_Label1.Size = new System.Drawing.Size(114, 19);
+            this.ckM_Label1.TabIndex = 64;
+            this.ckM_Label1.Text = "オペレータ";
+            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1
             // 
@@ -964,47 +1005,6 @@
             this.btnProj4.TabIndex = 36;
             this.btnProj4.UseVisualStyleBackColor = false;
             // 
-            // lblLoginDate
-            // 
-            this.lblLoginDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblLoginDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLoginDate.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.lblLoginDate.Location = new System.Drawing.Point(973, 24);
-            this.lblLoginDate.Name = "lblLoginDate";
-            this.lblLoginDate.Size = new System.Drawing.Size(125, 33);
-            this.lblLoginDate.TabIndex = 66;
-            this.lblLoginDate.Text = "9999/99/99";
-            this.lblLoginDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblOperatorName
-            // 
-            this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
-            this.lblOperatorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.lblOperatorName.Location = new System.Drawing.Point(763, 24);
-            this.lblOperatorName.Name = "lblOperatorName";
-            this.lblOperatorName.Size = new System.Drawing.Size(212, 33);
-            this.lblOperatorName.TabIndex = 65;
-            this.lblOperatorName.Text = "0001";
-            this.lblOperatorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ckM_Label1
-            // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(630, 30);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(114, 19);
-            this.ckM_Label1.TabIndex = 64;
-            this.ckM_Label1.Text = "オペレータ";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // Haspo_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1015,6 +1015,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Haspo_MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HaspoMainMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Haspo_MainMenu_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Haspo_MainMenu_KeyDown);

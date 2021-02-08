@@ -166,7 +166,7 @@ namespace DL
         }
         public DataTable M_Multipurpose_SelectAll()
         {
-            string sp = "M_Multipurpose_SelectAll";
+            string sp = "M_Multipurpose_SelectAll_";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 
