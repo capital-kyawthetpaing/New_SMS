@@ -120,9 +120,9 @@ namespace MasterTorikomi_SKU
                             ExcelErrorCheck(dt);
                             if (checkerr)
                             {
-                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                dtmain = dt.Copy();  
-                                dtmain = ChangeColName(dtmain, type);
+                                // type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                                //dtmain = dt.Copy();  
+                               // dtmain = ChangeColName(dtmain, type);
                                 mE = GetEntity(dtmain);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
@@ -131,13 +131,11 @@ namespace MasterTorikomi_SKU
                             }
                             GV_SKU.DataSource = null;
                             GV_SKU.DataSource = dt;
-                          
                         }
                     }
                     else
                     {
                         MessageBox.Show("No row data was found or import excel is opening in different location");
-
                     }
                 }
             }
@@ -303,6 +301,138 @@ namespace MasterTorikomi_SKU
                     }
                 }
 
+            }
+            return true;
+        }
+
+        private bool Check(DataTable dt)
+        {
+            if (dt.Columns.Contains("EItem") && dt.Columns.Contains("Error"))
+            {
+                dt.Columns.Remove("EItem");
+                dt.Columns.Remove("Error");
+            }
+            string kibun = dt.Rows[0]["データ区分"].ToString();
+            if (RB_all.Checked)
+            {
+                if (dt.Columns.Count != 126)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "1")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_BaseInfo.Checked)
+            {
+                if (dt.Columns.Count != 48)
+                {
+                    return false;
+                }
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "2")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_attributeinfo.Checked)
+            {
+
+                if (dt.Columns.Count != 75)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "3")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_priceinfo.Checked)
+            {
+                if (dt.Columns.Count != 27)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "4")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_Catloginfo.Checked)
+            {
+                if (dt.Columns.Count != 22)
+                {
+                    return false;
+                }
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "5")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_tagInfo.Checked)
+            {
+                if (dt.Columns.Count != 23)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "6")
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            else if (RB_JanCD.Checked)
+            {
+                if (dt.Columns.Count != 16)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "7")
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            else if (RB_SizeURL.Checked)
+            {
+                if (dt.Columns.Count != 15)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "8")
+                    {
+                        return false;
+                    }
+                }
             }
             return true;
         }
@@ -1401,18 +1531,16 @@ namespace MasterTorikomi_SKU
                     return;
                 }
 
-              //  type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
                 dt = ExcelToDatatable(filePath);
-                //if (dt != null)
-                //{
-                //    dtmain = dt.Copy();
-                //   -- dtmain = ChangeColName(dtmain, type);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No row data was found or import excel is opening in different location");
-
-                //}
+                if (dt != null)
+                {
+                    if (Check(dt))
+                    {
+                        dtmain = dt.Copy();
+                        dtmain = ChangeColName(dtmain, type);
+                    }
+                }
             }
         }
     }
