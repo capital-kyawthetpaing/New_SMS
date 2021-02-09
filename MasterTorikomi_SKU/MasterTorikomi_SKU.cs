@@ -120,9 +120,9 @@ namespace MasterTorikomi_SKU
                             ExcelErrorCheck(dt);
                             if (checkerr)
                             {
-                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                dtmain = dt.Copy();  
-                                dtmain = ChangeColName(dtmain, type);
+                                // type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                                //dtmain = dt.Copy();  
+                               // dtmain = ChangeColName(dtmain, type);
                                 mE = GetEntity(dtmain);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
@@ -131,13 +131,11 @@ namespace MasterTorikomi_SKU
                             }
                             GV_SKU.DataSource = null;
                             GV_SKU.DataSource = dt;
-                          
                         }
                     }
                     else
                     {
                         MessageBox.Show("No row data was found or import excel is opening in different location");
-
                     }
                 }
             }
@@ -173,7 +171,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "1")
@@ -182,6 +179,37 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
+                    "JANCD", "削除","諸口区分", "商品名", "カナ名",
+                    "略名", "英語名", "ITEMCD", "サイズ枝番","カラー枝番",
+                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "メーカー仕入先CD",
+                    "メーカー仕入先名","ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
+                    "単位名","競技CD", "競技名", "商品分類CD","分類名",
+                       "セグメントCD", "セグメント名", "セット品区分", "セット品区分名", "プレゼント品区分",
+                    "プレゼント品区分名", "サンプル品区分", "サンプル品区分名", "値引商品区分", "値引商品区分名",
+                    "Webストア取扱区分", "Webストア取扱区分名", "実店舗取扱区分","実店舗取扱区分名", "在庫管理対象区分",
+                    "在庫管理対象区分名", "架空商品区分", "架空商品区分名", "直送品区分", "直送品区分名",
+                                   "予約品区分", "予約品区分名", "特記区分", "特記区分名", "送料区分",
+                    "送料区分名", "要加工品区分", "要加工品区分名", "要確認品区分", "要確認品区分名",
+                                  "Web在庫連携区分", "Web在庫連携区分名", "販売停止品区分", "販売停止品区分名","廃番品区分",
+                    "廃番品区分名", "完売品区分", "完売品区分名", "自社在庫連携対象", "自社在庫連携対象名",
+                    "メーカー在庫連携対象",  "メーカー在庫連携対象名", "店舗在庫連携対象", "店舗在庫連携対象名", "Net発注不可区分",
+                    "Net発注不可区分名", "EDI発注可能区分", "EDI発注可能区分名",  "自動発注対象区分", "自動発注対象",
+                    "カタログ掲載有無区分", "カタログ掲載有無", "小包梱包可能区分", "小包梱包可能", "税率区分",
+                                   "税率区分名", "原価計算方法", "原価計算方法名", "Sale対象外区分", "Sale対象外区分名",
+                    "標準原価", "税抜定価", "税込定価", "発注税込価格", "発注税抜価格",
+                                   "掛率", "発売開始日", "Web掲載開始日", "発注注意区分","発注注意区分名",
+                    "発注注意事項", "管理用備考","表示用備考", "棚番", "年度", "シーズン",
+                    "カタログ番号","カタログページ", "カタログ番号Long", "カタログページLong", "カタログ情報",
+                    "指示書番号", "指示書発行日", "商品情報アドレス","構成数", "発注ロット",
+                    "タグ1", "タグ2", "タグ3", "タグ4", "タグ5",
+                      "タグ6", "タグ7", "タグ8", "タグ9", "タグ10"};
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
+                
             }
             else if (RB_BaseInfo.Checked)
             {
@@ -197,6 +225,22 @@ namespace MasterTorikomi_SKU
                         bbl.ShowMessage("E137");
                         return false;
                     }
+                }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
+                    "JANCD", "削除","諸口区分", "商品名", "カナ名",
+                    "略名", "英語名", "ITEMCD", "サイズ枝番","カラー枝番",
+                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "メーカー仕入先CD",
+                    "メーカー仕入先名","ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
+                    "単位名","競技CD", "競技名", "商品分類CD","分類名",
+                       "セグメントCD", "セグメント名",  "標準原価", "税抜定価", "税込定価",
+                  "発注税込価格", "発注税抜価格",  "掛率", "発売開始日", "Web掲載開始日",
+                                 "発注注意区分","発注注意区分名","発注注意事項", "管理用備考","表示用備考",
+                     "棚番","構成数", "発注ロット"
+                    };
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
                 }
             }
             else if (RB_attributeinfo.Checked)
@@ -216,6 +260,27 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
+
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
+                    "JANCD", "削除", "商品名", "ITEMCD", "サイズ枝番","カラー枝番",
+                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "セット品区分",
+                      "セット品区分名", "プレゼント品区分","プレゼント品区分名", "サンプル品区分", "サンプル品区分名",
+                    "値引商品区分", "値引商品区分名",  "Webストア取扱区分", "Webストア取扱区分名", "実店舗取扱区分",
+                    "実店舗取扱区分名", "在庫管理対象区分",  "在庫管理対象区分名", "架空商品区分", "架空商品区分名",
+                   "直送品区分", "直送品区分名","予約品区分", "予約品区分名", "特記区分",
+                     "特記区分名", "送料区分", "送料区分名", "要加工品区分", "要加工品区分名",
+                    "要確認品区分", "要確認品区分名", "Web在庫連携区分", "Web在庫連携区分名", "販売停止品区分",
+                     "販売停止品区分名","廃番品区分", "廃番品区分名", "完売品区分", "完売品区分名",
+                    "自社在庫連携対象", "自社在庫連携対象名", "メーカー在庫連携対象",  "メーカー在庫連携対象名", "店舗在庫連携対象",
+                   "店舗在庫連携対象名", "Net発注不可区分","Net発注不可区分名", "EDI発注可能区分", "EDI発注可能区分名",
+                     "自動発注対象区分", "自動発注対象","カタログ掲載有無区分", "カタログ掲載有無", "小包梱包可能区分",
+                    "小包梱包可能",  "Sale対象外区分", "Sale対象外区分名","標準原価", "税抜定価",
+                     "税込定価", "発注税込価格", "発注税抜価格","掛率", };
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
             }
             else if (RB_priceinfo.Checked)
             {
@@ -224,7 +289,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "4")
@@ -232,6 +296,18 @@ namespace MasterTorikomi_SKU
                         bbl.ShowMessage("E137");
                         return false;
                     }
+                }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
+                    "JANCD", "削除", "商品名", "ITEMCD", "サイズ枝番",
+                    "カラー枝番", "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名",
+                      "税率区分", "税率区分名", "原価計算方法", "原価計算方法名", "Sale対象外区分",
+                                  "Sale対象外区分名", "標準原価", "税抜定価", "税込定価", "発注税込価格",
+                    "発注税抜価格",
+                                   "掛率"};
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
                 }
             }
             else if (RB_Catloginfo.Checked)
@@ -248,6 +324,16 @@ namespace MasterTorikomi_SKU
                         bbl.ShowMessage("E137");
                         return false;
                     }
+                }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
+                                     "JANCD", "削除", "商品名", "ITEMCD", "サイズ枝番",
+                                     "カラー枝番", "サイズ名", "カラー名", "年度", "シーズン",
+                                     "カタログ番号","カタログページ", "カタログ番号Long", "カタログページLong", "カタログ情報",
+                                     "指示書番号", "指示書発行日"};
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
                 }
             }
             else if (RB_tagInfo.Checked)
@@ -266,7 +352,15 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD", "JANCD", "削除", "商品名",  "ITEMCD", "サイズ枝番",
+                    "カラー枝番", "サイズ名", "カラー名","タグ1", "タグ2", "タグ3", "タグ4", "タグ5",     "タグ6", "タグ7", "タグ8", "タグ9", "タグ10"};
 
+
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
             }
             else if (RB_JanCD.Checked)
             {
@@ -284,7 +378,14 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD","JANCD", "削除", "商品名", "カナ名",
+                                 "略名", "英語名", "ITEMCD", "サイズ枝番","カラー枝番", "サイズ名", "カラー名"};
 
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
             }
             else if (RB_SizeURL.Checked)
             {
@@ -302,7 +403,147 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
+                string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
+                                    "JANCD", "削除", "商品名",  "ITEMCD", "サイズ枝番","カラー枝番",  "サイズ名", "カラー名","APIKey","サイト商品CD"
+                                    };
 
+                if (!ColumnCheck(colname, dt))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool Check(DataTable dt)
+        {
+            if (dt.Columns.Contains("EItem") && dt.Columns.Contains("Error"))
+            {
+                dt.Columns.Remove("EItem");
+                dt.Columns.Remove("Error");
+            }
+            string kibun = dt.Rows[0]["データ区分"].ToString();
+            if (RB_all.Checked)
+            {
+                if (dt.Columns.Count != 126)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "1")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_BaseInfo.Checked)
+            {
+                if (dt.Columns.Count != 48)
+                {
+                    return false;
+                }
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "2")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_attributeinfo.Checked)
+            {
+
+                if (dt.Columns.Count != 75)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "3")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_priceinfo.Checked)
+            {
+                if (dt.Columns.Count != 27)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "4")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_Catloginfo.Checked)
+            {
+                if (dt.Columns.Count != 22)
+                {
+                    return false;
+                }
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "5")
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (RB_tagInfo.Checked)
+            {
+                if (dt.Columns.Count != 23)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "6")
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            else if (RB_JanCD.Checked)
+            {
+                if (dt.Columns.Count != 16)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "7")
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            else if (RB_SizeURL.Checked)
+            {
+                if (dt.Columns.Count != 15)
+                {
+                    return false;
+                }
+
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                {
+                    if (kibun != "8")
+                    {
+                        return false;
+                    }
+                }
             }
             return true;
         }
@@ -1401,19 +1642,21 @@ namespace MasterTorikomi_SKU
                     return;
                 }
 
-              //  type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
                 dt = ExcelToDatatable(filePath);
-                //if (dt != null)
-                //{
-                //    dtmain = dt.Copy();
-                //   -- dtmain = ChangeColName(dtmain, type);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No row data was found or import excel is opening in different location");
-
-                //}
+                if (dt != null)
+                {
+                    if (Check(dt))
+                    {
+                        dtmain = dt.Copy();
+                        dtmain = ChangeColName(dtmain, type);
+                    }
+                }
             }
+        }
+        protected override void EndSec()
+        {
+            this.Close();
         }
     }
 }
