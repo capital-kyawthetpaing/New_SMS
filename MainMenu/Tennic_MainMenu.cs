@@ -446,16 +446,22 @@ namespace MainMenu
         }
         private void Tennic_MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            BL.Base_BL bbl = new Base_BL();
-            if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+            if (CheckOpenForm())
             {
-                ForceToCLose();
-                e.Cancel = false;
+                BL.Base_BL bbl = new Base_BL();
+                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                {
+                    ForceToCLose();
+                    e.Cancel = false;
+                }
+                else
+                    e.Cancel = true;
             }
-            else
-                e.Cancel = true;
         }
-
+        private bool CheckOpenForm()
+        {
+            return (Application.OpenForms["Tennic_MainMenu"].Visible == true);
+        }
         private void Tennic_MainMenu_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData==Keys.F1)

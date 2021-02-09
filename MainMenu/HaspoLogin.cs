@@ -109,7 +109,8 @@ namespace MainMenu
                     {
                         if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
                         {
-                            Haspo_MainMenu menuForm = new Haspo_MainMenu(GetInfo().StaffCD, GetInfo());
+                            var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
+                            Haspo_MainMenu menuForm = new Haspo_MainMenu(GetInfo().StaffCD, mseinfo);
                             this.Hide();
                             menuForm.ShowDialog();
                             this.Close();

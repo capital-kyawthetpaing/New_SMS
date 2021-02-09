@@ -17,8 +17,7 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mke.ChangeDate } },
-                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mke.DeleteFlg } },
+                { "@CarrierCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mke.CarrierCD } },
             };
             return SelectData(dic, "M_CarrierDeliveryTime_Bind");
         }

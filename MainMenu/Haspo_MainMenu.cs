@@ -147,6 +147,7 @@ namespace MainMenu
             // this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
             //  this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             ButtonState();
+            ParentID = "";
         }
         protected void ButtonState()
         {
@@ -328,33 +329,43 @@ namespace MainMenu
         //        }
         //    }
         //}
+
         private void OpenForm(object sender)
         {
+            string filePath = ""; string cmdLine = ""; string exe_name = "";
             try
             {
+                //if ((sender as CKM_Button).Text == "権限設定")
+                //{
+                //    Login_BL loginbl = new Login_BL();
+                //    var df = loginbl.CheckDefault("1", Staff_CD);
+                //    if (df.Rows[0]["AdminKBN"].ToString() == "0")
+                //    {
+                //        MessageBox.Show("You have no permission to this access.");
+                //        return;
+                //    }
+                //}
+                //var programID = (sender as CKM_Button).Text;
+                // exe_name = menu.Select("ProgramID = '"+programID+"'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 var programID = (sender as CKM_Button).Text;
-                var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+                //var Condition = "ProgramID = '" + programID + "'" + "";
+                var Condition = "BusinessSEQ = '" + ParentID + "'" + " And " + "ProgramSEQ = '" + (sender as CKM_Button).Name.Split('j').Last() + "'";
+                exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-                string filePath = "";
-                //System.Diagnostics.Debug 
+
+
                 if (Debugger.IsAttached || Login_BL.Islocalized)
                 {
                     System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                     filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                    //   filePath = @"C:\SMS\AppData";
                 }
                 else
                 {
-                    filePath = @"C:\\SMS\\AppData";
+                    filePath = @"C:\SMS\AppData";
                 }
-                string cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-                //Process[] localByName = Process.GetProcessesByName(exe_name);
-                //if (localByName.Count() > 0)
-                //{
-                //    IntPtr handle = localByName[0].MainWindowHandle;
-                //    ShowWindow(handle, SW_SHOWMAXIMIZED);
-                //    return;
-                //}
+                cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
 
                 Process[] localByName = Process.GetProcessesByName(exe_name);
                 if (localByName.Count() > 0)
@@ -368,11 +379,51 @@ namespace MainMenu
 
                     return;
                 }
+                System.Diagnostics.Process.Start(filePath + @"\\" + exe_name + ".exe", cmdLine + "");
+                //  MessageBox.Show(  Environment.NewLine + cmdLine + Environment.NewLine + filePath + Environment.NewLine + exe_name+ "Upper" + Base_DL.iniEntity.DatabaseServer);
+                // (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+                //  MessageBox.Show(Environment.NewLine + cmdLine + Environment.NewLine + filePath + Environment.NewLine + exe_name + "Lower");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The program cannot locate to the specified file!!!" + ex.ToString() + Environment.NewLine + cmdLine + Environment.NewLine + filePath + Environment.NewLine + exe_name);
+            }
+        }
+        public string ParentID { get; set; }
+        private void OpenForm_(object sender)
+        {
+            try
+            {
+                var programID = (sender as CKM_Button).Text;
+                var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+                 string filePath = "";
+                if (Debugger.IsAttached || Login_BL.Islocalized)
+                {
+                    System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                    filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                }
+                else
+                {
+                    filePath = @"C:\\SMS\\AppData";
+                }
+                string cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
+                 Process[] localByName = Process.GetProcessesByName(exe_name);
+                if (localByName.Count() > 0)
+                {
+
+                    IntPtr handle = localByName[0].MainWindowHandle;
+                    ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    SetForegroundWindow(handle);
+
+                    return;
+                }
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("The program cannot locate to the specified file!!!");
+              //  MessageBox.Show("The program cannot locate to the specified file!!!" + ex.ToString() + Environment.NewLine + cmdLine + Environment.NewLine + filePath + Environment.NewLine + exe_name);
+
             }
         }
         public IEnumerable<Control> GetAllControls(Control root)
@@ -415,14 +466,22 @@ namespace MainMenu
         }
         private void Haspo_MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            BL.Base_BL bbl = new Base_BL();
-            if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+            if (CheckOpenForm())
             {
-                ForceToClose();
-                e.Cancel = false;
+                BL.Base_BL bbl = new Base_BL();
+                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                {
+                    ForceToClose();
+                    e.Cancel = false;
+                }
+                else
+                    e.Cancel = true;
             }
-            else
-                e.Cancel = true;
+
+        }
+        private bool CheckOpenForm()
+        {
+            return (Application.OpenForms["Haspo_MainMenu"].Visible == true);
         }
         private void panelLeft_Click(object sender, EventArgs e)
         {
@@ -441,10 +500,17 @@ namespace MainMenu
                     // ((CKM_Button)ctrl).Name = "btnPro" + (c.Count() - (j));
                 }
             }
+            //CKM_Button btn = sender as CKM_Button;
+            //btnText = btn.Text;
+            //if (!string.IsNullOrWhiteSpace(btnText))
+            //{
+            //    RightButton_Text(btnText, btn.TabIndex);
+            //}
             CKM_Button btn = sender as CKM_Button;
             btnText = btn.Text;
             if (!string.IsNullOrWhiteSpace(btnText))
             {
+                ParentID = btn.Name.Split('m').Last();
                 RightButton_Text(btnText, btn.TabIndex);
             }
         }

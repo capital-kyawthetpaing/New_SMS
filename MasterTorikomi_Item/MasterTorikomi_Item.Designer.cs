@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_Item));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -48,13 +49,15 @@
             this.inputPath = new CKM_Controls.CKM_TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.gvItem = new CKM_Controls.CKM_GridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.ItemCDShow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemMakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvItem)).BeginInit();
             this.SuspendLayout();
@@ -165,6 +168,7 @@
             this.RB_tagInfo.TabStop = true;
             this.RB_tagInfo.Text = "タグ情報";
             this.RB_tagInfo.UseVisualStyleBackColor = true;
+            this.RB_tagInfo.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // RB_SizeURL
             // 
@@ -177,6 +181,7 @@
             this.RB_SizeURL.TabStop = true;
             this.RB_SizeURL.Text = "サイトURL";
             this.RB_SizeURL.UseVisualStyleBackColor = true;
+            this.RB_SizeURL.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // RB_Catloginfo
             // 
@@ -189,6 +194,7 @@
             this.RB_Catloginfo.TabStop = true;
             this.RB_Catloginfo.Text = "カタログ情報";
             this.RB_Catloginfo.UseVisualStyleBackColor = true;
+            this.RB_Catloginfo.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // RB_priceinfo
             // 
@@ -201,6 +207,7 @@
             this.RB_priceinfo.TabStop = true;
             this.RB_priceinfo.Text = "価格情報";
             this.RB_priceinfo.UseVisualStyleBackColor = true;
+            this.RB_priceinfo.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // RB_attributeinfo
             // 
@@ -213,6 +220,7 @@
             this.RB_attributeinfo.TabStop = true;
             this.RB_attributeinfo.Text = "属性情報";
             this.RB_attributeinfo.UseVisualStyleBackColor = true;
+            this.RB_attributeinfo.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // RB_all
             // 
@@ -225,6 +233,7 @@
             this.RB_all.TabStop = true;
             this.RB_all.Text = "全て";
             this.RB_all.UseVisualStyleBackColor = true;
+            this.RB_all.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // RB_BaseInfo
             // 
@@ -237,6 +246,7 @@
             this.RB_BaseInfo.TabStop = true;
             this.RB_BaseInfo.Text = "基本情報";
             this.RB_BaseInfo.UseVisualStyleBackColor = true;
+            this.RB_BaseInfo.CheckedChanged += new System.EventHandler(this.RB_all_CheckedChanged);
             // 
             // inputPath
             // 
@@ -329,16 +339,7 @@
             this.gvItem.TabIndex = 3;
             this.gvItem.UseRowNo = true;
             this.gvItem.UseSetting = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "▼";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.gvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvItem_CellContentClick);
             // 
             // ItemCDShow
             // 
@@ -389,11 +390,36 @@
             this.Error.ReadOnly = true;
             this.Error.Width = 440;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 23);
+            this.button1.TabIndex = 112;
+            this.button1.Text = "▼";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(780, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 16);
+            this.label2.TabIndex = 113;
+            // 
             // MasterTorikomi_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1884, 931);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gvItem);
             this.Controls.Add(this.ckM_Label3);
@@ -402,6 +428,7 @@
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.panel3);
             this.Location = new System.Drawing.Point(0, 0);
+            this.ModeVisible = true;
             this.Name = "MasterTorikomi_Item";
             this.PanelHeaderHeight = 60;
             this.Text = "MasterTorikomi_Item";
@@ -413,6 +440,7 @@
             this.Controls.SetChildIndex(this.ckM_Label3, 0);
             this.Controls.SetChildIndex(this.gvItem, 0);
             this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvItem)).EndInit();
@@ -445,6 +473,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemMakerCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn EItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Error;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

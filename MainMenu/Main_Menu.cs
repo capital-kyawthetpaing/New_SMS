@@ -611,7 +611,6 @@ namespace MainMenu
         }
         public void ForceToClose()
         {
-
             foreach (DataRow dr in menu.Rows)
             {
                 var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());

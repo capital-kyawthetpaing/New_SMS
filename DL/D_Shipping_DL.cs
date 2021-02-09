@@ -58,6 +58,9 @@ namespace DL
             AddParam(command, "@CarrierCD", SqlDbType.VarChar, dse.CarrierCD);
             AddParam(command, "@StaffCD", SqlDbType.VarChar, dse.StaffCD);
             AddParam(command, "@UnitsCount", SqlDbType.TinyInt, dse.UnitsCount);
+            AddParam(command, "@BoxSize", SqlDbType.VarChar, dse.BoxSize);
+            AddParam(command, "@DecidedDeliveryDate", SqlDbType.VarChar, dse.DecidedDeliveryDate);            
+            AddParam(command, "@DecidedDeliveryTime", SqlDbType.VarChar, dse.DecidedDeliveryTime);
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
             AddParam(command, "@Operator", SqlDbType.VarChar, dse.InsertOperator);
             AddParam(command, "@PC", SqlDbType.VarChar, dse.PC);

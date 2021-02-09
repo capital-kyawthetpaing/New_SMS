@@ -45,7 +45,7 @@
             this.lblDisp = new System.Windows.Forms.Label();
             this.btnChangeIkkatuHacchuuMode = new CKM_Controls.CKM_Button();
             this.PanelFooter = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.i = new System.Windows.Forms.TableLayoutPanel();
             this.BtnF3 = new CKM_Controls.CKM_Button();
             this.BtnF4 = new CKM_Controls.CKM_Button();
             this.BtnF5 = new CKM_Controls.CKM_Button();
@@ -69,7 +69,7 @@
             this.PanelLeft.SuspendLayout();
             this.PanelRight.SuspendLayout();
             this.PanelFooter.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.i.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -259,7 +259,7 @@
             // PanelFooter
             // 
             this.PanelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.PanelFooter.Controls.Add(this.tableLayoutPanel1);
+            this.PanelFooter.Controls.Add(this.i);
             this.PanelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelFooter.Location = new System.Drawing.Point(0, 717);
             this.PanelFooter.Name = "PanelFooter";
@@ -268,40 +268,40 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 12;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.Controls.Add(this.BtnF3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF6, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF7, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF8, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF9, 8, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF10, 9, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF11, 10, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnF12, 11, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 32);
-            this.tableLayoutPanel1.TabIndex = 99;
+            this.i.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.i.ColumnCount = 12;
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.i.Controls.Add(this.BtnF3, 2, 0);
+            this.i.Controls.Add(this.BtnF4, 3, 0);
+            this.i.Controls.Add(this.BtnF5, 4, 0);
+            this.i.Controls.Add(this.BtnF6, 5, 0);
+            this.i.Controls.Add(this.BtnF7, 6, 0);
+            this.i.Controls.Add(this.BtnF8, 7, 0);
+            this.i.Controls.Add(this.BtnF9, 8, 0);
+            this.i.Controls.Add(this.BtnF10, 9, 0);
+            this.i.Controls.Add(this.BtnF11, 10, 0);
+            this.i.Controls.Add(this.BtnF1, 0, 0);
+            this.i.Controls.Add(this.BtnF2, 1, 0);
+            this.i.Controls.Add(this.BtnF12, 11, 0);
+            this.i.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.i.Location = new System.Drawing.Point(0, 0);
+            this.i.Margin = new System.Windows.Forms.Padding(0);
+            this.i.Name = "tableLayoutPanel1";
+            this.i.RowCount = 1;
+            this.i.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.i.Size = new System.Drawing.Size(1370, 32);
+            this.i.TabIndex = 99;
             // 
             // BtnF3
             // 
@@ -666,7 +666,7 @@
             this.PanelRight.ResumeLayout(false);
             this.PanelRight.PerformLayout();
             this.PanelFooter.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.i.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,7 +687,7 @@
         private System.Windows.Forms.Panel PanelSubFooter;
         protected System.Windows.Forms.Panel PanelSearch;
         private System.Windows.Forms.Panel PanelFooter;
-        protected System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        protected System.Windows.Forms.TableLayoutPanel i;
         private CKM_Controls.CKM_Button BtnF3;
         private CKM_Controls.CKM_Button BtnF4;
         private CKM_Controls.CKM_Button BtnF5;
