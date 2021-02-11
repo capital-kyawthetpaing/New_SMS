@@ -344,6 +344,7 @@
     <Content Include="StoreProcedure\MasterTouroku_ShiireKakeritsu.sql" />
     <Content Include="StoreProcedure\MoneyPayee_Select.sql" />
     <Content Include="StoreProcedure\M_API_InsertRefreshToken_Yahoo.sql" />
+    <Content Include="StoreProcedure\M_API_Select.sql" />
     <Content Include="StoreProcedure\M_Authorizations_AccessCheck.sql" />
     <Content Include="StoreProcedure\M_BankShiten_Delete.sql" />
     <Content Include="StoreProcedure\M_BankShiten_Insert_Update.sql" />

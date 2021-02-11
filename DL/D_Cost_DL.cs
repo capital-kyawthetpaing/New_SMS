@@ -37,10 +37,10 @@ namespace DL
             {
                 { "@RecordDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.RecordedDateFrom} },
                 { "@RecordDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.RecordedDateTo} },
-                { "@ExpanseEntryDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ExpanseEntryDateFrom} },
-                { "@ExpanseEntryDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ExpanseEntryDateTo} },
-                { "@InsertDateTimeFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.Expense_TimeFrom} },
-                { "@InsertDateTimeTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ExPense_TimeTo} },
+                { "@ExpanseEntryDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.PaymentDateFrom} },
+                { "@ExpanseEntryDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.PaymentDateTo} },
+                { "@InsertDateTimeFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ExpanseEntryDateFrom} },
+                { "@InsertDateTimeTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ExpanseEntryDateTo} },
                 { "@printTarget", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.PrintTarget} },
                 { "@StoreName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.Store} },
 
