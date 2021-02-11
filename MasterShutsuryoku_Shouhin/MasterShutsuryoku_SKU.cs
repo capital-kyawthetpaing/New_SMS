@@ -687,7 +687,6 @@ namespace MasterShutsuryoku_Shouhin
                     }
                 }
             }
-
         }
 
         private void TB_UpdateDateT_KeyDown(object sender, KeyEventArgs e)
@@ -703,7 +702,6 @@ namespace MasterShutsuryoku_Shouhin
                     }
                 }
             }
-
         }
 
         private void TB_ApprovalDateT_KeyDown(object sender, KeyEventArgs e)

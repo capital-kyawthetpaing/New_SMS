@@ -123,7 +123,8 @@ namespace MasterTorikomi_SKU
                                 // type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
                                 //dtmain = dt.Copy();  
                                // dtmain = ChangeColName(dtmain, type);
-                                mE = GetEntity(dtmain);
+                              // dt=ChangeColName()
+                                mE = GetEntity(dt);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
                                     bbl.ShowMessage("I101");
@@ -1645,14 +1646,14 @@ namespace MasterTorikomi_SKU
 
                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
                 dt = ExcelToDatatable(filePath);
-                if (dt != null)
-                {
-                    if (Check(dt))
-                    {
-                        dtmain = dt.Copy();
-                        dtmain = ChangeColName(dtmain, type);
-                    }
-                }
+                //if (dt != null)
+                //{
+                //    if (Check(dt))
+                //    {
+                //        dtmain = dt.Copy();
+                //        dtmain = ChangeColName(dtmain, type);
+                //    }
+                //}
             }
         }
         protected override void EndSec()
