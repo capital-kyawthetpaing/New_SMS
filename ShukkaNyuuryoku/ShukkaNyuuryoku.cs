@@ -21,6 +21,7 @@ namespace ShukkaNyuuryoku
     {
         private const string ProID = "ShukkaNyuuryoku";
         private const string ProNm = "出荷入力";
+        private const string YamatoOkurijou = "YamatoOkurijou.exe";
         private const short mc_L_END = 3; // ロック用
 
         private enum EIndex : int
@@ -75,11 +76,13 @@ namespace ShukkaNyuuryoku
         private string mJANCD;
         private string mAdminNO;
         private bool mFlgCancel;
+        private bool mFlgCombo;
         private string mSCatKBN2;
 
         private string mOldShippingNO = "";         //排他処理のため使用
         private string mOldInstructionNO = "";      //排他処理のため使用
         private string mOldShippingDate = "";
+        private string mOldCarrierCd = "";
 
         public ShukkaNyuuryoku()
         {
@@ -109,8 +112,8 @@ namespace ShukkaNyuuryoku
                 snbl = new ShukkaNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
                 CboCarrierName.Bind(ymd);
-                CboCarrierBoxSize.Bind(ymd,"");
-                CboCarrierDeliveryTime.Bind(ymd,"");
+                CboCarrierBoxSize.Bind(ymd, "");
+                CboCarrierDeliveryTime.Bind(ymd, "");
 
                 //検索用のパラメータ設定
                 string stores = GetAllAvailableStores();
@@ -160,6 +163,7 @@ namespace ShukkaNyuuryoku
             M_Carrier_Entity me = new M_Carrier_Entity
             {
                 ChangeDate = bbl.GetDate(),
+                DeleteFlg = "0",
             };
             Carrier_BL cbl = new Carrier_BL();
             DataTable sdt = cbl.M_Carrier_Bind(me);
@@ -171,45 +175,31 @@ namespace ShukkaNyuuryoku
             {
                 CboCarrierName.SelectedValue = "";
             }
-            mSCatKBN2 = "";
+            mOldCarrierCd = CboCarrierName.SelectedValue.ToString();
+
+            me.CarrierCD = CboCarrierName.SelectedValue.ToString();
+            DataTable mdt = snbl.M_Carrier_SelectForShukka(me);
+            if (mdt.Rows.Count > 0)
+            {
+                mSCatKBN2 = mdt.Rows[0]["SCatKBN2"].ToString();
+            }
+
+
+                // 箱サイズ
+                CboCarrierBoxSize.Bind(ymd, CboCarrierName.SelectedValue.ToString());
+            if (CboCarrierBoxSize.Items.Count > 1)
+            {
+                CboCarrierBoxSize.SelectedIndex = 1;
+            }
+            //希望時間帯
+            CboCarrierDeliveryTime.Bind(ymd, CboCarrierName.SelectedValue.ToString());
+            if (CboCarrierDeliveryTime.Items.Count > 1)
+            {
+                CboCarrierDeliveryTime.SelectedIndex = 1;
+            }
 
             //個口
             headControls[(int)EIndex.UnitsCount].Text = "1";
-
-            if (CboCarrierName.SelectedIndex > 0)
-            {
-                //箱サイズ
-                M_CarrierBoxSize_Entity mbe = new M_CarrierBoxSize_Entity
-                {
-                    CarrierCD = CboCarrierName.SelectedValue.ToString(),
-                };
-                CarrierBoxSize_BL cbbl = new CarrierBoxSize_BL();
-                DataTable sbdt = cbbl.M_CarrierBoxSize_Bind(mbe);
-                if (sbdt.Rows.Count > 0)
-                {
-                    CboCarrierBoxSize.SelectedValue = sbdt.Rows[0]["BoxSize"];
-                }
-                else
-                {
-                    CboCarrierBoxSize.SelectedValue = "";
-                }
-
-                //希望時間帯
-                M_CarrierDeliveryTime_Entity mte = new M_CarrierDeliveryTime_Entity
-                {
-                    CarrierCD = CboCarrierName.SelectedValue.ToString(),
-                };
-                CarrierDeliveryTime_BL cbtl = new CarrierDeliveryTime_BL();
-                DataTable stdt = cbtl.M_CarrierDeliveryTime_Bind(mte);
-                if (stdt.Rows.Count > 0)
-                {
-                    CboCarrierDeliveryTime.SelectedValue = stdt.Rows[0]["DeliveryTime"];
-                }
-                else
-                {
-                    CboCarrierDeliveryTime.SelectedValue = "";
-                }
-            }
             
         }
 
@@ -941,10 +931,23 @@ namespace ShukkaNyuuryoku
                         return false;
                     }
 
-                    mSCatKBN2 = mdt.Rows[0]["NormalFLG"].ToString();
-                    CboCarrierBoxSize.Bind(changeDate, me.CarrierCD);
-                    CboCarrierBoxSize.SelectedIndex = 1;
-                    CboCarrierDeliveryTime.Bind(changeDate, me.CarrierCD);
+                    mSCatKBN2 = mdt.Rows[0]["SCatKBN2"].ToString();
+                    if (mOldCarrierCd != CboCarrierName.SelectedValue.ToString())
+                    {
+                        mFlgCombo = true;
+                        CboCarrierBoxSize.Bind(changeDate, me.CarrierCD);
+                        if (CboCarrierBoxSize.Items.Count > 1)
+                        {
+                            CboCarrierBoxSize.SelectedIndex = 1;
+                        }
+                        CboCarrierDeliveryTime.Bind(changeDate, me.CarrierCD);
+                        if (CboCarrierDeliveryTime.Items.Count > 1)
+                        {
+                            CboCarrierDeliveryTime.SelectedIndex = 1;
+                        }
+                        mFlgCombo = false;
+                    }
+                    mOldCarrierCd = CboCarrierName.SelectedValue.ToString();
 
                     break;
 
@@ -1232,7 +1235,7 @@ namespace ShukkaNyuuryoku
         {
             for (int i = 0; i < headControls.Length; i++)
             {
-                if (CheckHead(i) == false)
+                if (CheckHead(i,false) == false)
                 {
                     headControls[i].Focus();
                     return false;
@@ -1376,6 +1379,15 @@ namespace ShukkaNyuuryoku
             else
                 bbl.ShowMessage("I101");
 
+            //ヤマト送り状プログラム起動
+            if (OperationMode == EOperationMode.INSERT)
+            {
+                if (mSCatKBN2 != "")
+                {
+                    ExecYamatoOkurijou(dse.ShippingNO);
+                }
+            }
+
             //更新後画面クリア
             ChangeOperationMode(OperationMode);
         }
@@ -1492,9 +1504,12 @@ namespace ShukkaNyuuryoku
             mAdminNO = "";
             mJANCD = "";
             mOldShippingDate = "";
+            mOldCarrierCd = "";
             mSoukoCD = "";
             mInstructionKBN = "";
             mFlgCancel = false;
+            mFlgCombo = false;
+            mSCatKBN2 = "";
 
             GvDetail.DataSource = null;
             GvDetail.RowCount = 0;
@@ -1805,6 +1820,37 @@ namespace ShukkaNyuuryoku
 
         }
 
+        /// <summary>
+        /// ヤマト送り状プログラム起動
+        /// </summary>
+        private void ExecYamatoOkurijou(string shippingNo)
+        {
+            try
+            {
+                //EXEが存在しない時ｴﾗｰ
+                // 実行モジュールと同一フォルダのファイルを取得
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + YamatoOkurijou;
+                if (System.IO.File.Exists(filePath))
+                {
+                    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + shippingNo;
+                    System.Diagnostics.Process.Start(filePath, cmdLine);
+                }
+
+                else
+                {
+                    //ファイルなし
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
         private void HeadControl_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -2062,10 +2108,16 @@ namespace ShukkaNyuuryoku
         {
             try
             {
+                // 運送会社変更時に、カーソルが日付に移動してしまうため
+                if (mFlgCombo)
+                {
+                    return;
+                }
+                    
                 ComboBox ctrl = (ComboBox)sender;
                 if (ctrl.SelectedIndex > 0)
                 {
-                    int index = Array.IndexOf(detailControls, sender);
+                    int index = Array.IndexOf(headControls, sender);
                     bool ret = CheckHead(index);
                     if (ret)
                     {
