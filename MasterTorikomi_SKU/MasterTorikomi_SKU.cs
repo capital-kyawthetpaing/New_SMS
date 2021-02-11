@@ -51,7 +51,7 @@ namespace MasterTorikomi_SKU
             InProgramID = "MasterTorikomi_SKU";
             StartProgram();
             RB_all.Checked = true;
-            dtSKU = sbl.M_SKU_SelectAll_NOPara();
+           
             dtBrand = mtbl.M_Brand_SelectAll_NoPara();
             dtMultiP = mtbl.M_Multipurpose_SelectAll();
             dtVendor = mtbl.M_Vendor_SelectAll();
@@ -551,7 +551,8 @@ namespace MasterTorikomi_SKU
         {
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
-            if(RB_SizeURL.Checked)
+            dtSKU = sbl.M_SKU_SelectAll_NOPara();
+            if (RB_SizeURL.Checked)
             {
                 dtAPI = apbl.M_API_Select();
             }
