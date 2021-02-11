@@ -129,6 +129,7 @@ namespace KeihiNyuuryoku
             ScVendor.TxtCode.Require(true);
             txtKeijouDate.Require(true);
             ScStaff.TxtCode.Require(true);
+            txtShihraiYoteiDate.Require(true);
         }
          
         public override void FunctionProcess(int index)
@@ -423,7 +424,7 @@ namespace KeihiNyuuryoku
             //DetailCheck on F12
             else if (index == 12)
             {
-                 if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
+                 if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode,txtShihraiYoteiDate }))
                      return false;
 
                  if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
