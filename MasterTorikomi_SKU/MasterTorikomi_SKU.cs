@@ -1659,5 +1659,10 @@ namespace MasterTorikomi_SKU
         {
             this.Close();
         }
+
+        private void MasterTorikomi_SKU_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
     }
 }
