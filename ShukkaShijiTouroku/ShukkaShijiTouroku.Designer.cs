@@ -548,7 +548,7 @@
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
@@ -5999,7 +5999,7 @@
             this.ckM_TextBox18.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox18.DecimalPlace = 0;
             this.ckM_TextBox18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ckM_TextBox18.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox18.IntegerPart = 0;
             this.ckM_TextBox18.IsCorrectDate = true;
             this.ckM_TextBox18.isEnterKeyDown = false;
@@ -6248,7 +6248,7 @@
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox5.DecimalPlace = 0;
             this.ckM_TextBox5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox5.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_TextBox5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
