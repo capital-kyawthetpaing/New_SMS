@@ -69,6 +69,7 @@ namespace MasterTorikomi_Item
         {
             //if (bbl.ShowMessage("Q001") == DialogResult.Yes)
             //{
+            gvItem.DataSource = null;
             string filePath = string.Empty;
             string fileExt = string.Empty;
             if (!System.IO.Directory.Exists("C:\\SMS\\MasterShutsuryoku_ITEM\\"))
@@ -99,13 +100,11 @@ namespace MasterTorikomi_Item
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
-                            //var dtres = dt.Select("ItemCDShow <> ''");
-                            if (dt != null)
-                            {
-                                gvItem.DataSource = null;
-                                gvItem.DataSource = dt;
-                                //Cursor = Cursors.WaitCursor;
-                            }
+                            //if (dt != null)
+                            //{
+                            //    gvItem.DataSource = null;
+                            //    gvItem.DataSource = dt;
+                            //}
 
                         }
                         else
@@ -330,6 +329,38 @@ namespace MasterTorikomi_Item
             await Task.WhenAll();
         }
         string  maxCount = "";
+        private bool ControlInvokeRequired(Control c,Action a)
+        {
+            if (c.InvokeRequired)
+            {
+                c.Invoke(new MethodInvoker(  delegate { a(); }));
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+        private void UpdateControl(Control c, string s)
+        {
+            if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+            {
+                c.Text = s;
+                return;
+            }
+            c.Text = s;
+            c.Update();
+        }
+        private async Task UpdateText(Control c,string t)
+        {
+            await Task.Run(() =>
+            {
+                if (c.InvokeRequired)
+                {
+                    UpdateControl(c,t);
+                }
+            });
+        }
         private async  void ExcelErrorCheck(DataTable dt)
         {
           //  tick = 0;
@@ -355,6 +386,8 @@ namespace MasterTorikomi_Item
 
                    try
                    { //tick = i;
+                  await  UpdateText(label2, i.ToString());
+                    //Task.Delay(100).Wait();
                         if (cc == 100)
                        {
                       // Run1(i.ToString());
@@ -1408,6 +1441,7 @@ namespace MasterTorikomi_Item
                    catch { }
                    int g = 0;
                }
+            
         //   });
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -1429,11 +1463,13 @@ namespace MasterTorikomi_Item
                     }
                 }
             }
+            if (dt != null)
+            {
+                gvItem.DataSource = dt;
+            }
             try
             {
-               // timer1.Stop();
                 label2.Visible = false;
-                
             }
             catch { }
         }
