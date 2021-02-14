@@ -829,7 +829,7 @@ BEGIN
                    ,2 AS DeliveryKBN	--(1:îÃîÑÅA2:ëqå…à⁄ìÆ)
                    ,@NewMoveNO	AS Number
                    ,NULL	--[DeliveryName]
-                   ,@FromSoukoCD	--[DeliverySoukoCD]
+                   ,@ToSoukoCD	--[DeliverySoukoCD]
                    ,NULL	--[DeliveryZip1CD]
                    ,NULL	--[DeliveryZip2CD]
                    ,NULL	--[DeliveryAddress1]
@@ -845,7 +845,7 @@ BEGIN
                    ,NULL	--[CommentOutStore]
                    ,NULL	--[InvoiceNO]
                    ,NULL	--[DeliveryPlanDate]
-                   ,0	--[HikiateFLG]
+                   ,1	--[HikiateFLG]
                    ,0	--[IncludeFLG]
                    ,0	--[OntheDayFLG]
                    ,0	--[ExpressFLG]
@@ -1823,11 +1823,11 @@ BEGIN
             BEGIN 
                 --ÅyD_DeliveryPlanÅzîzëóó\íËèÓïÒ  Tableì]ëóédólJá@
                 UPDATE [D_DeliveryPlan] SET
-                       [DeliveryKBN] = 2    --(1:îÃîÑÅA2:ëqå…à⁄ìÆ)
-                      ,[Number]      = @MoveNO
-                      ,[DeliverySoukoCD]    =  @ToSoukoCD
-                      ,[UpdateOperator]     =  @Operator  
-                      ,[UpdateDateTime]     =  @SYSDATETIME
+                       [DeliveryKBN]     = 2    --(1:îÃîÑÅA2:ëqå…à⁄ìÆ)
+                      ,[Number]          = @MoveNO
+                      ,[DeliverySoukoCD] = @ToSoukoCD
+                      ,[UpdateOperator]  = @Operator  
+                      ,[UpdateDateTime]  = @SYSDATETIME
                       
                  FROM @Table AS tbl
                  WHERE @MoveNO = D_DeliveryPlan.Number
@@ -1835,8 +1835,8 @@ BEGIN
 	            
                 --ÅyD_DeliveryPlanDetailsÅzîzëóó\íËèÓïÒÅ@Tableì]ëóédólKá@
                 UPDATE [D_DeliveryPlanDetails] SET
-                       [UpdateOperator]     =  @Operator  
-                      ,[UpdateDateTime]     =  @SYSDATETIME
+                       [UpdateOperator]  =  @Operator  
+                      ,[UpdateDateTime]  =  @SYSDATETIME
                       
                  FROM @Table AS tbl
                  WHERE @MoveNO = D_DeliveryPlanDetails.Number
@@ -1846,13 +1846,13 @@ BEGIN
                 --ÅyD_ArrivalPlanÅz     Update   Tableì]ëóédólÇk
                 UPDATE [D_ArrivalPlan] SET
                    [ArrivalPlanDate] = DATEADD(DAY,(SELECT top 1 convert(int,A.StoreIdouCount) 
-                                                      FROM M_Souko A 
-                                                      WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
-                                                      ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) --AS ArrivalPlanDate
+                                                    FROM M_Souko A 
+                                                    WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
+                                                    ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) --AS ArrivalPlanDate
                   ,[CalcuArrivalPlanDate] = DATEADD(DAY,(SELECT top 1 convert(int,A.StoreIdouCount) 
-                                                      FROM M_Souko A 
-                                                      WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
-                                                      ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) --AS ArrivalPlanDate
+                                                         FROM M_Souko A 
+                                                         WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
+                                                         ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) --AS ArrivalPlanDate
                   ,[SoukoCD]        = @ToSoukoCD
                   ,[SKUCD]          = tbl.SKUCD
                   ,[AdminNO]        = tbl.AdminNO
@@ -1947,15 +1947,15 @@ BEGIN
                                ,tbl.MoveRows AS NumberRows
                                ,tbl.MoveRows AS NumberSEQ
                                ,DATEADD(DAY,(SELECT top 1 convert(int,A.StoreIdouCount) 
-                                                      FROM M_Souko A 
-                                                      WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
-                                                      ORDER BY A.ChangeDate desc),convert(date,@MoveDate))  AS ArrivalPlanDate
+                                             FROM M_Souko A 
+                                             WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
+                                             ORDER BY A.ChangeDate desc),convert(date,@MoveDate))  AS ArrivalPlanDate
                                ,0 AS ArrivalPlanMonth
                                ,NULL AS ArrivalPlanCD
                                ,DATEADD(DAY,(SELECT top 1 convert(int,A.StoreIdouCount) 
-                                                      FROM M_Souko A 
-                                                      WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
-                                                      ORDER BY A.ChangeDate desc),convert(date,@MoveDate))  AS CalcuArrivalPlanDate
+                                             FROM M_Souko A 
+                                             WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
+                                             ORDER BY A.ChangeDate desc),convert(date,@MoveDate))  AS CalcuArrivalPlanDate
                                ,@SYSDATETIME    --ArrivalPlanUpdateDateTime
                                ,@StaffCD
                                ,1 AS LastestFLG
@@ -2356,12 +2356,12 @@ BEGIN
                  FROM D_Stock AS DS
                   INNER JOIN D_Warehousing AS DW
                   ON DW.WarehousingKBN = (CASE @MovePurposeType WHEN @KBN_TENPONAI THEN 11 
-                                          WHEN @KBN_SYOCD THEN 31		--15
-                                          WHEN @KBN_CHOSEI_ADD THEN 19
-                                          WHEN @KBN_CHOSEI_DEL THEN 20
-                                          WHEN @KBN_LOCATION THEN 22
-                                          WHEN @KBN_HENPIN THEN 16
-                                        ELSE 0 END)   --WarehousingKBN
+                                          WHEN @KBN_SYOCD       THEN 31		--15
+                                          WHEN @KBN_CHOSEI_ADD  THEN 19
+                                          WHEN @KBN_CHOSEI_DEL  THEN 20
+                                          WHEN @KBN_LOCATION    THEN 22
+                                          WHEN @KBN_HENPIN      THEN 16
+                                          ELSE 0 END)   --WarehousingKBN
                   AND DW.DeleteFlg = 0
                   AND DW.DeleteDateTime IS NULL
                   AND DW.[Number] = @MoveNO
@@ -2500,18 +2500,18 @@ BEGIN
 */
                 --ÅyD_DeliveryPlanÅzîzëóó\íËèÓïÒ  Tableì]ëóédólJáA
                 UPDATE [D_DeliveryPlan] SET
-                       [Number] = NULL
-                      ,[UpdateOperator]     =  @Operator  
-                      ,[UpdateDateTime]     =  @SYSDATETIME
+                       [Number]         = NULL
+                      ,[UpdateOperator] = @Operator  
+                      ,[UpdateDateTime] = @SYSDATETIME
                  WHERE @MoveNO = D_DeliveryPlan.Number
                 ;
                 
                 --ÅyD_DeliveryPlanDetailsÅzîzëóó\íËèÓïÒÅ@Tableì]ëóédólKáA
                 UPDATE [D_DeliveryPlanDetails] SET
-                       [Number] = NULL
-                      ,[NumberRows] = 0
-                      ,[UpdateOperator]     =  @Operator  
-                      ,[UpdateDateTime]     =  @SYSDATETIME
+                       [Number]         = NULL
+                      ,[NumberRows]     = 0
+                      ,[UpdateOperator] = @Operator  
+                      ,[UpdateDateTime] = @SYSDATETIME
                       
                  FROM @Table AS tbl
                  WHERE @MoveNO = D_DeliveryPlanDetails.Number

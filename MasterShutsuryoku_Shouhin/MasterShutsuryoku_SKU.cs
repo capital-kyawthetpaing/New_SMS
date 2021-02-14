@@ -673,5 +673,50 @@ namespace MasterShutsuryoku_Shouhin
             SC_makervendor.ChangeDate = bbl.GetDate();
             SC_makervendor.Value1 = "1";
         }
+
+        private void TB_InsertDateT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_InsertDateF.Text) && !String.IsNullOrEmpty(TB_InsertDateT.Text))
+                {
+                    if (Convert.ToDateTime(TB_InsertDateF.Text) > Convert.ToDateTime(TB_InsertDateT.Text))
+                    {
+                        bbl.ShowMessage("E104");
+                        TB_InsertDateF.Focus();
+                    }
+                }
+            }
+        }
+
+        private void TB_UpdateDateT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_UpdateDateF.Text) && !String.IsNullOrEmpty(TB_UpdateDateT.Text))
+                {
+                    if (Convert.ToDateTime(TB_UpdateDateF.Text) > Convert.ToDateTime(TB_UpdateDateT.Text))
+                    {
+                        bbl.ShowMessage("E104");
+                        TB_UpdateDateF.Focus();
+                    }
+                }
+            }
+        }
+
+        private void TB_ApprovalDateT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_ApprovalDateF.Text) && !String.IsNullOrEmpty(TB_ApprovalDateT.Text))
+                {
+                    if (Convert.ToDateTime(TB_ApprovalDateF.Text) > Convert.ToDateTime(TB_ApprovalDateT.Text))
+                    {
+                        bbl.ShowMessage("E104");
+                        TB_ApprovalDateF.Focus();
+                    }
+                }
+            }
+        }
     }
 }
