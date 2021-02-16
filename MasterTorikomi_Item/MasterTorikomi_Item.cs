@@ -524,9 +524,16 @@ namespace MasterTorikomi_Item
                        {
                            if (!Is102(dt.Rows[i]["商品名"].ToString()))
                            {
-                               dt.Rows[i]["EItem"] = "商品名";
-                               dt.Rows[i]["Error"] = "E102";
-                               goto SkippedLine;
+                            if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString().Trim()))
+                            {
+                                dt.Rows[i]["商品名"] = "---";
+                            }
+                            else
+                            {
+                                dt.Rows[i]["EItem"] = "商品名";
+                                dt.Rows[i]["Error"] = "E102";
+                                goto SkippedLine;
+                            }
                            }
                        }
                    }

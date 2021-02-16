@@ -58,6 +58,8 @@ namespace MainMenu.Haspo
             loginbl = new Login_BL();
             txtOperatorCD.Focus();
             Add_ButtonDesign();
+            txtOperatorCD.Focus();
+            txtOperatorCD.Select();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

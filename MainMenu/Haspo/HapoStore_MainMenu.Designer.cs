@@ -35,7 +35,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblOperatorName = new CKM_Controls.CKM_Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.lblStoreName = new CKM_Controls.CKM_Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.btnProcess = new CKM_Controls.CKM_Button();
@@ -139,28 +139,28 @@
             // 
             this.panel2.BackgroundImage = global::MainMenu.Properties.Resources.pb_1;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.ckM_Label1);
+            this.panel2.Controls.Add(this.lblStoreName);
             this.panel2.Location = new System.Drawing.Point(448, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(704, 79);
             this.panel2.TabIndex = 5;
             // 
-            // ckM_Label1
+            // lblStoreName
             // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.XLarge;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.White;
-            this.ckM_Label1.Location = new System.Drawing.Point(232, 20);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(285, 33);
-            this.ckM_Label1.TabIndex = 0;
-            this.ckM_Label1.Text = "Racket Plaza石橋";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.White;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStoreName.AutoSize = true;
+            this.lblStoreName.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblStoreName.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName.DefaultlabelSize = true;
+            this.lblStoreName.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.XLarge;
+            this.lblStoreName.ForeColor = System.Drawing.Color.White;
+            this.lblStoreName.Location = new System.Drawing.Point(232, 20);
+            this.lblStoreName.Name = "lblStoreName";
+            this.lblStoreName.Size = new System.Drawing.Size(285, 33);
+            this.lblStoreName.TabIndex = 0;
+            this.lblStoreName.Text = "Racket Plaza石橋";
+            this.lblStoreName.Text_Color = CKM_Controls.CKM_Label.CKM_Color.White;
+            this.lblStoreName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -851,6 +851,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HapoStore_MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HaspoStoreMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HapoStore_MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.HapoStore_MainMenu_Load);
@@ -908,6 +909,6 @@
         private System.Windows.Forms.Panel panel4;
         private CKM_Controls.CKM_Label lblOperatorName;
         private System.Windows.Forms.Panel panel2;
-        private CKM_Controls.CKM_Label ckM_Label1;
+        private CKM_Controls.CKM_Label lblStoreName;
     }
 }

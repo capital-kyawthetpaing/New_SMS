@@ -37,16 +37,13 @@ namespace MainMenu.Haspo
         public static extern bool SetForegroundWindow(IntPtr hwnd);
         public HapoStore_MainMenu(string SCD,M_Staff_Entity mse)
         {
-
             mbl = new Menu_BL();
             Staff_CD = SCD;
             this.mse = mse;
             InitializeComponent();
             lblOperatorName.Text = mse.StaffName;
             SetDesignerFunction();
-
             lblOperatorName.Text = mse.StaffName;
-          
         }
         private void SetDesignerFunction()
 
@@ -83,6 +80,17 @@ namespace MainMenu.Haspo
             Clear_Text(panel_right);
             BindButtonName();
             ParentID = "";
+            M_Staff_Entity mse2 = new M_Staff_Entity
+            {
+                StaffCD = Staff_CD
+            };
+            Login_BL loginbl = new Login_BL();
+            mse2 = loginbl.M_Store_InitSelect(mse);
+
+             
+            lblStoreName.Text = mse2.StoreName;
+
+            
         }
 
 
@@ -344,7 +352,7 @@ namespace MainMenu.Haspo
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message + ex.StackTrace);
+                        MessageBox.Show(ex.Message + ex.StackTrace );
                     }
                 }
                 else

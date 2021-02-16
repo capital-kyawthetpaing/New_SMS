@@ -98,13 +98,26 @@ namespace BL
                 mse.SysDate = dt.Rows[0]["sysDate"].ToString();
                 mse.StoreCD = dt.Rows[0]["StoreCD"].ToString();
                 Base_DL.iniEntity.DatabaseDate = mse.SysDate;
-
+                //mse.StoreName = dt.Rows[0]["StoreName"].ToString(); ;
             }
 
             return mse;
         }
 
+        //M_Store_InitSelect
+        public M_Staff_Entity M_Store_InitSelect(M_Staff_Entity mpe)
+        {
+           // M_Program_DL dl = new M_Program_DL();
+            DataTable dt = msdl.M_Store_InitSelect(mpe);
+            if (dt.Rows.Count > 0)
+            {
+                mpe.StoreName = dt.Rows[0]["StoreName"].ToString();
+                //mpe.Type = dt.Rows[0]["Type"].ToString();
 
+           
+            }
+            return mpe;
+        }
         /// <summary>
         /// For Default Souko Bind
         /// </summary>
@@ -278,6 +291,7 @@ namespace BL
 
 
         }
+       
         protected string GetMessages()
         {
             var get = getd();
