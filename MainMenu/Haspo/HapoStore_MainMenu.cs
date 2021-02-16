@@ -82,6 +82,7 @@ namespace MainMenu.Haspo
             Clear_Text(panel_left);
             Clear_Text(panel_right);
             BindButtonName();
+            ParentID = "";
         }
 
 
@@ -189,105 +190,6 @@ namespace MainMenu.Haspo
                 }
             }
         }
-        //protected void ButtonText(Panel p, DataTable k0, int Gym)
-        //{
-        //    IOrderedEnumerable<DataRow> result;
-        //    if (Gym == 1)
-        //        result = k0.Select().OrderBy(row => row["BusinessSEQ"]);
-        //    else
-        //        result = k0.Select().OrderBy(row => row["ProgramSEQ"]);
-        //    var k = result.CopyToDataTable();
-        //    // MainMenuLogin
-        //    System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-
-        //    for (int j = 0; j < k.Rows.Count; j++)
-        //    {
-        //        var c = GetAllControls(p);
-        //        for (int i = 0; i < c.Count(); i++)
-        //        {
-        //            Control ctrl = c.ElementAt(i) as Control;
-
-        //            if (ctrl is CKM_Button)
-        //            {
-
-        //                ToolTip1.SetToolTip(((CKM_Button)ctrl), null);
-        //                if (Gym == 1 && k.Rows[j]["Char1"].ToString() != string.Empty && k.Rows[j]["BusinessSEQ"].ToString() != string.Empty)
-        //                {
-        //                    if (((CKM_Button)ctrl).Name == "btnGym" + Convert.ToInt32(k.Rows[j]["BusinessSEQ"].ToString()))
-        //                    {
-        //                        ((CKM_Button)ctrl).Text = k.Rows[j]["Char1"].ToString();
-        //                        ((CKM_Button)ctrl).Enabled = true;
-        //                        ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["BusinessSEQ"].ToString());
-
-        //                    }
-        //                }
-        //                else if (Gym == 0 && k.Rows[j]["ProgramID"].ToString() != string.Empty)
-        //                {
-        //                    if (((CKM_Button)ctrl).Name == "btn_Proj" + Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString()))
-        //                    {
-        //                        ((CKM_Button)ctrl).Text = k.Rows[j]["ProgramID"].ToString();
-        //                        ((CKM_Button)ctrl).Enabled = true;
-        //                        ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString());
-        //                        //  ((CKM_Button)ctrl).Name = mope_data.PROID.ToString();
-        //                        // ToolTip1.SetToolTip(((CKM_Button)ctrl),"");
-        //                        //ToolTip1.SetToolTip(((CKM_Button)ctrl), ((CKM_Button)ctrl).Text);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private void BindButtonName()
-        //{
-        //    var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        var _result = menu.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
-        //        ButtonText(panel_left, _result, 1);
-        //    }
-
-
-        //}
-        //protected void ButtonText(Panel p, DataTable k0, int Gym)
-        //{
-        //    IOrderedEnumerable<DataRow> result;
-        //    result = k0.Select().OrderBy(row => row["BusinessSEQ"]);
-        //    var k = result.CopyToDataTable();
-        //    System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-
-        //    for (int j = 0; j < k.Rows.Count; j++)
-        //    {
-        //        var c = GetAllControls(p);
-        //        for (int i = 0; i < c.Count(); i++)
-        //        {
-        //            Control ctrl = c.ElementAt(i) as Control;
-
-        //            if (ctrl is CKM_Button)
-        //            {
-
-        //                ToolTip1.SetToolTip(((CKM_Button)ctrl), null);
-        //                if (Gym == 1 && k.Rows[j]["Char1"].ToString() != string.Empty && k.Rows[j]["BusinessSEQ"].ToString() != string.Empty)
-        //                {
-        //                    if (((CKM_Button)ctrl).Name == "btnGym" + Convert.ToInt32(k.Rows[j]["BusinessSEQ"].ToString()))
-        //                    {
-        //                        ((CKM_Button)ctrl).Text = k.Rows[j]["Char1"].ToString();
-        //                        ((CKM_Button)ctrl).Enabled = true;
-        //                    }
-        //                }
-        //                else if (Gym == 0 && k.Rows[j]["ProgramID"].ToString() != string.Empty)
-        //                {
-        //                    if (((CKM_Button)ctrl).Name == "btn_Proj" + Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString()))
-        //                    {
-        //                        ((CKM_Button)ctrl).Text = k.Rows[j]["ProgramID"].ToString();
-        //                        ((CKM_Button)ctrl).Enabled = true;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
         public IEnumerable<Control> GetAllControls(Control root)
         {
             foreach (Control control in root.Controls)
@@ -419,16 +321,20 @@ namespace MainMenu.Haspo
             btnText = btn.Text;
             if (!string.IsNullOrWhiteSpace(btnText))
             {
+                ParentID = btn.Name.Split('m').Last();
                 RightButton_Text(btnText, btn.TabIndex);
             }
         }
+        public string ParentID { get; set; }
         private void OpenForm(object sender)
         {
             try
             {
                 var programID = (sender as CKM_Button).Text;
-                var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+                //var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
 
+                var Condition = "BusinessSEQ = '" + ParentID + "'" + " And " + "ProgramSEQ = '" + (sender as CKM_Button).Name.Split('j').Last() + "'";
+                var exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CashDrawerOpen")
                 {
                     try
@@ -499,51 +405,6 @@ namespace MainMenu.Haspo
                 }
             }
         }
-        //private void OpenForm(object sender)
-        //{
-        //    try
-        //    {
-        //        var programID = (sender as CKM_Button).Text;
-        //        var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
-        //        //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-        //        //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-
-        //        string filePath = "";
-        //        //System.Diagnostics.Debug 
-        //        if (Debugger.IsAttached || Login_BL.Islocalized)
-        //        {
-        //            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-        //            filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-        //        }
-        //        else
-        //        {
-        //            filePath = @"C:\\SMS\\AppData";
-        //        }
-        //        string cmdLine = " " + "01" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-        //        //Process[] localByName = Process.GetProcessesByName(exe_name);
-        //        //if (localByName.Count() > 0)
-        //        //{
-        //        //    IntPtr handle = localByName[0].MainWindowHandle;
-        //        //    ShowWindow(handle, SW_SHOWMAXIMIZED);
-        //        //    return;
-        //        //}
-
-        //        Process[] localByName = Process.GetProcessesByName(exe_name);
-        //        if (localByName.Count() > 0)
-        //        {
-        //            IntPtr handle = localByName[0].MainWindowHandle;
-        //            ShowWindow(handle, SW_SHOWMAXIMIZED);
-        //            SetForegroundWindow(handle);
-        //            return;
-        //        }
-
-        //        (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("The program cannot locate to the specified file!!!");
-        //    }
-        //}
         protected Base_BL bbl = new Base_BL();
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -597,23 +458,30 @@ namespace MainMenu.Haspo
         {
             if (IsClose)
             {
-                BL.Base_BL bbl = new Base_BL();
-                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                if (CheckOpenForm())
                 {
-                    try
+                    BL.Base_BL bbl = new Base_BL();
+                    if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                     {
-                        ForceToclose();
+                        try
+                        {
+                            ForceToclose();
+                        }
+                        catch { }
+                        e.Cancel = false;
                     }
-                    catch { }
-                    e.Cancel = false;
+                    else
+                        e.Cancel = true;
                 }
-                else
-                    e.Cancel = true;
             }
             else
             {
                 e.Cancel = true;
             }
+        }
+        private bool CheckOpenForm()
+        {
+            return (Application.OpenForms["HapoStore_MainMenu"].Visible == true);
         }
         CashDrawerOpen cdo = new CashDrawerOpen();
         public void ForceToclose()

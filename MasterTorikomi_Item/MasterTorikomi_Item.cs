@@ -149,7 +149,7 @@ namespace MasterTorikomi_Item
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "1")
                     {
@@ -373,7 +373,7 @@ namespace MasterTorikomi_Item
             dt.Columns.Add("ItemDate");
             string currentType =  RB_all.Checked ? "1" : RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked ? "3" : RB_priceinfo.Checked ? "4" : RB_Catloginfo.Checked ? "5" : RB_tagInfo.Checked ? "6" : "8";
             string[] Cols = GetCurrentType(Convert.ToInt32(currentType)); 
-            string kibun = dt.Rows[1]["データ区分"].ToString();
+            //string kibun = dt.Rows[1]["データ区分"].ToString();
             label2.Visible = true;
             var cou = dt.Rows.Count.ToString() + "";
             maxCount = cou;
@@ -644,6 +644,16 @@ namespace MasterTorikomi_Item
                        {
                            if (!Is101("M_MultiPorpose", dt.Rows[i]["商品分類CD"].ToString(), "203"))
                            {
+                            var vl = dt.Rows[i]["商品分類CD"].ToString();
+                            if (!Liststr.Contains(vl))
+                            {
+                                if (vl == "クラブツイルキャップ")
+                                {
+
+
+                                }
+                                Liststr.Add(vl);
+                            }
                                dt.Rows[i]["EItem"] = "商品分類CD";
                                dt.Rows[i]["Error"] = "E101";
                                goto SkippedLine;
@@ -1528,8 +1538,20 @@ namespace MasterTorikomi_Item
                 {
                     string str = " [Key] ='" + param + "'" +
                            "and ID='" + paramID + "'";
+                    string str_sec = " [Char1] ='" + param + "'" +
+                           "and ID='" + paramID + "'";
                     var result = dtMultiP.Select(str);
-                    return (result.Count() > 0);
+                    if (result.Count() > 0)
+                    {
+
+                        return (result.Count() > 0);
+                    }
+                    else {
+                        var res = dtMultiP.Select(str_sec);
+                        return (res.Count() > 0);
+
+                    }
+                    
                     //data = bbl.SimpleSelect1("42", bbl.GetDate(), paramID, param);
                 }
 
@@ -1538,6 +1560,7 @@ namespace MasterTorikomi_Item
 
             return false;
         }
+        List<string> Liststr = new List<string>();
         private bool Is190(string value, bool IsDataFlag = false)
         {
             if (!IsDataFlag)
@@ -1632,9 +1655,11 @@ namespace MasterTorikomi_Item
         }
         private void F12()
         {
-            try { 
+            try {
+                var d = Liststr.ToArray();
+                var str = String.Join(",", d);
 
-            ibl = new ITEM_BL();
+                ibl = new ITEM_BL();
                 if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
                     Cursor = Cursors.WaitCursor;
