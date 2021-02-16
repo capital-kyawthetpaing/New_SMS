@@ -2061,7 +2061,7 @@ namespace ShukkaShijiTouroku
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 //画面転送表03に従い、第2画面を起動
-                FrmShukkaShiji frm = new FrmShukkaShiji();
+                FrmShukkaShiji frm = new FrmShukkaShiji(ProID);
                 frm.DeliveryPlanNO = mGrid.g_DArray[w_Row].DeliveryPlanNO;
                 frm.JuchuNO = mGrid.g_DArray[w_Row].JuchuNo;
 

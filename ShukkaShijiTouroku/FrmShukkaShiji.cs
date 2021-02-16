@@ -24,12 +24,12 @@ namespace ShukkaShijiTouroku
         D_DeliveryPlan_Entity dje;
         ShukkaShijiTouroku_BL nnbl;
 
-        public FrmShukkaShiji()
+        public FrmShukkaShiji(string ProId)
         {
             InitializeComponent();
             
             HeaderTitleText = ProNm;
-            this.Text = ProNm;
+            this.Text = ProId;
 
             nnbl = new ShukkaShijiTouroku_BL();
         }
@@ -109,5 +109,6 @@ namespace ShukkaShijiTouroku
                 //EndSec();
             }
         }
+
     }
 }
