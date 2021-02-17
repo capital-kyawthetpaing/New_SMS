@@ -115,7 +115,7 @@ namespace MasterTorikomi_SKU
                         {
                             ExcelErrorCheck(dt);
                             if (checkerr)
-                            {
+                           {
                                 type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
                                 
                                 mE = GetEntity(dt);
