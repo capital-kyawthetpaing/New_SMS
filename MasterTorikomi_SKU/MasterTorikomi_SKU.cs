@@ -619,15 +619,14 @@ namespace MasterTorikomi_SKU
                 {
                     if (dt.Rows[i]["JANCD"].ToString() != "Auto")
                     {
-                        String query = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'" +
-                            " and SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
-
-                        var result = dtSKU.Select(query);
-                        if (result.Count() == 0)
-                        {
-                            dt.Rows[i]["EItem"] = "JANCD";
-                            dt.Rows[i]["Error"] = "E101";
-                        }
+                        //String query = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'" +
+                        //    " and SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
+                        //var result = dtSKU.Select(query);
+                        //if (result.Count() == 0)
+                        //{
+                        //    dt.Rows[i]["EItem"] = "JANCD";
+                        //    dt.Rows[i]["Error"] = "E101";
+                        //}
                     }
                     else
                     {
