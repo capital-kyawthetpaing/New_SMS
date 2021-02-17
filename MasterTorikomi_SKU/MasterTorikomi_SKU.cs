@@ -108,29 +108,22 @@ namespace MasterTorikomi_SKU
                     //}
 
                     dt = ExcelToDatatable(filePath);
-                    //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
-                    //if (ColumnCheck(colname, dtExcel))
-                    //{
-
-                    //}
                     if (dt != null)
                     {
                       
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
-                            //if (checkerr)
-                            //{
-                               type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                //dtmain = dt.Copy();  
-                               // dtmain = ChangeColName(dtmain, type);
-                              // dt=ChangeColName()
+                            if (checkerr)
+                            {
+                                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                                
                                 mE = GetEntity(dt);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
                                     bbl.ShowMessage("I101");
                                 }
-                            //}
+                            }
                             GV_SKU.DataSource = null;
                             GV_SKU.DataSource = dt;
                         }
@@ -215,7 +208,7 @@ namespace MasterTorikomi_SKU
             }
             else if (RB_BaseInfo.Checked)
             {
-                if (dt.Columns.Count != 48)
+                if (dt.Columns.Count != 46)
                 {
                     bbl.ShowMessage("E137");
                     return false;
@@ -231,8 +224,8 @@ namespace MasterTorikomi_SKU
                 string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
                     "JANCD", "削除","諸口区分", "商品名", "カナ名",
                     "略名", "英語名", "ITEMCD", "サイズ枝番","カラー枝番",
-                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "メーカー仕入先CD",
-                    "メーカー仕入先名","ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
+                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名",
+                    "ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
                     "単位名","競技CD", "競技名", "商品分類CD","分類名",
                        "セグメントCD", "セグメント名",  "標準原価", "税抜定価", "税込定価",
                   "発注税込価格", "発注税抜価格",  "掛率", "発売開始日", "Web掲載開始日",
@@ -253,7 +246,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "3")
@@ -262,7 +254,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
                 string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
                     "JANCD", "削除", "商品名", "ITEMCD", "サイズ枝番","カラー枝番",
                      "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "セット品区分",
@@ -371,7 +362,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "7")
@@ -396,7 +386,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "8")
@@ -417,7 +406,6 @@ namespace MasterTorikomi_SKU
             }
             return true;
         }
-
         private bool Check(DataTable dt)
         {
             if (dt.Columns.Contains("EItem") && dt.Columns.Contains("Error"))
@@ -687,11 +675,8 @@ namespace MasterTorikomi_SKU
                     dt.Rows[i]["EItem"] = "サイズ名";
                     dt.Rows[i]["Error"] = "E102";
                 }
-               
-
                 if (RB_all.Checked || RB_BaseInfo.Checked )
                 {
-
                     //if (!String.IsNullOrEmpty(dt.Rows[i]["主要仕入先CD"].ToString()))
                     //{
                     //    string query = " VendorCD = '" + dt.Rows[i]["主要仕入先CD"].ToString() + "'";
@@ -724,7 +709,6 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
-
                     if (!String.IsNullOrEmpty(dt.Rows[i]["競技CD"].ToString()))
                     {
                         String Bq = " [Key] ='" + dt.Rows[i]["競技CD"].ToString() + "'" +
@@ -1291,8 +1275,8 @@ namespace MasterTorikomi_SKU
                 dt.Columns["値引商品区分"].ColumnName = "DiscountKBN";
                 dt.Columns["主要仕入先CD"].ColumnName = "MainVendorCD";
                 dt.Columns["主要仕入先名"].ColumnName = "VendorName";
-                dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
-                dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
+                //dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
+                //dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
                 dt.Columns["ブランドCD"].ColumnName = "BrandCD";
                 dt.Columns["ブランド名"].ColumnName = "BrandName";
                 dt.Columns["メーカー商品CD"].ColumnName = "MakerItem";
@@ -1383,8 +1367,8 @@ namespace MasterTorikomi_SKU
                 dt.Columns["カラー名"].ColumnName = "ColorName";
                 dt.Columns["主要仕入先CD"].ColumnName = "MainVendorCD";
                 dt.Columns["主要仕入先名"].ColumnName = "VendorName";
-                dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
-                dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
+                //dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
+                //dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
                 dt.Columns["ブランドCD"].ColumnName = "BrandCD";
                 dt.Columns["ブランド名"].ColumnName = "BrandName";
                 dt.Columns["メーカー商品CD"].ColumnName = "MakerItem";
