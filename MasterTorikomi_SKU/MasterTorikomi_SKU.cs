@@ -110,27 +110,26 @@ namespace MasterTorikomi_SKU
                     dt = ExcelToDatatable(filePath);
                     if (dt != null)
                     {
-                      
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
-                            if (checkerr)
-                           {
-                                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                
-                                mE = GetEntity(dt);
-                                if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
-                                {
-                                    bbl.ShowMessage("I101");
-                                }
-                            }
+                           //if( CheckPartial(dt))
+                          // { 
+                                //type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+
+                                //mE = GetEntity(dt);
+                                //if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
+                                //{
+                                //    bbl.ShowMessage("I101");
+                                //}
+                         //  }
                             GV_SKU.DataSource = null;
                             GV_SKU.DataSource = dt;
                         }
                     }
                     else
                     {
-                      //  MessageBox.Show("No row data was found or import excel is opening in different location");
+                        MessageBox.Show("No row data was found or import excel is opening in different location");
                     }
                 }
             }
@@ -1243,11 +1242,6 @@ namespace MasterTorikomi_SKU
                     {
                     }
                 }
-               
-                if (String.IsNullOrEmpty(dt.Rows[i]["EItem"].ToString()))
-                {
-                    checkerr = true;
-                }
             }
 
         }
@@ -1576,7 +1570,7 @@ namespace MasterTorikomi_SKU
             }
             catch
             {
-                bbl.ShowMessage("E137");
+               // bbl.ShowMessage("E137");
                 return null;
             }
         }
@@ -1594,6 +1588,13 @@ namespace MasterTorikomi_SKU
             }
         }
 
+        private bool CheckPartial(DataTable dt)
+        {
+            var query = "Error <> ''";
+            if (dt.Select(query).Count() > 0)
+                return false;
+            return true;
+        }
         private M_SKU_Entity GetEntity(DataTable dtT)
         {
             mE = new M_SKU_Entity
