@@ -262,7 +262,7 @@ namespace TempoRegiShiharaiNyuuryoku
         {
             ddpe = new D_DepositHistory_Entity
             {
-                StoreCD = InOperatorCD,
+                StoreCD = StoreCD,
                 DenominationCD = cboDenominationName.SelectedValue.ToString(),
                 DataKBN = "3",
                 DepositKBN = "3",
