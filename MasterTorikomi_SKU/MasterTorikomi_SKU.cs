@@ -645,17 +645,17 @@ namespace MasterTorikomi_SKU
                         dt.Rows[i]["Error"] = "E190";
                     }
                 }
-                if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "商品名";
-                    dt.Rows[i]["Error"] = "E102";
-                }
-                if (String.IsNullOrEmpty(dt.Rows[i]["ITEMCD"].ToString()))
-                {
+                //if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString()))
+                //{
+                //    dt.Rows[i]["EItem"] = "商品名";
+                //    dt.Rows[i]["Error"] = "E102";
+                //}
+                //if (String.IsNullOrEmpty(dt.Rows[i]["ITEMCD"].ToString()))
+                //{
 
-                    dt.Rows[i]["EItem"] = "ITEMCD";
-                    dt.Rows[i]["Error"] = "E102";
-                }
+                //    dt.Rows[i]["EItem"] = "ITEMCD";
+                //    dt.Rows[i]["Error"] = "E102";
+                //}
                 if (String.IsNullOrEmpty(dt.Rows[i]["サイズ枝番"].ToString()))
                 {
                     dt.Rows[i]["EItem"] = "サイズ枝番";
