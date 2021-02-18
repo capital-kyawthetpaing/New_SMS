@@ -54,11 +54,11 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Size = new System.Drawing.Size(1711, 24);
+            this.PanelHeader.Size = new System.Drawing.Size(1538, 24);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1004, 0);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -538,7 +538,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 774);
+            this.ClientSize = new System.Drawing.Size(1540, 774);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
