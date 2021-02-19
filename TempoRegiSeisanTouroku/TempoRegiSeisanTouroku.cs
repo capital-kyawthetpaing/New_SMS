@@ -126,7 +126,7 @@ namespace TempoRegiSeisanTouroku
 
         public void DisplayData()
         {
-            string data = InOperatorCD;
+            string data = StoreCD;
             string date = DateTime.Now.ToString("yyyy/MM/dd");
 
             #region D_StoreCalculation

@@ -465,18 +465,18 @@ namespace KeihiltiranHyou
                         txtExpenseFrom.Focus();
                         return;
                     }
-                    if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) == Convert.ToDateTime(txtExpenseTo.Text.ToString()))
-                    {
-                        if (!string.IsNullOrWhiteSpace(expense_timefrom.Text) && !string.IsNullOrWhiteSpace(expense_timeto.Text))
-                        {
-                            if (Convert.ToInt32(expense_timefrom.Text.Replace(":", "")) > Convert.ToInt32(expense_timeto.Text.Replace(":", "")))
-                            {
-                                bbl.ShowMessage("E103");
-                                expense_timefrom.Focus();
-                                return;
-                            }
-                        }
-                    }
+                    //if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) == Convert.ToDateTime(txtExpenseTo.Text.ToString()))
+                    //{
+                    //    if (!string.IsNullOrWhiteSpace(expense_timefrom.Text) && !string.IsNullOrWhiteSpace(expense_timeto.Text))
+                    //    {
+                    //        if (Convert.ToInt32(expense_timefrom.Text.Replace(":", "")) > Convert.ToInt32(expense_timeto.Text.Replace(":", "")))
+                    //        {
+                    //            bbl.ShowMessage("E103");
+                    //            expense_timefrom.Focus();
+                    //            return;
+                    //        }
+                    //    }
+                    //}
                 }
             }
         }
