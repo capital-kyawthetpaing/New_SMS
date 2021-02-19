@@ -77,7 +77,6 @@ namespace MasterTorikomi_SKU
                     break;
             }
         }
-
         private void InputExcel()
         {
             if(String.IsNullOrEmpty(TB_FileName.Text))
@@ -1573,7 +1572,6 @@ namespace MasterTorikomi_SKU
                 j +=7;
             }
         }
-
         private bool CheckPartial(DataTable dt)
         {
             var query = "Error <> ''";
@@ -1593,7 +1591,6 @@ namespace MasterTorikomi_SKU
             };
             return mE;
         }
-
         private void BT_FileName_Click(object sender, EventArgs e)
         {
            
@@ -1618,7 +1615,6 @@ namespace MasterTorikomi_SKU
         {
             this.Close();
         }
-
         private void MasterTorikomi_SKU_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
