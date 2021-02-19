@@ -351,8 +351,8 @@ namespace MasterShutsuryoku_Shouhin
                             ////dt.Columns.Remove("英語名");
                             //dt.Columns.Remove("主要仕入先CD");
                             //dt.Columns.Remove("主要仕入先名");
-                            dt.Columns.Remove("メーカー仕入先CD");
-                            dt.Columns.Remove("メーカー仕入先名");
+                            //dt.Columns.Remove("メーカー仕入先CD");
+                            //dt.Columns.Remove("メーカー仕入先名");
                             dt.Columns.Remove("ブランドCD");
                             dt.Columns.Remove("ブランド名");
                             dt.Columns.Remove("メーカー商品CD");

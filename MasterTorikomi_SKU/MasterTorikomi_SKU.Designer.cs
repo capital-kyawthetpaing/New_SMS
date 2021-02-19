@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,6 +46,8 @@
             this.RB_BaseInfo = new CKM_Controls.CKM_RadioButton();
             this.BT_Torikomi = new CKM_Controls.CKM_Button();
             this.GV_SKU = new CKM_Controls.CKM_GridView();
+            this.TB_FileName = new CKM_Controls.CKM_TextBox();
+            this.BT_FileName = new CKM_Controls.CKM_Button();
             this.colSKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colskuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,19 +56,17 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colError = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TB_FileName = new CKM_Controls.CKM_TextBox();
-            this.BT_FileName = new CKM_Controls.CKM_Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_SKU)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Size = new System.Drawing.Size(1282, 0);
+            this.PanelHeader.Size = new System.Drawing.Size(1582, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(748, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1048, 0);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -227,7 +227,7 @@
             this.BT_Torikomi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Torikomi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_Torikomi.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_Torikomi.Location = new System.Drawing.Point(1103, 68);
+            this.BT_Torikomi.Location = new System.Drawing.Point(1428, 68);
             this.BT_Torikomi.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Torikomi.Name = "BT_Torikomi";
             this.BT_Torikomi.Size = new System.Drawing.Size(100, 28);
@@ -241,18 +241,18 @@
             this.GV_SKU.AllowUserToAddRows = false;
             this.GV_SKU.AllowUserToDeleteRows = false;
             this.GV_SKU.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_SKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_SKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_SKU.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_SKU.CheckCol = null;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_SKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_SKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_SKU.ColumnHeadersHeight = 25;
             this.GV_SKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKU,
@@ -263,91 +263,35 @@
             this.Column2,
             this.Column3,
             this.colError});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_SKU.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_SKU.DefaultCellStyle = dataGridViewCellStyle3;
             this.GV_SKU.EnableHeadersVisualStyles = false;
             this.GV_SKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_SKU.Location = new System.Drawing.Point(33, 116);
             this.GV_SKU.Name = "GV_SKU";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_SKU.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_SKU.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GV_SKU.RowHeight_ = 20;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GV_SKU.RowTemplate.Height = 20;
-            this.GV_SKU.Size = new System.Drawing.Size(1170, 650);
+            this.GV_SKU.Size = new System.Drawing.Size(1500, 650);
             this.GV_SKU.TabIndex = 108;
             this.GV_SKU.UseRowNo = true;
             this.GV_SKU.UseSetting = false;
             this.GV_SKU.Paint += new System.Windows.Forms.PaintEventHandler(this.GV_SKU_Paint);
-            // 
-            // colSKU
-            // 
-            this.colSKU.DataPropertyName = "SKUCD";
-            this.colSKU.HeaderText = "SKUCD";
-            this.colSKU.Name = "colSKU";
-            this.colSKU.Width = 150;
-            // 
-            // colJan
-            // 
-            this.colJan.DataPropertyName = "JANCD";
-            this.colJan.HeaderText = "JANCD";
-            this.colJan.MaxInputLength = 13;
-            this.colJan.Name = "colJan";
-            this.colJan.Width = 120;
-            // 
-            // colskuname
-            // 
-            this.colskuname.DataPropertyName = "商品名";
-            this.colskuname.HeaderText = "商品名";
-            this.colskuname.Name = "colskuname";
-            this.colskuname.Width = 250;
-            // 
-            // colColr
-            // 
-            this.colColr.DataPropertyName = "カラー";
-            this.colColr.HeaderText = "カラー";
-            this.colColr.Name = "colColr";
-            this.colColr.Width = 120;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "セイズ";
-            this.Column1.HeaderText = "セイズ";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 120;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "メーカー商品CD";
-            this.Column2.HeaderText = "メーカー商品CD";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "EItem";
-            this.Column3.HeaderText = "エラー";
-            this.Column3.Name = "Column3";
-            // 
-            // colError
-            // 
-            this.colError.DataPropertyName = "Error";
-            this.colError.HeaderText = "";
-            this.colError.Name = "colError";
-            this.colError.Width = 150;
             // 
             // TB_FileName
             // 
@@ -397,11 +341,67 @@
             this.BT_FileName.UseVisualStyleBackColor = false;
             this.BT_FileName.Click += new System.EventHandler(this.BT_FileName_Click);
             // 
+            // colSKU
+            // 
+            this.colSKU.DataPropertyName = "SKUCD";
+            this.colSKU.HeaderText = "SKUCD";
+            this.colSKU.Name = "colSKU";
+            this.colSKU.Width = 220;
+            // 
+            // colJan
+            // 
+            this.colJan.DataPropertyName = "JANCD";
+            this.colJan.HeaderText = "JANCD";
+            this.colJan.MaxInputLength = 13;
+            this.colJan.Name = "colJan";
+            this.colJan.Width = 120;
+            // 
+            // colskuname
+            // 
+            this.colskuname.DataPropertyName = "商品名";
+            this.colskuname.HeaderText = "商品名";
+            this.colskuname.Name = "colskuname";
+            this.colskuname.Width = 430;
+            // 
+            // colColr
+            // 
+            this.colColr.DataPropertyName = "カラー";
+            this.colColr.HeaderText = "カラー";
+            this.colColr.Name = "colColr";
+            this.colColr.Width = 130;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "セイズ";
+            this.Column1.HeaderText = "セイズ";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 130;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "メーカー商品CD";
+            this.Column2.HeaderText = "メーカー商品CD";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 170;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "EItem";
+            this.Column3.HeaderText = "エラー";
+            this.Column3.Name = "Column3";
+            // 
+            // colError
+            // 
+            this.colError.DataPropertyName = "Error";
+            this.colError.HeaderText = "";
+            this.colError.Name = "colError";
+            this.colError.Width = 150;
+            // 
             // MasterTorikomi_SKU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 811);
+            this.ClientSize = new System.Drawing.Size(1584, 811);
             this.Controls.Add(this.BT_FileName);
             this.Controls.Add(this.TB_FileName);
             this.Controls.Add(this.GV_SKU);
