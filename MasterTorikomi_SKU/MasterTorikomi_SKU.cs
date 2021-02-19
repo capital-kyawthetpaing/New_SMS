@@ -56,6 +56,7 @@ namespace MasterTorikomi_SKU
             dtMultiP = mtbl.M_Multipurpose_SelectAll();
             dtVendor = mtbl.M_Vendor_SelectAll();
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
+            dtSKU = sbl.M_SKU_SelectAll_NOPara();
             //dtAPI = apbl.M_API_Select();
         }
         public override void FunctionProcess(int index)
@@ -106,24 +107,16 @@ namespace MasterTorikomi_SKU
                     //    return;
                     //}
 
-                    //dt = ExcelToDatatable(filePath);
-                    //string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名"};
-                    //if (ColumnCheck(colname, dtExcel))
-                    //{
-
-                    //}
+                    dt = ExcelToDatatable(filePath);
                     if (dt != null)
                     {
-                      
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
-                            if (checkerr)
+                            if (CheckPartial(dt))
                             {
-                                // type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                                //dtmain = dt.Copy();  
-                               // dtmain = ChangeColName(dtmain, type);
-                              // dt=ChangeColName()
+                                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+
                                 mE = GetEntity(dt);
                                 if (mtbl.MasterTorikomi_SKU_Insert_Update(type, mE))
                                 {
@@ -167,7 +160,7 @@ namespace MasterTorikomi_SKU
             string kibun = dt.Rows[0]["データ区分"].ToString();
             if (RB_all.Checked)
             {
-                if (dt.Columns.Count != 126)
+                if (dt.Columns.Count != 124)
                 {
                     bbl.ShowMessage("E137");
                     return false;
@@ -183,8 +176,8 @@ namespace MasterTorikomi_SKU
                 string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
                     "JANCD", "削除","諸口区分", "商品名", "カナ名",
                     "略名", "英語名", "ITEMCD", "サイズ枝番","カラー枝番",
-                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "メーカー仕入先CD",
-                    "メーカー仕入先名","ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
+                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", 
+                   "ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
                     "単位名","競技CD", "競技名", "商品分類CD","分類名",
                        "セグメントCD", "セグメント名", "セット品区分", "セット品区分名", "プレゼント品区分",
                     "プレゼント品区分名", "サンプル品区分", "サンプル品区分名", "値引商品区分", "値引商品区分名",
@@ -214,7 +207,7 @@ namespace MasterTorikomi_SKU
             }
             else if (RB_BaseInfo.Checked)
             {
-                if (dt.Columns.Count != 48)
+                if (dt.Columns.Count != 46)
                 {
                     bbl.ShowMessage("E137");
                     return false;
@@ -230,8 +223,8 @@ namespace MasterTorikomi_SKU
                 string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
                     "JANCD", "削除","諸口区分", "商品名", "カナ名",
                     "略名", "英語名", "ITEMCD", "サイズ枝番","カラー枝番",
-                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "メーカー仕入先CD",
-                    "メーカー仕入先名","ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
+                     "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名",
+                    "ブランドCD", "ブランド名", "メーカー商品CD", "単位CD",
                     "単位名","競技CD", "競技名", "商品分類CD","分類名",
                        "セグメントCD", "セグメント名",  "標準原価", "税抜定価", "税込定価",
                   "発注税込価格", "発注税抜価格",  "掛率", "発売開始日", "Web掲載開始日",
@@ -252,7 +245,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "3")
@@ -261,7 +253,6 @@ namespace MasterTorikomi_SKU
                         return false;
                     }
                 }
-
                 string[] colname = {"データ区分", "AdminNO", "改定日", "承認日", "SKUCD",
                     "JANCD", "削除", "商品名", "ITEMCD", "サイズ枝番","カラー枝番",
                      "サイズ名", "カラー名", "主要仕入先CD", "主要仕入先名", "セット品区分",
@@ -370,7 +361,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "7")
@@ -395,7 +385,6 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-
                 if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
                     if (kibun != "8")
@@ -416,7 +405,6 @@ namespace MasterTorikomi_SKU
             }
             return true;
         }
-
         private bool Check(DataTable dt)
         {
             if (dt.Columns.Contains("EItem") && dt.Columns.Contains("Error"))
@@ -552,7 +540,7 @@ namespace MasterTorikomi_SKU
         {
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
-            dtSKU = sbl.M_SKU_SelectAll_NOPara();
+            
             if (RB_SizeURL.Checked)
             {
                 dtAPI = apbl.M_API_Select();
@@ -584,14 +572,14 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
-                    else
-                    {
-                        var dtAdmin = mtbl.M_SKUCounter_Update();
-                        if (dtAdmin.Rows.Count > 0)
-                        {
-                            dt.Rows[i]["AdminNo"] = dtAdmin.Rows[0]["AdminNO"].ToString();
-                        }
-                    }
+                    //else
+                    //{
+                    //    var dtAdmin = mtbl.M_SKUCounter_Update();
+                    //    if (dtAdmin.Rows.Count > 0)
+                    //    {
+                    //        dt.Rows[i]["AdminNo"] = dtAdmin.Rows[0]["AdminNO"].ToString();
+                    //    }
+                    //}
                 }
                 if (!String.IsNullOrEmpty(dt.Rows[i]["改定日"].ToString()))
                 {
@@ -630,15 +618,14 @@ namespace MasterTorikomi_SKU
                 {
                     if (dt.Rows[i]["JANCD"].ToString() != "Auto")
                     {
-                        String query = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'" +
-                            " and SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
-
-                        var result = dtSKU.Select(query);
-                        if (result.Count() == 0)
-                        {
-                            dt.Rows[i]["EItem"] = "JANCD";
-                            dt.Rows[i]["Error"] = "E101";
-                        }
+                        //String query = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'" +
+                        //    " and SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
+                        //var result = dtSKU.Select(query);
+                        //if (result.Count() == 0)
+                        //{
+                        //    dt.Rows[i]["EItem"] = "JANCD";
+                        //    dt.Rows[i]["Error"] = "E101";
+                        //}
                     }
                     else
                     {
@@ -658,17 +645,17 @@ namespace MasterTorikomi_SKU
                         dt.Rows[i]["Error"] = "E190";
                     }
                 }
-                if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "商品名";
-                    dt.Rows[i]["Error"] = "E102";
-                }
-                if (String.IsNullOrEmpty(dt.Rows[i]["ITEMCD"].ToString()))
-                {
+                //if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString()))
+                //{
+                //    dt.Rows[i]["EItem"] = "商品名";
+                //    dt.Rows[i]["Error"] = "E102";
+                //}
+                //if (String.IsNullOrEmpty(dt.Rows[i]["ITEMCD"].ToString()))
+                //{
 
-                    dt.Rows[i]["EItem"] = "ITEMCD";
-                    dt.Rows[i]["Error"] = "E102";
-                }
+                //    dt.Rows[i]["EItem"] = "ITEMCD";
+                //    dt.Rows[i]["Error"] = "E102";
+                //}
                 if (String.IsNullOrEmpty(dt.Rows[i]["サイズ枝番"].ToString()))
                 {
                     dt.Rows[i]["EItem"] = "サイズ枝番";
@@ -686,11 +673,8 @@ namespace MasterTorikomi_SKU
                     dt.Rows[i]["EItem"] = "サイズ名";
                     dt.Rows[i]["Error"] = "E102";
                 }
-               
-
                 if (RB_all.Checked || RB_BaseInfo.Checked )
                 {
-
                     //if (!String.IsNullOrEmpty(dt.Rows[i]["主要仕入先CD"].ToString()))
                     //{
                     //    string query = " VendorCD = '" + dt.Rows[i]["主要仕入先CD"].ToString() + "'";
@@ -723,7 +707,6 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
-
                     if (!String.IsNullOrEmpty(dt.Rows[i]["競技CD"].ToString()))
                     {
                         String Bq = " [Key] ='" + dt.Rows[i]["競技CD"].ToString() + "'" +
@@ -1259,11 +1242,6 @@ namespace MasterTorikomi_SKU
                     {
                     }
                 }
-               
-                if (String.IsNullOrEmpty(dt.Rows[i]["EItem"].ToString()))
-                {
-                    checkerr = true;
-                }
             }
 
         }
@@ -1290,8 +1268,8 @@ namespace MasterTorikomi_SKU
                 dt.Columns["値引商品区分"].ColumnName = "DiscountKBN";
                 dt.Columns["主要仕入先CD"].ColumnName = "MainVendorCD";
                 dt.Columns["主要仕入先名"].ColumnName = "VendorName";
-                dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
-                dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
+                //dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
+                //dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
                 dt.Columns["ブランドCD"].ColumnName = "BrandCD";
                 dt.Columns["ブランド名"].ColumnName = "BrandName";
                 dt.Columns["メーカー商品CD"].ColumnName = "MakerItem";
@@ -1382,8 +1360,8 @@ namespace MasterTorikomi_SKU
                 dt.Columns["カラー名"].ColumnName = "ColorName";
                 dt.Columns["主要仕入先CD"].ColumnName = "MainVendorCD";
                 dt.Columns["主要仕入先名"].ColumnName = "VendorName";
-                dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
-                dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
+                //dt.Columns["メーカー仕入先CD"].ColumnName = "MakerVendorCD";
+                //dt.Columns["メーカー仕入先名"].ColumnName = "MakerVendorName";
                 dt.Columns["ブランドCD"].ColumnName = "BrandCD";
                 dt.Columns["ブランド名"].ColumnName = "BrandName";
                 dt.Columns["メーカー商品CD"].ColumnName = "MakerItem";
@@ -1592,7 +1570,7 @@ namespace MasterTorikomi_SKU
             }
             catch
             {
-                bbl.ShowMessage("E137");
+               // bbl.ShowMessage("E137");
                 return null;
             }
         }
@@ -1610,6 +1588,13 @@ namespace MasterTorikomi_SKU
             }
         }
 
+        private bool CheckPartial(DataTable dt)
+        {
+            var query = "Error <> ''";
+            if (dt.Select(query).Count() > 0)
+                return false;
+            return true;
+        }
         private M_SKU_Entity GetEntity(DataTable dtT)
         {
             mE = new M_SKU_Entity
@@ -1644,8 +1629,8 @@ namespace MasterTorikomi_SKU
                     return;
                 }
 
-                type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                dt = ExcelToDatatable(filePath);
+               // type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
+                //dt = ExcelToDatatable(filePath);
                 //if (dt != null)
                 //{
                 //    if (Check(dt))
