@@ -88,24 +88,6 @@ namespace MasterTorikomi_SKU
             {
                 if (bbl.ShowMessage("Q001", "取込処理") == DialogResult.Yes)
                 {
-                    //string filePath = string.Empty;
-                    //string fileExt = string.Empty;
-                    ////if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
-                    ////{
-                    ////    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
-                    ////}
-                    //OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file 
-                    //                                            // file.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
-                    //                                            // file.RestoreDirectory = true;
-                    //if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
-                    //{
-                    //   filePath = file.FileName; //get the path of the file  
-                    //fileExt = Path.GetExtension(filePath); //get the file extension  
-                    //if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
-                    //{
-                    //    bbl.ShowMessage("E137");
-                    //    return;
-                    //}
 
                     dt = ExcelToDatatable(filePath);
                     if (dt != null)
@@ -568,7 +550,7 @@ namespace MasterTorikomi_SKU
                         var result = dtSKU.Select(query);
                         if (result.Count() == 0)
                         {
-                            dt.Rows[i]["EItem"] = "JANCD";
+                            dt.Rows[i]["EItem"] = "AdminNO";
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
@@ -627,14 +609,14 @@ namespace MasterTorikomi_SKU
                         //    dt.Rows[i]["Error"] = "E101";
                         //}
                     }
-                    else
-                    {
-                        var dtJan = mtbl.M_JANCounter_JanContUpdate();
-                        if (dtJan.Rows.Count > 0)
-                        {
-                            dt.Rows[i]["JanCount"] = dtJan.Rows[0]["JanCount"].ToString();
-                        }
-                    }
+                    //else
+                    //{
+                    //    var dtJan = mtbl.M_JANCounter_JanContUpdate();
+                    //    if (dtJan.Rows.Count > 0)
+                    //    {
+                    //        dt.Rows[i]["JanCount"] = dtJan.Rows[0]["JanCount"].ToString();
+                    //    }
+                    //}
                 }
                 if (!String.IsNullOrEmpty(dt.Rows[i]["削除"].ToString()))
                 {
@@ -1205,7 +1187,6 @@ namespace MasterTorikomi_SKU
                         }
                     }
                 }  
-
                 else if(RB_all.Checked || RB_attributeinfo.Checked || RB_BaseInfo.Checked || RB_priceinfo.Checked)
                 {
                     if (!String.IsNullOrEmpty(dt.Rows[i]["主要仕入先CD"].ToString()))
@@ -1218,7 +1199,6 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
-
                 }
                 else if (RB_SizeURL.Checked)
                 {
@@ -1238,12 +1218,8 @@ namespace MasterTorikomi_SKU
                             dt.Rows[i]["Error"] = "E101";
                         }
                     }
-                    if (!String.IsNullOrEmpty(dt.Rows[i]["サイト商品CD"].ToString()))
-                    {
-                    }
                 }
             }
-
         }
         private DataTable ChangeColName(DataTable dt, int type)
         {
@@ -1578,13 +1554,23 @@ namespace MasterTorikomi_SKU
         {
             for (int j = 6; j < 8;)
             {
+                string[] monthes = { "", "エラー" };
                 Rectangle r1 = this.GV_SKU.GetCellDisplayRectangle(j, -1, true);
                 int w1 = this.GV_SKU.GetCellDisplayRectangle(j + 1, -1, true).Width;
                 r1.X += 1;
                 r1.Y += 1;
                 r1.Width = r1.Width + w1 - 2;
                 r1.Height = r1.Height - 2;
-                j += 7;
+                e.Graphics.FillRectangle(new SolidBrush(this.GV_SKU.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                format.Alignment = StringAlignment.Center;
+                e.Graphics.DrawString(monthes[j / 6],
+                this.GV_SKU.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.GV_SKU.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j +=7;
             }
         }
 
@@ -1610,10 +1596,7 @@ namespace MasterTorikomi_SKU
 
         private void BT_FileName_Click(object sender, EventArgs e)
         {
-            //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
-            //{
-            //    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
-            //}
+           
             OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file 
                                                         // file.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
                                                         // file.RestoreDirectory = true;
@@ -1624,21 +1607,11 @@ namespace MasterTorikomi_SKU
                 fileExt = Path.GetExtension(filePath); //get the file extension  
                 if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
                 {
-                    // bbl.ShowMessage("E137");
+                    
                     MessageBox.Show("No row data was found or import excel is opening in different location");
                     return;
                 }
-
-               // type = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
-                //dt = ExcelToDatatable(filePath);
-                //if (dt != null)
-                //{
-                //    if (Check(dt))
-                //    {
-                //        dtmain = dt.Copy();
-                //        dtmain = ChangeColName(dtmain, type);
-                //    }
-                //}
+                GV_SKU.DataSource = null;
             }
         }
         protected override void EndSec()
