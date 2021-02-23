@@ -69,7 +69,7 @@ namespace TempoRegiShiharaiNyuuryoku
                 return false;
             }
             DataTable dt = new DataTable();
-            dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), InOperatorCD);
+            dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
             if (dt.Rows.Count > 0)
             {
                 trgshbl.ShowMessage("E252");
@@ -109,11 +109,11 @@ namespace TempoRegiShiharaiNyuuryoku
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
                     DataTable dt = new DataTable();
-                    dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"),InOperatorCD);
-                    if (dt.Rows.Count > 0)
-                    {
-                        trgshbl.ShowMessage("E252");
-                    }
+                    //dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"),StoreCD);
+                    //if (dt.Rows.Count > 0)
+                    //{
+                    //    trgshbl.ShowMessage("E252");
+                    //}
 
                     ddpe = GetDepositEntity();
 
@@ -123,7 +123,7 @@ namespace TempoRegiShiharaiNyuuryoku
                         //RunConsole();//exeRun    <<<< PTK
                         if (Base_DL.iniEntity.IsDM_D30Used)
                         {
-                            RunConsole();
+                            //RunConsole();
                         }
                         else
                         {
@@ -193,7 +193,7 @@ namespace TempoRegiShiharaiNyuuryoku
                     try
                     {
                         Printer_Open(filePath, programID, cmdLine + "");
-                        CDO_Open();
+                        //CDO_Open();
                         //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
                         //   Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine+ ""));
                     }
