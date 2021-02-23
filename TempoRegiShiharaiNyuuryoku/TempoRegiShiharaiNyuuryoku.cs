@@ -27,7 +27,6 @@ namespace TempoRegiShiharaiNyuuryoku
             InitializeComponent();
             dtDepositNO = new DataTable();
         }
-
         private void TempoRejiShiharaiNyuuryoku_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiShiharaiNyuuryoku";
