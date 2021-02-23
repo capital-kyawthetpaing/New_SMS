@@ -40,6 +40,7 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPassword = new CKM_Controls.CKM_TextBox();
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
+            this.lblProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -220,6 +221,7 @@
             this.txtPassword.isMaxLengthErr = false;
             this.txtPassword.IsNumber = true;
             this.txtPassword.IsShop = false;
+            this.txtPassword.IsTimemmss = false;
             this.txtPassword.Length = 10;
             this.txtPassword.Location = new System.Drawing.Point(433, 267);
             this.txtPassword.MaxLength = 10;
@@ -250,6 +252,7 @@
             this.txtOperatorCD.isMaxLengthErr = false;
             this.txtOperatorCD.IsNumber = true;
             this.txtOperatorCD.IsShop = false;
+            this.txtOperatorCD.IsTimemmss = false;
             this.txtOperatorCD.Length = 8;
             this.txtOperatorCD.Location = new System.Drawing.Point(433, 213);
             this.txtOperatorCD.MaxLength = 8;
@@ -260,12 +263,23 @@
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
             this.txtOperatorCD.UseColorSizMode = false;
             // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(581, 426);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(58, 13);
+            this.lblProgress.TabIndex = 38;
+            this.lblProgress.Text = "lblProgress";
+            this.lblProgress.Visible = false;
+            // 
             // HaspoStoreMenuLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1207, 614);
+            this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.ckM_Label2);
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.txtPassword);
@@ -301,5 +315,6 @@
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox txtPassword;
         private CKM_Controls.CKM_TextBox txtOperatorCD;
+        private System.Windows.Forms.Label lblProgress;
     }
 }
