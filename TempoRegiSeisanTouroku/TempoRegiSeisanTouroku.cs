@@ -780,7 +780,7 @@ namespace TempoRegiSeisanTouroku
 
         private void Delete()
         {
-            string data = InOperatorCD;
+            string data = StoreCD;
             string date = DateTime.Now.ToString("yyyy/MM/dd");          
             dsce.StoreCD = data;
             dsce.CalculationDate = date;
