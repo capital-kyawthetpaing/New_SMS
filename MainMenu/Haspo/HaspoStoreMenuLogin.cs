@@ -5,6 +5,7 @@ using System.Data;
 using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,15 @@ namespace MainMenu.Haspo
 
         public HaspoStoreMenuLogin(bool IsMainCall=false)
         {
+           // base.Icon = this.Icon;
+            //var exe = Application.ExecutablePath;
+            //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            //var f= u.LocalPath.Replace("bin", "*").Split('*').First() + "MainMenu\\Resources\\Haspo.ico";
+            //using (var stream = File.OpenRead(f))
+            //{
+            //    MessageBox.Show(f);
+            //    this.Icon = base.Icon = new Icon(stream);
+            //}
             if (!IsMainCall)
             {
                 if (CheckExistFormRunning())
