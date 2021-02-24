@@ -15,6 +15,7 @@ using DL;
 using System.Runtime.InteropServices;
 using System.Threading;
 using EPSON_TM30;
+using System.IO;
 
 namespace MainMenu.Haspo
 {
@@ -37,6 +38,8 @@ namespace MainMenu.Haspo
         public static extern bool SetForegroundWindow(IntPtr hwnd);
         public HapoStore_MainMenu(string SCD,M_Staff_Entity mse)
         {
+
+           
             mbl = new Menu_BL();
             Staff_CD = SCD;
             this.mse = mse;
