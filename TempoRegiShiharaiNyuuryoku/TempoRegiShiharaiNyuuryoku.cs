@@ -122,7 +122,7 @@ namespace TempoRegiShiharaiNyuuryoku
                         //RunConsole();//exeRun    <<<< PTK
                         if (Base_DL.iniEntity.IsDM_D30Used)
                         {
-                            //RunConsole();
+                            RunConsole();
                         }
                         else
                         {
@@ -192,7 +192,7 @@ namespace TempoRegiShiharaiNyuuryoku
                     try
                     {
                         Printer_Open(filePath, programID, cmdLine + "");
-                        //CDO_Open();
+                        CDO_Open();
                         //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
                         //   Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine+ ""));
                     }
