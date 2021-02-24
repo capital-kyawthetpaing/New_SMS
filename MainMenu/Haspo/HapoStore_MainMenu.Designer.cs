@@ -32,6 +32,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblOperatorName = new CKM_Controls.CKM_Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblStoreName = new CKM_Controls.CKM_Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.btnProcess = new CKM_Controls.CKM_Button();
@@ -44,7 +48,7 @@
             this.btn_Proj11 = new CKM_Controls.CKM_Button();
             this.btn_Proj10 = new CKM_Controls.CKM_Button();
             this.btn_Proj9 = new CKM_Controls.CKM_Button();
-            this.ckM_Button9btn_Proj8 = new CKM_Controls.CKM_Button();
+            this.btn_Proj8 = new CKM_Controls.CKM_Button();
             this.btn_Proj7 = new CKM_Controls.CKM_Button();
             this.btn_Proj6 = new CKM_Controls.CKM_Button();
             this.btn_Proj5 = new CKM_Controls.CKM_Button();
@@ -64,19 +68,15 @@
             this.btnGym3 = new CKM_Controls.CKM_Button();
             this.btnGym2 = new CKM_Controls.CKM_Button();
             this.btnGym1 = new CKM_Controls.CKM_Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblOperatorName = new CKM_Controls.CKM_Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_right.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_left.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -107,6 +107,60 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1524, 75);
             this.panel5.TabIndex = 32;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::MainMenu.Properties.Resources.bn_13;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.lblOperatorName);
+            this.panel4.Location = new System.Drawing.Point(1153, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(352, 72);
+            this.panel4.TabIndex = 6;
+            // 
+            // lblOperatorName
+            // 
+            this.lblOperatorName.AutoSize = true;
+            this.lblOperatorName.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
+            this.lblOperatorName.DefaultlabelSize = false;
+            this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
+            this.lblOperatorName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
+            this.lblOperatorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblOperatorName.Location = new System.Drawing.Point(90, 23);
+            this.lblOperatorName.Name = "lblOperatorName";
+            this.lblOperatorName.Size = new System.Drawing.Size(57, 27);
+            this.lblOperatorName.TabIndex = 1;
+            this.lblOperatorName.Text = "OPT";
+            this.lblOperatorName.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
+            this.lblOperatorName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::MainMenu.Properties.Resources.pb_1;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.lblStoreName);
+            this.panel2.Location = new System.Drawing.Point(448, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(704, 79);
+            this.panel2.TabIndex = 5;
+            // 
+            // lblStoreName
+            // 
+            this.lblStoreName.AutoSize = true;
+            this.lblStoreName.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblStoreName.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName.DefaultlabelSize = true;
+            this.lblStoreName.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.XLarge;
+            this.lblStoreName.ForeColor = System.Drawing.Color.White;
+            this.lblStoreName.Location = new System.Drawing.Point(232, 20);
+            this.lblStoreName.Name = "lblStoreName";
+            this.lblStoreName.Size = new System.Drawing.Size(285, 33);
+            this.lblStoreName.TabIndex = 0;
+            this.lblStoreName.Text = "Racket Plaza石橋";
+            this.lblStoreName.Text_Color = CKM_Controls.CKM_Label.CKM_Color.White;
+            this.lblStoreName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -205,7 +259,7 @@
             this.panel_right.Controls.Add(this.btn_Proj11);
             this.panel_right.Controls.Add(this.btn_Proj10);
             this.panel_right.Controls.Add(this.btn_Proj9);
-            this.panel_right.Controls.Add(this.ckM_Button9btn_Proj8);
+            this.panel_right.Controls.Add(this.btn_Proj8);
             this.panel_right.Controls.Add(this.btn_Proj7);
             this.panel_right.Controls.Add(this.btn_Proj6);
             this.panel_right.Controls.Add(this.btn_Proj5);
@@ -365,26 +419,26 @@
             this.btn_Proj9.Text = "ckm_1";
             this.btn_Proj9.UseVisualStyleBackColor = false;
             // 
-            // ckM_Button9btn_Proj8
+            // btn_Proj8
             // 
-            this.ckM_Button9btn_Proj8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ckM_Button9btn_Proj8.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
-            this.ckM_Button9btn_Proj8.BackgroundImage = global::MainMenu.Properties.Resources.bn_9;
-            this.ckM_Button9btn_Proj8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button9btn_Proj8.DefaultBtnSize = false;
-            this.ckM_Button9btn_Proj8.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ckM_Button9btn_Proj8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button9btn_Proj8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button9btn_Proj8.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button9btn_Proj8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
-            this.ckM_Button9btn_Proj8.ForeColor = System.Drawing.Color.Green;
-            this.ckM_Button9btn_Proj8.Location = new System.Drawing.Point(361, 294);
-            this.ckM_Button9btn_Proj8.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button9btn_Proj8.Name = "ckM_Button9btn_Proj8";
-            this.ckM_Button9btn_Proj8.Size = new System.Drawing.Size(334, 131);
-            this.ckM_Button9btn_Proj8.TabIndex = 43;
-            this.ckM_Button9btn_Proj8.Text = "ckm_1";
-            this.ckM_Button9btn_Proj8.UseVisualStyleBackColor = false;
+            this.btn_Proj8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Proj8.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
+            this.btn_Proj8.BackgroundImage = global::MainMenu.Properties.Resources.bn_9;
+            this.btn_Proj8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Proj8.DefaultBtnSize = false;
+            this.btn_Proj8.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Proj8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_Proj8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Proj8.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.btn_Proj8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
+            this.btn_Proj8.ForeColor = System.Drawing.Color.Green;
+            this.btn_Proj8.Location = new System.Drawing.Point(361, 294);
+            this.btn_Proj8.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Proj8.Name = "btn_Proj8";
+            this.btn_Proj8.Size = new System.Drawing.Size(334, 131);
+            this.btn_Proj8.TabIndex = 43;
+            this.btn_Proj8.Text = "ckm_1";
+            this.btn_Proj8.UseVisualStyleBackColor = false;
             // 
             // btn_Proj7
             // 
@@ -783,60 +837,6 @@
             this.btnGym1.Text = "ckm_1";
             this.btnGym1.UseVisualStyleBackColor = false;
             // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::MainMenu.Properties.Resources.bn_13;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.lblOperatorName);
-            this.panel4.Location = new System.Drawing.Point(1153, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(352, 72);
-            this.panel4.TabIndex = 6;
-            // 
-            // lblOperatorName
-            // 
-            this.lblOperatorName.AutoSize = true;
-            this.lblOperatorName.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
-            this.lblOperatorName.DefaultlabelSize = false;
-            this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
-            this.lblOperatorName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
-            this.lblOperatorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblOperatorName.Location = new System.Drawing.Point(90, 23);
-            this.lblOperatorName.Name = "lblOperatorName";
-            this.lblOperatorName.Size = new System.Drawing.Size(57, 27);
-            this.lblOperatorName.TabIndex = 1;
-            this.lblOperatorName.Text = "OPT";
-            this.lblOperatorName.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
-            this.lblOperatorName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::MainMenu.Properties.Resources.pb_1;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.ckM_Label1);
-            this.panel2.Location = new System.Drawing.Point(448, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(704, 79);
-            this.panel2.TabIndex = 5;
-            // 
-            // ckM_Label1
-            // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.XLarge;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.White;
-            this.ckM_Label1.Location = new System.Drawing.Point(232, 20);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(285, 33);
-            this.ckM_Label1.TabIndex = 0;
-            this.ckM_Label1.Text = "Racket Plaza石橋";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.White;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // HapoStore_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -851,20 +851,21 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HapoStore_MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HaspoStoreMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HapoStore_MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.HapoStore_MainMenu_Load);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel_right.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel_left.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel_right.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel_left.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -885,7 +886,7 @@
         private CKM_Controls.CKM_Button btn_Proj11;
         private CKM_Controls.CKM_Button btn_Proj10;
         private CKM_Controls.CKM_Button btn_Proj9;
-        private CKM_Controls.CKM_Button ckM_Button9btn_Proj8;
+        private CKM_Controls.CKM_Button btn_Proj8;
         private CKM_Controls.CKM_Button btn_Proj7;
         private CKM_Controls.CKM_Button btn_Proj6;
         private CKM_Controls.CKM_Button btn_Proj5;
@@ -908,6 +909,6 @@
         private System.Windows.Forms.Panel panel4;
         private CKM_Controls.CKM_Label lblOperatorName;
         private System.Windows.Forms.Panel panel2;
-        private CKM_Controls.CKM_Label ckM_Label1;
+        private CKM_Controls.CKM_Label lblStoreName;
     }
 }

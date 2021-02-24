@@ -510,7 +510,7 @@ namespace Base.Client
         protected string StoreAuthorizationsCD { get; set; }
         protected string StoreAuthorizationsChangeDate { get; set; }
         protected string StoreCD { get; set; }
-
+        protected string StoreName { get; set; }
         protected string SoukoCD { get; set; }
 
         protected CKM_Button Btn_F1 { get => BtnF1; set => BtnF1 = value; }
@@ -769,6 +769,13 @@ namespace Base.Client
             this.lblLoginDate.Text = mse.SysDate;
             this.StoreCD = lblStoreCD.Text = mse.StoreCD;
 
+            //M_Staff_Entity mse2 = new M_Staff_Entity
+            //{
+            //    StaffCD = InOperatorCD
+            //};
+            //mse2 = loginbl.M_Store_InitSelect(mse);
+
+            //this.StoreName = mse2.StoreName; 
             /// For Default Souko Bind
             M_Staff_Entity mse1 = new M_Staff_Entity
             {

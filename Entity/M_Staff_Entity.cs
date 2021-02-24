@@ -43,6 +43,7 @@ namespace Entity
         public string StaffCDFrom { get; set; }
         public string StaffCDTo { get; set; }
         public string StoreMenuCD { get; set; }
+        public string StoreName { get; set; }
 
     }
 }

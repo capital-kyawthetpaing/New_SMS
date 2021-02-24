@@ -19,7 +19,7 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT TOP 1 A.CarrierName,A.NormalFLG 
+    SELECT TOP 1 A.CarrierName,A.NormalFLG, A.SCatKBN2
     FROM M_Carrier A
     WHERE A.CarrierCD = @CarrierCD
       AND A.ChangeDate <= @ChangeDate

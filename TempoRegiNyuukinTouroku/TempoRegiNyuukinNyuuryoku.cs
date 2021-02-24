@@ -155,7 +155,7 @@ namespace TempoRegiNyuukinTouroku
         {
             ddpe = new D_DepositHistory_Entity
             {
-                StoreCD = InOperatorCD,
+                StoreCD = StoreCD,
                 DataKBN = "3",
                 DenominationCD = cboDenominationName.SelectedValue.ToString(),
                 CancelKBN = "0",

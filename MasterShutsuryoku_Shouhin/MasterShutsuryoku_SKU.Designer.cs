@@ -485,6 +485,7 @@
             this.TB_MakerItem.isMaxLengthErr = false;
             this.TB_MakerItem.IsNumber = true;
             this.TB_MakerItem.IsShop = false;
+            this.TB_MakerItem.IsTimemmss = false;
             this.TB_MakerItem.Length = 200;
             this.TB_MakerItem.Location = new System.Drawing.Point(117, 235);
             this.TB_MakerItem.MaxLength = 200;
@@ -514,6 +515,7 @@
             this.TB_Item.isMaxLengthErr = false;
             this.TB_Item.IsNumber = true;
             this.TB_Item.IsShop = false;
+            this.TB_Item.IsTimemmss = false;
             this.TB_Item.Length = 300;
             this.TB_Item.Location = new System.Drawing.Point(117, 216);
             this.TB_Item.MaxLength = 300;
@@ -600,6 +602,7 @@
             this.TB_ApprovalDateT.isMaxLengthErr = false;
             this.TB_ApprovalDateT.IsNumber = true;
             this.TB_ApprovalDateT.IsShop = false;
+            this.TB_ApprovalDateT.IsTimemmss = false;
             this.TB_ApprovalDateT.Length = 10;
             this.TB_ApprovalDateT.Location = new System.Drawing.Point(910, 260);
             this.TB_ApprovalDateT.MaxLength = 10;
@@ -610,6 +613,7 @@
             this.TB_ApprovalDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_ApprovalDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_ApprovalDateT.UseColorSizMode = false;
+            this.TB_ApprovalDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_ApprovalDateT_KeyDown);
             // 
             // ckM_Label32
             // 
@@ -647,6 +651,7 @@
             this.TB_ApprovalDateF.isMaxLengthErr = false;
             this.TB_ApprovalDateF.IsNumber = true;
             this.TB_ApprovalDateF.IsShop = false;
+            this.TB_ApprovalDateF.IsTimemmss = false;
             this.TB_ApprovalDateF.Length = 10;
             this.TB_ApprovalDateF.Location = new System.Drawing.Point(776, 260);
             this.TB_ApprovalDateF.MaxLength = 10;
@@ -694,6 +699,7 @@
             this.TB_UpdateDateT.isMaxLengthErr = false;
             this.TB_UpdateDateT.IsNumber = true;
             this.TB_UpdateDateT.IsShop = false;
+            this.TB_UpdateDateT.IsTimemmss = false;
             this.TB_UpdateDateT.Length = 10;
             this.TB_UpdateDateT.Location = new System.Drawing.Point(589, 260);
             this.TB_UpdateDateT.MaxLength = 10;
@@ -704,6 +710,7 @@
             this.TB_UpdateDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_UpdateDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_UpdateDateT.UseColorSizMode = false;
+            this.TB_UpdateDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_UpdateDateT_KeyDown);
             // 
             // ckM_Label30
             // 
@@ -742,6 +749,7 @@
             this.TB_UpdateDateF.isMaxLengthErr = false;
             this.TB_UpdateDateF.IsNumber = true;
             this.TB_UpdateDateF.IsShop = false;
+            this.TB_UpdateDateF.IsTimemmss = false;
             this.TB_UpdateDateF.Length = 10;
             this.TB_UpdateDateF.Location = new System.Drawing.Point(453, 260);
             this.TB_UpdateDateF.MaxLength = 10;
@@ -789,6 +797,7 @@
             this.TB_InsertDateT.isMaxLengthErr = false;
             this.TB_InsertDateT.IsNumber = true;
             this.TB_InsertDateT.IsShop = false;
+            this.TB_InsertDateT.IsTimemmss = false;
             this.TB_InsertDateT.Length = 10;
             this.TB_InsertDateT.Location = new System.Drawing.Point(258, 260);
             this.TB_InsertDateT.MaxLength = 10;
@@ -799,6 +808,7 @@
             this.TB_InsertDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_InsertDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_InsertDateT.UseColorSizMode = false;
+            this.TB_InsertDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_InsertDateT_KeyDown);
             // 
             // ckM_Label29
             // 
@@ -836,6 +846,7 @@
             this.TB_InsertDateF.isMaxLengthErr = false;
             this.TB_InsertDateF.IsNumber = true;
             this.TB_InsertDateF.IsShop = false;
+            this.TB_InsertDateF.IsTimemmss = false;
             this.TB_InsertDateF.Length = 10;
             this.TB_InsertDateF.Location = new System.Drawing.Point(117, 260);
             this.TB_InsertDateF.MaxLength = 10;
@@ -917,6 +928,7 @@
             this.TB_InstructionNo.isMaxLengthErr = false;
             this.TB_InstructionNo.IsNumber = true;
             this.TB_InstructionNo.IsShop = false;
+            this.TB_InstructionNo.IsTimemmss = false;
             this.TB_InstructionNo.Length = 50;
             this.TB_InstructionNo.Location = new System.Drawing.Point(1281, 162);
             this.TB_InstructionNo.MaxLength = 50;
@@ -1358,6 +1370,7 @@
             this.TB_Catalog.isMaxLengthErr = false;
             this.TB_Catalog.IsNumber = true;
             this.TB_Catalog.IsShop = false;
+            this.TB_Catalog.IsTimemmss = false;
             this.TB_Catalog.Length = 50;
             this.TB_Catalog.Location = new System.Drawing.Point(690, 83);
             this.TB_Catalog.MaxLength = 50;
@@ -1470,6 +1483,7 @@
             this.TB_CommentInStore.isMaxLengthErr = false;
             this.TB_CommentInStore.IsNumber = true;
             this.TB_CommentInStore.IsShop = false;
+            this.TB_CommentInStore.IsTimemmss = false;
             this.TB_CommentInStore.Length = 100;
             this.TB_CommentInStore.Location = new System.Drawing.Point(117, 162);
             this.TB_CommentInStore.MaxLength = 100;
@@ -1612,6 +1626,7 @@
             this.TB_Shouhin.isMaxLengthErr = false;
             this.TB_Shouhin.IsNumber = true;
             this.TB_Shouhin.IsShop = false;
+            this.TB_Shouhin.IsTimemmss = false;
             this.TB_Shouhin.Length = 80;
             this.TB_Shouhin.Location = new System.Drawing.Point(117, 113);
             this.TB_Shouhin.MaxLength = 80;

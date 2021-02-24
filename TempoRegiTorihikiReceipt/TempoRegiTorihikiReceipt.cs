@@ -111,9 +111,9 @@ namespace TempoRegiTorihikiReceipt
          
 
             //コマンドライン引数を配列で取得する
-           string[] cmds = Environment.GetCommandLineArgs();// 
-               //  string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "5", "2368" };// 
-                                                             //  MessageBox.Show(cmds.Length.ToString());
+          string[] cmds = Environment.GetCommandLineArgs();// 
+             ///   string[] cmds = new string[] { "C:\\", "01", "haspo1", "MYA040_PC", "2", "70" };// 
+                                                               //MessageBox.Show(cmds.Length.ToString());
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
             {
                 //   MessageBox.Show("Hi");
@@ -252,7 +252,13 @@ namespace TempoRegiTorihikiReceipt
                         {
                             // 雑入金のみデータあり
                             var reportModeDepositMiscDeposit = new TempoRegiTorihikiReceipt_MiscDeposit();
-                            reportModeDepositMiscDeposit.SetDataSource(torihikiReceiptDataSet);
+                            try
+                            {
+                                reportModeDepositMiscDeposit.SetDataSource(torihikiReceiptDataSet);
+                            }
+                            catch(Exception ex) {
+                                var d = ex;
+                            }
                             reportModeDepositMiscDeposit.Refresh();
                            reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
                             ReadyToPrinter = reportModeDepositMiscDeposit;

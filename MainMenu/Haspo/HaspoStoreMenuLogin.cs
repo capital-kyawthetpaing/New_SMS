@@ -58,6 +58,8 @@ namespace MainMenu.Haspo
             loginbl = new Login_BL();
             txtOperatorCD.Focus();
             Add_ButtonDesign();
+            txtOperatorCD.Focus();
+            txtOperatorCD.Select();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -161,10 +163,8 @@ namespace MainMenu.Haspo
                     ftp.UpdateSyncData(Login_BL.SyncPath);
                     this.Cursor = Cursors.Default;
                     MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // .. 
                 }
                 ckM_Button1.Focus();
-
             }
         }
       

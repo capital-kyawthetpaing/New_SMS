@@ -427,7 +427,8 @@ namespace TempoRegiRyousyuusyo
                 if (receiptDataSet.StoreTable.Rows.Count == 0)
                 {
                     var store = receiptDataSet.StoreTable.NewStoreTableRow();
-                    store.Logo = (byte[])row["Logo"];
+                    if(!(row["Logo"] is System.DBNull))
+                        store.Logo = (byte[])row["Logo"];
                     store.CompanyName = Convert.ToString(row["CompanyName"]);
                     store.StoreName = Convert.ToString(row["StoreName"]);                       // 店舗名
                     store.Address1 = Convert.ToString(row["Address1"]);                         // 住所1

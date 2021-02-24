@@ -328,13 +328,7 @@ namespace MainMenu
         private void btnClose_Click(object sender, EventArgs e)
         {
             IsClose = true;
-           // if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 this.Close();
-            //else
-            //{
-            //        btnClose.Focus();
-            //}
-            //    return;
         }
         private void panelLeft_Click(object sender, EventArgs e)
         {
@@ -419,7 +413,7 @@ namespace MainMenu
             {
                 //var programID = (sender as CKM_Button).Text;
                 //var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
-                var programID = (sender as CKM_Button).Text;
+                //var programID = (sender as CKM_Button).Text;
                 //var Condition = "ProgramID = '" + programID + "'" + "";
                 var Condition = "BusinessSEQ = '" + ParentID + "'" + " And " + "ProgramSEQ = '" + (sender as CKM_Button).Name.Split('j').Last() + "'";
                var exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();

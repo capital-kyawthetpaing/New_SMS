@@ -6,34 +6,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.PointOfService;
+using System.Windows;
 
 namespace EPSON_TM30
 {
-    public class CashDrawerOpen
+    public class CashDrawerOpen 
     {
          public CashDrawer m_Drawer { get; set; } = null;
        /* PosExplorer posExplorer*/
         public CashDrawerOpen()
         {
         }
-        public void OpenCashDrawer(bool IsWaited = false,bool IsIdle = false)
+        public void OpenCashDrawer(bool IsWaited = false,bool IsIdle = false, String vl = null )
         {
+            //if (vl == null)
+            //return;
             try
             {
                 string strLogicalName = "CashDrawer";
 
                 //PosExplorerを生成します。
                 PosExplorer posExplorer = new PosExplorer();
-
+                //var d = posExplorer.GetDevices("CashDrawer")[3];
                 DeviceInfo deviceInfo = null;
-
-                deviceInfo = posExplorer.GetDevice(DeviceType.CashDrawer, strLogicalName);
+                
+                    deviceInfo = posExplorer.GetDevice(DeviceType.CashDrawer, strLogicalName);
+               // vl= string.IsNullOrEmpty(deviceInfo) ? "NULL" : deviceInfo.Type; 
                 m_Drawer = (CashDrawer)posExplorer.CreateInstance(deviceInfo);
                 try
                 {
-                     // m_Drawer.DeviceEnabled = true;
+                    // m_Drawer.DeviceEnabled = true;
                 }
-                catch { }
+                catch(Exception ex) {
+                    
+                }
                 m_Drawer.Open();
 
                 m_Drawer.Claim(1000);

@@ -69,6 +69,7 @@ namespace MasterTorikomi_Item
         {
             //if (bbl.ShowMessage("Q001") == DialogResult.Yes)
             //{
+            gvItem.DataSource = null;
             string filePath = string.Empty;
             string fileExt = string.Empty;
             if (!System.IO.Directory.Exists("C:\\SMS\\MasterShutsuryoku_ITEM\\"))
@@ -99,13 +100,11 @@ namespace MasterTorikomi_Item
                         if (ErrorCheck(dt))
                         {
                             ExcelErrorCheck(dt);
-                            //var dtres = dt.Select("ItemCDShow <> ''");
-                            if (dt != null)
-                            {
-                                gvItem.DataSource = null;
-                                gvItem.DataSource = dt;
-                                //Cursor = Cursors.WaitCursor;
-                            }
+                            //if (dt != null)
+                            //{
+                            //    gvItem.DataSource = null;
+                            //    gvItem.DataSource = dt;
+                            //}
 
                         }
                         else
@@ -150,7 +149,7 @@ namespace MasterTorikomi_Item
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "1")
                     {
@@ -330,6 +329,38 @@ namespace MasterTorikomi_Item
             await Task.WhenAll();
         }
         string  maxCount = "";
+        private bool ControlInvokeRequired(Control c,Action a)
+        {
+            if (c.InvokeRequired)
+            {
+                c.Invoke(new MethodInvoker(  delegate { a(); }));
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+        private void UpdateControl(Control c, string s)
+        {
+            if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+            {
+                c.Text = s;
+                return;
+            }
+            c.Text = s;
+            c.Update();
+        }
+        private async Task UpdateText(Control c,string t)
+        {
+            await Task.Run(() =>
+            {
+                if (c.InvokeRequired)
+                {
+                    UpdateControl(c,t);
+                }
+            });
+        }
         private async  void ExcelErrorCheck(DataTable dt)
         {
           //  tick = 0;
@@ -342,7 +373,7 @@ namespace MasterTorikomi_Item
             dt.Columns.Add("ItemDate");
             string currentType =  RB_all.Checked ? "1" : RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked ? "3" : RB_priceinfo.Checked ? "4" : RB_Catloginfo.Checked ? "5" : RB_tagInfo.Checked ? "6" : "8";
             string[] Cols = GetCurrentType(Convert.ToInt32(currentType)); 
-            string kibun = dt.Rows[1]["データ区分"].ToString();
+            //string kibun = dt.Rows[1]["データ区分"].ToString();
             label2.Visible = true;
             var cou = dt.Rows.Count.ToString() + "";
             maxCount = cou;
@@ -355,6 +386,8 @@ namespace MasterTorikomi_Item
 
                    try
                    { //tick = i;
+                  await  UpdateText(label2, i.ToString());
+                    //Task.Delay(100).Wait();
                         if (cc == 100)
                        {
                       // Run1(i.ToString());
@@ -491,9 +524,16 @@ namespace MasterTorikomi_Item
                        {
                            if (!Is102(dt.Rows[i]["商品名"].ToString()))
                            {
-                               dt.Rows[i]["EItem"] = "商品名";
-                               dt.Rows[i]["Error"] = "E102";
-                               goto SkippedLine;
+                            if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString().Trim()))
+                            {
+                                dt.Rows[i]["商品名"] = "---";
+                            }
+                            else
+                            {
+                                dt.Rows[i]["EItem"] = "商品名";
+                                dt.Rows[i]["Error"] = "E102";
+                                goto SkippedLine;
+                            }
                            }
                        }
                    }
@@ -611,6 +651,16 @@ namespace MasterTorikomi_Item
                        {
                            if (!Is101("M_MultiPorpose", dt.Rows[i]["商品分類CD"].ToString(), "203"))
                            {
+                            var vl = dt.Rows[i]["商品分類CD"].ToString();
+                            if (!Liststr.Contains(vl))
+                            {
+                                if (vl == "クラブツイルキャップ")
+                                {
+
+
+                                }
+                                Liststr.Add(vl);
+                            }
                                dt.Rows[i]["EItem"] = "商品分類CD";
                                dt.Rows[i]["Error"] = "E101";
                                goto SkippedLine;
@@ -1408,6 +1458,7 @@ namespace MasterTorikomi_Item
                    catch { }
                    int g = 0;
                }
+            
         //   });
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -1429,11 +1480,13 @@ namespace MasterTorikomi_Item
                     }
                 }
             }
+            if (dt != null)
+            {
+                gvItem.DataSource = dt;
+            }
             try
             {
-               // timer1.Stop();
                 label2.Visible = false;
-                
             }
             catch { }
         }
@@ -1492,8 +1545,20 @@ namespace MasterTorikomi_Item
                 {
                     string str = " [Key] ='" + param + "'" +
                            "and ID='" + paramID + "'";
+                    string str_sec = " [Char1] ='" + param + "'" +
+                           "and ID='" + paramID + "'";
                     var result = dtMultiP.Select(str);
-                    return (result.Count() > 0);
+                    if (result.Count() > 0)
+                    {
+
+                        return (result.Count() > 0);
+                    }
+                    else {
+                        var res = dtMultiP.Select(str_sec);
+                        return (res.Count() > 0);
+
+                    }
+                    
                     //data = bbl.SimpleSelect1("42", bbl.GetDate(), paramID, param);
                 }
 
@@ -1502,6 +1567,7 @@ namespace MasterTorikomi_Item
 
             return false;
         }
+        List<string> Liststr = new List<string>();
         private bool Is190(string value, bool IsDataFlag = false)
         {
             if (!IsDataFlag)
@@ -1596,9 +1662,11 @@ namespace MasterTorikomi_Item
         }
         private void F12()
         {
-            try { 
+            try {
+                var d = Liststr.ToArray();
+                var str = String.Join(",", d);
 
-            ibl = new ITEM_BL();
+                ibl = new ITEM_BL();
                 if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
                     Cursor = Cursors.WaitCursor;

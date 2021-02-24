@@ -89,8 +89,16 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
-
+        //M_Store_InitSelect
+        public DataTable M_Store_InitSelect(M_Staff_Entity mse)
+        {
+            string sp = "M_Store_InitSelect";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StaffCD } }
+            };
+            return SelectData(dic, sp);
+        }
         /// <summary>
         /// 
         /// </summary>

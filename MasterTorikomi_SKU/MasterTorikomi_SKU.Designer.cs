@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -61,11 +62,11 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Size = new System.Drawing.Size(1282, 0);
+            this.PanelHeader.Size = new System.Drawing.Size(1682, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(748, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1148, 0);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -226,7 +227,7 @@
             this.BT_Torikomi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Torikomi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_Torikomi.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_Torikomi.Location = new System.Drawing.Point(1103, 68);
+            this.BT_Torikomi.Location = new System.Drawing.Point(1443, 68);
             this.BT_Torikomi.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Torikomi.Name = "BT_Torikomi";
             this.BT_Torikomi.Size = new System.Drawing.Size(100, 28);
@@ -246,7 +247,7 @@
             this.GV_SKU.CheckCol = null;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -262,23 +263,31 @@
             this.Column2,
             this.Column3,
             this.colError});
-            this.GV_SKU.EnableHeadersVisualStyles = false;
-            this.GV_SKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.GV_SKU.Location = new System.Drawing.Point(33, 116);
-            this.GV_SKU.Name = "GV_SKU";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_SKU.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.GV_SKU.RowHeight_ = 20;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_SKU.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GV_SKU.EnableHeadersVisualStyles = false;
+            this.GV_SKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GV_SKU.Location = new System.Drawing.Point(33, 106);
+            this.GV_SKU.Name = "GV_SKU";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_SKU.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.GV_SKU.RowHeight_ = 20;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.GV_SKU.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GV_SKU.RowTemplate.Height = 20;
-            this.GV_SKU.Size = new System.Drawing.Size(1170, 650);
+            this.GV_SKU.Size = new System.Drawing.Size(1510, 650);
             this.GV_SKU.TabIndex = 108;
             this.GV_SKU.UseRowNo = true;
             this.GV_SKU.UseSetting = false;
@@ -289,7 +298,7 @@
             this.colSKU.DataPropertyName = "SKUCD";
             this.colSKU.HeaderText = "SKUCD";
             this.colSKU.Name = "colSKU";
-            this.colSKU.Width = 150;
+            this.colSKU.Width = 220;
             // 
             // colJan
             // 
@@ -304,28 +313,28 @@
             this.colskuname.DataPropertyName = "商品名";
             this.colskuname.HeaderText = "商品名";
             this.colskuname.Name = "colskuname";
-            this.colskuname.Width = 250;
+            this.colskuname.Width = 430;
             // 
             // colColr
             // 
             this.colColr.DataPropertyName = "カラー";
             this.colColr.HeaderText = "カラー";
             this.colColr.Name = "colColr";
-            this.colColr.Width = 120;
+            this.colColr.Width = 130;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "セイズ";
             this.Column1.HeaderText = "セイズ";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 120;
+            this.Column1.Width = 130;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "メーカー商品CD";
             this.Column2.HeaderText = "メーカー商品CD";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.Column2.Width = 170;
             // 
             // Column3
             // 
@@ -365,7 +374,7 @@
             this.TB_FileName.MoveNext = true;
             this.TB_FileName.Name = "TB_FileName";
             this.TB_FileName.Size = new System.Drawing.Size(480, 19);
-            this.TB_FileName.TabIndex = 109;
+            this.TB_FileName.TabIndex = 1;
             this.TB_FileName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_FileName.UseColorSizMode = false;
             // 
@@ -392,7 +401,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 811);
+            this.ClientSize = new System.Drawing.Size(1684, 798);
             this.Controls.Add(this.BT_FileName);
             this.Controls.Add(this.TB_FileName);
             this.Controls.Add(this.GV_SKU);
@@ -415,6 +424,7 @@
             this.PanelHeaderHeight = 45;
             this.Text = "MasterTorikomi_SKU";
             this.Load += new System.EventHandler(this.MasterTorikomi_SKU_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MasterTorikomi_SKU_KeyUp);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.Controls.SetChildIndex(this.ckM_Label2, 0);
