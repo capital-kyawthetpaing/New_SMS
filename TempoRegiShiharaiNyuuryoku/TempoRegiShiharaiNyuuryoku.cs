@@ -27,7 +27,6 @@ namespace TempoRegiShiharaiNyuuryoku
             InitializeComponent();
             dtDepositNO = new DataTable();
         }
-
         private void TempoRejiShiharaiNyuuryoku_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiShiharaiNyuuryoku";
@@ -69,7 +68,7 @@ namespace TempoRegiShiharaiNyuuryoku
                 return false;
             }
             DataTable dt = new DataTable();
-            dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), InOperatorCD);
+            dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
             if (dt.Rows.Count > 0)
             {
                 trgshbl.ShowMessage("E252");
@@ -109,11 +108,11 @@ namespace TempoRegiShiharaiNyuuryoku
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
                     DataTable dt = new DataTable();
-                    dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"),InOperatorCD);
-                    if (dt.Rows.Count > 0)
-                    {
-                        trgshbl.ShowMessage("E252");
-                    }
+                    //dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"),StoreCD);
+                    //if (dt.Rows.Count > 0)
+                    //{
+                    //    trgshbl.ShowMessage("E252");
+                    //}
 
                     ddpe = GetDepositEntity();
 
