@@ -442,5 +442,17 @@ namespace TempoRegiTsurisenJyunbi
             //////catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
         }
         EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            POS pos = new POS();
+            pos.OpenCashDrawer();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+        }
     }
 }

@@ -118,7 +118,6 @@
             this.expense_timeto.Name = "expense_timeto";
             this.expense_timeto.Size = new System.Drawing.Size(50, 19);
             this.expense_timeto.TabIndex = 7;
-            this.expense_timeto.Text = "00:00";
             this.expense_timeto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.expense_timeto.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.expense_timeto.UseColorSizMode = false;
@@ -151,10 +150,10 @@
             this.expense_timefrom.Name = "expense_timefrom";
             this.expense_timefrom.Size = new System.Drawing.Size(50, 19);
             this.expense_timefrom.TabIndex = 5;
-            this.expense_timefrom.Text = "00:00";
             this.expense_timefrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.expense_timefrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.expense_timefrom.UseColorSizMode = false;
+            this.expense_timefrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.expense_timeto_KeyDown);
             // 
             // cboStoreName
             // 

@@ -7,14 +7,14 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using CKM_Controls;
 using Entity;
-
-
+using Microsoft.Win32;
 
 namespace MainMenu.Haspo
 {
@@ -25,7 +25,11 @@ namespace MainMenu.Haspo
 
         public HaspoStoreMenuLogin(bool IsMainCall=false)
         {
-           // base.Icon = this.Icon;
+           // base.Icon = Icon = Properties.Resources.Haspo1;
+            SetAddRemoveProgramsIcon();
+            ShowIcon = true;
+            ShowInTaskbar = true;
+          //  ShowInTaskbar = true;
             //var exe = Application.ExecutablePath;
             //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             //var f= u.LocalPath.Replace("bin", "*").Split('*').First() + "MainMenu\\Resources\\Haspo.ico";
@@ -53,6 +57,46 @@ namespace MainMenu.Haspo
                 ckM_Button3.Visible = false;
 
         }
+
+        private static void SetAddRemoveProgramsIcon()
+        {
+            //only run if deployed
+            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            //     && ApplicationDeployment.CurrentDeployment.IsFirstRun)
+            {
+                try
+                {
+                    Assembly code = Assembly.GetExecutingAssembly();
+                    AssemblyDescriptionAttribute asdescription =
+                        (AssemblyDescriptionAttribute)Attribute.GetCustomAttribute(code, typeof(AssemblyDescriptionAttribute));
+                    // string assemblyDescription = asdescription.Description;
+
+                    //the icon is included in this program
+                    string iconSourcePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "Haspo.ico");
+
+                    if (!File.Exists(iconSourcePath))
+                        return;
+
+                    RegistryKey myUninstallKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall");
+                    string[] mySubKeyNames = myUninstallKey.GetSubKeyNames();
+                    for (int i = 0; i < mySubKeyNames.Length; i++)
+                    {
+                        RegistryKey myKey = myUninstallKey.OpenSubKey(mySubKeyNames[i], true);
+                        object myValue = myKey.GetValue("DisplayName");
+                        if (myValue != null && myValue.ToString() == "MainMenu")
+                        {
+                            myKey.SetValue("DisplayIcon", iconSourcePath);
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
         private bool CheckExistFormRunning()
         {
             Process[] localByName = Process.GetProcessesByName("MainMenu");

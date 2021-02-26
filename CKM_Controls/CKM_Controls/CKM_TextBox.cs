@@ -337,6 +337,18 @@ namespace CKM_Controls
                     e.Handled = true;
                 }
             }
+            else if (CtrlType == Type.Time)
+            {
+                if (char.IsDigit(e.KeyChar) ||  (e.KeyChar.ToString() == ":") || (e.KeyChar.ToString() == " ") || (e.KeyChar.ToString() == "\b"))
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+
+            }
             else
             {
 
@@ -921,7 +933,7 @@ namespace CKM_Controls
             return true;
         }
 
-        private bool TimeCheck()
+        public bool TimeCheck()
         {
             if (!string.IsNullOrWhiteSpace(Text))
             {
@@ -959,7 +971,7 @@ namespace CKM_Controls
                 if (IsTimemmss)
                 {
                     if (Text.Contains(":"))
-                        Text = Text.Split(':')[0] + ":"+ Text.Split(':')[1];
+                        Text = Text.Split(':')[0] + ":" + Text.Split(':')[1];
                 }
             }
 

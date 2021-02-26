@@ -32,7 +32,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://163.43.194.87/SMS-Globe/</UpdateUrl>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,7 +61,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Haspo.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>227D923EC21402B740346D06C1007DE0CA469F30</ManifestCertificateThumbprint>
@@ -74,6 +75,13 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -303,6 +311,7 @@
   <ItemGroup>
     <None Include="Logos\haspoicon_fj7_icon.ico" />
     <Content Include="Haspo.ico" />
+    <Content Include="logorktn_wIB_icon.ico" />
     <Content Include="Logos\Haspo.ico" />
     <Content Include="Logos\logo_mark_l5k_icon.ico" />
     <None Include="Logos\tennic123_ARk_icon.ico" />
