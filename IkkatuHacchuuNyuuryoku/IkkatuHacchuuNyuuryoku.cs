@@ -288,8 +288,17 @@ namespace IkkatuHacchuuNyuuryoku
                             || index == (int)EIndex.HacchuuShoriNO
                            )
                         {
-                            this.BtnSubF11.Focus();
-                           // CheckData(true);
+                            //this.BtnSubF11.Focus();
+                            // CheckData(true);
+                            try
+                            {
+                                base.FunctionProcess(FuncDisp - 1);
+                            }
+                            catch (Exception ex)
+                            {
+                                //エラー時共通処理
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                         else if (detailControls.Length - 1 > index)
                         {
@@ -1419,32 +1428,15 @@ namespace IkkatuHacchuuNyuuryoku
 
                 case (int)EIndex.JuchuuStaffCD:
 
-                    //Old
-                    //if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    //{
-                    //     return true;
-                    //}
-
-                    //if (!CheckDependsOnHacchuuDate(index))
-                    //    return false;
-
-                    //CheckData(set);
-                    // edit 1221
                     if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         if (!CheckDependsOnHacchuuDate(index))
                             return false;
 
-                        //CheckData(true);
+                        CheckData(set);
+                        CheckGrid(0, 0);
+                        this.CalcKin();
                     }
-
-
-                    //CheckData(set);
-                    CheckData(true);
-                    CheckGrid(0, 0);
-                    
-                    this.CalcKin();
-
                     break;
 
                 case (int)EIndex.SiiresakiCD:
@@ -1797,9 +1789,12 @@ namespace IkkatuHacchuuNyuuryoku
 
                 if (dt.Rows.Count > 0)
                 {
-                    bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
-                    detailControls[(int)EIndex.HacchuuNO].Focus();
-                    return false;
+                    if(this.InOperatorCD != dt.Rows[0]["Operator"].ToString())
+                    {
+                        bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
+                        detailControls[(int)EIndex.HacchuuNO].Focus();
+                        return false;
+                    }
                 }
                 else
                 {
@@ -1832,14 +1827,18 @@ namespace IkkatuHacchuuNyuuryoku
 
                     if (dt.Rows.Count > 0)
                     {
-                        bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
-                        detailControls[(int)EIndex.HacchuuShoriNO].Focus();
-                        foreach (var item in hacchuuNOList)
+                        if(this.InOperatorCD != dt.Rows[0]["Operator"].ToString())
                         {
-                            mOldIkkatuHacchuuNo = item;
-                            //this.DeleteExclusive();
+                            bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
+                            detailControls[(int)EIndex.HacchuuShoriNO].Focus();
+                            foreach (var item in hacchuuNOList)
+                            {
+                                mOldIkkatuHacchuuNo = item;
+                                //this.DeleteExclusive();
+                            }
+                            return false;
                         }
-                        return false;
+                       
                     }
                     else
                     {
@@ -1883,9 +1882,14 @@ namespace IkkatuHacchuuNyuuryoku
                 DataTable dt2 = ebl.D_Exclusive_Select(dee);
                 if (dt2.Rows.Count > 0)
                 {
-                    bbl.ShowMessage("S004", dt2.Rows[0]["Program"].ToString(), dt2.Rows[0]["Operator"].ToString());
-                    //DeleteExclusive_Juchuu();
-                    return false;
+                    
+                    if(this.InOperatorCD != dt2.Rows[0]["Operator"].ToString())
+                    {
+                        bbl.ShowMessage("S004", dt2.Rows[0]["Program"].ToString(), dt2.Rows[0]["Operator"].ToString());
+                        // DeleteExclusive_Juchuu();
+                        return false;
+                    }
+                   
                 }
                 else
                 {
@@ -2369,7 +2373,7 @@ namespace IkkatuHacchuuNyuuryoku
                     //排他チェック
                     if (!this.SelectAndInsertExclusive_Juchuu(dt))
                     {
-                        this.previousCtrl.Focus();
+                        //this.previousCtrl.Focus();
                         return false;
                     }
                 }
@@ -2482,6 +2486,7 @@ namespace IkkatuHacchuuNyuuryoku
                 }
                  
                 mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
+                //scSiiresakiCD_0.Focus();
             }
 
             if (OperationMode == EOperationMode.UPDATE)
@@ -2501,6 +2506,7 @@ namespace IkkatuHacchuuNyuuryoku
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, this.ActiveControl, -1, -1, this.ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridIkkatuHacchuu.ColNO.TaishouFLG);
+                scSiiresakiCD_0.Focus();
             }
             else
             {

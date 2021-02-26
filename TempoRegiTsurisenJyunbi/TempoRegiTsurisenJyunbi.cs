@@ -204,6 +204,21 @@ namespace TempoRegiTsurisenJyunbi
         {
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
+            else
+            {
+                string ymd = bbl.GetDate();
+                //txtDate.Text = ymd;
+                DateTime target = DateTime.Parse(txtDate.Text);
+                //DateTime today = DateTime.Today;
+                DateTime yesterday = DateTime.Now.AddDays(-1);
+                if (target <= yesterday)
+                {
+                    trtjb.ShowMessage("E103");
+                    txtDate.Focus();
+                    return false;
+                }
+
+            }
             DataTable dt = new DataTable();
             dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
             if (dt.Rows.Count > 0)
