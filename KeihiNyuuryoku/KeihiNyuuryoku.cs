@@ -782,9 +782,9 @@ namespace KeihiNyuuryoku
             tb.Rows.InsertAt(row, r);
             tb.AcceptChanges();
 
-            for (int i = 0; i < dgvKehiNyuuryoku.Rows[r - 1].Cells.Count; i++)
+            for (int i = 0; i < dgvKehiNyuuryoku.Rows[r +1].Cells.Count; i++)
             {
-                dgvKehiNyuuryoku.Rows[r].Cells[i].Value = dgvKehiNyuuryoku.Rows[r - 1].Cells[i].Value;
+                dgvKehiNyuuryoku.Rows[r].Cells[i].Value = dgvKehiNyuuryoku.Rows[r+1].Cells[i].Value;
             }
 
             BindTotalGaku(tb);
