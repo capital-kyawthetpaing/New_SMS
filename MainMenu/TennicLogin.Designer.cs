@@ -221,6 +221,7 @@
             this.txtPassword.isMaxLengthErr = false;
             this.txtPassword.IsNumber = true;
             this.txtPassword.IsShop = false;
+            this.txtPassword.IsTimemmss = false;
             this.txtPassword.Length = 10;
             this.txtPassword.Location = new System.Drawing.Point(444, 259);
             this.txtPassword.MaxLength = 10;
@@ -251,9 +252,10 @@
             this.txtOperatorCD.isMaxLengthErr = false;
             this.txtOperatorCD.IsNumber = true;
             this.txtOperatorCD.IsShop = false;
-            this.txtOperatorCD.Length = 8;
+            this.txtOperatorCD.IsTimemmss = false;
+            this.txtOperatorCD.Length = 10;
             this.txtOperatorCD.Location = new System.Drawing.Point(444, 205);
-            this.txtOperatorCD.MaxLength = 8;
+            this.txtOperatorCD.MaxLength = 10;
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(405, 37);
