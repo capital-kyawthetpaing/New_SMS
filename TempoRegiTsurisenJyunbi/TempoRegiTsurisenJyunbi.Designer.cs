@@ -75,6 +75,7 @@
             this.txtDate.AllowMinus = false;
             this.txtDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDate.BackColor = System.Drawing.Color.White;
+            this.txtDate.BorderColor = false;
             this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDate.ClientColor = System.Drawing.SystemColors.Window;
             this.txtDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -88,6 +89,7 @@
             this.txtDate.isMaxLengthErr = false;
             this.txtDate.IsNumber = true;
             this.txtDate.IsShop = false;
+            this.txtDate.IsTimemmss = false;
             this.txtDate.Length = 10;
             this.txtDate.Location = new System.Drawing.Point(258, 79);
             this.txtDate.MaxLength = 10;
@@ -97,6 +99,7 @@
             this.txtDate.TabIndex = 0;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtDate.UseColorSizMode = false;
             this.txtDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDate_KeyDown);
             // 
             // ckmShop_Label2
@@ -110,7 +113,7 @@
             this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label2.Location = new System.Drawing.Point(130, 83);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
-            this.ckmShop_Label2.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label2.TabIndex = 5;
             this.ckmShop_Label2.Text = "日　付";
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -148,7 +151,7 @@
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label5.Location = new System.Drawing.Point(130, 204);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label5.TabIndex = 4;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -159,6 +162,7 @@
             this.DepositGaku.AllowMinus = true;
             this.DepositGaku.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.DepositGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.DepositGaku.BorderColor = false;
             this.DepositGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DepositGaku.ClientColor = System.Drawing.Color.White;
             this.DepositGaku.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -172,6 +176,7 @@
             this.DepositGaku.isMaxLengthErr = false;
             this.DepositGaku.IsNumber = true;
             this.DepositGaku.IsShop = false;
+            this.DepositGaku.IsTimemmss = false;
             this.DepositGaku.Length = 10;
             this.DepositGaku.Location = new System.Drawing.Point(258, 140);
             this.DepositGaku.MaxLength = 10;
@@ -181,6 +186,7 @@
             this.DepositGaku.TabIndex = 1;
             this.DepositGaku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DepositGaku.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.DepositGaku.UseColorSizMode = false;
             // 
             // ckmShop_Label1
             // 

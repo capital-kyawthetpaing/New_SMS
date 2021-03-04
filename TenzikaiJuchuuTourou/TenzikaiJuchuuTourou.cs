@@ -4402,7 +4402,7 @@ namespace TenzikaiJuchuuTourou
                 }
                 else
                 {
-                    bbl.ShowMessage("E101");
+                    bbl.ShowMessage("S001");
                     return;
                 }
             }
@@ -4427,7 +4427,7 @@ namespace TenzikaiJuchuuTourou
                 }
                 else
                 {
-                    bbl.ShowMessage("E101");
+                    bbl.ShowMessage("S001");
                     return;
                 }
             }
@@ -4450,7 +4450,7 @@ namespace TenzikaiJuchuuTourou
                 }
                 else
                 {
-                    bbl.ShowMessage("E101");
+                    bbl.ShowMessage("S001");
                     return;
                 }
             }

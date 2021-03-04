@@ -19,7 +19,7 @@ namespace EDINouhinJouhonTourokuB
         string mainfolderPath = string.Empty;
         string bakfolderPath = string.Empty;
         string firstColHeader = string.Empty;
-        static DataTable dtImportB, dtImportD;
+        static DataTable dtImportB, dtImportD , dtImport1, dtImport2;
         static DataTable dtImport = new DataTable();
 
         const int COL_COUNT = 37;
@@ -33,10 +33,10 @@ namespace EDINouhinJouhonTourokuB
             DirectoryInfo[] diArr = di.GetDirectories();
 
             //int i = 0;
-            foreach(DirectoryInfo dr in diArr)
+            foreach (DirectoryInfo dr in diArr)
             {
                 dtImportB = dtImportD = null;
-                ArrayList FilePath = getFilePath(mainfolderPath +@"\"+ dr.ToString());
+                ArrayList FilePath = getFilePath(mainfolderPath + @"\" + dr.ToString());
                 dskend.VendorCD = dr.ToString();
 
                 foreach (string s in FilePath)
@@ -47,11 +47,11 @@ namespace EDINouhinJouhonTourokuB
                     PrepareImportData(s);
 
                 }
-                if(dtImportB!=null && dtImportD!=null)
+                if (dtImportB != null || dtImportD != null)
                 {
                     dskend.dt1 = dtImportB;
                     dskend.dt2 = dtImportD;
-                    if(edij_bl.SKEN_InsertData(dskend))
+                    if (edij_bl.SKEN_InsertData(dskend))
                     {
                         foreach (string s in FilePath)
                         {
@@ -59,9 +59,9 @@ namespace EDINouhinJouhonTourokuB
                         }
                     }
                 }
-                   
+
             }
-           
+
         }
 
         private ArrayList getFilePath(string folderPath)
@@ -96,7 +96,7 @@ namespace EDINouhinJouhonTourokuB
                 //dtImportD = new DataTable();
 
                 String[] colNameB = { "レコード区分", "データ区分", "取引先会社部署CD", "取引先企業部署名", "納品元会社部署CD", "納品元企業部署名", "販売店会社部署CD", "販売店会社部署名", "出荷先会社部署CD", "出荷先会社部署名", "納品書NO", "伝票区分", "受注日", "出荷日", "納品/返品伝票日", "発注NO", "発注区分", "伝票表示a", "伝票表示b", "伝票表示c", "伝票表示d", "運送方法", "個数", "運賃区分", "諸掛", "運賃", "品代合計", "消費税", "総合計", "メーカー伝票NO", "元伝NO", "予備1", "予備2", "予備3", "予備4", "予備5" };
-                String[] colNameD = { "レコード区分", "データ区分", "取引先会社部署CD", "取引先企業部署名", "納品元会社部署CD", "納品元企業部署名", "販売店会社部署CD", "販売店会社部署名", "出荷先会社部署CD", "出荷先会社部署名", "納品書NO", "納品書NO行", "納品書NO列", "伝票区分", "受注日", "出荷日", "納品/返品伝票日", "発注NO", "発注区分", "発注者商品CD", "納品元品番", "メーカー規格1", "メーカー規格2", "単位", "取引単価", "標準上代", "ブランド略名", "商品略名", "JANCD", "納品数", "メーカー伝票NO", "元伝NO","予備1", "予備2", "予備3", "予備4", "予備5" };
+                String[] colNameD = { "レコード区分", "データ区分", "取引先会社部署CD", "取引先企業部署名", "納品元会社部署CD", "納品元企業部署名", "販売店会社部署CD", "販売店会社部署名", "出荷先会社部署CD", "出荷先会社部署名", "納品書NO", "納品書NO行", "納品書NO列", "伝票区分", "受注日", "出荷日", "納品/返品伝票日", "発注NO", "発注区分", "発注者商品CD", "納品元品番", "メーカー規格1", "メーカー規格2", "単位", "取引単価", "標準上代", "ブランド略名", "商品略名", "JANCD", "納品数", "メーカー伝票NO", "元伝NO", "予備1", "予備2", "予備3", "予備4", "予備5" };
                 dtImport = null;
 
 
@@ -105,30 +105,76 @@ namespace EDINouhinJouhonTourokuB
                     dtImport = CSVToTable(filePath);
                 }
 
-                
-                if (dtImport.Rows.Count>0)
+                if (dtImport.Rows.Count > 0)
                 {
-                    if (dtImport.Rows[0]["A"].ToString() == "B" && dtImport.Rows[0]["B"].ToString() == "21")
+                    dtImport1 = new DataTable();
+                    dtImport2 = new DataTable();
+                    dtImport1 =  dtImport.Copy();
+                    dtImport2 = dtImport.Copy();
+                    if (dtImport.Rows.Count > 0)
                     {
-                        //if (CheckColName(colNameB, dtImport))
-                        //{
-                        dtImportB = new DataTable();
-                        Para_Add(dtImportB,'B');
-                        SetData(dtImport, dtImportB,'B');
-                        //dtImportB = ChangeColName(dtImport,"B");
-                            
-                        //}
+                        List<DataRow> toBeDelb = new List<DataRow>();
+                        List<DataRow> toBeDeld = new List<DataRow>();
+
+                        foreach (DataRow dr in dtImport1.Rows)
+                        {
+                            if (dr["A"].ToString() == "D" && dr["B"].ToString() == "21")
+                                toBeDelb.Add(dr);
+                        }
+
+                        foreach (DataRow dr in toBeDelb)
+                        {
+                            dtImport1.Rows.Remove(dr);
+                        }
+
+                        foreach (DataRow dr1 in dtImport2.Rows)
+                        {
+                            if (dr1["A"].ToString() == "B" && dr1["B"].ToString() == "21")
+                                toBeDeld.Add(dr1);
+                        }
+
+                        foreach (DataRow dr1 in toBeDeld)
+                        {
+                            dtImport2.Rows.Remove(dr1);
+                        }
+
+
+                        if (dtImport1.Rows.Count > 0)
+                        {
+                            dtImportB = new DataTable();
+                            Para_Add(dtImportB, 'B');
+                            SetData(dtImport1, dtImportB, 'B');
+                        }
+                        if (dtImport2.Rows.Count > 0)
+                        {
+                            dtImportD = new DataTable();
+                            Para_Add(dtImportD, 'D');
+                            SetData(dtImport2, dtImportD, 'D');
+                        }
+
                     }
-                    else if(dtImport.Rows[0]["A"].ToString() == "D" && dtImport.Rows[0]["B"].ToString() == "21")
-                    {
-                        //if (CheckColName(colNameD, dtImport))
-                        //{
-                        dtImportD = new DataTable();
-                        Para_Add(dtImportD, 'D');
-                        SetData(dtImport, dtImportD, 'D');
-                        //dtImportD = ChangeColName(dtImport,"D");
-                        //}
-                    }
+
+                    //if (dtImport.Rows[0]["A"].ToString() == "B" && dtImport.Rows[0]["B"].ToString() == "21")
+                    //{
+                    //    //if (CheckColName(colNameB, dtImport))
+                    //    //{
+
+                    //    Para_Add(dtImportB, 'B');
+                    //    SetData(dtImport, dtImportB, 'B');
+                    //    //dtImportB = ChangeColName(dtImport,"B");
+
+                    //    //}
+                    //}
+                    //else if (dtImport.Rows[0]["A"].ToString() == "D" && dtImport.Rows[0]["B"].ToString() == "21")
+                    //{
+                    //    //if (CheckColName(colNameD, dtImport))
+                    //    //{
+                    //    dtImportD = new DataTable();
+                    //    Para_Add(dtImportD, 'D');
+                    //    SetData(dtImport, dtImportD, 'D');
+                    //    //dtImportD = ChangeColName(dtImport,"D");
+                    //    //}
+                    //}
 
                 }
 
@@ -205,7 +251,7 @@ namespace EDINouhinJouhonTourokuB
                         csvData.Rows.Add(colFields);//add first row as data row
                     }
 
-                     while (!csvReader.EndOfData)
+                    while (!csvReader.EndOfData)
                     {
                         string[] fieldData = csvReader.ReadFields();
 
@@ -240,10 +286,10 @@ namespace EDINouhinJouhonTourokuB
 
         }
 
-        private void SetData( DataTable dtImport, DataTable dtImportB,char ch)
+        private void SetData(DataTable dtImport, DataTable dtImportB, char ch)
         {
             int rowNo = 1;
-            if(ch=='B')
+            if (ch == 'B')
             {
                 foreach (DataRow row in dtImport.Rows)
                 {
@@ -362,7 +408,7 @@ namespace EDINouhinJouhonTourokuB
 
         }
 
-        private void Para_Add(DataTable dt,char ch)
+        private void Para_Add(DataTable dt, char ch)
         {
             //dt.Columns.Add("ImportDetailsSu", typeof(string));   //'エラーなく取り込んだ行数 
             //dt.Columns.Add("ErrorSu", typeof(string)); //エラーがあった行数
@@ -370,7 +416,7 @@ namespace EDINouhinJouhonTourokuB
             //dt.Columns.Add("ImportFile", typeof(string)); //import file name
             //dt.Columns.Add("ErrorText", typeof(string)); //Error Msg
 
-            if (ch=='B')
+            if (ch == 'B')
             {
                 dt.Columns.Add("SKENRecordKBN", typeof(string));  //レコード区分 
                 dt.Columns.Add("SKENDataKBN", typeof(string)); //データ区分
@@ -627,7 +673,7 @@ namespace EDINouhinJouhonTourokuB
                 errNo = 1;
                 return;
             }
-            
+
         }
 
 
