@@ -253,9 +253,9 @@
             this.txtOperatorCD.IsNumber = true;
             this.txtOperatorCD.IsShop = false;
             this.txtOperatorCD.IsTimemmss = false;
-            this.txtOperatorCD.Length = 8;
+            this.txtOperatorCD.Length = 10;
             this.txtOperatorCD.Location = new System.Drawing.Point(433, 213);
-            this.txtOperatorCD.MaxLength = 8;
+            this.txtOperatorCD.MaxLength = 10;
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(405, 37);

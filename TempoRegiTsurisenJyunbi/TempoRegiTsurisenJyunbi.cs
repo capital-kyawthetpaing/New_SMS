@@ -204,6 +204,21 @@ namespace TempoRegiTsurisenJyunbi
         {
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
+            else
+            {
+                string ymd = bbl.GetDate();
+                //txtDate.Text = ymd;
+                DateTime target = DateTime.Parse(txtDate.Text);
+                //DateTime today = DateTime.Today;
+                DateTime yesterday = DateTime.Now.AddDays(-1);
+                if (target <= yesterday)
+                {
+                    trtjb.ShowMessage("E103");
+                    txtDate.Focus();
+                    return false;
+                }
+
+            }
             DataTable dt = new DataTable();
             dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
             if (dt.Rows.Count > 0)
@@ -442,5 +457,17 @@ namespace TempoRegiTsurisenJyunbi
             //////catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
         }
         EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            POS pos = new POS();
+            pos.OpenCashDrawer();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+        }
     }
 }
