@@ -96,19 +96,33 @@ namespace MainMenu
             //    Login_BL.SyncPath = path;
             //}
 
+        
+
             var GetList = FTPData.GetFileList(Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");   /// Add Network Credentials
-            ErrorStatus += GetList.Count();
-            // if (GetList.Count() > 0 && GetList != null)
+            //var lblini = " of "+ GetList.Count().ToString();
+           // ErrorStatus += GetList.Count();
+            //var lbb = (GetParentLbl().Controls.Find("lblProgress", true)[0] as System.Windows.Forms.Label);
+            //lbb.Visible = true;
+            //lbb.Text = lblini;
+            //if (lblini != null)
+            //return;
             if (GetList != null)
             {
-                // Cursor = Cursors.WaitCursor;
+             //   if ()
                 foreach (string file in GetList)
                 {
                     FTPData.Download(file, Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
-                   // ErrorStatus += file + Environment.NewLine;
                 }
-                //  Cursor = Cursors.Default;
             }
+        }
+        public System.Windows.Forms.Form GetParentLbl()
+        {
+            var formOpen = System.Windows.Forms.Application.OpenForms.Cast<System.Windows.Forms.Form>().Where(form => form.Name == "HaspoStoreMenuLogin").FirstOrDefault();
+            if (formOpen != null)
+            {
+                return formOpen;
+            }
+            return null;
         }
         public static void Download(string file, string ftpuri, string UID, string PWD, string path)
         {

@@ -747,6 +747,7 @@ namespace TempoRegiHanbaiTouroku
         {
             try
             {
+                cdo.SetDisplay(true, true, "");
                 cdo.RemoveDisplay(true);
                 cdo.RemoveDisplay(true);
             }

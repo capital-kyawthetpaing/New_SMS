@@ -15,6 +15,7 @@ using DL;
 using System.Runtime.InteropServices;
 using System.Threading;
 using EPSON_TM30;
+using System.IO;
 
 namespace MainMenu.Haspo
 {
@@ -37,6 +38,8 @@ namespace MainMenu.Haspo
         public static extern bool SetForegroundWindow(IntPtr hwnd);
         public HapoStore_MainMenu(string SCD,M_Staff_Entity mse)
         {
+
+           
             mbl = new Menu_BL();
             Staff_CD = SCD;
             this.mse = mse;
@@ -345,14 +348,17 @@ namespace MainMenu.Haspo
                 var exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CashDrawerOpen")
                 {
+                    string E = "";
                     try
                     {
                         CashDrawerOpen cdo_open = new CashDrawerOpen();
-                        cdo_open.OpenCashDrawer();
+                        
+                        cdo_open.OpenCashDrawer(false,false,E);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message + ex.StackTrace );
+                        var nl = Environment.NewLine;
+                        MessageBox.Show(ex.Message +nl +ex.StackTrace +nl+  ex.InnerException +nl+ ex.TargetSite.Name + nl + E   );
                     }
                 }
                 else
