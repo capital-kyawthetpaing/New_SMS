@@ -664,6 +664,9 @@ namespace TempoJuchuuShoukai
                         break;
                     }
                 case 1:     //F2:新規
+                    if (bbl.ShowMessage("Q210") != DialogResult.Yes)
+                        return;
+
                     ExecSec();
                     break;
                 case 2:     //F3:変更
