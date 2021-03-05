@@ -153,7 +153,7 @@ namespace BL
             M_Authorizations_DL madl = new M_Authorizations_DL();
             DataTable dtAuthorization = madl.M_Authorizations_AccessCheck(mae);
 
-            if (dtAuthorization.Rows.Count > 0)
+             if (dtAuthorization.Rows.Count > 0)
             {
                 string messageID = dtAuthorization.Rows[0]["MessageID"].ToString();
                 if (messageID.Equals("allow"))

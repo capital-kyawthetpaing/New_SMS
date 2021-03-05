@@ -239,7 +239,31 @@ namespace TempoJuchuuShoukai
             }
 
         }
-
+        protected override void ExecSec()
+        {
+            try
+            {
+                //EXEが存在しない時ｴﾗｰ
+                // 実行モジュールと同一フォルダのファイルを取得
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + Juchuu;
+                if (System.IO.File.Exists(filePath))
+                {
+                    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID;
+                    System.Diagnostics.Process.Start(filePath, cmdLine);
+                }
+                else
+                {
+                    //ファイルなし
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
         protected override void ExecDisp()
         {
             for (int i = 0; i < detailControls.Length; i++)
@@ -640,6 +664,9 @@ namespace TempoJuchuuShoukai
                         break;
                     }
                 case 1:     //F2:新規
+                    if (bbl.ShowMessage("Q210") != DialogResult.Yes)
+                        return;
+
                     ExecSec();
                     break;
                 case 2:     //F3:変更
