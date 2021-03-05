@@ -459,7 +459,7 @@ namespace KeihiltiranHyou
                     if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) > Convert.ToDateTime(txtExpenseTo.Text.ToString())) //対象期間(From)の方が大きい場合Error
                     {
                         bbl.ShowMessage("E104");
-                        txtExpenseFrom.Focus();
+                        expense_timeto.Focus();//
                         return;
                     }
                     if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) == Convert.ToDateTime(txtExpenseTo.Text.ToString()))
@@ -469,12 +469,13 @@ namespace KeihiltiranHyou
                             if (!expense_timefrom.TimeCheck() || !expense_timeto.TimeCheck())
                             {
                                 bbl.ShowMessage("E103");
+                                expense_timeto.Focus();
                                 return;
                             }
                             if (Convert.ToInt32(expense_timefrom.Text.Replace(":", "")) > Convert.ToInt32(expense_timeto.Text.Replace(":", "")))
                             {
                                 bbl.ShowMessage("E104");
-                                expense_timefrom.Focus();
+                                expense_timeto.Focus();
                                 return;
                             }
                         }

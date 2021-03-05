@@ -25,7 +25,7 @@ namespace MainMenu
             await Task.Run(() =>
             {
                 FTPData ftp = new FTPData();
-                ftp.UpdateSyncData(p);
+                ftp.UpdateSyncData(p,"");
             });
 
             MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

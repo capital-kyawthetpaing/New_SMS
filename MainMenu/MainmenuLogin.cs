@@ -227,7 +227,15 @@ namespace MainMenu
                     FTPData ftp = new FTPData();
                     try
                     {
-                        ftp.UpdateSyncData(Login_BL.SyncPath);
+                        if (result == DialogResult.Yes)
+                        {
+                            this.Cursor = Cursors.WaitCursor;
+                            //   FTPData ftp = new FTPData();
+
+                            ftp.UpdateSyncData(Login_BL.SyncPath, "MainmenuLogin");
+                            this.Cursor = Cursors.Default;
+                            //MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -236,7 +244,7 @@ namespace MainMenu
                         this.Cursor = Cursors.Default;
                         return;
                     }
-                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   // MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     this.Cursor = Cursors.Default;
