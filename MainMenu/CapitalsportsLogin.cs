@@ -144,17 +144,14 @@ namespace MainMenu
                 if (result == DialogResult.Yes)
                 {
                     this.Cursor = Cursors.WaitCursor;
-                    FTPData ftp = new FTPData();
+                    FTPData ftp = new FTPData(Login_BL.SyncPath, "CapitalsportsLogin");
                     try
                     {
                         if (result == DialogResult.Yes)
                         {
                             this.Cursor = Cursors.WaitCursor;
-                         //   FTPData ftp = new FTPData();
-
-                            ftp.UpdateSyncData(Login_BL.SyncPath, "CapitalsportsLogin");
+                             ftp.UpdateSyncData();
                             this.Cursor = Cursors.Default;
-                            //MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     catch (Exception ex)

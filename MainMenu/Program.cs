@@ -8,6 +8,8 @@ using DL;
 using System.Deployment;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.IO;
+using System.Deployment.Application;
 
 namespace MainMenu
 {
@@ -46,9 +48,52 @@ namespace MainMenu
                 return false;
             }
         }
+        public static string LocateEXE(String filename)
+        {
+            String path = Environment.GetEnvironmentVariable("path");
+            String[] folders = path.Split(';');
+            foreach (String folder in folders)
+            {
+                if (File.Exists(folder + filename))
+                {
+                    return folder + filename;
+                }
+                else if (File.Exists(folder + "\\" + filename))
+                {
+                    return folder + "\\" + filename;
+                }
+            }
+
+            return String.Empty;
+        }
+        public static void  CreateIfMissingAsync()
+        {
+            bool folderExists = Directory.Exists(@"C:\SMS\AppData\");
+            if (!folderExists)
+                Directory.CreateDirectory(@"C:\SMS\AppData\");
+            try
+            {
+                if (!File.Exists(@"C:\SMS\AppData\CKM.ini"))
+                {
+                    System.Net.WebClient wc = new System.Net.WebClient();
+                    var key = EncodeTo64(DateTime.Now.Day.ToString());
+                    byte[] raw = wc.DownloadData("http://163.43.194.87/GetIniFile.aspx?Value=" + key);
+                    File.WriteAllBytes(@"C:\SMS\AppData\CKM.ini", raw);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        static string EncodeTo64(string toEncode)
+        {
+            byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(toEncode);
+            string returnValue = System.Convert.ToBase64String(toEncodeAsBytes);
+            return returnValue;
+        }
         static Form LoginFormName()
         {
-
+            CreateIfMissingAsync();
             Form pgname = null;
             var localpath = @"C:\SMS\AppData\CKM.ini";
             if (!System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
@@ -56,7 +101,7 @@ namespace MainMenu
                 System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 localpath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + "CKM.ini";
             }
-           
+
             var Id = "";
             var pass = "";
             var path = "";
@@ -82,11 +127,11 @@ namespace MainMenu
                 //return;
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
-                FTPData ftp = new FTPData();
-                if (!System.IO.File.Exists(localpath))
-                {
-                    //FTPData.Download("CKM.ini", path,Id, pass, @"C:\SMS\AppData\");   /// 2021-03-04 ptk commented concerning with static filed method
-                }
+                //FTPData ftp = new FTPData();
+                //if (!System.IO.File.Exists(localpath))
+                //{
+                //  //  ftp.Download("", "CKM.ini", @"‪ftp://163.43.194.87/Encrypt/", Id, pass, @"C:\SMS\AppData\");   /// 2021-03-04 ptk commented concerning with static filed method
+                //}
                 Login_BL.Islocalized = false;
             }
             else
