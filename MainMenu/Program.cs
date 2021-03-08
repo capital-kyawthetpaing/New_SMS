@@ -85,7 +85,7 @@ namespace MainMenu
                 FTPData ftp = new FTPData();
                 if (!System.IO.File.Exists(localpath))
                 {
-                    FTPData.Download("CKM.ini", path,Id, pass, @"C:\SMS\AppData\");
+                    //FTPData.Download("CKM.ini", path,Id, pass, @"C:\SMS\AppData\");   /// 2021-03-04 ptk commented concerning with static filed method
                 }
                 Login_BL.Islocalized = false;
             }

@@ -265,12 +265,12 @@
             // 
             // lblProgress
             // 
-            this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(581, 426);
+            this.lblProgress.Location = new System.Drawing.Point(570, 405);
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(58, 13);
+            this.lblProgress.Size = new System.Drawing.Size(100, 23);
             this.lblProgress.TabIndex = 38;
             this.lblProgress.Text = "lblProgress";
+            this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblProgress.Visible = false;
             // 
             // HaspoStoreMenuLogin

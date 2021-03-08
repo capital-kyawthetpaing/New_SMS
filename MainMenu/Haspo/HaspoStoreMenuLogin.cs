@@ -205,7 +205,7 @@ namespace MainMenu.Haspo
                 F11();
             }
         }
-        private void F11()
+        private  void F11()
         {
             if (ApplicationDeployment.IsNetworkDeployed)
             {
@@ -214,9 +214,10 @@ namespace MainMenu.Haspo
                 {
                     this.Cursor = Cursors.WaitCursor;
                     FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData(Login_BL.SyncPath);
+                    
+                        ftp.UpdateSyncData(Login_BL.SyncPath, "HaspoStoreMenuLogin");
                     this.Cursor = Cursors.Default;
-                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 ckM_Button1.Focus();
             }

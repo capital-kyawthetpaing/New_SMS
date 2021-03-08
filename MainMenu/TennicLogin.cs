@@ -169,10 +169,10 @@ namespace MainMenu
                 {
                     this.Cursor = Cursors.WaitCursor;
                     FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData(Login_BL.SyncPath);
+
+                    ftp.UpdateSyncData(Login_BL.SyncPath, "TennicLogin");
                     this.Cursor = Cursors.Default;
-                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // .. 
+                    //MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 ckM_Button1.Focus();
             }

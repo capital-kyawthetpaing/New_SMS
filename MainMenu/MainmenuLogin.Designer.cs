@@ -40,6 +40,7 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPassword = new CKM_Controls.CKM_TextBox();
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
+            this.lblProgress = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -264,12 +265,23 @@
             this.txtOperatorCD.UseColorSizMode = false;
             this.txtOperatorCD.TextChanged += new System.EventHandler(this.txtOperatorCD_TextChanged);
             // 
+            // lblProgress
+            // 
+            this.lblProgress.Location = new System.Drawing.Point(570, 389);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(100, 23);
+            this.lblProgress.TabIndex = 33;
+            this.lblProgress.Text = "lblProgress";
+            this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProgress.Visible = false;
+            // 
             // MainmenuLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1193, 614);
+            this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ckM_Label2);
             this.Controls.Add(this.ckM_Label1);
@@ -305,5 +317,6 @@
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox txtPassword;
         private CKM_Controls.CKM_TextBox txtOperatorCD;
+        private System.Windows.Forms.Label lblProgress;
     }
 }

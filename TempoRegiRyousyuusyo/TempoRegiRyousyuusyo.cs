@@ -32,6 +32,8 @@ namespace TempoRegiRyousyuusyo
             /// <summary>プログラムID</summary>
             PcID,
 
+            StoreCD,
+
             /// <summary>お買上番号</summary>
             SalesNO,
 
