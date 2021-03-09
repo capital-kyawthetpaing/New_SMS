@@ -16,20 +16,20 @@ namespace MainMenu
         public ProgressBar(string Path)
         {
             InitializeComponent();
-            CenterToParent();
-            p = Path;
-            progressBar1.Style = ProgressBarStyle.Marquee;
+            //CenterToParent();
+            //p = Path;
+            //progressBar1.Style = ProgressBarStyle.Marquee;
         }
-        private async void ProgressBar_Load(object sender, EventArgs e)
+        private  void ProgressBar_Load(object sender, EventArgs e)
         {
-            await Task.Run(() =>
-            {
-                FTPData ftp = new FTPData();
-                ftp.UpdateSyncData(p);
-            });
+            //await Task.Run(() =>
+            //{
+            //    FTPData ftp = new FTPData();
+            //    ftp.UpdateSyncData(p,"");
+            //});
 
-            MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Close();
+            //MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //Close();
         }
       
     }

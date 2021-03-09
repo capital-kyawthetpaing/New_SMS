@@ -167,11 +167,9 @@ namespace MainMenu
                 if (result == DialogResult.Yes)
                 {
                     this.Cursor = Cursors.WaitCursor;
-                    FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData(Login_BL.SyncPath);
+                    FTPData ftp = new FTPData(Login_BL.SyncPath, "HaspoLogin");
+                    ftp.UpdateSyncData();
                     this.Cursor = Cursors.Default;
-                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // .. 
                 }
                 ckM_Button1.Focus();
 

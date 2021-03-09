@@ -207,21 +207,26 @@ namespace MainMenu.Haspo
         }
         private void F11()
         {
-            if (ApplicationDeployment.IsNetworkDeployed)
+            var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    this.Cursor = Cursors.WaitCursor;
-                    FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData(Login_BL.SyncPath);
-                    this.Cursor = Cursors.Default;
-                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                ckM_Button1.Focus();
+                this.Cursor = Cursors.WaitCursor;
+                FTPData ftp = new FTPData(Login_BL.SyncPath, "HaspoStoreMenuLogin");
+                ftp.UpdateSyncData();
+                this.Cursor = Cursors.Default;
             }
+            ckM_Button1.Focus();
         }
-      
+        private void  Async()
+        {
+            //progressBar1.Visible = true;
+            FTPData ftp = new FTPData(Login_BL.SyncPath, "HaspoStoreMenuLogin");
+            ftp.UpdateSyncData();
+            //Task task = new Task(ftp.UpdateSync);
+            //task.Start();
+            //task.Wait();
+           
+        }
         private void ckM_Button1_Click_1(object sender, EventArgs e)
         {
             Login_Click();
