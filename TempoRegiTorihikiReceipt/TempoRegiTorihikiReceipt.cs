@@ -124,8 +124,11 @@ namespace TempoRegiTorihikiReceipt
                     InputDepositNO = cmds[(int)CommandLine.DepositeNO];
                     // MessageBox.Show(cmds.Length.ToString());
                     // 印刷
-                   // MessageBox.Show(InputMode + " " + InputDepositNO);
-                    Print();
+                    // MessageBox.Show(InputMode + " " + InputDepositNO);
+                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    {
+                        Print();
+                    }
                 }
                 catch (Exception ex)
                 {

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Linq;
 using System.Windows.Forms;
-
+using DL;
 namespace TempoRegiRyousyuusyo
 {
     /// <summary>
@@ -237,14 +237,16 @@ namespace TempoRegiRyousyuusyo
                 }
                 else
                 {
-                    // 領収書、レシートいずれかにチェックありの場合
-                    bool Isboth = chkRyousyuusho.Checked && chkReceipt.Checked;
-                    if (chkRyousyuusho.Checked)
+                    if (Base_DL.iniEntity.IsDM_D30Used)
                     {
-                        // 領収書チェックボックスにチェックあり
-                        var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
-                        if (ryousyuusyo.Rows.Count > 0)
+                        // 領収書、レシートいずれかにチェックありの場合
+                        bool Isboth = chkRyousyuusho.Checked && chkReceipt.Checked;
+                        if (chkRyousyuusho.Checked)
                         {
+                            // 領収書チェックボックスにチェックあり
+                            var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
+                            if (ryousyuusyo.Rows.Count > 0)
+                            {
                                 //try
                                 //{
                                 //    cdo.RemoveDisplay(true);
@@ -252,32 +254,32 @@ namespace TempoRegiRyousyuusyo
                                 //}
                                 //catch { }
                                 OutputRyouusyusyo(ryousyuusyo);
-                            try
-                            {
-                                //Thread.Sleep(2000);
-                                if (!Isboth)
-                                    Stop_DisplayService();
+                                try
+                                {
+                                    //Thread.Sleep(2000);
+                                    if (!Isboth)
+                                        Stop_DisplayService();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                MessageBox.Show(ex.Message);
+                                bl.ShowMessage("E198", "領収書");
+                                txtSalesNO.Focus();
                             }
                         }
-                        else
+
+                        if (chkReceipt.Checked)
                         {
-                            bl.ShowMessage("E198", "領収書");
-                            txtSalesNO.Focus();
-                        }
-                    }
+                            // レシートチェックボックスにチェックあり
 
-                    if (chkReceipt.Checked)
-                    {
-                        // レシートチェックボックスにチェックあり
-
-                        // 店舗取引履歴
-                        DataTable receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
-                        //if ((!IsHanbaiTouroku))
-                        //{
+                            // 店舗取引履歴
+                            DataTable receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
+                            //if ((!IsHanbaiTouroku))
+                            //{
                             if (receiptData.Rows.Count > 0)
                             {
                                 try
@@ -297,23 +299,23 @@ namespace TempoRegiRyousyuusyo
                                 // Stop_DisplayService();
                                 //  return;
                             }
-                        //}
-                        //else
-                        //{
-                        //    if (receiptData.Rows.Count > 0)
-                        //    {
-                        //        OutputReceipt(receiptData);
-                        //    }
-                        //    else
-                        //    {
-                        //        bl.ShowMessage("E198", "領収書");
-                        //        txtSalesNO.Focus();
-                        //    }
-                        //}
-                  
-                      
-                    }
+                            //}
+                            //else
+                            //{
+                            //    if (receiptData.Rows.Count > 0)
+                            //    {
+                            //        OutputReceipt(receiptData);
+                            //    }
+                            //    else
+                            //    {
+                            //        bl.ShowMessage("E198", "領収書");
+                            //        txtSalesNO.Focus();
+                            //    }
+                            //}
 
+
+                        }
+                    }
                 }
             }
         }
