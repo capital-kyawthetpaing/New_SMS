@@ -41,6 +41,7 @@
             this.ckM_Button3 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
             this.lblProgress = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -265,13 +266,23 @@
             // 
             // lblProgress
             // 
-            this.lblProgress.Location = new System.Drawing.Point(569, 391);
+            this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblProgress.Location = new System.Drawing.Point(532, 390);
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(100, 23);
+            this.lblProgress.Size = new System.Drawing.Size(200, 23);
             this.lblProgress.TabIndex = 38;
             this.lblProgress.Text = "lblProgress";
             this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblProgress.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(434, 441);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(412, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 41;
+            this.progressBar1.Visible = false;
             // 
             // HaspoLogin
             // 
@@ -279,6 +290,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1193, 614);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ckM_Label2);
@@ -318,5 +330,6 @@
         private CKM_Controls.CKM_Button ckM_Button3;
         private CKM_Controls.CKM_Button ckM_Button2;
         private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

@@ -41,6 +41,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblProgress = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -267,13 +268,23 @@
             // 
             // lblProgress
             // 
-            this.lblProgress.Location = new System.Drawing.Point(575, 390);
+            this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblProgress.Location = new System.Drawing.Point(536, 393);
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(100, 23);
+            this.lblProgress.Size = new System.Drawing.Size(200, 23);
             this.lblProgress.TabIndex = 34;
             this.lblProgress.Text = "lblProgress";
             this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblProgress.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(430, 440);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(412, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 40;
+            this.progressBar1.Visible = false;
             // 
             // CapitalsportsLogin
             // 
@@ -281,6 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1207, 614);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -320,5 +332,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

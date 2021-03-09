@@ -45,6 +45,9 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_2 = new CKM_Controls.CKM_TextBox();
             this.Pnl_Body = new System.Windows.Forms.Panel();
+            this.IMT_VENNM_0 = new CKM_Controls.CKM_TextBox();
+            this.IMT_VENNM_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_VENNM_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_ORTAN_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_ORTAN_1 = new CKM_Controls.CKM_TextBox();
             this.IMN_ORTAN_0 = new CKM_Controls.CKM_TextBox();
@@ -161,9 +164,6 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_0 = new Search.CKM_SearchControl();
             this.IMT_VENCD_1 = new Search.CKM_SearchControl();
             this.IMT_VENCD_2 = new Search.CKM_SearchControl();
-            this.IMT_VENNM_0 = new CKM_Controls.CKM_TextBox();
-            this.IMT_VENNM_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_VENNM_2 = new CKM_Controls.CKM_TextBox();
             this.label31 = new CKM_Controls.CKM_Label();
             this.label33 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox6 = new CKM_Controls.CKM_TextBox();
@@ -350,6 +350,10 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.PanelSearch.TabIndex = 7;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -450,6 +454,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_1.isMaxLengthErr = false;
             this.IMT_KAIDT_1.IsNumber = true;
             this.IMT_KAIDT_1.IsShop = false;
+            this.IMT_KAIDT_1.IsTimemmss = false;
             this.IMT_KAIDT_1.Length = 20;
             this.IMT_KAIDT_1.Location = new System.Drawing.Point(1092, 76);
             this.IMT_KAIDT_1.MaxLength = 20;
@@ -482,6 +487,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Text_4.isMaxLengthErr = false;
             this.ckM_Text_4.IsNumber = true;
             this.ckM_Text_4.IsShop = false;
+            this.ckM_Text_4.IsTimemmss = false;
             this.ckM_Text_4.Length = 20;
             this.ckM_Text_4.Location = new System.Drawing.Point(87, 155);
             this.ckM_Text_4.MaxLength = 20;
@@ -513,6 +519,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_0.isMaxLengthErr = false;
             this.IMT_KAIDT_0.IsNumber = true;
             this.IMT_KAIDT_0.IsShop = false;
+            this.IMT_KAIDT_0.IsTimemmss = false;
             this.IMT_KAIDT_0.Length = 20;
             this.IMT_KAIDT_0.Location = new System.Drawing.Point(1092, 0);
             this.IMT_KAIDT_0.MaxLength = 20;
@@ -545,6 +552,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_2.isMaxLengthErr = false;
             this.IMT_REMAK_2.IsNumber = true;
             this.IMT_REMAK_2.IsShop = false;
+            this.IMT_REMAK_2.IsTimemmss = false;
             this.IMT_REMAK_2.Length = 80;
             this.IMT_REMAK_2.Location = new System.Drawing.Point(27, 209);
             this.IMT_REMAK_2.MaxLength = 80;
@@ -577,6 +585,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_1.isMaxLengthErr = false;
             this.IMT_REMAK_1.IsNumber = true;
             this.IMT_REMAK_1.IsShop = false;
+            this.IMT_REMAK_1.IsTimemmss = false;
             this.IMT_REMAK_1.Length = 80;
             this.IMT_REMAK_1.Location = new System.Drawing.Point(27, 133);
             this.IMT_REMAK_1.MaxLength = 80;
@@ -609,6 +618,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_0.isMaxLengthErr = false;
             this.IMT_REMAK_0.IsNumber = true;
             this.IMT_REMAK_0.IsShop = false;
+            this.IMT_REMAK_0.IsTimemmss = false;
             this.IMT_REMAK_0.Length = 80;
             this.IMT_REMAK_0.Location = new System.Drawing.Point(27, 57);
             this.IMT_REMAK_0.MaxLength = 80;
@@ -640,6 +650,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_0.isMaxLengthErr = false;
             this.IMT_ITMCD_0.IsNumber = true;
             this.IMT_ITMCD_0.IsShop = false;
+            this.IMT_ITMCD_0.IsTimemmss = false;
             this.IMT_ITMCD_0.Length = 40;
             this.IMT_ITMCD_0.Location = new System.Drawing.Point(168, 0);
             this.IMT_ITMCD_0.MaxLength = 40;
@@ -672,6 +683,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_1.isMaxLengthErr = false;
             this.IMT_ITMCD_1.IsNumber = true;
             this.IMT_ITMCD_1.IsShop = false;
+            this.IMT_ITMCD_1.IsTimemmss = false;
             this.IMT_ITMCD_1.Length = 40;
             this.IMT_ITMCD_1.Location = new System.Drawing.Point(168, 76);
             this.IMT_ITMCD_1.MaxLength = 40;
@@ -704,6 +716,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_2.isMaxLengthErr = false;
             this.IMT_ITMCD_2.IsNumber = true;
             this.IMT_ITMCD_2.IsShop = false;
+            this.IMT_ITMCD_2.IsTimemmss = false;
             this.IMT_ITMCD_2.Length = 40;
             this.IMT_ITMCD_2.Location = new System.Drawing.Point(168, 152);
             this.IMT_ITMCD_2.MaxLength = 40;
@@ -853,6 +866,105 @@ namespace TempoJuchuuNyuuryoku
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 232);
             this.Pnl_Body.TabIndex = 0;
             // 
+            // IMT_VENNM_0
+            // 
+            this.IMT_VENNM_0.AllowMinus = false;
+            this.IMT_VENNM_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_VENNM_0.BackColor = System.Drawing.Color.Silver;
+            this.IMT_VENNM_0.BorderColor = false;
+            this.IMT_VENNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_0.ClientColor = System.Drawing.Color.White;
+            this.IMT_VENNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_VENNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_VENNM_0.DecimalPlace = 0;
+            this.IMT_VENNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENNM_0.IntegerPart = 0;
+            this.IMT_VENNM_0.IsCorrectDate = true;
+            this.IMT_VENNM_0.isEnterKeyDown = false;
+            this.IMT_VENNM_0.IsFirstTime = true;
+            this.IMT_VENNM_0.isMaxLengthErr = false;
+            this.IMT_VENNM_0.IsNumber = true;
+            this.IMT_VENNM_0.IsShop = false;
+            this.IMT_VENNM_0.IsTimemmss = false;
+            this.IMT_VENNM_0.Length = 80;
+            this.IMT_VENNM_0.Location = new System.Drawing.Point(388, 38);
+            this.IMT_VENNM_0.MaxLength = 80;
+            this.IMT_VENNM_0.MoveNext = true;
+            this.IMT_VENNM_0.Name = "IMT_VENNM_0";
+            this.IMT_VENNM_0.ReadOnly = true;
+            this.IMT_VENNM_0.Size = new System.Drawing.Size(245, 19);
+            this.IMT_VENNM_0.TabIndex = 526;
+            this.IMT_VENNM_0.Tag = "0";
+            this.IMT_VENNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
+            this.IMT_VENNM_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_VENNM_0.UseColorSizMode = false;
+            // 
+            // IMT_VENNM_1
+            // 
+            this.IMT_VENNM_1.AllowMinus = false;
+            this.IMT_VENNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_VENNM_1.BackColor = System.Drawing.Color.Silver;
+            this.IMT_VENNM_1.BorderColor = false;
+            this.IMT_VENNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_1.ClientColor = System.Drawing.Color.White;
+            this.IMT_VENNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_VENNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_VENNM_1.DecimalPlace = 0;
+            this.IMT_VENNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENNM_1.IntegerPart = 0;
+            this.IMT_VENNM_1.IsCorrectDate = true;
+            this.IMT_VENNM_1.isEnterKeyDown = false;
+            this.IMT_VENNM_1.IsFirstTime = true;
+            this.IMT_VENNM_1.isMaxLengthErr = false;
+            this.IMT_VENNM_1.IsNumber = true;
+            this.IMT_VENNM_1.IsShop = false;
+            this.IMT_VENNM_1.IsTimemmss = false;
+            this.IMT_VENNM_1.Length = 80;
+            this.IMT_VENNM_1.Location = new System.Drawing.Point(388, 114);
+            this.IMT_VENNM_1.MaxLength = 80;
+            this.IMT_VENNM_1.MoveNext = true;
+            this.IMT_VENNM_1.Name = "IMT_VENNM_1";
+            this.IMT_VENNM_1.ReadOnly = true;
+            this.IMT_VENNM_1.Size = new System.Drawing.Size(245, 19);
+            this.IMT_VENNM_1.TabIndex = 527;
+            this.IMT_VENNM_1.Tag = "1";
+            this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
+            this.IMT_VENNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_VENNM_1.UseColorSizMode = false;
+            // 
+            // IMT_VENNM_2
+            // 
+            this.IMT_VENNM_2.AllowMinus = false;
+            this.IMT_VENNM_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_VENNM_2.BackColor = System.Drawing.Color.Silver;
+            this.IMT_VENNM_2.BorderColor = false;
+            this.IMT_VENNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_2.ClientColor = System.Drawing.Color.White;
+            this.IMT_VENNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_VENNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_VENNM_2.DecimalPlace = 0;
+            this.IMT_VENNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENNM_2.IntegerPart = 0;
+            this.IMT_VENNM_2.IsCorrectDate = true;
+            this.IMT_VENNM_2.isEnterKeyDown = false;
+            this.IMT_VENNM_2.IsFirstTime = true;
+            this.IMT_VENNM_2.isMaxLengthErr = false;
+            this.IMT_VENNM_2.IsNumber = true;
+            this.IMT_VENNM_2.IsShop = false;
+            this.IMT_VENNM_2.IsTimemmss = false;
+            this.IMT_VENNM_2.Length = 80;
+            this.IMT_VENNM_2.Location = new System.Drawing.Point(388, 190);
+            this.IMT_VENNM_2.MaxLength = 80;
+            this.IMT_VENNM_2.MoveNext = true;
+            this.IMT_VENNM_2.Name = "IMT_VENNM_2";
+            this.IMT_VENNM_2.ReadOnly = true;
+            this.IMT_VENNM_2.Size = new System.Drawing.Size(245, 19);
+            this.IMT_VENNM_2.TabIndex = 528;
+            this.IMT_VENNM_2.Tag = "2";
+            this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
+            this.IMT_VENNM_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_VENNM_2.UseColorSizMode = false;
+            // 
             // IMN_ORTAN_2
             // 
             this.IMN_ORTAN_2.AllowMinus = false;
@@ -873,6 +985,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_2.isMaxLengthErr = false;
             this.IMN_ORTAN_2.IsNumber = true;
             this.IMN_ORTAN_2.IsShop = false;
+            this.IMN_ORTAN_2.IsTimemmss = false;
             this.IMN_ORTAN_2.Length = 9;
             this.IMN_ORTAN_2.Location = new System.Drawing.Point(1088, 190);
             this.IMN_ORTAN_2.MaxLength = 9;
@@ -906,6 +1019,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_1.isMaxLengthErr = false;
             this.IMN_ORTAN_1.IsNumber = true;
             this.IMN_ORTAN_1.IsShop = false;
+            this.IMN_ORTAN_1.IsTimemmss = false;
             this.IMN_ORTAN_1.Length = 9;
             this.IMN_ORTAN_1.Location = new System.Drawing.Point(1088, 114);
             this.IMN_ORTAN_1.MaxLength = 9;
@@ -939,6 +1053,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_0.isMaxLengthErr = false;
             this.IMN_ORTAN_0.IsNumber = true;
             this.IMN_ORTAN_0.IsShop = false;
+            this.IMN_ORTAN_0.IsTimemmss = false;
             this.IMN_ORTAN_0.Length = 9;
             this.IMN_ORTAN_0.Location = new System.Drawing.Point(1088, 38);
             this.IMN_ORTAN_0.MaxLength = 9;
@@ -972,6 +1087,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_2.isMaxLengthErr = false;
             this.IMT_SPDAT_2.IsNumber = true;
             this.IMT_SPDAT_2.IsShop = false;
+            this.IMT_SPDAT_2.IsTimemmss = false;
             this.IMT_SPDAT_2.Length = 10;
             this.IMT_SPDAT_2.Location = new System.Drawing.Point(127, 171);
             this.IMT_SPDAT_2.MaxLength = 10;
@@ -1005,6 +1121,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_1.isMaxLengthErr = false;
             this.IMT_SPDAT_1.IsNumber = true;
             this.IMT_SPDAT_1.IsShop = false;
+            this.IMT_SPDAT_1.IsTimemmss = false;
             this.IMT_SPDAT_1.Length = 10;
             this.IMT_SPDAT_1.Location = new System.Drawing.Point(127, 95);
             this.IMT_SPDAT_1.MaxLength = 10;
@@ -1038,6 +1155,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_0.isMaxLengthErr = false;
             this.IMT_SPDAT_0.IsNumber = true;
             this.IMT_SPDAT_0.IsShop = false;
+            this.IMT_SPDAT_0.IsTimemmss = false;
             this.IMT_SPDAT_0.Length = 10;
             this.IMT_SPDAT_0.Location = new System.Drawing.Point(127, 19);
             this.IMT_SPDAT_0.MaxLength = 10;
@@ -1260,6 +1378,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_2.isMaxLengthErr = false;
             this.IMT_HIKAT_2.IsNumber = true;
             this.IMT_HIKAT_2.IsShop = false;
+            this.IMT_HIKAT_2.IsTimemmss = false;
             this.IMT_HIKAT_2.Length = 10;
             this.IMT_HIKAT_2.Location = new System.Drawing.Point(27, 190);
             this.IMT_HIKAT_2.MaxLength = 10;
@@ -1293,6 +1412,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_1.isMaxLengthErr = false;
             this.IMT_HIKAT_1.IsNumber = true;
             this.IMT_HIKAT_1.IsShop = false;
+            this.IMT_HIKAT_1.IsTimemmss = false;
             this.IMT_HIKAT_1.Length = 10;
             this.IMT_HIKAT_1.Location = new System.Drawing.Point(27, 114);
             this.IMT_HIKAT_1.MaxLength = 10;
@@ -1326,6 +1446,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_0.isMaxLengthErr = false;
             this.IMT_HIKAT_0.IsNumber = true;
             this.IMT_HIKAT_0.IsShop = false;
+            this.IMT_HIKAT_0.IsTimemmss = false;
             this.IMT_HIKAT_0.Length = 10;
             this.IMT_HIKAT_0.Location = new System.Drawing.Point(27, 38);
             this.IMT_HIKAT_0.MaxLength = 10;
@@ -1358,6 +1479,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_0.isMaxLengthErr = false;
             this.IMT_JUONO_0.IsNumber = true;
             this.IMT_JUONO_0.IsShop = false;
+            this.IMT_JUONO_0.IsTimemmss = false;
             this.IMT_JUONO_0.Length = 20;
             this.IMT_JUONO_0.Location = new System.Drawing.Point(179, 38);
             this.IMT_JUONO_0.MaxLength = 20;
@@ -1390,6 +1512,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_1.isMaxLengthErr = false;
             this.IMT_JUONO_1.IsNumber = true;
             this.IMT_JUONO_1.IsShop = false;
+            this.IMT_JUONO_1.IsTimemmss = false;
             this.IMT_JUONO_1.Length = 20;
             this.IMT_JUONO_1.Location = new System.Drawing.Point(179, 114);
             this.IMT_JUONO_1.MaxLength = 20;
@@ -1422,6 +1545,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_2.isMaxLengthErr = false;
             this.IMT_JUONO_2.IsNumber = true;
             this.IMT_JUONO_2.IsShop = false;
+            this.IMT_JUONO_2.IsTimemmss = false;
             this.IMT_JUONO_2.Length = 20;
             this.IMT_JUONO_2.Location = new System.Drawing.Point(179, 190);
             this.IMT_JUONO_2.MaxLength = 20;
@@ -1509,6 +1633,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
+            this.IMN_GENER2_2.IsTimemmss = false;
             this.IMN_GENER2_2.Length = 9;
             this.IMN_GENER2_2.Location = new System.Drawing.Point(1088, 171);
             this.IMN_GENER2_2.MaxLength = 9;
@@ -1542,6 +1667,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_2.isMaxLengthErr = false;
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
+            this.IMN_TEIKA_2.IsTimemmss = false;
             this.IMN_TEIKA_2.Length = 9;
             this.IMN_TEIKA_2.Location = new System.Drawing.Point(1163, 171);
             this.IMN_TEIKA_2.MaxLength = 9;
@@ -1575,6 +1701,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_2.isMaxLengthErr = false;
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
+            this.IMN_GENER_2.IsTimemmss = false;
             this.IMN_GENER_2.Length = 9;
             this.IMN_GENER_2.Location = new System.Drawing.Point(976, 171);
             this.IMN_GENER_2.MaxLength = 9;
@@ -1608,6 +1735,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
+            this.IMN_MEMBR_2.IsTimemmss = false;
             this.IMN_MEMBR_2.Length = 10;
             this.IMN_MEMBR_2.Location = new System.Drawing.Point(1031, 171);
             this.IMN_MEMBR_2.MaxLength = 10;
@@ -1640,6 +1768,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
+            this.IMN_GENER2_1.IsTimemmss = false;
             this.IMN_GENER2_1.Length = 9;
             this.IMN_GENER2_1.Location = new System.Drawing.Point(1088, 95);
             this.IMN_GENER2_1.MaxLength = 9;
@@ -1673,6 +1802,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_1.isMaxLengthErr = false;
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
+            this.IMN_TEIKA_1.IsTimemmss = false;
             this.IMN_TEIKA_1.Length = 9;
             this.IMN_TEIKA_1.Location = new System.Drawing.Point(1163, 95);
             this.IMN_TEIKA_1.MaxLength = 9;
@@ -1706,6 +1836,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_1.isMaxLengthErr = false;
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
+            this.IMN_GENER_1.IsTimemmss = false;
             this.IMN_GENER_1.Length = 9;
             this.IMN_GENER_1.Location = new System.Drawing.Point(976, 95);
             this.IMN_GENER_1.MaxLength = 9;
@@ -1739,6 +1870,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
+            this.IMN_MEMBR_1.IsTimemmss = false;
             this.IMN_MEMBR_1.Length = 10;
             this.IMN_MEMBR_1.Location = new System.Drawing.Point(1031, 95);
             this.IMN_MEMBR_1.MaxLength = 10;
@@ -1771,6 +1903,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
+            this.IMN_GENER2_0.IsTimemmss = false;
             this.IMN_GENER2_0.Length = 9;
             this.IMN_GENER2_0.Location = new System.Drawing.Point(1088, 19);
             this.IMN_GENER2_0.MaxLength = 9;
@@ -1804,6 +1937,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_0.isMaxLengthErr = false;
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
+            this.IMN_GENER_0.IsTimemmss = false;
             this.IMN_GENER_0.Length = 9;
             this.IMN_GENER_0.Location = new System.Drawing.Point(976, 19);
             this.IMN_GENER_0.MaxLength = 9;
@@ -1837,6 +1971,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
+            this.IMN_MEMBR_0.IsTimemmss = false;
             this.IMN_MEMBR_0.Length = 10;
             this.IMN_MEMBR_0.Location = new System.Drawing.Point(1031, 19);
             this.IMN_MEMBR_0.MaxLength = 10;
@@ -1869,6 +2004,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_0.isMaxLengthErr = false;
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
+            this.IMN_TEIKA_0.IsTimemmss = false;
             this.IMN_TEIKA_0.Length = 9;
             this.IMN_TEIKA_0.Location = new System.Drawing.Point(1163, 19);
             this.IMN_TEIKA_0.MaxLength = 9;
@@ -1902,6 +2038,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_2.isMaxLengthErr = false;
             this.IMT_NYUKA_2.IsNumber = true;
             this.IMT_NYUKA_2.IsShop = false;
+            this.IMT_NYUKA_2.IsTimemmss = false;
             this.IMT_NYUKA_2.Length = 20;
             this.IMT_NYUKA_2.Location = new System.Drawing.Point(864, 190);
             this.IMT_NYUKA_2.MaxLength = 20;
@@ -1934,6 +2071,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_2.isMaxLengthErr = false;
             this.IMT_SYUKA_2.IsNumber = true;
             this.IMT_SYUKA_2.IsShop = false;
+            this.IMT_SYUKA_2.IsTimemmss = false;
             this.IMT_SYUKA_2.Length = 20;
             this.IMT_SYUKA_2.Location = new System.Drawing.Point(976, 190);
             this.IMT_SYUKA_2.MaxLength = 20;
@@ -1966,6 +2104,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_1.isMaxLengthErr = false;
             this.IMT_NYUKA_1.IsNumber = true;
             this.IMT_NYUKA_1.IsShop = false;
+            this.IMT_NYUKA_1.IsTimemmss = false;
             this.IMT_NYUKA_1.Length = 20;
             this.IMT_NYUKA_1.Location = new System.Drawing.Point(864, 114);
             this.IMT_NYUKA_1.MaxLength = 20;
@@ -1998,6 +2137,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_1.isMaxLengthErr = false;
             this.IMT_SYUKA_1.IsNumber = true;
             this.IMT_SYUKA_1.IsShop = false;
+            this.IMT_SYUKA_1.IsTimemmss = false;
             this.IMT_SYUKA_1.Length = 20;
             this.IMT_SYUKA_1.Location = new System.Drawing.Point(976, 114);
             this.IMT_SYUKA_1.MaxLength = 20;
@@ -2030,6 +2170,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_0.isMaxLengthErr = false;
             this.IMT_NYUKA_0.IsNumber = true;
             this.IMT_NYUKA_0.IsShop = false;
+            this.IMT_NYUKA_0.IsTimemmss = false;
             this.IMT_NYUKA_0.Length = 20;
             this.IMT_NYUKA_0.Location = new System.Drawing.Point(864, 38);
             this.IMT_NYUKA_0.MaxLength = 20;
@@ -2062,6 +2203,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_0.isMaxLengthErr = false;
             this.IMT_SYUKA_0.IsNumber = true;
             this.IMT_SYUKA_0.IsShop = false;
+            this.IMT_SYUKA_0.IsTimemmss = false;
             this.IMT_SYUKA_0.Length = 20;
             this.IMT_SYUKA_0.Location = new System.Drawing.Point(976, 38);
             this.IMT_SYUKA_0.MaxLength = 20;
@@ -2094,6 +2236,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_2.isMaxLengthErr = false;
             this.IMT_COLDT_2.IsNumber = true;
             this.IMT_COLDT_2.IsShop = false;
+            this.IMT_COLDT_2.IsTimemmss = false;
             this.IMT_COLDT_2.Length = 10;
             this.IMT_COLDT_2.Location = new System.Drawing.Point(787, 190);
             this.IMT_COLDT_2.MaxLength = 10;
@@ -2127,6 +2270,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_2.isMaxLengthErr = false;
             this.IMT_PAYDT_2.IsNumber = true;
             this.IMT_PAYDT_2.IsShop = false;
+            this.IMT_PAYDT_2.IsTimemmss = false;
             this.IMT_PAYDT_2.Length = 10;
             this.IMT_PAYDT_2.Location = new System.Drawing.Point(710, 190);
             this.IMT_PAYDT_2.MaxLength = 10;
@@ -2160,6 +2304,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_2.isMaxLengthErr = false;
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
+            this.IMT_ARIDT_2.IsTimemmss = false;
             this.IMT_ARIDT_2.Length = 10;
             this.IMT_ARIDT_2.Location = new System.Drawing.Point(633, 190);
             this.IMT_ARIDT_2.MaxLength = 10;
@@ -2193,6 +2338,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_1.isMaxLengthErr = false;
             this.IMT_COLDT_1.IsNumber = true;
             this.IMT_COLDT_1.IsShop = false;
+            this.IMT_COLDT_1.IsTimemmss = false;
             this.IMT_COLDT_1.Length = 10;
             this.IMT_COLDT_1.Location = new System.Drawing.Point(787, 114);
             this.IMT_COLDT_1.MaxLength = 10;
@@ -2226,6 +2372,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_1.isMaxLengthErr = false;
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
+            this.IMT_PAYDT_1.IsTimemmss = false;
             this.IMT_PAYDT_1.Length = 10;
             this.IMT_PAYDT_1.Location = new System.Drawing.Point(710, 114);
             this.IMT_PAYDT_1.MaxLength = 10;
@@ -2259,6 +2406,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_1.isMaxLengthErr = false;
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
+            this.IMT_ARIDT_1.IsTimemmss = false;
             this.IMT_ARIDT_1.Length = 10;
             this.IMT_ARIDT_1.Location = new System.Drawing.Point(633, 114);
             this.IMT_ARIDT_1.MaxLength = 10;
@@ -2292,6 +2440,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_0.isMaxLengthErr = false;
             this.IMT_COLDT_0.IsNumber = true;
             this.IMT_COLDT_0.IsShop = false;
+            this.IMT_COLDT_0.IsTimemmss = false;
             this.IMT_COLDT_0.Length = 10;
             this.IMT_COLDT_0.Location = new System.Drawing.Point(787, 38);
             this.IMT_COLDT_0.MaxLength = 10;
@@ -2325,6 +2474,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_0.isMaxLengthErr = false;
             this.IMT_PAYDT_0.IsNumber = true;
             this.IMT_PAYDT_0.IsShop = false;
+            this.IMT_PAYDT_0.IsTimemmss = false;
             this.IMT_PAYDT_0.Length = 10;
             this.IMT_PAYDT_0.Location = new System.Drawing.Point(710, 38);
             this.IMT_PAYDT_0.MaxLength = 10;
@@ -2358,6 +2508,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_0.isMaxLengthErr = false;
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
+            this.IMT_ARIDT_0.IsTimemmss = false;
             this.IMT_ARIDT_0.Length = 10;
             this.IMT_ARIDT_0.Location = new System.Drawing.Point(633, 38);
             this.IMT_ARIDT_0.MaxLength = 10;
@@ -2392,6 +2543,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
+            this.ckM_TextBox3.IsTimemmss = false;
             this.ckM_TextBox3.Length = 2;
             this.ckM_TextBox3.Location = new System.Drawing.Point(1321, 152);
             this.ckM_TextBox3.MaxLength = 2;
@@ -2427,6 +2579,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
+            this.ckM_TextBox4.IsTimemmss = false;
             this.ckM_TextBox4.Length = 2;
             this.ckM_TextBox4.Location = new System.Drawing.Point(1321, 76);
             this.ckM_TextBox4.MaxLength = 2;
@@ -2462,6 +2615,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox12.isMaxLengthErr = false;
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
+            this.ckM_TextBox12.IsTimemmss = false;
             this.ckM_TextBox12.Length = 2;
             this.ckM_TextBox12.Location = new System.Drawing.Point(1321, 0);
             this.ckM_TextBox12.MaxLength = 2;
@@ -2496,6 +2650,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_2.isMaxLengthErr = false;
             this.IMT_ITMNM_2.IsNumber = true;
             this.IMT_ITMNM_2.IsShop = false;
+            this.IMT_ITMNM_2.IsTimemmss = false;
             this.IMT_ITMNM_2.Length = 100;
             this.IMT_ITMNM_2.Location = new System.Drawing.Point(377, 152);
             this.IMT_ITMNM_2.MaxLength = 100;
@@ -2528,6 +2683,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_1.isMaxLengthErr = false;
             this.IMT_ITMNM_1.IsNumber = true;
             this.IMT_ITMNM_1.IsShop = false;
+            this.IMT_ITMNM_1.IsTimemmss = false;
             this.IMT_ITMNM_1.Length = 100;
             this.IMT_ITMNM_1.Location = new System.Drawing.Point(377, 76);
             this.IMT_ITMNM_1.MaxLength = 100;
@@ -2560,6 +2716,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_0.isMaxLengthErr = false;
             this.IMT_ITMNM_0.IsNumber = true;
             this.IMT_ITMNM_0.IsShop = false;
+            this.IMT_ITMNM_0.IsTimemmss = false;
             this.IMT_ITMNM_0.Length = 100;
             this.IMT_ITMNM_0.Location = new System.Drawing.Point(377, 0);
             this.IMT_ITMNM_0.MaxLength = 100;
@@ -2671,6 +2828,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox15.isMaxLengthErr = false;
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
+            this.ckM_TextBox15.IsTimemmss = false;
             this.ckM_TextBox15.Length = 10;
             this.ckM_TextBox15.Location = new System.Drawing.Point(1312, 209);
             this.ckM_TextBox15.MaxLength = 10;
@@ -2706,6 +2864,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox16.isMaxLengthErr = false;
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
+            this.ckM_TextBox16.IsTimemmss = false;
             this.ckM_TextBox16.Length = 10;
             this.ckM_TextBox16.Location = new System.Drawing.Point(1312, 133);
             this.ckM_TextBox16.MaxLength = 10;
@@ -2741,6 +2900,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox17.isMaxLengthErr = false;
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
+            this.ckM_TextBox17.IsTimemmss = false;
             this.ckM_TextBox17.Length = 10;
             this.ckM_TextBox17.Location = new System.Drawing.Point(1312, 57);
             this.ckM_TextBox17.MaxLength = 10;
@@ -2776,6 +2936,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_2.isMaxLengthErr = false;
             this.IMT_ZEIRT_2.IsNumber = true;
             this.IMT_ZEIRT_2.IsShop = false;
+            this.IMT_ZEIRT_2.IsTimemmss = false;
             this.IMT_ZEIRT_2.Length = 10;
             this.IMT_ZEIRT_2.Location = new System.Drawing.Point(1312, 190);
             this.IMT_ZEIRT_2.MaxLength = 10;
@@ -2811,6 +2972,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_1.isMaxLengthErr = false;
             this.IMT_ZEIRT_1.IsNumber = true;
             this.IMT_ZEIRT_1.IsShop = false;
+            this.IMT_ZEIRT_1.IsTimemmss = false;
             this.IMT_ZEIRT_1.Length = 10;
             this.IMT_ZEIRT_1.Location = new System.Drawing.Point(1312, 114);
             this.IMT_ZEIRT_1.MaxLength = 10;
@@ -2846,6 +3008,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_2.isMaxLengthErr = false;
             this.IMT_ZKDIS_2.IsNumber = true;
             this.IMT_ZKDIS_2.IsShop = false;
+            this.IMT_ZKDIS_2.IsTimemmss = false;
             this.IMT_ZKDIS_2.Length = 10;
             this.IMT_ZKDIS_2.Location = new System.Drawing.Point(1312, 171);
             this.IMT_ZKDIS_2.MaxLength = 10;
@@ -2881,6 +3044,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_1.isMaxLengthErr = false;
             this.IMT_ZKDIS_1.IsNumber = true;
             this.IMT_ZKDIS_1.IsShop = false;
+            this.IMT_ZKDIS_1.IsTimemmss = false;
             this.IMT_ZKDIS_1.Length = 10;
             this.IMT_ZKDIS_1.Location = new System.Drawing.Point(1312, 95);
             this.IMT_ZKDIS_1.MaxLength = 10;
@@ -2916,6 +3080,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_0.isMaxLengthErr = false;
             this.IMT_ZKDIS_0.IsNumber = true;
             this.IMT_ZKDIS_0.IsShop = false;
+            this.IMT_ZKDIS_0.IsTimemmss = false;
             this.IMT_ZKDIS_0.Length = 10;
             this.IMT_ZKDIS_0.Location = new System.Drawing.Point(1312, 19);
             this.IMT_ZKDIS_0.MaxLength = 10;
@@ -2951,6 +3116,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_0.isMaxLengthErr = false;
             this.IMT_ZEIRT_0.IsNumber = true;
             this.IMT_ZEIRT_0.IsShop = false;
+            this.IMT_ZEIRT_0.IsTimemmss = false;
             this.IMT_ZEIRT_0.Length = 10;
             this.IMT_ZEIRT_0.Location = new System.Drawing.Point(1312, 38);
             this.IMT_ZEIRT_0.MaxLength = 10;
@@ -2985,6 +3151,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_2.isMaxLengthErr = false;
             this.IMT_KAIDT_2.IsNumber = true;
             this.IMT_KAIDT_2.IsShop = false;
+            this.IMT_KAIDT_2.IsTimemmss = false;
             this.IMT_KAIDT_2.Length = 20;
             this.IMT_KAIDT_2.Location = new System.Drawing.Point(1092, 152);
             this.IMT_KAIDT_2.MaxLength = 20;
@@ -3017,6 +3184,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
+            this.IMN_WEBPR2_2.IsTimemmss = false;
             this.IMN_WEBPR2_2.Length = 80;
             this.IMN_WEBPR2_2.Location = new System.Drawing.Point(816, 209);
             this.IMN_WEBPR2_2.MaxLength = 80;
@@ -3049,6 +3217,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_1.isMaxLengthErr = false;
             this.IMN_WEBPR2_1.IsNumber = true;
             this.IMN_WEBPR2_1.IsShop = false;
+            this.IMN_WEBPR2_1.IsTimemmss = false;
             this.IMN_WEBPR2_1.Length = 80;
             this.IMN_WEBPR2_1.Location = new System.Drawing.Point(816, 133);
             this.IMN_WEBPR2_1.MaxLength = 80;
@@ -3081,6 +3250,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
+            this.IMN_WEBPR2_0.IsTimemmss = false;
             this.IMN_WEBPR2_0.Length = 80;
             this.IMN_WEBPR2_0.Location = new System.Drawing.Point(816, 57);
             this.IMN_WEBPR2_0.MaxLength = 80;
@@ -3113,6 +3283,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_2.isMaxLengthErr = false;
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
+            this.IMN_SALEP2_2.IsTimemmss = false;
             this.IMN_SALEP2_2.Length = 9;
             this.IMN_SALEP2_2.Location = new System.Drawing.Point(1163, 190);
             this.IMN_SALEP2_2.MaxLength = 9;
@@ -3146,6 +3317,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_1.isMaxLengthErr = false;
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
+            this.IMN_SALEP2_1.IsTimemmss = false;
             this.IMN_SALEP2_1.Length = 9;
             this.IMN_SALEP2_1.Location = new System.Drawing.Point(1163, 114);
             this.IMN_SALEP2_1.MaxLength = 9;
@@ -3179,6 +3351,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_0.isMaxLengthErr = false;
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
+            this.IMN_SALEP2_0.IsTimemmss = false;
             this.IMN_SALEP2_0.Length = 9;
             this.IMN_SALEP2_0.Location = new System.Drawing.Point(1163, 38);
             this.IMN_SALEP2_0.MaxLength = 9;
@@ -3212,6 +3385,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox9.isMaxLengthErr = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
+            this.ckM_TextBox9.IsTimemmss = false;
             this.ckM_TextBox9.Length = 30;
             this.ckM_TextBox9.Location = new System.Drawing.Point(256, 19);
             this.ckM_TextBox9.MaxLength = 30;
@@ -3244,6 +3418,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox10.isMaxLengthErr = false;
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
+            this.ckM_TextBox10.IsTimemmss = false;
             this.ckM_TextBox10.Length = 30;
             this.ckM_TextBox10.Location = new System.Drawing.Point(256, 95);
             this.ckM_TextBox10.MaxLength = 30;
@@ -3276,6 +3451,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox11.isMaxLengthErr = false;
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
+            this.ckM_TextBox11.IsTimemmss = false;
             this.ckM_TextBox11.Length = 30;
             this.ckM_TextBox11.Location = new System.Drawing.Point(256, 171);
             this.ckM_TextBox11.MaxLength = 30;
@@ -3312,6 +3488,7 @@ namespace TempoJuchuuNyuuryoku
             this.SC_ITEM_0.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_0.TabIndex = 1;
             this.SC_ITEM_0.Tag = "0";
+            this.SC_ITEM_0.test = null;
             this.SC_ITEM_0.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_0.UseChangeDate = false;
             this.SC_ITEM_0.Value1 = null;
@@ -3346,6 +3523,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_2.isMaxLengthErr = false;
             this.IMN_GENKA_2.IsNumber = true;
             this.IMN_GENKA_2.IsShop = false;
+            this.IMN_GENKA_2.IsTimemmss = false;
             this.IMN_GENKA_2.Length = 9;
             this.IMN_GENKA_2.Location = new System.Drawing.Point(1233, 190);
             this.IMN_GENKA_2.MaxLength = 9;
@@ -3380,6 +3558,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_1.isMaxLengthErr = false;
             this.IMN_GENKA_1.IsNumber = true;
             this.IMN_GENKA_1.IsShop = false;
+            this.IMN_GENKA_1.IsTimemmss = false;
             this.IMN_GENKA_1.Length = 9;
             this.IMN_GENKA_1.Location = new System.Drawing.Point(1233, 114);
             this.IMN_GENKA_1.MaxLength = 9;
@@ -3414,6 +3593,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_2.isMaxLengthErr = false;
             this.IMN_TEIKA2_2.IsNumber = true;
             this.IMN_TEIKA2_2.IsShop = false;
+            this.IMN_TEIKA2_2.IsTimemmss = false;
             this.IMN_TEIKA2_2.Length = 9;
             this.IMN_TEIKA2_2.Location = new System.Drawing.Point(1236, 171);
             this.IMN_TEIKA2_2.MaxLength = 9;
@@ -3448,6 +3628,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_2.isMaxLengthErr = false;
             this.IMN_CLINT_2.IsNumber = true;
             this.IMN_CLINT_2.IsShop = false;
+            this.IMN_CLINT_2.IsTimemmss = false;
             this.IMN_CLINT_2.Length = 20;
             this.IMN_CLINT_2.Location = new System.Drawing.Point(960, 152);
             this.IMN_CLINT_2.MaxLength = 20;
@@ -3480,6 +3661,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_2.isMaxLengthErr = false;
             this.IMN_WEBPR_2.IsNumber = true;
             this.IMN_WEBPR_2.IsShop = false;
+            this.IMN_WEBPR_2.IsTimemmss = false;
             this.IMN_WEBPR_2.Length = 80;
             this.IMN_WEBPR_2.Location = new System.Drawing.Point(426, 209);
             this.IMN_WEBPR_2.MaxLength = 80;
@@ -3512,6 +3694,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_1.isMaxLengthErr = false;
             this.IMN_TEIKA2_1.IsNumber = true;
             this.IMN_TEIKA2_1.IsShop = false;
+            this.IMN_TEIKA2_1.IsTimemmss = false;
             this.IMN_TEIKA2_1.Length = 9;
             this.IMN_TEIKA2_1.Location = new System.Drawing.Point(1236, 95);
             this.IMN_TEIKA2_1.MaxLength = 9;
@@ -3546,6 +3729,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_1.isMaxLengthErr = false;
             this.IMN_CLINT_1.IsNumber = true;
             this.IMN_CLINT_1.IsShop = false;
+            this.IMN_CLINT_1.IsTimemmss = false;
             this.IMN_CLINT_1.Length = 20;
             this.IMN_CLINT_1.Location = new System.Drawing.Point(960, 76);
             this.IMN_CLINT_1.MaxLength = 20;
@@ -3578,6 +3762,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_1.isMaxLengthErr = false;
             this.IMN_WEBPR_1.IsNumber = true;
             this.IMN_WEBPR_1.IsShop = false;
+            this.IMN_WEBPR_1.IsTimemmss = false;
             this.IMN_WEBPR_1.Length = 80;
             this.IMN_WEBPR_1.Location = new System.Drawing.Point(426, 133);
             this.IMN_WEBPR_1.MaxLength = 80;
@@ -3610,6 +3795,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_0.isMaxLengthErr = false;
             this.IMN_TEIKA2_0.IsNumber = true;
             this.IMN_TEIKA2_0.IsShop = false;
+            this.IMN_TEIKA2_0.IsTimemmss = false;
             this.IMN_TEIKA2_0.Length = 9;
             this.IMN_TEIKA2_0.Location = new System.Drawing.Point(1236, 19);
             this.IMN_TEIKA2_0.MaxLength = 9;
@@ -3677,6 +3863,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_0.isMaxLengthErr = false;
             this.IMN_GENKA_0.IsNumber = true;
             this.IMN_GENKA_0.IsShop = false;
+            this.IMN_GENKA_0.IsTimemmss = false;
             this.IMN_GENKA_0.Length = 9;
             this.IMN_GENKA_0.Location = new System.Drawing.Point(1233, 38);
             this.IMN_GENKA_0.MaxLength = 9;
@@ -3711,6 +3898,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_0.isMaxLengthErr = false;
             this.IMN_CLINT_0.IsNumber = true;
             this.IMN_CLINT_0.IsShop = false;
+            this.IMN_CLINT_0.IsTimemmss = false;
             this.IMN_CLINT_0.Length = 20;
             this.IMN_CLINT_0.Location = new System.Drawing.Point(960, 0);
             this.IMN_CLINT_0.MaxLength = 20;
@@ -3743,6 +3931,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_0.isMaxLengthErr = false;
             this.IMN_WEBPR_0.IsNumber = true;
             this.IMN_WEBPR_0.IsShop = false;
+            this.IMN_WEBPR_0.IsTimemmss = false;
             this.IMN_WEBPR_0.Length = 80;
             this.IMN_WEBPR_0.Location = new System.Drawing.Point(426, 57);
             this.IMN_WEBPR_0.MaxLength = 80;
@@ -3774,6 +3963,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_0.isMaxLengthErr = false;
             this.IMT_JANCD_0.IsNumber = true;
             this.IMT_JANCD_0.IsShop = false;
+            this.IMT_JANCD_0.IsTimemmss = false;
             this.IMT_JANCD_0.Length = 30;
             this.IMT_JANCD_0.Location = new System.Drawing.Point(27, 0);
             this.IMT_JANCD_0.MaxLength = 30;
@@ -3812,6 +4002,7 @@ namespace TempoJuchuuNyuuryoku
             this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_1.TabIndex = 482;
             this.SC_ITEM_1.Tag = "1";
+            this.SC_ITEM_1.test = null;
             this.SC_ITEM_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_1.UseChangeDate = false;
             this.SC_ITEM_1.Value1 = null;
@@ -3837,6 +4028,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_1.isMaxLengthErr = false;
             this.IMT_JANCD_1.IsNumber = true;
             this.IMT_JANCD_1.IsShop = false;
+            this.IMT_JANCD_1.IsTimemmss = false;
             this.IMT_JANCD_1.Length = 30;
             this.IMT_JANCD_1.Location = new System.Drawing.Point(27, 74);
             this.IMT_JANCD_1.MaxLength = 30;
@@ -3875,6 +4067,7 @@ namespace TempoJuchuuNyuuryoku
             this.SC_ITEM_2.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_2.TabIndex = 483;
             this.SC_ITEM_2.Tag = "2";
+            this.SC_ITEM_2.test = null;
             this.SC_ITEM_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_2.UseChangeDate = false;
             this.SC_ITEM_2.Value1 = null;
@@ -3900,6 +4093,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_2.isMaxLengthErr = false;
             this.IMT_JANCD_2.IsNumber = true;
             this.IMT_JANCD_2.IsShop = false;
+            this.IMT_JANCD_2.IsTimemmss = false;
             this.IMT_JANCD_2.Length = 30;
             this.IMT_JANCD_2.Location = new System.Drawing.Point(27, 150);
             this.IMT_JANCD_2.MaxLength = 30;
@@ -3934,6 +4128,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_2.isMaxLengthErr = false;
             this.IMN_CLINT2_2.IsNumber = true;
             this.IMN_CLINT2_2.IsShop = false;
+            this.IMN_CLINT2_2.IsTimemmss = false;
             this.IMN_CLINT2_2.Length = 2;
             this.IMN_CLINT2_2.Location = new System.Drawing.Point(932, 152);
             this.IMN_CLINT2_2.MaxLength = 2;
@@ -3967,6 +4162,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_1.isMaxLengthErr = false;
             this.IMN_CLINT2_1.IsNumber = true;
             this.IMN_CLINT2_1.IsShop = false;
+            this.IMN_CLINT2_1.IsTimemmss = false;
             this.IMN_CLINT2_1.Length = 2;
             this.IMN_CLINT2_1.Location = new System.Drawing.Point(932, 76);
             this.IMN_CLINT2_1.MaxLength = 2;
@@ -4000,6 +4196,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_0.isMaxLengthErr = false;
             this.IMN_CLINT2_0.IsNumber = true;
             this.IMN_CLINT2_0.IsShop = false;
+            this.IMN_CLINT2_0.IsTimemmss = false;
             this.IMN_CLINT2_0.Length = 2;
             this.IMN_CLINT2_0.Location = new System.Drawing.Point(932, 0);
             this.IMN_CLINT2_0.MaxLength = 2;
@@ -4033,6 +4230,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_2.isMaxLengthErr = false;
             this.IMN_SALEP_2.IsNumber = true;
             this.IMN_SALEP_2.IsShop = false;
+            this.IMN_SALEP_2.IsTimemmss = false;
             this.IMN_SALEP_2.Length = 9;
             this.IMN_SALEP_2.Location = new System.Drawing.Point(1228, 209);
             this.IMN_SALEP_2.MaxLength = 9;
@@ -4067,6 +4265,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_1.isMaxLengthErr = false;
             this.IMN_SALEP_1.IsNumber = true;
             this.IMN_SALEP_1.IsShop = false;
+            this.IMN_SALEP_1.IsTimemmss = false;
             this.IMN_SALEP_1.Length = 9;
             this.IMN_SALEP_1.Location = new System.Drawing.Point(1228, 133);
             this.IMN_SALEP_1.MaxLength = 9;
@@ -4101,6 +4300,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_0.isMaxLengthErr = false;
             this.IMN_SALEP_0.IsNumber = true;
             this.IMN_SALEP_0.IsShop = false;
+            this.IMN_SALEP_0.IsTimemmss = false;
             this.IMN_SALEP_0.Length = 9;
             this.IMN_SALEP_0.Location = new System.Drawing.Point(1228, 57);
             this.IMN_SALEP_0.MaxLength = 9;
@@ -4138,6 +4338,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_0.Size = new System.Drawing.Size(133, 27);
             this.IMT_VENCD_0.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.IMT_VENCD_0.TabIndex = 525;
+            this.IMT_VENCD_0.test = null;
             this.IMT_VENCD_0.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.IMT_VENCD_0.UseChangeDate = false;
             this.IMT_VENCD_0.Value1 = null;
@@ -4167,6 +4368,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_1.Size = new System.Drawing.Size(133, 27);
             this.IMT_VENCD_1.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.IMT_VENCD_1.TabIndex = 529;
+            this.IMT_VENCD_1.test = null;
             this.IMT_VENCD_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.IMT_VENCD_1.UseChangeDate = false;
             this.IMT_VENCD_1.Value1 = null;
@@ -4196,107 +4398,12 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_2.Size = new System.Drawing.Size(133, 27);
             this.IMT_VENCD_2.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.IMT_VENCD_2.TabIndex = 530;
+            this.IMT_VENCD_2.test = null;
             this.IMT_VENCD_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.IMT_VENCD_2.UseChangeDate = false;
             this.IMT_VENCD_2.Value1 = null;
             this.IMT_VENCD_2.Value2 = null;
             this.IMT_VENCD_2.Value3 = null;
-            // 
-            // IMT_VENNM_0
-            // 
-            this.IMT_VENNM_0.AllowMinus = false;
-            this.IMT_VENNM_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_VENNM_0.BackColor = System.Drawing.Color.Silver;
-            this.IMT_VENNM_0.BorderColor = false;
-            this.IMT_VENNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_VENNM_0.ClientColor = System.Drawing.Color.White;
-            this.IMT_VENNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_VENNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_VENNM_0.DecimalPlace = 0;
-            this.IMT_VENNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_VENNM_0.IntegerPart = 0;
-            this.IMT_VENNM_0.IsCorrectDate = true;
-            this.IMT_VENNM_0.isEnterKeyDown = false;
-            this.IMT_VENNM_0.IsFirstTime = true;
-            this.IMT_VENNM_0.isMaxLengthErr = false;
-            this.IMT_VENNM_0.IsNumber = true;
-            this.IMT_VENNM_0.IsShop = false;
-            this.IMT_VENNM_0.Length = 80;
-            this.IMT_VENNM_0.Location = new System.Drawing.Point(388, 38);
-            this.IMT_VENNM_0.MaxLength = 80;
-            this.IMT_VENNM_0.MoveNext = true;
-            this.IMT_VENNM_0.Name = "IMT_VENNM_0";
-            this.IMT_VENNM_0.ReadOnly = true;
-            this.IMT_VENNM_0.Size = new System.Drawing.Size(245, 19);
-            this.IMT_VENNM_0.TabIndex = 526;
-            this.IMT_VENNM_0.Tag = "0";
-            this.IMT_VENNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
-            this.IMT_VENNM_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_VENNM_0.UseColorSizMode = false;
-            // 
-            // IMT_VENNM_1
-            // 
-            this.IMT_VENNM_1.AllowMinus = false;
-            this.IMT_VENNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_VENNM_1.BackColor = System.Drawing.Color.Silver;
-            this.IMT_VENNM_1.BorderColor = false;
-            this.IMT_VENNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_VENNM_1.ClientColor = System.Drawing.Color.White;
-            this.IMT_VENNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_VENNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_VENNM_1.DecimalPlace = 0;
-            this.IMT_VENNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_VENNM_1.IntegerPart = 0;
-            this.IMT_VENNM_1.IsCorrectDate = true;
-            this.IMT_VENNM_1.isEnterKeyDown = false;
-            this.IMT_VENNM_1.IsFirstTime = true;
-            this.IMT_VENNM_1.isMaxLengthErr = false;
-            this.IMT_VENNM_1.IsNumber = true;
-            this.IMT_VENNM_1.IsShop = false;
-            this.IMT_VENNM_1.Length = 80;
-            this.IMT_VENNM_1.Location = new System.Drawing.Point(388, 114);
-            this.IMT_VENNM_1.MaxLength = 80;
-            this.IMT_VENNM_1.MoveNext = true;
-            this.IMT_VENNM_1.Name = "IMT_VENNM_1";
-            this.IMT_VENNM_1.ReadOnly = true;
-            this.IMT_VENNM_1.Size = new System.Drawing.Size(245, 19);
-            this.IMT_VENNM_1.TabIndex = 527;
-            this.IMT_VENNM_1.Tag = "1";
-            this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_VENNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_VENNM_1.UseColorSizMode = false;
-            // 
-            // IMT_VENNM_2
-            // 
-            this.IMT_VENNM_2.AllowMinus = false;
-            this.IMT_VENNM_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_VENNM_2.BackColor = System.Drawing.Color.Silver;
-            this.IMT_VENNM_2.BorderColor = false;
-            this.IMT_VENNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_VENNM_2.ClientColor = System.Drawing.Color.White;
-            this.IMT_VENNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_VENNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_VENNM_2.DecimalPlace = 0;
-            this.IMT_VENNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_VENNM_2.IntegerPart = 0;
-            this.IMT_VENNM_2.IsCorrectDate = true;
-            this.IMT_VENNM_2.isEnterKeyDown = false;
-            this.IMT_VENNM_2.IsFirstTime = true;
-            this.IMT_VENNM_2.isMaxLengthErr = false;
-            this.IMT_VENNM_2.IsNumber = true;
-            this.IMT_VENNM_2.IsShop = false;
-            this.IMT_VENNM_2.Length = 80;
-            this.IMT_VENNM_2.Location = new System.Drawing.Point(388, 190);
-            this.IMT_VENNM_2.MaxLength = 80;
-            this.IMT_VENNM_2.MoveNext = true;
-            this.IMT_VENNM_2.Name = "IMT_VENNM_2";
-            this.IMT_VENNM_2.ReadOnly = true;
-            this.IMT_VENNM_2.Size = new System.Drawing.Size(245, 19);
-            this.IMT_VENNM_2.TabIndex = 528;
-            this.IMT_VENNM_2.Tag = "2";
-            this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_VENNM_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_VENNM_2.UseColorSizMode = false;
             // 
             // label31
             // 
@@ -4352,6 +4459,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
+            this.ckM_TextBox6.IsTimemmss = false;
             this.ckM_TextBox6.Length = 10;
             this.ckM_TextBox6.Location = new System.Drawing.Point(1259, 348);
             this.ckM_TextBox6.MaxLength = 10;
@@ -4383,6 +4491,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
+            this.ckM_TextBox5.IsTimemmss = false;
             this.ckM_TextBox5.Length = 10;
             this.ckM_TextBox5.Location = new System.Drawing.Point(1259, 327);
             this.ckM_TextBox5.MaxLength = 10;
@@ -4453,6 +4562,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScCustomer.Size = new System.Drawing.Size(133, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCustomer.TabIndex = 10;
+            this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
             this.ScCustomer.Value1 = null;
@@ -5015,6 +5125,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScCopyJuchuuNO.Size = new System.Drawing.Size(133, 28);
             this.ScCopyJuchuuNO.Stype = Search.CKM_SearchControl.SearchType.受注番号;
             this.ScCopyJuchuuNO.TabIndex = 1;
+            this.ScCopyJuchuuNO.test = null;
             this.ScCopyJuchuuNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyJuchuuNO.UseChangeDate = false;
             this.ScCopyJuchuuNO.Value1 = null;
@@ -5044,6 +5155,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScJuchuuNO.Size = new System.Drawing.Size(133, 28);
             this.ScJuchuuNO.Stype = Search.CKM_SearchControl.SearchType.受注番号;
             this.ScJuchuuNO.TabIndex = 0;
+            this.ScJuchuuNO.test = null;
             this.ScJuchuuNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScJuchuuNO.UseChangeDate = false;
             this.ScJuchuuNO.Value1 = null;
@@ -5073,6 +5185,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 9;
+            this.ScStaff.test = null;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -5154,6 +5267,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScMitsumoriNO.Size = new System.Drawing.Size(133, 28);
             this.ScMitsumoriNO.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ScMitsumoriNO.TabIndex = 2;
+            this.ScMitsumoriNO.test = null;
             this.ScMitsumoriNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScMitsumoriNO.UseChangeDate = false;
             this.ScMitsumoriNO.Value1 = null;
@@ -5217,6 +5331,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.test = null;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
@@ -5243,6 +5358,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
+            this.ckM_TextBox1.IsTimemmss = false;
             this.ckM_TextBox1.Length = 10;
             this.ckM_TextBox1.Location = new System.Drawing.Point(87, 93);
             this.ckM_TextBox1.MaxLength = 10;
@@ -5971,6 +6087,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
+            this.ckM_TextBox7.IsTimemmss = false;
             this.ckM_TextBox7.Length = 80;
             this.ckM_TextBox7.Location = new System.Drawing.Point(87, 136);
             this.ckM_TextBox7.MaxLength = 80;
@@ -6082,6 +6199,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl1.TabIndex = 694;
+            this.ckM_SearchControl1.test = null;
             this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl1.UseChangeDate = false;
             this.ckM_SearchControl1.Value1 = null;
@@ -6128,6 +6246,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScMotoJuchuNo.Size = new System.Drawing.Size(133, 28);
             this.ScMotoJuchuNo.Stype = Search.CKM_SearchControl.SearchType.受注番号;
             this.ScMotoJuchuNo.TabIndex = 5;
+            this.ScMotoJuchuNo.test = null;
             this.ScMotoJuchuNo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScMotoJuchuNo.UseChangeDate = false;
             this.ScMotoJuchuNo.Value1 = null;
@@ -6154,6 +6273,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox8.isMaxLengthErr = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
+            this.ckM_TextBox8.IsTimemmss = false;
             this.ckM_TextBox8.Length = 4;
             this.ckM_TextBox8.Location = new System.Drawing.Point(587, 158);
             this.ckM_TextBox8.MaxLength = 4;
@@ -6184,6 +6304,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox13.isMaxLengthErr = false;
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
+            this.ckM_TextBox13.IsTimemmss = false;
             this.ckM_TextBox13.Length = 4;
             this.ckM_TextBox13.Location = new System.Drawing.Point(627, 158);
             this.ckM_TextBox13.MaxLength = 4;
@@ -6214,6 +6335,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox18.isMaxLengthErr = false;
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
+            this.ckM_TextBox18.IsTimemmss = false;
             this.ckM_TextBox18.Length = 5;
             this.ckM_TextBox18.Location = new System.Drawing.Point(537, 158);
             this.ckM_TextBox18.MaxLength = 5;
@@ -6393,6 +6515,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox14.isMaxLengthErr = false;
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
+            this.ckM_TextBox14.IsTimemmss = false;
             this.ckM_TextBox14.Length = 4;
             this.ckM_TextBox14.Location = new System.Drawing.Point(587, 220);
             this.ckM_TextBox14.MaxLength = 4;
@@ -6423,6 +6546,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox19.isMaxLengthErr = false;
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
+            this.ckM_TextBox19.IsTimemmss = false;
             this.ckM_TextBox19.Length = 4;
             this.ckM_TextBox19.Location = new System.Drawing.Point(627, 220);
             this.ckM_TextBox19.MaxLength = 4;
@@ -6453,6 +6577,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox20.isMaxLengthErr = false;
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
+            this.ckM_TextBox20.IsTimemmss = false;
             this.ckM_TextBox20.Length = 5;
             this.ckM_TextBox20.Location = new System.Drawing.Point(537, 220);
             this.ckM_TextBox20.MaxLength = 5;
@@ -6520,6 +6645,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox21.isMaxLengthErr = false;
             this.ckM_TextBox21.IsNumber = true;
             this.ckM_TextBox21.IsShop = false;
+            this.ckM_TextBox21.IsTimemmss = false;
             this.ckM_TextBox21.Length = 80;
             this.ckM_TextBox21.Location = new System.Drawing.Point(87, 198);
             this.ckM_TextBox21.MaxLength = 80;
@@ -6551,6 +6677,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox22.isMaxLengthErr = false;
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;
+            this.ckM_TextBox22.IsTimemmss = false;
             this.ckM_TextBox22.Length = 20;
             this.ckM_TextBox22.Location = new System.Drawing.Point(87, 217);
             this.ckM_TextBox22.MaxLength = 20;
@@ -6585,6 +6712,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScDeliveryCD.Size = new System.Drawing.Size(133, 28);
             this.ScDeliveryCD.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScDeliveryCD.TabIndex = 18;
+            this.ScDeliveryCD.test = null;
             this.ScDeliveryCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScDeliveryCD.UseChangeDate = false;
             this.ScDeliveryCD.Value1 = null;

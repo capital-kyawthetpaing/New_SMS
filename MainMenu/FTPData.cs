@@ -20,9 +20,12 @@ namespace MainMenu
         StringBuilder result = new StringBuilder();
         WebResponse response = null;
         StreamReader reader = null;
-
-        public FTPData()
+        string SenderPath = "";
+        string SenderParent = "";
+        public FTPData(string Sen = null, string par = null)
         {
+            SenderPath = Sen;
+            SenderParent = par;
             ErrorStatus = "";
         }
         public static string[] GetFileList(string ftpuri, string UID, string PWD, string path)
@@ -56,7 +59,7 @@ namespace MainMenu
             }
             catch (Exception ex)
             {
-                ErrorStatus += "GetFileListLine No 58 Catch " +Environment.NewLine +ex.StackTrace.ToString();
+                ErrorStatus += "GetFileListLine No 58 Catch " + Environment.NewLine + ex.StackTrace.ToString();
                 if (reader != null)
                 {
                     reader.Close();
@@ -76,28 +79,76 @@ namespace MainMenu
         }
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
-
-        public async void UpdateSyncData(string Path, string Parent)
+        public async void UpdateSync()
         {
-            //var Id = "";
-            //var pass = "";
-            //var path = "";
-            //Login_BL lbl = new Login_BL();
-            //IniFile_DL idl = new IniFile_DL(@"‪C:\SMS\AppData\CKM.ini");
-            //if (lbl.ReadConfig())
-            //{
-            //    byte[] buffer = new byte[2048];
+           // Task<int> task = UpdateSyncData();
+        }
+        public async void UpdateSyncData()
+        {
+            var GetList = FTPData.GetFileList(SenderPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");   /// Add Network Credentials
+            //  PTK async 2021-03-04
+            bool UseAsync = true;
+            var lblini = "";
+            try
+            {
+                MaxCount = GetList.Count();
+                lblini = " of " + GetList.Count().ToString() + " Completed!";//
+                _Progressbar = (System.Windows.Forms.ProgressBar)GetParentLbl(SenderParent).Controls.Find("progressBar1", true)[0];
+                _Progressbar.Visible = true;
+                _Progressbar.Enabled = true;
+                _Progressbar.Maximum = 100;
+                _Progressbar.Minimum = 0;
+                _Progressbar.Value = 0;
+                _Progressbar.Step = 1;
+                //   _Progressbar.Text = "0" + lblini;
 
-            //    GetPrivateProfileSection("ServerAuthen", buffer, 2048, @"‪C:\SMS\AppData\CKM.ini");
-            //    String[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
-            //    Id = tmp[1].Replace("\"", "").Split('=').Last();
-            //    pass = tmp[2].Replace("\"", "").Split('=').Last();
-            //    path = tmp[3].Replace("\"", "").Split('=').Last();
-            //    Login_BL.SyncPath = path;
-            //}
+                _Progress = (GetParentLbl(SenderParent).Controls.Find("lblProgress", true)[0] as System.Windows.Forms.Label);
+                _Progress.Visible = true;
+                _Progress.Text = "0" + lblini;
 
-        
-
+                if (lblini == "")
+                    UseAsync = false;
+            }
+            catch
+            {
+                UseAsync = false;
+            }
+            //  PTK async 2021-03-04
+            if (GetList != null)
+            {
+                int cc = 0;
+               // _Progressbar.Value = 50;// Convert.ToInt32((Convert.ToInt32(cc) / MaxCount) * 100);
+                _Progressbar.PerformStep();
+                _Progressbar.Update();
+                foreach (string file in GetList)
+                {
+                    //if (cc == 8)
+                    //    break;
+                    cc++;
+                    if (UseAsync)
+                    {
+                        await Task.Run(() =>
+                        {
+                            try
+                            {
+                                UpdateText(_Progressbar, cc.ToString() + lblini);
+                                UpdateText(_Progress, cc.ToString() + lblini);
+                            }
+                            catch { }
+                        });
+                    }
+                    Download(cc.ToString() + lblini, file, SenderPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+                }
+                MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _Progressbar.Enabled = false;
+                _Progressbar.Visible = false;
+                _Progress.Text = "";
+                // System.Windows.Forms.Cursor.Current = Cursors.Default;
+            }
+          
+        }
+        public async void _UpdateSyncData(string Path, string Parent)
+        {
             var GetList = FTPData.GetFileList(Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");   /// Add Network Credentials
 
             //  PTK async 2021-03-04
@@ -105,21 +156,20 @@ namespace MainMenu
             var lblini = "";
             try
             {
-                lblini = " of " + GetList.Count().ToString();
-                // ErrorStatus += GetList.Count();
+                lblini = " of " + GetList.Count().ToString();//
                 _Progress = (GetParentLbl(Parent).Controls.Find("lblProgress", true)[0] as System.Windows.Forms.Label);
                 _Progress.Visible = true;
                 _Progress.Text = "0" + lblini;
                 if (lblini == "")
-                    UseAsync = false; 
+                    UseAsync = false;
             }
-            catch {
+            catch
+            {
                 UseAsync = false;
             }
             //  PTK async 2021-03-04
             if (GetList != null)
             {
-                //   if ()
                 int cc = 0;
                 foreach (string file in GetList)
                 {
@@ -137,13 +187,11 @@ namespace MainMenu
                             catch { }
                         });
                     }
-                    
-                      Download(cc.ToString() + lblini, file, Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
-                   
+                    Download(cc.ToString() + lblini, file, Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 }
                 MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _Progress.Text = "";
-               // System.Windows.Forms.Cursor.Current = Cursors.Default;
+                // System.Windows.Forms.Cursor.Current = Cursors.Default;
             }
         }
         public async Task UpdateText(Control c, string t)
@@ -156,23 +204,44 @@ namespace MainMenu
                 }
             }).ConfigureAwait(false);
         }
+        public int MaxCount = 0;
         public void UpdateControl(Control c, string s)
         {
-            try
+            if (c.Name == "progressBar1")
             {
-                if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+                try
                 {
-                    c.Text = s;
-                    return;
+                    if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+                    {
+                      //  MessageBox.Show(Convert.ToInt32((Convert.ToInt32(s.Split(' ').First()) *100 / MaxCount) ).ToString());
+                        (c as System.Windows.Forms.ProgressBar).Value = Convert.ToInt32((Convert.ToInt32(s.Split(' ').First()) * 100 / MaxCount));
+                        return;
+                    }
+                    (c as System.Windows.Forms.ProgressBar).Value = Convert.ToInt32((Convert.ToInt32(s.Split(' ').First()) * 100 / MaxCount));
+                    c.Update();
                 }
-                c.Text = s;
-                c.Update();
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.Message);
+                    //return;
+                }
             }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
-                //return;
-            }
+            else
+                try
+                {
+                    if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+                    {
+                        c.Text = s;
+                        return;
+                    }
+                    c.Text = s;
+                    c.Update();
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.Message);
+                    //return;
+                }
         }
         public bool ControlInvokeRequired(Control c, Action a)
         {
@@ -186,8 +255,8 @@ namespace MainMenu
             }
             return true;
         }
-        public  System.Windows.Forms.Label _Progress = null;
-        
+        public  System.Windows.Forms.ProgressBar _Progressbar = null;
+        public System.Windows.Forms.Label _Progress = null;
         public void Sync(string path)
         {
 

@@ -614,11 +614,13 @@ namespace TempoRegiHanbaiTouroku
                         lblJuchuuTaxRitsu.Text = dse.SalesNO;
 
                         string reissue = OperationMode == FrmMainForm.EOperationMode.INSERT ? "0" : "1";
-                   
+
                         //レシート印字
                         //TempoRegiRyousyuusyo‗店舗領収書印刷
-                        ExecPrint(dse.SalesNO, reissue);
-
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            ExecPrint(dse.SalesNO, reissue);
+                        }
                         //cdo.SetDisplay("");
                         //データ更新（レシート印刷やお釣りのやり取りする間にややこしい更新を行う）
                         //TempoRegiDataUpdate‗店舗レジデータ更新
@@ -677,63 +679,22 @@ namespace TempoRegiHanbaiTouroku
                 b = cmdLine;
                 try
                 {
-
-                    ///movedBegin
-                    try
-                    {
-                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath,  "", cmdLine));
-                    }
-                    catch (Exception ex) {
-
-                        MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message + Environment.NewLine+ ex.StackTrace.ToString());
-
-                    }
-                    cdo.SetDisplay(false, false, "", Up, Lp);
+                    //if (Base_DL.iniEntity.IsDM_D30Used)    //2021-01-09 PTK
+                    //{
+                        try
+                        {
+                            Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, "", cmdLine));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message + Environment.NewLine + ex.StackTrace.ToString());
+                        }
+                        cdo.SetDisplay(false, false, "", Up, Lp);
+                    //}
                 }
                 catch
                 {
-
                 }
-
-                //try
-                //{
-                //    try
-                //    {
-                //        cdo.RemoveDisplay(true);
-                //        cdo.RemoveDisplay(true);
-                //    }
-                //    catch
-                //    {
-                //        cdo.RemoveDisplay(true);
-                //    }
-                //    if (Base_DL.iniEntity.IsDM_D30Used)
-                //    {
-                //        EPSON_TM30.CashDrawerOpen op = new EPSON_TM30.CashDrawerOpen();  //2020_06_24 
-                //        op.OpenCashDrawer(); //2020_06_24     << PTK
-                //    }
-                //    try
-                //    {
-                //        var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
-                //        pro.WaitForExit();
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        MessageBox.Show(ex.Message + Environment.NewLine + cmdLine);
-
-                //    }
-                //    try
-                //    {
-                //        cdo.SetDisplay(true, true, "", "");
-                //        cdo.RemoveDisplay(true);
-                //        cdo.RemoveDisplay(true);
-                //    }
-                //    catch { }
-
-                //    cdo.SetDisplay(false, false, "", Up, Lp);
-                //}
-                //catch
-                //{
-                //}
             }
             else
             {

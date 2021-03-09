@@ -290,7 +290,10 @@ namespace TempoRegiPoint
                 var coupon = bl.D_CouponSelect(StoreCD);
                 if (coupon.Rows.Count > 0)
                 {
-                    OutputCoupon(coupon);
+                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    {
+                        OutputCoupon(coupon);
+                    }
                 }
                 else
                 {

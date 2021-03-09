@@ -227,10 +227,13 @@ namespace TempoRegiHanbaiTouroku
 
                 try
                 {
-                    Stop_DisplayService();
-                    cdo.SetDisplay(true, true, "");
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
+                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    {
+                        Stop_DisplayService();
+                        cdo.SetDisplay(true, true, "");
+                        cdo.RemoveDisplay(true);
+                        cdo.RemoveDisplay(true);
+                    }
                 }
                 catch { }
             }
@@ -1244,10 +1247,14 @@ namespace TempoRegiHanbaiTouroku
 
                     if (!frm.flgCancel)
                     {
-                        try { Stop_DisplayService();
-                            cdo.SetDisplay(true, true, "");
-                            cdo.RemoveDisplay(true);
-                            cdo.RemoveDisplay(true);
+                        try {
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
+                                Stop_DisplayService();
+                                cdo.SetDisplay(true, true, "");
+                                cdo.RemoveDisplay(true);
+                                cdo.RemoveDisplay(true);
+                            }
                         }
                         catch { }
                       //  Stop_DisplayService();
@@ -2230,9 +2237,12 @@ namespace TempoRegiHanbaiTouroku
         private void btnClear_Click(object sender, EventArgs e)
         {
             InitScr();
-            cdo.SetDisplay(true, true, "");
-            cdo.RemoveDisplay(true);
-            cdo.RemoveDisplay(true);
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+                cdo.SetDisplay(true, true, "");
+                cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
+            }
         }
     }
 }
