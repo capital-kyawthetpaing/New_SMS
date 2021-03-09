@@ -1677,7 +1677,7 @@ namespace ShiireNyuuryoku
                     CheckGrid((int)ClsGridShiire.ColNO.JanCD, i,false, true);
 
                     mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
-                    mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
+                    mGrid.g_DArray[i].TaniName = bbl.LeftB(row["TaniName"].ToString(), 10);     // 
                     mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();   // 
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
@@ -2177,7 +2177,7 @@ namespace ShiireNyuuryoku
                         mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
                         mGrid.g_DArray[row].DiscountKbn = Convert.ToInt16(selectRow["DiscountKbn"].ToString());
                         mGrid.g_DArray[row].TaniCD = selectRow["TaniCD"].ToString();
-                        mGrid.g_DArray[row].TaniName = selectRow["TaniName"].ToString();
+                        mGrid.g_DArray[row].TaniName = bbl.LeftB( selectRow["TaniName"].ToString(),10);
 
                         mGrid.g_DArray[row].VariousFLG = Convert.ToInt16(selectRow["VariousFLG"].ToString());
                         mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(selectRow["ZaikoKBN"].ToString());
