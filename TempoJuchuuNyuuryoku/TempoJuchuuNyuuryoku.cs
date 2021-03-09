@@ -1942,12 +1942,13 @@ namespace TempoJuchuuNyuuryoku
                         CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, i);
                     else
                         mGrid.g_DArray[i].VendorName = "";
+
                     mGrid.g_DArray[i].ArrivePlanDate = row["ArrivePlanDate"].ToString();
                     mGrid.g_DArray[i].PaymentPlanDate = row["PaymentPlanDate"].ToString();
                     mGrid.g_DArray[i].CollectClearDate = row["D_CollectClearDate"].ToString();
                     mGrid.g_DArray[i].ShippingPlanDate = row["ShippingPlanDate"].ToString();
                     mGrid.g_DArray[i].OldShippingPlanDate = mGrid.g_DArray[i].ShippingPlanDate;
-
+                    mGrid.g_DArray[i].DesiredDeliveryDate = row["DesiredDeliveryDate"].ToString();
                     //mGrid.g_DArray[i].KeigenTax = bbl.Z_Set(row["CollectClearDate"]);
 
 
@@ -5485,6 +5486,7 @@ namespace TempoJuchuuNyuuryoku
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
         }
+
     }
 }
 
