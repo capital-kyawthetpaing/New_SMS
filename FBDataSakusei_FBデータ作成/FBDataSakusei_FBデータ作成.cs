@@ -332,8 +332,14 @@ namespace FBDataSakusei_FBデータ作成
                             dfbe = new D_FBControl_Entity
                             {
                                 Operator = InOperatorCD,
+                                PayDate = txtPaymentDate.Text,                              
+                                MotoKouzaCD = cboPayment.SelectedValue.ToString(),
                             };
-                            if (fbbl.FBDataSakusei_Update(dfbe))
+                            dpe = new D_Pay_Entity
+                            {
+                                Flg = cboProcess.SelectedValue.ToString(),                              
+                            };
+                            if (fbbl.FBDataSakusei_Update(dfbe,dpe))
                             {
                                 Clear(panel1);
                                 BindCombo();
