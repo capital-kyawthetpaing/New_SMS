@@ -1669,17 +1669,20 @@ namespace TempoJuchuuNyuuryoku
                 {
                     //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
                     bool ret = mibl.CheckJuchuData(dje.JuchuuNO, out string errno, (short)mTennic);
-                    if (ret)
+                    if (OperationMode != EOperationMode.SHOW)
                     {
-                        if (!string.IsNullOrWhiteSpace(errno))
+                        if (ret)
                         {
-                            //警告メッセージを表示する
-                            bbl.ShowMessage(errno);
-
-                            //E165：売上済み
-                            if (errno.Equals("E165"))
+                            if (!string.IsNullOrWhiteSpace(errno))
                             {
-                                lblDisp.Text = "売上済";
+                                //警告メッセージを表示する
+                                bbl.ShowMessage(errno);
+
+                                //E165：売上済み
+                                if (errno.Equals("E165"))
+                                {
+                                    lblDisp.Text = "売上済";
+                                }
                             }
                         }
                     }
