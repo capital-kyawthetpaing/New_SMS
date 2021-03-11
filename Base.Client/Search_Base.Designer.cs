@@ -39,8 +39,8 @@
             // 
             this.lblSearch_Name.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.lblSearch_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblSearch_Name.Font = new System.Drawing.Font("MS Gothic", 32F, System.Drawing.FontStyle.Bold);
-            this.lblSearch_Name.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XLarge;
+            this.lblSearch_Name.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.lblSearch_Name.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Large;
             this.lblSearch_Name.FontBold = true;
             this.lblSearch_Name.ForeColor = System.Drawing.Color.Black;
             this.lblSearch_Name.Location = new System.Drawing.Point(12, 9);
