@@ -1478,6 +1478,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
                         mGrid.g_DArray[i].PurchaseSu = bbl.Z_SetStr(row["PurchaseSu"]);   //単価算出のため先にセットしておく    
                         mGrid.g_DArray[i].OldPurchaseSu = Convert.ToInt16(row["PurchaseSu"]);
+                        mGrid.g_DArray[i].PurchaseZumiSu = Convert.ToInt16(row["PurchaseZumiSu"]);
 
                         CheckGrid((int)ClsGridShiire.ColNO.JanCD, i);
                         mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
