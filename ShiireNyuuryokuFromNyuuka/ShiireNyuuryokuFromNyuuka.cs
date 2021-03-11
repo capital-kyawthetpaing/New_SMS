@@ -1063,7 +1063,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
-                    ChangeOperationMode(EOperationMode.UPDATE);
+                    ChangeOperationMode(EOperationMode.SHOW);
                     keyControls[(int)EIndex.PurchaseNO].Text = shiireNO;
                     CheckKey((int)EIndex.PurchaseNO, true);
                 }
