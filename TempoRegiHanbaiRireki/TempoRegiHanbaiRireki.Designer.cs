@@ -2202,7 +2202,7 @@
             this.txtCustomerNo.IsShop = true;
             this.txtCustomerNo.IsTimemmss = false;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(204, 82);
+            this.txtCustomerNo.Location = new System.Drawing.Point(204, 80);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
