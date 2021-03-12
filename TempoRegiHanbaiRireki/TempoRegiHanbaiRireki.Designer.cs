@@ -531,9 +531,9 @@
             this.lblDtSKUName1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtSKUName1.FontBold = true;
             this.lblDtSKUName1.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSKUName1.Location = new System.Drawing.Point(851, 5);
+            this.lblDtSKUName1.Location = new System.Drawing.Point(852, 4);
             this.lblDtSKUName1.Name = "lblDtSKUName1";
-            this.lblDtSKUName1.Size = new System.Drawing.Size(560, 60);
+            this.lblDtSKUName1.Size = new System.Drawing.Size(560, 67);
             this.lblDtSKUName1.TabIndex = 47;
             this.lblDtSKUName1.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblDtSKUName1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -2200,8 +2200,9 @@
             this.txtCustomerNo.isMaxLengthErr = false;
             this.txtCustomerNo.IsNumber = false;
             this.txtCustomerNo.IsShop = true;
+            this.txtCustomerNo.IsTimemmss = false;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(204, 80);
+            this.txtCustomerNo.Location = new System.Drawing.Point(204, 83);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
