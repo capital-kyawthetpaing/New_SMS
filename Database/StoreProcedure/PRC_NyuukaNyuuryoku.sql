@@ -270,7 +270,7 @@ BEGIN
         WHILE @@FETCH_STATUS = 0
         BEGIN
         -- ========= ループ内の実際の処理 ここから===
-            IF @sumArrivalPlanSu > 0 AND @SakuseiFlg = 1
+            IF (@sumArrivalPlanSu > 0 OR @tblReserveSu > 0) AND @SakuseiFlg = 1
             BEGIN
                 IF @oldArrivalPlanNO <> @tblArrivalPlanNO 
                 BEGIN
@@ -339,7 +339,8 @@ BEGIN
                            ,DP.SKUCD
                            ,DP.AdminNO
                            ,DP.JanCD
-                           ,DP.ArrivalPlanSu-@tblArrivalSu  --元のレコードのArrivalPlanSu - 明細入荷数
+                           ,(CASE DP.ArrivalPlanSu-@tblArrivalSu > 0 THEN DP.ArrivalPlanSu-@tblArrivalSu
+                             ELSE @tblReserveSu END) --元のレコードのArrivalPlanSu - 明細入荷数
                            ,0   --ArrivalSu
                            ,DP.ArrivalPlanNO    --元のレコードのArrivalPlanNO
                            ,DP.OrderCD
