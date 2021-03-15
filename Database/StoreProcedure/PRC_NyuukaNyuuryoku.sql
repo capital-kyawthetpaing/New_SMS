@@ -339,8 +339,8 @@ BEGIN
                            ,DP.SKUCD
                            ,DP.AdminNO
                            ,DP.JanCD
-                           ,(CASE DP.ArrivalPlanSu-@tblArrivalSu > 0 THEN DP.ArrivalPlanSu-@tblArrivalSu
-                             ELSE @tblReserveSu END) --元のレコードのArrivalPlanSu - 明細入荷数
+                           ,(CASE WHEN DP.ArrivalPlanSu-@tblArrivalSu > 0 THEN DP.ArrivalPlanSu-@tblArrivalSu
+                                  ELSE @tblReserveSu END) --元のレコードのArrivalPlanSu - 明細入荷数
                            ,0   --ArrivalSu
                            ,DP.ArrivalPlanNO    --元のレコードのArrivalPlanNO
                            ,DP.OrderCD
