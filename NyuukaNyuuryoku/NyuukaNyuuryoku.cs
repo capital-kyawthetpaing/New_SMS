@@ -1937,6 +1937,7 @@ namespace NyuukaNyuuryoku
                         mGrid.g_DArray[i].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
                         mGrid.g_DArray[i].OrderWayKBN = row["OrderWayKBN"].ToString();
                         mGrid.g_DArray[i].AliasKBN = row["AliasKBN"].ToString();
+                        mGrid.g_DArray[i].OldSURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
 
                         m_dataCnt = i + 1;
                         Grid_NotFocus((int)ClsGridHikiate.ColNO.JYUNO, i);
@@ -1976,6 +1977,7 @@ namespace NyuukaNyuuryoku
                         mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
                         mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
                         mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
+                        mGrid2.g_DArray[i2].OldSURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                         mGrid2.g_DArray[i2].isCopy = false;
 
                          m_dataCnt2 = i2 + 1;
@@ -2652,6 +2654,7 @@ namespace NyuukaNyuuryoku
             dt.Columns.Add("ReserveNO", typeof(string));   
             dt.Columns.Add("CustomerCD", typeof(string));
             dt.Columns.Add("ArrivalSu", typeof(int));
+            dt.Columns.Add("OldArrivalSu", typeof(int));
             dt.Columns.Add("ArrivalPlanKBN", typeof(int));
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
@@ -2681,6 +2684,7 @@ namespace NyuukaNyuuryoku
                         , mGrid.g_DArray[RW].ReserveNO
                         , mGrid.g_DArray[RW].CustomerCD
                         , bbl.Z_Set(mGrid.g_DArray[RW].SURYO)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].OldSURYO)
                         , bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanKBN)
                         , 0 //bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
@@ -2705,6 +2709,7 @@ namespace NyuukaNyuuryoku
                         , mGrid2.g_DArray[RW].ReserveNO
                         , mGrid2.g_DArray[RW].CustomerCD
                         , bbl.Z_Set(mGrid2.g_DArray[RW].SURYO)
+                        , bbl.Z_Set(mGrid2.g_DArray[RW].OldSURYO)
                         , bbl.Z_Set(mGrid2.g_DArray[RW].ArrivalPlanKBN)
                         , 0 //bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu) ? 1 : 0
                         );

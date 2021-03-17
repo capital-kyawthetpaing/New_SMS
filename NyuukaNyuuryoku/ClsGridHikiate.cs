@@ -41,6 +41,7 @@ namespace NyuukaNyuuryoku
             internal string OrderTaxRitsu;
             internal string OrderWayKBN;
             internal string AliasKBN;
+            internal string OldSURYO;      //修正前入荷数
         }
 
         //列番号定数
