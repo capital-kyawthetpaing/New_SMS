@@ -2626,12 +2626,12 @@ BEGIN
                    ,tbl.MoveRows AS DeliveryPlanRows
                    ,@MoveNO AS Number
                    ,tbl.MoveRows  As NumberRows
-                   ,NULL    --CommentInStore]
-                   ,NULL    --CommentOutStore]
-                   ,0   --HikiateFLG]
-                   ,0   --UpdateCancelKBN]
-                   ,NULL    --DeliveryOrderComIn]
-                   ,NULL    --DeliveryOrderComOut]                        
+                   ,NULL    --CommentInStore
+                   ,NULL    --CommentOutStore
+                   ,1       --HikiateFLG
+                   ,0       --UpdateCancelKBN
+                   ,NULL    --DeliveryOrderComIn
+                   ,NULL    --DeliveryOrderComOut                        
                    ,@Operator  
                    ,@SYSDATETIME
                    ,@Operator  

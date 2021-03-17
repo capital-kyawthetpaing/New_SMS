@@ -32,7 +32,7 @@ namespace Search
             InitializeComponent();
             lblChangeDate.Text = ChangeDate;
             lblVendorKBN.Text = VendorKBN;
-            ProgramName = "仕入先・支払先検索";
+            ProgramName = "仕入先・支払先";
         }
 
         private void btnShow_Click(object sender, EventArgs e)

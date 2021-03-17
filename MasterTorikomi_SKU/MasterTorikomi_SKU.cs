@@ -87,7 +87,6 @@ namespace MasterTorikomi_SKU
             {
                 if (bbl.ShowMessage("Q001", "取込処理") == DialogResult.Yes)
                 {
-
                     dt = ExcelToDatatable(filePath);
                     if (dt != null)
                     {

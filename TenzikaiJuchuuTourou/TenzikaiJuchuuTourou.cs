@@ -1135,7 +1135,7 @@ namespace TenzikaiJuchuuTourou
                 // mGrid.g_DArray[row].TenI = selectRow["TaniCD"].ToString(); // Name
                 mGrid.g_DArray[row].TaniHDN = selectRow["TaniCD"].ToString();
                 mGrid.g_DArray[row].TenI = tkb.D_TeniSelectbyTaniCD(mGrid.g_DArray[row].TaniHDN);
-                mGrid.g_DArray[row].TeniName = selectRow["TaniName"].ToString();
+                mGrid.g_DArray[row].TeniName = bbl.LeftB(selectRow["TaniName"].ToString(),10);
                 mGrid.g_DArray[row].TaxRateFlg = Convert.ToInt16(selectRow["TaxRateFlg"].ToString()).ToString();
             }
             else
@@ -1322,7 +1322,7 @@ namespace TenzikaiJuchuuTourou
                         }
                         mGrid.g_DArray[row].TaniHDN = selectRow["TaniCD"].ToString();
                         mGrid.g_DArray[row].TenI = tkb.D_TeniSelectbyTaniCD(mGrid.g_DArray[row].TaniHDN);
-                        mGrid.g_DArray[row].TeniName = selectRow["TaniName"].ToString();
+                        mGrid.g_DArray[row].TeniName = bbl.LeftB( selectRow["TaniName"].ToString(),10);
                         //TaxRate
                         mGrid.g_DArray[row].TaxRateFlg = Convert.ToInt16(selectRow["TaxRateFLG"].ToString()).ToString();
 

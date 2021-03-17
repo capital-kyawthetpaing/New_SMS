@@ -1063,7 +1063,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
-                    ChangeOperationMode(EOperationMode.UPDATE);
+                    ChangeOperationMode(EOperationMode.SHOW);
                     keyControls[(int)EIndex.PurchaseNO].Text = shiireNO;
                     CheckKey((int)EIndex.PurchaseNO, true);
                 }
@@ -1349,7 +1349,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
                     mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
                     mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
-                    mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
+                    mGrid.g_DArray[i].TaniName = bbl.LeftB(row["TaniName"].ToString(), 10);    // 
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
@@ -1478,11 +1478,12 @@ namespace ShiireNyuuryokuFromNyuuka
                         mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
                         mGrid.g_DArray[i].PurchaseSu = bbl.Z_SetStr(row["PurchaseSu"]);   //単価算出のため先にセットしておく    
                         mGrid.g_DArray[i].OldPurchaseSu = Convert.ToInt16(row["PurchaseSu"]);
+                        mGrid.g_DArray[i].PurchaseZumiSu = Convert.ToInt16(row["PurchaseZumiSu"]);
 
                         CheckGrid((int)ClsGridShiire.ColNO.JanCD, i);
                         mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
                         mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
-                        mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
+                        mGrid.g_DArray[i].TaniName = bbl.LeftB(row["TaniName"].ToString(),10);   // 
                         mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                         mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                         mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 

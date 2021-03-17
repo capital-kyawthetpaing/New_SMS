@@ -33,9 +33,9 @@ namespace BL
             return dfbdl.FBDataSakusei_Insert(dfbe, dfde,dpe);
         }
 
-        public bool FBDataSakusei_Update(D_FBControl_Entity dfe)
+        public bool FBDataSakusei_Update(D_FBControl_Entity dfe, D_Pay_Entity dpe)
         {
-            return dfbdl.FBDataSakusei_Update(dfe);
+            return dfbdl.FBDataSakusei_Update(dfe,dpe);
         }
 
         public DataTable D_Pay_SelectForText(D_FBControl_Entity dfbe,D_Pay_Entity dpe)

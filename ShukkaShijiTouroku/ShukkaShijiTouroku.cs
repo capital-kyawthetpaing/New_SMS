@@ -745,6 +745,12 @@ namespace ShukkaShijiTouroku
                             Scr_Lock(1, mc_L_END, 1);   // フレームのロック
                             this.Vsb_Mei_0.TabStop = false;
 
+                            detailControls[(int)EIndex.PlanDateTo].Text = bbl.GetDate();
+                            for(int idx = (int)EIndex.Chk1; idx<= (int)EIndex.Chk5; idx++)
+                            {
+                                ((CheckBox)detailControls[idx]).Checked = true;
+                            }
+
                             SetFuncKeyAll(this, "100001001010");
                         }
                         break;

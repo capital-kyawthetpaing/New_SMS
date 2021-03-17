@@ -1254,7 +1254,7 @@ namespace HenpinNyuuryoku
                     CheckGrid((int)ClsGridShiire.ColNO.JanCD, i);
 
                     mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
-                    mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
+                    mGrid.g_DArray[i].TaniName = bbl.LeftB(row["TaniName"].ToString(), 10);    // 
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
@@ -1383,7 +1383,7 @@ namespace HenpinNyuuryoku
                         CheckGrid((int)ClsGridShiire.ColNO.JanCD, i);
 
                         mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
-                        mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
+                        mGrid.g_DArray[i].TaniName = bbl.LeftB(row["TaniName"].ToString(), 10);     // 
                         mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                         mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                         mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
