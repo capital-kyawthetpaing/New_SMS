@@ -177,6 +177,29 @@ BEGIN
          WHERE ArrivalNO = @ArrivalNO
            ;
 
+        --yD_ArrivalPlanz     Update/Delete   Table“]‘—d—l‚b‡A
+        UPDATE [D_ArrivalPlan] SET
+           [ArrivalSu]      = D_ArrivalPlan.[ArrivalSu] - tbl.OldArrivalSu
+          ,[UpdateOperator] = @Operator  
+          ,[UpdateDateTime] = @SYSDATETIME
+        
+        FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.OldArrivalSu) AS OldArrivalSu
+                FROM @Table AS tbl
+               WHERE tbl.UpdateFlg >= 0
+               GROUP BY tbl.ArrivalPlanNO
+        ) AS tbl
+        WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
+        ;
+        
+        --yD_ArrivalPlanz  •ªŠ„•ªíœiDeletej
+        DELETE FROM D_ArrivalPlan
+        WHERE EXISTS (SELECT 1 FROM D_ArrivalPlan AS DP 
+                       INNER JOIN @Table AS tbl
+                          ON tbl.ArrivalPlanNO = DP.ArrivalPlanNO
+                         AND tbl.UpdateFlg >= 0
+                       WHERE DP.ArrivalPlanNO = D_ArrivalPlan.OriginalArrivalPlanNO)
+        ;
+        
         --yD_Stockz           Update/Delete   Table“]‘—d—l‚c‡A
         UPDATE [D_Stock] SET
                [ArrivalYetFLG]           = 1
@@ -217,17 +240,16 @@ BEGIN
         --yD_Reservez         Update/Delete   Table“]‘—d—l‚d‡A
         UPDATE [D_Reserve] SET
                [ShippingPossibleDate] = NULL
-              ,[ShippingPossibleSU]   = [ShippingPossibleSU] - tbl.ArrivalSu
+              ,[ShippingPossibleSU]   = [ShippingPossibleSU] - tbl.OldArrivalSu
               ,[UpdateOperator]       = @Operator  
               ,[UpdateDateTime]       = @SYSDATETIME
               
          FROM (SELECT tbl.ReserveNO, SUM(OldArrivalSu) AS OldArrivalSu
                  FROM @Table AS tbl
                 WHERE tbl.UpdateFlg >= 0
+                  AND tbl.DataKbn = 1
                 GROUP BY tbl.ReserveNO) AS tbl
         WHERE tbl.ReserveNO = D_Reserve.ReserveNO
-          AND tbl.UpdateFlg >= 0
-          AND tbl.DataKbn = 1
         ;
         
         --yD_Reservez  •ªŠ„•ªíœiDeletej
