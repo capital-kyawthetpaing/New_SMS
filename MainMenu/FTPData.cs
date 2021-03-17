@@ -139,7 +139,7 @@ namespace MainMenu
                     }
                     Download(cc.ToString() + lblini, file, SenderPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 }
-                MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ダウンロードが終わりました", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _Progressbar.Enabled = false;
                 _Progressbar.Visible = false;
                 _Progress.Text = "";
