@@ -140,7 +140,7 @@ namespace MainMenu
         {
             if (ApplicationDeployment.IsNetworkDeployed)
             {
-                var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var result = MessageBox.Show("サーバーから最新プログラムをダウンロードしますか？", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     this.Cursor = Cursors.WaitCursor;
