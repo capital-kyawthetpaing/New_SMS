@@ -2672,7 +2672,7 @@ namespace NyuukaNyuuryoku
                 //zが更新有効行数
                 if (mGrid.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
                 {
-                    dt.Rows.Add(1
+                            dt.Rows.Add(1
                         , rowNo
                         , 1
                         , mGrid.g_DArray[RW].JYUNO
