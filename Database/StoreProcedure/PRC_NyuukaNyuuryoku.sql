@@ -931,18 +931,18 @@ BEGIN
     
     --カーソル定義
     DECLARE CUR_AAA CURSOR FOR
-            SELECT tbl.OrderNO, tbl.OrderRows, tbl.ArrivalSu, tbl.OldArrivalSu
+            SELECT tbl.OrderNO, tbl.OrderRows, (CASE WHEN tbl.UpdateFlg = 2 THEN 0 ELSE tbl.ArrivalSu), tbl.OldArrivalSu
               FROM @Table AS tbl
              WHERE tbl.DataKbn > 1
-               AND tbl.UpdateFlg <> 2
+               --AND tbl.UpdateFlg <> 2
         UNION ALL
-            SELECT DO.OrderNO, DO.OrderRows, tbl.ArrivalSu, tbl.OldArrivalSu
+            SELECT DO.OrderNO, DO.OrderRows, (CASE WHEN tbl.UpdateFlg = 2 THEN 0 ELSE tbl.ArrivalSu), tbl.OldArrivalSu
               FROM @Table AS tbl
              INNER JOIN D_OrderDetails AS DO
                 ON DO.JuchuuNO = tbl.OrderNO
                AND DO.JuchuuRows = tbl.OrderRows
              WHERE tbl.DataKbn = 1
-               AND tbl.UpdateFlg <> 2
+               --AND tbl.UpdateFlg <> 2
         ORDER BY OrderNO, OrderRows
         ;
     
