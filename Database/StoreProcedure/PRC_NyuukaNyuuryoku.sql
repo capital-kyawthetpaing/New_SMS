@@ -841,7 +841,7 @@ BEGIN
        ,NULL	--ToRackNO
        ,NULL	--ToStockNO
        ,NULL    --FromStoreCD
-       ,NULL	--FromSoukoCD]
+       ,NULL	--FromSoukoCD
        ,NULL	--FromRackNO
        ,tbl.CustomerCD
        ,(CASE @OperateMode WHEN 3 THEN -1 ELSE 1 END) * tbl.ArrivalSu	--Quantity
@@ -948,8 +948,8 @@ BEGIN
     
     DECLARE @OrderNO varchar(11);
     DECLARE @OrderRows int;
-	DECLARE @tblOldArrivalSu int;
-	
+    DECLARE @tblOldArrivalSu int;
+    
     --カーソルオープン
     OPEN CUR_AAA;
 
