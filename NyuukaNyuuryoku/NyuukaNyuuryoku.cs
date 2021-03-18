@@ -2670,7 +2670,7 @@ namespace NyuukaNyuuryoku
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (mGrid.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
+                if (mGrid.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE || OperationMode == EOperationMode.UPDATE)
                 {
                             dt.Rows.Add(1
                         , rowNo
@@ -2686,7 +2686,7 @@ namespace NyuukaNyuuryoku
                         , bbl.Z_Set(mGrid.g_DArray[RW].SURYO)
                         , bbl.Z_Set(mGrid.g_DArray[RW].OldSURYO)
                         , bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanKBN)
-                        , 0 //bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) ? 1 : 0
+                        , mGrid.g_DArray[RW].Check ? 0 : 2 //bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
                     vendorCD = mGrid.g_DArray[RW].VendorCD;
                     rowNo++;
@@ -2695,7 +2695,7 @@ namespace NyuukaNyuuryoku
             for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (mGrid2.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
+                if (mGrid2.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE || OperationMode == EOperationMode.UPDATE)
                 {
                     dt.Rows.Add(2
                         , rowNo
@@ -2711,7 +2711,7 @@ namespace NyuukaNyuuryoku
                         , bbl.Z_Set(mGrid2.g_DArray[RW].SURYO)
                         , bbl.Z_Set(mGrid2.g_DArray[RW].OldSURYO)
                         , bbl.Z_Set(mGrid2.g_DArray[RW].ArrivalPlanKBN)
-                        , 0 //bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu) ? 1 : 0
+                        , mGrid.g_DArray[RW].Check ? 0 : 2  //bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
                     vendorCD = mGrid2.g_DArray[RW].VendorCD;
                     rowNo++;

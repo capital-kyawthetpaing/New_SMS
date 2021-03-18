@@ -308,7 +308,7 @@ BEGIN
                    ,@SYSDATETIME
 
               FROM @Table tbl
-              WHERE tbl.UpdateFlg >= 0
+              WHERE tbl.UpdateFlg <> 2
               ;
         
         --カーソル定義
@@ -329,6 +329,7 @@ BEGIN
             LEFT OUTER JOIN D_Stock As DS
             ON DS.StockNO = tbl.StockNO
             AND DS.DeleteDateTime IS NULL
+            WHERE tbl.UpdateFlg <> 2
             ORDER BY tbl.ArrivalPlanNO
             ;
         
@@ -357,7 +358,6 @@ BEGIN
         WHILE @@FETCH_STATUS = 0
         BEGIN
         -- ========= ループ内の実際の処理 ここから===
-
             
             IF (@sumArrivalPlanSu > 0 OR @tblReserveSu > 0) AND @SakuseiFlg = 1
             BEGIN
@@ -659,8 +659,8 @@ BEGIN
                 UPDATE [D_Reserve] SET
                        [ShippingPossibleDate] = @SYSDATE
                       ,[ShippingPossibleSU]   = [ShippingPossibleSU] + @tblArrivalSu
-                      ,[UpdateOperator]       =  @Operator  
-                      ,[UpdateDateTime]       =  @SYSDATETIME
+                      ,[UpdateOperator]       = @Operator  
+                      ,[UpdateDateTime]       = @SYSDATETIME
                       
                  FROM D_Reserve AS DR
                  WHERE DR.ReserveNO  = @tblReserveNO
@@ -691,7 +691,7 @@ BEGIN
         
          FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
                  FROM @Table AS tbl
-                WHERE tbl.UpdateFlg >= 0
+                WHERE tbl.UpdateFlg <> 2
                 GROUP BY tbl.ArrivalPlanNO
          ) AS tbl
          WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
@@ -855,7 +855,7 @@ BEGIN
        ,NULL
 
       FROM @Table tbl
-      WHERE tbl.UpdateFlg >= 0
+      WHERE tbl.UpdateFlg <> 2
       AND tbl.ArrivalPlanKBN = 1	--発注
       ;
 
@@ -925,7 +925,7 @@ BEGIN
        ,NULL
 
       FROM @Table tbl
-      WHERE tbl.UpdateFlg >= 0
+      WHERE tbl.UpdateFlg <> 2
       AND tbl.ArrivalPlanKBN = 2	--移動
       ;
     
@@ -934,6 +934,7 @@ BEGIN
             SELECT tbl.OrderNO, tbl.OrderRows, tbl.ArrivalSu, tbl.OldArrivalSu
               FROM @Table AS tbl
              WHERE tbl.DataKbn > 1
+               AND tbl.UpdateFlg <> 2
         UNION ALL
             SELECT DO.OrderNO, DO.OrderRows, tbl.ArrivalSu, tbl.OldArrivalSu
               FROM @Table AS tbl
@@ -941,6 +942,7 @@ BEGIN
                 ON DO.JuchuuNO = tbl.OrderNO
                AND DO.JuchuuRows = tbl.OrderRows
              WHERE tbl.DataKbn = 1
+               AND tbl.UpdateFlg <> 2
         ORDER BY OrderNO, OrderRows
         ;
     
