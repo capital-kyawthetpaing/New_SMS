@@ -151,7 +151,15 @@ namespace NyuukaNyuuryoku
                             check.Enter += new System.EventHandler(GridControl_Enter);
                             check.Leave += new System.EventHandler(GridControl_Leave);
                             check.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
-                            check.Click += new System.EventHandler(CHK_Del_Click);
+
+                            if (w_CtlCol == (int)ClsGridHikiate.ColNO.Check)
+                            {
+                                check.Click += new System.EventHandler(CHK_Del_Click);
+                            }
+                            else
+                            {
+                                check.Click += new System.EventHandler(CHK_Finish_Click);
+                            }
                         }
                         else if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(Button)))
                         {
@@ -228,6 +236,7 @@ namespace NyuukaNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ReserveSu, 0].CellCtl = IMN_SALEP_0;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.Customer, 0].CellCtl = IMN_WEBPR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DeliveryPlanDate, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ChkFinish, 0].CellCtl = CHK_FINISH_0;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JYGNO, 0].CellCtl = IMT_PAYDT_0;    //支払予定日
             
             // 2行目
@@ -241,8 +250,8 @@ namespace NyuukaNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DirectFlg, 1].CellCtl = IMN_MEMBR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ReserveSu, 1].CellCtl = IMN_SALEP_1;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.Customer, 1].CellCtl = IMN_WEBPR_1;
-            
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DeliveryPlanDate, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ChkFinish, 1].CellCtl = CHK_FINISH_1;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JYGNO, 1].CellCtl = IMT_PAYDT_1;    //支払予定日
             
             // 3行目
@@ -257,6 +266,7 @@ namespace NyuukaNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ReserveSu, 2].CellCtl = IMN_SALEP_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.Customer, 2].CellCtl = IMN_WEBPR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DeliveryPlanDate, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ChkFinish, 2].CellCtl = CHK_FINISH_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JYGNO, 2].CellCtl = IMT_PAYDT_2;    //支払予定日
 
             // 1行目
@@ -271,6 +281,7 @@ namespace NyuukaNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ReserveSu, 3].CellCtl = IMN_SALEP2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.Customer, 3].CellCtl = IMN_WEBPR2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DeliveryPlanDate, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ChkFinish, 3].CellCtl = CHK_FINISH_3;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JYGNO, 3].CellCtl = IMT_PAYDT_3;    //支払予定日
 
             // 1行目
@@ -285,6 +296,7 @@ namespace NyuukaNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ReserveSu, 4].CellCtl = IMN_SALEP2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.Customer, 4].CellCtl = IMN_WEBPR2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DeliveryPlanDate, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ChkFinish, 4].CellCtl = CHK_FINISH_4;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JYGNO, 4].CellCtl = IMT_PAYDT_4;    //支払予定日
 
             // 1行目
@@ -299,6 +311,7 @@ namespace NyuukaNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ReserveSu, 5].CellCtl = IMN_SALEP2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.Customer, 5].CellCtl = IMN_WEBPR2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.DeliveryPlanDate, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.ChkFinish, 5].CellCtl = CHK_FINISH_5;
             mGrid.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JYGNO, 5].CellCtl = IMT_PAYDT_5;    //支払予定日
         }
 
@@ -664,6 +677,7 @@ namespace NyuukaNyuuryoku
                                 if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
                                 {
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
+                                    mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.ChkFinish, w_Row].Cell_Enabled = true;
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.Btn, w_Row].Cell_Enabled = true;
                                     continue;
@@ -677,6 +691,7 @@ namespace NyuukaNyuuryoku
                                 if (!string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
                                 {
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
+                                    mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.ChkFinish, w_Row].Cell_Enabled = true;
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
                                     continue;
                                 }
@@ -813,7 +828,8 @@ namespace NyuukaNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridHikiate.ColNO.SURYO:
-                            case (int)ClsGridHikiate.ColNO.Check:    // 
+                            case (int)ClsGridHikiate.ColNO.Check:
+                            case (int)ClsGridHikiate.ColNO.ChkFinish:    // 
                             case (int)ClsGridHikiate.ColNO.Btn:    // 
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
@@ -886,7 +902,15 @@ namespace NyuukaNyuuryoku
                             check.Enter += new System.EventHandler(GridControl_Enter2);
                             check.Leave += new System.EventHandler(GridControl_Leave2);
                             check.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown2);
-                            check.Click += new System.EventHandler(CHK_Del_Click2);
+                          
+                            if (w_CtlCol == (int)ClsGridZaiko.ColNO.Check)
+                            {
+                                check.Click += new System.EventHandler(CHK_Del_Click2);
+                            }
+                            else
+                            {
+                                check.Click += new System.EventHandler(CHK_Finish_Click);
+                            }
                         }
                     }
                 }
@@ -956,6 +980,7 @@ namespace NyuukaNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.ReserveSu, 0].CellCtl = IMN_SALEP2_0;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.Customer, 0].CellCtl = IMN_WEBPR2_0;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.DeliveryPlanDate, 0].CellCtl = IMT_ARIDT2_0;     //
+            mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.ChkFinish, 0].CellCtl = CHK_FINISH2_0;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.RowNo, 0].CellCtl = IMT_PAYDT2_0;    //
 
             // 2行目
@@ -969,6 +994,7 @@ namespace NyuukaNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.ReserveSu, 1].CellCtl = IMN_SALEP2_1;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.Customer, 1].CellCtl = IMN_WEBPR2_1;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.DeliveryPlanDate, 1].CellCtl = IMT_ARIDT2_1;     //
+            mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.ChkFinish, 1].CellCtl = CHK_FINISH2_1;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.RowNo, 1].CellCtl = IMT_PAYDT2_1;    //
 
             // 3行目
@@ -982,6 +1008,7 @@ namespace NyuukaNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.ReserveSu, 2].CellCtl = IMN_SALEP2_2;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.Customer, 2].CellCtl = IMN_WEBPR2_2;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.DeliveryPlanDate, 2].CellCtl = IMT_ARIDT2_2;     //
+            mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.ChkFinish, 2].CellCtl = CHK_FINISH2_2;
             mGrid2.g_MK_Ctrl[(int)ClsGridZaiko.ColNO.RowNo, 2].CellCtl = IMT_PAYDT2_2;    //
 
         }
@@ -1352,6 +1379,7 @@ namespace NyuukaNyuuryoku
                                     switch (w_Col)
                                     {
                                         case (int)ClsGridZaiko.ColNO.Check:    // 
+                                        case (int)ClsGridZaiko.ColNO.ChkFinish:    // 
                                         case (int)ClsGridZaiko.ColNO.SURYO:    // 
                                             {
                                                 mGrid2.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
@@ -1502,6 +1530,7 @@ namespace NyuukaNyuuryoku
                         {
                             case (int)ClsGridZaiko.ColNO.SURYO:    
                             case (int)ClsGridZaiko.ColNO.Check:    // 
+                            case (int)ClsGridZaiko.ColNO.ChkFinish:    // 
                                 {
                                     mGrid2.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                 }
@@ -1544,6 +1573,7 @@ namespace NyuukaNyuuryoku
 
                 //起動時共通処理
                 base.StartProgram();
+                Btn_F3.Text = "";
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "入荷予定(F10)";
@@ -3558,7 +3588,7 @@ namespace NyuukaNyuuryoku
                         return;
                     }
 
-                    if (CL == (int)ClsGridHikiate.ColNO.Check)
+                    if (CL == (int)ClsGridHikiate.ColNO.Check || CL == (int)ClsGridHikiate.ColNO.ChkFinish)
                     {
                         if (e.Shift)
                             S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
@@ -3693,7 +3723,7 @@ namespace NyuukaNyuuryoku
                         return;
                     }
 
-                    if (CL == (int)ClsGridZaiko.ColNO.Check)
+                    if (CL == (int)ClsGridZaiko.ColNO.Check || CL == (int)ClsGridZaiko.ColNO.ChkFinish)
                     {
                         if (e.Shift)
                             S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
@@ -3853,6 +3883,58 @@ namespace NyuukaNyuuryoku
                 //EndSec();
             }
         }
+        private void CHK_Finish_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
+                ////新規モードの場合、ONにした明細に紐づく会員名または発注先を取得し、画面項目の会員名または発注先にセット
+                //if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                //{
+                //    // 明細部  画面の範囲の内容を配列にセット
+                //    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+                //    //【引当】の明細をONにした場合、会員名←	画面転送表02のD_Reserve②.発注先								
+                //    if (mGrid.g_DArray[w_Row].Check)
+                //    {
+                //        mGrid.g_DArray[w_Row].SURYO = mGrid.g_DArray[w_Row].ReserveSu;
+
+                //        if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid.g_DArray[w_Row].VendorName))
+                //        {
+                //            //Ｅ１９９				
+                //            bbl.ShowMessage("E199");
+                //            mGrid.g_DArray[w_Row].Check = false;
+
+                //            //配列の内容を画面にセット
+                //            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                //            CalcKin();
+                //            return;
+                //        }
+                //        lblVendor.Text = mGrid.g_DArray[w_Row].VendorName;
+
+                //        CalcKin();
+
+                //        //配列の内容を画面にセット
+                //        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                //    }
+                //    else
+                //    {
+                //        ClearVendor();
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
         /// <summary>
         /// 明細部在庫ボタンクリック時処理
         /// </summary>
@@ -3895,7 +3977,7 @@ namespace NyuukaNyuuryoku
             }
         }
         #endregion
-
+        
     }
 }
 

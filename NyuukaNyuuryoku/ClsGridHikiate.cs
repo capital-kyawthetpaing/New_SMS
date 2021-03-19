@@ -20,10 +20,11 @@ namespace NyuukaNyuuryoku
             internal string SURYO;      //入荷数
             internal string Space;      //
             internal string DirectFlg;      //
-            internal string DeliveryPlanDate;
-            internal string JYGNO;     //入荷予定日     
+            internal string DeliveryPlanDate;　//入荷予定日
+            internal string JYGNO;     //     
             internal string ReserveSu;      //
             internal string Customer;
+            internal bool ChkFinish;
 
             //隠し項目
             internal string CustomerCD;//(Hidden)
@@ -57,6 +58,7 @@ namespace NyuukaNyuuryoku
             SURYO,           // 入荷数
             DirectFlg,                 // 単位 
             DeliveryPlanDate,     //出荷予定日
+            ChkFinish,
             Btn,
             COUNT
         }
@@ -208,6 +210,14 @@ namespace NyuukaNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBoldForSmallLarge(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
+
+                w_CtlCol = (int)ColNO.ChkFinish;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkFinish);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
+
                 w_CtlCol = (int)ColNO.Btn;
 
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
@@ -269,6 +279,9 @@ namespace NyuukaNyuuryoku
 
                 w_CtlCol = (int)ColNO.DeliveryPlanDate;     //希望納期
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryPlanDate);
+
+                w_CtlCol = (int)ColNO.ChkFinish;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkFinish);
 
                 w_CtlCol = (int)ColNO.JYGNO;    //入荷予定日
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JYGNO);
