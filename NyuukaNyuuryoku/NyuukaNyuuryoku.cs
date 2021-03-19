@@ -2686,6 +2686,7 @@ namespace NyuukaNyuuryoku
             dt.Columns.Add("ArrivalSu", typeof(int));
             dt.Columns.Add("OldArrivalSu", typeof(int));
             dt.Columns.Add("ArrivalPlanKBN", typeof(int));
+            dt.Columns.Add("ChkFinish", typeof(int));
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
 
@@ -2716,6 +2717,7 @@ namespace NyuukaNyuuryoku
                         , bbl.Z_Set(mGrid.g_DArray[RW].SURYO)
                         , bbl.Z_Set(mGrid.g_DArray[RW].OldSURYO)
                         , bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanKBN)
+                        , mGrid.g_DArray[RW].ChkFinish ? 1:0
                         , mGrid.g_DArray[RW].Check ? 0 : 2 //bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
                     vendorCD = mGrid.g_DArray[RW].VendorCD;
@@ -2741,6 +2743,7 @@ namespace NyuukaNyuuryoku
                         , bbl.Z_Set(mGrid2.g_DArray[RW].SURYO)
                         , bbl.Z_Set(mGrid2.g_DArray[RW].OldSURYO)
                         , bbl.Z_Set(mGrid2.g_DArray[RW].ArrivalPlanKBN)
+                        , mGrid2.g_DArray[RW].ChkFinish ? 1 : 0
                         , mGrid2.g_DArray[RW].Check ? 0 : 2  //bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
                     vendorCD = mGrid2.g_DArray[RW].VendorCD;

@@ -29,6 +29,7 @@ CREATE TYPE T_NyuukaN AS TABLE
     [ArrivalSu] [int] ,
     [OldArrivalSu] [int] ,
     [ArrivalPlanKBN][tinyint],
+    [ChkFinish][tinyint],
     [UpdateFlg][tinyint]
     )
 GO
@@ -151,46 +152,7 @@ BEGIN
 
     END
         
-    --変更--
-    ELSE IF @OperateMode = 2
-    BEGIN
-        SET @OperateModeNm = '変更';
-        
-        UPDATE D_Arrival SET
-               [VendorDeliveryNo] = @VendorDeliveryNo
-              ,[StoreCD] = (SELECT top 1 M.StoreCD
-                              FROM M_Souko AS M
-                             WHERE M.SoukoCD = @SoukoCD
-                               AND M.ChangeDate <= @ArrivalDate
-                             ORDER BY M.ChangeDate desc)  
-              ,[VendorCD]       = @VendorCD
-              ,[ArrivalDate]    = @ArrivalDate
-              ,[InputDate]      = @SYSDATE
-              ,[SoukoCD]        = @SoukoCD
-              ,[JanCD]          = @JanCD
-              ,[AdminNO]        = @AdminNO
-              ,[SKUCD]          = @SKUCD
-              ,[MakerItem]      = @MakerItem
-              ,[ArrivalSu]      = @ArrivalSu      
-              ,[UpdateOperator] = @Operator  
-              ,[UpdateDateTime] = @SYSDATETIME
-         WHERE ArrivalNO = @ArrivalNO
-           ;
-
-        --【D_ArrivalPlan】     Update/Delete   Table転送仕様Ｃ②
-        UPDATE [D_ArrivalPlan] SET
-           [ArrivalSu]      = D_ArrivalPlan.[ArrivalSu] - tbl.OldArrivalSu
-          ,[UpdateOperator] = @Operator  
-          ,[UpdateDateTime] = @SYSDATETIME
-        
-        FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.OldArrivalSu) AS OldArrivalSu
-                FROM @Table AS tbl
-               WHERE tbl.UpdateFlg >= 0
-               GROUP BY tbl.ArrivalPlanNO
-        ) AS tbl
-        WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
-        ;
-        
+/*        
         --【D_ArrivalPlan】  分割分削除（Delete）
         DELETE FROM D_ArrivalPlan
         WHERE EXISTS (SELECT 1 FROM D_ArrivalPlan AS DP 
@@ -262,7 +224,7 @@ BEGIN
                        WHERE DR.OriginalReserveNO = D_Reserve.ReserveNO)
         ;
     END
-    
+    */
     ELSE IF @OperateMode = 3 --削除--
     BEGIN
         SET @OperateModeNm = '削除';
@@ -271,6 +233,29 @@ BEGIN
          WHERE [ArrivalNO] = @ArrivalNO
          ;
 
+        --【D_ArrivalPlan】     Update/Delete   Table転送仕様Ｃ②
+        UPDATE [D_ArrivalPlan] SET
+          -- [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu,0)		--★
+          --,
+           [ArrivalSu]      = D_ArrivalPlan.[ArrivalSu] - tbl.ArrivalSu
+          ,[UpdateOperator] = @Operator  
+          ,[UpdateDateTime] = @SYSDATETIME
+        
+        FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
+              FROM @Table AS tbl
+              WHERE tbl.UpdateFlg >= 0
+              GROUP BY tbl.ArrivalPlanNO
+        ) AS tbl
+        /*
+        LEFT OUTER JOIN (SELECT D.OriginalArrivalPlanNO
+                              , SUM(D.ArrivalPlanSu) AS ArrivalPlanSu
+                         FROM D_ArrivalPlan D
+                         GROUP BY D.OriginalArrivalPlanNO
+        )AS DS2
+        ON DS2.OriginalArrivalPlanNO = tbl.ArrivalPlanNO
+        */
+        WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
+        ;
     END
     
     --【D_ArrivalDetails】Table転送仕様Ｂ
@@ -363,9 +348,6 @@ BEGIN
             BEGIN
                 IF @oldArrivalPlanNO <> @tblArrivalPlanNO 
                 BEGIN
-                    SET @ArrivalPlanNO = @tblArrivalPlanNO;
-                    
-                    /*
                     --伝票番号採番
                     EXEC Fnc_GetNumber
                         22,             --in伝票種別 5
@@ -446,9 +428,8 @@ BEGIN
                      FROM D_ArrivalPlan AS DP
                      WHERE DP.ArrivalPlanNO = @tblArrivalPlanNO
                      AND DP.DeleteDateTime IS NULL
-                     AND DP.ArrivalPlanSu-@tblArrivalSu > 0
+                     --AND DP.ArrivalPlanSu-@tblArrivalSu > 0
                      ;
-                    */
                     
                     --伝票番号採番
                     EXEC Fnc_GetNumber
@@ -533,7 +514,7 @@ BEGIN
                     ;
                                         
                 END     --@tblArrivalPlanNOが異なる場合
-                /*
+                
                 ELSE
                 BEGIN
                     --明細内で同じArrivalPlanNO、StockNOの場合は新規にINSERTせず数量をUPDATE（INSERTすると在庫が倍増してしまう）
@@ -555,7 +536,7 @@ BEGIN
                    -- WHERE StockNO = @StockNO
                    -- ;
                 END
-                */
+                
                 
                 IF @tblDataKbn = 1 AND @tblReserveSu > 0
                 BEGIN
@@ -683,9 +664,8 @@ BEGIN
 
         --【D_ArrivalPlan】Update   Table転送仕様Ｃ	★★
         UPDATE [D_ArrivalPlan] SET
-          -- [ArrivalPlanSu]  = tbl.ArrivalSu
-          --,
-           [ArrivalSu]      = D_ArrivalPlan.ArrivalSu + tbl.ArrivalSu
+           [ArrivalPlanSu]  = tbl.ArrivalSu
+          ,[ArrivalSu]      = tbl.ArrivalSu
           ,[UpdateOperator] = @Operator  
           ,[UpdateDateTime] = @SYSDATETIME
         
@@ -698,30 +678,9 @@ BEGIN
         ;
         
     END
-	ELSE	--削除時
-	BEGIN
-        --【D_ArrivalPlan】     Update/Delete   Table転送仕様Ｃ②
-        UPDATE [D_ArrivalPlan] SET
-          -- [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu,0)		--★
-          --,
-           [ArrivalSu]      = D_ArrivalPlan.[ArrivalSu] - tbl.ArrivalSu
-          ,[UpdateOperator] = @Operator  
-          ,[UpdateDateTime] = @SYSDATETIME
-        
-        FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
-              FROM @Table AS tbl
-              WHERE tbl.UpdateFlg >= 0
-              GROUP BY tbl.ArrivalPlanNO
-        ) AS tbl
-        LEFT OUTER JOIN (SELECT D.OriginalArrivalPlanNO
-                              , SUM(D.ArrivalPlanSu) AS ArrivalPlanSu
-                         FROM D_ArrivalPlan D
-                         GROUP BY D.OriginalArrivalPlanNO
-        )AS DS2
-        ON DS2.OriginalArrivalPlanNO = tbl.ArrivalPlanNO
-        WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
-        ;
-        
+    ELSE    --削除時
+    BEGIN
+        /*
         --【D_ArrivalPlan】  分割分削除（Delete）
         DELETE FROM D_ArrivalPlan
         WHERE EXISTS (SELECT 1 FROM D_ArrivalPlan AS DP 
@@ -730,6 +689,7 @@ BEGIN
                          AND tbl.UpdateFlg >= 0
                        WHERE DP.ArrivalPlanNO = D_ArrivalPlan.OriginalArrivalPlanNO)
         ;
+        */
 
         --【D_Stock】           Update/Delete   Table転送仕様Ｄ②
         UPDATE [D_Stock] SET
@@ -756,7 +716,8 @@ BEGIN
                            GROUP BY D.OriginalStockNO
          )AS DS2
          ON DS2.OriginalStockNO = tbl.StockNO
-         WHERE tbl.StockNO = D_Stock.StockNO
+         WHERE D_Stock.StockNO = tbl.StockNO
+           AND D_Stock.ArrivalYetFLG = 0   --同じStockNOに対して複数回Updateしないように
         ;
         
         --【D_Stock】  分割分削除（Delete）
@@ -791,10 +752,10 @@ BEGIN
                        WHERE DR.OriginalReserveNO = D_Reserve.ReserveNO)
         ;
 
-	END
+    END
 
     --【D_Warehousing】追加更新（Insert)  Table転送仕様Ｆ 発注
-	INSERT INTO [D_Warehousing]
+    INSERT INTO [D_Warehousing]
        ([WarehousingDate]
        ,[SoukoCD]
        ,[RackNO]
@@ -826,23 +787,23 @@ BEGIN
     SELECT (CASE WHEN @OperateMode = 3 THEN (CASE WHEN @ArrivalDate > @SYSDATE THEN @ArrivalDate ELSE @SYSDATE END)
                  ELSE @ArrivalDate END)	--WarehousingDate
        ,@SoukoCD
-       ,NULL	--RackNO
+       ,NULL            --RackNO
        ,@StockNO
        ,@JanCD
        ,@AdminNO
        ,@SKUCD
-       ,1	--WarehousingKBN
-       ,(CASE WHEN @OperateMode = 3 THEN 1 ELSE 0 END)	--DeleteFlg
-       ,@ArrivalNO	--Number
-       ,tbl.ArrivalRows	--NumberRow
+       ,1               --WarehousingKBN
+       ,(CASE WHEN @OperateMode = 3 THEN 1 ELSE 0 END)  --DeleteFlg
+       ,@ArrivalNO      --Number
+       ,tbl.ArrivalRows --NumberRow
        ,@VendorCD
-       ,NULL	--ToStoreCD
-       ,NULL	--ToSoukoCD
-       ,NULL	--ToRackNO
-       ,NULL	--ToStockNO
+       ,NULL    --ToStoreCD
+       ,NULL    --ToSoukoCD
+       ,NULL    --ToRackNO
+       ,NULL    --ToStockNO
        ,NULL    --FromStoreCD
-       ,NULL	--FromSoukoCD
-       ,NULL	--FromRackNO
+       ,NULL    --FromSoukoCD
+       ,NULL    --FromRackNO
        ,tbl.CustomerCD
        ,(CASE @OperateMode WHEN 3 THEN -1 ELSE 1 END) * tbl.ArrivalSu	--Quantity
        ,'NyuukaNyuuryoku'	--Program
@@ -931,31 +892,28 @@ BEGIN
     
     --カーソル定義
     DECLARE CUR_AAA CURSOR FOR
-            SELECT tbl.OrderNO, tbl.OrderRows, (CASE WHEN tbl.UpdateFlg = 2 THEN 0 ELSE tbl.ArrivalSu), tbl.OldArrivalSu
+            SELECT tbl.OrderNO, tbl.OrderRows, tbl.ArrivalSu
               FROM @Table AS tbl
              WHERE tbl.DataKbn > 1
-               --AND tbl.UpdateFlg <> 2
         UNION ALL
-            SELECT DO.OrderNO, DO.OrderRows, (CASE WHEN tbl.UpdateFlg = 2 THEN 0 ELSE tbl.ArrivalSu), tbl.OldArrivalSu
+            SELECT DO.OrderNO, DO.OrderRows, tbl.ArrivalSu
               FROM @Table AS tbl
              INNER JOIN D_OrderDetails AS DO
                 ON DO.JuchuuNO = tbl.OrderNO
                AND DO.JuchuuRows = tbl.OrderRows
              WHERE tbl.DataKbn = 1
-               --AND tbl.UpdateFlg <> 2
         ORDER BY OrderNO, OrderRows
         ;
     
     DECLARE @OrderNO varchar(11);
     DECLARE @OrderRows int;
-    DECLARE @tblOldArrivalSu int;
     
     --カーソルオープン
     OPEN CUR_AAA;
 
     --最初の1行目を取得して変数へ値をセット
     FETCH NEXT FROM CUR_AAA
-    INTO @OrderNO, @OrderRows, @tblArrivalSu, @tblOldArrivalSu;
+    INTO @OrderNO, @OrderRows, @tblArrivalSu;
     
     --データの行数分ループ処理を実行する
     WHILE @@FETCH_STATUS = 0
@@ -971,7 +929,6 @@ BEGIN
         --【D_OrderDetails】    Update  Table転送仕様Ｇ     TableのデータをLoopする必要あり
         UPDATE D_OrderDetails
             SET [TotalArrivalSu] = [TotalArrivalSu] + (CASE WHEN @OperateMode = 3 THEN -1 * @tblArrivalSu 
-                                                            WHEN @OperateMode = 2 THEN -1 * @tblOldArrivalSu + @tblArrivalSu
                                                             ELSE @tblArrivalSu END)
                ,[UpdateOperator] = @Operator  
                ,[UpdateDateTime] = @SYSDATETIME
@@ -982,7 +939,6 @@ BEGIN
         --【D_MoveDetails】     Update  Table転送仕様Ｈ
         UPDATE D_MoveDetails
             SET [TotalArrivalSu] = [TotalArrivalSu] + (CASE WHEN @OperateMode = 3 THEN -1 * @tblArrivalSu 
-                                                            WHEN @OperateMode = 2 THEN -1 * @tblOldArrivalSu + @tblArrivalSu
                                                             ELSE @tblArrivalSu END)
                ,[UpdateOperator] = @Operator  
                ,[UpdateDateTime] = @SYSDATETIME
@@ -993,7 +949,7 @@ BEGIN
 
         --次の行のデータを取得して変数へ値をセット
         FETCH NEXT FROM CUR_AAA
-        INTO @OrderNO, @OrderRows, @tblArrivalSu, @tblOldArrivalSu;
+        INTO @OrderNO, @OrderRows, @tblArrivalSu;
 
     END
     
