@@ -140,7 +140,8 @@ BEGIN
            ,@AdminNO
            ,@SKUCD
            ,@MakerItem
-           ,@ArrivalSu  --ArrivalSu
+           ,(CASE (SELECT top 1 tbl.ChkFinish FROM @Table tbl) WHEN 1 THEN 0
+             ELSE @ArrivalSu END) --ArrivalSu
            ,0 --PurchaseSu
            ,@Operator  
            ,@SYSDATETIME
@@ -192,6 +193,7 @@ BEGIN
          
     IF @OperateMode <= 2    --êVãKÅEèCê≥éû
     BEGIN
+        --ÉeÅ[ÉuÉãì]ëóédólÇa
         INSERT INTO [D_ArrivalDetails]
                    ([ArrivalNO]
                    ,[ArrivalRows]
@@ -210,7 +212,8 @@ BEGIN
                    ,tbl.ArrivalKBN
                    ,tbl.OrderNO	--Åyà¯ìñÅzÇ»ÇÁéÛíçî‘çÜÅAÅyç›å…ÅzÇ»ÇÁî≠íçÅEà⁄ìÆî‘çÜ
                    ,tbl.ArrivalPlanNO  --ArrivalPlanNO
-                   ,tbl.ArrivalSu
+                   ,(CASE tbl.ChkFinish WHEN 1 THEN 0
+                     ELSE tbl.ArrivalSu END)
                    ,0
 
                    ,@Operator  
@@ -529,7 +532,7 @@ BEGIN
                            ,NULL    --CompletedPickingDate
                            ,0       --ShippingSu
                            ,0       --ReturnKBN
-                           ,DR.OriginalReserveNO
+                           ,DR.ReserveNO AS OriginalReserveNO
                      
                            ,@Operator  
                            ,@SYSDATETIME
@@ -622,10 +625,10 @@ BEGIN
                [ArrivalYetFLG]           = 1
               ,[ArrivalDate]             = NULL
               ,[StockSu]                 = [D_Stock].[StockSu] - tbl.ArrivalSu
-              ,[PlanSu]                  = tbl.ArrivalSu + ISNULL(DS2.PlanSu,0)
-              ,[AllowableSu]             = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
-              ,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
-              ,[ReserveSu]               = [D_Stock].[ReserveSu] + ISNULL(DS2.ReserveSu,0)
+              ,[PlanSu]                  = tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
+              --,[AllowableSu]             = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
+              --,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
+              --,[ReserveSu]               = [D_Stock].[ReserveSu] + ISNULL(DS2.ReserveSu,0)
               ,[UpdateOperator]          = @Operator  
               ,[UpdateDateTime]          = @SYSDATETIME
               
@@ -634,6 +637,7 @@ BEGIN
                 WHERE tbl.UpdateFlg >= 0
                 GROUP BY tbl.StockNO
          ) AS tbl
+         /*
          LEFT OUTER JOIN (SELECT D.OriginalStockNO
                                , SUM(D.PlanSu) AS PlanSu
                                , SUM(D.AnotherStoreAllowableSu) AS AnotherStoreAllowableSu
@@ -642,6 +646,7 @@ BEGIN
                            GROUP BY D.OriginalStockNO
          )AS DS2
          ON DS2.OriginalStockNO = tbl.StockNO
+         */
          WHERE D_Stock.StockNO = tbl.StockNO
            AND D_Stock.ArrivalYetFLG = 0   --ìØÇ∂StockNOÇ…ëŒÇµÇƒï°êîâÒUpdateÇµÇ»Ç¢ÇÊÇ§Ç…
         ;
