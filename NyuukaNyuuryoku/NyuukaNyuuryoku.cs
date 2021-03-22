@@ -2827,16 +2827,20 @@ namespace NyuukaNyuuryoku
                             bool focus = true;
                             if (CheckGrid(CL, RW, ref focus, true) == false)
                             {
-                                if(focus)
+                                if (focus)
                                     //Focusセット処理
                                     ERR_FOCUS_GRID_SUB(CL, RW);
                                 return;
                             }
                         }
                         if (mGrid.g_DArray[RW].ChkFinish)
+                        {
                             flgOn = true;
+                        }
                         else
+                        {
                             flgOff = true;
+                        }
                     }
                 }
 
@@ -2857,10 +2861,15 @@ namespace NyuukaNyuuryoku
                             }
 
                             if (mGrid2.g_DArray[RW].ChkFinish)
+                            {
                                 flgOn = true;
+                            }
                             else
+                            {
                                 flgOff = true;
+                            }
                         }
+                    }
                 }
 
                 //更新対象チェックボックスがONの明細の中で、完納チェックボックスがONとOFFの明細が混在している場合、エラー表示
