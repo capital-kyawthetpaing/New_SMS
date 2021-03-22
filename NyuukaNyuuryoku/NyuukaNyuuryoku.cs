@@ -2814,6 +2814,9 @@ namespace NyuukaNyuuryoku
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
+                bool flgOn = false;
+                bool flgOff = false;
+
                 //明細部チェック
                 for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
@@ -2830,8 +2833,13 @@ namespace NyuukaNyuuryoku
                                 return;
                             }
                         }
+                        if (mGrid.g_DArray[RW].ChkFinish)
+                            flgOn = true;
+                        else
+                            flgOff = true;
                     }
                 }
+
                 mGrid2.S_DispToArray(Vsb_Mei_1.Value);
 
                 //明細部チェック
@@ -2847,8 +2855,21 @@ namespace NyuukaNyuuryoku
                                 ERR_FOCUS_GRID_SUB2(CL, RW);
                                 return;
                             }
+
+                            if (mGrid2.g_DArray[RW].ChkFinish)
+                                flgOn = true;
+                            else
+                                flgOff = true;
                         }
-                    }
+                }
+
+                //更新対象チェックボックスがONの明細の中で、完納チェックボックスがONとOFFの明細が混在している場合、エラー表示
+                //エラーの場合、カーソルは入荷総数へ
+                if (flgOn && flgOff)
+                {
+                    bbl.ShowMessage("E277");
+                    detailControls[(int)EIndex.Nyukasu].Focus();
+                    return;
                 }
 
                 //各金額項目の再計算必要

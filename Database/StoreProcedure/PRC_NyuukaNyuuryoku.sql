@@ -151,80 +151,6 @@ BEGIN
            );               
 
     END
-        
-/*        
-        --yD_ArrivalPlanz  •ªŠ„•ªíœiDeletej
-        DELETE FROM D_ArrivalPlan
-        WHERE EXISTS (SELECT 1 FROM D_ArrivalPlan AS DP 
-                       INNER JOIN @Table AS tbl
-                          ON tbl.ArrivalPlanNO = DP.ArrivalPlanNO
-                         AND tbl.UpdateFlg >= 0
-                       WHERE DP.ArrivalPlanNO = D_ArrivalPlan.OriginalArrivalPlanNO)
-        ;
-        
-        --yD_Stockz           Update/Delete   Table“]‘—d—l‚c‡A
-        UPDATE [D_Stock] SET
-               [ArrivalYetFLG]           = 1
-              ,[ArrivalDate]             = NULL
-              ,[StockSu]                 = [D_Stock].[StockSu] - tbl.OldArrivalSu
-              ,[PlanSu]                  = tbl.OldArrivalSu + ISNULL(DS2.PlanSu,0)
-              ,[AllowableSu]             = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
-              ,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
-              ,[ReserveSu]               = [D_Stock].[ReserveSu] + ISNULL(DS2.ReserveSu,0)
-              ,[UpdateOperator]          = @Operator  
-              ,[UpdateDateTime]          = @SYSDATETIME
-              
-         FROM (SELECT tbl.StockNO, SUM(OldArrivalSu) AS OldArrivalSu
-                 FROM @Table AS tbl
-                WHERE tbl.UpdateFlg >= 0
-                GROUP BY tbl.StockNO) AS tbl
-         LEFT OUTER JOIN (SELECT D.OriginalStockNO
-                               , SUM(D.PlanSu) AS PlanSu
-                               , SUM(D.AnotherStoreAllowableSu) AS AnotherStoreAllowableSu
-                               , SUM(D.ReserveSu) AS ReserveSu
-                            FROM D_Stock D
-                           GROUP BY D.OriginalStockNO
-         )AS DS2
-         ON DS2.OriginalStockNO = tbl.StockNO
-         WHERE tbl.StockNO = D_Stock.StockNO
-           AND D_Stock.ArrivalYetFLG = 0   --“¯‚¶StockNO‚É‘Î‚µ‚Ä•¡”‰ñUpdate‚µ‚È‚¢‚æ‚¤‚É
-        ;
-        
-        --yD_Stockz  •ªŠ„•ªíœiDeletej
-        DELETE FROM D_Stock
-        WHERE EXISTS (SELECT 1 FROM D_Stock AS DS
-                       INNER JOIN @Table AS tbl
-                          ON tbl.StockNO = DS.StockNO
-                         AND tbl.UpdateFlg >= 0
-                       WHERE DS.StockNO = D_Stock.OriginalStockNO)
-        ;
-        
-        --yD_Reservez         Update/Delete   Table“]‘—d—l‚d‡A
-        UPDATE [D_Reserve] SET
-               [ShippingPossibleDate] = NULL
-              ,[ShippingPossibleSU]   = [ShippingPossibleSU] - tbl.OldArrivalSu
-              ,[UpdateOperator]       = @Operator  
-              ,[UpdateDateTime]       = @SYSDATETIME
-              
-         FROM (SELECT tbl.ReserveNO, SUM(OldArrivalSu) AS OldArrivalSu
-                 FROM @Table AS tbl
-                WHERE tbl.UpdateFlg >= 0
-                  AND tbl.DataKbn = 1
-                GROUP BY tbl.ReserveNO) AS tbl
-        WHERE tbl.ReserveNO = D_Reserve.ReserveNO
-        ;
-        
-        --yD_Reservez  •ªŠ„•ªíœiDeletej
-        DELETE FROM D_Reserve
-        WHERE EXISTS (SELECT 1 FROM D_Reserve AS DR
-                       INNER JOIN @Table AS tbl
-                          ON tbl.ReserveNO = DR.ReserveNO
-                         AND tbl.UpdateFlg >= 0
-                         AND tbl.DataKbn = 1
-                       WHERE DR.OriginalReserveNO = D_Reserve.ReserveNO)
-        ;
-    END
-    */
     ELSE IF @OperateMode = 3 --íœ--
     BEGIN
         SET @OperateModeNm = 'íœ';
@@ -721,6 +647,7 @@ BEGIN
         ;
         
         --yD_Stockz  •ªŠ„•ªíœiDeletej
+        /*
         DELETE FROM D_Stock
         WHERE EXISTS (SELECT 1 FROM D_Stock AS DS
                        INNER JOIN @Table AS tbl
@@ -728,6 +655,7 @@ BEGIN
                          AND tbl.UpdateFlg = 0
                        WHERE DS.StockNO = D_Stock.OriginalStockNO)
         ;
+        */
         
         --yD_Reservez         Update/Delete   Table“]‘—d—l‚d‡A
         UPDATE [D_Reserve] SET
@@ -742,6 +670,7 @@ BEGIN
         AND tbl.DataKbn = 1
         ;
         
+        /*
         --yD_Reservez  •ªŠ„•ªíœiDeletej
         DELETE FROM D_Reserve
         WHERE EXISTS (SELECT 1 FROM D_Reserve AS DR
@@ -751,6 +680,7 @@ BEGIN
                          AND tbl.DataKbn = 1
                        WHERE DR.OriginalReserveNO = D_Reserve.ReserveNO)
         ;
+        */
 
     END
 
