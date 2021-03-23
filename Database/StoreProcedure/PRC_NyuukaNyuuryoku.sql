@@ -244,6 +244,7 @@ BEGIN
             ON DS.StockNO = tbl.StockNO
             AND DS.DeleteDateTime IS NULL
             WHERE tbl.UpdateFlg <> 2
+            AND tbl.ChkFinish = 0
             ORDER BY tbl.ArrivalPlanNO
             ;
         
@@ -589,12 +590,12 @@ BEGIN
         --ÉJÅ[É\ÉãÇï¬Ç∂ÇÈ
         CLOSE CUR_TABLE;
         DEALLOCATE CUR_TABLE;
-        
 
-        --ÅyD_ArrivalPlanÅzUpdate   Tableì]ëóédólÇb	ÅöÅö
+        --ÅyD_ArrivalPlanÅzUpdate   Tableì]ëóédólÇb,Çbá@
         UPDATE [D_ArrivalPlan] SET
            [ArrivalPlanSu]  = tbl.ArrivalSu
-          ,[ArrivalSu]      = tbl.ArrivalSu
+          ,[ArrivalSu]      = (CASE tbl.ChkFinish WHEN 1 THEN 0
+                               ELSE tbl.ArrivalSu END)
           ,[UpdateOperator] = @Operator  
           ,[UpdateDateTime] = @SYSDATETIME
         
@@ -605,6 +606,33 @@ BEGIN
          ) AS tbl
          WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
         ;
+        
+        --äÆî[éûÇÃÇ›
+        --ÅyD_StockÅz           UpdateÅ@Tableì]ëóédólÇcá@
+        UPDATE [D_Stock] SET
+               [ArrivalYetFLG]           = 0
+              ,[ArrivalDate]             = @SYSDATE
+              ,[StockSu]                 = 0
+              ,[PlanSu]                  = 0
+              ,[AllowableSu]             = 0
+              ,[AnotherStoreAllowableSu] = 0
+              ,[ReserveSu]               = 0
+              ,[InstructionSu]           = 0
+              ,[ShippingSu]              = 0
+              ,[OriginalStockNO]         = 0
+              ,[ExpectReturnDate]        = 0
+              ,[ReturnPlanSu]            = 0
+              ,[VendorCD]                = 0
+              ,[ReturnDate]              = 0
+              ,[ReturnSu]                = 0
+              ,[UpdateOperator]          = @Operator  
+              ,[UpdateDateTime]          = @SYSDATETIME
+              
+         FROM @Table AS tbl
+         WHERE D_Stock.StockNO = tbl.StockNO
+         AND tbl.ChkFinishu = 1
+        ;
+
         
     END
     ELSE    --çÌèúéû
@@ -753,6 +781,7 @@ BEGIN
       FROM @Table tbl
       WHERE tbl.UpdateFlg <> 2
       AND tbl.ArrivalPlanKBN = 1	--î≠íç
+      AND tbl.ChkFinish = 0
       ;
 
     --ÅyD_WarehousingÅzí«â¡çXêVÅiInsert)  Tableì]ëóédólÇe à⁄ìÆ
@@ -823,6 +852,7 @@ BEGIN
       FROM @Table tbl
       WHERE tbl.UpdateFlg <> 2
       AND tbl.ArrivalPlanKBN = 2	--à⁄ìÆ
+      AND tbl.ChkFinish = 0
       ;
     
     --ÉJÅ[É\ÉãíËã`
@@ -830,6 +860,7 @@ BEGIN
             SELECT tbl.OrderNO, tbl.OrderRows, tbl.ArrivalSu
               FROM @Table AS tbl
              WHERE tbl.DataKbn > 1
+               AND tbl.ChkFinish = 0
         UNION ALL
             SELECT DO.OrderNO, DO.OrderRows, tbl.ArrivalSu
               FROM @Table AS tbl
@@ -837,6 +868,7 @@ BEGIN
                 ON DO.JuchuuNO = tbl.OrderNO
                AND DO.JuchuuRows = tbl.OrderRows
              WHERE tbl.DataKbn = 1
+               AND tbl.ChkFinish = 0
         ORDER BY OrderNO, OrderRows
         ;
     
