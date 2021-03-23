@@ -594,12 +594,13 @@ BEGIN
         --ÅyD_ArrivalPlanÅzUpdate   Tableì]ëóédólÇb,Çbá@
         UPDATE [D_ArrivalPlan] SET
            [ArrivalPlanSu]  = tbl.ArrivalSu
-          ,[ArrivalSu]      = (CASE tbl.ChkFinish WHEN 1 THEN 0
-                               ELSE tbl.ArrivalSu END)
+          ,[ArrivalSu]      = tbl.ArrivalSu
           ,[UpdateOperator] = @Operator  
           ,[UpdateDateTime] = @SYSDATETIME
         
-         FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
+         FROM (SELECT tbl.ArrivalPlanNO
+                    , SUM((CASE tbl.ChkFinish WHEN 1 THEN 0
+                                              ELSE tbl.ArrivalSu END)) AS ArrivalSu
                  FROM @Table AS tbl
                 WHERE tbl.UpdateFlg <> 2
                 GROUP BY tbl.ArrivalPlanNO
@@ -620,17 +621,17 @@ BEGIN
               ,[InstructionSu]           = 0
               ,[ShippingSu]              = 0
               ,[OriginalStockNO]         = 0
-              ,[ExpectReturnDate]        = 0
+              ,[ExpectReturnDate]        = NULL
               ,[ReturnPlanSu]            = 0
               ,[VendorCD]                = 0
-              ,[ReturnDate]              = 0
+              ,[ReturnDate]              = NULL
               ,[ReturnSu]                = 0
               ,[UpdateOperator]          = @Operator  
               ,[UpdateDateTime]          = @SYSDATETIME
               
          FROM @Table AS tbl
          WHERE D_Stock.StockNO = tbl.StockNO
-         AND tbl.ChkFinishu = 1
+         AND tbl.ChkFinish = 1
         ;
 
         
