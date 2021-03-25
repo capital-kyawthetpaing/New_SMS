@@ -776,6 +776,7 @@ namespace KeihiNyuuryoku
 
         private void F10() // Insert new row, copy/paste data from upper row and Recalculate TotalGaku
         {
+
             int r = dgvKehiNyuuryoku.CurrentCell.RowIndex;
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             var row = tb.NewRow();
