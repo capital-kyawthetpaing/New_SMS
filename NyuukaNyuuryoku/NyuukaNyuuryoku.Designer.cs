@@ -62,6 +62,7 @@
             this.label11 = new CKM_Controls.CKM_Label();
             this.ScOrderNO = new Search.CKM_SearchControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.ckM_Label2 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -148,6 +149,12 @@
             this.BTN_Detail_2 = new System.Windows.Forms.Button();
             this.BTN_Detail_1 = new System.Windows.Forms.Button();
             this.BTN_Detail_0 = new System.Windows.Forms.Button();
+            this.CHK_FINISH_5 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH_4 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH_3 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH_2 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH_1 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH_0 = new GridControl.clsGridCheckBox();
             this.ckmShop_Label11 = new CKM_Controls.CKM_Label();
             this.lblHikiate = new System.Windows.Forms.Label();
             this.lblZaiko = new System.Windows.Forms.Label();
@@ -200,6 +207,10 @@
             this.lblMaker = new System.Windows.Forms.Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.txtMakerItem = new CKM_Controls.CKM_TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CHK_FINISH2_2 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH2_1 = new GridControl.clsGridCheckBox();
+            this.CHK_FINISH2_0 = new GridControl.clsGridCheckBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -338,6 +349,7 @@
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.test = null;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
@@ -364,6 +376,7 @@
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
+            this.ckM_TextBox1.IsTimemmss = false;
             this.ckM_TextBox1.Length = 10;
             this.ckM_TextBox1.Location = new System.Drawing.Point(375, 1);
             this.ckM_TextBox1.MaxLength = 10;
@@ -374,6 +387,7 @@
             this.ckM_TextBox1.Text = "2019/01/01";
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.ckM_TextBox1.UseColorSizMode = false;
             // 
             // BtnSubF12
             // 
@@ -385,7 +399,7 @@
             this.BtnSubF12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubF12.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.BtnSubF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.BtnSubF12.Location = new System.Drawing.Point(1163, 563);
+            this.BtnSubF12.Location = new System.Drawing.Point(1163, 572);
             this.BtnSubF12.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF12.Name = "BtnSubF12";
             this.BtnSubF12.Size = new System.Drawing.Size(201, 140);
@@ -417,6 +431,7 @@
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl1.TabIndex = 694;
+            this.ckM_SearchControl1.test = null;
             this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl1.UseChangeDate = false;
             this.ckM_SearchControl1.Value1 = null;
@@ -443,6 +458,7 @@
             this.txtSu.isMaxLengthErr = false;
             this.txtSu.IsNumber = true;
             this.txtSu.IsShop = false;
+            this.txtSu.IsTimemmss = false;
             this.txtSu.Length = 3;
             this.txtSu.Location = new System.Drawing.Point(1004, 298);
             this.txtSu.MaxLength = 3;
@@ -452,6 +468,7 @@
             this.txtSu.TabIndex = 4;
             this.txtSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSu.TextSize = CKM_Controls.CKM_TextBox.FontSize.XLarge;
+            this.txtSu.UseColorSizMode = false;
             // 
             // ckmShop_Label9
             // 
@@ -632,6 +649,7 @@
             this.txtVendorDeliveryNo.isMaxLengthErr = false;
             this.txtVendorDeliveryNo.IsNumber = false;
             this.txtVendorDeliveryNo.IsShop = false;
+            this.txtVendorDeliveryNo.IsTimemmss = false;
             this.txtVendorDeliveryNo.Length = 15;
             this.txtVendorDeliveryNo.Location = new System.Drawing.Point(175, 110);
             this.txtVendorDeliveryNo.MaxLength = 15;
@@ -641,6 +659,7 @@
             this.txtVendorDeliveryNo.TabIndex = 0;
             this.txtVendorDeliveryNo.Text = "XXXXXXXXXXX1315";
             this.txtVendorDeliveryNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.txtVendorDeliveryNo.UseColorSizMode = false;
             // 
             // txtJANCD
             // 
@@ -662,6 +681,7 @@
             this.txtJANCD.isMaxLengthErr = false;
             this.txtJANCD.IsNumber = false;
             this.txtJANCD.IsShop = false;
+            this.txtJANCD.IsTimemmss = false;
             this.txtJANCD.Length = 13;
             this.txtJANCD.Location = new System.Drawing.Point(174, 143);
             this.txtJANCD.MaxLength = 13;
@@ -671,6 +691,7 @@
             this.txtJANCD.TabIndex = 2;
             this.txtJANCD.Text = "XXXXXXXXXXX13";
             this.txtJANCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.txtJANCD.UseColorSizMode = false;
             // 
             // BtnJANCD
             // 
@@ -818,7 +839,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 59274147;
+            this.ScOrderNO.ChangeDateWidth = 164650398;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;
@@ -837,6 +858,7 @@
             this.ScOrderNO.Size = new System.Drawing.Size(205, 42);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.入荷番号;
             this.ScOrderNO.TabIndex = 0;
+            this.ScOrderNO.test = null;
             this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.SmallLarge;
             this.ScOrderNO.UseChangeDate = false;
             this.ScOrderNO.Value1 = null;
@@ -845,6 +867,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.ckM_Label2);
             this.panel4.Controls.Add(this.label26);
             this.panel4.Controls.Add(this.label18);
@@ -859,8 +882,21 @@
             this.panel4.Controls.Add(this.IMT_DMY_0);
             this.panel4.Location = new System.Drawing.Point(121, 363);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1033, 31);
+            this.panel4.Size = new System.Drawing.Size(1072, 31);
             this.panel4.TabIndex = 741;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.DarkGray;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(1001, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 27);
+            this.label2.TabIndex = 303;
+            this.label2.Text = "受注";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ckM_Label2
             // 
@@ -883,9 +919,9 @@
             this.label26.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label26.Location = new System.Drawing.Point(945, 2);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(66, 27);
+            this.label26.Size = new System.Drawing.Size(56, 27);
             this.label26.TabIndex = 278;
-            this.label26.Text = "受注";
+            this.label26.Text = "完納";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -1090,9 +1126,15 @@
             this.Pnl_Body.Controls.Add(this.BTN_Detail_2);
             this.Pnl_Body.Controls.Add(this.BTN_Detail_1);
             this.Pnl_Body.Controls.Add(this.BTN_Detail_0);
+            this.Pnl_Body.Controls.Add(this.CHK_FINISH_5);
+            this.Pnl_Body.Controls.Add(this.CHK_FINISH_4);
+            this.Pnl_Body.Controls.Add(this.CHK_FINISH_3);
+            this.Pnl_Body.Controls.Add(this.CHK_FINISH_2);
+            this.Pnl_Body.Controls.Add(this.CHK_FINISH_1);
+            this.Pnl_Body.Controls.Add(this.CHK_FINISH_0);
             this.Pnl_Body.Location = new System.Drawing.Point(121, 391);
             this.Pnl_Body.Name = "Pnl_Body";
-            this.Pnl_Body.Size = new System.Drawing.Size(1029, 178);
+            this.Pnl_Body.Size = new System.Drawing.Size(1085, 178);
             this.Pnl_Body.TabIndex = 742;
             // 
             // IMT_GYONO_5
@@ -1210,6 +1252,7 @@
             this.IMN_GENER2_5.isMaxLengthErr = false;
             this.IMN_GENER2_5.IsNumber = true;
             this.IMN_GENER2_5.IsShop = false;
+            this.IMN_GENER2_5.IsTimemmss = false;
             this.IMN_GENER2_5.Length = 9;
             this.IMN_GENER2_5.Location = new System.Drawing.Point(524, 145);
             this.IMN_GENER2_5.MaxLength = 9;
@@ -1221,6 +1264,7 @@
             this.IMN_GENER2_5.Text = "999";
             this.IMN_GENER2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER2_5.UseColorSizMode = false;
             // 
             // IMN_WEBPR2_5
             // 
@@ -1242,6 +1286,7 @@
             this.IMN_WEBPR2_5.isMaxLengthErr = false;
             this.IMN_WEBPR2_5.IsNumber = true;
             this.IMN_WEBPR2_5.IsShop = false;
+            this.IMN_WEBPR2_5.IsTimemmss = false;
             this.IMN_WEBPR2_5.Length = 100;
             this.IMN_WEBPR2_5.Location = new System.Drawing.Point(267, 145);
             this.IMN_WEBPR2_5.MaxLength = 100;
@@ -1252,6 +1297,7 @@
             this.IMN_WEBPR2_5.Tag = "5";
             this.IMN_WEBPR2_5.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR2_5.UseColorSizMode = false;
             // 
             // IMT_PAYDT_5
             // 
@@ -1273,6 +1319,7 @@
             this.IMT_PAYDT_5.isMaxLengthErr = false;
             this.IMT_PAYDT_5.IsNumber = true;
             this.IMT_PAYDT_5.IsShop = false;
+            this.IMT_PAYDT_5.IsTimemmss = false;
             this.IMT_PAYDT_5.Length = 3;
             this.IMT_PAYDT_5.Location = new System.Drawing.Point(191, 145);
             this.IMT_PAYDT_5.MaxLength = 3;
@@ -1284,6 +1331,7 @@
             this.IMT_PAYDT_5.Text = "999";
             this.IMT_PAYDT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT_5.UseColorSizMode = false;
             // 
             // IMN_SURYO_5
             // 
@@ -1305,6 +1353,7 @@
             this.IMN_SURYO_5.isMaxLengthErr = false;
             this.IMN_SURYO_5.IsNumber = true;
             this.IMN_SURYO_5.IsShop = false;
+            this.IMN_SURYO_5.IsTimemmss = false;
             this.IMN_SURYO_5.Length = 3;
             this.IMN_SURYO_5.Location = new System.Drawing.Point(678, 145);
             this.IMN_SURYO_5.MaxLength = 3;
@@ -1316,6 +1365,7 @@
             this.IMN_SURYO_5.Text = "999";
             this.IMN_SURYO_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO_5.UseColorSizMode = false;
             // 
             // IMN_MEMBR_5
             // 
@@ -1337,6 +1387,7 @@
             this.IMN_MEMBR_5.isMaxLengthErr = false;
             this.IMN_MEMBR_5.IsNumber = true;
             this.IMN_MEMBR_5.IsShop = false;
+            this.IMN_MEMBR_5.IsTimemmss = false;
             this.IMN_MEMBR_5.Length = 5;
             this.IMN_MEMBR_5.Location = new System.Drawing.Point(755, 145);
             this.IMN_MEMBR_5.MaxLength = 5;
@@ -1348,6 +1399,7 @@
             this.IMN_MEMBR_5.Text = "XXXX";
             this.IMN_MEMBR_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR_5.UseColorSizMode = false;
             // 
             // IMT_ARIDT_5
             // 
@@ -1369,6 +1421,7 @@
             this.IMT_ARIDT_5.isMaxLengthErr = false;
             this.IMT_ARIDT_5.IsNumber = true;
             this.IMT_ARIDT_5.IsShop = false;
+            this.IMT_ARIDT_5.IsTimemmss = false;
             this.IMT_ARIDT_5.Length = 10;
             this.IMT_ARIDT_5.Location = new System.Drawing.Point(817, 145);
             this.IMT_ARIDT_5.MaxLength = 10;
@@ -1380,6 +1433,7 @@
             this.IMT_ARIDT_5.Text = "2019/01/01";
             this.IMT_ARIDT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT_5.UseColorSizMode = false;
             // 
             // IMN_SALEP2_5
             // 
@@ -1401,6 +1455,7 @@
             this.IMN_SALEP2_5.isMaxLengthErr = false;
             this.IMN_SALEP2_5.IsNumber = true;
             this.IMN_SALEP2_5.IsShop = false;
+            this.IMN_SALEP2_5.IsTimemmss = false;
             this.IMN_SALEP2_5.Length = 11;
             this.IMN_SALEP2_5.Location = new System.Drawing.Point(600, 145);
             this.IMN_SALEP2_5.MaxLength = 11;
@@ -1412,6 +1467,7 @@
             this.IMN_SALEP2_5.Text = "999";
             this.IMN_SALEP2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP2_5.UseColorSizMode = false;
             // 
             // IMT_ITMCD_5
             // 
@@ -1432,6 +1488,7 @@
             this.IMT_ITMCD_5.isMaxLengthErr = false;
             this.IMT_ITMCD_5.IsNumber = true;
             this.IMT_ITMCD_5.IsShop = false;
+            this.IMT_ITMCD_5.IsTimemmss = false;
             this.IMT_ITMCD_5.Length = 11;
             this.IMT_ITMCD_5.Location = new System.Drawing.Point(53, 145);
             this.IMT_ITMCD_5.MaxLength = 11;
@@ -1443,6 +1500,7 @@
             this.IMT_ITMCD_5.Tag = "5";
             this.IMT_ITMCD_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD_5.UseColorSizMode = false;
             // 
             // CHK_DELCK_4
             // 
@@ -1481,6 +1539,7 @@
             this.IMN_GENER2_4.isMaxLengthErr = false;
             this.IMN_GENER2_4.IsNumber = true;
             this.IMN_GENER2_4.IsShop = false;
+            this.IMN_GENER2_4.IsTimemmss = false;
             this.IMN_GENER2_4.Length = 9;
             this.IMN_GENER2_4.Location = new System.Drawing.Point(524, 116);
             this.IMN_GENER2_4.MaxLength = 9;
@@ -1492,6 +1551,7 @@
             this.IMN_GENER2_4.Text = "999";
             this.IMN_GENER2_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER2_4.UseColorSizMode = false;
             // 
             // IMN_WEBPR2_4
             // 
@@ -1513,6 +1573,7 @@
             this.IMN_WEBPR2_4.isMaxLengthErr = false;
             this.IMN_WEBPR2_4.IsNumber = true;
             this.IMN_WEBPR2_4.IsShop = false;
+            this.IMN_WEBPR2_4.IsTimemmss = false;
             this.IMN_WEBPR2_4.Length = 100;
             this.IMN_WEBPR2_4.Location = new System.Drawing.Point(267, 116);
             this.IMN_WEBPR2_4.MaxLength = 100;
@@ -1523,6 +1584,7 @@
             this.IMN_WEBPR2_4.Tag = "4";
             this.IMN_WEBPR2_4.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR2_4.UseColorSizMode = false;
             // 
             // IMT_PAYDT_4
             // 
@@ -1544,6 +1606,7 @@
             this.IMT_PAYDT_4.isMaxLengthErr = false;
             this.IMT_PAYDT_4.IsNumber = true;
             this.IMT_PAYDT_4.IsShop = false;
+            this.IMT_PAYDT_4.IsTimemmss = false;
             this.IMT_PAYDT_4.Length = 3;
             this.IMT_PAYDT_4.Location = new System.Drawing.Point(191, 116);
             this.IMT_PAYDT_4.MaxLength = 3;
@@ -1555,6 +1618,7 @@
             this.IMT_PAYDT_4.Text = "999";
             this.IMT_PAYDT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT_4.UseColorSizMode = false;
             // 
             // IMN_SURYO_4
             // 
@@ -1576,6 +1640,7 @@
             this.IMN_SURYO_4.isMaxLengthErr = false;
             this.IMN_SURYO_4.IsNumber = true;
             this.IMN_SURYO_4.IsShop = false;
+            this.IMN_SURYO_4.IsTimemmss = false;
             this.IMN_SURYO_4.Length = 3;
             this.IMN_SURYO_4.Location = new System.Drawing.Point(678, 116);
             this.IMN_SURYO_4.MaxLength = 3;
@@ -1587,6 +1652,7 @@
             this.IMN_SURYO_4.Text = "999";
             this.IMN_SURYO_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO_4.UseColorSizMode = false;
             // 
             // IMN_MEMBR_4
             // 
@@ -1608,6 +1674,7 @@
             this.IMN_MEMBR_4.isMaxLengthErr = false;
             this.IMN_MEMBR_4.IsNumber = true;
             this.IMN_MEMBR_4.IsShop = false;
+            this.IMN_MEMBR_4.IsTimemmss = false;
             this.IMN_MEMBR_4.Length = 5;
             this.IMN_MEMBR_4.Location = new System.Drawing.Point(755, 116);
             this.IMN_MEMBR_4.MaxLength = 5;
@@ -1619,6 +1686,7 @@
             this.IMN_MEMBR_4.Text = "XXXX";
             this.IMN_MEMBR_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR_4.UseColorSizMode = false;
             // 
             // IMT_ARIDT_4
             // 
@@ -1640,6 +1708,7 @@
             this.IMT_ARIDT_4.isMaxLengthErr = false;
             this.IMT_ARIDT_4.IsNumber = true;
             this.IMT_ARIDT_4.IsShop = false;
+            this.IMT_ARIDT_4.IsTimemmss = false;
             this.IMT_ARIDT_4.Length = 10;
             this.IMT_ARIDT_4.Location = new System.Drawing.Point(817, 116);
             this.IMT_ARIDT_4.MaxLength = 10;
@@ -1651,6 +1720,7 @@
             this.IMT_ARIDT_4.Text = "2019/01/01";
             this.IMT_ARIDT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT_4.UseColorSizMode = false;
             // 
             // IMN_SALEP2_4
             // 
@@ -1672,6 +1742,7 @@
             this.IMN_SALEP2_4.isMaxLengthErr = false;
             this.IMN_SALEP2_4.IsNumber = true;
             this.IMN_SALEP2_4.IsShop = false;
+            this.IMN_SALEP2_4.IsTimemmss = false;
             this.IMN_SALEP2_4.Length = 11;
             this.IMN_SALEP2_4.Location = new System.Drawing.Point(600, 116);
             this.IMN_SALEP2_4.MaxLength = 11;
@@ -1683,6 +1754,7 @@
             this.IMN_SALEP2_4.Text = "999";
             this.IMN_SALEP2_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP2_4.UseColorSizMode = false;
             // 
             // IMT_ITMCD_4
             // 
@@ -1703,6 +1775,7 @@
             this.IMT_ITMCD_4.isMaxLengthErr = false;
             this.IMT_ITMCD_4.IsNumber = true;
             this.IMT_ITMCD_4.IsShop = false;
+            this.IMT_ITMCD_4.IsTimemmss = false;
             this.IMT_ITMCD_4.Length = 11;
             this.IMT_ITMCD_4.Location = new System.Drawing.Point(53, 116);
             this.IMT_ITMCD_4.MaxLength = 11;
@@ -1714,6 +1787,7 @@
             this.IMT_ITMCD_4.Tag = "4";
             this.IMT_ITMCD_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD_4.UseColorSizMode = false;
             // 
             // CHK_DELCK_3
             // 
@@ -1752,6 +1826,7 @@
             this.IMN_GENER2_3.isMaxLengthErr = false;
             this.IMN_GENER2_3.IsNumber = true;
             this.IMN_GENER2_3.IsShop = false;
+            this.IMN_GENER2_3.IsTimemmss = false;
             this.IMN_GENER2_3.Length = 9;
             this.IMN_GENER2_3.Location = new System.Drawing.Point(524, 87);
             this.IMN_GENER2_3.MaxLength = 9;
@@ -1763,6 +1838,7 @@
             this.IMN_GENER2_3.Text = "999";
             this.IMN_GENER2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER2_3.UseColorSizMode = false;
             // 
             // IMN_WEBPR2_3
             // 
@@ -1784,6 +1860,7 @@
             this.IMN_WEBPR2_3.isMaxLengthErr = false;
             this.IMN_WEBPR2_3.IsNumber = true;
             this.IMN_WEBPR2_3.IsShop = false;
+            this.IMN_WEBPR2_3.IsTimemmss = false;
             this.IMN_WEBPR2_3.Length = 100;
             this.IMN_WEBPR2_3.Location = new System.Drawing.Point(267, 87);
             this.IMN_WEBPR2_3.MaxLength = 100;
@@ -1794,6 +1871,7 @@
             this.IMN_WEBPR2_3.Tag = "3";
             this.IMN_WEBPR2_3.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR2_3.UseColorSizMode = false;
             // 
             // IMT_PAYDT_3
             // 
@@ -1815,6 +1893,7 @@
             this.IMT_PAYDT_3.isMaxLengthErr = false;
             this.IMT_PAYDT_3.IsNumber = true;
             this.IMT_PAYDT_3.IsShop = false;
+            this.IMT_PAYDT_3.IsTimemmss = false;
             this.IMT_PAYDT_3.Length = 3;
             this.IMT_PAYDT_3.Location = new System.Drawing.Point(191, 87);
             this.IMT_PAYDT_3.MaxLength = 3;
@@ -1826,6 +1905,7 @@
             this.IMT_PAYDT_3.Text = "999";
             this.IMT_PAYDT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT_3.UseColorSizMode = false;
             // 
             // IMN_SURYO_3
             // 
@@ -1847,6 +1927,7 @@
             this.IMN_SURYO_3.isMaxLengthErr = false;
             this.IMN_SURYO_3.IsNumber = true;
             this.IMN_SURYO_3.IsShop = false;
+            this.IMN_SURYO_3.IsTimemmss = false;
             this.IMN_SURYO_3.Length = 3;
             this.IMN_SURYO_3.Location = new System.Drawing.Point(678, 87);
             this.IMN_SURYO_3.MaxLength = 3;
@@ -1858,6 +1939,7 @@
             this.IMN_SURYO_3.Text = "999";
             this.IMN_SURYO_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO_3.UseColorSizMode = false;
             // 
             // IMN_MEMBR_3
             // 
@@ -1879,6 +1961,7 @@
             this.IMN_MEMBR_3.isMaxLengthErr = false;
             this.IMN_MEMBR_3.IsNumber = true;
             this.IMN_MEMBR_3.IsShop = false;
+            this.IMN_MEMBR_3.IsTimemmss = false;
             this.IMN_MEMBR_3.Length = 5;
             this.IMN_MEMBR_3.Location = new System.Drawing.Point(755, 87);
             this.IMN_MEMBR_3.MaxLength = 5;
@@ -1890,6 +1973,7 @@
             this.IMN_MEMBR_3.Text = "XXXX";
             this.IMN_MEMBR_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR_3.UseColorSizMode = false;
             // 
             // IMT_ARIDT_3
             // 
@@ -1911,6 +1995,7 @@
             this.IMT_ARIDT_3.isMaxLengthErr = false;
             this.IMT_ARIDT_3.IsNumber = true;
             this.IMT_ARIDT_3.IsShop = false;
+            this.IMT_ARIDT_3.IsTimemmss = false;
             this.IMT_ARIDT_3.Length = 10;
             this.IMT_ARIDT_3.Location = new System.Drawing.Point(817, 87);
             this.IMT_ARIDT_3.MaxLength = 10;
@@ -1922,6 +2007,7 @@
             this.IMT_ARIDT_3.Text = "2019/01/01";
             this.IMT_ARIDT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT_3.UseColorSizMode = false;
             // 
             // IMN_SALEP2_3
             // 
@@ -1943,6 +2029,7 @@
             this.IMN_SALEP2_3.isMaxLengthErr = false;
             this.IMN_SALEP2_3.IsNumber = true;
             this.IMN_SALEP2_3.IsShop = false;
+            this.IMN_SALEP2_3.IsTimemmss = false;
             this.IMN_SALEP2_3.Length = 11;
             this.IMN_SALEP2_3.Location = new System.Drawing.Point(600, 87);
             this.IMN_SALEP2_3.MaxLength = 11;
@@ -1954,6 +2041,7 @@
             this.IMN_SALEP2_3.Text = "999";
             this.IMN_SALEP2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP2_3.UseColorSizMode = false;
             // 
             // IMT_ITMCD_3
             // 
@@ -1974,6 +2062,7 @@
             this.IMT_ITMCD_3.isMaxLengthErr = false;
             this.IMT_ITMCD_3.IsNumber = true;
             this.IMT_ITMCD_3.IsShop = false;
+            this.IMT_ITMCD_3.IsTimemmss = false;
             this.IMT_ITMCD_3.Length = 11;
             this.IMT_ITMCD_3.Location = new System.Drawing.Point(53, 87);
             this.IMT_ITMCD_3.MaxLength = 11;
@@ -1985,6 +2074,7 @@
             this.IMT_ITMCD_3.Tag = "3";
             this.IMT_ITMCD_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD_3.UseColorSizMode = false;
             // 
             // CHK_DELCK_2
             // 
@@ -2023,6 +2113,7 @@
             this.IMT_ARIDT_0.isMaxLengthErr = false;
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
+            this.IMT_ARIDT_0.IsTimemmss = false;
             this.IMT_ARIDT_0.Length = 10;
             this.IMT_ARIDT_0.Location = new System.Drawing.Point(817, 0);
             this.IMT_ARIDT_0.MaxLength = 10;
@@ -2034,6 +2125,7 @@
             this.IMT_ARIDT_0.Text = "2019/01/01";
             this.IMT_ARIDT_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT_0.UseColorSizMode = false;
             // 
             // IMN_GENER2_2
             // 
@@ -2055,6 +2147,7 @@
             this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
+            this.IMN_GENER2_2.IsTimemmss = false;
             this.IMN_GENER2_2.Length = 9;
             this.IMN_GENER2_2.Location = new System.Drawing.Point(524, 58);
             this.IMN_GENER2_2.MaxLength = 9;
@@ -2066,6 +2159,7 @@
             this.IMN_GENER2_2.Text = "999";
             this.IMN_GENER2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER2_2.UseColorSizMode = false;
             // 
             // IMN_GENER2_1
             // 
@@ -2087,6 +2181,7 @@
             this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
+            this.IMN_GENER2_1.IsTimemmss = false;
             this.IMN_GENER2_1.Length = 9;
             this.IMN_GENER2_1.Location = new System.Drawing.Point(524, 29);
             this.IMN_GENER2_1.MaxLength = 9;
@@ -2098,6 +2193,7 @@
             this.IMN_GENER2_1.Text = "999";
             this.IMN_GENER2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER2_1.UseColorSizMode = false;
             // 
             // IMN_GENER2_0
             // 
@@ -2119,6 +2215,7 @@
             this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
+            this.IMN_GENER2_0.IsTimemmss = false;
             this.IMN_GENER2_0.Length = 9;
             this.IMN_GENER2_0.Location = new System.Drawing.Point(524, 0);
             this.IMN_GENER2_0.MaxLength = 9;
@@ -2130,6 +2227,7 @@
             this.IMN_GENER2_0.Text = "999";
             this.IMN_GENER2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER2_0.UseColorSizMode = false;
             // 
             // IMN_WEBPR_2
             // 
@@ -2151,6 +2249,7 @@
             this.IMN_WEBPR_2.isMaxLengthErr = false;
             this.IMN_WEBPR_2.IsNumber = true;
             this.IMN_WEBPR_2.IsShop = false;
+            this.IMN_WEBPR_2.IsTimemmss = false;
             this.IMN_WEBPR_2.Length = 100;
             this.IMN_WEBPR_2.Location = new System.Drawing.Point(267, 58);
             this.IMN_WEBPR_2.MaxLength = 100;
@@ -2161,6 +2260,7 @@
             this.IMN_WEBPR_2.Tag = "2";
             this.IMN_WEBPR_2.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR_2.UseColorSizMode = false;
             // 
             // IMN_WEBPR_1
             // 
@@ -2182,6 +2282,7 @@
             this.IMN_WEBPR_1.isMaxLengthErr = false;
             this.IMN_WEBPR_1.IsNumber = true;
             this.IMN_WEBPR_1.IsShop = false;
+            this.IMN_WEBPR_1.IsTimemmss = false;
             this.IMN_WEBPR_1.Length = 100;
             this.IMN_WEBPR_1.Location = new System.Drawing.Point(267, 29);
             this.IMN_WEBPR_1.MaxLength = 100;
@@ -2192,6 +2293,7 @@
             this.IMN_WEBPR_1.Tag = "1";
             this.IMN_WEBPR_1.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR_1.UseColorSizMode = false;
             // 
             // IMN_WEBPR_0
             // 
@@ -2213,6 +2315,7 @@
             this.IMN_WEBPR_0.isMaxLengthErr = false;
             this.IMN_WEBPR_0.IsNumber = true;
             this.IMN_WEBPR_0.IsShop = false;
+            this.IMN_WEBPR_0.IsTimemmss = false;
             this.IMN_WEBPR_0.Length = 100;
             this.IMN_WEBPR_0.Location = new System.Drawing.Point(267, 0);
             this.IMN_WEBPR_0.MaxLength = 100;
@@ -2223,6 +2326,7 @@
             this.IMN_WEBPR_0.Tag = "0";
             this.IMN_WEBPR_0.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR_0.UseColorSizMode = false;
             // 
             // IMT_PAYDT_2
             // 
@@ -2244,6 +2348,7 @@
             this.IMT_PAYDT_2.isMaxLengthErr = false;
             this.IMT_PAYDT_2.IsNumber = true;
             this.IMT_PAYDT_2.IsShop = false;
+            this.IMT_PAYDT_2.IsTimemmss = false;
             this.IMT_PAYDT_2.Length = 3;
             this.IMT_PAYDT_2.Location = new System.Drawing.Point(191, 58);
             this.IMT_PAYDT_2.MaxLength = 3;
@@ -2255,6 +2360,7 @@
             this.IMT_PAYDT_2.Text = "999";
             this.IMT_PAYDT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT_2.UseColorSizMode = false;
             // 
             // IMT_PAYDT_1
             // 
@@ -2276,6 +2382,7 @@
             this.IMT_PAYDT_1.isMaxLengthErr = false;
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
+            this.IMT_PAYDT_1.IsTimemmss = false;
             this.IMT_PAYDT_1.Length = 3;
             this.IMT_PAYDT_1.Location = new System.Drawing.Point(191, 29);
             this.IMT_PAYDT_1.MaxLength = 3;
@@ -2287,6 +2394,7 @@
             this.IMT_PAYDT_1.Text = "999";
             this.IMT_PAYDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT_1.UseColorSizMode = false;
             // 
             // IMT_PAYDT_0
             // 
@@ -2308,6 +2416,7 @@
             this.IMT_PAYDT_0.isMaxLengthErr = false;
             this.IMT_PAYDT_0.IsNumber = true;
             this.IMT_PAYDT_0.IsShop = false;
+            this.IMT_PAYDT_0.IsTimemmss = false;
             this.IMT_PAYDT_0.Length = 3;
             this.IMT_PAYDT_0.Location = new System.Drawing.Point(191, 0);
             this.IMT_PAYDT_0.MaxLength = 3;
@@ -2319,6 +2428,7 @@
             this.IMT_PAYDT_0.Text = "999";
             this.IMT_PAYDT_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT_0.UseColorSizMode = false;
             // 
             // IMN_SURYO_2
             // 
@@ -2340,6 +2450,7 @@
             this.IMN_SURYO_2.isMaxLengthErr = false;
             this.IMN_SURYO_2.IsNumber = true;
             this.IMN_SURYO_2.IsShop = false;
+            this.IMN_SURYO_2.IsTimemmss = false;
             this.IMN_SURYO_2.Length = 3;
             this.IMN_SURYO_2.Location = new System.Drawing.Point(678, 58);
             this.IMN_SURYO_2.MaxLength = 3;
@@ -2351,6 +2462,7 @@
             this.IMN_SURYO_2.Text = "999";
             this.IMN_SURYO_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO_2.UseColorSizMode = false;
             // 
             // IMN_MEMBR_2
             // 
@@ -2372,6 +2484,7 @@
             this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
+            this.IMN_MEMBR_2.IsTimemmss = false;
             this.IMN_MEMBR_2.Length = 5;
             this.IMN_MEMBR_2.Location = new System.Drawing.Point(755, 58);
             this.IMN_MEMBR_2.MaxLength = 5;
@@ -2383,6 +2496,7 @@
             this.IMN_MEMBR_2.Text = "XXXX";
             this.IMN_MEMBR_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR_2.UseColorSizMode = false;
             // 
             // IMN_SURYO_1
             // 
@@ -2404,6 +2518,7 @@
             this.IMN_SURYO_1.isMaxLengthErr = false;
             this.IMN_SURYO_1.IsNumber = true;
             this.IMN_SURYO_1.IsShop = false;
+            this.IMN_SURYO_1.IsTimemmss = false;
             this.IMN_SURYO_1.Length = 3;
             this.IMN_SURYO_1.Location = new System.Drawing.Point(678, 29);
             this.IMN_SURYO_1.MaxLength = 3;
@@ -2415,6 +2530,7 @@
             this.IMN_SURYO_1.Text = "999";
             this.IMN_SURYO_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO_1.UseColorSizMode = false;
             // 
             // IMN_MEMBR_1
             // 
@@ -2436,6 +2552,7 @@
             this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
+            this.IMN_MEMBR_1.IsTimemmss = false;
             this.IMN_MEMBR_1.Length = 5;
             this.IMN_MEMBR_1.Location = new System.Drawing.Point(755, 29);
             this.IMN_MEMBR_1.MaxLength = 5;
@@ -2447,6 +2564,7 @@
             this.IMN_MEMBR_1.Text = "XXXX";
             this.IMN_MEMBR_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR_1.UseColorSizMode = false;
             // 
             // IMN_SURYO_0
             // 
@@ -2468,6 +2586,7 @@
             this.IMN_SURYO_0.isMaxLengthErr = false;
             this.IMN_SURYO_0.IsNumber = true;
             this.IMN_SURYO_0.IsShop = false;
+            this.IMN_SURYO_0.IsTimemmss = false;
             this.IMN_SURYO_0.Length = 3;
             this.IMN_SURYO_0.Location = new System.Drawing.Point(678, 0);
             this.IMN_SURYO_0.MaxLength = 3;
@@ -2479,6 +2598,7 @@
             this.IMN_SURYO_0.Text = "999";
             this.IMN_SURYO_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO_0.UseColorSizMode = false;
             // 
             // IMN_MEMBR_0
             // 
@@ -2500,6 +2620,7 @@
             this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
+            this.IMN_MEMBR_0.IsTimemmss = false;
             this.IMN_MEMBR_0.Length = 5;
             this.IMN_MEMBR_0.Location = new System.Drawing.Point(755, 0);
             this.IMN_MEMBR_0.MaxLength = 5;
@@ -2511,6 +2632,7 @@
             this.IMN_MEMBR_0.Text = "XXXX";
             this.IMN_MEMBR_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR_0.UseColorSizMode = false;
             // 
             // IMT_ARIDT_2
             // 
@@ -2532,6 +2654,7 @@
             this.IMT_ARIDT_2.isMaxLengthErr = false;
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
+            this.IMT_ARIDT_2.IsTimemmss = false;
             this.IMT_ARIDT_2.Length = 10;
             this.IMT_ARIDT_2.Location = new System.Drawing.Point(817, 58);
             this.IMT_ARIDT_2.MaxLength = 10;
@@ -2543,6 +2666,7 @@
             this.IMT_ARIDT_2.Text = "2019/01/01";
             this.IMT_ARIDT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT_2.UseColorSizMode = false;
             // 
             // IMT_ARIDT_1
             // 
@@ -2564,6 +2688,7 @@
             this.IMT_ARIDT_1.isMaxLengthErr = false;
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
+            this.IMT_ARIDT_1.IsTimemmss = false;
             this.IMT_ARIDT_1.Length = 10;
             this.IMT_ARIDT_1.Location = new System.Drawing.Point(817, 29);
             this.IMT_ARIDT_1.MaxLength = 10;
@@ -2575,6 +2700,7 @@
             this.IMT_ARIDT_1.Text = "2019/01/01";
             this.IMT_ARIDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT_1.UseColorSizMode = false;
             // 
             // IMN_SALEP_2
             // 
@@ -2596,6 +2722,7 @@
             this.IMN_SALEP_2.isMaxLengthErr = false;
             this.IMN_SALEP_2.IsNumber = true;
             this.IMN_SALEP_2.IsShop = false;
+            this.IMN_SALEP_2.IsTimemmss = false;
             this.IMN_SALEP_2.Length = 11;
             this.IMN_SALEP_2.Location = new System.Drawing.Point(600, 58);
             this.IMN_SALEP_2.MaxLength = 11;
@@ -2607,6 +2734,7 @@
             this.IMN_SALEP_2.Text = "999";
             this.IMN_SALEP_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP_2.UseColorSizMode = false;
             // 
             // IMN_SALEP_1
             // 
@@ -2628,6 +2756,7 @@
             this.IMN_SALEP_1.isMaxLengthErr = false;
             this.IMN_SALEP_1.IsNumber = true;
             this.IMN_SALEP_1.IsShop = false;
+            this.IMN_SALEP_1.IsTimemmss = false;
             this.IMN_SALEP_1.Length = 11;
             this.IMN_SALEP_1.Location = new System.Drawing.Point(600, 29);
             this.IMN_SALEP_1.MaxLength = 11;
@@ -2639,6 +2768,7 @@
             this.IMN_SALEP_1.Text = "999";
             this.IMN_SALEP_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP_1.UseColorSizMode = false;
             // 
             // IMN_SALEP_0
             // 
@@ -2660,6 +2790,7 @@
             this.IMN_SALEP_0.isMaxLengthErr = false;
             this.IMN_SALEP_0.IsNumber = true;
             this.IMN_SALEP_0.IsShop = false;
+            this.IMN_SALEP_0.IsTimemmss = false;
             this.IMN_SALEP_0.Length = 11;
             this.IMN_SALEP_0.Location = new System.Drawing.Point(600, 0);
             this.IMN_SALEP_0.MaxLength = 11;
@@ -2671,6 +2802,7 @@
             this.IMN_SALEP_0.Text = "999";
             this.IMN_SALEP_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP_0.UseColorSizMode = false;
             // 
             // IMT_ITMCD_0
             // 
@@ -2691,6 +2823,7 @@
             this.IMT_ITMCD_0.isMaxLengthErr = false;
             this.IMT_ITMCD_0.IsNumber = true;
             this.IMT_ITMCD_0.IsShop = false;
+            this.IMT_ITMCD_0.IsTimemmss = false;
             this.IMT_ITMCD_0.Length = 11;
             this.IMT_ITMCD_0.Location = new System.Drawing.Point(53, 0);
             this.IMT_ITMCD_0.MaxLength = 11;
@@ -2702,6 +2835,7 @@
             this.IMT_ITMCD_0.Tag = "0";
             this.IMT_ITMCD_0.Text = "XXXXXXXXX1X";
             this.IMT_ITMCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD_0.UseColorSizMode = false;
             // 
             // IMT_ITMCD_1
             // 
@@ -2722,6 +2856,7 @@
             this.IMT_ITMCD_1.isMaxLengthErr = false;
             this.IMT_ITMCD_1.IsNumber = true;
             this.IMT_ITMCD_1.IsShop = false;
+            this.IMT_ITMCD_1.IsTimemmss = false;
             this.IMT_ITMCD_1.Length = 11;
             this.IMT_ITMCD_1.Location = new System.Drawing.Point(53, 29);
             this.IMT_ITMCD_1.MaxLength = 11;
@@ -2733,6 +2868,7 @@
             this.IMT_ITMCD_1.Tag = "1";
             this.IMT_ITMCD_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD_1.UseColorSizMode = false;
             // 
             // IMT_ITMCD_2
             // 
@@ -2753,6 +2889,7 @@
             this.IMT_ITMCD_2.isMaxLengthErr = false;
             this.IMT_ITMCD_2.IsNumber = true;
             this.IMT_ITMCD_2.IsShop = false;
+            this.IMT_ITMCD_2.IsTimemmss = false;
             this.IMT_ITMCD_2.Length = 11;
             this.IMT_ITMCD_2.Location = new System.Drawing.Point(53, 58);
             this.IMT_ITMCD_2.MaxLength = 11;
@@ -2764,12 +2901,13 @@
             this.IMT_ITMCD_2.Tag = "2";
             this.IMT_ITMCD_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD_2.UseColorSizMode = false;
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1008, 0);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1061, 0);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 176);
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 173);
             this.Vsb_Mei_0.TabIndex = 0;
             this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
@@ -2906,7 +3044,7 @@
             // BTN_Detail_5
             // 
             this.BTN_Detail_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BTN_Detail_5.Location = new System.Drawing.Point(945, 145);
+            this.BTN_Detail_5.Location = new System.Drawing.Point(998, 145);
             this.BTN_Detail_5.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Detail_5.Name = "BTN_Detail_5";
             this.BTN_Detail_5.Size = new System.Drawing.Size(64, 29);
@@ -2918,7 +3056,7 @@
             // BTN_Detail_4
             // 
             this.BTN_Detail_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BTN_Detail_4.Location = new System.Drawing.Point(945, 116);
+            this.BTN_Detail_4.Location = new System.Drawing.Point(998, 116);
             this.BTN_Detail_4.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Detail_4.Name = "BTN_Detail_4";
             this.BTN_Detail_4.Size = new System.Drawing.Size(64, 29);
@@ -2930,7 +3068,7 @@
             // BTN_Detail_3
             // 
             this.BTN_Detail_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BTN_Detail_3.Location = new System.Drawing.Point(945, 87);
+            this.BTN_Detail_3.Location = new System.Drawing.Point(998, 87);
             this.BTN_Detail_3.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Detail_3.Name = "BTN_Detail_3";
             this.BTN_Detail_3.Size = new System.Drawing.Size(64, 29);
@@ -2942,7 +3080,7 @@
             // BTN_Detail_2
             // 
             this.BTN_Detail_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BTN_Detail_2.Location = new System.Drawing.Point(945, 58);
+            this.BTN_Detail_2.Location = new System.Drawing.Point(998, 58);
             this.BTN_Detail_2.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Detail_2.Name = "BTN_Detail_2";
             this.BTN_Detail_2.Size = new System.Drawing.Size(64, 29);
@@ -2954,7 +3092,7 @@
             // BTN_Detail_1
             // 
             this.BTN_Detail_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BTN_Detail_1.Location = new System.Drawing.Point(945, 29);
+            this.BTN_Detail_1.Location = new System.Drawing.Point(998, 29);
             this.BTN_Detail_1.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Detail_1.Name = "BTN_Detail_1";
             this.BTN_Detail_1.Size = new System.Drawing.Size(64, 29);
@@ -2966,7 +3104,7 @@
             // BTN_Detail_0
             // 
             this.BTN_Detail_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BTN_Detail_0.Location = new System.Drawing.Point(945, 0);
+            this.BTN_Detail_0.Location = new System.Drawing.Point(998, 0);
             this.BTN_Detail_0.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Detail_0.Name = "BTN_Detail_0";
             this.BTN_Detail_0.Size = new System.Drawing.Size(64, 29);
@@ -2974,6 +3112,102 @@
             this.BTN_Detail_0.Tag = "0";
             this.BTN_Detail_0.Text = "　";
             this.BTN_Detail_0.UseVisualStyleBackColor = true;
+            // 
+            // CHK_FINISH_5
+            // 
+            this.CHK_FINISH_5.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH_5.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH_5.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH_5.Location = new System.Drawing.Point(943, 145);
+            this.CHK_FINISH_5.Name = "CHK_FINISH_5";
+            this.CHK_FINISH_5.Size = new System.Drawing.Size(55, 29);
+            this.CHK_FINISH_5.TabIndex = 669;
+            this.CHK_FINISH_5.Tag = "5";
+            this.CHK_FINISH_5.Text = "　";
+            this.CHK_FINISH_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_5.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH_4
+            // 
+            this.CHK_FINISH_4.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH_4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH_4.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH_4.Location = new System.Drawing.Point(943, 116);
+            this.CHK_FINISH_4.Name = "CHK_FINISH_4";
+            this.CHK_FINISH_4.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH_4.TabIndex = 668;
+            this.CHK_FINISH_4.Tag = "4";
+            this.CHK_FINISH_4.Text = "　";
+            this.CHK_FINISH_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_4.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH_3
+            // 
+            this.CHK_FINISH_3.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH_3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH_3.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH_3.Location = new System.Drawing.Point(943, 87);
+            this.CHK_FINISH_3.Name = "CHK_FINISH_3";
+            this.CHK_FINISH_3.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH_3.TabIndex = 667;
+            this.CHK_FINISH_3.Tag = "3";
+            this.CHK_FINISH_3.Text = "　";
+            this.CHK_FINISH_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_3.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH_2
+            // 
+            this.CHK_FINISH_2.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH_2.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH_2.Location = new System.Drawing.Point(943, 58);
+            this.CHK_FINISH_2.Name = "CHK_FINISH_2";
+            this.CHK_FINISH_2.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH_2.TabIndex = 666;
+            this.CHK_FINISH_2.Tag = "2";
+            this.CHK_FINISH_2.Text = "　";
+            this.CHK_FINISH_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_2.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH_1
+            // 
+            this.CHK_FINISH_1.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH_1.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH_1.Location = new System.Drawing.Point(943, 29);
+            this.CHK_FINISH_1.Name = "CHK_FINISH_1";
+            this.CHK_FINISH_1.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH_1.TabIndex = 665;
+            this.CHK_FINISH_1.Tag = "1";
+            this.CHK_FINISH_1.Text = "　";
+            this.CHK_FINISH_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_1.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH_0
+            // 
+            this.CHK_FINISH_0.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH_0.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH_0.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH_0.Location = new System.Drawing.Point(943, 0);
+            this.CHK_FINISH_0.Name = "CHK_FINISH_0";
+            this.CHK_FINISH_0.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH_0.TabIndex = 664;
+            this.CHK_FINISH_0.Tag = "0";
+            this.CHK_FINISH_0.Text = "　";
+            this.CHK_FINISH_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH_0.UseVisualStyleBackColor = false;
             // 
             // ckmShop_Label11
             // 
@@ -3035,6 +3269,10 @@
             // 
             this.Pnl_Body2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Body2.Controls.Add(this.Vsb_Mei_1);
+            this.Pnl_Body2.Controls.Add(this.CHK_FINISH2_2);
+            this.Pnl_Body2.Controls.Add(this.CHK_FINISH2_1);
+            this.Pnl_Body2.Controls.Add(this.CHK_FINISH2_0);
             this.Pnl_Body2.Controls.Add(this.IMT_GYONO2_2);
             this.Pnl_Body2.Controls.Add(this.IMT_GYONO2_1);
             this.Pnl_Body2.Controls.Add(this.IMT_GYONO2_0);
@@ -3062,7 +3300,6 @@
             this.Pnl_Body2.Controls.Add(this.IMT_ITMCD2_0);
             this.Pnl_Body2.Controls.Add(this.IMT_ITMCD2_1);
             this.Pnl_Body2.Controls.Add(this.IMT_ITMCD2_2);
-            this.Pnl_Body2.Controls.Add(this.Vsb_Mei_1);
             this.Pnl_Body2.Controls.Add(this.clsGridCheckBox5);
             this.Pnl_Body2.Controls.Add(this.clsGridCheckBox6);
             this.Pnl_Body2.Controls.Add(this.CHK_EDICK2_2);
@@ -3070,7 +3307,7 @@
             this.Pnl_Body2.Controls.Add(this.CHK_EDICK2_0);
             this.Pnl_Body2.Location = new System.Drawing.Point(123, 606);
             this.Pnl_Body2.Name = "Pnl_Body2";
-            this.Pnl_Body2.Size = new System.Drawing.Size(967, 91);
+            this.Pnl_Body2.Size = new System.Drawing.Size(1019, 91);
             this.Pnl_Body2.TabIndex = 748;
             // 
             // IMT_GYONO2_2
@@ -3132,6 +3369,7 @@
             this.IMT_ARIDT2_0.isMaxLengthErr = false;
             this.IMT_ARIDT2_0.IsNumber = true;
             this.IMT_ARIDT2_0.IsShop = false;
+            this.IMT_ARIDT2_0.IsTimemmss = false;
             this.IMT_ARIDT2_0.Length = 10;
             this.IMT_ARIDT2_0.Location = new System.Drawing.Point(817, 0);
             this.IMT_ARIDT2_0.MaxLength = 10;
@@ -3143,6 +3381,7 @@
             this.IMT_ARIDT2_0.Text = "2019/01/01";
             this.IMT_ARIDT2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT2_0.UseColorSizMode = false;
             // 
             // IMN_GENER22_2
             // 
@@ -3164,6 +3403,7 @@
             this.IMN_GENER22_2.isMaxLengthErr = false;
             this.IMN_GENER22_2.IsNumber = true;
             this.IMN_GENER22_2.IsShop = false;
+            this.IMN_GENER22_2.IsTimemmss = false;
             this.IMN_GENER22_2.Length = 9;
             this.IMN_GENER22_2.Location = new System.Drawing.Point(524, 58);
             this.IMN_GENER22_2.MaxLength = 9;
@@ -3175,6 +3415,7 @@
             this.IMN_GENER22_2.Text = "999";
             this.IMN_GENER22_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER22_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER22_2.UseColorSizMode = false;
             // 
             // IMN_GENER22_1
             // 
@@ -3196,6 +3437,7 @@
             this.IMN_GENER22_1.isMaxLengthErr = false;
             this.IMN_GENER22_1.IsNumber = true;
             this.IMN_GENER22_1.IsShop = false;
+            this.IMN_GENER22_1.IsTimemmss = false;
             this.IMN_GENER22_1.Length = 9;
             this.IMN_GENER22_1.Location = new System.Drawing.Point(524, 29);
             this.IMN_GENER22_1.MaxLength = 9;
@@ -3207,6 +3449,7 @@
             this.IMN_GENER22_1.Text = "999";
             this.IMN_GENER22_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER22_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER22_1.UseColorSizMode = false;
             // 
             // IMN_GENER22_0
             // 
@@ -3228,6 +3471,7 @@
             this.IMN_GENER22_0.isMaxLengthErr = false;
             this.IMN_GENER22_0.IsNumber = true;
             this.IMN_GENER22_0.IsShop = false;
+            this.IMN_GENER22_0.IsTimemmss = false;
             this.IMN_GENER22_0.Length = 9;
             this.IMN_GENER22_0.Location = new System.Drawing.Point(524, 0);
             this.IMN_GENER22_0.MaxLength = 9;
@@ -3239,6 +3483,7 @@
             this.IMN_GENER22_0.Text = "999";
             this.IMN_GENER22_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_GENER22_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_GENER22_0.UseColorSizMode = false;
             // 
             // IMN_WEBPR2_2
             // 
@@ -3260,6 +3505,7 @@
             this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
+            this.IMN_WEBPR2_2.IsTimemmss = false;
             this.IMN_WEBPR2_2.Length = 100;
             this.IMN_WEBPR2_2.Location = new System.Drawing.Point(267, 58);
             this.IMN_WEBPR2_2.MaxLength = 100;
@@ -3270,6 +3516,7 @@
             this.IMN_WEBPR2_2.Tag = "2";
             this.IMN_WEBPR2_2.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR2_2.UseColorSizMode = false;
             // 
             // IMN_WEBPR2_1
             // 
@@ -3291,6 +3538,7 @@
             this.IMN_WEBPR2_1.isMaxLengthErr = false;
             this.IMN_WEBPR2_1.IsNumber = true;
             this.IMN_WEBPR2_1.IsShop = false;
+            this.IMN_WEBPR2_1.IsTimemmss = false;
             this.IMN_WEBPR2_1.Length = 100;
             this.IMN_WEBPR2_1.Location = new System.Drawing.Point(267, 29);
             this.IMN_WEBPR2_1.MaxLength = 100;
@@ -3301,6 +3549,7 @@
             this.IMN_WEBPR2_1.Tag = "1";
             this.IMN_WEBPR2_1.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR2_1.UseColorSizMode = false;
             // 
             // IMN_WEBPR2_0
             // 
@@ -3322,6 +3571,7 @@
             this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
+            this.IMN_WEBPR2_0.IsTimemmss = false;
             this.IMN_WEBPR2_0.Length = 100;
             this.IMN_WEBPR2_0.Location = new System.Drawing.Point(267, 0);
             this.IMN_WEBPR2_0.MaxLength = 100;
@@ -3332,6 +3582,7 @@
             this.IMN_WEBPR2_0.Tag = "0";
             this.IMN_WEBPR2_0.Text = "ＸＸＸＸＸＸＸＸＸＸ";
             this.IMN_WEBPR2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_WEBPR2_0.UseColorSizMode = false;
             // 
             // IMT_PAYDT2_2
             // 
@@ -3353,6 +3604,7 @@
             this.IMT_PAYDT2_2.isMaxLengthErr = false;
             this.IMT_PAYDT2_2.IsNumber = true;
             this.IMT_PAYDT2_2.IsShop = false;
+            this.IMT_PAYDT2_2.IsTimemmss = false;
             this.IMT_PAYDT2_2.Length = 3;
             this.IMT_PAYDT2_2.Location = new System.Drawing.Point(191, 58);
             this.IMT_PAYDT2_2.MaxLength = 3;
@@ -3364,6 +3616,7 @@
             this.IMT_PAYDT2_2.Text = "999";
             this.IMT_PAYDT2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT2_2.UseColorSizMode = false;
             // 
             // IMT_PAYDT2_1
             // 
@@ -3385,6 +3638,7 @@
             this.IMT_PAYDT2_1.isMaxLengthErr = false;
             this.IMT_PAYDT2_1.IsNumber = true;
             this.IMT_PAYDT2_1.IsShop = false;
+            this.IMT_PAYDT2_1.IsTimemmss = false;
             this.IMT_PAYDT2_1.Length = 3;
             this.IMT_PAYDT2_1.Location = new System.Drawing.Point(191, 29);
             this.IMT_PAYDT2_1.MaxLength = 3;
@@ -3396,6 +3650,7 @@
             this.IMT_PAYDT2_1.Text = "999";
             this.IMT_PAYDT2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT2_1.UseColorSizMode = false;
             // 
             // IMT_PAYDT2_0
             // 
@@ -3417,6 +3672,7 @@
             this.IMT_PAYDT2_0.isMaxLengthErr = false;
             this.IMT_PAYDT2_0.IsNumber = true;
             this.IMT_PAYDT2_0.IsShop = false;
+            this.IMT_PAYDT2_0.IsTimemmss = false;
             this.IMT_PAYDT2_0.Length = 3;
             this.IMT_PAYDT2_0.Location = new System.Drawing.Point(191, 0);
             this.IMT_PAYDT2_0.MaxLength = 3;
@@ -3428,6 +3684,7 @@
             this.IMT_PAYDT2_0.Text = "999";
             this.IMT_PAYDT2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMT_PAYDT2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_PAYDT2_0.UseColorSizMode = false;
             // 
             // IMN_SURYO2_2
             // 
@@ -3449,6 +3706,7 @@
             this.IMN_SURYO2_2.isMaxLengthErr = false;
             this.IMN_SURYO2_2.IsNumber = true;
             this.IMN_SURYO2_2.IsShop = false;
+            this.IMN_SURYO2_2.IsTimemmss = false;
             this.IMN_SURYO2_2.Length = 3;
             this.IMN_SURYO2_2.Location = new System.Drawing.Point(678, 58);
             this.IMN_SURYO2_2.MaxLength = 3;
@@ -3460,6 +3718,7 @@
             this.IMN_SURYO2_2.Text = "999";
             this.IMN_SURYO2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO2_2.UseColorSizMode = false;
             // 
             // IMN_MEMBR2_2
             // 
@@ -3481,6 +3740,7 @@
             this.IMN_MEMBR2_2.isMaxLengthErr = false;
             this.IMN_MEMBR2_2.IsNumber = true;
             this.IMN_MEMBR2_2.IsShop = false;
+            this.IMN_MEMBR2_2.IsTimemmss = false;
             this.IMN_MEMBR2_2.Length = 5;
             this.IMN_MEMBR2_2.Location = new System.Drawing.Point(755, 58);
             this.IMN_MEMBR2_2.MaxLength = 5;
@@ -3492,6 +3752,7 @@
             this.IMN_MEMBR2_2.Text = "XXXX";
             this.IMN_MEMBR2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR2_2.UseColorSizMode = false;
             // 
             // IMN_SURYO2_1
             // 
@@ -3513,6 +3774,7 @@
             this.IMN_SURYO2_1.isMaxLengthErr = false;
             this.IMN_SURYO2_1.IsNumber = true;
             this.IMN_SURYO2_1.IsShop = false;
+            this.IMN_SURYO2_1.IsTimemmss = false;
             this.IMN_SURYO2_1.Length = 3;
             this.IMN_SURYO2_1.Location = new System.Drawing.Point(678, 29);
             this.IMN_SURYO2_1.MaxLength = 3;
@@ -3524,6 +3786,7 @@
             this.IMN_SURYO2_1.Text = "999";
             this.IMN_SURYO2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO2_1.UseColorSizMode = false;
             // 
             // IMN_MEMBR2_1
             // 
@@ -3545,6 +3808,7 @@
             this.IMN_MEMBR2_1.isMaxLengthErr = false;
             this.IMN_MEMBR2_1.IsNumber = true;
             this.IMN_MEMBR2_1.IsShop = false;
+            this.IMN_MEMBR2_1.IsTimemmss = false;
             this.IMN_MEMBR2_1.Length = 5;
             this.IMN_MEMBR2_1.Location = new System.Drawing.Point(755, 29);
             this.IMN_MEMBR2_1.MaxLength = 5;
@@ -3556,6 +3820,7 @@
             this.IMN_MEMBR2_1.Text = "XXXX";
             this.IMN_MEMBR2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR2_1.UseColorSizMode = false;
             // 
             // IMN_SURYO2_0
             // 
@@ -3577,6 +3842,7 @@
             this.IMN_SURYO2_0.isMaxLengthErr = false;
             this.IMN_SURYO2_0.IsNumber = true;
             this.IMN_SURYO2_0.IsShop = false;
+            this.IMN_SURYO2_0.IsTimemmss = false;
             this.IMN_SURYO2_0.Length = 3;
             this.IMN_SURYO2_0.Location = new System.Drawing.Point(678, 0);
             this.IMN_SURYO2_0.MaxLength = 3;
@@ -3588,6 +3854,7 @@
             this.IMN_SURYO2_0.Text = "999";
             this.IMN_SURYO2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SURYO2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SURYO2_0.UseColorSizMode = false;
             // 
             // IMN_MEMBR2_0
             // 
@@ -3609,6 +3876,7 @@
             this.IMN_MEMBR2_0.isMaxLengthErr = false;
             this.IMN_MEMBR2_0.IsNumber = true;
             this.IMN_MEMBR2_0.IsShop = false;
+            this.IMN_MEMBR2_0.IsTimemmss = false;
             this.IMN_MEMBR2_0.Length = 5;
             this.IMN_MEMBR2_0.Location = new System.Drawing.Point(755, 0);
             this.IMN_MEMBR2_0.MaxLength = 5;
@@ -3620,6 +3888,7 @@
             this.IMN_MEMBR2_0.Text = "XXXX";
             this.IMN_MEMBR2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMN_MEMBR2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_MEMBR2_0.UseColorSizMode = false;
             // 
             // IMT_ARIDT2_2
             // 
@@ -3641,6 +3910,7 @@
             this.IMT_ARIDT2_2.isMaxLengthErr = false;
             this.IMT_ARIDT2_2.IsNumber = true;
             this.IMT_ARIDT2_2.IsShop = false;
+            this.IMT_ARIDT2_2.IsTimemmss = false;
             this.IMT_ARIDT2_2.Length = 10;
             this.IMT_ARIDT2_2.Location = new System.Drawing.Point(817, 58);
             this.IMT_ARIDT2_2.MaxLength = 10;
@@ -3652,6 +3922,7 @@
             this.IMT_ARIDT2_2.Text = "2019/01/01";
             this.IMT_ARIDT2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT2_2.UseColorSizMode = false;
             // 
             // IMT_ARIDT2_1
             // 
@@ -3673,6 +3944,7 @@
             this.IMT_ARIDT2_1.isMaxLengthErr = false;
             this.IMT_ARIDT2_1.IsNumber = true;
             this.IMT_ARIDT2_1.IsShop = false;
+            this.IMT_ARIDT2_1.IsTimemmss = false;
             this.IMT_ARIDT2_1.Length = 10;
             this.IMT_ARIDT2_1.Location = new System.Drawing.Point(817, 29);
             this.IMT_ARIDT2_1.MaxLength = 10;
@@ -3684,6 +3956,7 @@
             this.IMT_ARIDT2_1.Text = "2019/01/01";
             this.IMT_ARIDT2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ARIDT2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ARIDT2_1.UseColorSizMode = false;
             // 
             // IMN_SALEP2_2
             // 
@@ -3705,6 +3978,7 @@
             this.IMN_SALEP2_2.isMaxLengthErr = false;
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
+            this.IMN_SALEP2_2.IsTimemmss = false;
             this.IMN_SALEP2_2.Length = 11;
             this.IMN_SALEP2_2.Location = new System.Drawing.Point(600, 58);
             this.IMN_SALEP2_2.MaxLength = 11;
@@ -3716,6 +3990,7 @@
             this.IMN_SALEP2_2.Text = "999";
             this.IMN_SALEP2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP2_2.UseColorSizMode = false;
             // 
             // IMN_SALEP2_1
             // 
@@ -3737,6 +4012,7 @@
             this.IMN_SALEP2_1.isMaxLengthErr = false;
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
+            this.IMN_SALEP2_1.IsTimemmss = false;
             this.IMN_SALEP2_1.Length = 11;
             this.IMN_SALEP2_1.Location = new System.Drawing.Point(600, 29);
             this.IMN_SALEP2_1.MaxLength = 11;
@@ -3748,6 +4024,7 @@
             this.IMN_SALEP2_1.Text = "999";
             this.IMN_SALEP2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP2_1.UseColorSizMode = false;
             // 
             // IMN_SALEP2_0
             // 
@@ -3769,6 +4046,7 @@
             this.IMN_SALEP2_0.isMaxLengthErr = false;
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
+            this.IMN_SALEP2_0.IsTimemmss = false;
             this.IMN_SALEP2_0.Length = 11;
             this.IMN_SALEP2_0.Location = new System.Drawing.Point(600, 0);
             this.IMN_SALEP2_0.MaxLength = 11;
@@ -3780,6 +4058,7 @@
             this.IMN_SALEP2_0.Text = "999";
             this.IMN_SALEP2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SALEP2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMN_SALEP2_0.UseColorSizMode = false;
             // 
             // IMT_ITMCD2_0
             // 
@@ -3800,6 +4079,7 @@
             this.IMT_ITMCD2_0.isMaxLengthErr = false;
             this.IMT_ITMCD2_0.IsNumber = true;
             this.IMT_ITMCD2_0.IsShop = false;
+            this.IMT_ITMCD2_0.IsTimemmss = false;
             this.IMT_ITMCD2_0.Length = 11;
             this.IMT_ITMCD2_0.Location = new System.Drawing.Point(53, 0);
             this.IMT_ITMCD2_0.MaxLength = 11;
@@ -3811,6 +4091,7 @@
             this.IMT_ITMCD2_0.Tag = "0";
             this.IMT_ITMCD2_0.Text = "XXXXXXXXX1X";
             this.IMT_ITMCD2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD2_0.UseColorSizMode = false;
             // 
             // IMT_ITMCD2_1
             // 
@@ -3831,6 +4112,7 @@
             this.IMT_ITMCD2_1.isMaxLengthErr = false;
             this.IMT_ITMCD2_1.IsNumber = true;
             this.IMT_ITMCD2_1.IsShop = false;
+            this.IMT_ITMCD2_1.IsTimemmss = false;
             this.IMT_ITMCD2_1.Length = 11;
             this.IMT_ITMCD2_1.Location = new System.Drawing.Point(53, 29);
             this.IMT_ITMCD2_1.MaxLength = 11;
@@ -3842,6 +4124,7 @@
             this.IMT_ITMCD2_1.Tag = "1";
             this.IMT_ITMCD2_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD2_1.UseColorSizMode = false;
             // 
             // IMT_ITMCD2_2
             // 
@@ -3862,6 +4145,7 @@
             this.IMT_ITMCD2_2.isMaxLengthErr = false;
             this.IMT_ITMCD2_2.IsNumber = true;
             this.IMT_ITMCD2_2.IsShop = false;
+            this.IMT_ITMCD2_2.IsTimemmss = false;
             this.IMT_ITMCD2_2.Length = 11;
             this.IMT_ITMCD2_2.Location = new System.Drawing.Point(53, 58);
             this.IMT_ITMCD2_2.MaxLength = 11;
@@ -3873,10 +4157,11 @@
             this.IMT_ITMCD2_2.Tag = "2";
             this.IMT_ITMCD2_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.IMT_ITMCD2_2.UseColorSizMode = false;
             // 
             // Vsb_Mei_1
             // 
-            this.Vsb_Mei_1.Location = new System.Drawing.Point(946, -3);
+            this.Vsb_Mei_1.Location = new System.Drawing.Point(998, -3);
             this.Vsb_Mei_1.Name = "Vsb_Mei_1";
             this.Vsb_Mei_1.Size = new System.Drawing.Size(17, 90);
             this.Vsb_Mei_1.TabIndex = 0;
@@ -3966,6 +4251,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label19);
@@ -3978,7 +4264,7 @@
             this.panel2.Controls.Add(this.label30);
             this.panel2.Location = new System.Drawing.Point(123, 578);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(978, 31);
+            this.panel2.Size = new System.Drawing.Size(1028, 31);
             this.panel2.TabIndex = 747;
             // 
             // label12
@@ -4159,6 +4445,7 @@
             this.txtMakerItem.isMaxLengthErr = false;
             this.txtMakerItem.IsNumber = false;
             this.txtMakerItem.IsShop = false;
+            this.txtMakerItem.IsTimemmss = false;
             this.txtMakerItem.Length = 50;
             this.txtMakerItem.Location = new System.Drawing.Point(823, 176);
             this.txtMakerItem.MaxLength = 50;
@@ -4168,6 +4455,68 @@
             this.txtMakerItem.TabIndex = 3;
             this.txtMakerItem.Text = "XXXXXXXXXXX1315";
             this.txtMakerItem.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            this.txtMakerItem.UseColorSizMode = false;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.DarkGray;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(946, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 27);
+            this.label3.TabIndex = 303;
+            this.label3.Text = "完納";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CHK_FINISH2_2
+            // 
+            this.CHK_FINISH2_2.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH2_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH2_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH2_2.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH2_2.Location = new System.Drawing.Point(945, 59);
+            this.CHK_FINISH2_2.Name = "CHK_FINISH2_2";
+            this.CHK_FINISH2_2.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH2_2.TabIndex = 669;
+            this.CHK_FINISH2_2.Tag = "2";
+            this.CHK_FINISH2_2.Text = "　";
+            this.CHK_FINISH2_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH2_2.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH2_1
+            // 
+            this.CHK_FINISH2_1.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH2_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH2_1.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH2_1.Location = new System.Drawing.Point(945, 30);
+            this.CHK_FINISH2_1.Name = "CHK_FINISH2_1";
+            this.CHK_FINISH2_1.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH2_1.TabIndex = 668;
+            this.CHK_FINISH2_1.Tag = "1";
+            this.CHK_FINISH2_1.Text = "　";
+            this.CHK_FINISH2_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH2_1.UseVisualStyleBackColor = false;
+            // 
+            // CHK_FINISH2_0
+            // 
+            this.CHK_FINISH2_0.BackColor = System.Drawing.Color.White;
+            this.CHK_FINISH2_0.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH2_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_FINISH2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_FINISH2_0.ForeColor = System.Drawing.Color.Black;
+            this.CHK_FINISH2_0.Location = new System.Drawing.Point(945, 1);
+            this.CHK_FINISH2_0.Name = "CHK_FINISH2_0";
+            this.CHK_FINISH2_0.Size = new System.Drawing.Size(55, 27);
+            this.CHK_FINISH2_0.TabIndex = 667;
+            this.CHK_FINISH2_0.Tag = "0";
+            this.CHK_FINISH2_0.Text = "　";
+            this.CHK_FINISH2_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_FINISH2_0.UseVisualStyleBackColor = false;
             // 
             // NyuukaNyuuryoku
             // 
@@ -4437,6 +4786,17 @@
         private System.Windows.Forms.Label lblMaker;
         private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_TextBox txtMakerItem;
+        private System.Windows.Forms.Label label2;
+        private GridControl.clsGridCheckBox CHK_FINISH_5;
+        private GridControl.clsGridCheckBox CHK_FINISH_4;
+        private GridControl.clsGridCheckBox CHK_FINISH_3;
+        private GridControl.clsGridCheckBox CHK_FINISH_2;
+        private GridControl.clsGridCheckBox CHK_FINISH_1;
+        private GridControl.clsGridCheckBox CHK_FINISH_0;
+        private GridControl.clsGridCheckBox CHK_FINISH2_2;
+        private GridControl.clsGridCheckBox CHK_FINISH2_1;
+        private GridControl.clsGridCheckBox CHK_FINISH2_0;
+        private System.Windows.Forms.Label label3;
     }
 }
 

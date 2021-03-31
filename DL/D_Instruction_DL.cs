@@ -98,6 +98,7 @@ namespace DL
                 { "@DeliveryName", new ValuePair { value1 = SqlDbType.VarChar, value2 = die.DeliveryName } },
                 { "@ChkHakkozumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = die.ChkHakkozumi.ToString() } },
                 { "@ChkSyukkazumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = die.ChkSyukkazumi.ToString() } },
+                { "@ChkSyukkaFuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = die.ChkSyukkaFuka.ToString() } },
             };
 
             return SelectData(dic, sp);

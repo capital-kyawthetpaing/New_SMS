@@ -10,9 +10,13 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using CKM_Controls;
+using System.Diagnostics;
+using System.IO;
+using DL;
 
 namespace Base.Client
 {
+
     public partial class ShopBaseForm : Form
     {
         #region "公開定数"
@@ -93,9 +97,88 @@ namespace Base.Client
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            //this.MaximizeBox = false;
-        }
 
+            if (IsMainMenuRunning())
+            {
+                if (IsExistSettingIn(out string path))
+                {
+                    try
+                    {
+                        if (!string.IsNullOrEmpty(path))
+                            pictureBox1.Image = new Bitmap(path);
+                    }
+                    catch { }
+                }
+            }
+
+        }
+        private bool IsMainMenuRunning()
+        {
+            if (Process.GetProcessesByName("MainMenu.exe").Count() > 0 || Process.GetProcessesByName("MainMenu").Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool IsExistSettingIn(out String path)
+        {
+            try
+            {
+                var IsDeployed = false;
+                var desti = @"C:\SMS\AppData";
+                System.Uri ui = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                var localpath = path = System.IO.Path.GetDirectoryName(ui.LocalPath);
+                if (desti.Replace("\\", "") == localpath.Replace("\\", "")) //Ondeployment
+                {
+                    IsDeployed = true;
+                }
+                path = localpath + @"\" + "Portfolio";
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+               
+                if (!File.Exists(localpath + @"\" + "CKM.ini"))
+                {
+                    return false;
+                }
+                
+                IniFile_DL idl = new IniFile_DL(localpath + @"\" + "CKM.ini");
+                
+                var Exten = "";
+                if ((idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin"))
+                {
+                    Exten = "C_Logo";
+                }
+                else if (idl.IniReadValue("Database", "Login_Type") == "HaspoStoreMenuLogin")
+                {
+                    Exten = "H_Logo";
+                }
+                else
+                {
+                    Exten = "T_Logo";
+                }
+                var FullPathLogo = "";
+                if (File.Exists(path + @"\" + Exten + ".png"))
+                {
+                    FullPathLogo = path + @"\" + Exten + ".png";
+                }
+                else if (File.Exists(path + @"\" + Exten + ".jpeg"))
+                {
+                    FullPathLogo = path + @"\" + Exten + ".jpeg";
+                }
+                else if (File.Exists(path + @"\" + Exten + ".jpg"))
+                {
+                    FullPathLogo = path + @"\" + Exten + ".jpg";
+                }
+                path = FullPathLogo;
+                return true;
+            }
+            catch {
+                path = null;
+                return false;
+            }
+        }
         /// <summary>
         /// EXEではなくFormとして起動した場合に必要な処理
         /// </summary>

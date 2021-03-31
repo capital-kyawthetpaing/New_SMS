@@ -283,6 +283,7 @@
             this.ckM_Button4 = new CKM_Controls.CKM_Button();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
+            this.ChkSyukkaFuka = new CKM_Controls.CKM_CheckBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
@@ -294,6 +295,7 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.ChkSyukkaFuka);
             this.PanelHeader.Controls.Add(this.ckM_CheckBox5);
             this.PanelHeader.Controls.Add(this.ckM_CheckBox4);
             this.PanelHeader.Controls.Add(this.ckM_CheckBox3);
@@ -328,6 +330,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox4, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox5, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ChkSyukkaFuka, 0);
             // 
             // PanelSearch
             // 
@@ -6397,6 +6400,18 @@
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.Btn_Tekiyo_Click);
             // 
+            // ChkSyukkaFuka
+            // 
+            this.ChkSyukkaFuka.AutoSize = true;
+            this.ChkSyukkaFuka.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkSyukkaFuka.Location = new System.Drawing.Point(287, 82);
+            this.ChkSyukkaFuka.Name = "ChkSyukkaFuka";
+            this.ChkSyukkaFuka.Size = new System.Drawing.Size(194, 16);
+            this.ChkSyukkaFuka.TabIndex = 11;
+            this.ChkSyukkaFuka.Text = "出荷不可分(入金不足)を含む";
+            this.ChkSyukkaFuka.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChkSyukkaFuka.UseVisualStyleBackColor = true;
+            // 
             // ShukkaShijiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6691,6 +6706,7 @@
         private System.Windows.Forms.Label LBL_DEDAY_2;
         private System.Windows.Forms.Label LBL_DEDAY_1;
         private System.Windows.Forms.Label LBL_DEDAY_0;
+        private CKM_Controls.CKM_CheckBox ChkSyukkaFuka;
     }
 }
 

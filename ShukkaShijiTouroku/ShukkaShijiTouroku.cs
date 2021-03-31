@@ -36,6 +36,7 @@ namespace ShukkaShijiTouroku
 
             ChkHakkozumi,
             ChkShukkazumi,
+            ChkSyukkaFuka,
 
             DeliveryPlanDate,
             CarrierCD,
@@ -964,7 +965,7 @@ namespace ShukkaShijiTouroku
             //keyLabels = new Control[] {  };
             detailControls = new Control[] { CboStoreCD, ckM_TextBox1 ,ckM_TextBox2 
                      ,ckM_CheckBox1,ckM_CheckBox2,ckM_CheckBox3,ckM_CheckBox4,ckM_CheckBox5
-                     ,ckM_TextBox5, ChkHakkozumi,ChkSyukkazumi,ckM_TextBox18, ckM_ComboBox1
+                     ,ckM_TextBox5, ChkHakkozumi,ChkSyukkazumi,ChkSyukkaFuka, ckM_TextBox18, ckM_ComboBox1
                          };
             detailLabels = new Control[] { };
             searchButtons = new Control[] { };
@@ -1418,6 +1419,11 @@ namespace ShukkaShijiTouroku
                 die.ChkSyukkazumi = 1;
             else
                 die.ChkSyukkazumi = 0;
+
+            if(ChkSyukkaFuka.Checked)
+                die.ChkSyukkaFuka = 1;
+            else
+                die.ChkSyukkaFuka = 0;
 
             return die;
         }

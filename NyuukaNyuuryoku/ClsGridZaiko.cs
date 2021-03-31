@@ -24,6 +24,7 @@ namespace NyuukaNyuuryoku
             internal string DirectFlg;      //
             internal string DeliveryPlanDate;
             internal string Customer;
+            internal bool ChkFinish;
 
             //隠し項目
             internal string CustomerCD;//(Hidden)
@@ -42,6 +43,7 @@ namespace NyuukaNyuuryoku
             internal string OrderTaxRitsu;
             internal string OrderWayKBN;
             internal string AliasKBN;
+            internal string OldSURYO;      //修正前入荷数
             internal bool isCopy;
         }
 
@@ -58,6 +60,7 @@ namespace NyuukaNyuuryoku
             SURYO,           // 入荷数
             DirectFlg,                 // 単位 
             DeliveryPlanDate,     //出荷予定日
+            ChkFinish,
             COUNT
         }
         internal ST_DArray_Grid[] g_DArray=null;
@@ -208,6 +211,12 @@ namespace NyuukaNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBoldForSmallLarge(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
+                w_CtlCol = (int)ColNO.ChkFinish;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkFinish);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
             }
         }
 
@@ -258,6 +267,9 @@ namespace NyuukaNyuuryoku
 
                 w_CtlCol = (int)ColNO.DeliveryPlanDate;     
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryPlanDate);
+
+                w_CtlCol = (int)ColNO.ChkFinish;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkFinish);
 
                 w_CtlCol = (int)ColNO.RowNo;    
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].RowNo);

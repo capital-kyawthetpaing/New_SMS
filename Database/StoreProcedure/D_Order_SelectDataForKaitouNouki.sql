@@ -62,53 +62,53 @@ BEGIN
           
           ,DH.OrderCD          
           ,(SELECT top 1 A.VendorName
-          FROM M_Vendor A 
-          WHERE A.VendorCD = DH.OrderCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.OrderDate
-		  AND A.VendorFlg = 1
-          ORDER BY A.ChangeDate desc) AS VendorName 
+              FROM M_Vendor A 
+             WHERE A.VendorCD = DH.OrderCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.OrderDate
+	           AND A.VendorFlg = 1
+             ORDER BY A.ChangeDate desc) AS VendorName 
                                    
           ,(SELECT top 1 A.StoreName 
               FROM M_Store A 
-              WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.OrderDate
-              AND A.DeleteFlg = 0
-              ORDER BY A.ChangeDate desc) AS StoreName
+             WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.OrderDate
+               AND A.DeleteFlg = 0
+             ORDER BY A.ChangeDate desc) AS StoreName
           
           ,(SELECT top 1 (CASE A.VariousFLG WHEN 1 THEN DM.ItemName ELSE A.SKUName END) AS SKUName 
               FROM M_SKU A 
-              WHERE A.AdminNO = DM.AdminNO 
-              AND A.ChangeDate <= DH.OrderDate 
-              AND A.DeleteFlg = 0
-              ORDER BY A.ChangeDate desc) AS SKUName
-            ,(SELECT top 1 M.ITemCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
+             WHERE A.AdminNO = DM.AdminNO 
+               AND A.ChangeDate <= DH.OrderDate 
+               AND A.DeleteFlg = 0
+             ORDER BY A.ChangeDate desc) AS SKUName
+          ,(SELECT top 1 M.ITemCD 
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= DH.OrderDate
+               AND M.AdminNO = DM.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS ITemCD
-            ,(SELECT top 1 M.AdminNO 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
+          ,(SELECT top 1 M.AdminNO 
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= DH.OrderDate
+               AND M.AdminNO = DM.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS AdminNO
-            ,(SELECT top 1 M.SKUCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
+          ,(SELECT top 1 M.SKUCD 
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= DH.OrderDate
+               AND M.AdminNO = DM.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS SKUCD
-            ,(SELECT top 1 M.JANCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
+          ,(SELECT top 1 M.JANCD 
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= DH.OrderDate
+               AND M.AdminNO = DM.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS JANCD
-            ,DM.MakerItem
-            ,(SELECT top 1 M.OrderAttentionNote 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
+          ,DM.MakerItem
+          ,(SELECT top 1 M.OrderAttentionNote 
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= DH.OrderDate
+               AND M.AdminNO = DM.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS OrderAttentionNote
              
           ,DM.CommentOutStore
@@ -127,9 +127,9 @@ BEGIN
           ,DA.ArrivalPlanSu
                           
           ,(SELECT top 1 M.Num2 
-            FROM M_MultiPorpose AS M 
-            WHERE M.ID = 206
-            AND M.[Key] = DA.ArrivalPlanCD
+              FROM M_MultiPorpose AS M 
+             WHERE M.ID = 206
+               AND M.[Key] = DA.ArrivalPlanCD
             ) AS Num2 
               
           ,1 AS DelFlg
@@ -139,8 +139,8 @@ BEGIN
     INTO #TableForKaitouNouki
     from D_Order AS DH
     INNER JOIN D_OrderDetails AS DM 
-        ON DM.OrderNO = DH.OrderNO 
-        AND DM.DeleteDateTime IS NULL
+       ON DM.OrderNO = DH.OrderNO 
+      AND DM.DeleteDateTime IS NULL
     /*
     INNER JOIN (SELECT  DM.OrderNO
             , CONVERT(varchar, MAX(DA.ArrivalPlanDate), 111) AS ArrivalPlanDate
@@ -170,7 +170,8 @@ BEGIN
             */
     LEFT OUTER JOIN D_ArrivalPlan AS DA
         ON DA.DeleteDateTime IS NULL
-        AND DM.OrderNO = DA.Number AND DM.OrderRows = DA.NumberRows
+        AND DM.OrderNO = DA.Number 
+        AND DM.OrderRows = DA.NumberRows
         AND DA.ArrivalPlanKBN = 1
         AND DA.ArrivalPlanSu <> 0
         AND DA.ArrivalPlanSu <> DA.ArrivalSu
