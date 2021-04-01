@@ -63,6 +63,7 @@ namespace NyuukaShoukai
             cboWarehouse.Bind(string.Empty,"");
             cboWarehouse.SelectedValue = SoukoCD;
             cboSourceWH.Bind(string.Empty,"");
+            //cboSourceWH.SelectedValue = SoukoCD;
         }
 
         private void SetRequireField()
@@ -114,7 +115,7 @@ namespace NyuukaShoukai
 
         public void Clear()
         {
-            Clear(panelcombo1);
+            //Clear(panelcombo1);
             Clear(panelcombo2);
             txtArrivalDay1.Clear();
             txtArrivalDay2.Clear();
@@ -128,7 +129,11 @@ namespace NyuukaShoukai
             ScItem.Clear();
             ScJanCD.Clear();
             ScSupplier.Clear();
-            
+
+            cboWarehouse.SelectedValue = SoukoCD;
+            dgvNyuukaShoukai.DataSource = null;
+            cboWarehouse.Focus();
+
         }
 
         #region DisplayData
