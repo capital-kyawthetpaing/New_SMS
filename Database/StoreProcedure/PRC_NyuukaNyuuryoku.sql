@@ -568,7 +568,8 @@ BEGIN
             BEGIN
                 --ÅyD_ReserveÅz         Update  Tableì]ëóédólÇd
                 UPDATE [D_Reserve] SET
-                       [ShippingPossibleDate] = @SYSDATE
+                       [ReserveSu]            = [ShippingPossibleSU] + @tblArrivalSu   --ñ¢ämîF
+                      ,[ShippingPossibleDate] = @SYSDATE
                       ,[ShippingPossibleSU]   = [ShippingPossibleSU] + @tblArrivalSu
                       ,[UpdateOperator]       = @Operator  
                       ,[UpdateDateTime]       = @SYSDATETIME
