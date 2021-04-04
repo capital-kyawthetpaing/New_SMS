@@ -655,7 +655,7 @@ BEGIN
                [ArrivalYetFLG]           = 1
               ,[ArrivalDate]             = NULL
               ,[StockSu]                 = [D_Stock].[StockSu] - tbl.ArrivalSu
-              ,[PlanSu]                  = tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
+              ,[PlanSu]                  = [D_Stock].[PlanSu] + tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
               --,[AllowableSu]             = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
               --,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
               --,[ReserveSu]               = [D_Stock].[ReserveSu] + ISNULL(DS2.ReserveSu,0)
