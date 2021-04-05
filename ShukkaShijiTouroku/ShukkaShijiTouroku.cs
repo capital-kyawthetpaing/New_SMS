@@ -1731,7 +1731,7 @@ namespace ShukkaShijiTouroku
                     if (ret)
                     {
 
-                        if (index == (int)EIndex.DeliveryName) //取込日
+                        if (index == (int)EIndex.ChkSyukkaFuka) 
                             btnSubF11.Focus();
 
                         else if (index == (int)EIndex.COUNT - 1)
