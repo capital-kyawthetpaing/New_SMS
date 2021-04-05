@@ -160,6 +160,14 @@ BEGIN
          WHERE [ArrivalNO] = @ArrivalNO
          ;
 
+        --ÅyD_ArrivalPlanÅz    ï™äÑï™çÌèúÅiDeleteÅjTableì]ëóédólÇbáA
+        DELETE FROM [D_ArrivalPlan]
+         WHERE EXISTS(SELECT 1
+                        FROM @Table AS tbl
+                       WHERE tbl.ArrivalPlanNO = [D_ArrivalPlan].OriginalArrivalPlanNO)
+           AND InsertOperator = 'Nyuuka'
+           ;
+
         --ÅyD_ArrivalPlanÅz     Update/Delete   Tableì]ëóédólÇbáA
         UPDATE [D_ArrivalPlan] SET
           -- [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu,0)		--Åö
@@ -655,7 +663,7 @@ BEGIN
                [ArrivalYetFLG]           = 1
               ,[ArrivalDate]             = NULL
               ,[StockSu]                 = [D_Stock].[StockSu] - tbl.ArrivalSu
-              ,[PlanSu]                  = tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
+              ,[PlanSu]                  = [D_Stock].[PlanSu] + tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
               --,[AllowableSu]             = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
               --,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
               --,[ReserveSu]               = [D_Stock].[ReserveSu] + ISNULL(DS2.ReserveSu,0)

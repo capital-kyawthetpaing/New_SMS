@@ -170,7 +170,7 @@ BEGIN
     OR ISNULL(W.TagName5,'') =  (CASE WHEN @TagName5 <> '' THEN @TagName5 ELSE ISNULL(W.TagName5,'') END)
     )
     AND MS.DeleteFlg = 0
-	AND MS.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE MS.JanCD END)
+	AND ISNULL(MS.JanCD,'') = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE ISNULL(MS.JanCD,'') END)
     AND MS.SKUCD = (CASE WHEN @SKUCD <> '' THEN @SKUCD ELSE MS.SKUCD END)
     AND ISNULL(MS.MainVendorCD,'') = (CASE WHEN @MainVendorCD <> '' THEN @MainVendorCD ELSE ISNULL(MS.MainVendorCD,'') END)
     AND ISNULL(MS.BrandCD,'') =  (CASE WHEN @BrandCD <> '' THEN @BrandCD ELSE ISNULL(MS.BrandCD,'') END)
