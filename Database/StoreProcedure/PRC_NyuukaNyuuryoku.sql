@@ -160,6 +160,14 @@ BEGIN
          WHERE [ArrivalNO] = @ArrivalNO
          ;
 
+        --yD_ArrivalPlanz    •ªŠ„•ªíœiDeletejTable“]‘—d—l‚b‡A
+        DELETE FROM [D_ArrivalPlan]
+         WHERE EXISTS(SELECT 1
+                        FROM @Table AS tbl
+                       WHERE tbl.ArrivalPlanNO = [D_ArrivalPlan].OriginalArrivalPlanNO)
+           AND InsertOperator = 'Nyuuka'
+           ;
+
         --yD_ArrivalPlanz     Update/Delete   Table“]‘—d—l‚b‡A
         UPDATE [D_ArrivalPlan] SET
           -- [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu,0)		--š
