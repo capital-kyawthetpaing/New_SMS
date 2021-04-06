@@ -2,7 +2,8 @@
 /****** Object:  StoredProcedure [dbo].[PRC_NyuukaNyuuryoku]    Script Date: 2020/10/01 19:36:58 ******/
 DROP PROCEDURE [dbo].[PRC_NyuukaNyuuryoku]
 GO
-DROP TYPE [dbo].[T_NyuukaN]
+
+--DROP TYPE [dbo].[T_NyuukaN]
 
 /****** Object:  StoredProcedure [dbo].[PRC_NyuukaNyuuryoku]    Script Date: 2020/10/01 19:36:58 ******/
 SET ANSI_NULLS ON
@@ -11,8 +12,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
+/*
 CREATE TYPE T_NyuukaN AS TABLE
     (
     [DataKbn][tinyint],		--1:yˆø“–z,2:y”­’z,3:yˆÚ“®z
@@ -33,6 +33,7 @@ CREATE TYPE T_NyuukaN AS TABLE
     [UpdateFlg][tinyint]
     )
 GO
+*/
 
 CREATE PROCEDURE [dbo].[PRC_NyuukaNyuuryoku]
     (@OperateMode    int,                 -- ˆ—‹æ•ªi1:V‹K 2:C³ 3:íœj

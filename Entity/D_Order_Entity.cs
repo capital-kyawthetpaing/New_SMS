@@ -106,6 +106,7 @@ namespace Entity
         public string Rate { get; set; }
         public string OrderTax { get; set; }
         public string OrderTaxRitsu { get; set; }
+        public string OriginalArrivalPlanNO        { get; set; }
 
     }
 }

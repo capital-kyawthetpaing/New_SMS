@@ -410,6 +410,7 @@ namespace DL
             AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, de.OrderHontaiGaku);
             AddParam(command, "@OrderTax", SqlDbType.Money, de.OrderTax);
             AddParam(command, "@OrderTaxRitsu", SqlDbType.Int, de.OrderTaxRitsu);
+            AddParam(command, "@OriginalArrivalPlanNO", SqlDbType.VarChar, de.OriginalArrivalPlanNO);
             AddParam(command, "@Operator", SqlDbType.VarChar, de.Operator);
 
             //OUTパラメータの追加

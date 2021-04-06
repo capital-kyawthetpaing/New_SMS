@@ -909,7 +909,7 @@ namespace NyuukaNyuuryoku
                             }
                             else
                             {
-                                check.Click += new System.EventHandler(CHK_Finish_Click);
+                                check.Click += new System.EventHandler(CHK_Finish_Click2);
                             }
                         }
                     }
@@ -2385,13 +2385,13 @@ namespace NyuukaNyuuryoku
                         bbl.ShowMessage("E102");
                         return false;
                     }
-                    //入荷総数≦0の場合、エラー
-                    if(bbl.Z_Set(detailControls[index].Text) <= 0)
-                    {
-                        //Ｅ１４３
-                        bbl.ShowMessage("E143","1","小さい");
-                        return false;
-                    }
+                    ////入荷総数≦0の場合、エラー
+                    //if(bbl.Z_Set(detailControls[index].Text) <= 0)
+                    //{
+                    //    //Ｅ１４３
+                    //    bbl.ShowMessage("E143","1","小さい");
+                    //    return false;
+                    //}
 
                     break;
             }
@@ -2456,7 +2456,7 @@ namespace NyuukaNyuuryoku
             {
                 case (int)ClsGridHikiate.ColNO.SURYO:
                     //ONにした明細に対して、入荷数≦0の場合、エラー
-                    if (mGrid.g_DArray[row].Check && bbl.Z_Set(mGrid.g_DArray[row].SURYO) <= 0)
+                    if (mGrid.g_DArray[row].Check && bbl.Z_Set(mGrid.g_DArray[row].SURYO) <= 0 && !mGrid.g_DArray[row].ChkFinish)
                     {
                         //Ｅ１４３
                         bbl.ShowMessage("E143", "1", "小さい");
@@ -2526,7 +2526,7 @@ namespace NyuukaNyuuryoku
             {
                 case (int)ClsGridHikiate.ColNO.SURYO:
                     //ONにした明細に対して、入荷数≦0の場合、エラー
-                    if (mGrid2.g_DArray[row].Check && bbl.Z_Set(mGrid2.g_DArray[row].SURYO) <= 0)
+                    if (mGrid2.g_DArray[row].Check && bbl.Z_Set(mGrid2.g_DArray[row].SURYO) <= 0 && !mGrid2.g_DArray[row].ChkFinish)
                     {
                         //Ｅ１４３
                         bbl.ShowMessage("E143", "1", "小さい");
@@ -2879,6 +2879,16 @@ namespace NyuukaNyuuryoku
                     bbl.ShowMessage("E277");
                     detailControls[(int)EIndex.Nyukasu].Focus();
                     return;
+                }else if(flgOff)
+                {
+                    //入荷総数≦0の場合、エラー
+                    if (bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text) <= 0)
+                    {
+                        //Ｅ１４３
+                        bbl.ShowMessage("E143", "1", "小さい");
+                        detailControls[(int)EIndex.Nyukasu].Focus();
+                        return;
+                    }
                 }
 
                 //各金額項目の再計算必要
@@ -2953,6 +2963,7 @@ namespace NyuukaNyuuryoku
             string OrderTaxRitsu = "";
             string OrderWayKBN = "";
             string AliasKBN = "";
+            string OriginalArrivalPlanNO = "";
 
             if (!CalcKin())
                 return;
@@ -2974,6 +2985,7 @@ namespace NyuukaNyuuryoku
                     OrderTaxRitsu = mGrid.g_DArray[w_Row].OrderTaxRitsu;
                     OrderWayKBN = mGrid.g_DArray[w_Row].OrderWayKBN;
                     AliasKBN = mGrid.g_DArray[w_Row].AliasKBN;
+                    OriginalArrivalPlanNO = mGrid.g_DArray[w_Row].ArrivalPlanNO;
                     break;
 
                 case 2:
@@ -2989,6 +3001,7 @@ namespace NyuukaNyuuryoku
                     OrderTaxRitsu = mGrid2.g_DArray[w_Row].OrderTaxRitsu;
                     OrderWayKBN = mGrid2.g_DArray[w_Row].OrderWayKBN;
                     AliasKBN = mGrid2.g_DArray[w_Row].AliasKBN;
+                    OriginalArrivalPlanNO = mGrid2.g_DArray[w_Row].ArrivalPlanNO;
                     break;
             }
 
@@ -3027,6 +3040,7 @@ namespace NyuukaNyuuryoku
             int TaxFractionKBN = GetTaxFractionKBN(VendorCD, de.ChangeDate);
             de.OrderTax = GetResultWithHasuKbn(TaxFractionKBN, bbl.Z_Set(OrderSuu) * bbl.Z_Set(OrderUnitPrice) * bbl.Z_Set(OrderTaxRitsu) / 100).ToString();
             de.OrderTaxRitsu = OrderTaxRitsu;
+            de.OriginalArrivalPlanNO = OriginalArrivalPlanNO;
             de.Operator = InOperatorCD;
 
             DataTable dt = nnbl.Order_Exec(de);
@@ -3839,6 +3853,37 @@ namespace NyuukaNyuuryoku
                 //EndSec();
             }
         }
+        private void CHK_Finish_Click2(object sender, EventArgs e)
+        {
+            try
+            {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_1.Value;
+
+                // 明細部  画面の範囲の内容を配列にセット
+                mGrid2.S_DispToArray(Vsb_Mei_1.Value);
+
+                if (mGrid2.g_DArray[w_Row].ChkFinish)
+                {
+                    mGrid2.g_DArray[w_Row].Check = true;
+                    mGrid2.g_DArray[w_Row].SURYO = "0";
+                }
+                CalcKin();
+
+                //配列の内容を画面にセット
+                mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -3926,40 +3971,19 @@ namespace NyuukaNyuuryoku
                 w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
-                ////新規モードの場合、ONにした明細に紐づく会員名または発注先を取得し、画面項目の会員名または発注先にセット
-                //if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-                //{
-                //    // 明細部  画面の範囲の内容を配列にセット
-                //    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+                // 明細部  画面の範囲の内容を配列にセット
+                mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-                //    //【引当】の明細をONにした場合、会員名←	画面転送表02のD_Reserve②.発注先								
-                //    if (mGrid.g_DArray[w_Row].Check)
-                //    {
-                //        mGrid.g_DArray[w_Row].SURYO = mGrid.g_DArray[w_Row].ReserveSu;
+                if (mGrid.g_DArray[w_Row].ChkFinish)
+                {
+                    mGrid.g_DArray[w_Row].Check = true;
+                    mGrid.g_DArray[w_Row].SURYO = "0";
+                }
+                CalcKin();
 
-                //        if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid.g_DArray[w_Row].VendorName))
-                //        {
-                //            //Ｅ１９９				
-                //            bbl.ShowMessage("E199");
-                //            mGrid.g_DArray[w_Row].Check = false;
+                //配列の内容を画面にセット
+                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-                //            //配列の内容を画面にセット
-                //            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                //            CalcKin();
-                //            return;
-                //        }
-                //        lblVendor.Text = mGrid.g_DArray[w_Row].VendorName;
-
-                //        CalcKin();
-
-                //        //配列の内容を画面にセット
-                //        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                //    }
-                //    else
-                //    {
-                //        ClearVendor();
-                //    }
-                //}
             }
             catch (Exception ex)
             {
