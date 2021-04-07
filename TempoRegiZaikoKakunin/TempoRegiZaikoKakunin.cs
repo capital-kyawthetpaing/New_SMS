@@ -67,7 +67,7 @@ namespace TempoRegiZaikoKakunin
 
         private void SetRequireField()
         {
-            txtJanCD.Require(true);
+            //txtJanCD.Require(true);
         }
 
         public override void FunctionProcess(int index)
@@ -125,10 +125,10 @@ namespace TempoRegiZaikoKakunin
                     if (dtSKU.Rows.Count == 1)
                     {
                         txtJanCD.Text = dtSKU.Rows[0]["JanCD"].ToString();
-                        lblItemName.Text = dtSKU.Rows[0]["SKUName"].ToString();
-                        lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["SizeName"].ToString();
-                        lblColorSize.Visible = true;
-                        lblItemName.Visible = true;
+                        //lblItemName.Text = dtSKU.Rows[0]["SKUName"].ToString();
+                        //lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["SizeName"].ToString();
+                        //lblColorSize.Visible = true;
+                        //lblItemName.Visible = true;
                     }
                     else
                     {
@@ -137,10 +137,10 @@ namespace TempoRegiZaikoKakunin
                         frmsku.ShowDialog();
                         if (!frmsku.flgCancel)
                         {
-                            lblItemName.Text = frmsku.SKUName;
-                            lblColorSize.Text = frmsku.SizeColorName;
-                            lblColorSize.Visible = true;
-                            lblItemName.Visible = true;
+                            //lblItemName.Text = frmsku.SKUName;
+                            //lblColorSize.Text = frmsku.SizeColorName;
+                            //lblColorSize.Visible = true;
+                            //lblItemName.Visible = true;
                         }
                     }
                     SelectData();
@@ -154,8 +154,8 @@ namespace TempoRegiZaikoKakunin
             else
             {
                 zaikobl.ShowMessage("E102");
-                lblItemName.Text = string.Empty;
-                lblColorSize.Text = string.Empty;
+                //lblItemName.Text = string.Empty;
+                //lblColorSize.Text = string.Empty;
                 txtJanCD.Focus();
 
             }
@@ -197,10 +197,10 @@ namespace TempoRegiZaikoKakunin
                         if (dtSKU.Rows.Count == 1)
                         {
                             txtJanCD.Text = dtSKU.Rows[0]["JanCD"].ToString();
-                            lblItemName.Text = dtSKU.Rows[0]["SKUName"].ToString();
-                            lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["SizeName"].ToString();
-                            lblColorSize.Visible = true;
-                            lblItemName.Visible = true;
+                            //lblItemName.Text = dtSKU.Rows[0]["SKUName"].ToString();
+                            //lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["SizeName"].ToString();
+                            //lblColorSize.Visible = true;
+                            //lblItemName.Visible = true;
                         }                          
                         else
                         {
@@ -209,10 +209,10 @@ namespace TempoRegiZaikoKakunin
                             frmsku.ShowDialog();
                             if(!frmsku.flgCancel)
                             {
-                                lblItemName.Text = frmsku.SKUName;
-                                lblColorSize.Text = frmsku.SizeColorName;
-                                lblColorSize.Visible = true;
-                                lblItemName.Visible = true;
+                                //lblItemName.Text = frmsku.SKUName;
+                                //lblColorSize.Text = frmsku.SizeColorName;
+                                //lblColorSize.Visible = true;
+                                //lblItemName.Visible = true;
                             }                           
                         }
                         SelectData();
@@ -226,8 +226,8 @@ namespace TempoRegiZaikoKakunin
                 else
                 {
                     zaikobl.ShowMessage("E102");
-                    lblItemName.Text = string.Empty;
-                    lblColorSize.Text = string.Empty;
+                    //lblItemName.Text = string.Empty;
+                    //lblColorSize.Text = string.Empty;
                     txtJanCD.Focus();
                     
                 }
@@ -261,10 +261,10 @@ namespace TempoRegiZaikoKakunin
             TempoRegiShouhinKensaku frmshouhin = new TempoRegiShouhinKensaku(InOperatorCD);
             frmshouhin.ShowDialog();
                  txtJanCD.Text = frmshouhin.JANCD;
-                lblItemName.Text = frmshouhin.SKUName;
-                lblColorSize.Text = frmshouhin.Color + " . " + frmshouhin.Size;
-                lblColorSize.Visible = true;
-                lblItemName.Visible = true;           
+                //lblItemName.Text = frmshouhin.SKUName;
+                //lblColorSize.Text = frmshouhin.Color + " . " + frmshouhin.Size;
+                //lblColorSize.Visible = true;
+                //lblItemName.Visible = true;           
         }
     }
 }

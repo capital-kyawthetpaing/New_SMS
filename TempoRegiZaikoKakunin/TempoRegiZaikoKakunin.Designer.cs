@@ -28,63 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtJanCD = new CKM_Controls.CKM_TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInquery = new CKM_Controls.CKM_Button();
-            this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
-            this.lblItemName = new CKM_Controls.CKMShop_Label();
-            this.lblColorSize = new CKM_Controls.CKMShop_Label();
-            this.chkColorSize = new CKM_Controls.CKMShop_CheckBox();
-            this.lblZaiko = new CKM_Controls.CKMShop_Label();
             this.lblProduct = new CKM_Controls.CKMShop_Label();
             this.lblplandate = new CKM_Controls.CKMShop_Label();
             this.lblsou = new CKM_Controls.CKMShop_Label();
             this.lblallowsou = new CKM_Controls.CKMShop_Label();
-            this.btnProduct = new CKM_Controls.CKM_Button();
             this.dgvZaikokakunin = new CKM_Controls.CKMShop_GridView();
             this.colWarehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblZaiko = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
+            this.lblCustomerNo = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
+            this.txtJanCD = new CKM_Controls.CKMShop_Label();
+            this.chkColorSize = new CKM_Controls.CKMShop_CheckBox();
+            this.lblRyousyuusho = new CKM_Controls.CKMShop_Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaikokakunin)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtJanCD
-            // 
-            this.txtJanCD.AllowMinus = false;
-            this.txtJanCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
-            this.txtJanCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
-            this.txtJanCD.BorderColor = false;
-            this.txtJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtJanCD.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
-            this.txtJanCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtJanCD.DecimalPlace = 0;
-            this.txtJanCD.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.txtJanCD.IntegerPart = 0;
-            this.txtJanCD.IsCorrectDate = true;
-            this.txtJanCD.isEnterKeyDown = false;
-            this.txtJanCD.IsFirstTime = true;
-            this.txtJanCD.isMaxLengthErr = false;
-            this.txtJanCD.IsNumber = true;
-            this.txtJanCD.IsShop = false;
-            this.txtJanCD.IsTimemmss = false;
-            this.txtJanCD.Length = 13;
-            this.txtJanCD.Location = new System.Drawing.Point(156, 100);
-            this.txtJanCD.MaxLength = 13;
-            this.txtJanCD.MoveNext = true;
-            this.txtJanCD.Name = "txtJanCD";
-            this.txtJanCD.Size = new System.Drawing.Size(240, 42);
-            this.txtJanCD.TabIndex = 1;
-            this.txtJanCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
-            this.txtJanCD.UseColorSizMode = false;
-            this.txtJanCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJanCD_KeyDown);
             // 
             // btnInquery
             // 
@@ -97,7 +68,7 @@
             this.btnInquery.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnInquery.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnInquery.ForeColor = System.Drawing.Color.Black;
-            this.btnInquery.Location = new System.Drawing.Point(1742, 95);
+            this.btnInquery.Location = new System.Drawing.Point(1751, 198);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
             this.btnInquery.Size = new System.Drawing.Size(150, 45);
@@ -105,83 +76,6 @@
             this.btnInquery.Text = "照会";
             this.btnInquery.UseVisualStyleBackColor = false;
             this.btnInquery.Click += new System.EventHandler(this.btnInquery_Click);
-            // 
-            // ckmShop_Label5
-            // 
-            this.ckmShop_Label5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label5.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label5.FontBold = true;
-            this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(110, 148);
-            this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(250, 35);
-            this.ckmShop_Label5.TabIndex = 46;
-            this.ckmShop_Label5.Text = "色サイズ違い ";
-            this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.ckmShop_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblItemName
-            // 
-            this.lblItemName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblItemName.BackColor = System.Drawing.Color.Transparent;
-            this.lblItemName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblItemName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblItemName.FontBold = true;
-            this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(417, 101);
-            this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(1100, 70);
-            this.lblItemName.TabIndex = 49;
-            this.lblItemName.Text = "ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            this.lblItemName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblItemName.Visible = false;
-            // 
-            // lblColorSize
-            // 
-            this.lblColorSize.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblColorSize.BackColor = System.Drawing.Color.Transparent;
-            this.lblColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblColorSize.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblColorSize.FontBold = true;
-            this.lblColorSize.ForeColor = System.Drawing.Color.Black;
-            this.lblColorSize.Location = new System.Drawing.Point(417, 186);
-            this.lblColorSize.Name = "lblColorSize";
-            this.lblColorSize.Size = new System.Drawing.Size(600, 40);
-            this.lblColorSize.TabIndex = 50;
-            this.lblColorSize.Text = "ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20 ";
-            this.lblColorSize.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblColorSize.Visible = false;
-            // 
-            // chkColorSize
-            // 
-            this.chkColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.chkColorSize.ForeColor = System.Drawing.Color.Black;
-            this.chkColorSize.IsattachedCaption = true;
-            this.chkColorSize.Location = new System.Drawing.Point(363, 149);
-            this.chkColorSize.Name = "chkColorSize";
-            this.chkColorSize.Size = new System.Drawing.Size(35, 35);
-            this.chkColorSize.TabIndex = 51;
-            this.chkColorSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkColorSize.UseVisualStyleBackColor = true;
-            // 
-            // lblZaiko
-            // 
-            this.lblZaiko.AutoSize = true;
-            this.lblZaiko.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZaiko.BackColor = System.Drawing.Color.Transparent;
-            this.lblZaiko.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblZaiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblZaiko.FontBold = true;
-            this.lblZaiko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblZaiko.Location = new System.Drawing.Point(125, 235);
-            this.lblZaiko.Name = "lblZaiko";
-            this.lblZaiko.Size = new System.Drawing.Size(163, 35);
-            this.lblZaiko.TabIndex = 52;
-            this.lblZaiko.Text = "在庫倉庫";
-            this.lblZaiko.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblZaiko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblProduct
             // 
@@ -192,11 +86,11 @@
             this.lblProduct.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblProduct.FontBold = true;
             this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblProduct.Location = new System.Drawing.Point(426, 236);
+            this.lblProduct.Location = new System.Drawing.Point(436, 256);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(125, 35);
+            this.lblProduct.Size = new System.Drawing.Size(874, 35);
             this.lblProduct.TabIndex = 53;
-            this.lblProduct.Text = "商　品";
+            this.lblProduct.Text = "品　番／商品名             JANCD／カラーサイズ\t\t";
             this.lblProduct.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -209,7 +103,7 @@
             this.lblplandate.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblplandate.FontBold = true;
             this.lblplandate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblplandate.Location = new System.Drawing.Point(1284, 236);
+            this.lblplandate.Location = new System.Drawing.Point(1323, 256);
             this.lblplandate.Name = "lblplandate";
             this.lblplandate.Size = new System.Drawing.Size(200, 35);
             this.lblplandate.TabIndex = 54;
@@ -226,7 +120,7 @@
             this.lblsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblsou.FontBold = true;
             this.lblsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblsou.Location = new System.Drawing.Point(1564, 236);
+            this.lblsou.Location = new System.Drawing.Point(1561, 256);
             this.lblsou.Name = "lblsou";
             this.lblsou.Size = new System.Drawing.Size(126, 35);
             this.lblsou.TabIndex = 55;
@@ -243,7 +137,7 @@
             this.lblallowsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblallowsou.FontBold = true;
             this.lblallowsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblallowsou.Location = new System.Drawing.Point(1696, 237);
+            this.lblallowsou.Location = new System.Drawing.Point(1691, 257);
             this.lblallowsou.Name = "lblallowsou";
             this.lblallowsou.Size = new System.Drawing.Size(145, 35);
             this.lblallowsou.TabIndex = 56;
@@ -251,44 +145,23 @@
             this.lblallowsou.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.lblallowsou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnProduct
-            // 
-            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
-            this.btnProduct.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
-            this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduct.DefaultBtnSize = true;
-            this.btnProduct.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.btnProduct.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnProduct.ForeColor = System.Drawing.Color.Black;
-            this.btnProduct.Location = new System.Drawing.Point(37, 100);
-            this.btnProduct.Margin = new System.Windows.Forms.Padding(1);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(120, 45);
-            this.btnProduct.TabIndex = 57;
-            this.btnProduct.Text = "商 品";
-            this.btnProduct.UseVisualStyleBackColor = false;
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            // 
             // dgvZaikokakunin
             // 
-            this.dgvZaikokakunin.AllowUserToAddRows = false;
             this.dgvZaikokakunin.AllowUserToDeleteRows = false;
             this.dgvZaikokakunin.AllowUserToResizeRows = false;
             this.dgvZaikokakunin.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.Control;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvZaikokakunin.BackgroundColor = System.Drawing.Color.White;
             this.dgvZaikokakunin.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvZaikokakunin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvZaikokakunin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvZaikokakunin.ColumnHeadersHeight = 22;
             this.dgvZaikokakunin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvZaikokakunin.ColumnHeadersVisible = false;
@@ -298,14 +171,14 @@
             this.colDate,
             this.colQuantity,
             this.colNo});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvZaikokakunin.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvZaikokakunin.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvZaikokakunin.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.dgvZaikokakunin.EnableHeadersVisualStyles = false;
             this.dgvZaikokakunin.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -314,14 +187,14 @@
             this.dgvZaikokakunin.HeaderHeight_ = 22;
             this.dgvZaikokakunin.HeaderVisible = false;
             this.dgvZaikokakunin.Height_ = 550;
-            this.dgvZaikokakunin.Location = new System.Drawing.Point(34, 275);
+            this.dgvZaikokakunin.Location = new System.Drawing.Point(34, 295);
             this.dgvZaikokakunin.Name = "dgvZaikokakunin";
             this.dgvZaikokakunin.RowHeadersWidth = 70;
             this.dgvZaikokakunin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvZaikokakunin.RowHeight_ = 50;
             this.dgvZaikokakunin.RowTemplate.Height = 50;
             this.dgvZaikokakunin.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvZaikokakunin.Size = new System.Drawing.Size(1830, 680);
+            this.dgvZaikokakunin.Size = new System.Drawing.Size(1830, 650);
             this.dgvZaikokakunin.TabIndex = 48;
             this.dgvZaikokakunin.UseRowNo = true;
             this.dgvZaikokakunin.UseSetting = true;
@@ -336,7 +209,7 @@
             this.colWarehouse.ReadOnly = true;
             this.colWarehouse.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colWarehouse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colWarehouse.Width = 320;
+            this.colWarehouse.Width = 330;
             // 
             // colProduct
             // 
@@ -346,80 +219,229 @@
             this.colProduct.ReadOnly = true;
             this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colProduct.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colProduct.Width = 840;
+            this.colProduct.Width = 875;
             // 
             // colDate
             // 
             this.colDate.DataPropertyName = "StockDate";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle15;
             this.colDate.HeaderText = "入荷予定日";
             this.colDate.MaxInputLength = 8;
             this.colDate.Name = "colDate";
             this.colDate.ReadOnly = true;
             this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colDate.Width = 240;
+            this.colDate.Width = 230;
             // 
             // colQuantity
             // 
             this.colQuantity.DataPropertyName = "StockNum";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle16;
             this.colQuantity.HeaderText = "在庫数";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
             this.colQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colQuantity.Width = 180;
+            this.colQuantity.Width = 150;
             // 
             // colNo
             // 
             this.colNo.DataPropertyName = "KanoSu";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle17;
             this.colNo.HeaderText = "可能数";
             this.colNo.Name = "colNo";
             this.colNo.ReadOnly = true;
             this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 165;
+            this.colNo.Width = 150;
+            // 
+            // lblZaiko
+            // 
+            this.lblZaiko.AutoSize = true;
+            this.lblZaiko.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblZaiko.BackColor = System.Drawing.Color.Transparent;
+            this.lblZaiko.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblZaiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblZaiko.FontBold = true;
+            this.lblZaiko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblZaiko.Location = new System.Drawing.Point(125, 255);
+            this.lblZaiko.Name = "lblZaiko";
+            this.lblZaiko.Size = new System.Drawing.Size(163, 35);
+            this.lblZaiko.TabIndex = 52;
+            this.lblZaiko.Text = "在庫倉庫";
+            this.lblZaiko.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblZaiko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckmShop_Label1
+            // 
+            this.ckmShop_Label1.AutoSize = true;
+            this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label1.FontBold = true;
+            this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label1.Location = new System.Drawing.Point(63, 84);
+            this.ckmShop_Label1.Name = "ckmShop_Label1";
+            this.ckmShop_Label1.Size = new System.Drawing.Size(106, 30);
+            this.ckmShop_Label1.TabIndex = 57;
+            this.ckmShop_Label1.Text = "品　番";
+            this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            // 
+            // ckmShop_Label2
+            // 
+            this.ckmShop_Label2.AutoSize = true;
+            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label2.FontBold = true;
+            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label2.Location = new System.Drawing.Point(63, 125);
+            this.ckmShop_Label2.Name = "ckmShop_Label2";
+            this.ckmShop_Label2.Size = new System.Drawing.Size(106, 30);
+            this.ckmShop_Label2.TabIndex = 58;
+            this.ckmShop_Label2.Text = "商品名";
+            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            // 
+            // ckmShop_Label3
+            // 
+            this.ckmShop_Label3.AutoSize = true;
+            this.ckmShop_Label3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label3.FontBold = true;
+            this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label3.Location = new System.Drawing.Point(76, 163);
+            this.ckmShop_Label3.Name = "ckmShop_Label3";
+            this.ckmShop_Label3.Size = new System.Drawing.Size(93, 30);
+            this.ckmShop_Label3.TabIndex = 59;
+            this.ckmShop_Label3.Text = "JANCD";
+            this.ckmShop_Label3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            // 
+            // lblCustomerNo
+            // 
+            this.lblCustomerNo.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblCustomerNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustomerNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCustomerNo.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblCustomerNo.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblCustomerNo.FontBold = false;
+            this.lblCustomerNo.ForeColor = System.Drawing.Color.Black;
+            this.lblCustomerNo.Location = new System.Drawing.Point(172, 78);
+            this.lblCustomerNo.Name = "lblCustomerNo";
+            this.lblCustomerNo.Size = new System.Drawing.Size(650, 42);
+            this.lblCustomerNo.TabIndex = 66;
+            this.lblCustomerNo.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+            this.lblCustomerNo.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
+            this.lblCustomerNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ckmShop_Label4
+            // 
+            this.ckmShop_Label4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label4.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.ckmShop_Label4.FontBold = false;
+            this.ckmShop_Label4.ForeColor = System.Drawing.Color.Black;
+            this.ckmShop_Label4.Location = new System.Drawing.Point(172, 119);
+            this.ckmShop_Label4.Name = "ckmShop_Label4";
+            this.ckmShop_Label4.Size = new System.Drawing.Size(1200, 42);
+            this.ckmShop_Label4.TabIndex = 67;
+            this.ckmShop_Label4.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+            this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
+            this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtJanCD
+            // 
+            this.txtJanCD.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.txtJanCD.BackColor = System.Drawing.Color.Transparent;
+            this.txtJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJanCD.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtJanCD.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.txtJanCD.FontBold = false;
+            this.txtJanCD.ForeColor = System.Drawing.Color.Black;
+            this.txtJanCD.Location = new System.Drawing.Point(172, 160);
+            this.txtJanCD.Name = "txtJanCD";
+            this.txtJanCD.Size = new System.Drawing.Size(300, 42);
+            this.txtJanCD.TabIndex = 68;
+            this.txtJanCD.Text = "XXXXXXXXXXXXX";
+            this.txtJanCD.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
+            this.txtJanCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // chkColorSize
+            // 
+            this.chkColorSize.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.chkColorSize.Checked = true;
+            this.chkColorSize.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkColorSize.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.chkColorSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.chkColorSize.IsattachedCaption = false;
+            this.chkColorSize.Location = new System.Drawing.Point(368, 208);
+            this.chkColorSize.Name = "chkColorSize";
+            this.chkColorSize.Size = new System.Drawing.Size(35, 35);
+            this.chkColorSize.TabIndex = 69;
+            this.chkColorSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkColorSize.UseVisualStyleBackColor = true;
+            // 
+            // lblRyousyuusho
+            // 
+            this.lblRyousyuusho.AutoSize = true;
+            this.lblRyousyuusho.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblRyousyuusho.BackColor = System.Drawing.Color.Transparent;
+            this.lblRyousyuusho.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblRyousyuusho.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblRyousyuusho.FontBold = true;
+            this.lblRyousyuusho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblRyousyuusho.Location = new System.Drawing.Point(128, 208);
+            this.lblRyousyuusho.Name = "lblRyousyuusho";
+            this.lblRyousyuusho.Size = new System.Drawing.Size(237, 35);
+            this.lblRyousyuusho.TabIndex = 70;
+            this.lblRyousyuusho.Text = "色サイズ違い";
+            this.lblRyousyuusho.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblRyousyuusho.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmTempoRegiZaikoKakunin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1913, 961);
-            this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.chkColorSize);
+            this.Controls.Add(this.lblRyousyuusho);
+            this.Controls.Add(this.txtJanCD);
+            this.Controls.Add(this.ckmShop_Label4);
+            this.Controls.Add(this.lblCustomerNo);
+            this.Controls.Add(this.ckmShop_Label3);
+            this.Controls.Add(this.ckmShop_Label2);
+            this.Controls.Add(this.ckmShop_Label1);
             this.Controls.Add(this.lblallowsou);
             this.Controls.Add(this.lblsou);
             this.Controls.Add(this.lblplandate);
             this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblZaiko);
-            this.Controls.Add(this.chkColorSize);
-            this.Controls.Add(this.lblColorSize);
-            this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.dgvZaikokakunin);
-            this.Controls.Add(this.ckmShop_Label5);
             this.Controls.Add(this.btnInquery);
-            this.Controls.Add(this.txtJanCD);
             this.Name = "frmTempoRegiZaikoKakunin";
             this.Text = "店舗レジ 在庫確認";
             this.Load += new System.EventHandler(this.frmTempoRegiZaikoKakunin_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmTempoRegiZaikoKakunin_KeyUp);
-            this.Controls.SetChildIndex(this.txtJanCD, 0);
             this.Controls.SetChildIndex(this.btnInquery, 0);
-            this.Controls.SetChildIndex(this.ckmShop_Label5, 0);
             this.Controls.SetChildIndex(this.dgvZaikokakunin, 0);
-            this.Controls.SetChildIndex(this.lblItemName, 0);
-            this.Controls.SetChildIndex(this.lblColorSize, 0);
-            this.Controls.SetChildIndex(this.chkColorSize, 0);
             this.Controls.SetChildIndex(this.lblZaiko, 0);
             this.Controls.SetChildIndex(this.lblProduct, 0);
             this.Controls.SetChildIndex(this.lblplandate, 0);
             this.Controls.SetChildIndex(this.lblsou, 0);
             this.Controls.SetChildIndex(this.lblallowsou, 0);
-            this.Controls.SetChildIndex(this.btnProduct, 0);
+            this.Controls.SetChildIndex(this.ckmShop_Label1, 0);
+            this.Controls.SetChildIndex(this.ckmShop_Label2, 0);
+            this.Controls.SetChildIndex(this.ckmShop_Label3, 0);
+            this.Controls.SetChildIndex(this.lblCustomerNo, 0);
+            this.Controls.SetChildIndex(this.ckmShop_Label4, 0);
+            this.Controls.SetChildIndex(this.txtJanCD, 0);
+            this.Controls.SetChildIndex(this.lblRyousyuusho, 0);
+            this.Controls.SetChildIndex(this.chkColorSize, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaikokakunin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -427,23 +449,25 @@
         }
 
         #endregion
-        private CKM_Controls.CKM_TextBox txtJanCD;
         private CKM_Controls.CKM_Button btnInquery;
-        private CKM_Controls.CKMShop_Label ckmShop_Label5;
-        private CKM_Controls.CKMShop_Label lblItemName;
-        private CKM_Controls.CKMShop_Label lblColorSize;
-        private CKM_Controls.CKMShop_CheckBox chkColorSize;
-        private CKM_Controls.CKMShop_Label lblZaiko;
         private CKM_Controls.CKMShop_Label lblProduct;
         private CKM_Controls.CKMShop_Label lblplandate;
         private CKM_Controls.CKMShop_Label lblsou;
         private CKM_Controls.CKMShop_Label lblallowsou;
-        private CKM_Controls.CKM_Button btnProduct;
         private CKM_Controls.CKMShop_GridView dgvZaikokakunin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWarehouse;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
+        private CKM_Controls.CKMShop_Label lblZaiko;
+        private CKM_Controls.CKMShop_Label ckmShop_Label1;
+        private CKM_Controls.CKMShop_Label ckmShop_Label2;
+        private CKM_Controls.CKMShop_Label ckmShop_Label3;
+        private CKM_Controls.CKMShop_Label lblCustomerNo;
+        private CKM_Controls.CKMShop_Label ckmShop_Label4;
+        private CKM_Controls.CKMShop_Label txtJanCD;
+        private CKM_Controls.CKMShop_CheckBox chkColorSize;
+        private CKM_Controls.CKMShop_Label lblRyousyuusho;
     }
 }
