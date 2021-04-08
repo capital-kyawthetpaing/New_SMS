@@ -46,7 +46,10 @@ namespace TempoRegiZaikoKakunin
             //    txtJanCD.Text = JanCD;
             //}
             this.Text = "在庫確認";
-            txtJanCD.Focus();
+            txtbin.Text = string.Empty;
+            txtProductName.Text = string.Empty;
+            txtJanCD.Text = string.Empty;
+            txtbin.Focus();
             //SetRequireField();
             chkColorSize.Checked = false;
             BtnP_text = "決　定";
@@ -92,19 +95,26 @@ namespace TempoRegiZaikoKakunin
 
         public bool ErrorCheck()
         {
-            if (string.IsNullOrWhiteSpace(txtJanCD.Text))
-            {
-                zaikobl.ShowMessage("E102");
-                txtJanCD.Focus();
-                return false;
-            }
+            //if (string.IsNullOrWhiteSpace(txtJanCD.Text))
+            //{
+            //    zaikobl.ShowMessage("E102");
+            //    txtJanCD.Focus();
+            //    return false;
+            //}
             //else
             //{
             //    kne.JanCD = txtJanCD.Text;
             //    DataTable dtname = new DataTable();
 
             //}
-            
+            if(string.IsNullOrWhiteSpace(txtbin.Text) && string.IsNullOrWhiteSpace(txtProductName.Text) &&
+                string.IsNullOrWhiteSpace(txtJanCD.Text))
+            {
+                zaikobl.ShowMessage("E111");
+                txtJanCD.Focus();
+                return false;
+            }
+
             return true;
         }
 
@@ -116,7 +126,13 @@ namespace TempoRegiZaikoKakunin
         private void btnInquery_Click(object sender, EventArgs e)
         {
             //SelectData();
-            if (!string.IsNullOrWhiteSpace(txtJanCD.Text))
+            if (string.IsNullOrWhiteSpace(txtbin.Text) && string.IsNullOrWhiteSpace(txtProductName.Text) &&
+               string.IsNullOrWhiteSpace(txtJanCD.Text))
+            {
+                zaikobl.ShowMessage("E111");
+                txtJanCD.Focus();
+            }
+            else if (!string.IsNullOrWhiteSpace(txtJanCD.Text))
             {
                 DataTable dtSKU = SelectSKUData(txtJanCD.Text);
                 if (dtSKU.Rows.Count > 0)
@@ -151,14 +167,14 @@ namespace TempoRegiZaikoKakunin
                     txtJanCD.Focus();
                 }
             }
-            else
-            {
-                zaikobl.ShowMessage("E102");
-                //lblItemName.Text = string.Empty;
-                //lblColorSize.Text = string.Empty;
-                txtJanCD.Focus();
+            //else
+            //{
+            //    zaikobl.ShowMessage("E102");
+            //    //lblItemName.Text = string.Empty;
+            //    //lblColorSize.Text = string.Empty;
+            //    txtJanCD.Focus();
 
-            }
+            //}
         }
 
         private void SelectData()
