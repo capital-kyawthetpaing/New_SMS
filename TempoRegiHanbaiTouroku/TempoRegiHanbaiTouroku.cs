@@ -1242,6 +1242,7 @@ namespace TempoRegiHanbaiTouroku
                     //frm.dt = dtUpdate;
                     frm.dt = dtSales;
                     frm.ParSaleRate = mParSaleRate;
+                    frm.HaspoMode = mHaspoMode;
 
                     frm.ShowDialog();
 
