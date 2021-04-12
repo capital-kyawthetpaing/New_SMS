@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInquery = new CKM_Controls.CKM_Button();
             this.lblProduct = new CKM_Controls.CKMShop_Label();
             this.lblplandate = new CKM_Controls.CKMShop_Label();
@@ -151,18 +151,18 @@
             this.dgvZaikokakunin.AllowUserToDeleteRows = false;
             this.dgvZaikokakunin.AllowUserToResizeRows = false;
             this.dgvZaikokakunin.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.Control;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvZaikokakunin.BackgroundColor = System.Drawing.Color.White;
             this.dgvZaikokakunin.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvZaikokakunin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvZaikokakunin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvZaikokakunin.ColumnHeadersHeight = 22;
             this.dgvZaikokakunin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvZaikokakunin.ColumnHeadersVisible = false;
@@ -172,14 +172,14 @@
             this.colDate,
             this.colQuantity,
             this.colNo});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvZaikokakunin.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvZaikokakunin.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvZaikokakunin.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.dgvZaikokakunin.EnableHeadersVisualStyles = false;
             this.dgvZaikokakunin.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -225,8 +225,8 @@
             // colDate
             // 
             this.colDate.DataPropertyName = "StockDate";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.colDate.HeaderText = "入荷予定日";
             this.colDate.MaxInputLength = 8;
             this.colDate.Name = "colDate";
@@ -238,8 +238,8 @@
             // colQuantity
             // 
             this.colQuantity.DataPropertyName = "StockNum";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle4;
             this.colQuantity.HeaderText = "在庫数";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
@@ -250,8 +250,8 @@
             // colNo
             // 
             this.colNo.DataPropertyName = "KanoSu";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle5;
             this.colNo.HeaderText = "可能数";
             this.colNo.Name = "colNo";
             this.colNo.ReadOnly = true;
@@ -284,7 +284,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.FontBold = true;
-            this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckmShop_Label1.Location = new System.Drawing.Point(63, 84);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(125, 35);
@@ -300,7 +300,7 @@
             this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label2.FontBold = true;
-            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label2.ForeColor = System.Drawing.Color.Black;
             this.ckmShop_Label2.Location = new System.Drawing.Point(63, 125);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
             this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
@@ -316,7 +316,7 @@
             this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.FontBold = true;
-            this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label3.ForeColor = System.Drawing.Color.Black;
             this.ckmShop_Label3.Location = new System.Drawing.Point(76, 163);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(110, 35);

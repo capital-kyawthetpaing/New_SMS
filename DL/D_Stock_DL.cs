@@ -17,6 +17,8 @@ namespace DL
                    {"@JanCD",new ValuePair { value1=SqlDbType.VarChar,value2=kne.JanCD} } ,
                    {"@DataCheck",new ValuePair { value1=SqlDbType.TinyInt,value2=kne.dataCheck} } ,
                    { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = kne.Operator } },
+                   {"@ItemCD",new ValuePair { value1=SqlDbType.VarChar,value2=kne.ItemCD} } ,
+                   {"@SKUName",new ValuePair { value1=SqlDbType.VarChar,value2=kne.SKUName} } ,
                };
             return SelectData(dic, "D_Stock_DataSelect");
         }
