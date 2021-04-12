@@ -282,5 +282,7 @@ namespace TempoRegiZaikoKakunin
                 //lblColorSize.Visible = true;
                 //lblItemName.Visible = true;           
         }
+
+       
     }
 }
