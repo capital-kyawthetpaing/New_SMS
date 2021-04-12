@@ -276,17 +276,6 @@ namespace TempoRegiZaikoKakunin
             DataSending();
         }
 
-        private void btnProduct_Click(object sender, EventArgs e)
-        {
-            TempoRegiShouhinKensaku frmshouhin = new TempoRegiShouhinKensaku(InOperatorCD);
-            frmshouhin.ShowDialog();
-                 txtJanCD.Text = frmshouhin.JANCD;
-                //lblItemName.Text = frmshouhin.SKUName;
-                //lblColorSize.Text = frmshouhin.Color + " . " + frmshouhin.Size;
-                //lblColorSize.Visible = true;
-                //lblItemName.Visible = true;           
-        }
-
         private void btnProductName_Click(object sender, EventArgs e)
         {
             TempoRegiShouhinKensaku frmshouhin = new TempoRegiShouhinKensaku(InOperatorCD);
