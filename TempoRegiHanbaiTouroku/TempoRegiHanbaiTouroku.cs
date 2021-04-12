@@ -1202,7 +1202,8 @@ namespace TempoRegiHanbaiTouroku
                     }
                     break;
                 case 2:
-                    ExecOK();
+                    if(!string.IsNullOrWhiteSpace( txtJanCD.Text))
+                        ExecOK();
 
                     //その日付で店舗精算データが存在する場合はエラーとする Ｅ２５２
                     D_StoreCalculation_Entity ds = new D_StoreCalculation_Entity();
