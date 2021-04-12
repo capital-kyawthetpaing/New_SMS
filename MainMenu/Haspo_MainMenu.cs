@@ -135,6 +135,17 @@ namespace MainMenu
         }
         private void Haspo_MainMenu_Load(object sender, EventArgs e)
         {
+            Iconic ic = new Iconic();
+            if (ic.IsExistSettingIn(out string path))
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(path);
+                }
+                catch
+                {
+                }
+            }
             this.ResizeRedraw = false;
             BindButtonName();
             ChangeFont();

@@ -261,8 +261,6 @@ namespace ShiireShoukaiDetails
             if(ErrorCheck())
             {
                 dpd_entity.ProgramID = "1";
-               
-
                 dpd_entity = GetDPurchaseDetails();
 
                 DataTable dtResult = new DataTable();

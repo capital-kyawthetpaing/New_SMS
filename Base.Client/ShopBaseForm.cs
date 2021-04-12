@@ -137,14 +137,11 @@ namespace Base.Client
                 {
                     Directory.CreateDirectory(path);
                 }
-               
                 if (!File.Exists(localpath + @"\" + "CKM.ini"))
                 {
                     return false;
                 }
-                
                 IniFile_DL idl = new IniFile_DL(localpath + @"\" + "CKM.ini");
-                
                 var Exten = "";
                 if ((idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin"))
                 {

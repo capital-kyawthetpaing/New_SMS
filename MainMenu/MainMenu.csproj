@@ -142,6 +142,7 @@
     <Compile Include="Haspo_MainMenu.Designer.cs">
       <DependentUpon>Haspo_MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Iconic.cs" />
     <Compile Include="MainmenuLogin.cs">
       <SubType>Form</SubType>
     </Compile>
