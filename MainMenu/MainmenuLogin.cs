@@ -90,6 +90,18 @@ namespace MainMenu
         }
         private void MainmenuLogin_Load(object sender, EventArgs e)
         {
+
+            Iconic ic = new Iconic();
+            if (ic.IsExistSettingIn(out string path))
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(path);
+                }
+                catch
+                {
+                }
+            }
             loginbl = new Login_BL();
             txtOperatorCD.Focus();
             Add_ButtonDesign();

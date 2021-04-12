@@ -100,10 +100,12 @@ BEGIN
     DECLARE @ChangeDate varchar(10);
     DECLARE @OperateModeNm varchar(10);
     DECLARE @KeyItem varchar(100);
+    DECLARE @Haspo tinyint;
     
     SET @W_ERR = 0;
     SET @SYSDATETIME = SYSDATETIME();
     SET @ChangeDate = convert(VARCHAR,@SYSDATETIME,111);
+    SET @Haspo = (SELECT HASPO FROM M_Control WHERE [MainKey] = 1);
     
     DECLARE @Program varchar(50);
     
@@ -1096,7 +1098,7 @@ BEGIN
 
         --テーブル転送仕様Ｌ 会員マスター
         UPDATE M_Customer SET
-            LastPoint = LastPoint + @LastPoint
+            LastPoint = LastPoint + @LastPoint - (CASE @Haspo WHEN 1 THEN @PointAmount ELSE 0 END) --ポイント消化
             ,TotalPoint = TotalPoint + @LastPoint
             ,TotalPurchase = TotalPurchase + @SalesGaku-@SalesTax
             ,LastSalesDate = @ChangeDate
@@ -1117,7 +1119,7 @@ BEGIN
         
         --テーブル転送仕様Ｌ 会員マスター ポイント加算（取消）
         UPDATE M_Customer SET
-            LastPoint = LastPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
+            LastPoint = LastPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO) + (CASE @Haspo WHEN 1 THEN @PointAmount ELSE 0 END) --ポイント消化（取消）
             ,TotalPoint = TotalPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
             ,TotalPurchase = TotalPurchase - (SELECT DS. SalesHontaiGaku FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
             ,UpdateOperator = @Operator
@@ -2075,9 +2077,28 @@ BEGIN
     BEGIN
         SET @OperateModeNm = '訂正';
 
+        SELECT @OldDiscount = DS.DiscountAmount
+        --  ,DS.BillingAmount
+            ,@OldAdvanceAmount = DS.AdvanceAmount
+            ,@OldPointAmount = DS.PointAmount
+            ,@OldDenominationCD = DS.CardDenominationCD
+            ,@OldCardAmount = DS.CardAmount
+            ,@OldCashAmount = DS.CashAmount
+        --  ,DS.DepositAmount
+            ,@OldRefundAmount = DS.RefundAmount
+            ,@OldCreditAmount = DS.CreditAmount
+            ,@OldDenominationCD1 = DS.Denomination1CD
+            ,@OldDenomination1Amount = DS.Denomination1Amount
+            ,@OldDenominationCD2 = DS.Denomination2CD
+            ,@OldDenomination2Amount = DS.Denomination2Amount
+        FROM D_StorePayment As DS
+        WHERE SalesNO = @SalesNO
+        AND StoreCD = @StoreCD
+        ;
+        
         --テーブル転送仕様Ｌ 会員マスター ポイント加算（取消）
         UPDATE M_Customer SET
-            LastPoint = LastPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
+            LastPoint = LastPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO) + (CASE @Haspo WHEN 1 THEN @OldPointAmount ELSE 0 END)
             ,TotalPoint = TotalPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
             ,TotalPurchase = TotalPurchase - (SELECT DS. SalesHontaiGaku FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
             ,UpdateOperator = @Operator
@@ -2161,24 +2182,6 @@ BEGIN
        WHERE DM.SalesNO = @SalesNO
        ;
 
-        SELECT @OldDiscount = DS.DiscountAmount
-        --  ,DS.BillingAmount
-            ,@OldAdvanceAmount = DS.AdvanceAmount
-            ,@OldPointAmount = DS.PointAmount
-            ,@OldDenominationCD = DS.CardDenominationCD
-            ,@OldCardAmount = DS.CardAmount
-            ,@OldCashAmount = DS.CashAmount
-        --  ,DS.DepositAmount
-            ,@OldRefundAmount = DS.RefundAmount
-            ,@OldCreditAmount = DS.CreditAmount
-            ,@OldDenominationCD1 = DS.Denomination1CD
-            ,@OldDenomination1Amount = DS.Denomination1Amount
-            ,@OldDenominationCD2 = DS.Denomination2CD
-            ,@OldDenomination2Amount = DS.Denomination2Amount
-        FROM D_StorePayment As DS
-        WHERE SalesNO = @SalesNO
-        AND StoreCD = @StoreCD
-        ;
         
         IF @OldPointAmount <> 0
         BEGIN
@@ -3006,7 +3009,7 @@ BEGIN
         
         --テーブル転送仕様Ｌ 会員マスター
         UPDATE M_Customer SET
-            LastPoint = LastPoint + @LastPoint
+            LastPoint = LastPoint + @LastPoint - (CASE @Haspo WHEN 1 THEN @PointAmount ELSE 0 END)
             ,TotalPoint = TotalPoint + @LastPoint
             ,TotalPurchase = TotalPurchase + @SalesGaku-@SalesTax
             ,LastSalesDate = @ChangeDate
@@ -3026,7 +3029,7 @@ BEGIN
 
         --テーブル転送仕様Ｌ 会員マスター ポイント加算（取消）
         UPDATE M_Customer SET
-            LastPoint = LastPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
+            LastPoint = LastPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO) + (CASE @Haspo WHEN 1 THEN @PointAmount ELSE 0 END)
             ,TotalPoint = TotalPoint - (SELECT DS.LastPoint FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
             ,TotalPurchase = TotalPurchase - (SELECT DS. SalesHontaiGaku FROM D_Sales AS DS WHERE DS.SalesNO = @SalesNO)
             ,UpdateOperator = @Operator
