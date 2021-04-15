@@ -973,7 +973,7 @@ BEGIN
                ,tbl.MoveRows  As NumberRows
                ,NULL	--CommentInStore]
                ,NULL	--CommentOutStore]
-               ,0	--HikiateFLG]
+               ,1	--HikiateFLG]
                ,0	--UpdateCancelKBN]
                ,NULL	--DeliveryOrderComIn]
                ,NULL	--DeliveryOrderComOut]                        
@@ -2595,7 +2595,7 @@ BEGIN
                        ,NULL    --[CommentOutStore]
                        ,NULL    --[InvoiceNO]
                        ,NULL    --[DeliveryPlanDate]
-                       ,0   --[HikiateFLG]
+                       ,1   --[HikiateFLG]
                        ,0   --[IncludeFLG]
                        ,0   --[OntheDayFLG]
                        ,0   --[ExpressFLG]
