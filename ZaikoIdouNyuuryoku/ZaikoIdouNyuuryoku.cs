@@ -248,7 +248,8 @@ namespace ZaikoIdouNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentOutStore, 0].CellCtl = IMN_WEBPR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentInStore, 0].CellCtl = IMT_REMAK_0;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.SKUCD, 0].CellCtl = IMT_JUONO_0;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectedDate, 0].CellCtl = IMT_ARIDT_0;     //移動日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 0].CellCtl = IMT_YTIDT_0;     //希望
 
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
@@ -265,7 +266,8 @@ namespace ZaikoIdouNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentInStore, 1].CellCtl = IMT_REMAK_1;
 
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.SKUCD, 1].CellCtl = IMT_JUONO_1;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectedDate, 1].CellCtl = IMT_ARIDT_1;     //移動日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 1].CellCtl = IMT_YTIDT_1;     //希望
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 2].CellCtl = CHK_DELCK_2;
@@ -280,7 +282,8 @@ namespace ZaikoIdouNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentOutStore, 2].CellCtl = IMN_WEBPR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentInStore, 2].CellCtl = IMT_REMAK_2;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.SKUCD, 2].CellCtl = IMT_JUONO_2;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectedDate, 2].CellCtl = IMT_ARIDT_2;     //移動日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 2].CellCtl = IMT_YTIDT_2;     //希望
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
@@ -296,7 +299,8 @@ namespace ZaikoIdouNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentOutStore, 3].CellCtl = IMN_WEBPR_3;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentInStore, 3].CellCtl = IMT_REMAK_3;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.SKUCD, 3].CellCtl = IMT_JUONO_3;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectedDate, 3].CellCtl = IMT_ARIDT_3;     //移動日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 3].CellCtl = IMT_YTIDT_3;     //希望
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
@@ -312,7 +316,8 @@ namespace ZaikoIdouNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentOutStore, 4].CellCtl = IMN_WEBPR_4;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentInStore, 4].CellCtl = IMT_REMAK_4;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.SKUCD, 4].CellCtl = IMT_JUONO_4;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectedDate, 4].CellCtl = IMT_ARIDT_4;     //移動日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 4].CellCtl = IMT_YTIDT_4;     //希望
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 5].CellCtl = CHK_DELCK_5;
@@ -327,7 +332,8 @@ namespace ZaikoIdouNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentOutStore, 5].CellCtl = IMN_WEBPR_5;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.CommentInStore, 5].CellCtl = IMT_REMAK_5;
             mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.SKUCD, 5].CellCtl = IMT_JUONO_5;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectedDate, 5].CellCtl = IMT_ARIDT_5;     //移動日
+            mGrid.g_MK_Ctrl[(int)ClsGridIdo.ColNO.ExpectReturnDate, 5].CellCtl = IMT_YTIDT_5;     //希望
 
         }
 
@@ -1272,7 +1278,8 @@ namespace ZaikoIdouNyuuryoku
                     mGrid.g_DArray[i].MoveSu = bbl.Z_SetStr(row["MoveSu"]);   // 
                     mGrid.g_DArray[i].IraiSu = bbl.Z_SetStr(row["RequestSu"]);   // 
                     //mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
-                    mGrid.g_DArray[i].ExpectReturnDate = row["ExpectedDate"].ToString();
+                    mGrid.g_DArray[i].ExpectedDate = row["ExpectedDate"].ToString();
+                    mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
                     mGrid.g_DArray[i].EvaluationPrice = bbl.Z_Set(row["EvaluationPrice"]);
 
                     mGrid.g_DArray[i].FromRackNO = row["FromRackNO"].ToString();
@@ -2363,6 +2370,7 @@ namespace ZaikoIdouNyuuryoku
             dt.Columns.Add("NewJanCD", typeof(string));
 
             dt.Columns.Add("DeliveryPlanNO", typeof(string));
+            dt.Columns.Add("ExpectedDate", typeof(DateTime));
             dt.Columns.Add("ExpectReturnDate", typeof(DateTime));
             dt.Columns.Add("VendorCD", typeof(string));
             dt.Columns.Add("CommentInStore", typeof(string));
@@ -2416,6 +2424,7 @@ namespace ZaikoIdouNyuuryoku
                     , mGrid.g_DArray[RW].NewJanCD == "" ? null : mGrid.g_DArray[RW].NewJanCD
 
                     , mGrid.g_DArray[RW].DeliveryPlanNO == "" ? null : mGrid.g_DArray[RW].DeliveryPlanNO
+                    , mGrid.g_DArray[RW].ExpectedDate == "" ? null : mGrid.g_DArray[RW].ExpectedDate
                     , mGrid.g_DArray[RW].ExpectReturnDate == "" ? null : mGrid.g_DArray[RW].ExpectReturnDate
                     , mGrid.g_DArray[RW].VendorCD == "" ? null : mGrid.g_DArray[RW].VendorCD
                     , mGrid.g_DArray[RW].CommentInStore == "" ? null : mGrid.g_DArray[RW].CommentInStore
@@ -3646,6 +3655,7 @@ namespace ZaikoIdouNyuuryoku
             }
             detailControls[(int)EIndex.ToRackNO].Text = mGrid.g_DArray[row].ToRackNO;
             detailControls[(int)EIndex.ExpectReturnDate].Text = mGrid.g_DArray[row].ExpectReturnDate;
+             lblExpectedDate.Text = mGrid.g_DArray[row].ExpectedDate;
             detailControls[(int)EIndex.EvaluationPrice].Text =bbl.Z_SetStr( mGrid.g_DArray[row].EvaluationPrice);
             detailControls[(int)EIndex.RemarksInStore].Text = mGrid.g_DArray[row].CommentInStore;
             //CboSoukoCD.SelectedValue = mGrid.g_DArray[row].VendorCD;
@@ -3706,6 +3716,7 @@ namespace ZaikoIdouNyuuryoku
                 mGrid.g_DArray[row].EvaluationPrice = bbl.Z_Set(detailControls[(int)EIndex.EvaluationPrice].Text);
                 mGrid.g_DArray[row].FromRackNO = detailControls[(int)EIndex.FromRackNO].Text;
                 mGrid.g_DArray[row].ToRackNO = detailControls[(int)EIndex.ToRackNO].Text;
+                mGrid.g_DArray[row].ExpectedDate = lblExpectedDate.Text;
                 mGrid.g_DArray[row].ExpectReturnDate = detailControls[(int)EIndex.ExpectReturnDate].Text;
                 mGrid.g_DArray[row].CommentInStore = detailControls[(int)EIndex.RemarksInStore].Text;
                 mGrid.g_DArray[row].VendorCD = detailControls[(int)EIndex.HenpinSaki].Text;
@@ -3787,7 +3798,7 @@ namespace ZaikoIdouNyuuryoku
             lblSKUNameF.Text = "";
             lblIraiSu.Text = "";
             lblGeneralPriceOutTax.Text = "";
-            lblExpectReturnDate.Text = "";
+            lblExpectedDate.Text = "";
             ScVendorCD.LabelText = "";
 
             mAdminNO = "";
