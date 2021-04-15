@@ -40,6 +40,10 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.lblJyuchuNo = new System.Windows.Forms.Label();
+            this.lblDeliveryName = new System.Windows.Forms.Label();
+            this.lblDeliveryAddress1 = new System.Windows.Forms.Label();
+            this.lblDecidedDeliveryDate = new System.Windows.Forms.Label();
             this.colJuchuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +53,6 @@
             this.colJuchuuSuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colArrivePlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDirectFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblJyuchuNo = new System.Windows.Forms.Label();
-            this.lblDeliveryName = new System.Windows.Forms.Label();
-            this.lblDeliveryAddress1 = new System.Windows.Forms.Label();
-            this.lblDecidedDeliveryDate = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.PanelHeader.Controls.Add(this.lblJyuchuNo);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.ckM_Label3);
-            this.PanelHeader.Size = new System.Drawing.Size(1152, 98);
+            this.PanelHeader.Size = new System.Drawing.Size(1270, 98);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.lblJyuchuNo, 0);
@@ -151,12 +151,56 @@
             this.GvDetail.ReadOnly = true;
             this.GvDetail.RowHeight_ = 20;
             this.GvDetail.RowTemplate.Height = 20;
-            this.GvDetail.Size = new System.Drawing.Size(1133, 322);
+            this.GvDetail.Size = new System.Drawing.Size(1235, 322);
             this.GvDetail.TabIndex = 20;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
+            // 
+            // lblJyuchuNo
+            // 
+            this.lblJyuchuNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblJyuchuNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJyuchuNo.Location = new System.Drawing.Point(81, 11);
+            this.lblJyuchuNo.Name = "lblJyuchuNo";
+            this.lblJyuchuNo.Size = new System.Drawing.Size(100, 20);
+            this.lblJyuchuNo.TabIndex = 52;
+            this.lblJyuchuNo.Text = "XXXXXXXXX1XX3";
+            this.lblJyuchuNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDeliveryName
+            // 
+            this.lblDeliveryName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblDeliveryName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDeliveryName.Location = new System.Drawing.Point(81, 38);
+            this.lblDeliveryName.Name = "lblDeliveryName";
+            this.lblDeliveryName.Size = new System.Drawing.Size(270, 20);
+            this.lblDeliveryName.TabIndex = 53;
+            this.lblDeliveryName.Text = "出荷先名ＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
+            this.lblDeliveryName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDeliveryAddress1
+            // 
+            this.lblDeliveryAddress1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblDeliveryAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDeliveryAddress1.Location = new System.Drawing.Point(357, 38);
+            this.lblDeliveryAddress1.Name = "lblDeliveryAddress1";
+            this.lblDeliveryAddress1.Size = new System.Drawing.Size(517, 20);
+            this.lblDeliveryAddress1.TabIndex = 54;
+            this.lblDeliveryAddress1.Text = "出荷先住所ＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.lblDeliveryAddress1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDecidedDeliveryDate
+            // 
+            this.lblDecidedDeliveryDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblDecidedDeliveryDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDecidedDeliveryDate.Location = new System.Drawing.Point(81, 65);
+            this.lblDecidedDeliveryDate.Name = "lblDecidedDeliveryDate";
+            this.lblDecidedDeliveryDate.Size = new System.Drawing.Size(100, 20);
+            this.lblDecidedDeliveryDate.TabIndex = 55;
+            this.lblDecidedDeliveryDate.Text = "9999/99/99 99時";
+            this.lblDecidedDeliveryDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // colJuchuNO
             // 
@@ -172,7 +216,7 @@
             this.colSKUCD.HeaderText = "SKUCD";
             this.colSKUCD.Name = "colSKUCD";
             this.colSKUCD.ReadOnly = true;
-            this.colSKUCD.Width = 120;
+            this.colSKUCD.Width = 180;
             // 
             // colJANCD
             // 
@@ -242,55 +286,11 @@
             this.colDirectFLG.ReadOnly = true;
             this.colDirectFLG.Width = 80;
             // 
-            // lblJyuchuNo
-            // 
-            this.lblJyuchuNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblJyuchuNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJyuchuNo.Location = new System.Drawing.Point(81, 11);
-            this.lblJyuchuNo.Name = "lblJyuchuNo";
-            this.lblJyuchuNo.Size = new System.Drawing.Size(100, 20);
-            this.lblJyuchuNo.TabIndex = 52;
-            this.lblJyuchuNo.Text = "XXXXXXXXX1XX3";
-            this.lblJyuchuNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblDeliveryName
-            // 
-            this.lblDeliveryName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblDeliveryName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDeliveryName.Location = new System.Drawing.Point(81, 38);
-            this.lblDeliveryName.Name = "lblDeliveryName";
-            this.lblDeliveryName.Size = new System.Drawing.Size(270, 20);
-            this.lblDeliveryName.TabIndex = 53;
-            this.lblDeliveryName.Text = "出荷先名ＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
-            this.lblDeliveryName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblDeliveryAddress1
-            // 
-            this.lblDeliveryAddress1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblDeliveryAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDeliveryAddress1.Location = new System.Drawing.Point(357, 38);
-            this.lblDeliveryAddress1.Name = "lblDeliveryAddress1";
-            this.lblDeliveryAddress1.Size = new System.Drawing.Size(517, 20);
-            this.lblDeliveryAddress1.TabIndex = 54;
-            this.lblDeliveryAddress1.Text = "出荷先住所ＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
-            this.lblDeliveryAddress1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblDecidedDeliveryDate
-            // 
-            this.lblDecidedDeliveryDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblDecidedDeliveryDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDecidedDeliveryDate.Location = new System.Drawing.Point(81, 65);
-            this.lblDecidedDeliveryDate.Name = "lblDecidedDeliveryDate";
-            this.lblDecidedDeliveryDate.Size = new System.Drawing.Size(100, 20);
-            this.lblDecidedDeliveryDate.TabIndex = 55;
-            this.lblDecidedDeliveryDate.Text = "9999/99/99 99時";
-            this.lblDecidedDeliveryDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // FrmShukkaShiji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 517);
+            this.ClientSize = new System.Drawing.Size(1270, 517);
             this.Controls.Add(this.GvDetail);
             this.F11Visible = true;
             this.F12Visible = true;
