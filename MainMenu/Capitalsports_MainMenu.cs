@@ -91,6 +91,17 @@ namespace MainMenu
         }
         private void Capital_MainMenu_Load(object sender, EventArgs e)
         {
+            Iconic ic = new Iconic();
+            if (ic.IsExistSettingIn(out string path))
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(path);
+                }
+                catch
+                {
+                }
+            }
             Clear_Text(panel_left);
             Clear_Text(panel_right);
             BindButtonName();

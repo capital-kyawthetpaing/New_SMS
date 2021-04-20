@@ -4,6 +4,8 @@
 DROP PROCEDURE [dbo].[PRC_ZaikoIdouNyuuryoku]
 GO
 
+DROP TYPE [dbo].[T_Ido]
+
 /****** Object:  StoredProcedure [dbo].[PRC_ZaikoIdouNyuuryoku]    Script Date: 2020/10/01 19:37:40 ******/
 SET ANSI_NULLS ON
 GO
@@ -13,33 +15,34 @@ GO
 
 
 
---CREATE TYPE T_Ido AS TABLE
---    (
---    [MoveRows] [int],
+CREATE TYPE T_Ido AS TABLE
+    (
+    [MoveRows] [int],
 
---    [SKUCD] [varchar](30) ,
---    [AdminNO] [int] ,
---    [JanCD] [varchar](13) ,
---    [MoveSu] [int] ,
---    [OldMoveSu] [int] ,
---    [EvaluationPrice] [money] ,
---    [FromRackNO]  [varchar](11) ,
---    [ToRackNO]  [varchar](11) ,
---    [NewSKUCD] [varchar](30) ,
---    [NewAdminNO] [int] ,
---    [NewJanCD] [varchar](13) ,
---    [DeliveryPlanNO]  [varchar](11) ,
---    [ExpectReturnDate] date,
---    [VendorCD] varchar(13),
---    [CommentInStore] varchar(80),
---    [RequestRows] int,
---    [AnswerKBN] tinyint,
+    [SKUCD] [varchar](30) ,
+    [AdminNO] [int] ,
+    [JanCD] [varchar](13) ,
+    [MoveSu] [int] ,
+    [OldMoveSu] [int] ,
+    [EvaluationPrice] [money] ,
+    [FromRackNO]  [varchar](11) ,
+    [ToRackNO]  [varchar](11) ,
+    [NewSKUCD] [varchar](30) ,
+    [NewAdminNO] [int] ,
+    [NewJanCD] [varchar](13) ,
+    [DeliveryPlanNO]  [varchar](11) ,
+    [ExpectedDate] date,
+    [ExpectReturnDate] date,
+    [VendorCD] varchar(13),
+    [CommentInStore] varchar(80),
+    [RequestRows] int,
+    [AnswerKBN] tinyint,
 
-----    [StockNO] [varchar](11) ,
---    [ArrivalPlanNO] [varchar](11) ,
---    [UpdateFlg][tinyint]
---    )
---GO
+--    [StockNO] [varchar](11) ,
+    [ArrivalPlanNO] [varchar](11) ,
+    [UpdateFlg][tinyint]
+    )
+GO
 
 CREATE PROCEDURE [dbo].[PRC_ZaikoIdouNyuuryoku]
    (@OperateMode    int,                 -- èàóùãÊï™Åi1:êVãK 2:èCê≥ 3:çÌèúÅj
@@ -844,7 +847,7 @@ BEGIN
                    ,NULL	--[CommentInStore]
                    ,NULL	--[CommentOutStore]
                    ,NULL	--[InvoiceNO]
-                   ,NULL	--[DeliveryPlanDate]
+                   ,@MoveDate	--[DeliveryPlanDate]
                    ,1	--[HikiateFLG]
                    ,0	--[IncludeFLG]
                    ,0	--[OntheDayFLG]
@@ -973,7 +976,7 @@ BEGIN
                ,tbl.MoveRows  As NumberRows
                ,NULL	--CommentInStore]
                ,NULL	--CommentOutStore]
-               ,0	--HikiateFLG]
+               ,1	--HikiateFLG]
                ,0	--UpdateCancelKBN]
                ,NULL	--DeliveryOrderComIn]
                ,NULL	--DeliveryOrderComOut]                        
@@ -1823,11 +1826,12 @@ BEGIN
             BEGIN 
                 --ÅyD_DeliveryPlanÅzîzëóó\íËèÓïÒ  Tableì]ëóédólJá@
                 UPDATE [D_DeliveryPlan] SET
-                       [DeliveryKBN]     = 2    --(1:îÃîÑÅA2:ëqå…à⁄ìÆ)
-                      ,[Number]          = @MoveNO
-                      ,[DeliverySoukoCD] = @ToSoukoCD
-                      ,[UpdateOperator]  = @Operator  
-                      ,[UpdateDateTime]  = @SYSDATETIME
+                       [DeliveryKBN]      = 2    --(1:îÃîÑÅA2:ëqå…à⁄ìÆ)
+                      ,[Number]           = @MoveNO
+                      ,[DeliverySoukoCD]  = @ToSoukoCD
+                      ,[DeliveryPlanDate] = @MoveDate
+                      ,[UpdateOperator]   = @Operator  
+                      ,[UpdateDateTime]   = @SYSDATETIME
                       
                  FROM @Table AS tbl
                  WHERE @MoveNO = D_DeliveryPlan.Number
@@ -2594,8 +2598,8 @@ BEGIN
                        ,NULL    --[CommentInStore]
                        ,NULL    --[CommentOutStore]
                        ,NULL    --[InvoiceNO]
-                       ,NULL    --[DeliveryPlanDate]
-                       ,0   --[HikiateFLG]
+                       ,@MoveDate    --[DeliveryPlanDate]
+                       ,1   --[HikiateFLG]
                        ,0   --[IncludeFLG]
                        ,0   --[OntheDayFLG]
                        ,0   --[ExpressFLG]

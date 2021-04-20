@@ -114,7 +114,7 @@ BEGIN
           ,DM.CommentOutStore
           ,DM.CommentInStore
 
-          ,DM.OrderSu
+          ,DM.OrderSu - DM.TotalArrivalSu  AS OrderSu
           ,DM.OrderUnitPrice
           ,DM.OrderHontaiGaku
           

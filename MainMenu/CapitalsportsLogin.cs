@@ -60,6 +60,17 @@ namespace MainMenu
             //pop.TitleText = "New Updates are Available Now!";
             //pop.ContentText = "Press F11 to download new features";
             //pop.Popup();
+
+            Iconic ic = new Iconic();
+            if (ic.IsExistSettingIn(out string path))
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(path);
+                }
+                catch {
+                }
+            }
             Add_ButtonDesign();
         }
         protected void Add_ButtonDesign()

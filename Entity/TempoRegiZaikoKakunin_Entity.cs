@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-  public class TempoRegiZaikoKakunin_Entity:Base_Entity
+    public class TempoRegiZaikoKakunin_Entity : Base_Entity
     {
         public string SoukoName { get; set; }
         public string JanCD { get; set; }
@@ -21,5 +21,7 @@ namespace Entity
         public string AnotherStoreAllowableSu { get; set; }
 
         public string dataCheck { get; set; }
+        public string ItemCD {get;set;}
+        public string SKUName { get; set; }
     }
 }

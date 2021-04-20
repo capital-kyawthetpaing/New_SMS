@@ -68,6 +68,7 @@ namespace TempoRegiHanbaiTouroku
         }
         public bool flgCancel = false;
         public int ParSaleRate { get; set; }
+        public short HaspoMode;
         private string mMaeuke ;
         EPSON_TM30.CashDrawerOpen cdo;
         private  string Up { get; set; }
@@ -102,6 +103,11 @@ namespace TempoRegiHanbaiTouroku
                 Bind(cboCardDenominationCD);
 
                 InitialControlArray();
+
+                bool visible = HaspoMode.Equals(1);
+                lblPointTitle.Visible = visible;
+                lblPointZan.Visible = visible;
+                pnlPointZan.Visible = visible;
 
                 //領収書ボタンを押せないようにする
                 btnRyosyusyo.Enabled = false;
@@ -162,7 +168,7 @@ namespace TempoRegiHanbaiTouroku
                     txtOther1.Text = "0";
                     txtOther2.Text = "0";
                     lblShiharaiKei.Text = "0";
-                    //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                    lblPointZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     txtDiscount.Focus();
                 }
@@ -195,7 +201,7 @@ namespace TempoRegiHanbaiTouroku
                         cboDenominationName2.SelectedValue = dspe.Denomination2CD;
                     txtKake.Text = bbl.Z_SetStr(dspe.CreditAmount);
                     lblShiharaiKei.Text = "0";
-                    //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                    lblPointZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     Calkkin();
 
@@ -367,18 +373,21 @@ namespace TempoRegiHanbaiTouroku
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.POINT)
             {
-                //ポイント
-                //大小チェック
-                if (bbl.Z_Set(dse.LastPoint) < bbl.Z_Set(txtPoint.Text))
+                if (HaspoMode.Equals(1))
                 {
-                    //Ｅ２４０				
-                    bbl.ShowMessage("E240");
-                    txtPoint.Focus();
-                    return false;
-                }
+                    //ポイント
+                    //大小チェック
+                    if (bbl.Z_Set(dse.LastPoint) < bbl.Z_Set(txtPoint.Text))
+                    {
+                        //Ｅ２４０				
+                        bbl.ShowMessage("E240");
+                        txtPoint.Focus();
+                        return false;
+                    }
 
-                //入力されたらポイント残＝ポイント残－ポイント
-                //lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
+                    //入力されたらポイント残＝ポイント残－ポイント
+                    lblPointZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
+                }
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.OTHER1)
             {
@@ -881,13 +890,19 @@ namespace TempoRegiHanbaiTouroku
                     //ポイントを自動セットするときにポイント残額を上限にする
                     if (wPoint > bbl.Z_Set(dse.LastPoint))
                     {
+                        if(HaspoMode.Equals(1))
+                        {
+                            bbl.ShowMessage("E240");
+                            txtPoint.Focus();
+                            return;
+                        }
                         wPoint = bbl.Z_Set(dse.LastPoint);
                     }
                     txtPoint.Text = bbl.Z_SetStr(wPoint);
                 }
 
                 //ポイント残 ＝	ポイント残－ポイント
-                //lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
+                lblPointZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
 
                 //お支払計＝ポイント＋その他①＋その他②＋カード＋現金＋掛
                 Calkkin();
@@ -1013,7 +1028,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //ポイント残					を元に戻す		
-                //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                lblPointZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                 //ポイント、その他①②、現金、預り、カード、掛、お支払計を０に。
                 txtDiscount.Text = "0";

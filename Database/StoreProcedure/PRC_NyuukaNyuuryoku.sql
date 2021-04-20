@@ -2,7 +2,8 @@
 /****** Object:  StoredProcedure [dbo].[PRC_NyuukaNyuuryoku]    Script Date: 2020/10/01 19:36:58 ******/
 DROP PROCEDURE [dbo].[PRC_NyuukaNyuuryoku]
 GO
-DROP TYPE [dbo].[T_NyuukaN]
+
+--DROP TYPE [dbo].[T_NyuukaN]
 
 /****** Object:  StoredProcedure [dbo].[PRC_NyuukaNyuuryoku]    Script Date: 2020/10/01 19:36:58 ******/
 SET ANSI_NULLS ON
@@ -11,8 +12,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
+/*
 CREATE TYPE T_NyuukaN AS TABLE
     (
     [DataKbn][tinyint],		--1:Åyà¯ìñÅz,2:Åyî≠íçÅz,3:Åyà⁄ìÆÅz
@@ -33,6 +33,7 @@ CREATE TYPE T_NyuukaN AS TABLE
     [UpdateFlg][tinyint]
     )
 GO
+*/
 
 CREATE PROCEDURE [dbo].[PRC_NyuukaNyuuryoku]
     (@OperateMode    int,                 -- èàóùãÊï™Åi1:êVãK 2:èCê≥ 3:çÌèúÅj
@@ -159,6 +160,14 @@ BEGIN
         DELETE FROM [D_Arrival]
          WHERE [ArrivalNO] = @ArrivalNO
          ;
+
+        --ÅyD_ArrivalPlanÅz    ï™äÑï™çÌèúÅiDeleteÅjTableì]ëóédólÇbáA
+        DELETE FROM [D_ArrivalPlan]
+         WHERE EXISTS(SELECT 1
+                        FROM @Table AS tbl
+                       WHERE tbl.ArrivalPlanNO = [D_ArrivalPlan].OriginalArrivalPlanNO)
+           AND InsertOperator = 'Nyuuka'
+           ;
 
         --ÅyD_ArrivalPlanÅz     Update/Delete   Tableì]ëóédólÇbáA
         UPDATE [D_ArrivalPlan] SET
@@ -568,7 +577,8 @@ BEGIN
             BEGIN
                 --ÅyD_ReserveÅz         Update  Tableì]ëóédólÇd
                 UPDATE [D_Reserve] SET
-                       [ShippingPossibleDate] = @SYSDATE
+                       [ReserveSu]            = [ShippingPossibleSU] + @tblArrivalSu   --ñ¢ämîF
+                      ,[ShippingPossibleDate] = @SYSDATE
                       ,[ShippingPossibleSU]   = [ShippingPossibleSU] + @tblArrivalSu
                       ,[UpdateOperator]       = @Operator  
                       ,[UpdateDateTime]       = @SYSDATETIME
@@ -654,7 +664,7 @@ BEGIN
                [ArrivalYetFLG]           = 1
               ,[ArrivalDate]             = NULL
               ,[StockSu]                 = [D_Stock].[StockSu] - tbl.ArrivalSu
-              ,[PlanSu]                  = tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
+              ,[PlanSu]                  = [D_Stock].[PlanSu] + tbl.ArrivalSu --+ ISNULL(DS2.PlanSu,0)
               --,[AllowableSu]             = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
               --,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
               --,[ReserveSu]               = [D_Stock].[ReserveSu] + ISNULL(DS2.ReserveSu,0)

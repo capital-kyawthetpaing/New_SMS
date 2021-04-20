@@ -18,11 +18,11 @@ namespace ZaikoIdouNyuuryoku
             internal bool Chk;
             internal string MoveSu;      // 移動数
             internal string IraiSu;      //依頼数
-            internal string ExpectReturnDate;
+            internal string ExpectedDate;
             internal string Space;      //
             internal string CommentInStore;      // 
             internal string CommentOutStore;      //
-
+            internal string ExpectReturnDate;
             internal string JanCD;      // 
             internal string SKUCD;
             internal string SizeName;      // 
@@ -71,11 +71,12 @@ namespace ZaikoIdouNyuuryoku
             SizeName,           //サイズ
             IdoSu,    // 移動数
             IraiSu,    //依頼数 
-            ExpectReturnDate,     //希望日付
+            ExpectedDate,     //希望日付
 
             CommentOutStore,    // 社外備考・コメント
             CommentInStore,    //社内備考・コメント
-            Space,                  
+            Space,
+            ExpectReturnDate,   //予定日
 
             COUNT
         }
@@ -255,6 +256,16 @@ namespace ZaikoIdouNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
                 //
 
+                w_CtlCol = (int)ColNO.ExpectedDate;    //入荷予定日
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ExpectedDate);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
                 w_CtlCol = (int)ColNO.ExpectReturnDate;    //入荷予定日
 
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ExpectReturnDate);
@@ -264,8 +275,6 @@ namespace ZaikoIdouNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
-
-
             }
         }
 
@@ -331,8 +340,8 @@ namespace ZaikoIdouNyuuryoku
                         case (int)ColNO.SKUCD:     //メーカー商品CD
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUCD);
                             break;
-                        case (int)ColNO.ExpectReturnDate:     //希望納期
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ExpectReturnDate);
+                        case (int)ColNO.ExpectedDate:     //希望納期
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ExpectedDate);
                             break;
                        
                     }

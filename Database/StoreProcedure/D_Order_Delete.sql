@@ -12,7 +12,7 @@ GO
 CREATE PROCEDURE D_Order_Delete
     (@OperateMode    int,                 -- ˆ—‹æ•ªi1:V‹K 2:C³ 3:íœj
 
-    @Table  T_Nyuuka READONLY,
+    @Table  T_NyuukaN READONLY,
     @Operator  varchar(10),
     @PC  varchar(30)
 )AS
