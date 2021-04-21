@@ -19,5 +19,6 @@ namespace Entity
         public string CatalogText { get; set; }
         public string InstructionsNO { get; set; }
         public string InstructionsDate { get; set; }
+        public string CustomerCD { get; set; }
     }
 }
