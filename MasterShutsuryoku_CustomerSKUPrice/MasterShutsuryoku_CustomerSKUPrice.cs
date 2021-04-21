@@ -471,6 +471,7 @@ namespace MasterShutsuryoku_CustomerSKUPrice
                 //{
                 //    dtDatao.Columns.Remove("AdminNO");
                 //}
+                fname = DateTime.Now.ToString("yyyyMMdd HH:mm:ss").Replace(" ","").Replace(":","");
                 string folderPath = "C:\\SMS\\MasterShutsuryoku_CustomerSKUPrice\\";
                 if (!Directory.Exists(folderPath))
                 {
@@ -479,7 +480,7 @@ namespace MasterShutsuryoku_CustomerSKUPrice
                 SaveFileDialog savedialog = new SaveFileDialog();
                 savedialog.Filter = "Excel Files|*.xlsx;";
                 savedialog.Title = "Save";
-                savedialog.FileName = "MasterShutsuryoku_CustomerSKUPrice" + fname;
+                savedialog.FileName = "MasterShutsuryoku_CustomerSKUPrice_" + fname;
                 savedialog.InitialDirectory = folderPath;
 
                 savedialog.RestoreDirectory = true;
