@@ -778,7 +778,6 @@ namespace ShukkaShijiTouroku
                                     switch (w_Col)
                                     {
                                         case (int)ClsGridShukka.ColNO.BtnJuchu:    // 
-                                        case (int)ClsGridShukka.ColNO.BtnDetail:    //  
                                             //Form. 出荷指示種別(Hidden)＝２の場合は、クリックしても処理不要
                                             if (mGrid.g_DArray[w_Row].InstructionKBN.Equals(2))
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
@@ -786,6 +785,7 @@ namespace ShukkaShijiTouroku
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                             break;
 
+                                        case (int)ClsGridShukka.ColNO.BtnDetail:    //  
                                         case (int)ClsGridShukka.ColNO.ChkSyukka:    //
                                         case (int)ClsGridShukka.ColNO.ChkTekiyo:    // 
                                         case (int)ClsGridShukka.ColNO.ChkSokujitu:    // 

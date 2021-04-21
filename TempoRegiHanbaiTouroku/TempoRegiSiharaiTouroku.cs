@@ -373,18 +373,21 @@ namespace TempoRegiHanbaiTouroku
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.POINT)
             {
-                //ポイント
-                //大小チェック
-                if (bbl.Z_Set(dse.LastPoint) < bbl.Z_Set(txtPoint.Text))
+                if (HaspoMode.Equals(1))
                 {
-                    //Ｅ２４０				
-                    bbl.ShowMessage("E240");
-                    txtPoint.Focus();
-                    return false;
-                }
+                    //ポイント
+                    //大小チェック
+                    if (bbl.Z_Set(dse.LastPoint) < bbl.Z_Set(txtPoint.Text))
+                    {
+                        //Ｅ２４０				
+                        bbl.ShowMessage("E240");
+                        txtPoint.Focus();
+                        return false;
+                    }
 
-                //入力されたらポイント残＝ポイント残－ポイント
-                lblPointZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
+                    //入力されたらポイント残＝ポイント残－ポイント
+                    lblPointZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
+                }
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.OTHER1)
             {
