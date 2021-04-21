@@ -745,7 +745,12 @@ namespace Search
                 ITEM = GvDetail.CurrentRow.Cells["ITEMCD"].Value.ToString();
                 SKUCD = GvDetail.CurrentRow.Cells["colSKUCD"].Value.ToString();
                 MakerItem = GvDetail.CurrentRow.Cells["colMakerItem"].Value.ToString();
-                JANCD = GvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();
+                JANCD = GvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();//colJANCD
+                if (JANCD == "")
+                {
+                    var dt = (GvDetail.DataSource as DataTable); 
+                    //1915
+                }
                 AdminNO = GvDetail.CurrentRow.Cells["colAdminNO"].Value.ToString();
                 ChangeDate = GvDetail.CurrentRow.Cells["colChangeDate"].Value.ToString();
 
