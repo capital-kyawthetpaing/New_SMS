@@ -544,7 +544,7 @@
             this.dgvDetail.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.dgvDetail.HeaderHeight_ = 22;
             this.dgvDetail.HeaderVisible = false;
-            this.dgvDetail.Height_ = 672;
+            this.dgvDetail.Height_ = 679;
             this.dgvDetail.Location = new System.Drawing.Point(19, 201);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.RowHeadersWidth = 80;
@@ -552,7 +552,7 @@
             this.dgvDetail.RowHeight_ = 42;
             this.dgvDetail.RowTemplate.Height = 42;
             this.dgvDetail.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvDetail.Size = new System.Drawing.Size(1880, 672);
+            this.dgvDetail.Size = new System.Drawing.Size(1880, 679);
             this.dgvDetail.TabIndex = 9;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;
