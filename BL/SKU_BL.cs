@@ -16,14 +16,17 @@ namespace BL
         {
             mdl = new M_SKU_DL();
         }
-
-        /// <summary>	
-        /// 商品マスタメンテよりデータ取得	
-        /// </summary>	
-        /// <param name="mse"></param>	
-        /// <remarks>指定した適用日のデータを取得</remarks>	
-        /// <returns></returns>	
-        public bool M_SKU_Select(M_SKU_Entity mse)
+        public DataTable M_SKU_Select_byCusotmerSKUPrice(M_SKU_Entity mse)
+        {
+            return mdl.M_SKU_Select(mse);
+        }
+            /// <summary>	
+            /// 商品マスタメンテよりデータ取得	
+            /// </summary>	
+            /// <param name="mse"></param>	
+            /// <remarks>指定した適用日のデータを取得</remarks>	
+            /// <returns></returns>	
+            public bool M_SKU_Select(M_SKU_Entity mse)
         {
             DataTable dt = mdl.M_SKU_Select(mse);
             if (dt.Rows.Count > 0)

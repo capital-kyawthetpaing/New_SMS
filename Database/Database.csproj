@@ -388,6 +388,7 @@
     <Content Include="StoreProcedure\M_Ginkou_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Ginkou_Select.sql" />
     <Content Include="StoreProcedure\M_ItemSelectoutput.sql" />
+    <Content Include="StoreProcedure\M_ItemSelectOutput_SKUPrice.sql" />
     <Content Include="StoreProcedure\M_ITem_ItemNandPriceoutTax_Select.sql" />
     <Content Include="StoreProcedure\M_ItemOrderPrice_Select.sql" />
     <Content Include="StoreProcedure\M_ItemPrice_Select.sql" />

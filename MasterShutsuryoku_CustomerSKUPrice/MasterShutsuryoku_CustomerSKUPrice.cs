@@ -12,6 +12,10 @@ using Search;
 using CKM_Controls;
 using BL;
 using Entity;
+using System.IO;
+using ClosedXML.Excel;
+using System.Diagnostics;
+
 namespace MasterShutsuryoku_CustomerSKUPrice
 {
     public partial class MasterShutsuryoku_CustomerSKUPrice : Base.Client.FrmMainForm
@@ -338,7 +342,7 @@ namespace MasterShutsuryoku_CustomerSKUPrice
            
             if (result != null)
             {
-                //Excel(result, name);
+                Excel(dt, "");
             }
             else
             {
@@ -459,18 +463,81 @@ namespace MasterShutsuryoku_CustomerSKUPrice
             MoveNextControl(e);
 
         }
+        private void Excel(DataTable dtDatao, string fname = null)
+        {
+            try
+            {
+                //if (dtDatao.Columns.Contains("AdminNO"))
+                //{
+                //    dtDatao.Columns.Remove("AdminNO");
+                //}
+                fname = DateTime.Now.ToString("yyyyMMdd HH:mm:ss").Replace(" ","").Replace(":","");
+                string folderPath = "C:\\SMS\\MasterShutsuryoku_CustomerSKUPrice\\";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Filter = "Excel Files|*.xlsx;";
+                savedialog.Title = "Save";
+                savedialog.FileName = "MasterShutsuryoku_CustomerSKUPrice_" + fname;
+                savedialog.InitialDirectory = folderPath;
 
+                savedialog.RestoreDirectory = true;
+
+                if (savedialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                    {
+                        Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                        Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                        Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                        worksheet = workbook.ActiveSheet;
+                        worksheet.Name = "worksheet";
+
+                        using (XLWorkbook wb = new XLWorkbook())
+                        {
+                            wb.Worksheets.Add(dtDatao, "worksheet");
+                            wb.SaveAs(savedialog.FileName);
+                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                        }
+
+                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void ckM_SearchControl1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                txtCustomerCD.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(txtCustomerCD.TxtCode.Text))
                 {
-                    
-                   // txtCustomerCD.TxtCode.Focus();
+                    if (!txtCustomerCD.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        txtCustomerCD.SetFocus(1);
+                    }
                 }
-                else
-                    txtCustomerCD.TxtChangeDate.Clear();
+                //if (string.IsNullOrEmpty(txtCustomerCD.TxtCode.Text))
+                //{
+                //    //Customer_BL cb = new Customer_BL();
+                //    //var txt = cb.SimpleSelect1("9", bbl.GetDate(), txtCustomerCD.TxtCode.Text);
+                //    //if (txt.Rows.Count > 0)
+                //    //{
+                //    //    // txtCustomerCD.TxtChangeDate.Text = "";
+                //    //}
+                //    //else
+                //    //    txtCustomerCD.TxtChangeDate.Text = "";
+                //}
+                //else
+                //    txtCustomerCD.TxtChangeDate.Text="";
 
             }
         }
