@@ -97,7 +97,6 @@ namespace MasterTouroku_Tokuisaki
             , CboStoreCD
             , StaffCD
             , DeleteFlg
-            , txtCreditCheckKBN
             , COUNT
 
             //Label
@@ -1223,7 +1222,7 @@ namespace MasterTouroku_Tokuisaki
                 case (int)EIndex.COUNT:
                     break;
 
-                case (int)EIndex.txtCreditCheckKBN:
+                case (int)EIndex.CreditCheckKBN:
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
@@ -1239,6 +1238,10 @@ namespace MasterTouroku_Tokuisaki
                             }
                         }
                     }
+                    break;
+                case (int)EIndex.FareLevel:
+                case (int)EIndex.Fare:
+                    detailControls[index].Text = bbl.Z_SetStr(detailControls[index].Text);
                     break;
 
                 case (int)EIndex.lblKouzaCD:
