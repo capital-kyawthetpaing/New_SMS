@@ -178,5 +178,10 @@ namespace BL
         {
             return mdl.M_SKU_Export(me, checkflg, chkUnapprove,type);
         }
+
+        public DataTable M_SKUPrice_Export(M_SKU_Entity me, int chkUnapprove, int type)
+        {
+            return mdl.M_SKUPrice_Export(me, chkUnapprove, type);
+        }
     }
 }
