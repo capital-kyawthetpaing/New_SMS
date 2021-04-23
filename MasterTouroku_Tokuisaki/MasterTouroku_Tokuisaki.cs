@@ -77,6 +77,11 @@ namespace MasterTouroku_Tokuisaki
             , CreditETC
             //, CreditWarningAmount
             , CreditAdditionAmount
+            , CreditCheckKBN
+            , FareLevel
+            , Fare
+            , CreditMessage
+
             , DisplayOrder
             , AnalyzeCD1
             , AnalyzeCD2
@@ -386,9 +391,11 @@ namespace MasterTouroku_Tokuisaki
                             ,pnlHolidayKBN,txtRegisteredNumber
                             ,ChkNoInvoiceFlg,pnlTaxPrintKBN,cmbTaxTiming,cmbTaxFractionKBN,cmbAmountFractionKBN
                             ,cmbPaymentMethodCD,ScKouzaCD.TxtCode,cmbPaymentUnit,cmbStoreTankaKBN,ScTankaCD.TxtCode,ChkAttentionFLG,ChkConfirmFLG,txtConfirmComment
-                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
+                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC
+                            ,txtCreditAdditionAmount,txtCreditCheckKBN,  txtFareLevel, txtFare,txtCreditMessage
+                            ,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
                             ,ChkPointFLG,txtLastPoint,txtWaitingPoint,txtTotalPoint,txtRemarksOutStore,txtRemarksInStore,
-                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg, txtCreditCheckKBN, txtCreditMessage,  txtFareLevel, txtFare };
+                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg};
             detailLabels = new Control[] { ScKouzaCD, ScBillingCD, ScCollectCD, ScTankaCD, ScStaff, lblStoreName, lblLastSalesDate, lblPoint, lblMinyukin, lblKensu, lblCreditAmount };
             searchButtons = new Control[] { ScKouzaCD.BtnSearch, ScBillingCD.BtnSearch,ScCollectCD.BtnSearch,ScStaff.BtnSearch,
                                             ScTankaCD.BtnSearch,ScCopyCustomer.BtnSearch,ScCustomer.BtnSearch };
