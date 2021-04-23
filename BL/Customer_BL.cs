@@ -16,14 +16,18 @@ namespace BL
         {
             mmdl = new M_Customer_DL();
         }
-
-        /// <summary>
-        /// 得意先データ取得処理
-        /// </summary>
-        /// <param name="mce"></param>
-        /// <param name="kbn">CustomerKBN 1:店舗会員、2:店舗現金会員、3:団体法人</param>
-        /// <returns></returns>
-        public bool M_Customer_Select(M_Customer_Entity mce, short kbn = 0)
+        public DataTable M_Customer_Select_byCustomerSKUprice(M_Customer_Entity mce)
+        {
+            return mmdl.M_Customer_Select_byCustomerSKUprice(mce); 
+        }
+            /// <summary>
+            /// 得意先データ取得処理
+            /// </summary>
+            /// <param name="mce"></param>
+            /// <param name="kbn">CustomerKBN 1:店舗会員、2:店舗現金会員、3:団体法人</param>
+            /// <returns></returns>
+            /// 
+            public bool M_Customer_Select(M_Customer_Entity mce, short kbn = 0)
         {
             DataTable dt = mmdl.M_Customer_Select(mce);
 

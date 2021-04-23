@@ -67,7 +67,7 @@ namespace BL
 
             return GetMessage(mme);
         }
-
+        
         /// <summary>
         /// show message
         /// </summary>

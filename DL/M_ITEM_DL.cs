@@ -218,6 +218,18 @@ namespace DL
 
             return InsertUpdateDeleteData(dic, sp);
         }
+        public bool ImportCustomerItem(string xml)
+        {
+            string sp = "M_CustomerSKUPrice_Import";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xml", new ValuePair { value1 = SqlDbType.Xml, value2 = xml} },
+            };
+
+            return InsertUpdateDeleteData(dic, sp);
+        }
+        //ImportCustomerItem
 
         public bool SKUUpdate(string xml, string xml_1, string OPD, string OPT, string OPTR, string PGM, string PC, string OPM, string KI,string Mode)
         {
