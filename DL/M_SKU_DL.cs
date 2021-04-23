@@ -22,6 +22,28 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+        public DataTable M_SKU_CS_Select(string Admin)
+        {
+            string sp = "M_SKU_CS_Pair";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                    { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = Admin } },
+            };
+            return SelectData(dic, sp);
+        }
+        //M_SKU_CS_Select
+        public DataTable M_SKU_Select_byCustomerSKUPrice(M_SKU_Entity mse)
+        {
+            string sp = "M_SKU_Select_byCustomerSKUPrice";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@AdminNo", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.AdminNO } },
+                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
+                    { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
+            };
+            return SelectData(dic, sp);
+        }
+        //
         public DataTable M_SKU_SelectAll(M_SKU_Entity mse)
         {
             string sp = "M_SKU_SelectAll";

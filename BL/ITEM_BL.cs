@@ -112,6 +112,11 @@ namespace BL
             
                 return false;
         }
+
+        public bool ImportCustomerItem(string xml)
+        {
+            return mdl.ImportCustomerItem(xml);
+        }
         /// <summary>
         /// 商品マスタメンテよりデータ取得
         /// </summary>

@@ -28,6 +28,9 @@ namespace MasterTorikomi_M_CustomerSKUPrice
         DataTable dtskuintial = new DataTable();
         DataTable dtMessage = new DataTable();
         DataTable dtSKU = new DataTable();
+        DataTable dtCustomer = new DataTable();
+        M_Customer_Entity ce;
+        Customer_BL cbl;
         public MasterTorikomi_M_CustomerSKUPrice()
         {
             InitializeComponent();
@@ -49,7 +52,10 @@ namespace MasterTorikomi_M_CustomerSKUPrice
             dtVendor = mtbl.M_Vendor_SelectAll();
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
             dtMessage = msIbl.M_MessageSelectAll();
-            dtSKU = skubl.M_SKU_Select_byCusotmerSKUPrice(new M_SKU_Entity() { AdminNO ="0", ChangeDate = bbl.GetDate() });
+         
+              ce = new M_Customer_Entity() { ChangeDate = bbl.GetDate(),   } ;
+              cbl      = new Customer_BL();
+            dtCustomer = cbl.M_Customer_Select_byCustomerSKUprice(ce);
             this.ModeVisible = false;
             this.Text = "得意先別商品別単価マスタ取込";
             Btn_F12.Text = "取込(F12)";
@@ -58,7 +64,6 @@ namespace MasterTorikomi_M_CustomerSKUPrice
         {
             F2Visible = F3Visible = F4Visible = F5Visible = F7Visible = F8Visible = F9Visible = F10Visible = F11Visible = false;
         }
-
         private void MasterTorikomi_M_CustomerSKUPrice_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -135,7 +140,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     {
                         if (ErrorCheck(dt))
                         {
-                            //ExcelErrorCheck(dt);
+                            ExcelErrorCheck(dt);
                             if (dt != null)
                             {
                                 gvItem.DataSource = null;
@@ -247,17 +252,22 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     //{
                     if (CheckPartial(dt))
                     {
-                        M_ITEM_Entity mie = new M_ITEM_Entity();
-                        mie.Operator = InOperatorCD;
-                        mie.PC = Environment.MachineName;
-                        mie.ProgramID = "MasterTorikomi_Item";
-                        mie.ProcessMode = null;
-                        mie.Key = inputPath.Text;
-                        // mie.MainFlg = RB_all.Checked ? "1" : RB_BaseInfo.Checked ? "2" : RB_attributeinfo.Checked ? "3" : RB_priceinfo.Checked ? "4" : RB_Catloginfo.Checked ? "5" : RB_tagInfo.Checked ? "6" : "8";
-                        var xml = bbl.DataTableToXml(dt);
-                        mie.xml1 = xml;
+                        dt.Columns["データ区分"].ColumnName = "KBN";
+                        dt.Columns["顧客CD"].ColumnName = "CustomerCD";
+                        dt.Columns["顧客名称"].ColumnName = "CustomerName";
+                        dt.Columns["適用開始日"].ColumnName = "StartDate";
+                        dt.Columns["適用終了日"].ColumnName = "EndDate";
+                        dt.Columns["税抜単価"].ColumnName = "SalePOT";
+                        dt.Columns["備考"].ColumnName = "Remark";
+                        dt.Columns["削除FLG"].ColumnName = "DeleteFlg";
+                        dt.Columns["商品名"].ColumnName = "ShouhinName";
 
-                        var res = ibl.ImportItem(mie);
+                        dt.Columns.Add("PC"); dt.Rows[0]["PC"] = Environment.MachineName;
+                        dt.Columns.Add("Operator"); dt.Rows[0]["Operator"] = InOperatorCD;
+                        dt.Columns.Add("ProgramID"); dt.Rows[0]["ProgramID"] = "MasterTorikomi_M_CustomerSKUPrice";
+                        dt.Columns.Add("Key"); dt.Rows[0]["Key"] = inputPath.Text;
+                        var xml = bbl.DataTableToXml(dt);
+                        var res = ibl.ImportCustomerItem(xml);
                         if (res)
                         {
                             bbl.ShowMessage("I101");
@@ -296,28 +306,63 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                 dtVendor = mtbl.M_Vendor_SelectAll();
                 dtskuintial = msIbl.M_SKUInitial_SelectAll();
                 dtMessage = msIbl.M_MessageSelectAll();
+                dtCustomer = cbl.M_Customer_Select_byCustomerSKUprice(ce);
+
                 button1.Focus();
-            }
+                            }
             catch
             {
 
             }
             Cursor = Cursors.Default; ;
         }
-
         private void BT_Torikomi_Click(object sender, EventArgs e)
         {
             F12();
         }
-
+        private async Task UpdateText(Control c, string t)
+        {
+            await Task.Run(() =>
+            {
+                if (c.InvokeRequired)
+                {
+                    UpdateControl(c, t);
+                }
+            });
+        }
+        private bool ControlInvokeRequired(Control c, Action a)
+        {
+            if (c.InvokeRequired)
+            {
+                c.Invoke(new MethodInvoker(delegate { a(); }));
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+        private void UpdateControl(Control c, string s)
+        {
+            try
+            {
+                if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+                {
+                    c.Text = s;
+                    return;
+                }
+                c.Text = s;
+                c.Update();
+            }
+            catch { }
+        }
         private async void ExcelErrorCheck(DataTable dt)
         {
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
-
             dt.Columns.Add("Cusotmer");
-            dt.Columns.Add("SKUCD");
-            dt.Columns.Add("JANCD");
+            //dt.Columns.Add("SKUCD");
+            //dt.Columns.Add("JANCD");
             dt.Columns.Add("AppDate");
             dt.Columns.Add("ItemName");
             dt.Columns.Add("Color");
@@ -327,56 +372,56 @@ namespace MasterTorikomi_M_CustomerSKUPrice
             string[] Cols = "データ区分,顧客CD,顧客名称,適用開始日,適用終了日,AdminNO,JANCD,SKUCD,商品名,税抜単価,備考,削除FLG".Split(',');
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                await UpdateText(label2, i.ToString());
                 try
                 {
-                        if (!Is102(dt.Rows[i]["データ区分"].ToString()))
-                        {
-                            dt.Rows[i]["EItem"] = "データ区分";
-                            dt.Rows[i]["Error"] = "E102";
-                            goto SkippedLine;
-                        }
-                        if (!Is190(dt.Rows[i]["データ区分"].ToString(), true))
-                        {
-                            dt.Rows[i]["EItem"] = "データ区分";
-                            dt.Rows[i]["Error"] = "E190";
-                            goto SkippedLine;
-                        }
-                    
-                }
-                catch { }
-                try
-                {
-                        if (!Is102(dt.Rows[i]["顧客CD"].ToString()))
-                        {
-                            dt.Rows[i]["EItem"] = "顧客CD";
-                            dt.Rows[i]["Error"] = "E102";
-                            goto SkippedLine;
-                        }
-                        if (!Is101("M_Customer", dt.Rows[i]["顧客CD"].ToString()))
-                        {
-                            dt.Rows[i]["EItem"] = "顧客CD";
-                            dt.Rows[i]["Error"] = "E101";
-                            goto SkippedLine;
-                        }
-                    
-                }
-                catch { }
+                    if (!Is102(dt.Rows[i]["データ区分"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "データ区分";
+                        dt.Rows[i]["Error"] = "E102";
+                        goto SkippedLine;
+                    }
+                    if (!Is190(dt.Rows[i]["データ区分"].ToString(), true))
+                    {
+                        dt.Rows[i]["EItem"] = "データ区分";
+                        dt.Rows[i]["Error"] = "E190";
+                        goto SkippedLine;
+                    }
 
+                }
+                catch { }
                 try
                 {
-                        if (!Is102(dt.Rows[i]["適用開始日"].ToString()))
-                        {
-                            dt.Rows[i]["EItem"] = "適用開始日";
-                            dt.Rows[i]["Error"] = "E102";
-                            goto SkippedLine;
-                        }
-                        if (!Is103(dt.Rows[i]["適用開始日"].ToString()))
-                        {
-                            dt.Rows[i]["EItem"] = "適用開始日";
-                            dt.Rows[i]["Error"] = "E103";
-                            goto SkippedLine;
-                        }
-                   
+                    if (!Is102(dt.Rows[i]["顧客CD"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "顧客CD";
+                        dt.Rows[i]["Error"] = "E102";
+                        goto SkippedLine;
+                    }
+                    if (!Is101("M_Customer", dt.Rows[i]["顧客CD"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "顧客CD";
+                        dt.Rows[i]["Error"] = "E101";
+                        goto SkippedLine;
+                    }
+
+                }
+                catch { }
+                try
+                {
+                    if (!Is102(dt.Rows[i]["適用開始日"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "適用開始日";
+                        dt.Rows[i]["Error"] = "E102";
+                        goto SkippedLine;
+                    }
+                    if (!Is103(dt.Rows[i]["適用開始日"].ToString()))
+                    {
+                        dt.Rows[i]["EItem"] = "適用開始日";
+                        dt.Rows[i]["Error"] = "E103";
+                        goto SkippedLine;
+                    }
+
                 }
                 catch { }
                 try
@@ -397,7 +442,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                         dt.Rows[i]["Error"] = "E102";
                         goto SkippedLine;
                     }
-                     if (!Is101("M_SKU", dt.Rows[i]["AdminNo"].ToString(), dt.Rows[i]["SKUCD"].ToString()))
+                    if (!Is101("M_SKU", dt.Rows[i]["AdminNo"].ToString(), dt.Rows[i]["SKUCD"].ToString()))
                     {
                         dt.Rows[i]["EItem"] = "AdminNo";
                         dt.Rows[i]["Error"] = "E101";
@@ -431,8 +476,6 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     }
                 }
                 catch { }
-
-
                 try
                 {
                     IsNoB(dt, i, "税抜単価", "0");
@@ -443,31 +486,41 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     IsNoB(dt, i, "削除FLG", "0");
                 }
                 catch { }
-            // 
-            //適用終了日
-
-            //try
-            //{
-            //    if (Cols.Contains("適用開始日"))
-            //    {
-            //        IsNoB(dt, i, "適用開始日", dt.Rows[i]["適用開始日"].ToString());
-            //    }
-            //}
-            //catch { }
-
-
-
-
             SkippedLine:
-                dt.Rows[i]["ItemCDShow"] = dt.Rows[i]["ITEMCD"].ToString();
+                string col = "";
+                string siz = "";
+                string val = CS(dt.Rows[i]["AdminNo"].ToString());
+                if (val != "0")
+                {
+                    col = val.Split(' ').First();
+                    siz = val.Split(' ').Last();
+                }
+
+                dt.Rows[i]["Cusotmer"] = dt.Rows[i]["顧客名称"].ToString();
                 dt.Rows[i]["ItemName"] = dt.Rows[i]["商品名"].ToString();
-                dt.Rows[i]["ItemDate"] = dt.Rows[i]["改定日"].ToString();
+                dt.Rows[i]["AppDate"] = dt.Rows[i]["適用開始日"].ToString();
+                dt.Rows[i]["Color"] = col;
+                dt.Rows[i]["Size"] = siz;
+                if (dt != null)
+                {
+                    gvItem.DataSource = dt;
+                }
                 try
                 {
-                    dt.Rows[i]["ItemMakerCD"] = dt.Rows[i]["メーカー商品CD"].ToString();
+                    label2.Visible = false;
                 }
                 catch { }
             }
+        }
+        public string CS(string Admino)
+        {
+            
+            var dt= skubl.M_SKU_CS_Select(Admino);
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["ColorNo"].ToString() + " "+dt.Rows[0]["SizeNo"].ToString();
+            }
+            return "0";
         }
         private bool Is102(string value)
         {
@@ -515,11 +568,12 @@ namespace MasterTorikomi_M_CustomerSKUPrice
 
                     //data = bbl.SimpleSelect1("56", bbl.GetDate(), param);
                 }
-                
-                //if (tableName == "M_MultiPorpose")
-                //{
-                //     data = bbl.SimpleSelect1("14", bbl.GetDate(), param);
-                //}
+
+                if (tableName == "M_Customer")
+                {
+                    string query = " CustomerCD = '" + param.Trim() + "'";
+                    return (dtCustomer.Select(query).Count() > 0);
+                }
 
             }
             else if (paramID != null)
@@ -551,15 +605,12 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                 }
                 else if (tableName == "M_SKU")
                 {
-                    
-                       // string query = " SKUCD = '" + param + "'";
                     string str = " [AdminNo] ='" + param + "'" +
-                        "and [SKUCD]='" + paramID + "'";
-                    var result = dtSKU.Select(str);
-                        return (result.Count() > 0);
-
-                        //data = bbl.SimpleSelect1("56", bbl.GetDate(), param);
-                    
+                        " and [SKUCD]='" + paramID + "'";
+                   // var result = dtSKU.Select(str);
+                        
+                    dtSKU = skubl.M_SKU_Select_byCustomerSKUPrice(new M_SKU_Entity() { AdminNO= param, SKUCD = paramID, ChangeDate = bbl.GetDate() });
+                    return (dtSKU.Rows.Count > 0);
                 }
                 // return (data.Rows.Count > 0);
             }
