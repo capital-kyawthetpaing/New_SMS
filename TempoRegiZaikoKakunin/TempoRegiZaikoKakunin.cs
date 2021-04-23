@@ -85,12 +85,12 @@ namespace TempoRegiZaikoKakunin
 
         public void DataSending()
         {
-            if (dgvZaikokakunin.CurrentRow != null && dgvZaikokakunin.CurrentRow.Index >= 0)
-            {
-                //  data = dgvZaikokakunin.CurrentRow.Cells["colProduct"].Value.ToString();
-                data = txtJanCD.Text;
-                this.Close();
-            }
+            //if (dgvZaikokakunin.CurrentRow != null && dgvZaikokakunin.CurrentRow.Index >= 0)
+            //{
+            //    //  data = dgvZaikokakunin.CurrentRow.Cells["colProduct"].Value.ToString();
+            //    data = txtJanCD.Text;
+            //    this.Close();
+            //}23.4.2021
         }
 
         public bool ErrorCheck()
@@ -190,11 +190,11 @@ namespace TempoRegiZaikoKakunin
                 dt = zaikobl.D_Stock_DataSelect(kne);
                 if(dt.Rows.Count > 0)
                 {
-                    dgvZaikokakunin.DataSource = dt;
+                    //dgvZaikokakunin.DataSource = dt;23.4.2021
                 }
                 else
                 {
-                    dgvZaikokakunin.DataSource = string.Empty;
+                    //dgvZaikokakunin.DataSource = string.Empty;23.4.2021
                     zaikobl.ShowMessage("E128");
                     txtJanCD.Focus();
                 }
@@ -283,5 +283,8 @@ namespace TempoRegiZaikoKakunin
             txtJanCD.Text = frmshouhin.JANCD;
             txtProductName.Text = frmshouhin.SKUName;
         }
+
+
+       
     }
 }
