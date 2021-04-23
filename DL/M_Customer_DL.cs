@@ -27,7 +27,17 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable M_Customer_Select_byCustomerSKUprice(M_Customer_Entity me)
+        {
+            string sp = "M_Customer_Select_ByCustomerSKUPRicce";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.CustomerCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate } }
+            };
 
+            return SelectData(dic, sp);
+        }
         public DataTable M_Customer_SelectAll(M_Customer_Entity mke)
         {
             string sp = "M_Customer_SelectAll";

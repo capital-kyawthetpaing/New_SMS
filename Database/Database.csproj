@@ -373,6 +373,7 @@
     <Content Include="StoreProcedure\M_Control_RecordCheck.sql" />
     <Content Include="StoreProcedure\M_Control_Select.sql" />
     <Content Include="StoreProcedure\M_CustomerSKUPriceSelectData.sql" />
+    <Content Include="StoreProcedure\M_CustomerSKUPrice_Import.sql" />
     <Content Include="StoreProcedure\M_CustomerSKUPrice_InsertUpdate.sql" />
     <Content Include="StoreProcedure\M_Customer_CustomerName_Select.sql" />
     <Content Include="StoreProcedure\M_Customer_Display.sql" />
@@ -380,6 +381,7 @@
     <Content Include="StoreProcedure\M_Customer_Search.sql" />
     <Content Include="StoreProcedure\M_Customer_Select.sql" />
     <Content Include="StoreProcedure\M_Customer_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_Customer_Select_ByCustomerSKUPRicce.sql" />
     <Content Include="StoreProcedure\M_Customer_UpdateLastPoint.sql" />
     <Content Include="StoreProcedure\M_DenominationKBN_cboSelect.sql" />
     <Content Include="StoreProcedure\M_DenominationKBN_Select.sql" />
@@ -474,6 +476,7 @@
     <Content Include="StoreProcedure\M_SKUPrice_SelectTanka.sql" />
     <Content Include="StoreProcedure\M_SKUSelectAll.sql" />
     <Content Include="StoreProcedure\M_SKUSelectDataForHanbaiTankaKakeritu.sql" />
+    <Content Include="StoreProcedure\M_SKU_CS_Pair.sql" />
     <Content Include="StoreProcedure\M_SKU_Export.sql" />
     <Content Include="StoreProcedure\M_Sku_henkouSelect.sql" />
     <Content Include="StoreProcedure\M_SKU_Select.sql" />
@@ -488,6 +491,7 @@
     <Content Include="StoreProcedure\M_SKU_SelectForSearchProduct.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectForSKSMasterUpdate.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectFor_SKU_Update.sql" />
+    <Content Include="StoreProcedure\M_SKU_Select_byCustomerSKUPrice.sql" />
     <Content Include="StoreProcedure\M_SKU_Select_ByJanCD.sql" />
     <Content Include="StoreProcedure\M_SoukoName_Select.sql" />
     <Content Include="StoreProcedure\M_SoukoWarehouse_Select.sql" />
