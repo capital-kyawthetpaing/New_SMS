@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4AFD838D-A501-40DF-BAA7-477341B43778}</ProjectGuid>
+    <ProjectGuid>{2521079B-6C1A-4E7E-AA01-790EDFDD404B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MasterTorikomi_M_CustomerSKUPrice</RootNamespace>
-    <AssemblyName>MasterTorikomi_M_CustomerSKUPrice</AssemblyName>
+    <RootNamespace>MasterShutsuryoku_SKUPrice</RootNamespace>
+    <AssemblyName>MasterShutsuryoku_SKUPrice</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,10 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa" />
-    <Reference Include="ExcelDataReader.DataSet, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+    <Reference Include="closedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Search\RequiredDLL\ExcelDataReader.DataSet.dll</HintPath>
+      <HintPath>..\Search\RequiredDLL\closedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,16 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MasterTorikomi_M_CustomerSKUPrice.cs">
+    <Compile Include="MasterShutsuryoku_SKUPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterTorikomi_M_CustomerSKUPrice.Designer.cs">
-      <DependentUpon>MasterTorikomi_M_CustomerSKUPrice.cs</DependentUpon>
+    <Compile Include="MasterShutsuryoku_SKUPrice.Designer.cs">
+      <DependentUpon>MasterShutsuryoku_SKUPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MasterTorikomi_M_CustomerSKUPrice.resx">
-      <DependentUpon>MasterTorikomi_M_CustomerSKUPrice.cs</DependentUpon>
+    <EmbeddedResource Include="MasterShutsuryoku_SKUPrice.resx">
+      <DependentUpon>MasterShutsuryoku_SKUPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,12 +96,16 @@
       <Name>BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
-      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
+      <Project>{472A8D76-1CE3-430E-89FE-373D2F6B1031}</Project>
       <Name>CKM_Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Search\Search.csproj">
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
+      <Name>Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

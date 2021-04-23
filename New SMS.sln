@@ -367,6 +367,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterShutsuryoku_CustomerS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTorikomi_M_CustomerSKUPrice", "MasterTorikomi_M_CustomerSKUPrice\MasterTorikomi_M_CustomerSKUPrice.csproj", "{4AFD838D-A501-40DF-BAA7-477341B43778}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterShutsuryoku_SKUPrice", "MasterShutsuryoku_SKUPrice\MasterShutsuryoku_SKUPrice.csproj", "{2521079B-6C1A-4E7E-AA01-790EDFDD404B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2547,6 +2549,18 @@ Global
 		{4AFD838D-A501-40DF-BAA7-477341B43778}.Release|x64.Build.0 = Release|Any CPU
 		{4AFD838D-A501-40DF-BAA7-477341B43778}.Release|x86.ActiveCfg = Release|Any CPU
 		{4AFD838D-A501-40DF-BAA7-477341B43778}.Release|x86.Build.0 = Release|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Debug|x64.Build.0 = Debug|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Debug|x86.Build.0 = Debug|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Release|x64.ActiveCfg = Release|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Release|x64.Build.0 = Release|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Release|x86.ActiveCfg = Release|Any CPU
+		{2521079B-6C1A-4E7E-AA01-790EDFDD404B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
