@@ -438,6 +438,8 @@ namespace MasterTouroku_Tokuisaki
             ckM_RadioButton5.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             ckM_RadioButton7.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             ckM_RadioButton8.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+
+            ckM_RadioButton3.CheckedChanged += new System.EventHandler(RadioBillingType_CheckedChanged);
         }
 
         private bool CheckKey(int index)
@@ -973,6 +975,9 @@ namespace MasterTouroku_Tokuisaki
                     }
                     break;
                 case (int)EIndex.BillingCloseDate:
+                    if (!detailControls[index].Enabled)
+                        return true;
+
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
@@ -986,6 +991,9 @@ namespace MasterTouroku_Tokuisaki
                     break;
 
                 case (int)EIndex.cmbCollectPlanMonth:
+                    if (!detailControls[index].Enabled)
+                        return true;
+
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         bbl.ShowMessage("E102");
@@ -995,6 +1003,9 @@ namespace MasterTouroku_Tokuisaki
                     break;
 
                 case (int)EIndex.CollectPlanDate:
+                    if (!detailControls[index].Enabled)
+                        return true;
+
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
@@ -1888,6 +1899,24 @@ namespace MasterTouroku_Tokuisaki
                     detailControls[(int)EIndex.LastName].Enabled = true;
                     detailControls[(int)EIndex.FirstName].Enabled = true;     // 2020-12-01 By SYP
                 }
+
+                if(ckM_RadioButton3.Checked)
+                {
+                    //請求区分＝締請求のとき
+                    detailControls[(int)EIndex.BillingCloseDate].Enabled = true;
+                    detailControls[(int)EIndex.cmbCollectPlanMonth].Enabled = true;
+                    detailControls[(int)EIndex.CollectPlanDate].Enabled = true;
+
+                }
+                else
+                {
+                    detailControls[(int)EIndex.BillingCloseDate].Text = "";
+                  cmbCollectPlanMonth.SelectedIndex = 0;
+                    detailControls[(int)EIndex.CollectPlanDate].Text = "";
+                    detailControls[(int)EIndex.BillingCloseDate].Enabled = false;
+                    detailControls[(int)EIndex.cmbCollectPlanMonth].Enabled = false;
+                    detailControls[(int)EIndex.CollectPlanDate].Enabled = false;
+                }
             }
         }
         private void RadioCustomerKBN_CheckedChanged(object sender, EventArgs e)
@@ -1900,7 +1929,7 @@ namespace MasterTouroku_Tokuisaki
                 {
                     //得意先会員区分＝Webの場合 以下の初期値をセットする		
                     M_CustomerInitial_Entity mc = new M_CustomerInitial_Entity();
-         bool ret=           mbl.M_CustomerInitial_Select(mc);
+                    bool ret = mbl.M_CustomerInitial_Select(mc);
                     if(!ret)
                     {
                         //Ｅ１５８
@@ -1946,6 +1975,18 @@ namespace MasterTouroku_Tokuisaki
                         ChkDMFlg.Checked = false;
 
                 }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void RadioBillingType_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SetEnabled(0);
             }
             catch (Exception ex)
             {
