@@ -1895,6 +1895,57 @@ namespace MasterTouroku_Tokuisaki
             try
             {
                 SetEnabled(0);
+
+                if(radioButton4.Checked)
+                {
+                    //得意先会員区分＝Webの場合 以下の初期値をセットする		
+                    M_CustomerInitial_Entity mc = new M_CustomerInitial_Entity();
+         bool ret=           mbl.M_CustomerInitial_Select(mc);
+                    if(!ret)
+                    {
+                        //Ｅ１５８
+                        //bbl.ShowMessage("E158");
+                        return;
+                    }
+                    CboStoreCD.SelectedValue = mce.MainStoreCD;
+                    ScStaff.TxtCode.Text = mce.StaffCD;
+                    CheckDetail((int)EIndex.StaffCD,false);
+                    radioButton9.Checked = true;//"様"		On
+                    ckM_RadioButton2.Checked = true;    //"即"		On
+                    detailControls[(int)EIndex.BillingCD].Text = keyControls[(int)EIndex.CustomerCD].Text;
+                    detailControls[(int)EIndex.CollectCD].Text = keyControls[(int)EIndex.CustomerCD].Text;
+                    cmbPaymentMethodCD.SelectedValue = mce.PaymentMethodCD;
+                    detailControls[(int)EIndex.KouzaCD].Text = mce.KouzaCD;
+                    CheckDetail((int)EIndex.KouzaCD, false);
+                    cmbPaymentUnit.SelectedValue = mce.PaymentUnit;
+                    cmbCreditLevel.SelectedValue = mce.CreditLevel;
+                    detailControls[(int)EIndex.CreditCheckKBN].Text = "0";
+                    //請求書税表記 "税込"            On
+                    cmbTaxTiming.SelectedValue = mce.TaxTiming;
+                    cmbTaxFractionKBN.SelectedValue = mce.TaxFractionKBN;
+                    cmbAmountFractionKBN.SelectedValue = mce.AmountFractionKBN;
+                    cmbStoreTankaKBN.SelectedIndex = 0;
+                    detailControls[(int)EIndex.TankaCD].Text = "";
+                    switch (mce.HolidayKBN)
+                    {
+                        case "0":
+                            ckM_RadioButton4.Checked = true;
+                            break;
+                        case "1":
+                            ckM_RadioButton5.Checked = true;
+                            break;
+                        case "2":
+                            ckM_RadioButton6.Checked = true;
+                            break;
+                    }
+                    cmbPaymentUnit.SelectedValue = mce.PaymentUnit;
+
+                    if (mce.DMFlg.Equals("0"))  //0ならON	
+                        ChkDMFlg.Checked = true;
+                    else
+                        ChkDMFlg.Checked = false;
+
+                }
             }
             catch (Exception ex)
             {
