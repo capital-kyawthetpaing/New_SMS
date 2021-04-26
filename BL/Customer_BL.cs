@@ -209,7 +209,7 @@ namespace BL
                 mce.TaxFractionKBN = dt.Rows[0]["TaxFractionKBN"].ToString();
                 mce.AmountFractionKBN = dt.Rows[0]["AmountFractionKBN"].ToString();
                 mce.CreditLevel = dt.Rows[0]["CreditLevel"].ToString();
-                mce.CreditCheckKBN = dt.Rows[0][" CreditCheckKBN"].ToString();
+                mce.CreditCheckKBN = dt.Rows[0]["CreditCheckKBN"].ToString();
                 mce.PaymentMethodCD = dt.Rows[0]["PaymentMethodCD"].ToString();
                 mce.KouzaCD = dt.Rows[0]["KouzaCD"].ToString();
                 mce.DisplayOrder = dt.Rows[0]["DisplayOrder"].ToString();

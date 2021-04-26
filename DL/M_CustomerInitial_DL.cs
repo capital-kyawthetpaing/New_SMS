@@ -15,7 +15,7 @@ namespace DL
             string sp = "M_CustomerInitial_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@CustomerCD", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.StoreKBN } },
+                { "@StoreKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.StoreKBN } },
                 //{ "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate } }
             };
 
