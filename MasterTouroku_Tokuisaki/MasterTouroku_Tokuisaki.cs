@@ -1363,9 +1363,9 @@ namespace MasterTouroku_Tokuisaki
                 mce.BillingType = "2";
             mce.BillingCD = detailControls[(int)EIndex.BillingCD].Text;
             mce.CollectCD = detailControls[(int)EIndex.CollectCD].Text;
-            mce.BillingCloseDate = txtBillingCloseDate.Text;
-            mce.CollectPlanMonth = cmbCollectPlanMonth.SelectedValue == null ? "0" : cmbCollectPlanMonth.SelectedValue.ToString();
-            mce.CollectPlanDate = txtCollectPlanDate.Text;
+            mce.BillingCloseDate = bbl.Z_SetStr(txtBillingCloseDate.Text);
+            mce.CollectPlanMonth = cmbCollectPlanMonth.SelectedIndex <= 0 ? "0" : cmbCollectPlanMonth.SelectedValue.ToString();
+            mce.CollectPlanDate = bbl.Z_SetStr(txtCollectPlanDate.Text);
             //mce.pnlHolidayKBN 0:前営業日 1:当日 2:次営業日
             if (ckM_RadioButton4.Checked)
                 mce.HolidayKBN = "0";
