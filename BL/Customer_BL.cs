@@ -189,5 +189,39 @@ namespace BL
                 return false;
             return true;
         }
+        public bool M_CustomerInitial_Select(M_CustomerInitial_Entity mce)
+        {
+            M_CustomerInitial_DL dl = new M_CustomerInitial_DL();
+            DataTable dt = dl.M_CustomerInitial_Select(mce);
+
+            if (dt.Rows.Count > 0)
+            {
+                mce.StoreKBN = dt.Rows[0]["StoreKBN"].ToString();
+                mce.CustomerKBN = dt.Rows[0]["CustomerKBN"].ToString();
+                mce.StoreTankaKBN = dt.Rows[0]["StoreTankaKBN"].ToString();
+                mce.TankaCD = dt.Rows[0]["TankaCD"].ToString();
+                mce.PointFLG = dt.Rows[0]["PointFLG"].ToString();
+                mce.MainStoreCD = dt.Rows[0]["MainStoreCD"].ToString();
+                mce.StaffCD = dt.Rows[0]["StaffCD"].ToString();
+                mce.HolidayKBN = dt.Rows[0]["HolidayKBN"].ToString();
+                mce.TaxTiming = dt.Rows[0]["TaxTiming"].ToString();
+                mce.TaxPrintKBN = dt.Rows[0]["TaxPrintKBN"].ToString();
+                mce.TaxFractionKBN = dt.Rows[0]["TaxFractionKBN"].ToString();
+                mce.AmountFractionKBN = dt.Rows[0]["AmountFractionKBN"].ToString();
+                mce.CreditLevel = dt.Rows[0]["CreditLevel"].ToString();
+                mce.CreditCheckKBN = dt.Rows[0]["CreditCheckKBN"].ToString();
+                mce.PaymentMethodCD = dt.Rows[0]["PaymentMethodCD"].ToString();
+                mce.KouzaCD = dt.Rows[0]["KouzaCD"].ToString();
+                mce.DisplayOrder = dt.Rows[0]["DisplayOrder"].ToString();
+                mce.PaymentUnit = dt.Rows[0]["PaymentUnit"].ToString();
+                mce.NoInvoiceFlg = dt.Rows[0]["NoInvoiceFlg"].ToString();
+                mce.DMFlg = dt.Rows[0]["DMFlg"].ToString();
+
+                return true;
+            }
+            else
+                return false;
+
+        }
     }
 }

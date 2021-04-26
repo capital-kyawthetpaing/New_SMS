@@ -284,7 +284,6 @@ namespace TempoRegiZaikoKakunin
             txtProductName.Text = frmshouhin.SKUName;
         }
 
-
        
     }
 }

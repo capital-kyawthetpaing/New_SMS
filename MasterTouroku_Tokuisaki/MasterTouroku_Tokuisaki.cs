@@ -77,6 +77,11 @@ namespace MasterTouroku_Tokuisaki
             , CreditETC
             //, CreditWarningAmount
             , CreditAdditionAmount
+            , CreditCheckKBN
+            , FareLevel
+            , Fare
+            , CreditMessage
+
             , DisplayOrder
             , AnalyzeCD1
             , AnalyzeCD2
@@ -92,7 +97,6 @@ namespace MasterTouroku_Tokuisaki
             , CboStoreCD
             , StaffCD
             , DeleteFlg
-            , txtCreditCheckKBN
             , COUNT
 
             //Label
@@ -386,9 +390,11 @@ namespace MasterTouroku_Tokuisaki
                             ,pnlHolidayKBN,txtRegisteredNumber
                             ,ChkNoInvoiceFlg,pnlTaxPrintKBN,cmbTaxTiming,cmbTaxFractionKBN,cmbAmountFractionKBN
                             ,cmbPaymentMethodCD,ScKouzaCD.TxtCode,cmbPaymentUnit,cmbStoreTankaKBN,ScTankaCD.TxtCode,ChkAttentionFLG,ChkConfirmFLG,txtConfirmComment
-                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
+                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC
+                            ,txtCreditAdditionAmount,txtCreditCheckKBN,  txtFareLevel, txtFare,txtCreditMessage
+                            ,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
                             ,ChkPointFLG,txtLastPoint,txtWaitingPoint,txtTotalPoint,txtRemarksOutStore,txtRemarksInStore,
-                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg, txtCreditCheckKBN, txtCreditMessage,  txtFareLevel, txtFare };
+                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg};
             detailLabels = new Control[] { ScKouzaCD, ScBillingCD, ScCollectCD, ScTankaCD, ScStaff, lblStoreName, lblLastSalesDate, lblPoint, lblMinyukin, lblKensu, lblCreditAmount };
             searchButtons = new Control[] { ScKouzaCD.BtnSearch, ScBillingCD.BtnSearch,ScCollectCD.BtnSearch,ScStaff.BtnSearch,
                                             ScTankaCD.BtnSearch,ScCopyCustomer.BtnSearch,ScCustomer.BtnSearch };
@@ -432,6 +438,8 @@ namespace MasterTouroku_Tokuisaki
             ckM_RadioButton5.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             ckM_RadioButton7.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             ckM_RadioButton8.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+
+            ckM_RadioButton3.CheckedChanged += new System.EventHandler(RadioBillingType_CheckedChanged);
         }
 
         private bool CheckKey(int index)
@@ -600,6 +608,9 @@ namespace MasterTouroku_Tokuisaki
                                 break;
                             case "3":
                                 radioButton3.Checked = true;
+                                break;
+                            case "4":
+                                radioButton4.Checked = true;
                                 break;
                         }
                         switch (mce.AliasKBN)   //1:様、2:御中
@@ -967,6 +978,9 @@ namespace MasterTouroku_Tokuisaki
                     }
                     break;
                 case (int)EIndex.BillingCloseDate:
+                    if (!detailControls[index].Enabled)
+                        return true;
+
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
@@ -980,6 +994,9 @@ namespace MasterTouroku_Tokuisaki
                     break;
 
                 case (int)EIndex.cmbCollectPlanMonth:
+                    if (!detailControls[index].Enabled)
+                        return true;
+
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         bbl.ShowMessage("E102");
@@ -989,6 +1006,9 @@ namespace MasterTouroku_Tokuisaki
                     break;
 
                 case (int)EIndex.CollectPlanDate:
+                    if (!detailControls[index].Enabled)
+                        return true;
+
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
@@ -1216,7 +1236,7 @@ namespace MasterTouroku_Tokuisaki
                 case (int)EIndex.COUNT:
                     break;
 
-                case (int)EIndex.txtCreditCheckKBN:
+                case (int)EIndex.CreditCheckKBN:
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
@@ -1232,6 +1252,10 @@ namespace MasterTouroku_Tokuisaki
                             }
                         }
                     }
+                    break;
+                case (int)EIndex.FareLevel:
+                case (int)EIndex.Fare:
+                    detailControls[index].Text = bbl.Z_SetStr(detailControls[index].Text);
                     break;
 
                 case (int)EIndex.lblKouzaCD:
@@ -1339,9 +1363,9 @@ namespace MasterTouroku_Tokuisaki
                 mce.BillingType = "2";
             mce.BillingCD = detailControls[(int)EIndex.BillingCD].Text;
             mce.CollectCD = detailControls[(int)EIndex.CollectCD].Text;
-            mce.BillingCloseDate = txtBillingCloseDate.Text;
-            mce.CollectPlanMonth = cmbCollectPlanMonth.SelectedValue == null ? "" : cmbCollectPlanMonth.SelectedValue.ToString();
-            mce.CollectPlanDate = txtCollectPlanDate.Text;
+            mce.BillingCloseDate = bbl.Z_SetStr(txtBillingCloseDate.Text);
+            mce.CollectPlanMonth = cmbCollectPlanMonth.SelectedIndex <= 0 ? "0" : cmbCollectPlanMonth.SelectedValue.ToString();
+            mce.CollectPlanDate = bbl.Z_SetStr(txtCollectPlanDate.Text);
             //mce.pnlHolidayKBN 0:前営業日 1:当日 2:次営業日
             if (ckM_RadioButton4.Checked)
                 mce.HolidayKBN = "0";
@@ -1358,18 +1382,18 @@ namespace MasterTouroku_Tokuisaki
             else if (ckM_RadioButton8.Checked)
                 mce.TaxPrintKBN = "2";
 
-            mce.TaxTiming = cmbTaxTiming.SelectedValue == null ? "" : cmbTaxTiming.SelectedValue.ToString();
-            mce.TaxFractionKBN = cmbTaxFractionKBN.SelectedValue == null ? "" : cmbTaxFractionKBN.SelectedValue.ToString();
-            mce.AmountFractionKBN = cmbAmountFractionKBN.SelectedValue == null ? "" : cmbAmountFractionKBN.SelectedValue.ToString();
-            mce.PaymentMethodCD = cmbPaymentMethodCD.SelectedValue == null ? "" : cmbPaymentMethodCD.SelectedValue.ToString();
+            mce.TaxTiming = cmbTaxTiming.SelectedIndex <= 0 ? "0" : cmbTaxTiming.SelectedValue.ToString();
+            mce.TaxFractionKBN = cmbTaxFractionKBN.SelectedIndex <= 0 ? "0" : cmbTaxFractionKBN.SelectedValue.ToString();
+            mce.AmountFractionKBN = cmbAmountFractionKBN.SelectedIndex <= 0 ? "0" : cmbAmountFractionKBN.SelectedValue.ToString();
+            mce.PaymentMethodCD = cmbPaymentMethodCD.SelectedIndex <= 0 ? "" : cmbPaymentMethodCD.SelectedValue.ToString();
             mce.KouzaCD = detailControls[(int)EIndex.KouzaCD].Text;
             mce.TankaCD = detailControls[(int)EIndex.TankaCD].Text;
-            mce.PaymentUnit = cmbPaymentUnit.SelectedValue == null ? "" : cmbPaymentUnit.SelectedValue.ToString();
-            mce.StoreTankaKBN = cmbStoreTankaKBN.SelectedValue == null ? "" : cmbStoreTankaKBN.SelectedValue.ToString();
+            mce.PaymentUnit = cmbPaymentUnit.SelectedIndex <= 0 ? "" : cmbPaymentUnit.SelectedValue.ToString();
+            mce.StoreTankaKBN = cmbStoreTankaKBN.SelectedIndex <= 0 ? "0" : cmbStoreTankaKBN.SelectedValue.ToString();
             mce.AttentionFLG = ChkAttentionFLG.Checked ? "1" : "0";
             mce.ConfirmFLG = ChkConfirmFLG.Checked ? "1" : "0";
             mce.ConfirmComment = txtConfirmComment.Text;
-            mce.CreditLevel = cmbCreditLevel.SelectedValue == null ? "0" : cmbCreditLevel.SelectedValue.ToString();
+            mce.CreditLevel = cmbCreditLevel.SelectedIndex <= 0 ? "0" : cmbCreditLevel.SelectedValue.ToString();
             mce.CreditCard = txtCreditCard.Text;
             mce.CreditInsurance = txtCreditInsurance.Text;
             mce.CreditDeposit = txtCreditDeposit.Text;
@@ -1391,7 +1415,7 @@ namespace MasterTouroku_Tokuisaki
             mce.TotalPoint = bbl.Z_SetStr(txtTotalPoint.Text);
             mce.RemarksOutStore = txtRemarksOutStore.Text;
             mce.RemarksInStore = txtRemarksInStore.Text;
-            mce.MainStoreCD = CboStoreCD.SelectedValue == null ? "" : CboStoreCD.SelectedValue.ToString();
+            mce.MainStoreCD = CboStoreCD.SelectedIndex <= 0 ? "" : CboStoreCD.SelectedValue.ToString();
             mce.StaffCD = detailControls[(int)EIndex.StaffCD].Text;
 
             //チェックボックス
@@ -1878,9 +1902,91 @@ namespace MasterTouroku_Tokuisaki
                     detailControls[(int)EIndex.LastName].Enabled = true;
                     detailControls[(int)EIndex.FirstName].Enabled = true;     // 2020-12-01 By SYP
                 }
+
+                if(ckM_RadioButton3.Checked)
+                {
+                    //請求区分＝締請求のとき
+                    detailControls[(int)EIndex.BillingCloseDate].Enabled = true;
+                    detailControls[(int)EIndex.cmbCollectPlanMonth].Enabled = true;
+                    detailControls[(int)EIndex.CollectPlanDate].Enabled = true;
+
+                }
+                else
+                {
+                    detailControls[(int)EIndex.BillingCloseDate].Text = "";
+                  cmbCollectPlanMonth.SelectedIndex = -1;
+                    detailControls[(int)EIndex.CollectPlanDate].Text = "";
+                    detailControls[(int)EIndex.BillingCloseDate].Enabled = false;
+                    detailControls[(int)EIndex.cmbCollectPlanMonth].Enabled = false;
+                    detailControls[(int)EIndex.CollectPlanDate].Enabled = false;
+                }
             }
         }
         private void RadioCustomerKBN_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SetEnabled(0);
+
+                if(radioButton4.Checked)
+                {
+                    //得意先会員区分＝Webの場合 以下の初期値をセットする		
+                    M_CustomerInitial_Entity mc = new M_CustomerInitial_Entity();
+                    mc.StoreKBN = "1";
+                    bool ret = mbl.M_CustomerInitial_Select(mc);
+                    if(!ret)
+                    {
+                        //Ｅ１５８
+                        //bbl.ShowMessage("E158");
+                        return;
+                    }
+                    CboStoreCD.SelectedValue = mc.MainStoreCD;
+                    ScStaff.TxtCode.Text = mc.StaffCD;
+                    CheckDetail((int)EIndex.StaffCD,false);
+                    radioButton9.Checked = true;//"様"		On
+                    ckM_RadioButton2.Checked = true;    //"即"		On
+                    detailControls[(int)EIndex.BillingCD].Text = keyControls[(int)EIndex.CustomerCD].Text;
+                    detailControls[(int)EIndex.CollectCD].Text = keyControls[(int)EIndex.CustomerCD].Text;
+                    cmbPaymentMethodCD.SelectedValue = mc.PaymentMethodCD;
+                    detailControls[(int)EIndex.KouzaCD].Text = mc.KouzaCD;
+                    CheckDetail((int)EIndex.KouzaCD, false);
+                    cmbPaymentUnit.SelectedValue = mc.PaymentUnit;
+                    cmbCreditLevel.SelectedValue = mc.CreditLevel;
+                    detailControls[(int)EIndex.CreditCheckKBN].Text = "0";
+                    //請求書税表記 "税込"            On
+                    cmbTaxTiming.SelectedValue = mc.TaxTiming;
+                    cmbTaxFractionKBN.SelectedValue = mc.TaxFractionKBN;
+                    cmbAmountFractionKBN.SelectedValue = mc.AmountFractionKBN;
+                    cmbStoreTankaKBN.SelectedIndex = 0;
+                    detailControls[(int)EIndex.TankaCD].Text = "";
+                    switch (mc.HolidayKBN)
+                    {
+                        case "0":
+                            ckM_RadioButton4.Checked = true;
+                            break;
+                        case "1":
+                            ckM_RadioButton5.Checked = true;
+                            break;
+                        case "2":
+                            ckM_RadioButton6.Checked = true;
+                            break;
+                    }
+                    cmbPaymentUnit.SelectedValue = mc.PaymentUnit;
+
+                    if (mce.DMFlg.Equals("0"))  //0ならON	
+                        ChkDMFlg.Checked = true;
+                    else
+                        ChkDMFlg.Checked = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void RadioBillingType_CheckedChanged(object sender, EventArgs e)
         {
             try
             {

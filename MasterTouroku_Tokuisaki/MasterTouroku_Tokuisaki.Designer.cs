@@ -192,6 +192,7 @@
             this.label25 = new CKM_Controls.CKM_Label();
             this.ScBillingCD = new Search.CKM_SearchControl();
             this.ScCollectCD = new Search.CKM_SearchControl();
+            this.ckM_Label31 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -237,7 +238,7 @@
             this.label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.DefaultlabelSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(649, 34);
@@ -254,7 +255,7 @@
             this.label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.DefaultlabelSize = true;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(568, 9);
@@ -271,7 +272,7 @@
             this.label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.DefaultlabelSize = true;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(87, 34);
@@ -288,7 +289,7 @@
             this.label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.DefaultlabelSize = true;
-            this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(35, 9);
@@ -307,7 +308,7 @@
             this.btnSubF11.DefaultBtnSize = true;
             this.btnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnSubF11.Location = new System.Drawing.Point(394, 3);
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
@@ -328,7 +329,7 @@
             this.ScCopyCustomer.CodeWidth1 = 100;
             this.ScCopyCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyCustomer.DataCheck = false;
-            this.ScCopyCustomer.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCopyCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCopyCustomer.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScCopyCustomer.IsCopy = false;
             this.ScCopyCustomer.LabelText = "";
@@ -341,6 +342,7 @@
             this.ScCopyCustomer.Size = new System.Drawing.Size(133, 50);
             this.ScCopyCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCopyCustomer.TabIndex = 2;
+            this.ScCopyCustomer.test = null;
             this.ScCopyCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyCustomer.UseChangeDate = true;
             this.ScCopyCustomer.Value1 = null;
@@ -357,7 +359,7 @@
             this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = false;
-            this.ScCustomer.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScCustomer.IsCopy = false;
             this.ScCustomer.LabelText = "";
@@ -370,6 +372,7 @@
             this.ScCustomer.Size = new System.Drawing.Size(133, 50);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCustomer.TabIndex = 1;
+            this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = true;
             this.ScCustomer.Value1 = null;
@@ -379,6 +382,7 @@
             // 
             // PanelDetail
             // 
+            this.PanelDetail.Controls.Add(this.ckM_Label31);
             this.PanelDetail.Controls.Add(this.txtCreditMessage);
             this.PanelDetail.Controls.Add(this.ckM_Label30);
             this.PanelDetail.Controls.Add(this.txtFare);
@@ -525,7 +529,7 @@
             this.txtCreditMessage.BackColor = System.Drawing.Color.White;
             this.txtCreditMessage.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半角;
             this.txtCreditMessage.F_focus = false;
-            this.txtCreditMessage.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditMessage.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditMessage.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtCreditMessage.Length = 100;
             this.txtCreditMessage.Location = new System.Drawing.Point(347, 696);
@@ -537,7 +541,7 @@
             this.txtCreditMessage.Name = "txtCreditMessage";
             this.txtCreditMessage.RowCount = 5;
             this.txtCreditMessage.Size = new System.Drawing.Size(180, 100);
-            this.txtCreditMessage.TabIndex = 763;
+            this.txtCreditMessage.TabIndex = 56;
             this.txtCreditMessage.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // ckM_Label30
@@ -546,7 +550,7 @@
             this.ckM_Label30.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label30.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label30.DefaultlabelSize = true;
-            this.ckM_Label30.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label30.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label30.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label30.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label30.Location = new System.Drawing.Point(450, 650);
@@ -562,12 +566,13 @@
             this.txtFare.AllowMinus = false;
             this.txtFare.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtFare.BackColor = System.Drawing.Color.White;
+            this.txtFare.BorderColor = false;
             this.txtFare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFare.ClientColor = System.Drawing.SystemColors.Window;
             this.txtFare.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtFare.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtFare.DecimalPlace = 0;
-            this.txtFare.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtFare.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtFare.IntegerPart = 0;
             this.txtFare.IsCorrectDate = true;
             this.txtFare.isEnterKeyDown = false;
@@ -575,27 +580,30 @@
             this.txtFare.isMaxLengthErr = false;
             this.txtFare.IsNumber = true;
             this.txtFare.IsShop = false;
+            this.txtFare.IsTimemmss = false;
             this.txtFare.Length = 10;
             this.txtFare.Location = new System.Drawing.Point(347, 664);
             this.txtFare.MaxLength = 10;
             this.txtFare.MoveNext = true;
             this.txtFare.Name = "txtFare";
             this.txtFare.Size = new System.Drawing.Size(100, 19);
-            this.txtFare.TabIndex = 760;
+            this.txtFare.TabIndex = 55;
             this.txtFare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFare.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFare.UseColorSizMode = false;
             // 
             // txtFareLevel
             // 
             this.txtFareLevel.AllowMinus = false;
             this.txtFareLevel.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtFareLevel.BackColor = System.Drawing.Color.White;
+            this.txtFareLevel.BorderColor = false;
             this.txtFareLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFareLevel.ClientColor = System.Drawing.SystemColors.Window;
             this.txtFareLevel.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtFareLevel.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtFareLevel.DecimalPlace = 0;
-            this.txtFareLevel.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtFareLevel.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtFareLevel.IntegerPart = 0;
             this.txtFareLevel.IsCorrectDate = true;
             this.txtFareLevel.isEnterKeyDown = false;
@@ -603,15 +611,17 @@
             this.txtFareLevel.isMaxLengthErr = false;
             this.txtFareLevel.IsNumber = true;
             this.txtFareLevel.IsShop = false;
+            this.txtFareLevel.IsTimemmss = false;
             this.txtFareLevel.Length = 10;
             this.txtFareLevel.Location = new System.Drawing.Point(347, 646);
             this.txtFareLevel.MaxLength = 10;
             this.txtFareLevel.MoveNext = true;
             this.txtFareLevel.Name = "txtFareLevel";
             this.txtFareLevel.Size = new System.Drawing.Size(100, 19);
-            this.txtFareLevel.TabIndex = 759;
+            this.txtFareLevel.TabIndex = 54;
             this.txtFareLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFareLevel.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFareLevel.UseColorSizMode = false;
             // 
             // ckM_Label29
             // 
@@ -619,7 +629,7 @@
             this.ckM_Label29.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label29.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label29.DefaultlabelSize = true;
-            this.ckM_Label29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label29.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label29.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label29.Location = new System.Drawing.Point(248, 698);
@@ -636,7 +646,7 @@
             this.ckM_Label28.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label28.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label28.DefaultlabelSize = true;
-            this.ckM_Label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label28.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label28.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label28.Location = new System.Drawing.Point(313, 668);
@@ -653,7 +663,7 @@
             this.ckM_Label27.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label27.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label27.DefaultlabelSize = true;
-            this.ckM_Label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label27.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label27.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label27.Location = new System.Drawing.Point(287, 650);
@@ -670,7 +680,7 @@
             this.ckM_Label26.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label26.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label26.DefaultlabelSize = true;
-            this.ckM_Label26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label26.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label26.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label26.Location = new System.Drawing.Point(159, 737);
@@ -686,12 +696,13 @@
             this.txtCreditCheckKBN.AllowMinus = false;
             this.txtCreditCheckKBN.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCreditCheckKBN.BackColor = System.Drawing.Color.White;
+            this.txtCreditCheckKBN.BorderColor = false;
             this.txtCreditCheckKBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCreditCheckKBN.ClientColor = System.Drawing.SystemColors.Window;
             this.txtCreditCheckKBN.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCreditCheckKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtCreditCheckKBN.DecimalPlace = 0;
-            this.txtCreditCheckKBN.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditCheckKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditCheckKBN.IntegerPart = 0;
             this.txtCreditCheckKBN.IsCorrectDate = true;
             this.txtCreditCheckKBN.isEnterKeyDown = false;
@@ -699,15 +710,17 @@
             this.txtCreditCheckKBN.isMaxLengthErr = false;
             this.txtCreditCheckKBN.IsNumber = true;
             this.txtCreditCheckKBN.IsShop = false;
+            this.txtCreditCheckKBN.IsTimemmss = false;
             this.txtCreditCheckKBN.Length = 1;
             this.txtCreditCheckKBN.Location = new System.Drawing.Point(136, 733);
             this.txtCreditCheckKBN.MaxLength = 1;
             this.txtCreditCheckKBN.MoveNext = true;
             this.txtCreditCheckKBN.Name = "txtCreditCheckKBN";
             this.txtCreditCheckKBN.Size = new System.Drawing.Size(17, 19);
-            this.txtCreditCheckKBN.TabIndex = 65;
+            this.txtCreditCheckKBN.TabIndex = 53;
             this.txtCreditCheckKBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCreditCheckKBN.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCreditCheckKBN.UseColorSizMode = false;
             // 
             // ckM_Label25
             // 
@@ -715,7 +728,7 @@
             this.ckM_Label25.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label25.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label25.DefaultlabelSize = true;
-            this.ckM_Label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label25.Location = new System.Drawing.Point(24, 737);
@@ -730,7 +743,7 @@
             // 
             this.lblCreditAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblCreditAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCreditAmount.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreditAmount.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditAmount.Location = new System.Drawing.Point(136, 696);
             this.lblCreditAmount.Name = "lblCreditAmount";
             this.lblCreditAmount.Size = new System.Drawing.Size(80, 18);
@@ -744,7 +757,7 @@
             this.ckM_Label24.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label24.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label24.DefaultlabelSize = true;
-            this.ckM_Label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label24.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label24.Location = new System.Drawing.Point(65, 699);
@@ -761,7 +774,7 @@
             this.ckM_Label23.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label23.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label23.DefaultlabelSize = true;
-            this.ckM_Label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label23.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label23.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label23.Location = new System.Drawing.Point(78, 679);
@@ -777,12 +790,13 @@
             this.txtCreditETC.AllowMinus = false;
             this.txtCreditETC.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCreditETC.BackColor = System.Drawing.Color.White;
+            this.txtCreditETC.BorderColor = false;
             this.txtCreditETC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCreditETC.ClientColor = System.Drawing.Color.White;
             this.txtCreditETC.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCreditETC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCreditETC.DecimalPlace = 0;
-            this.txtCreditETC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditETC.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditETC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCreditETC.IntegerPart = 9;
             this.txtCreditETC.IsCorrectDate = true;
@@ -791,6 +805,7 @@
             this.txtCreditETC.isMaxLengthErr = false;
             this.txtCreditETC.IsNumber = true;
             this.txtCreditETC.IsShop = false;
+            this.txtCreditETC.IsTimemmss = false;
             this.txtCreditETC.Length = 20;
             this.txtCreditETC.Location = new System.Drawing.Point(136, 677);
             this.txtCreditETC.MaxLength = 20;
@@ -801,6 +816,7 @@
             this.txtCreditETC.Text = "999,999,999";
             this.txtCreditETC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditETC.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCreditETC.UseColorSizMode = false;
             // 
             // ckM_Label22
             // 
@@ -808,7 +824,7 @@
             this.ckM_Label22.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label22.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label22.DefaultlabelSize = true;
-            this.ckM_Label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label22.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label22.Location = new System.Drawing.Point(78, 660);
@@ -824,12 +840,13 @@
             this.txtCreditDeposit.AllowMinus = false;
             this.txtCreditDeposit.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCreditDeposit.BackColor = System.Drawing.Color.White;
+            this.txtCreditDeposit.BorderColor = false;
             this.txtCreditDeposit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCreditDeposit.ClientColor = System.Drawing.Color.White;
             this.txtCreditDeposit.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCreditDeposit.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCreditDeposit.DecimalPlace = 0;
-            this.txtCreditDeposit.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditDeposit.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditDeposit.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCreditDeposit.IntegerPart = 9;
             this.txtCreditDeposit.IsCorrectDate = true;
@@ -838,6 +855,7 @@
             this.txtCreditDeposit.isMaxLengthErr = false;
             this.txtCreditDeposit.IsNumber = true;
             this.txtCreditDeposit.IsShop = false;
+            this.txtCreditDeposit.IsTimemmss = false;
             this.txtCreditDeposit.Length = 20;
             this.txtCreditDeposit.Location = new System.Drawing.Point(136, 658);
             this.txtCreditDeposit.MaxLength = 20;
@@ -848,6 +866,7 @@
             this.txtCreditDeposit.Text = "999,999,999";
             this.txtCreditDeposit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditDeposit.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCreditDeposit.UseColorSizMode = false;
             // 
             // ckM_Label21
             // 
@@ -855,7 +874,7 @@
             this.ckM_Label21.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label21.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label21.DefaultlabelSize = true;
-            this.ckM_Label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label21.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label21.Location = new System.Drawing.Point(91, 641);
@@ -871,12 +890,13 @@
             this.txtCreditInsurance.AllowMinus = false;
             this.txtCreditInsurance.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCreditInsurance.BackColor = System.Drawing.Color.White;
+            this.txtCreditInsurance.BorderColor = false;
             this.txtCreditInsurance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCreditInsurance.ClientColor = System.Drawing.Color.White;
             this.txtCreditInsurance.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCreditInsurance.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCreditInsurance.DecimalPlace = 0;
-            this.txtCreditInsurance.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditInsurance.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditInsurance.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCreditInsurance.IntegerPart = 9;
             this.txtCreditInsurance.IsCorrectDate = true;
@@ -885,6 +905,7 @@
             this.txtCreditInsurance.isMaxLengthErr = false;
             this.txtCreditInsurance.IsNumber = true;
             this.txtCreditInsurance.IsShop = false;
+            this.txtCreditInsurance.IsTimemmss = false;
             this.txtCreditInsurance.Length = 20;
             this.txtCreditInsurance.Location = new System.Drawing.Point(136, 639);
             this.txtCreditInsurance.MaxLength = 20;
@@ -895,18 +916,20 @@
             this.txtCreditInsurance.Text = "999,999,999";
             this.txtCreditInsurance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditInsurance.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCreditInsurance.UseColorSizMode = false;
             // 
             // txtConfirmComment
             // 
             this.txtConfirmComment.AllowMinus = false;
             this.txtConfirmComment.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtConfirmComment.BackColor = System.Drawing.Color.White;
+            this.txtConfirmComment.BorderColor = false;
             this.txtConfirmComment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConfirmComment.ClientColor = System.Drawing.Color.White;
             this.txtConfirmComment.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtConfirmComment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtConfirmComment.DecimalPlace = 0;
-            this.txtConfirmComment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtConfirmComment.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtConfirmComment.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtConfirmComment.IntegerPart = 0;
             this.txtConfirmComment.IsCorrectDate = true;
@@ -915,6 +938,7 @@
             this.txtConfirmComment.isMaxLengthErr = false;
             this.txtConfirmComment.IsNumber = true;
             this.txtConfirmComment.IsShop = false;
+            this.txtConfirmComment.IsTimemmss = false;
             this.txtConfirmComment.Length = 50;
             this.txtConfirmComment.Location = new System.Drawing.Point(268, 569);
             this.txtConfirmComment.MaxLength = 50;
@@ -924,6 +948,7 @@
             this.txtConfirmComment.TabIndex = 45;
             this.txtConfirmComment.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
             this.txtConfirmComment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtConfirmComment.UseColorSizMode = false;
             // 
             // ckM_Label1
             // 
@@ -931,7 +956,7 @@
             this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label1.Location = new System.Drawing.Point(170, 573);
@@ -948,7 +973,7 @@
             this.txtRemarksOutStore.BackColor = System.Drawing.Color.White;
             this.txtRemarksOutStore.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtRemarksOutStore.F_focus = false;
-            this.txtRemarksOutStore.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtRemarksOutStore.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtRemarksOutStore.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarksOutStore.Length = 500;
             this.txtRemarksOutStore.Location = new System.Drawing.Point(836, 549);
@@ -970,7 +995,7 @@
             this.ckM_Label20.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label20.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label20.DefaultlabelSize = true;
-            this.ckM_Label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label20.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label20.Location = new System.Drawing.Point(763, 554);
@@ -1004,7 +1029,7 @@
             this.ckM_Label19.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label19.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label19.DefaultlabelSize = true;
-            this.ckM_Label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label19.Location = new System.Drawing.Point(1133, 444);
@@ -1038,7 +1063,7 @@
             this.ckM_Label18.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label18.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label18.DefaultlabelSize = true;
-            this.ckM_Label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label18.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label18.Location = new System.Drawing.Point(1146, 423);
@@ -1071,12 +1096,13 @@
             this.txtCollectPlanDate.AllowMinus = false;
             this.txtCollectPlanDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCollectPlanDate.BackColor = System.Drawing.Color.White;
+            this.txtCollectPlanDate.BorderColor = false;
             this.txtCollectPlanDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCollectPlanDate.ClientColor = System.Drawing.Color.White;
             this.txtCollectPlanDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCollectPlanDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtCollectPlanDate.DecimalPlace = 0;
-            this.txtCollectPlanDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCollectPlanDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCollectPlanDate.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCollectPlanDate.IntegerPart = 0;
             this.txtCollectPlanDate.IsCorrectDate = true;
@@ -1085,6 +1111,7 @@
             this.txtCollectPlanDate.isMaxLengthErr = false;
             this.txtCollectPlanDate.IsNumber = true;
             this.txtCollectPlanDate.IsShop = false;
+            this.txtCollectPlanDate.IsTimemmss = false;
             this.txtCollectPlanDate.Length = 2;
             this.txtCollectPlanDate.Location = new System.Drawing.Point(858, 416);
             this.txtCollectPlanDate.MaxLength = 2;
@@ -1094,6 +1121,7 @@
             this.txtCollectPlanDate.TabIndex = 30;
             this.txtCollectPlanDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCollectPlanDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCollectPlanDate.UseColorSizMode = false;
             // 
             // cmbCollectPlanMonth
             // 
@@ -1118,7 +1146,7 @@
             this.ckM_Label17.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label17.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label17.DefaultlabelSize = true;
-            this.ckM_Label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label17.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label17.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label17.Location = new System.Drawing.Point(785, 399);
@@ -1133,7 +1161,7 @@
             // 
             this.ChkNoInvoiceFlg.AutoSize = true;
             this.ChkNoInvoiceFlg.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkNoInvoiceFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkNoInvoiceFlg.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkNoInvoiceFlg.Location = new System.Drawing.Point(1011, 373);
             this.ChkNoInvoiceFlg.Name = "ChkNoInvoiceFlg";
             this.ChkNoInvoiceFlg.Size = new System.Drawing.Size(89, 16);
@@ -1147,7 +1175,7 @@
             this.ckM_Label14.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label14.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label14.DefaultlabelSize = true;
-            this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label14.Location = new System.Drawing.Point(555, 758);
@@ -1164,7 +1192,7 @@
             this.ckM_Label15.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label15.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label15.DefaultlabelSize = true;
-            this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label15.Location = new System.Drawing.Point(542, 739);
@@ -1181,7 +1209,7 @@
             this.ckM_Label16.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label16.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label16.DefaultlabelSize = true;
-            this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label16.Location = new System.Drawing.Point(542, 720);
@@ -1197,12 +1225,13 @@
             this.txtTotalPoint.AllowMinus = false;
             this.txtTotalPoint.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTotalPoint.BackColor = System.Drawing.Color.White;
+            this.txtTotalPoint.BorderColor = false;
             this.txtTotalPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalPoint.ClientColor = System.Drawing.Color.White;
             this.txtTotalPoint.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTotalPoint.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtTotalPoint.DecimalPlace = 0;
-            this.txtTotalPoint.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTotalPoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTotalPoint.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtTotalPoint.IntegerPart = 9;
             this.txtTotalPoint.IsCorrectDate = true;
@@ -1211,28 +1240,31 @@
             this.txtTotalPoint.isMaxLengthErr = false;
             this.txtTotalPoint.IsNumber = true;
             this.txtTotalPoint.IsShop = false;
+            this.txtTotalPoint.IsTimemmss = false;
             this.txtTotalPoint.Length = 20;
             this.txtTotalPoint.Location = new System.Drawing.Point(641, 756);
             this.txtTotalPoint.MaxLength = 20;
             this.txtTotalPoint.MoveNext = true;
             this.txtTotalPoint.Name = "txtTotalPoint";
             this.txtTotalPoint.Size = new System.Drawing.Size(80, 19);
-            this.txtTotalPoint.TabIndex = 60;
+            this.txtTotalPoint.TabIndex = 64;
             this.txtTotalPoint.Text = "999,999,999";
             this.txtTotalPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotalPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTotalPoint.UseColorSizMode = false;
             // 
             // txtWaitingPoint
             // 
             this.txtWaitingPoint.AllowMinus = false;
             this.txtWaitingPoint.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtWaitingPoint.BackColor = System.Drawing.Color.White;
+            this.txtWaitingPoint.BorderColor = false;
             this.txtWaitingPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWaitingPoint.ClientColor = System.Drawing.Color.White;
             this.txtWaitingPoint.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtWaitingPoint.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtWaitingPoint.DecimalPlace = 0;
-            this.txtWaitingPoint.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtWaitingPoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtWaitingPoint.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtWaitingPoint.IntegerPart = 9;
             this.txtWaitingPoint.IsCorrectDate = true;
@@ -1241,28 +1273,31 @@
             this.txtWaitingPoint.isMaxLengthErr = false;
             this.txtWaitingPoint.IsNumber = true;
             this.txtWaitingPoint.IsShop = false;
+            this.txtWaitingPoint.IsTimemmss = false;
             this.txtWaitingPoint.Length = 20;
             this.txtWaitingPoint.Location = new System.Drawing.Point(641, 737);
             this.txtWaitingPoint.MaxLength = 20;
             this.txtWaitingPoint.MoveNext = true;
             this.txtWaitingPoint.Name = "txtWaitingPoint";
             this.txtWaitingPoint.Size = new System.Drawing.Size(80, 19);
-            this.txtWaitingPoint.TabIndex = 59;
+            this.txtWaitingPoint.TabIndex = 63;
             this.txtWaitingPoint.Text = "999,999,999";
             this.txtWaitingPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtWaitingPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtWaitingPoint.UseColorSizMode = false;
             // 
             // txtLastPoint
             // 
             this.txtLastPoint.AllowMinus = false;
             this.txtLastPoint.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLastPoint.BackColor = System.Drawing.Color.White;
+            this.txtLastPoint.BorderColor = false;
             this.txtLastPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastPoint.ClientColor = System.Drawing.Color.White;
             this.txtLastPoint.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtLastPoint.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtLastPoint.DecimalPlace = 0;
-            this.txtLastPoint.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtLastPoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtLastPoint.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtLastPoint.IntegerPart = 9;
             this.txtLastPoint.IsCorrectDate = true;
@@ -1271,26 +1306,28 @@
             this.txtLastPoint.isMaxLengthErr = false;
             this.txtLastPoint.IsNumber = true;
             this.txtLastPoint.IsShop = false;
+            this.txtLastPoint.IsTimemmss = false;
             this.txtLastPoint.Length = 20;
             this.txtLastPoint.Location = new System.Drawing.Point(641, 718);
             this.txtLastPoint.MaxLength = 20;
             this.txtLastPoint.MoveNext = true;
             this.txtLastPoint.Name = "txtLastPoint";
             this.txtLastPoint.Size = new System.Drawing.Size(80, 19);
-            this.txtLastPoint.TabIndex = 58;
+            this.txtLastPoint.TabIndex = 62;
             this.txtLastPoint.Text = "999,999,999";
             this.txtLastPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLastPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtLastPoint.UseColorSizMode = false;
             // 
             // ChkPointFLG
             // 
             this.ChkPointFLG.AutoSize = true;
             this.ChkPointFLG.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkPointFLG.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkPointFLG.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkPointFLG.Location = new System.Drawing.Point(554, 694);
             this.ChkPointFLG.Name = "ChkPointFLG";
             this.ChkPointFLG.Size = new System.Drawing.Size(102, 16);
-            this.ChkPointFLG.TabIndex = 57;
+            this.ChkPointFLG.TabIndex = 61;
             this.ChkPointFLG.Text = "ポイント対象";
             this.ChkPointFLG.UseVisualStyleBackColor = true;
             // 
@@ -1300,7 +1337,7 @@
             this.ckM_Label13.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label13.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label13.DefaultlabelSize = true;
-            this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label13.Location = new System.Drawing.Point(594, 613);
@@ -1316,12 +1353,13 @@
             this.txtDisplayOrder.AllowMinus = false;
             this.txtDisplayOrder.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDisplayOrder.BackColor = System.Drawing.Color.White;
+            this.txtDisplayOrder.BorderColor = false;
             this.txtDisplayOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDisplayOrder.ClientColor = System.Drawing.Color.White;
             this.txtDisplayOrder.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDisplayOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtDisplayOrder.DecimalPlace = 0;
-            this.txtDisplayOrder.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtDisplayOrder.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtDisplayOrder.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtDisplayOrder.IntegerPart = 5;
             this.txtDisplayOrder.IsCorrectDate = true;
@@ -1330,16 +1368,18 @@
             this.txtDisplayOrder.isMaxLengthErr = false;
             this.txtDisplayOrder.IsNumber = true;
             this.txtDisplayOrder.IsShop = false;
+            this.txtDisplayOrder.IsTimemmss = false;
             this.txtDisplayOrder.Length = 5;
             this.txtDisplayOrder.Location = new System.Drawing.Point(641, 610);
             this.txtDisplayOrder.MaxLength = 5;
             this.txtDisplayOrder.MoveNext = true;
             this.txtDisplayOrder.Name = "txtDisplayOrder";
             this.txtDisplayOrder.Size = new System.Drawing.Size(49, 19);
-            this.txtDisplayOrder.TabIndex = 53;
+            this.txtDisplayOrder.TabIndex = 57;
             this.txtDisplayOrder.Text = "99,999";
             this.txtDisplayOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDisplayOrder.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDisplayOrder.UseColorSizMode = false;
             // 
             // label40
             // 
@@ -1347,7 +1387,7 @@
             this.label40.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label40.BackColor = System.Drawing.Color.Transparent;
             this.label40.DefaultlabelSize = true;
-            this.label40.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label40.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label40.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label40.ForeColor = System.Drawing.Color.Black;
             this.label40.Location = new System.Drawing.Point(1379, 40);
@@ -1381,7 +1421,7 @@
             this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label12.DefaultlabelSize = true;
-            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label12.Location = new System.Drawing.Point(39, 604);
@@ -1396,7 +1436,7 @@
             // 
             this.lblKensu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKensu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKensu.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKensu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKensu.Location = new System.Drawing.Point(465, 551);
             this.lblKensu.Name = "lblKensu";
             this.lblKensu.Size = new System.Drawing.Size(34, 18);
@@ -1410,7 +1450,7 @@
             this.ckM_Label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label11.DefaultlabelSize = true;
-            this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label11.Location = new System.Drawing.Point(392, 554);
@@ -1425,7 +1465,7 @@
             // 
             this.lblMinyukin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblMinyukin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMinyukin.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinyukin.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinyukin.Location = new System.Drawing.Point(268, 551);
             this.lblMinyukin.Name = "lblMinyukin";
             this.lblMinyukin.Size = new System.Drawing.Size(85, 18);
@@ -1439,7 +1479,7 @@
             this.ckM_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label10.DefaultlabelSize = true;
-            this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label10.Location = new System.Drawing.Point(207, 554);
@@ -1454,7 +1494,7 @@
             // 
             this.ChkAttentionFLG.AutoSize = true;
             this.ChkAttentionFLG.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkAttentionFLG.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkAttentionFLG.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkAttentionFLG.Location = new System.Drawing.Point(35, 552);
             this.ChkAttentionFLG.Name = "ChkAttentionFLG";
             this.ChkAttentionFLG.Size = new System.Drawing.Size(115, 16);
@@ -1466,7 +1506,7 @@
             // 
             this.ChkConfirmFLG.AutoSize = true;
             this.ChkConfirmFLG.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkConfirmFLG.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkConfirmFLG.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkConfirmFLG.Location = new System.Drawing.Point(35, 572);
             this.ChkConfirmFLG.Name = "ChkConfirmFLG";
             this.ChkConfirmFLG.Size = new System.Drawing.Size(115, 16);
@@ -1514,7 +1554,7 @@
             this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label9.DefaultlabelSize = true;
-            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label9.Location = new System.Drawing.Point(52, 471);
@@ -1548,7 +1588,7 @@
             this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label8.Location = new System.Drawing.Point(52, 432);
@@ -1564,12 +1604,13 @@
             this.txtTel23.AllowMinus = false;
             this.txtTel23.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTel23.BackColor = System.Drawing.Color.White;
+            this.txtTel23.BorderColor = false;
             this.txtTel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTel23.ClientColor = System.Drawing.Color.White;
             this.txtTel23.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTel23.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtTel23.DecimalPlace = 0;
-            this.txtTel23.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTel23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTel23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtTel23.IntegerPart = 0;
             this.txtTel23.IsCorrectDate = true;
@@ -1578,6 +1619,7 @@
             this.txtTel23.isMaxLengthErr = false;
             this.txtTel23.IsNumber = true;
             this.txtTel23.IsShop = false;
+            this.txtTel23.IsTimemmss = false;
             this.txtTel23.Length = 4;
             this.txtTel23.Location = new System.Drawing.Point(463, 292);
             this.txtTel23.MaxLength = 4;
@@ -1586,18 +1628,20 @@
             this.txtTel23.Size = new System.Drawing.Size(37, 19);
             this.txtTel23.TabIndex = 23;
             this.txtTel23.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTel23.UseColorSizMode = false;
             // 
             // txtTel13
             // 
             this.txtTel13.AllowMinus = false;
             this.txtTel13.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTel13.BackColor = System.Drawing.Color.White;
+            this.txtTel13.BorderColor = false;
             this.txtTel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTel13.ClientColor = System.Drawing.Color.White;
             this.txtTel13.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTel13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtTel13.DecimalPlace = 0;
-            this.txtTel13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTel13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTel13.IntegerPart = 0;
             this.txtTel13.IsCorrectDate = true;
             this.txtTel13.isEnterKeyDown = false;
@@ -1605,6 +1649,7 @@
             this.txtTel13.isMaxLengthErr = false;
             this.txtTel13.IsNumber = true;
             this.txtTel13.IsShop = false;
+            this.txtTel13.IsTimemmss = false;
             this.txtTel13.Length = 4;
             this.txtTel13.Location = new System.Drawing.Point(210, 292);
             this.txtTel13.MaxLength = 4;
@@ -1613,18 +1658,20 @@
             this.txtTel13.Size = new System.Drawing.Size(37, 19);
             this.txtTel13.TabIndex = 20;
             this.txtTel13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTel13.UseColorSizMode = false;
             // 
             // txtTel22
             // 
             this.txtTel22.AllowMinus = false;
             this.txtTel22.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTel22.BackColor = System.Drawing.Color.White;
+            this.txtTel22.BorderColor = false;
             this.txtTel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTel22.ClientColor = System.Drawing.Color.White;
             this.txtTel22.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTel22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtTel22.DecimalPlace = 0;
-            this.txtTel22.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTel22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTel22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtTel22.IntegerPart = 0;
             this.txtTel22.IsCorrectDate = true;
@@ -1633,6 +1680,7 @@
             this.txtTel22.isMaxLengthErr = false;
             this.txtTel22.IsNumber = true;
             this.txtTel22.IsShop = false;
+            this.txtTel22.IsTimemmss = false;
             this.txtTel22.Length = 4;
             this.txtTel22.Location = new System.Drawing.Point(426, 292);
             this.txtTel22.MaxLength = 4;
@@ -1641,18 +1689,20 @@
             this.txtTel22.Size = new System.Drawing.Size(37, 19);
             this.txtTel22.TabIndex = 22;
             this.txtTel22.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTel22.UseColorSizMode = false;
             // 
             // txtTel12
             // 
             this.txtTel12.AllowMinus = false;
             this.txtTel12.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTel12.BackColor = System.Drawing.Color.White;
+            this.txtTel12.BorderColor = false;
             this.txtTel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTel12.ClientColor = System.Drawing.Color.White;
             this.txtTel12.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTel12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtTel12.DecimalPlace = 0;
-            this.txtTel12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTel12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTel12.IntegerPart = 0;
             this.txtTel12.IsCorrectDate = true;
             this.txtTel12.isEnterKeyDown = false;
@@ -1660,6 +1710,7 @@
             this.txtTel12.isMaxLengthErr = false;
             this.txtTel12.IsNumber = true;
             this.txtTel12.IsShop = false;
+            this.txtTel12.IsTimemmss = false;
             this.txtTel12.Length = 4;
             this.txtTel12.Location = new System.Drawing.Point(173, 292);
             this.txtTel12.MaxLength = 4;
@@ -1668,12 +1719,13 @@
             this.txtTel12.Size = new System.Drawing.Size(37, 19);
             this.txtTel12.TabIndex = 19;
             this.txtTel12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTel12.UseColorSizMode = false;
             // 
             // ChkDMFlg
             // 
             this.ChkDMFlg.AutoSize = true;
             this.ChkDMFlg.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkDMFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkDMFlg.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkDMFlg.Location = new System.Drawing.Point(592, 236);
             this.ChkDMFlg.Name = "ChkDMFlg";
             this.ChkDMFlg.Size = new System.Drawing.Size(64, 16);
@@ -1686,12 +1738,13 @@
             this.txtCountryName.AllowMinus = false;
             this.txtCountryName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCountryName.BackColor = System.Drawing.Color.White;
+            this.txtCountryName.BorderColor = false;
             this.txtCountryName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCountryName.ClientColor = System.Drawing.Color.White;
             this.txtCountryName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtCountryName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCountryName.DecimalPlace = 0;
-            this.txtCountryName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCountryName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCountryName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtCountryName.IntegerPart = 0;
             this.txtCountryName.IsCorrectDate = true;
@@ -1700,6 +1753,7 @@
             this.txtCountryName.isMaxLengthErr = false;
             this.txtCountryName.IsNumber = true;
             this.txtCountryName.IsShop = false;
+            this.txtCountryName.IsTimemmss = false;
             this.txtCountryName.Length = 30;
             this.txtCountryName.Location = new System.Drawing.Point(156, 209);
             this.txtCountryName.MaxLength = 30;
@@ -1709,12 +1763,13 @@
             this.txtCountryName.TabIndex = 12;
             this.txtCountryName.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX30";
             this.txtCountryName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCountryName.UseColorSizMode = false;
             // 
             // ChkCountryKBN
             // 
             this.ChkCountryKBN.AutoSize = true;
             this.ChkCountryKBN.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkCountryKBN.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkCountryKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkCountryKBN.Location = new System.Drawing.Point(99, 210);
             this.ChkCountryKBN.Name = "ChkCountryKBN";
             this.ChkCountryKBN.Size = new System.Drawing.Size(50, 16);
@@ -1726,7 +1781,7 @@
             // 
             this.lblPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPoint.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPoint.Location = new System.Drawing.Point(1452, 37);
             this.lblPoint.Name = "lblPoint";
             this.lblPoint.Size = new System.Drawing.Size(85, 18);
@@ -1738,7 +1793,7 @@
             // 
             this.lblStoreName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblStoreName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStoreName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStoreName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStoreName.Location = new System.Drawing.Point(1043, 36);
             this.lblStoreName.Name = "lblStoreName";
             this.lblStoreName.Size = new System.Drawing.Size(149, 18);
@@ -1750,7 +1805,7 @@
             // 
             this.lblLastSalesDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblLastSalesDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLastSalesDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastSalesDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastSalesDate.Location = new System.Drawing.Point(1192, 36);
             this.lblLastSalesDate.Name = "lblLastSalesDate";
             this.lblLastSalesDate.Size = new System.Drawing.Size(85, 18);
@@ -1763,12 +1818,13 @@
             this.txtLongName2.AllowMinus = false;
             this.txtLongName2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLongName2.BackColor = System.Drawing.Color.White;
+            this.txtLongName2.BorderColor = false;
             this.txtLongName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLongName2.ClientColor = System.Drawing.Color.White;
             this.txtLongName2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLongName2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLongName2.DecimalPlace = 0;
-            this.txtLongName2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtLongName2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtLongName2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtLongName2.IntegerPart = 0;
             this.txtLongName2.IsCorrectDate = true;
@@ -1777,6 +1833,7 @@
             this.txtLongName2.isMaxLengthErr = false;
             this.txtLongName2.IsNumber = true;
             this.txtLongName2.IsShop = false;
+            this.txtLongName2.IsTimemmss = false;
             this.txtLongName2.Length = 50;
             this.txtLongName2.Location = new System.Drawing.Point(136, 152);
             this.txtLongName2.MaxLength = 50;
@@ -1786,18 +1843,20 @@
             this.txtLongName2.TabIndex = 8;
             this.txtLongName2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
             this.txtLongName2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtLongName2.UseColorSizMode = false;
             // 
             // txtBirthDate
             // 
             this.txtBirthDate.AllowMinus = false;
             this.txtBirthDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBirthDate.BackColor = System.Drawing.Color.White;
+            this.txtBirthDate.BorderColor = false;
             this.txtBirthDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBirthDate.ClientColor = System.Drawing.Color.White;
             this.txtBirthDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtBirthDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtBirthDate.DecimalPlace = 0;
-            this.txtBirthDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtBirthDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtBirthDate.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtBirthDate.IntegerPart = 0;
             this.txtBirthDate.IsCorrectDate = true;
@@ -1806,6 +1865,7 @@
             this.txtBirthDate.isMaxLengthErr = false;
             this.txtBirthDate.IsNumber = true;
             this.txtBirthDate.IsShop = false;
+            this.txtBirthDate.IsTimemmss = false;
             this.txtBirthDate.Length = 10;
             this.txtBirthDate.Location = new System.Drawing.Point(136, 181);
             this.txtBirthDate.MaxLength = 10;
@@ -1816,18 +1876,20 @@
             this.txtBirthDate.Text = "9999/99/99";
             this.txtBirthDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBirthDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBirthDate.UseColorSizMode = false;
             // 
             // txtLongName1
             // 
             this.txtLongName1.AllowMinus = false;
             this.txtLongName1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLongName1.BackColor = System.Drawing.Color.White;
+            this.txtLongName1.BorderColor = false;
             this.txtLongName1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLongName1.ClientColor = System.Drawing.Color.White;
             this.txtLongName1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLongName1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLongName1.DecimalPlace = 0;
-            this.txtLongName1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtLongName1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtLongName1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtLongName1.IntegerPart = 0;
             this.txtLongName1.IsCorrectDate = true;
@@ -1836,6 +1898,7 @@
             this.txtLongName1.isMaxLengthErr = false;
             this.txtLongName1.IsNumber = true;
             this.txtLongName1.IsShop = false;
+            this.txtLongName1.IsTimemmss = false;
             this.txtLongName1.Length = 50;
             this.txtLongName1.Location = new System.Drawing.Point(136, 133);
             this.txtLongName1.MaxLength = 50;
@@ -1845,6 +1908,7 @@
             this.txtLongName1.TabIndex = 7;
             this.txtLongName1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
             this.txtLongName1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtLongName1.UseColorSizMode = false;
             // 
             // ckM_Label4
             // 
@@ -1852,7 +1916,7 @@
             this.ckM_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label4.DefaultlabelSize = true;
-            this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label4.Location = new System.Drawing.Point(91, 135);
@@ -1868,12 +1932,13 @@
             this.txtKanaName.AllowMinus = false;
             this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKanaName.BackColor = System.Drawing.Color.White;
+            this.txtKanaName.BorderColor = false;
             this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKanaName.ClientColor = System.Drawing.Color.White;
             this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKanaName.DecimalPlace = 0;
-            this.txtKanaName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtKanaName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtKanaName.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
             this.txtKanaName.IntegerPart = 0;
             this.txtKanaName.IsCorrectDate = true;
@@ -1882,6 +1947,7 @@
             this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
+            this.txtKanaName.IsTimemmss = false;
             this.txtKanaName.Length = 30;
             this.txtKanaName.Location = new System.Drawing.Point(136, 114);
             this.txtKanaName.MaxLength = 30;
@@ -1891,6 +1957,7 @@
             this.txtKanaName.TabIndex = 6;
             this.txtKanaName.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX30";
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKanaName.UseColorSizMode = false;
             // 
             // ckM_Label3
             // 
@@ -1898,7 +1965,7 @@
             this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label3.Location = new System.Drawing.Point(91, 116);
@@ -1914,12 +1981,13 @@
             this.txtCustomerName.AllowMinus = false;
             this.txtCustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCustomerName.BackColor = System.Drawing.Color.White;
+            this.txtCustomerName.BorderColor = false;
             this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerName.ClientColor = System.Drawing.Color.White;
             this.txtCustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtCustomerName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustomerName.DecimalPlace = 0;
-            this.txtCustomerName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCustomerName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCustomerName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtCustomerName.IntegerPart = 0;
             this.txtCustomerName.IsCorrectDate = true;
@@ -1928,6 +1996,7 @@
             this.txtCustomerName.isMaxLengthErr = false;
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
+            this.txtCustomerName.IsTimemmss = false;
             this.txtCustomerName.Length = 80;
             this.txtCustomerName.Location = new System.Drawing.Point(136, 95);
             this.txtCustomerName.MaxLength = 80;
@@ -1937,6 +2006,7 @@
             this.txtCustomerName.TabIndex = 4;
             this.txtCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtCustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCustomerName.UseColorSizMode = false;
             // 
             // ckM_Label5
             // 
@@ -1944,7 +2014,7 @@
             this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label5.Location = new System.Drawing.Point(52, 99);
@@ -1971,7 +2041,7 @@
             this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label7.DefaultlabelSize = true;
-            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label7.Location = new System.Drawing.Point(18, 11);
@@ -1985,7 +2055,7 @@
             // radioButton8
             // 
             this.radioButton8.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.radioButton8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.radioButton8.Location = new System.Drawing.Point(107, 9);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(59, 16);
@@ -1998,7 +2068,7 @@
             // 
             this.radioButton9.BackColor = System.Drawing.Color.Transparent;
             this.radioButton9.Checked = true;
-            this.radioButton9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.radioButton9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.radioButton9.Location = new System.Drawing.Point(53, 9);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(60, 16);
@@ -2030,7 +2100,7 @@
             this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label6.Location = new System.Drawing.Point(638, 39);
@@ -2046,12 +2116,13 @@
             this.txtFirstName.AllowMinus = false;
             this.txtFirstName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.BorderColor = false;
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.ClientColor = System.Drawing.Color.White;
             this.txtFirstName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtFirstName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtFirstName.DecimalPlace = 0;
-            this.txtFirstName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtFirstName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtFirstName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtFirstName.IntegerPart = 0;
             this.txtFirstName.IsCorrectDate = true;
@@ -2060,6 +2131,7 @@
             this.txtFirstName.isMaxLengthErr = false;
             this.txtFirstName.IsNumber = true;
             this.txtFirstName.IsShop = false;
+            this.txtFirstName.IsTimemmss = false;
             this.txtFirstName.Length = 40;
             this.txtFirstName.Location = new System.Drawing.Point(325, 67);
             this.txtFirstName.MaxLength = 40;
@@ -2068,6 +2140,7 @@
             this.txtFirstName.Size = new System.Drawing.Size(119, 19);
             this.txtFirstName.TabIndex = 3;
             this.txtFirstName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFirstName.UseColorSizMode = false;
             // 
             // panel6
             // 
@@ -2083,7 +2156,7 @@
             // 
             this.ChkCollectFLG.AutoSize = true;
             this.ChkCollectFLG.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkCollectFLG.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkCollectFLG.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkCollectFLG.Location = new System.Drawing.Point(172, 9);
             this.ChkCollectFLG.Name = "ChkCollectFLG";
             this.ChkCollectFLG.Size = new System.Drawing.Size(76, 16);
@@ -2095,7 +2168,7 @@
             // 
             this.ChkBillingFLG.AutoSize = true;
             this.ChkBillingFLG.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkBillingFLG.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkBillingFLG.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkBillingFLG.Location = new System.Drawing.Point(79, 9);
             this.ChkBillingFLG.Name = "ChkBillingFLG";
             this.ChkBillingFLG.Size = new System.Drawing.Size(76, 16);
@@ -2107,7 +2180,7 @@
             // 
             this.ChkVariousFLG.AutoSize = true;
             this.ChkVariousFLG.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChkVariousFLG.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkVariousFLG.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ChkVariousFLG.Location = new System.Drawing.Point(12, 9);
             this.ChkVariousFLG.Name = "ChkVariousFLG";
             this.ChkVariousFLG.Size = new System.Drawing.Size(50, 16);
@@ -2129,7 +2202,7 @@
             // 
             this.ckM_RadioButton7.AutoSize = true;
             this.ckM_RadioButton7.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton7.Location = new System.Drawing.Point(112, 9);
             this.ckM_RadioButton7.Name = "ckM_RadioButton7";
             this.ckM_RadioButton7.Size = new System.Drawing.Size(49, 16);
@@ -2142,7 +2215,7 @@
             // 
             this.ckM_RadioButton8.AutoSize = true;
             this.ckM_RadioButton8.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton8.Location = new System.Drawing.Point(180, 9);
             this.ckM_RadioButton8.Name = "ckM_RadioButton8";
             this.ckM_RadioButton8.Size = new System.Drawing.Size(49, 16);
@@ -2157,7 +2230,7 @@
             this.label32.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.DefaultlabelSize = true;
-            this.label32.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label32.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(16, 11);
@@ -2183,7 +2256,7 @@
             // 
             this.ckM_RadioButton6.AutoSize = true;
             this.ckM_RadioButton6.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton6.Location = new System.Drawing.Point(239, 11);
             this.ckM_RadioButton6.Name = "ckM_RadioButton6";
             this.ckM_RadioButton6.Size = new System.Drawing.Size(75, 16);
@@ -2196,7 +2269,7 @@
             // 
             this.ckM_RadioButton4.AutoSize = true;
             this.ckM_RadioButton4.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton4.Location = new System.Drawing.Point(101, 11);
             this.ckM_RadioButton4.Name = "ckM_RadioButton4";
             this.ckM_RadioButton4.Size = new System.Drawing.Size(75, 16);
@@ -2209,7 +2282,7 @@
             // 
             this.ckM_RadioButton5.AutoSize = true;
             this.ckM_RadioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton5.Location = new System.Drawing.Point(183, 11);
             this.ckM_RadioButton5.Name = "ckM_RadioButton5";
             this.ckM_RadioButton5.Size = new System.Drawing.Size(49, 16);
@@ -2224,7 +2297,7 @@
             this.label30.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label30.BackColor = System.Drawing.Color.Transparent;
             this.label30.DefaultlabelSize = true;
-            this.label30.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label30.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label30.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(14, 13);
@@ -2241,7 +2314,7 @@
             this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label2.Location = new System.Drawing.Point(798, 379);
@@ -2257,12 +2330,13 @@
             this.txtBillingCloseDate.AllowMinus = false;
             this.txtBillingCloseDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBillingCloseDate.BackColor = System.Drawing.Color.White;
+            this.txtBillingCloseDate.BorderColor = false;
             this.txtBillingCloseDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillingCloseDate.ClientColor = System.Drawing.Color.White;
             this.txtBillingCloseDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtBillingCloseDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtBillingCloseDate.DecimalPlace = 0;
-            this.txtBillingCloseDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtBillingCloseDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtBillingCloseDate.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtBillingCloseDate.IntegerPart = 0;
             this.txtBillingCloseDate.IsCorrectDate = true;
@@ -2271,6 +2345,7 @@
             this.txtBillingCloseDate.isMaxLengthErr = false;
             this.txtBillingCloseDate.IsNumber = true;
             this.txtBillingCloseDate.IsShop = false;
+            this.txtBillingCloseDate.IsTimemmss = false;
             this.txtBillingCloseDate.Length = 2;
             this.txtBillingCloseDate.Location = new System.Drawing.Point(858, 377);
             this.txtBillingCloseDate.MaxLength = 2;
@@ -2280,6 +2355,7 @@
             this.txtBillingCloseDate.TabIndex = 28;
             this.txtBillingCloseDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBillingCloseDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBillingCloseDate.UseColorSizMode = false;
             // 
             // label12
             // 
@@ -2287,7 +2363,7 @@
             this.label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.DefaultlabelSize = true;
-            this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(353, 112);
@@ -2303,12 +2379,13 @@
             this.txtRegisteredNumber.AllowMinus = false;
             this.txtRegisteredNumber.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRegisteredNumber.BackColor = System.Drawing.Color.White;
+            this.txtRegisteredNumber.BorderColor = false;
             this.txtRegisteredNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRegisteredNumber.ClientColor = System.Drawing.Color.White;
             this.txtRegisteredNumber.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRegisteredNumber.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtRegisteredNumber.DecimalPlace = 0;
-            this.txtRegisteredNumber.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtRegisteredNumber.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtRegisteredNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtRegisteredNumber.IntegerPart = 0;
             this.txtRegisteredNumber.IsCorrectDate = true;
@@ -2317,6 +2394,7 @@
             this.txtRegisteredNumber.isMaxLengthErr = false;
             this.txtRegisteredNumber.IsNumber = true;
             this.txtRegisteredNumber.IsShop = false;
+            this.txtRegisteredNumber.IsTimemmss = false;
             this.txtRegisteredNumber.Length = 15;
             this.txtRegisteredNumber.Location = new System.Drawing.Point(858, 474);
             this.txtRegisteredNumber.MaxLength = 15;
@@ -2326,6 +2404,7 @@
             this.txtRegisteredNumber.TabIndex = 32;
             this.txtRegisteredNumber.Text = "XXXXXXXXXXXXX15";
             this.txtRegisteredNumber.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRegisteredNumber.UseColorSizMode = false;
             // 
             // txtRemarksInStore
             // 
@@ -2333,7 +2412,7 @@
             this.txtRemarksInStore.BackColor = System.Drawing.Color.White;
             this.txtRemarksInStore.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtRemarksInStore.F_focus = false;
-            this.txtRemarksInStore.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtRemarksInStore.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtRemarksInStore.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarksInStore.Length = 500;
             this.txtRemarksInStore.Location = new System.Drawing.Point(836, 655);
@@ -2359,7 +2438,7 @@
             this.ScKouzaCD.CodeWidth1 = 30;
             this.ScKouzaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScKouzaCD.DataCheck = false;
-            this.ScKouzaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScKouzaCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScKouzaCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScKouzaCD.IsCopy = false;
             this.ScKouzaCD.LabelText = "";
@@ -2372,6 +2451,7 @@
             this.ScKouzaCD.Size = new System.Drawing.Size(414, 27);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
             this.ScKouzaCD.TabIndex = 39;
+            this.ScKouzaCD.test = null;
             this.ScKouzaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScKouzaCD.UseChangeDate = false;
             this.ScKouzaCD.Value1 = null;
@@ -2388,7 +2468,7 @@
             this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
-            this.ScStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
@@ -2401,6 +2481,7 @@
             this.ScStaff.Size = new System.Drawing.Size(354, 27);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 71;
+            this.ScStaff.test = null;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -2417,7 +2498,7 @@
             this.ScTankaCD.CodeWidth1 = 100;
             this.ScTankaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScTankaCD.DataCheck = false;
-            this.ScTankaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScTankaCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScTankaCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScTankaCD.IsCopy = false;
             this.ScTankaCD.LabelText = "";
@@ -2430,6 +2511,7 @@
             this.ScTankaCD.Size = new System.Drawing.Size(274, 27);
             this.ScTankaCD.Stype = Search.CKM_SearchControl.SearchType.単価設定;
             this.ScTankaCD.TabIndex = 42;
+            this.ScTankaCD.test = null;
             this.ScTankaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScTankaCD.UseChangeDate = false;
             this.ScTankaCD.Value1 = null;
@@ -2442,7 +2524,7 @@
             this.label42.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.DefaultlabelSize = true;
-            this.label42.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label42.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label42.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label42.ForeColor = System.Drawing.Color.Black;
             this.label42.Location = new System.Drawing.Point(1599, 18);
@@ -2467,12 +2549,13 @@
             this.txtTel21.AllowMinus = false;
             this.txtTel21.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTel21.BackColor = System.Drawing.Color.White;
+            this.txtTel21.BorderColor = false;
             this.txtTel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTel21.ClientColor = System.Drawing.Color.White;
             this.txtTel21.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTel21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtTel21.DecimalPlace = 0;
-            this.txtTel21.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTel21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTel21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtTel21.IntegerPart = 0;
             this.txtTel21.IsCorrectDate = true;
@@ -2481,6 +2564,7 @@
             this.txtTel21.isMaxLengthErr = false;
             this.txtTel21.IsNumber = true;
             this.txtTel21.IsShop = false;
+            this.txtTel21.IsTimemmss = false;
             this.txtTel21.Length = 4;
             this.txtTel21.Location = new System.Drawing.Point(389, 292);
             this.txtTel21.MaxLength = 4;
@@ -2489,18 +2573,20 @@
             this.txtTel21.Size = new System.Drawing.Size(37, 19);
             this.txtTel21.TabIndex = 21;
             this.txtTel21.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTel21.UseColorSizMode = false;
             // 
             // txtTel11
             // 
             this.txtTel11.AllowMinus = false;
             this.txtTel11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTel11.BackColor = System.Drawing.Color.White;
+            this.txtTel11.BorderColor = false;
             this.txtTel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTel11.ClientColor = System.Drawing.Color.White;
             this.txtTel11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTel11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtTel11.DecimalPlace = 0;
-            this.txtTel11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtTel11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtTel11.IntegerPart = 0;
             this.txtTel11.IsCorrectDate = true;
             this.txtTel11.isEnterKeyDown = false;
@@ -2508,6 +2594,7 @@
             this.txtTel11.isMaxLengthErr = false;
             this.txtTel11.IsNumber = true;
             this.txtTel11.IsShop = false;
+            this.txtTel11.IsTimemmss = false;
             this.txtTel11.Length = 4;
             this.txtTel11.Location = new System.Drawing.Point(136, 292);
             this.txtTel11.MaxLength = 4;
@@ -2516,18 +2603,20 @@
             this.txtTel11.Size = new System.Drawing.Size(37, 19);
             this.txtTel11.TabIndex = 18;
             this.txtTel11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTel11.UseColorSizMode = false;
             // 
             // txtMailAddress
             // 
             this.txtMailAddress.AllowMinus = false;
             this.txtMailAddress.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMailAddress.BackColor = System.Drawing.Color.White;
+            this.txtMailAddress.BorderColor = false;
             this.txtMailAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMailAddress.ClientColor = System.Drawing.Color.White;
             this.txtMailAddress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtMailAddress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtMailAddress.DecimalPlace = 0;
-            this.txtMailAddress.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtMailAddress.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtMailAddress.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtMailAddress.IntegerPart = 0;
             this.txtMailAddress.IsCorrectDate = true;
@@ -2536,6 +2625,7 @@
             this.txtMailAddress.isMaxLengthErr = false;
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
+            this.txtMailAddress.IsTimemmss = false;
             this.txtMailAddress.Length = 100;
             this.txtMailAddress.Location = new System.Drawing.Point(136, 321);
             this.txtMailAddress.MaxLength = 100;
@@ -2544,6 +2634,7 @@
             this.txtMailAddress.Size = new System.Drawing.Size(364, 19);
             this.txtMailAddress.TabIndex = 24;
             this.txtMailAddress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMailAddress.UseColorSizMode = false;
             // 
             // label37
             // 
@@ -2551,7 +2642,7 @@
             this.label37.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label37.BackColor = System.Drawing.Color.Transparent;
             this.label37.DefaultlabelSize = true;
-            this.label37.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label37.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label37.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label37.ForeColor = System.Drawing.Color.Black;
             this.label37.Location = new System.Drawing.Point(619, 651);
@@ -2568,7 +2659,7 @@
             this.label38.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.DefaultlabelSize = true;
-            this.label38.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label38.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label38.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label38.ForeColor = System.Drawing.Color.Black;
             this.label38.Location = new System.Drawing.Point(619, 632);
@@ -2585,7 +2676,7 @@
             this.label35.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.DefaultlabelSize = true;
-            this.label35.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label35.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label35.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label35.ForeColor = System.Drawing.Color.Black;
             this.label35.Location = new System.Drawing.Point(957, 58);
@@ -2602,7 +2693,7 @@
             this.label36.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label36.BackColor = System.Drawing.Color.Transparent;
             this.label36.DefaultlabelSize = true;
-            this.label36.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label36.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label36.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label36.ForeColor = System.Drawing.Color.Black;
             this.label36.Location = new System.Drawing.Point(64, 521);
@@ -2619,7 +2710,7 @@
             this.label31.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.DefaultlabelSize = true;
-            this.label31.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label31.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label31.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label31.ForeColor = System.Drawing.Color.Black;
             this.label31.Location = new System.Drawing.Point(1172, 402);
@@ -2636,7 +2727,7 @@
             this.label33.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.DefaultlabelSize = true;
-            this.label33.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label33.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label33.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(798, 477);
@@ -2653,7 +2744,7 @@
             this.label34.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.DefaultlabelSize = true;
-            this.label34.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label34.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label34.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label34.ForeColor = System.Drawing.Color.Black;
             this.label34.Location = new System.Drawing.Point(785, 421);
@@ -2670,7 +2761,7 @@
             this.label29.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label29.BackColor = System.Drawing.Color.Transparent;
             this.label29.DefaultlabelSize = true;
-            this.label29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label29.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label29.ForeColor = System.Drawing.Color.Black;
             this.label29.Location = new System.Drawing.Point(763, 658);
@@ -2687,7 +2778,7 @@
             this.label26.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.DefaultlabelSize = true;
-            this.label26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label26.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label26.ForeColor = System.Drawing.Color.Black;
             this.label26.Location = new System.Drawing.Point(39, 717);
@@ -2704,7 +2795,7 @@
             this.label28.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.DefaultlabelSize = true;
-            this.label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label28.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label28.ForeColor = System.Drawing.Color.Black;
             this.label28.Location = new System.Drawing.Point(52, 622);
@@ -2721,7 +2812,7 @@
             this.label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.DefaultlabelSize = true;
-            this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(619, 671);
@@ -2737,12 +2828,13 @@
             this.txtCreditAdditionAmount.AllowMinus = false;
             this.txtCreditAdditionAmount.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCreditAdditionAmount.BackColor = System.Drawing.Color.White;
+            this.txtCreditAdditionAmount.BorderColor = false;
             this.txtCreditAdditionAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCreditAdditionAmount.ClientColor = System.Drawing.Color.White;
             this.txtCreditAdditionAmount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCreditAdditionAmount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCreditAdditionAmount.DecimalPlace = 0;
-            this.txtCreditAdditionAmount.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditAdditionAmount.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditAdditionAmount.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCreditAdditionAmount.IntegerPart = 9;
             this.txtCreditAdditionAmount.IsCorrectDate = true;
@@ -2751,6 +2843,7 @@
             this.txtCreditAdditionAmount.isMaxLengthErr = false;
             this.txtCreditAdditionAmount.IsNumber = true;
             this.txtCreditAdditionAmount.IsShop = false;
+            this.txtCreditAdditionAmount.IsTimemmss = false;
             this.txtCreditAdditionAmount.Length = 20;
             this.txtCreditAdditionAmount.Location = new System.Drawing.Point(136, 714);
             this.txtCreditAdditionAmount.MaxLength = 20;
@@ -2761,18 +2854,20 @@
             this.txtCreditAdditionAmount.Text = "999,999,999";
             this.txtCreditAdditionAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditAdditionAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCreditAdditionAmount.UseColorSizMode = false;
             // 
             // txtCreditCard
             // 
             this.txtCreditCard.AllowMinus = false;
             this.txtCreditCard.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCreditCard.BackColor = System.Drawing.Color.White;
+            this.txtCreditCard.BorderColor = false;
             this.txtCreditCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCreditCard.ClientColor = System.Drawing.Color.White;
             this.txtCreditCard.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCreditCard.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCreditCard.DecimalPlace = 0;
-            this.txtCreditCard.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtCreditCard.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtCreditCard.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCreditCard.IntegerPart = 9;
             this.txtCreditCard.IsCorrectDate = true;
@@ -2781,6 +2876,7 @@
             this.txtCreditCard.isMaxLengthErr = false;
             this.txtCreditCard.IsNumber = true;
             this.txtCreditCard.IsShop = false;
+            this.txtCreditCard.IsTimemmss = false;
             this.txtCreditCard.Length = 20;
             this.txtCreditCard.Location = new System.Drawing.Point(136, 620);
             this.txtCreditCard.MaxLength = 20;
@@ -2791,18 +2887,20 @@
             this.txtCreditCard.Text = "999,999,999";
             this.txtCreditCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditCard.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCreditCard.UseColorSizMode = false;
             // 
             // txtAnalyzeCD3
             // 
             this.txtAnalyzeCD3.AllowMinus = false;
             this.txtAnalyzeCD3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAnalyzeCD3.BackColor = System.Drawing.Color.White;
+            this.txtAnalyzeCD3.BorderColor = false;
             this.txtAnalyzeCD3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAnalyzeCD3.ClientColor = System.Drawing.Color.White;
             this.txtAnalyzeCD3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAnalyzeCD3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAnalyzeCD3.DecimalPlace = 0;
-            this.txtAnalyzeCD3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtAnalyzeCD3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtAnalyzeCD3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtAnalyzeCD3.IntegerPart = 0;
             this.txtAnalyzeCD3.IsCorrectDate = true;
@@ -2811,27 +2909,30 @@
             this.txtAnalyzeCD3.isMaxLengthErr = false;
             this.txtAnalyzeCD3.IsNumber = true;
             this.txtAnalyzeCD3.IsShop = false;
+            this.txtAnalyzeCD3.IsTimemmss = false;
             this.txtAnalyzeCD3.Length = 10;
             this.txtAnalyzeCD3.Location = new System.Drawing.Point(641, 667);
             this.txtAnalyzeCD3.MaxLength = 10;
             this.txtAnalyzeCD3.MoveNext = true;
             this.txtAnalyzeCD3.Name = "txtAnalyzeCD3";
             this.txtAnalyzeCD3.Size = new System.Drawing.Size(82, 19);
-            this.txtAnalyzeCD3.TabIndex = 56;
+            this.txtAnalyzeCD3.TabIndex = 60;
             this.txtAnalyzeCD3.Text = "XXXXXXXXXX";
             this.txtAnalyzeCD3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAnalyzeCD3.UseColorSizMode = false;
             // 
             // txtAnalyzeCD2
             // 
             this.txtAnalyzeCD2.AllowMinus = false;
             this.txtAnalyzeCD2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAnalyzeCD2.BackColor = System.Drawing.Color.White;
+            this.txtAnalyzeCD2.BorderColor = false;
             this.txtAnalyzeCD2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAnalyzeCD2.ClientColor = System.Drawing.Color.White;
             this.txtAnalyzeCD2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAnalyzeCD2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAnalyzeCD2.DecimalPlace = 0;
-            this.txtAnalyzeCD2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtAnalyzeCD2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtAnalyzeCD2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtAnalyzeCD2.IntegerPart = 0;
             this.txtAnalyzeCD2.IsCorrectDate = true;
@@ -2840,27 +2941,30 @@
             this.txtAnalyzeCD2.isMaxLengthErr = false;
             this.txtAnalyzeCD2.IsNumber = true;
             this.txtAnalyzeCD2.IsShop = false;
+            this.txtAnalyzeCD2.IsTimemmss = false;
             this.txtAnalyzeCD2.Length = 10;
             this.txtAnalyzeCD2.Location = new System.Drawing.Point(641, 648);
             this.txtAnalyzeCD2.MaxLength = 10;
             this.txtAnalyzeCD2.MoveNext = true;
             this.txtAnalyzeCD2.Name = "txtAnalyzeCD2";
             this.txtAnalyzeCD2.Size = new System.Drawing.Size(82, 19);
-            this.txtAnalyzeCD2.TabIndex = 55;
+            this.txtAnalyzeCD2.TabIndex = 59;
             this.txtAnalyzeCD2.Text = "XXXXXXXXXX";
             this.txtAnalyzeCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAnalyzeCD2.UseColorSizMode = false;
             // 
             // txtAnalyzeCD1
             // 
             this.txtAnalyzeCD1.AllowMinus = false;
             this.txtAnalyzeCD1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAnalyzeCD1.BackColor = System.Drawing.Color.White;
+            this.txtAnalyzeCD1.BorderColor = false;
             this.txtAnalyzeCD1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAnalyzeCD1.ClientColor = System.Drawing.Color.White;
             this.txtAnalyzeCD1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAnalyzeCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAnalyzeCD1.DecimalPlace = 0;
-            this.txtAnalyzeCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtAnalyzeCD1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtAnalyzeCD1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtAnalyzeCD1.IntegerPart = 0;
             this.txtAnalyzeCD1.IsCorrectDate = true;
@@ -2869,27 +2973,30 @@
             this.txtAnalyzeCD1.isMaxLengthErr = false;
             this.txtAnalyzeCD1.IsNumber = true;
             this.txtAnalyzeCD1.IsShop = false;
+            this.txtAnalyzeCD1.IsTimemmss = false;
             this.txtAnalyzeCD1.Length = 10;
             this.txtAnalyzeCD1.Location = new System.Drawing.Point(641, 629);
             this.txtAnalyzeCD1.MaxLength = 10;
             this.txtAnalyzeCD1.MoveNext = true;
             this.txtAnalyzeCD1.Name = "txtAnalyzeCD1";
             this.txtAnalyzeCD1.Size = new System.Drawing.Size(82, 19);
-            this.txtAnalyzeCD1.TabIndex = 54;
+            this.txtAnalyzeCD1.TabIndex = 58;
             this.txtAnalyzeCD1.Text = "XXXXXXXXXX";
             this.txtAnalyzeCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAnalyzeCD1.UseColorSizMode = false;
             // 
             // txtAddress2
             // 
             this.txtAddress2.AllowMinus = false;
             this.txtAddress2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAddress2.BackColor = System.Drawing.Color.White;
+            this.txtAddress2.BorderColor = false;
             this.txtAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress2.ClientColor = System.Drawing.Color.White;
             this.txtAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress2.DecimalPlace = 0;
-            this.txtAddress2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtAddress2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtAddress2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtAddress2.IntegerPart = 0;
             this.txtAddress2.IsCorrectDate = true;
@@ -2898,6 +3005,7 @@
             this.txtAddress2.isMaxLengthErr = false;
             this.txtAddress2.IsNumber = true;
             this.txtAddress2.IsShop = false;
+            this.txtAddress2.IsTimemmss = false;
             this.txtAddress2.Length = 100;
             this.txtAddress2.Location = new System.Drawing.Point(136, 273);
             this.txtAddress2.MaxLength = 100;
@@ -2907,18 +3015,20 @@
             this.txtAddress2.TabIndex = 17;
             this.txtAddress2.Text = "〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●";
             this.txtAddress2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAddress2.UseColorSizMode = false;
             // 
             // txtAddress1
             // 
             this.txtAddress1.AllowMinus = false;
             this.txtAddress1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAddress1.BackColor = System.Drawing.Color.White;
+            this.txtAddress1.BorderColor = false;
             this.txtAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress1.ClientColor = System.Drawing.Color.White;
             this.txtAddress1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress1.DecimalPlace = 0;
-            this.txtAddress1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtAddress1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtAddress1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtAddress1.IntegerPart = 0;
             this.txtAddress1.IsCorrectDate = true;
@@ -2927,6 +3037,7 @@
             this.txtAddress1.isMaxLengthErr = false;
             this.txtAddress1.IsNumber = true;
             this.txtAddress1.IsShop = false;
+            this.txtAddress1.IsTimemmss = false;
             this.txtAddress1.Length = 100;
             this.txtAddress1.Location = new System.Drawing.Point(136, 254);
             this.txtAddress1.MaxLength = 100;
@@ -2936,18 +3047,20 @@
             this.txtAddress1.TabIndex = 16;
             this.txtAddress1.Text = "〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●〇〇〇〇●";
             this.txtAddress1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAddress1.UseColorSizMode = false;
             // 
             // txtZipCD2
             // 
             this.txtZipCD2.AllowMinus = false;
             this.txtZipCD2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtZipCD2.BackColor = System.Drawing.Color.White;
+            this.txtZipCD2.BorderColor = false;
             this.txtZipCD2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtZipCD2.ClientColor = System.Drawing.Color.White;
             this.txtZipCD2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCD2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtZipCD2.DecimalPlace = 0;
-            this.txtZipCD2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtZipCD2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtZipCD2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtZipCD2.IntegerPart = 0;
             this.txtZipCD2.IsCorrectDate = true;
@@ -2956,6 +3069,7 @@
             this.txtZipCD2.isMaxLengthErr = false;
             this.txtZipCD2.IsNumber = true;
             this.txtZipCD2.IsShop = false;
+            this.txtZipCD2.IsTimemmss = false;
             this.txtZipCD2.Length = 4;
             this.txtZipCD2.Location = new System.Drawing.Point(166, 235);
             this.txtZipCD2.MaxLength = 4;
@@ -2964,18 +3078,20 @@
             this.txtZipCD2.Size = new System.Drawing.Size(40, 19);
             this.txtZipCD2.TabIndex = 14;
             this.txtZipCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtZipCD2.UseColorSizMode = false;
             // 
             // txtZipCD1
             // 
             this.txtZipCD1.AllowMinus = false;
             this.txtZipCD1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtZipCD1.BackColor = System.Drawing.Color.White;
+            this.txtZipCD1.BorderColor = false;
             this.txtZipCD1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtZipCD1.ClientColor = System.Drawing.Color.White;
             this.txtZipCD1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtZipCD1.DecimalPlace = 0;
-            this.txtZipCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtZipCD1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtZipCD1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtZipCD1.IntegerPart = 0;
             this.txtZipCD1.IsCorrectDate = true;
@@ -2984,6 +3100,7 @@
             this.txtZipCD1.isMaxLengthErr = false;
             this.txtZipCD1.IsNumber = true;
             this.txtZipCD1.IsShop = false;
+            this.txtZipCD1.IsTimemmss = false;
             this.txtZipCD1.Length = 3;
             this.txtZipCD1.Location = new System.Drawing.Point(136, 235);
             this.txtZipCD1.MaxLength = 3;
@@ -2992,18 +3109,20 @@
             this.txtZipCD1.Size = new System.Drawing.Size(30, 19);
             this.txtZipCD1.TabIndex = 13;
             this.txtZipCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtZipCD1.UseColorSizMode = false;
             // 
             // txtLastName
             // 
             this.txtLastName.AllowMinus = false;
             this.txtLastName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLastName.BackColor = System.Drawing.Color.White;
+            this.txtLastName.BorderColor = false;
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastName.ClientColor = System.Drawing.Color.White;
             this.txtLastName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLastName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLastName.DecimalPlace = 0;
-            this.txtLastName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtLastName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtLastName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtLastName.IntegerPart = 0;
             this.txtLastName.IsCorrectDate = true;
@@ -3012,6 +3131,7 @@
             this.txtLastName.isMaxLengthErr = false;
             this.txtLastName.IsNumber = true;
             this.txtLastName.IsShop = false;
+            this.txtLastName.IsTimemmss = false;
             this.txtLastName.Length = 40;
             this.txtLastName.Location = new System.Drawing.Point(136, 67);
             this.txtLastName.MaxLength = 40;
@@ -3020,6 +3140,7 @@
             this.txtLastName.Size = new System.Drawing.Size(119, 19);
             this.txtLastName.TabIndex = 2;
             this.txtLastName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtLastName.UseColorSizMode = false;
             // 
             // label23
             // 
@@ -3027,7 +3148,7 @@
             this.label23.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.DefaultlabelSize = true;
-            this.label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label23.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(575, 632);
@@ -3044,7 +3165,7 @@
             this.label20.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.DefaultlabelSize = true;
-            this.label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.Location = new System.Drawing.Point(91, 183);
@@ -3061,7 +3182,7 @@
             this.label21.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.DefaultlabelSize = true;
-            this.label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label21.ForeColor = System.Drawing.Color.Black;
             this.label21.Location = new System.Drawing.Point(91, 380);
@@ -3078,7 +3199,7 @@
             this.label22.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.DefaultlabelSize = true;
-            this.label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label22.ForeColor = System.Drawing.Color.Black;
             this.label22.Location = new System.Drawing.Point(957, 39);
@@ -3095,7 +3216,7 @@
             this.label14.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.DefaultlabelSize = true;
-            this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(39, 453);
@@ -3112,7 +3233,7 @@
             this.label15.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.DefaultlabelSize = true;
-            this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(39, 323);
@@ -3129,7 +3250,7 @@
             this.label16.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.DefaultlabelSize = true;
-            this.label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(316, 296);
@@ -3146,7 +3267,7 @@
             this.label17.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.DefaultlabelSize = true;
-            this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label17.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(65, 294);
@@ -3163,7 +3284,7 @@
             this.label18.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.DefaultlabelSize = true;
-            this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label18.ForeColor = System.Drawing.Color.Black;
             this.label18.Location = new System.Drawing.Point(99, 258);
@@ -3180,7 +3301,7 @@
             this.label19.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.DefaultlabelSize = true;
-            this.label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(52, 501);
@@ -3197,7 +3318,7 @@
             this.label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.DefaultlabelSize = true;
-            this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(78, 239);
@@ -3214,7 +3335,7 @@
             this.label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.DefaultlabelSize = true;
-            this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(39, 41);
@@ -3231,7 +3352,7 @@
             this.label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.DefaultlabelSize = true;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(300, 70);
@@ -3248,7 +3369,7 @@
             this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.DefaultlabelSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(84, 70);
@@ -3273,7 +3394,7 @@
             // 
             this.radioButton7.AutoSize = true;
             this.radioButton7.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton7.Location = new System.Drawing.Point(142, 1);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(101, 16);
@@ -3286,7 +3407,7 @@
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton5.Location = new System.Drawing.Point(6, 1);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(49, 16);
@@ -3299,7 +3420,7 @@
             // 
             this.radioButton6.AutoSize = true;
             this.radioButton6.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton6.Location = new System.Drawing.Point(74, 1);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(49, 16);
@@ -3323,7 +3444,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton4.Location = new System.Drawing.Point(292, 5);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(70, 16);
@@ -3335,7 +3456,7 @@
             // radioButton3
             // 
             this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton3.Location = new System.Drawing.Point(197, 5);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(106, 16);
@@ -3347,7 +3468,7 @@
             // radioButton2
             // 
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton2.Location = new System.Drawing.Point(102, 5);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(95, 16);
@@ -3359,7 +3480,7 @@
             // radioButton1
             // 
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton1.Location = new System.Drawing.Point(7, 5);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(95, 16);
@@ -3374,7 +3495,7 @@
             this.label39.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label39.BackColor = System.Drawing.Color.Transparent;
             this.label39.DefaultlabelSize = true;
-            this.label39.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label39.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label39.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label39.ForeColor = System.Drawing.Color.Black;
             this.label39.Location = new System.Drawing.Point(65, 404);
@@ -3399,7 +3520,7 @@
             // 
             this.ckM_RadioButton2.AutoSize = true;
             this.ckM_RadioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton2.Location = new System.Drawing.Point(66, 3);
             this.ckM_RadioButton2.Name = "ckM_RadioButton2";
             this.ckM_RadioButton2.Size = new System.Drawing.Size(36, 16);
@@ -3412,7 +3533,7 @@
             // 
             this.ckM_RadioButton3.AutoSize = true;
             this.ckM_RadioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_RadioButton3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_RadioButton3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_RadioButton3.Location = new System.Drawing.Point(120, 3);
             this.ckM_RadioButton3.Name = "ckM_RadioButton3";
             this.ckM_RadioButton3.Size = new System.Drawing.Size(62, 16);
@@ -3427,7 +3548,7 @@
             this.label25.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.DefaultlabelSize = true;
-            this.label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label25.ForeColor = System.Drawing.Color.Black;
             this.label25.Location = new System.Drawing.Point(6, 5);
@@ -3448,7 +3569,7 @@
             this.ScBillingCD.CodeWidth1 = 100;
             this.ScBillingCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBillingCD.DataCheck = false;
-            this.ScBillingCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScBillingCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScBillingCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScBillingCD.IsCopy = false;
             this.ScBillingCD.LabelText = "";
@@ -3461,6 +3582,7 @@
             this.ScBillingCD.Size = new System.Drawing.Size(634, 27);
             this.ScBillingCD.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScBillingCD.TabIndex = 26;
+            this.ScBillingCD.test = null;
             this.ScBillingCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBillingCD.UseChangeDate = false;
             this.ScBillingCD.Value1 = null;
@@ -3477,7 +3599,7 @@
             this.ScCollectCD.CodeWidth1 = 100;
             this.ScCollectCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCollectCD.DataCheck = false;
-            this.ScCollectCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCollectCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCollectCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScCollectCD.IsCopy = false;
             this.ScCollectCD.LabelText = "";
@@ -3490,11 +3612,29 @@
             this.ScCollectCD.Size = new System.Drawing.Size(634, 27);
             this.ScCollectCD.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCollectCD.TabIndex = 27;
+            this.ScCollectCD.test = null;
             this.ScCollectCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCollectCD.UseChangeDate = false;
             this.ScCollectCD.Value1 = null;
             this.ScCollectCD.Value2 = null;
             this.ScCollectCD.Value3 = null;
+            // 
+            // ckM_Label31
+            // 
+            this.ckM_Label31.AutoSize = true;
+            this.ckM_Label31.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label31.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label31.DefaultlabelSize = true;
+            this.ckM_Label31.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label31.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label31.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label31.Location = new System.Drawing.Point(274, 715);
+            this.ckM_Label31.Name = "ckM_Label31";
+            this.ckM_Label31.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label31.TabIndex = 763;
+            this.ckM_Label31.Text = "メッセージ";
+            this.ckM_Label31.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MasterTouroku_Tokuisaki
             // 
@@ -3698,5 +3838,6 @@
         private CKM_Controls.CKM_Label ckM_Label25;
         private CKM_Controls.CKM_Label ckM_Label30;
         private CKM_Controls.CKM_MultiLineTextBox txtCreditMessage;
+        private CKM_Controls.CKM_Label ckM_Label31;
     }
 }

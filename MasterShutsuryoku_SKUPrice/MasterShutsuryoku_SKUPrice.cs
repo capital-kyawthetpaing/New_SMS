@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using Entity;
 using Base.Client;
 using System.IO;
 using ClosedXML.Excel;
@@ -17,6 +18,9 @@ namespace MasterShutsuryoku_SKUPrice
 {
     public partial class MasterShutsuryoku_SKUPrice : FrmMainForm
     {
+        Base_BL bbl;
+        M_SKU_Entity msku;
+        SKU_BL mbl;
         int type = 0;
         int checkflg = 0;
         int chkUnapprove = 0;
@@ -24,6 +28,9 @@ namespace MasterShutsuryoku_SKUPrice
         public MasterShutsuryoku_SKUPrice()
         {
             InitializeComponent();
+            bbl = new Base_BL();
+            msku = new M_SKU_Entity();
+            mbl = new SKU_BL();
         }
 
         private void MasterShutsuryoku_SKUPrice_Load(object sender, EventArgs e)
@@ -34,6 +41,7 @@ namespace MasterShutsuryoku_SKUPrice
             ModeVisible = false;
             LB_ChangeDate.Text = bbl.GetDate();
             SC_Vendor.SetFocus(1);
+            Btn_F12.Text = "Excel出力(F12)";
         }
 
         private void BindCombo()
@@ -68,7 +76,7 @@ namespace MasterShutsuryoku_SKUPrice
                 case 10:
 
                 case 12:
-                    //OutputExecel();
+                    OutputExecel();
                     break;
             }
         }
@@ -291,9 +299,9 @@ namespace MasterShutsuryoku_SKUPrice
                     chkUnapprove = CK_UnApprove.Checked ? 1 : 0;
                     //checkflg = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked ? 6 : RB_JanCD.Checked ? 7 : RB_SizeURL.Checked ? 8 : 0;
 
-                    //msku = GetData();
+                    msku = GetData();
                     DataTable dt = new DataTable();
-                    //dt = mbl.M_SKU_Export(msku, checkflg, chkUnapprove, type);
+                    dt = mbl.M_SKUPrice_Export(msku, chkUnapprove, type);
                     if (dt.Rows.Count > 0)
                     {
                         //if (checkflg != 1)
@@ -531,6 +539,49 @@ namespace MasterShutsuryoku_SKUPrice
             }
         }
 
+        private M_SKU_Entity GetData()
+        {
+
+            msku = new M_SKU_Entity()
+            {
+                ChangeDate = LB_ChangeDate.Text,
+                MainVendorCD = SC_Vendor.TxtCode.Text,
+                MakerVendorCD = SC_makervendor.TxtCode.Text,
+                BrandCD = SC_Brand.TxtCode.Text,
+                SKUName = TB_Shouhin.Text,
+                JanCD = SC_JANCD.TxtCode.Text,
+                SKUCD = SC_SKUCD.TxtCode.Text,
+                CommentInStore = TB_CommentInStore.Text,
+                LastYearTerm = CB_Year.Text,
+                LastSeason = CB_Season.Text,
+                LastCatalogNO = TB_Catalog.Text,
+                ReserveCD = CB_ReserveCD.Text,
+                NoticesCD = CB_NoticesCD.Text,
+                OrderAttentionCD = CB_OrderAttention.Text,
+                PostageCD = CB_PostageCD.Text,
+                SportsCD = SC_SportsCD.TxtCode.Text,
+                TagName1 = CB_Tag1.Text,
+                TagName2 = CB_Tag2.Text,
+                TagName3 = CB_Tag3.Text,
+                TagName4 = CB_Tag4.Text,
+                TagName5 = CB_Tag5.Text,
+                LastInstructionsNO = TB_InstructionNo.Text,
+                ITemCD = TB_Item.Text,
+                MakerItem = TB_MakerItem.Text,
+                InputDateFrom = TB_InsertDateF.Text,
+                InputDateTo = TB_InsertDateT.Text,
+                UpdateDateFrom = TB_UpdateDateF.Text,
+                UpdateDateTo = TB_UpdateDateT.Text,
+                ApprovalDateFrom = TB_ApprovalDateF.Text,
+                ApprovalDateTo = TB_ApprovalDateT.Text,
+                Operator = InOperatorCD,
+                PC = InPcID,
+                ProgramID = InProgramID,
+                ProcessMode = ModeText,
+                Key = StoreCD + " " + LB_ChangeDate.Text,
+            };
+            return msku;
+        }
 
         private bool ErrorCheck()
         {
