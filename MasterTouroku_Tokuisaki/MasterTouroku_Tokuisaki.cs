@@ -1914,7 +1914,7 @@ namespace MasterTouroku_Tokuisaki
                 else
                 {
                     detailControls[(int)EIndex.BillingCloseDate].Text = "";
-                  cmbCollectPlanMonth.SelectedIndex = 0;
+                  cmbCollectPlanMonth.SelectedIndex = -1;
                     detailControls[(int)EIndex.CollectPlanDate].Text = "";
                     detailControls[(int)EIndex.BillingCloseDate].Enabled = false;
                     detailControls[(int)EIndex.cmbCollectPlanMonth].Enabled = false;
