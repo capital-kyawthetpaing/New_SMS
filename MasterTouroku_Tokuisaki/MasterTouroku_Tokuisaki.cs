@@ -1481,6 +1481,7 @@ namespace MasterTouroku_Tokuisaki
             {
                 case EOperationMode.INSERT:
                     Scr_Lock(0, mc_L_END, 0);
+                    SetEnabled(0);
                     SetFuncKeyAll(this, "111111000001");
                     btnSubF11.Enabled = false;
                     break;
@@ -1914,7 +1915,7 @@ namespace MasterTouroku_Tokuisaki
                 else
                 {
                     detailControls[(int)EIndex.BillingCloseDate].Text = "";
-                  cmbCollectPlanMonth.SelectedIndex = -1;
+                    cmbCollectPlanMonth.SelectedIndex = -1;
                     detailControls[(int)EIndex.CollectPlanDate].Text = "";
                     detailControls[(int)EIndex.BillingCloseDate].Enabled = false;
                     detailControls[(int)EIndex.cmbCollectPlanMonth].Enabled = false;
