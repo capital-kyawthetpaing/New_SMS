@@ -45,8 +45,8 @@ BEGIN
 
 			)
 					exec sp_xml_removedocument @DocHandle;
-					 
-					Update msp set
+
+						Update msp set
 					msp.CustomerName = fc.CustomerName
 					,msp.TekiyouShuuryouDate = Convert (varchar(10), mt.EndDate,126  )
 					,msp.JanCD = fs.JANCD
@@ -56,13 +56,14 @@ BEGIN
 					,msp.Remarks = mt.Remark
 					,msp.DeleteFlg = mt.DeleteFlg
 					,msp.UpdateDateTime = @dtn
-					 from M_CustomerSKUPrice msp 
-					 
-					inner join #tempItem mt on msp.CustomerCD= mt.CustomerCD 
+
+
+					from M_CustomerSKUPrice msp 
+					inner join #tempItem mt on msp.CustomerCD= mt.CustomerCD and  convert(varchar(10),mt.StartDate,126) = Convert (varchar(10),msp.TekiyouKaisiDate,126  ) and  msp.AdminNo = mt.AdminNo 
 					inner join F_Customer(getdate()) fc on fc.CustomerCD = msp.CustomerCD
 					inner join F_SKu(getdate()) fs on fs.AdminNo = msp.AdminNo
-					and  msp.AdminNo = mt.AdminNo 
-					and  convert(varchar(10),mt.StartDate,111) = Convert (varchar(10),msp.TekiyouKaisiDate,126  )
+					
+					
 
 
 					insert into M_CustomerSKUPrice
@@ -92,10 +93,9 @@ BEGIN
 					select 1 from M_CustomerSKUPrice mcp 
 					where
 					 mcp.AdminNo = mt.AdminNo 
-					and convert(varchar(10),mt.StartDate,111) = Convert (varchar(10),mcp.TekiyouKaisiDate,126  ) 
+					and convert(varchar(10),mt.StartDate,126) = Convert (varchar(10),mcp.TekiyouKaisiDate,126  ) 
 					and mcp.CustomerCD = mt.CustomerCD
 					)
-
 					
 ---------------------------------------------------------------------------------------------------------------------
 

@@ -471,23 +471,28 @@ namespace KeihiNyuuryoku
                     {
                         dta.Rows.Remove(r);
                     }
+                    int g = 0;
                     foreach (DataRow dr in dta.Rows)
                     {
-                        
+                        g++;
                         if (string.IsNullOrWhiteSpace(dr["CostCD"].ToString()))
                         {
                             khnyk_BL.ShowMessage("E102");
-                            //dgvKehiNyuuryoku.ClearSelection(); //2020-06-16 ptk
-                            //dgvKehiNyuuryoku.Refresh(); //2020-06-16 ptk
-                            //dgvKehiNyuuryoku.Rows[ Convert.ToInt32 (dr["index"].ToString())-1].Selected =true; //2020-06-16 ptk
-                            // dgvKehiNyuuryoku.CurrentCell.Selected = true;
-                            // dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr)];
+                            dgvKehiNyuuryoku[0, g - 1].Selected = true;
+                            dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[g-1].Cells[0];
+                            dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                            dgvKehiNyuuryoku.BeginEdit(true);
                             return false;
                         }
                         else if (string.IsNullOrWhiteSpace(dr["DepartmentCD"].ToString())) // Check ComboBox is selected or not
                         {
                             khnyk_BL.ShowMessage("E102");
-                            dgvKehiNyuuryoku.Select();
+                            //dgvKehiNyuuryoku[2, g - 1].Selected = true;
+                            dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[g-1].Cells[2];
+                            dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                            dgvKehiNyuuryoku.BeginEdit(true);
+
+                            //dgvKehiNyuuryoku.e = true;
                             //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colDepartment"].Index, Convert.ToInt16(drs[0]["colDepartment"].ToString()) - 1];
                             return false;
                         }

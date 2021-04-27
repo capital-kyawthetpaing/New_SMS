@@ -252,7 +252,13 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     //{
                     if (CheckPartial(dt))
                     {
-                        dt.Columns["データ区分"].ColumnName = "KBN";
+                        try
+                        {
+                            dt.Columns["データ区分"].ColumnName = "KBN";
+                        }
+                        catch {
+
+                        }
                         dt.Columns["顧客CD"].ColumnName = "CustomerCD";
                         dt.Columns["顧客名称"].ColumnName = "CustomerName";
                         dt.Columns["適用開始日"].ColumnName = "StartDate";
@@ -358,6 +364,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
         }
         private async void ExcelErrorCheck(DataTable dt)
         {
+         
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
             dt.Columns.Add("Cusotmer");
@@ -498,7 +505,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
 
                 dt.Rows[i]["Cusotmer"] = dt.Rows[i]["顧客名称"].ToString();
                 dt.Rows[i]["ItemName"] = dt.Rows[i]["商品名"].ToString();
-                dt.Rows[i]["AppDate"] = dt.Rows[i]["適用開始日"].ToString();
+                dt.Rows[i]["AppDate"] = bbl.FormatDate(dt.Rows[i]["適用開始日"].ToString().Split().Count() >1 ? dt.Rows[i]["適用開始日"].ToString().Split().First() : dt.Rows[i]["適用開始日"].ToString());
                 dt.Rows[i]["Color"] = col;
                 dt.Rows[i]["Size"] = siz;
                 if (dt != null)
