@@ -387,14 +387,15 @@ namespace KeihiNyuuryoku
                         }
                     }
                 }
-                else
+                else if (OperationMode == EOperationMode.UPDATE)
                 {
                     if (!RequireCheck(new Control[] { ScCost.TxtCode }))
                         return false;
 
                     dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost.Code);
                     dtcontrol = khnyk_BL.M_Control_RecordCheck(System.DateTime.Now.ToString("yyyy-MM-dd"));
-                    dtpayplan = khnyk_BL.SimpleSelect1("19",null,ScCost.Code);
+                    dtpayplan = khnyk_BL.SimpleSelect1("19", null, ScCost.Code);
+
 
                     if (dtcost.Rows.Count < 1)
                     {
@@ -418,6 +419,14 @@ namespace KeihiNyuuryoku
                         khnyk_BL.ShowMessage("S014");
                         ScCost.SetFocus(1);
                         return false;
+                    }
+                }
+                else if (OperationMode == EOperationMode.DELETE)
+                {
+                    dtpayplan = khnyk_BL.SimpleSelect1("19", null, ScCost.Code);
+                    if (dtpayplan.Rows.Count > 0)
+                    {
+                        Btn_F12.Enabled = false;
                     }
                 }
             }
