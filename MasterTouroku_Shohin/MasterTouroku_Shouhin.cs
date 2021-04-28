@@ -2646,7 +2646,7 @@ namespace MasterTouroku_Shouhin
                 if (ret)
                 {
                     //UpdatingFlg＝１であればエラー
-                    if (me.UpdatingFlg.Equals("1"))
+                    if (me.UpdatingFlg.Equals("1") && !me.UpdateOperator.Equals(InOperatorCD))
                     {
                         bbl.ShowMessage("E220");
                         //OKボタンでJANCD採番ボタンにカーソル戻す
@@ -2742,7 +2742,7 @@ namespace MasterTouroku_Shouhin
                                         rows[0]["JanCD"] = jancd;
                                     }
                                     //③M_JANCounterをUpdate	
-                                    me.UpdatingFlg = "0";
+                                    me.UpdatingFlg = "1";
                                     me.Operator = InOperatorCD;
                                     mibl.M_JANCounter_Update(me);
 
