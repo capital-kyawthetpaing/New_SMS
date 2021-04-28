@@ -56,7 +56,6 @@
             this.ckmShop_Label41 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label62 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckmShop_Label72 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label71 = new CKM_Controls.CKMShop_Label();
@@ -157,6 +156,8 @@
             this.lblDtGyo4 = new CKM_Controls.CKMShop_Label();
             this.lblDtSSu4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label75 = new CKM_Controls.CKMShop_Label();
             this.pnlDetails.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -449,6 +450,7 @@
             // pnlDetails
             // 
             this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetails.Controls.Add(this.ckmShop_Label9);
             this.pnlDetails.Controls.Add(this.ckmShop_Label8);
             this.pnlDetails.Controls.Add(this.ckmShop_Label7);
             this.pnlDetails.Controls.Add(this.ckmShop_Label6);
@@ -555,7 +557,6 @@
             this.panel2.Controls.Add(this.ckmShop_Label41);
             this.panel2.Controls.Add(this.ckmShop_Label62);
             this.panel2.Controls.Add(this.ckmShop_Label10);
-            this.panel2.Controls.Add(this.ckmShop_Label9);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1898, 74);
@@ -688,22 +689,6 @@
             this.ckmShop_Label10.Text = "倉庫名ＸＸＸＸＸＸ10";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ckmShop_Label9
-            // 
-            this.ckmShop_Label9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label9.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label9.FontBold = true;
-            this.ckmShop_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label9.Location = new System.Drawing.Point(6, 2);
-            this.ckmShop_Label9.Name = "ckmShop_Label9";
-            this.ckmShop_Label9.Size = new System.Drawing.Size(73, 70);
-            this.ckmShop_Label9.TabIndex = 197;
-            this.ckmShop_Label9.Text = "1";
-            this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -2315,11 +2300,45 @@
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ckmShop_Label9
+            // 
+            this.ckmShop_Label9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label9.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label9.FontBold = true;
+            this.ckmShop_Label9.ForeColor = System.Drawing.Color.Black;
+            this.ckmShop_Label9.Location = new System.Drawing.Point(1478, -21);
+            this.ckmShop_Label9.Name = "ckmShop_Label9";
+            this.ckmShop_Label9.Size = new System.Drawing.Size(1, 780);
+            this.ckmShop_Label9.TabIndex = 175;
+            this.ckmShop_Label9.Text = "ckmShop_Label9";
+            this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckmShop_Label75
+            // 
+            this.ckmShop_Label75.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label75.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label75.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label75.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label75.FontBold = true;
+            this.ckmShop_Label75.ForeColor = System.Drawing.Color.Black;
+            this.ckmShop_Label75.Location = new System.Drawing.Point(13, 256);
+            this.ckmShop_Label75.Name = "ckmShop_Label75";
+            this.ckmShop_Label75.Size = new System.Drawing.Size(73, 70);
+            this.ckmShop_Label75.TabIndex = 205;
+            this.ckmShop_Label75.Text = "1";
+            this.ckmShop_Label75.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmTempoRegiZaikoKakunin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1913, 1061);
+            this.Controls.Add(this.ckmShop_Label75);
             this.Controls.Add(this.ckmShop_Label5);
             this.Controls.Add(this.pnlDetails);
             this.Controls.Add(this.btnProductName);
@@ -2356,6 +2375,7 @@
             this.Controls.SetChildIndex(this.btnProductName, 0);
             this.Controls.SetChildIndex(this.pnlDetails, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label5, 0);
+            this.Controls.SetChildIndex(this.ckmShop_Label75, 0);
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -2503,5 +2523,6 @@
         private CKM_Controls.CKMShop_Label lblJANCD3;
         private CKM_Controls.CKMShop_Label lblDtGyo3;
         private CKM_Controls.CKMShop_Label ckmShop_Label9;
+        private CKM_Controls.CKMShop_Label ckmShop_Label75;
     }
 }
