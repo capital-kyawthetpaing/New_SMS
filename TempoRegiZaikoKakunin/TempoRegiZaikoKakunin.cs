@@ -25,6 +25,8 @@ namespace TempoRegiZaikoKakunin
         public string PcID = string.Empty;
         public string OperatorCD = string.Empty;
 
+        private const int GYO_CNT = 10;
+
 
         public frmTempoRegiZaikoKakunin()
         {
@@ -40,6 +42,7 @@ namespace TempoRegiZaikoKakunin
             InCompanyCD = CompanyCD;
             string data = InOperatorCD;
             StartProgram();
+            AddHandler();
 
             //if (!string.IsNullOrWhiteSpace(JanCD))
             //{
@@ -68,9 +71,119 @@ namespace TempoRegiZaikoKakunin
 
         }
 
+        private void AddHandler()
+        {
+            for (int i = 1; i <= GYO_CNT; i++)
+            {
+                //lblDtGyoをさがす。子コントロールも検索する。
+                Control[] cs = this.Controls.Find("lblDtGyo" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Click += new System.EventHandler(this.lblDtGyo_Click);
+                }
+            }
+        }
+
         private void SetRequireField()
         {
             //txtJanCD.Require(true);
+        }
+
+        private void lblDtGyo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Label lblsender = (Label)sender;
+
+                if (string.IsNullOrWhiteSpace(lblsender.Text))
+                    return;
+
+                int index = Convert.ToInt16(lblsender.Text) - 1;
+
+                //選択行のindexを保持
+                btnDown.Tag = index;
+
+                ClearBackColor(pnlDetails);
+
+                ChangeBackColor(lblsender);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ClearBackColor(Panel panel)
+        {
+            IEnumerable<Control> c = GetAllControls(panel);
+            foreach (Control ctrl in c)
+            {
+                if (ctrl is Label)
+                    ((Label)ctrl).BackColor = Color.Transparent;
+                if (ctrl is Panel)
+                    ((Panel)ctrl).BackColor = Color.Transparent;
+
+            }
+        }
+
+        private void ChangeBackColor(Label lblsender)
+        {
+            Color backCl = Color.FromArgb(255, 242, 204);
+
+            lblsender.BackColor = backCl;
+
+            int i = Convert.ToInt16(lblsender.Name.Substring(8));
+
+            Control[] cs = this.Controls.Find("lblGyoSelect" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblWarehouse" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblProductName" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+
+            cs = this.Controls.Find("lblProductNum" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+
+            cs = this.Controls.Find("lblJANCD" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblColorSize" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+
+            }
+            cs = this.Controls.Find("lblStockDate" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblQuantity" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+
+            cs = this.Controls.Find("lblPossibleNum" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }        
         }
 
         public override void FunctionProcess(int index)
@@ -284,6 +397,61 @@ namespace TempoRegiZaikoKakunin
             txtProductName.Text = frmshouhin.SKUName;
         }
 
-       
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int gyoNo = Convert.ToInt16(lblDtGyo1.Text);
+                //if (gyoNo - GYO_CNT > 0)
+                    //DispFromDataTable(gyoNo - GYO_CNT);
+                //else
+                    //DispFromDataTable();
+
+                    int index = Convert.ToInt16(btnDown.Tag);
+                if (index - GYO_CNT >= 0)
+                {
+                    btnDown.Tag = index - GYO_CNT;
+                }
+                else
+                {
+                    btnDown.Tag = 0;
+                    //ChangeBackColor(lblDtGyo1);
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int gyoNo = Convert.ToInt16(lblDtGyo1.Text);
+                //if (dtJuchu.Rows.Count >= gyoNo + GYO_CNT)
+                //{
+                //    DispFromDataTable(gyoNo + GYO_CNT);
+
+                //    int index = Convert.ToInt16(btnDown.Tag);
+                //    if (dtJuchu.Rows.Count > index + GYO_CNT)
+                //    {
+                //        btnDown.Tag = index + GYO_CNT;
+                //    }
+                //    else
+                //    {
+                //        btnDown.Tag = gyoNo + GYO_CNT - 1;
+
+                //        ChangeBackColor(lblDtGyo1);
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
