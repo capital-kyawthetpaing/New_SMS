@@ -2742,7 +2742,7 @@ namespace MasterTouroku_Shouhin
                                         rows[0]["JanCD"] = jancd;
                                     }
                                     //③M_JANCounterをUpdate	
-                                    me.UpdatingFlg = "1";
+                                    me.UpdatingFlg = "0";
                                     me.Operator = InOperatorCD;
                                     mibl.M_JANCounter_Update(me);
 

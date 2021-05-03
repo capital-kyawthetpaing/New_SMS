@@ -132,6 +132,7 @@
     <Compile Include="M_CarrierDeliveryTime_DL.cs" />
     <Compile Include="M_Carrier_DL.cs" />
     <Compile Include="M_Control_DL.cs" />
+    <Compile Include="M_CustomerInitial_DL.cs" />
     <Compile Include="M_CustomerSKUPrice_DL.cs" />
     <Compile Include="M_DenominationKBN_DL.cs" />
     <Compile Include="M_FiscalYear_DL.cs" />

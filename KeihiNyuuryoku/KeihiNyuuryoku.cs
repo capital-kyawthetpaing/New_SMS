@@ -387,14 +387,15 @@ namespace KeihiNyuuryoku
                         }
                     }
                 }
-                else
+                else if (OperationMode == EOperationMode.UPDATE)
                 {
                     if (!RequireCheck(new Control[] { ScCost.TxtCode }))
                         return false;
 
                     dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost.Code);
                     dtcontrol = khnyk_BL.M_Control_RecordCheck(System.DateTime.Now.ToString("yyyy-MM-dd"));
-                    dtpayplan = khnyk_BL.SimpleSelect1("19",null,ScCost.Code);
+                    dtpayplan = khnyk_BL.SimpleSelect1("19", null, ScCost.Code);
+
 
                     if (dtcost.Rows.Count < 1)
                     {
@@ -418,6 +419,14 @@ namespace KeihiNyuuryoku
                         khnyk_BL.ShowMessage("S014");
                         ScCost.SetFocus(1);
                         return false;
+                    }
+                }
+                else if (OperationMode == EOperationMode.DELETE)
+                {
+                    dtpayplan = khnyk_BL.SimpleSelect1("19", null, ScCost.Code);
+                    if (dtpayplan.Rows.Count > 0)
+                    {
+                        Btn_F12.Enabled = false;
                     }
                 }
             }
@@ -471,23 +480,28 @@ namespace KeihiNyuuryoku
                     {
                         dta.Rows.Remove(r);
                     }
+                    int g = 0;
                     foreach (DataRow dr in dta.Rows)
                     {
-                        
+                        g++;
                         if (string.IsNullOrWhiteSpace(dr["CostCD"].ToString()))
                         {
                             khnyk_BL.ShowMessage("E102");
-                            //dgvKehiNyuuryoku.ClearSelection(); //2020-06-16 ptk
-                            //dgvKehiNyuuryoku.Refresh(); //2020-06-16 ptk
-                            //dgvKehiNyuuryoku.Rows[ Convert.ToInt32 (dr["index"].ToString())-1].Selected =true; //2020-06-16 ptk
-                            // dgvKehiNyuuryoku.CurrentCell.Selected = true;
-                            // dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr)];
+                            dgvKehiNyuuryoku[0, g - 1].Selected = true;
+                            dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[g-1].Cells[0];
+                            dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                            dgvKehiNyuuryoku.BeginEdit(true);
                             return false;
                         }
                         else if (string.IsNullOrWhiteSpace(dr["DepartmentCD"].ToString())) // Check ComboBox is selected or not
                         {
                             khnyk_BL.ShowMessage("E102");
-                            dgvKehiNyuuryoku.Select();
+                            //dgvKehiNyuuryoku[2, g - 1].Selected = true;
+                            dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[g-1].Cells[2];
+                            dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                            dgvKehiNyuuryoku.BeginEdit(true);
+
+                            //dgvKehiNyuuryoku.e = true;
                             //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colDepartment"].Index, Convert.ToInt16(drs[0]["colDepartment"].ToString()) - 1];
                             return false;
                         }

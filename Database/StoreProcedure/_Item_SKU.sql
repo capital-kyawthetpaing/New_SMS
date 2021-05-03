@@ -529,7 +529,7 @@ insert into #tempItem
 								 on 
 								 tsku.ItemCD = titem.ItemCD
 
-								 
+								 Update tempSKU set SizeNo = Cast (  Left(RIGHT(SKUCD, 8), 4)  as int) , ColorNo = Cast (  RIGHT(SKUCD, 4)  as int)
 							     insert into M_SKU
 								 select * from tempSKU order by AdminNo,SKUCD asc
 																										
