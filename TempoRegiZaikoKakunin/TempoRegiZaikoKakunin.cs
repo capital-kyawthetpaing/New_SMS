@@ -48,6 +48,8 @@ namespace TempoRegiZaikoKakunin
             //{
             //    txtJanCD.Text = JanCD;
             //}
+            Clear(pnlDetails);
+
             this.Text = "在庫確認";
             txtbin.Text = string.Empty;
             txtProductName.Text = string.Empty;
@@ -196,6 +198,21 @@ namespace TempoRegiZaikoKakunin
             }
         }
 
+        private void Clear(Panel panel)
+        {
+            IEnumerable<Control> c = GetAllControls(panel);
+            foreach (Control ctrl in c)
+            {
+                if (ctrl is Label)
+                    ((Label)ctrl).Text = string.Empty;
+
+                if (ctrl is Button)
+                    ((Button)ctrl).Text = string.Empty;
+
+                ctrl.Tag = "";
+            }
+        }
+
         public void DataSending()
         {
             //if (dgvZaikokakunin.CurrentRow != null && dgvZaikokakunin.CurrentRow.Index >= 0)
@@ -304,6 +321,7 @@ namespace TempoRegiZaikoKakunin
                 if(dt.Rows.Count > 0)
                 {
                     //dgvZaikokakunin.DataSource = dt;23.4.2021
+
                 }
                 else
                 {
@@ -453,5 +471,109 @@ namespace TempoRegiZaikoKakunin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void DispFromDataTable(int gyoNo = 1)
+        {
+
+            Clear(pnlDetails);
+
+            for (int i = 1; i <= GYO_CNT; i++)
+            {
+                int index = gyoNo - 2 + i;
+
+                if (dtJuchu.Rows.Count <= index)
+                    break;
+
+                DataRow row = dtJuchu.Rows[index];
+
+                Color foreCl = Color.Black;
+
+                //★出荷可能（引当が終わっているが、まだ出荷していない）
+                //Sum(ShippingPossibleSU）＞	Sum(ShippingSu）なら、文字を赤色にする			
+                if (bbl.Z_Set(row["ShippingPossibleSU"]) > 0)
+                    foreCl = Color.Red;
+
+                //★出荷可能②（直送）＆未売上	
+                if (row["DirectFLG"].ToString().Equals("1") && !string.IsNullOrWhiteSpace(row["OrderNO"].ToString()))
+                {
+                    if (bbl.Z_Set(row["JuchuuSu"]) > bbl.Z_Set(row["SalesSU"]))
+                    {
+                        foreCl = Color.Red;
+                    }
+                }
+
+                //★売上済（売上が終わっている）
+                //D_JuchuuDetails.JuchuuSu≦Sum(SalesSU）なら、文字を青色にする
+                if (bbl.Z_Set(row["JuchuuZan"]) <= 0)
+                    foreCl = Color.RoyalBlue;
+
+                //lblDtGyoをさがす。子コントロールも検索する。
+                Control[] cs = this.Controls.Find("lblDtGyo" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = (index + 1).ToString();
+                }
+
+                cs = this.Controls.Find("lblDtSKUName" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["SKUName"].ToString();
+                    cs[0].ForeColor = foreCl;
+                }
+                cs = this.Controls.Find("lblDtColorSize" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["ColorSizeName"].ToString();
+                    cs[0].ForeColor = foreCl;
+                }
+                cs = this.Controls.Find("lblJuchuuDate" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    if (row["ROWNUM"].ToString() == "1")
+                        cs[0].Text = row["JuchuuDate"].ToString();
+                    cs[0].ForeColor = foreCl;
+                }
+                cs = this.Controls.Find("lblStoreName" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    if (row["ROWNUM"].ToString() == "1")
+                        cs[0].Text = row["StoreName"].ToString() + " " + row["StaffName"].ToString();
+                    cs[0].ForeColor = foreCl;
+
+                }
+                cs = this.Controls.Find("lblJANCD" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["JANCD"].ToString();
+                    cs[0].ForeColor = foreCl;
+                }
+                cs = this.Controls.Find("lblJuchuuNO" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    if (row["ROWNUM"].ToString() == "1")
+                        cs[0].Text = row["JuchuuNO"].ToString();
+                    if (row["ROWNUMS"].ToString() == "1")
+                        cs[0].Text += "/" + row["SalesNO"].ToString();
+
+                    cs[0].ForeColor = foreCl;
+
+                }
+
+                cs = this.Controls.Find("lblDtSSu" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = bbl.Z_SetStr(row["JuchuuSuu"]);
+                    cs[0].ForeColor = foreCl;
+                }
+                cs = this.Controls.Find("lblDtKin" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = "\\" + bbl.Z_SetStr(row["JuchuuGaku"]);
+                    cs[0].ForeColor = foreCl;
+                }
+                //ckmShop_Label5.ForeColor = foreCl;
+            }
+        }
+
     }
 }
