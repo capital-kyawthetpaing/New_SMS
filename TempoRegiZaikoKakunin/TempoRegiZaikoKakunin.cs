@@ -26,7 +26,7 @@ namespace TempoRegiZaikoKakunin
         public string OperatorCD = string.Empty;
 
         private const int GYO_CNT = 10;
-
+        DataTable dt = new DataTable();
 
         public frmTempoRegiZaikoKakunin()
         {
@@ -316,16 +316,17 @@ namespace TempoRegiZaikoKakunin
                 kne.Operator = InOperatorCD;
                 kne.ItemCD = txtbin.Text;
                 kne.SKUName = txtProductName.Text;
-                DataTable dt = new DataTable();
+                
                 dt = zaikobl.D_Stock_DataSelect(kne);
                 if(dt.Rows.Count > 0)
                 {
                     //dgvZaikokakunin.DataSource = dt;23.4.2021
-
+                    DispFromDataTable();
                 }
                 else
                 {
                     //dgvZaikokakunin.DataSource = string.Empty;23.4.2021
+                    Clear(pnlDetails);
                     zaikobl.ShowMessage("E128");
                     txtJanCD.Focus();
                 }
@@ -420,12 +421,12 @@ namespace TempoRegiZaikoKakunin
             try
             {
                 int gyoNo = Convert.ToInt16(lblDtGyo1.Text);
-                //if (gyoNo - GYO_CNT > 0)
-                    //DispFromDataTable(gyoNo - GYO_CNT);
-                //else
-                    //DispFromDataTable();
+                if (gyoNo - GYO_CNT > 0)
+                    DispFromDataTable(gyoNo - GYO_CNT);
+                else
+                    DispFromDataTable();
 
-                    int index = Convert.ToInt16(btnDown.Tag);
+                int index = Convert.ToInt16(btnDown.Tag);
                 if (index - GYO_CNT >= 0)
                 {
                     btnDown.Tag = index - GYO_CNT;
@@ -433,7 +434,7 @@ namespace TempoRegiZaikoKakunin
                 else
                 {
                     btnDown.Tag = 0;
-                    //ChangeBackColor(lblDtGyo1);
+                    ChangeBackColor(lblDtGyo1);
                 }
             }
             catch (Exception ex)
@@ -448,22 +449,22 @@ namespace TempoRegiZaikoKakunin
             try
             {
                 int gyoNo = Convert.ToInt16(lblDtGyo1.Text);
-                //if (dtJuchu.Rows.Count >= gyoNo + GYO_CNT)
-                //{
-                //    DispFromDataTable(gyoNo + GYO_CNT);
+                if (dt.Rows.Count >= gyoNo + GYO_CNT)
+                {
+                    DispFromDataTable(gyoNo + GYO_CNT);
 
-                //    int index = Convert.ToInt16(btnDown.Tag);
-                //    if (dtJuchu.Rows.Count > index + GYO_CNT)
-                //    {
-                //        btnDown.Tag = index + GYO_CNT;
-                //    }
-                //    else
-                //    {
-                //        btnDown.Tag = gyoNo + GYO_CNT - 1;
+                    int index = Convert.ToInt16(btnDown.Tag);
+                    if (dt.Rows.Count > index + GYO_CNT)
+                    {
+                        btnDown.Tag = index + GYO_CNT;
+                    }
+                    else
+                    {
+                        btnDown.Tag = gyoNo + GYO_CNT - 1;
 
-                //        ChangeBackColor(lblDtGyo1);
-                //    }
-                //}
+                        ChangeBackColor(lblDtGyo1);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -481,31 +482,10 @@ namespace TempoRegiZaikoKakunin
             {
                 int index = gyoNo - 2 + i;
 
-                if (dtJuchu.Rows.Count <= index)
+                if (dt.Rows.Count <= index)
                     break;
 
-                DataRow row = dtJuchu.Rows[index];
-
-                Color foreCl = Color.Black;
-
-                //★出荷可能（引当が終わっているが、まだ出荷していない）
-                //Sum(ShippingPossibleSU）＞	Sum(ShippingSu）なら、文字を赤色にする			
-                if (bbl.Z_Set(row["ShippingPossibleSU"]) > 0)
-                    foreCl = Color.Red;
-
-                //★出荷可能②（直送）＆未売上	
-                if (row["DirectFLG"].ToString().Equals("1") && !string.IsNullOrWhiteSpace(row["OrderNO"].ToString()))
-                {
-                    if (bbl.Z_Set(row["JuchuuSu"]) > bbl.Z_Set(row["SalesSU"]))
-                    {
-                        foreCl = Color.Red;
-                    }
-                }
-
-                //★売上済（売上が終わっている）
-                //D_JuchuuDetails.JuchuuSu≦Sum(SalesSU）なら、文字を青色にする
-                if (bbl.Z_Set(row["JuchuuZan"]) <= 0)
-                    foreCl = Color.RoyalBlue;
+                DataRow row = dt.Rows[index];
 
                 //lblDtGyoをさがす。子コントロールも検索する。
                 Control[] cs = this.Controls.Find("lblDtGyo" + i.ToString(), true);
@@ -514,64 +494,50 @@ namespace TempoRegiZaikoKakunin
                     cs[0].Text = (index + 1).ToString();
                 }
 
-                cs = this.Controls.Find("lblDtSKUName" + i.ToString(), true);
+                cs = this.Controls.Find("lblWarehouse" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["SoukoName"].ToString();                  
+                }
+                cs = this.Controls.Find("lblProductNum" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["ItemCD"].ToString();
+                }
+                cs = this.Controls.Find("lblProductName" + i.ToString(), true);
                 if (cs.Length > 0)
                 {
                     cs[0].Text = row["SKUName"].ToString();
-                    cs[0].ForeColor = foreCl;
-                }
-                cs = this.Controls.Find("lblDtColorSize" + i.ToString(), true);
-                if (cs.Length > 0)
-                {
-                    cs[0].Text = row["ColorSizeName"].ToString();
-                    cs[0].ForeColor = foreCl;
-                }
-                cs = this.Controls.Find("lblJuchuuDate" + i.ToString(), true);
-                if (cs.Length > 0)
-                {
-                    if (row["ROWNUM"].ToString() == "1")
-                        cs[0].Text = row["JuchuuDate"].ToString();
-                    cs[0].ForeColor = foreCl;
-                }
-                cs = this.Controls.Find("lblStoreName" + i.ToString(), true);
-                if (cs.Length > 0)
-                {
-                    if (row["ROWNUM"].ToString() == "1")
-                        cs[0].Text = row["StoreName"].ToString() + " " + row["StaffName"].ToString();
-                    cs[0].ForeColor = foreCl;
-
                 }
                 cs = this.Controls.Find("lblJANCD" + i.ToString(), true);
                 if (cs.Length > 0)
                 {
-                    cs[0].Text = row["JANCD"].ToString();
-                    cs[0].ForeColor = foreCl;
-                }
-                cs = this.Controls.Find("lblJuchuuNO" + i.ToString(), true);
-                if (cs.Length > 0)
-                {
-                    if (row["ROWNUM"].ToString() == "1")
-                        cs[0].Text = row["JuchuuNO"].ToString();
-                    if (row["ROWNUMS"].ToString() == "1")
-                        cs[0].Text += "/" + row["SalesNO"].ToString();
-
-                    cs[0].ForeColor = foreCl;
+                    cs[0].Text = row["JanCD"].ToString();
 
                 }
+                cs = this.Controls.Find("lblColorSize" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["ColorSize"].ToString();                  
+                }
+                cs = this.Controls.Find("lblStockDate" + i.ToString(), true);
+                if (cs.Length > 0)
+                {
+                    cs[0].Text = row["StockDate"].ToString();
+                }
 
-                cs = this.Controls.Find("lblDtSSu" + i.ToString(), true);
+                cs = this.Controls.Find("lblQuantity" + i.ToString(), true);
                 if (cs.Length > 0)
                 {
-                    cs[0].Text = bbl.Z_SetStr(row["JuchuuSuu"]);
-                    cs[0].ForeColor = foreCl;
+                    cs[0].Text = row["StockNum"].ToString();
                 }
-                cs = this.Controls.Find("lblDtKin" + i.ToString(), true);
+
+                cs = this.Controls.Find("lblPossibleNum" + i.ToString(), true);
                 if (cs.Length > 0)
                 {
-                    cs[0].Text = "\\" + bbl.Z_SetStr(row["JuchuuGaku"]);
-                    cs[0].ForeColor = foreCl;
+                    cs[0].Text = row["KanoSu"].ToString();
                 }
-                //ckmShop_Label5.ForeColor = foreCl;
+               
             }
         }
 
