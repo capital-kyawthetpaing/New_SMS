@@ -545,7 +545,7 @@ insert into #tempItem
 			drop table tempSKU			
 			drop table CountSetting		
 	End
-	if @MainFlg =6
+	if @MainFlg =60
 	Begin
 
 	  Delete from M_SKU where ITemCD in (
@@ -788,7 +788,7 @@ insert into #tempItem
 								 on 
 								 tsku.ItemCD = titem.ItemCD
 
-								 
+								 Update tempSKU set SizeNo = Cast (  Left(RIGHT(SKUCD, 8), 4)  as int) , ColorNo = Cast (  RIGHT(SKUCD, 4)  as int)
 							     insert into M_SKU
 								 select * from tempSKU order by AdminNo,SKUCD asc
 
