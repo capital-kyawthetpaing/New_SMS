@@ -86,5 +86,14 @@ namespace DL
 
         //    return InsertUpdateDeleteData(dic, sp);
         //}
+
+        public DataTable M_TankaCD_SelectAll_NoPara()
+        {
+            string sp = "M_TankaCD_SelectAll_NoPara";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+            };
+            return SelectData(dic, sp);
+        }
     }
 }
