@@ -67,11 +67,7 @@ namespace MasterTorikomi_Item
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (bbl.ShowMessage("Q001") == DialogResult.Yes)
-            //{
-            gvItem.DataSource = null;
-            string filePath = string.Empty;
-            string fileExt = string.Empty;
+            gvItem.DataSource = null; 
             if (!System.IO.Directory.Exists("C:\\SMS\\MasterShutsuryoku_ITEM\\"))
             {
                 System.IO.Directory.CreateDirectory("C:\\SMS\\MasterShutsuryoku_ITEM\\");
@@ -81,11 +77,22 @@ namespace MasterTorikomi_Item
             file.InitialDirectory = "C:\\SMS\\MasterShutsuryoku_ITEM\\";                             // file.RestoreDirectory = true;
             if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
             {
-                
-                Cursor = Cursors.WaitCursor;
-                try
+
+                Import(file);
+            }
+        }
+
+        protected void Import(OpenFileDialog file=null,  bool IsClick =true)
+        {
+            string filePath = string.Empty;
+            string fileExt = string.Empty;
+            
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (IsClick)
                 {
-                    filePath = file.FileName; ; //get the path of the file  
+                    filePath = file.FileName;  //get the path of the file  
                     fileExt = Path.GetExtension(filePath); //get the file extension  
                     if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
                     {
@@ -93,40 +100,40 @@ namespace MasterTorikomi_Item
                         return;
                     }
                     inputPath.Text = filePath;
-                    DataTable dt = new DataTable();
-                    dt = ExcelToDatatable(filePath);
-                    if (dt != null)
+                }
+                DataTable dt = new DataTable();
+                dt = ExcelToDatatable(inputPath.Text);
+                if (dt != null)
+                {
+                    if (ErrorCheck(dt))
                     {
-                        if (ErrorCheck(dt))
-                        {
-                            ExcelErrorCheck(dt);
-                            //if (dt != null)
-                            //{
-                            //    gvItem.DataSource = null;
-                            //    gvItem.DataSource = dt;
-                            //}
+                        ExcelErrorCheck(dt);
+                        //if (dt != null)
+                        //{
+                        //    gvItem.DataSource = null;
+                        //    gvItem.DataSource = dt;
+                        //}
 
-                        }
-                        else
-                        {
-                            inputPath.Focus();
-                        }
-                        Cursor = Cursors.Default; ;
                     }
                     else
                     {
-                        MessageBox.Show("No row data was found or import excel is opening in different location");
-                        Cursor = Cursors.Default;
-                        return;
+                        inputPath.Focus();
                     }
+                    Cursor = Cursors.Default; ;
                 }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
+                else
+                {
+                    MessageBox.Show("No row data was found or import excel is opening in different location");
+                    Cursor = Cursors.Default;
+                    return;
                 }
-
-                Cursor = Cursors.Default;
             }
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Cursor = Cursors.Default;
 
         }
         protected override void EndSec()
@@ -343,13 +350,17 @@ namespace MasterTorikomi_Item
         }
         private void UpdateControl(Control c, string s)
         {
-            if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+            try
             {
+                if (ControlInvokeRequired(c, () => UpdateControl(c, s)))
+                {
+                    c.Text = s;
+                    return;
+                }
                 c.Text = s;
-                return;
+                c.Update();
             }
-            c.Text = s;
-            c.Update();
+            catch { }
         }
         private async Task UpdateText(Control c,string t)
         {
@@ -357,14 +368,16 @@ namespace MasterTorikomi_Item
             {
                 if (c.InvokeRequired)
                 {
-                    UpdateControl(c,t);
+                    try
+                    {
+                        UpdateControl(c, t);
+                    }
+                    catch { }
                 }
             });
         }
         private async  void ExcelErrorCheck(DataTable dt)
         {
-          //  tick = 0;
-
             dt.Columns.Add("EItem");
             dt.Columns.Add("Error");
             dt.Columns.Add("ItemCDShow");
@@ -2006,6 +2019,13 @@ namespace MasterTorikomi_Item
         private void gvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void inputPath_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            Import(null,false);
+           
         }
     }
 }
