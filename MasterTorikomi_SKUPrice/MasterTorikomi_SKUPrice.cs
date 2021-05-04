@@ -22,7 +22,7 @@ namespace MasterTorikomi_SKUPrice
         DataTable dtTankaCD = new DataTable();
         DataTable dtStoreCD = new DataTable();
         M_SKUPrice_Entity mskup;
-        MasterTorikomi_SKUPrice_BL mskupbl;
+        MasterTorikomi_SKUPrice_BL mskupbl; 
         SKU_BL sbl;
         string filePath = string.Empty;
 
@@ -30,7 +30,8 @@ namespace MasterTorikomi_SKUPrice
         {
             InitializeComponent();
             mskup = new M_SKUPrice_Entity();
-            mskupbl = new MasterTorikomi_SKUPrice_BL();
+            mskupbl = new MasterTorikomi_SKUPrice_BL(); 
+
             sbl = new SKU_BL();
         }
 
