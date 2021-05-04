@@ -25,7 +25,7 @@ namespace TempoRegiZaikoKakunin
         public string PcID = string.Empty;
         public string OperatorCD = string.Empty;
 
-        private const int GYO_CNT = 10;
+        private const int GYO_CNT = 8;
         DataTable dt = new DataTable();
 
         public frmTempoRegiZaikoKakunin()
