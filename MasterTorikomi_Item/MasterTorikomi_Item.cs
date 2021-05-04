@@ -680,10 +680,7 @@ namespace MasterTorikomi_Item
                            }
                        }
                    }
-                   catch { }
-
-
-
+                   catch { }  
                    try
                    {
                        if (Cols.Contains("セグメントCD"))
@@ -764,7 +761,7 @@ namespace MasterTorikomi_Item
                            }
                             //IsNoB(dt, i, "サンプル品区分", "M_SKUInitial");
                             var val = dt.Rows[i]["値引商品区分"].ToString();
-                           if (string.IsNullOrWhiteSpace(val) || val == "0")
+                           if (string.IsNullOrWhiteSpace(val))
                            {
                                if (dtskuintial.Rows.Count > 0)
                                {
