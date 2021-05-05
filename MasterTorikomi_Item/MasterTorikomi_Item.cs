@@ -123,7 +123,7 @@ namespace MasterTorikomi_Item
                 }
                 else
                 {
-                    MessageBox.Show("No row data was found or import excel is opening in different location");
+                    //MessageBox.Show("No row data was found or import excel is opening in different location");
                     Cursor = Cursors.Default;
                     return;
                 }
@@ -1267,8 +1267,13 @@ namespace MasterTorikomi_Item
                    {
                        if (Cols.Contains("税率区分"))
                        {
-                           if (!Is190(dt.Rows[i]["税率区分"].ToString()))
+                        //if ( dt.Rows[i]["税率区分"].ToString() == "2")
+                        //{
+
+                        //}
+                           if (!Is190(dt.Rows[i]["税率区分"].ToString(),false,true))
                            {
+                            
                                dt.Rows[i]["EItem"] = "税率区分";
                                dt.Rows[i]["Error"] = "E190";
                                goto SkippedLine;
@@ -1289,7 +1294,7 @@ namespace MasterTorikomi_Item
                    {
                        if (Cols.Contains("原価計算方法"))
                        {
-                           if (!Is190(dt.Rows[i]["原価計算方法"].ToString()))
+                           if (!Is190(dt.Rows[i]["原価計算方法"].ToString(),false,true))
                            {
                                dt.Rows[i]["EItem"] = "原価計算方法";
                                dt.Rows[i]["Error"] = "E190";
@@ -1448,14 +1453,14 @@ namespace MasterTorikomi_Item
                        }
                    }
                    catch { }
-                   try
-                   {
-                       if (Cols.Contains("ITEMタグ2"))
-                       {
-                           IsNoB(dt, i, "ITEMタグ2", "1");
-                       }
-                   }
-                   catch { }
+                   //try
+                   //{
+                   //    if (Cols.Contains("ITEMタグ2"))
+                   //    {
+                   //        IsNoB(dt, i, "ITEMタグ2", "1");
+                   //    }
+                   //}
+                   //catch { }
 
                SkippedLine:
                    dt.Rows[i]["ItemCDShow"] = dt.Rows[i]["ITEMCD"].ToString();
@@ -1578,11 +1583,18 @@ namespace MasterTorikomi_Item
             return false;
         }
         List<string> Liststr = new List<string>();
-        private bool Is190(string value, bool IsDataFlag = false)
+        private bool Is190(string value, bool IsDataFlag = false, bool Is_TaxRow=false)
         {
             if (!IsDataFlag)
             {
-                if (value.Trim().ToString() == "0" || value.Trim().ToString() == "1" || string.IsNullOrEmpty(value))
+                if (Is_TaxRow)
+                {
+                    if (value.Trim().ToString() == "0" || value.Trim().ToString() == "1" || string.IsNullOrEmpty(value) || value.Trim().ToString() == "2")
+                    {
+                        return true;
+                    }
+                }
+                else if (value.Trim().ToString() == "0" || value.Trim().ToString() == "1" || string.IsNullOrEmpty(value))
                 {
                     return true;
                 }
@@ -1639,7 +1651,7 @@ namespace MasterTorikomi_Item
             }
             catch
             {
-                bbl.ShowMessage("E137");
+                bbl.ShowMessage("E278");
                 return null;
             }
 
