@@ -22,7 +22,7 @@ BEGIN
 
     
 	Declare @DocHandle int,
-	@_Date datetime =CONVERT(varchar,getdate(),120),
+	@_Date datetime =CONVERT(varchar,@Date,120),
 	--@Opt as varchar(10) = '0001',
 	@Upt as int =1,
 	@Ins as int = 1;
