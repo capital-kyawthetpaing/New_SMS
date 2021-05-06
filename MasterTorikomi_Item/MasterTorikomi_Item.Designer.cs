@@ -256,7 +256,7 @@
             this.inputPath.BorderColor = false;
             this.inputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.inputPath.ClientColor = System.Drawing.SystemColors.Window;
-            this.inputPath.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.inputPath.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.inputPath.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.inputPath.DecimalPlace = 0;
             this.inputPath.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -277,6 +277,7 @@
             this.inputPath.TabIndex = 1;
             this.inputPath.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.inputPath.UseColorSizMode = false;
+            this.inputPath.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inputPath_KeyDown);
             // 
             // ckM_Label3
             // 

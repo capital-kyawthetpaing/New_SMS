@@ -6,7 +6,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[_Item_SKU]
+Create PROCEDURE [dbo].[_Item_SKU]
 	-- Add the parameters for the stored procedure here
 	  @xml as xml 
 	 ,@opt as varchar(20)
@@ -290,7 +290,7 @@ insert into #tempItem
 	
 
 
-			Create table dbo.tempSKU(
+			Create table dbo.#tempSKU(
 																						AdminNO				int						
 																						,ChangeDate			date				
 																						,SKUCD				varchar(100)	
@@ -384,7 +384,7 @@ insert into #tempItem
 																						,UpdateOperator				 varchar(200)					
 																						,UpdateDateTime				datetime			
 																						)
-			Create table dbo.CountSetting (EmpRows int);
+			Create table dbo.#CountSetting (EmpRows int);
 								
 									SET @Counter=0
 									WHILE ( @Counter <= 50)
@@ -392,7 +392,7 @@ insert into #tempItem
 									   
 									    SET @Counter  = @Counter  + 1
 
-										insert into  CountSetting(Emprows)
+										insert into  #CountSetting(Emprows)
 										values (@Counter)
 									END
 								
@@ -412,14 +412,14 @@ insert into #tempItem
 								BEGIN
 								set @tempAdmin= (select max(AdminNo) from M_SKUCounter );
 								--select @tempAdmin
-								insert into tempSKU(ITemCD,SKUCD ,AdminNO )
+								insert into #tempSKU(ITemCD,SKUCD ,AdminNO )
 							select  ItemCD, SKUCD , ( ROW_NUMBER () Over (order by SKUCD desc) + @tempAdmin ) from (
 								select @ItmCD as ItemCD, (@ItmCD + Cast(SizeCount as varchar) + cast(ColorCount as varchar) ) as SKUCD 
-								   from (  select * from (select  right('0000' +  Cast (EmpRows as varchar), 4) as SizeCount  from CountSetting where EmpRows  <= @SC) a) c
+								   from (  select * from (select  right('0000' +  Cast (EmpRows as varchar), 4) as SizeCount  from #CountSetting where EmpRows  <= @SC) a) c
 								  cross join 
-								 ( select *  from (select  right('0000' +  Cast (EmpRows as varchar), 4) as ColorCount  from CountSetting where EmpRows  <= @CC ) a) d  
+								 ( select *  from (select  right('0000' +  Cast (EmpRows as varchar), 4) as ColorCount  from #CountSetting where EmpRows  <= @CC ) a) d  
 								  ) abc
-								  set @tempAdmin= (select coalesce(MAX(AdminNo ), 0) from tempSKU );
+								  set @tempAdmin= (select coalesce(MAX(AdminNo ), 0) from #tempSKU );
 							    -- delete M_SKUCounter where MainKEY =1
 								-- insert M_SKUCounter (AdminNO, MainKEY, UpdateOperator,UpdateDateTime) values (@tempAdmin, 1,@Opt,@Upt)  
 								 Update M_SKUCounter  set AdminNo = @tempAdmin+1 where mainkey =1 
@@ -524,14 +524,14 @@ insert into #tempItem
 								 ,tsku.UpdateOperator											  =@Opt		
 								 ,tsku.UpdateDateTime											  =@Date		
 
-								 from tempSKU tsku
+								 from #tempSKU tsku
 								 inner join #tempItem titem
 								 on 
 								 tsku.ItemCD = titem.ItemCD
 
-								 
+								 Update #tempSKU set SizeNo = Cast (  Left(RIGHT(SKUCD, 8), 4)  as int) , ColorNo = Cast (  RIGHT(SKUCD, 4)  as int)
 							     insert into M_SKU
-								 select * from tempSKU order by AdminNo,SKUCD asc
+								 select * from #tempSKU order by AdminNo,SKUCD asc
 																										
 								--	Delete  from M_SKU where AdminNO =1
 
@@ -542,259 +542,8 @@ insert into #tempItem
 			 --select Max(ExhibitionSegmentCD) from tempSKU
 			
 			
-			drop table tempSKU			
-			drop table CountSetting		
-	End
-	if @MainFlg =6
-	Begin
-
-	  Delete from M_SKU where ITemCD in (
-	  select fsk.ItemCd  from F_SKU(GETDATE()) fsk 
-	  inner join #tempItem tim on fsk.ITemCD = tim.ITemCD and fsk.ChangeDate = tim.ChangeDate and fsk.DeleteFlg = 0)
-
-	  	Create table dbo.tempSKU(
-																						AdminNO				int						
-																						,ChangeDate			date				
-																						,SKUCD				varchar(100)	
-																						,VariousFLG			int					
-																						,SKUName			 varchar(200)					
-																						,SKUNameLong		 varchar(2000)					
-																						,KanaName			 varchar(200)						
-																						,SKUShortName			 varchar(200)						
-																						,EnglishName		 varchar(200)							
-																						,ITemCD				 varchar(200)					
-																						,SizeNO				int			
-																						,ColorNO				int			
-																						,JanCD				 varchar(200)					
-																						,SetKBN				int			
-																						,PresentKBN				int			
-																						,SampleKBN			int				
-																						,DiscountKBN		int					
-																						,SizeName			 varchar(200)						
-																						,ColorName			 varchar(200)						
-																						,SizeNameLong		 varchar(200)							
-																						,ColorNameLong		 varchar(200)							
-																						,WebFlg					int		
-																						,RealStoreFlg			int				
-																						,MainVendorCD			int				
-																						,MakerVendorCD		 varchar(200)							
-																						,BrandCD			 varchar(200)						
-																						,MakerItem			 varchar(200)						
-																						,TaniCD				 varchar(200)					
-																						,SportsCD			 varchar(200)						
-																						,SegmentCD			 varchar(200)						
-																						,ZaikoKBN			int				
-																						,Rack				 varchar(200)					
-																						,VirtualFlg			int				
-																						,DirectFlg			int				
-																						,ReserveCD			 varchar(200)						
-																						,NoticesCD			 varchar(200)						
-																						,PostageCD			 varchar(200)						
-																						,ManufactCD			 varchar(200)						
-																						,ConfirmCD			 varchar(200)						
-																						,WebStockFlg		int					
-																						,StopFlg			int				
-																						,DiscontinueFlg		int					
-																						,SoldOutFlg			int				
-																						,InventoryAddFlg	int						
-																						,MakerAddFlg		int					
-																						,StoreAddFlg		int					
-																						,NoNetOrderFlg		int					
-																						,EDIOrderFlg		int					
-																						,AutoOrderFlg		int					
-																						,CatalogFlg			int				
-																						,ParcelFlg			int				
-																						,TaxRateFLG			int				
-																						,CostingKBN			int				
-																						,NormalCost			money				
-																						,SaleExcludedFlg	int						
-																						,PriceWithTax		money					
-																						,PriceOutTax		money					
-																						,OrderPriceWithTax	money						
-																						,OrderPriceWithoutTax money							
-																						,Rate					decimal(5,2)		
-																						,SaleStartDate					date		
-																						,WebStartDate			date				
-																						,OrderAttentionCD		 varchar(200)							
-																						,OrderAttentionNote		 varchar(200)							
-																						,CommentInStore			 varchar(300)						
-																						,CommentOutStore		 varchar(300)							
-																						,LastYearTerm			 varchar(200)						
-																						,LastSeason				 varchar(200)					
-																						,LastCatalogNO			 varchar(200)						
-																						,LastCatalogPage		 varchar(200)							
-																						,LastCatalogNOLong		 varchar(2000)							
-																						,LastCatalogPageLong	 varchar(2000)								
-																						,LastCatalogText		 varchar(1000)							
-																						,LastInstructionsNO		 varchar(1000)							
-																						,LastInstructionsDate	date						
-																						,WebAddress				 varchar(200)					
-																						,SetAdminCD				 varchar(200)					
-																						,SetItemCD				 varchar(200)					
-																						,SetSKUCD				 varchar(200)					
-																						,SetSU					int		
-																						,ExhibitionSegmentCD	 varchar(200)								
-																						,OrderLot				int			
-																						,ExhibitionCommonCD		 varchar(200)							
-																						,ApprovalDate			date				
-																						,DeleteFlg				int			
-																						,UsedFlg				int			
-																						,SKSUpdateFlg			int				
-																						,SKSUpdateDateTime		datetime					
-																						,InsertOperator				 varchar(200)					
-																						,InsertDateTime				datetime			
-																						,UpdateOperator				 varchar(200)					
-																						,UpdateDateTime				datetime			
-																						)
-		Create table dbo.CountSetting (EmpRows int);
-							--	DECLARE @Counter INT ;
-									SET @Counter=0
-									WHILE ( @Counter <= 50)
-									BEGIN
-									   
-									    SET @Counter  = @Counter  + 1
-
-										insert into  CountSetting(Emprows)
-										values (@Counter)
-									END
-								
-						
-								DECLARE CUR_TEST CURSOR FAST_FORWARD FOR
-								    SELECT ItemCD, SizeCount ,ColorCount
-								    FROM   #tempItem
-								    ORDER BY SizeCount;
-								 
-								OPEN CUR_TEST
-								FETCH NEXT FROM CUR_TEST INTO @ItmCD, @SC , @CC
-
-								WHILE @@FETCH_STATUS = 0
-								BEGIN
-								set @tempAdmin= (select max(AdminNo) from M_SKUCounter );
-								--select @tempAdmin
-								insert into tempSKU(ITemCD,SKUCD ,AdminNO )
-							select  ItemCD, SKUCD , ( ROW_NUMBER () Over (order by SKUCD desc) + @tempAdmin ) from (
-								select @ItmCD as ItemCD, (@ItmCD + Cast(SizeCount as varchar) + cast(ColorCount as varchar) ) as SKUCD 
-								   from (  select * from (select  right('0000' +  Cast (EmpRows as varchar), 4) as SizeCount  from CountSetting where EmpRows  <= @SC) a) c
-								  cross join 
-								 ( select *  from (select  right('0000' +  Cast (EmpRows as varchar), 4) as ColorCount  from CountSetting where EmpRows  <= @CC ) a) d  
-								  ) abc
-								  set @tempAdmin= (select coalesce(MAX(AdminNo ), 0) from tempSKU );
-							    -- delete M_SKUCounter where MainKEY =1
-								-- insert M_SKUCounter (AdminNO, MainKEY, UpdateOperator,UpdateDateTime) values (@tempAdmin, 1,@Opt,@Upt)  
-								 Update M_SKUCounter  set AdminNo = @tempAdmin+1 where mainkey =1 
-								-- insert M_SKUCounter (AdminNO, MainKEY, UpdateOperator,UpdateDateTime) values (1400000, 1,0001,getdate())
-								   FETCH NEXT FROM CUR_TEST INTO @ItmCD, @SC , @CC
-								
-								END
-								CLOSE CUR_TEST
-								DEALLOCATE CUR_TEST
-								 
-								 Update  tsku
-								 set 
-								-- tsku.AdminNo= titem.Adm
-								 tsku.ChangeDate												  = titem.ChangeDate
-								 ,tsku.VariousFLG													=titem.VariousFLG
-								 ,tsku.SKUName													  =titem.ITemName			
-								 ,tsku.SKUNameLong												  =titem.ITemName		
-								 ,tsku.KanaName													  =titem.KanaName			
-								 ,tsku.SKUShortName												  =titem.ITEMShortName		
-								 ,tsku.EnglishName												  =titem.EnglishName		
-								 ,tsku.ITemCD													  =titem.ITemCD				
-								 ,tsku.SizeNO													  =titem.SizeCount				
-								 ,tsku.ColorNO													  =titem.ColorCount			
-								 ,tsku.JanCD													  = Null
-								 ,tsku.SetKBN													  =titem.SetKBN				
-								 ,tsku.PresentKBN												  =titem.PresentKBN			
-								 ,tsku.SampleKBN												  =titem.SampleKBN			
-								 ,tsku.DiscountKBN												  =titem.DiscountKBN		
-								 ,tsku.SizeName													  = null			
-								 ,tsku.ColorName												  = null				
-								 ,tsku.SizeNameLong												  =null		
-								 ,tsku.ColorNameLong											  =null		
-								 ,tsku.WebFlg													  =titem.WebFlg				
-								 ,tsku.RealStoreFlg												  =titem.RealStoreFlg		
-								 ,tsku.MainVendorCD												  =titem.MainVendorCD		
-								 ,tsku.MakerVendorCD											  =titem.MainVendorCD		
-								 ,tsku.BrandCD													  =titem.BrandCD			
-								 ,tsku.MakerItem												  =titem.MakerItem			
-								 ,tsku.TaniCD													  =titem.TaniCD				
-								 ,tsku.SportsCD													  =titem.SportsCD			
-								 ,tsku.SegmentCD												  =titem.SegmentCD			
-								 ,tsku.ZaikoKBN													  =titem.ZaikoKBN			
-								 ,tsku.Rack														  =titem.Rack				
-								 ,tsku.VirtualFlg												  =titem.VirtualFlg			
-								 ,tsku.DirectFlg												  =titem.DirectFlg			
-								 ,tsku.ReserveCD												  =titem.ReserveCD			
-								 ,tsku.NoticesCD												  =titem.NoticesCD			
-								 ,tsku.PostageCD												  =titem.PostageCD			
-								 ,tsku.ManufactCD												  =titem.ManufactCD			
-								 ,tsku.ConfirmCD												  =titem.ConfirmCD			
-								 ,tsku.WebStockFlg												  =titem.WebStockFlg		
-								 ,tsku.StopFlg													  =titem.StopFlg			
-								 ,tsku.DiscontinueFlg											  =titem.DiscontinueFlg		
-								 ,tsku.SoldOutFlg												  =titem.SoldOutFlg			
-								 ,tsku.InventoryAddFlg											  =titem.InventoryAddFlg	
-								 ,tsku.MakerAddFlg												  =titem.MakerAddFlg		
-								 ,tsku.StoreAddFlg												  =titem.StoreAddFlg		
-								 ,tsku.NoNetOrderFlg											  =titem.NoNetOrderFlg		
-								 ,tsku.EDIOrderFlg												  =titem.EDIOrderFlg		
-								 ,tsku.AutoOrderFlg												  =titem.AutoOrderFlg		
-								 ,tsku.CatalogFlg												  =titem.CatalogFlg			
-								 ,tsku.ParcelFlg												  =titem.ParcelFlg			
-								 ,tsku.TaxRateFLG												  =titem.TaxRateFLG			
-								 ,tsku.CostingKBN												  =titem.CostingKBN			
-								 ,tsku.NormalCost												  =titem.NormalCost			
-								 ,tsku.SaleExcludedFlg											  =titem.SaleExcludedFlg	
-								 ,tsku.PriceWithTax												  =titem.PriceWithTax		
-								 ,tsku.PriceOutTax												  =titem.PriceOutTax		
-								 ,tsku.OrderPriceWithTax										  =titem.OrderPriceWithTax	
-								 ,tsku.OrderPriceWithoutTax										  =titem.OrderPriceWithoutTax
-								 ,tsku.Rate														  =titem.Rate				
-								 ,tsku.SaleStartDate											  =titem.SaleStartDate		
-								 ,tsku.WebStartDate												  =titem.WebStartDate		
-								 ,tsku.OrderAttentionCD											  =titem.OrderAttentionCD	
-								 ,tsku.OrderAttentionNote										  =titem.OrderAttentionNote	
-								 ,tsku.CommentInStore											  =titem.CommentInStore		
-								 ,tsku.CommentOutStore											  =titem.CommentOutStore	
-								 ,tsku.LastYearTerm												  =titem.LastYearTerm		
-								 ,tsku.LastSeason												  =titem.LastSeason			
-								 ,tsku.LastCatalogNO											  =titem.LastCatalogNO		
-								 ,tsku.LastCatalogPage											  =titem.LastCatalogPage	
-								 --,tsku.LastCatalogNOLong										  =titem.LastCatalogNOLong	
-								 --,tsku.LastCatalogPageLong										  =titem.LastCatalogPageLong
-								 ,tsku.LastCatalogText											  =titem.LastCatalogText	
-								 ,tsku.LastInstructionsNO										  =titem.LastInstructionsNO	
-								 ,tsku.LastInstructionsDate										  =titem.LastInstructionsDate
-								 ,tsku.WebAddress												  =titem.WebAddress			
-								 ,tsku.SetAdminCD												  = '0'			
-								 ,tsku.SetItemCD												  =null		
-								 ,tsku.SetSKUCD													  =null			
-								 ,tsku.SetSU													  =0		
-								 ,tsku.ExhibitionSegmentCD										  =titem.ExhibitionSegmentCD
-								 ,tsku.OrderLot													  =titem.OrderLot			
-								 ,tsku.ExhibitionCommonCD										  = null	
-								 ,tsku.ApprovalDate												  =titem.ApprovalDate		
-								 ,tsku.DeleteFlg												  =titem.DeleteFlg			
-								 ,tsku.UsedFlg													  = 0			
-								 ,tsku.SKSUpdateFlg												  =1		
-								 ,tsku.SKSUpdateDateTime										  =null
-								 ,tsku.InsertOperator											  =@Opt		
-								 ,tsku.InsertDateTime											  =@Date		
-								 ,tsku.UpdateOperator											  =@Opt		
-								 ,tsku.UpdateDateTime											  =@Date		
-
-								 from tempSKU tsku
-								 inner join #tempItem titem
-								 on 
-								 tsku.ItemCD = titem.ItemCD
-
-								 
-							     insert into M_SKU
-								 select * from tempSKU order by AdminNo,SKUCD asc
-
-
-	  drop table tempSKU			
-			drop table CountSetting	
+			drop table #tempSKU			
+			drop table #CountSetting		
 	End
 
 	drop table dbo.#tempItem

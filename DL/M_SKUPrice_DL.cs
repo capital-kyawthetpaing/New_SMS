@@ -75,6 +75,22 @@ namespace DL
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
+
+        public bool M_SKUPrice_InsertUpdate(M_SKUPrice_Entity mse)
+        {
+            string sp = "M_SKUPrice_InsertUpdateForImport";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@xml",new ValuePair{value1=SqlDbType.VarChar,value2=mse.xml1} },
+                {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
+                {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
+                {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+                {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} },
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
         //public bool M_SKUPrice_Update(M_SKUPrice_Entity mse, string updateXml)
         //{
         //    string sp = "M_SKUPrice_Update";
@@ -96,7 +112,7 @@ namespace DL
         //    UseTransaction = true;
         //    return InsertUpdateDeleteData(dic, sp);
         //}
-       
+
         /*
         public DataTable M_Store_SelectAll(M_Store_Entity mbe)
         {
