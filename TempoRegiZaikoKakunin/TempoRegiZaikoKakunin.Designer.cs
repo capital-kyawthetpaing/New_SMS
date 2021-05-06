@@ -243,9 +243,9 @@
             this.lblZaiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblZaiko.FontBold = true;
             this.lblZaiko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblZaiko.Location = new System.Drawing.Point(125, 271);
+            this.lblZaiko.Location = new System.Drawing.Point(92, 271);
             this.lblZaiko.Name = "lblZaiko";
-            this.lblZaiko.Size = new System.Drawing.Size(163, 35);
+            this.lblZaiko.Size = new System.Drawing.Size(138, 35);
             this.lblZaiko.TabIndex = 52;
             this.lblZaiko.Text = "在庫倉庫";
             this.lblZaiko.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
