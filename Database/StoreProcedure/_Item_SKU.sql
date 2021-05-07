@@ -530,8 +530,110 @@ insert into #tempItem
 								 tsku.ItemCD = titem.ItemCD
 
 								 Update #tempSKU set SizeNo = Cast (  Left(RIGHT(SKUCD, 8), 4)  as int) , ColorNo = Cast (  RIGHT(SKUCD, 4)  as int)
+							     
+								 Update 
+								 tsku
+								 set 
+								   tsku.AdminNo														=titem.AdminNO
+								  ,tsku.VariousFLG													=titem.VariousFLG
+								  ,tsku.SKUName													  =titem.SKUName			
+								  ,tsku.SKUNameLong												  =titem.SKUNameLong		
+								  ,tsku.KanaName													  =titem.KanaName			
+								  ,tsku.SKUShortName												  =titem.SKUShortName		
+								  ,tsku.EnglishName												  =titem.EnglishName		
+								  ,tsku.ITemCD													  =titem.ITemCD				
+								  ,tsku.SizeNO													  =titem.SizeNO				
+								  ,tsku.ColorNO													  =titem.ColorNO			
+								  --,tsku.JanCD													  = Null
+								  ,tsku.SetKBN													  =titem.SetKBN				
+								  ,tsku.PresentKBN												  =titem.PresentKBN			
+								  ,tsku.SampleKBN												  =titem.SampleKBN			
+								  ,tsku.DiscountKBN												  =titem.DiscountKBN		
+								  --,tsku.SizeName													  = null			
+								  --,tsku.ColorName												  = null				
+								  --,tsku.SizeNameLong												  =null		
+								  --,tsku.ColorNameLong											  =null		
+								  ,tsku.WebFlg													  =titem.WebFlg				
+								  ,tsku.RealStoreFlg												  =titem.RealStoreFlg		
+								  ,tsku.MainVendorCD												  =titem.MainVendorCD		
+								  ,tsku.MakerVendorCD											  =titem.MainVendorCD		
+								  ,tsku.BrandCD													  =titem.BrandCD			
+								  ,tsku.MakerItem												  =titem.MakerItem			
+								  ,tsku.TaniCD													  =titem.TaniCD				
+								  ,tsku.SportsCD													  =titem.SportsCD			
+								  ,tsku.SegmentCD												  =titem.SegmentCD			
+								  ,tsku.ZaikoKBN													  =titem.ZaikoKBN			
+								  ,tsku.Rack														  =titem.Rack				
+								  ,tsku.VirtualFlg												  =titem.VirtualFlg			
+								  ,tsku.DirectFlg												  =titem.DirectFlg			
+								  ,tsku.ReserveCD												  =titem.ReserveCD			
+								  ,tsku.NoticesCD												  =titem.NoticesCD			
+								  ,tsku.PostageCD												  =titem.PostageCD			
+								  ,tsku.ManufactCD												  =titem.ManufactCD			
+								  ,tsku.ConfirmCD												  =titem.ConfirmCD			
+								  ,tsku.WebStockFlg												  =titem.WebStockFlg		
+								  ,tsku.StopFlg													  =titem.StopFlg			
+								  ,tsku.DiscontinueFlg											  =titem.DiscontinueFlg		
+								  ,tsku.SoldOutFlg												  =titem.SoldOutFlg			
+								  ,tsku.InventoryAddFlg											  =titem.InventoryAddFlg	
+								  ,tsku.MakerAddFlg												  =titem.MakerAddFlg		
+								  ,tsku.StoreAddFlg												  =titem.StoreAddFlg		
+								  ,tsku.NoNetOrderFlg											  =titem.NoNetOrderFlg		
+								  ,tsku.EDIOrderFlg												  =titem.EDIOrderFlg		
+								  ,tsku.AutoOrderFlg												  =titem.AutoOrderFlg		
+								  ,tsku.CatalogFlg												  =titem.CatalogFlg			
+								  ,tsku.ParcelFlg												  =titem.ParcelFlg			
+								  ,tsku.TaxRateFLG												  =titem.TaxRateFLG			
+								  ,tsku.CostingKBN												  =titem.CostingKBN			
+								  ,tsku.NormalCost												  =titem.NormalCost			
+								  ,tsku.SaleExcludedFlg											  =titem.SaleExcludedFlg	
+								  ,tsku.PriceWithTax												  =titem.PriceWithTax		
+								  ,tsku.PriceOutTax												  =titem.PriceOutTax		
+								  ,tsku.OrderPriceWithTax										  =titem.OrderPriceWithTax	
+								  ,tsku.OrderPriceWithoutTax										  =titem.OrderPriceWithoutTax
+								  ,tsku.Rate														  =titem.Rate				
+								  ,tsku.SaleStartDate											  =titem.SaleStartDate		
+								  ,tsku.WebStartDate												  =titem.WebStartDate		
+								  ,tsku.OrderAttentionCD											  =titem.OrderAttentionCD	
+								  ,tsku.OrderAttentionNote										  =titem.OrderAttentionNote	
+								  ,tsku.CommentInStore											  =titem.CommentInStore		
+								  ,tsku.CommentOutStore											  =titem.CommentOutStore	
+								  ,tsku.LastYearTerm												  =titem.LastYearTerm		
+								  ,tsku.LastSeason												  =titem.LastSeason			
+								  ,tsku.LastCatalogNO											  =titem.LastCatalogNO		
+								  ,tsku.LastCatalogPage											  =titem.LastCatalogPage	
+								  --,tsku.LastCatalogNOLong										  =titem.LastCatalogNOLong	
+								  --,tsku.LastCatalogPageLong										  =titem.LastCatalogPageLong
+								  ,tsku.LastCatalogText											  =titem.LastCatalogText	
+								  ,tsku.LastInstructionsNO										  =titem.LastInstructionsNO	
+								  ,tsku.LastInstructionsDate										  =titem.LastInstructionsDate
+								  ,tsku.WebAddress												  =titem.WebAddress			
+								  --,tsku.SetAdminCD												  = '0'			
+								  --,tsku.SetItemCD												  =null		
+								  --,tsku.SetSKUCD													  =null			
+								  --,tsku.SetSU													  =0		
+								  ,tsku.ExhibitionSegmentCD										  =titem.ExhibitionSegmentCD
+								  ,tsku.OrderLot													  =titem.OrderLot			
+								  --,tsku.ExhibitionCommonCD										  = null	
+								  ,tsku.ApprovalDate												  =titem.ApprovalDate		
+								  ,tsku.DeleteFlg												  =titem.DeleteFlg			
+								  --,tsku.UsedFlg													  = 0			
+								  ,tsku.SKSUpdateFlg												  =1		
+								  ,tsku.SKSUpdateDateTime										  =null
+								  --,tsku.InsertOperator											  =@Opt		
+								  --,tsku.InsertDateTime											  =@Date		
+								  ,tsku.UpdateOperator											  =@Opt		
+								  ,tsku.UpdateDateTime	
+								  										  =@Date		
+								from M_SKU tsku
+						 
+								 inner join #tempSKU titem on  (tsku.SKUCD = titem.SKUCD) and tsku.ChangeDate = titem.ChangeDate
+								
+
 							     insert into M_SKU
-								 select * from #tempSKU order by AdminNo,SKUCD asc
+								 select * from #tempSKU tp where tp.AdminNO not in 
+								 (select ms.AdminNO from M_SKU ms inner join #tempSKU tk on  ms.SKUCD = tk.SKUCD and ms.ChangeDate = tk.ChangeDate ) order by AdminNo,SKUCD asc
+
 																										
 								--	Delete  from M_SKU where AdminNO =1
 
