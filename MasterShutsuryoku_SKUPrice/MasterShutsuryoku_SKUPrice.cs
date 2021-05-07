@@ -315,7 +315,7 @@ namespace MasterShutsuryoku_SKUPrice
                         SaveFileDialog savedialog = new SaveFileDialog();
                         savedialog.Filter = "Excel Files|*.xlsx;";
                         savedialog.Title = "Save";
-                        savedialog.FileName = "MasterShutsuryoku_SKUPrice" + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ");
+                        savedialog.FileName = "MasterShutsuryoku_SKUPrice" + "_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ");
                         savedialog.InitialDirectory = folderPath;
 
                         savedialog.RestoreDirectory = true;

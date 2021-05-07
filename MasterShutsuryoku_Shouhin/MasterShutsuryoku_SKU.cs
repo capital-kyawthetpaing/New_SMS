@@ -501,7 +501,15 @@ namespace MasterShutsuryoku_Shouhin
                         SaveFileDialog savedialog = new SaveFileDialog();
                         savedialog.Filter = "Excel Files|*.xlsx;";
                         savedialog.Title = "Save";
-                        savedialog.FileName = "MasterShutsuryoku_Shouhin" + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ");
+                        savedialog.FileName = checkflg==1? "MasterShutsuryoku_Shouhin" + "_ALL_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss "):
+                                            checkflg == 2 ? "MasterShutsuryoku_Shouhin" + "_Kihon_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                            checkflg == 3 ? "MasterShutsuryoku_Shouhin" + "_Zokusei_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                            checkflg == 4 ? "MasterShutsuryoku_Shouhin" + "_Kakaku_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                            checkflg == 5 ? "MasterShutsuryoku_Shouhin" + "_Catalog_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                            checkflg == 6 ? "MasterShutsuryoku_Shouhin" + "_Tag_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                            checkflg == 7 ? "MasterShutsuryoku_Shouhin" + "_JANCD_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                            checkflg == 8 ? "MasterShutsuryoku_Shouhin" + "_Site_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") :
+                                             "MasterShutsuryoku_Shouhin" + "_" + DateTime.Now.ToString(" yyyyMMdd_HHmmss ");
                         savedialog.InitialDirectory = folderPath;
 
                         savedialog.RestoreDirectory = true;
