@@ -547,6 +547,7 @@ namespace BL
                 me.JanCount = dt.Rows[0]["JanCount"].ToString();
                 me.UpdatingFlg = dt.Rows[0]["UpdatingFlg"].ToString();
                 me.BeforeJanCount = dt.Rows[0]["BeforeJanCount"].ToString();
+                me.UpdateOperator = dt.Rows[0]["UpdateOperator"].ToString();
                 return true;
             }
             else

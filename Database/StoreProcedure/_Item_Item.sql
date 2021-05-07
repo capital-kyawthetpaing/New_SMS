@@ -8,7 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-Create PROCEDURE [dbo].[_Item_Item]
+create PROCEDURE [dbo].[_Item_Item]
 	-- Add the parameters for the stored procedure here
 	  @xml as xml 
 	 ,@opt as varchar(20)
@@ -22,7 +22,7 @@ BEGIN
 
     
 	Declare @DocHandle int,
-	--@Date datetime =CONVERT(varchar,getdate(),120),
+	@_Date datetime =CONVERT(varchar,@Date,120),
 	--@Opt as varchar(10) = '0001',
 	@Upt as int =1,
 	@Ins as int = 1;
@@ -278,7 +278,9 @@ insert into #tempItem
 			exec sp_xml_removedocument @DocHandle;
 			
 			 WITH cte AS ( SELECT  ROW_NUMBER() OVER (PARTITION BY ItemCD,ChangeDate ORDER BY ItemCD,ChangeDate ) row_num FROM  #tempItem) delete FROM cte WHERE row_num > 1;
+			 Update #tempItem set  TaniCD= null where TaniCD= ''
 			--select *  from #tempItem
+
 			--Merge [M_item] mi using [
 			if (@MainFlg =1)
 			Begin
@@ -352,7 +354,7 @@ insert into #tempItem
 				,LastInstructionsDate							
 				,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then @_Date else null end )	as ApprovalDateTime		
 				,TagName01							
 				,TagName02							
 				,TagName03							
@@ -444,7 +446,7 @@ insert into #tempItem
 			,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			,targ.WebAddress								 =src.WebAddress							
 			,targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )
 			,targ.TagName01									 =src.TagName01							
 			,targ.TagName02									 =src.TagName02							
 			,targ.TagName03									 =src.TagName03							
@@ -726,7 +728,7 @@ insert into #tempItem
 				--,LastInstructionsDate							
 				--,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	as ApprovalDateTime		
 				--,TagName01							
 				--,TagName02							
 				--,TagName03							
@@ -818,7 +820,7 @@ insert into #tempItem
 			--,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			--,targ.WebAddress								 =src.WebAddress							
 			,targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )		
 			--,targ.TagName01									 =src.TagName01							
 			--,targ.TagName02									 =src.TagName02							
 			--,targ.TagName03									 =src.TagName03							
@@ -1101,7 +1103,7 @@ insert into #tempItem
 				,LastInstructionsDate							
 				,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	as ApprovalDateTime		
 				,TagName01							
 				,TagName02							
 				,TagName03							
@@ -1193,7 +1195,7 @@ insert into #tempItem
 			--,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			--,targ.WebAddress								 =src.WebAddress							
 			,targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )		
 			--,targ.TagName01									 =src.TagName01							
 			--,targ.TagName02									 =src.TagName02							
 			--,targ.TagName03									 =src.TagName03							
@@ -1476,7 +1478,7 @@ insert into #tempItem
 				,LastInstructionsDate							
 				,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	as ApprovalDateTime		
 				,TagName01							
 				,TagName02							
 				,TagName03							
@@ -1568,7 +1570,7 @@ insert into #tempItem
 			--,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			--,targ.WebAddress								 =src.WebAddress							
 			,targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	
 			--,targ.TagName01									 =src.TagName01							
 			--,targ.TagName02									 =src.TagName02							
 			--,targ.TagName03									 =src.TagName03							
@@ -1851,7 +1853,7 @@ insert into #tempItem
 				,LastInstructionsDate							
 				,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	as ApprovalDateTime		
 				,TagName01							
 				,TagName02							
 				,TagName03							
@@ -1943,7 +1945,7 @@ insert into #tempItem
 			,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			--,targ.WebAddress								 =src.WebAddress							
 			,targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )		
 			--,targ.TagName01									 =src.TagName01							
 			--,targ.TagName02									 =src.TagName02							
 			--,targ.TagName03									 =src.TagName03							
@@ -2226,7 +2228,7 @@ insert into #tempItem
 				,LastInstructionsDate							
 				,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	as ApprovalDateTime		
 				,TagName01							
 				,TagName02							
 				,TagName03							
@@ -2318,7 +2320,7 @@ insert into #tempItem
 			--,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			--,targ.WebAddress								 =src.WebAddress							
 			targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	
 			,targ.TagName01									 =src.TagName01							
 			,targ.TagName02									 =src.TagName02							
 			,targ.TagName03									 =src.TagName03							
@@ -2601,7 +2603,7 @@ insert into #tempItem
 				,LastInstructionsDate							
 				,WebAddress							
 				,ApprovalDate							
-				,Isnull(ApprovalDate,@Date)	as ApprovalDateTime		
+				,(case when ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end ) as ApprovalDateTime		
 				,TagName01							
 				,TagName02							
 				,TagName03							
@@ -2693,7 +2695,7 @@ insert into #tempItem
 			--,targ.LastInstructionsDate						 =src.LastInstructionsDate							
 			--,targ.WebAddress								 =src.WebAddress							
 			targ.ApprovalDate								 =src.ApprovalDate							
-			,targ.ApprovalDateTime							 =src.ApprovalDateTime		
+			,targ.ApprovalDateTime							 =(case when src.ApprovalDate is not null then CONVERT(varchar,@_Date,120) else null end )	
 			--,targ.TagName01									 =src.TagName01							
 			--,targ.TagName02									 =src.TagName02							
 			--,targ.TagName03									 =src.TagName03							
@@ -2910,3 +2912,4 @@ insert into #tempItem
 			drop table dbo.#tempItem
 	 
 END
+

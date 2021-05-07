@@ -286,37 +286,40 @@ insert into #tempItem
 								
 								
 								insert into M_SKUTag 
-								select distinct AdminNO,ChangeDate ,  ROW_NUMBER() OVER (PARTITION BY AdminNo, ChangeDate  ORDER BY AdminNo, TaggedName DESC ) RowNo, TaggedName   from (  select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName01 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ITemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								select distinct AdminNO,ChangeDate ,  ROW_NUMBER() OVER (PARTITION BY AdminNo, ChangeDate  ORDER BY AdminNo desc, SEQ asc ) RowNo, TaggedName   
+
+							--	select *
+								from (  select distinct ms.AdminNo , ms.ChangeDate, 1 as SEQ ,tp.TagName01 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ITemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								  union all 
-								    select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName02 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								    select distinct ms.AdminNo , ms.ChangeDate, 2 as SEQ ,tp.TagName02 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								   union all
-								     select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName03 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								     select distinct ms.AdminNo , ms.ChangeDate, 3 as SEQ ,tp.TagName03 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								     select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName04 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								     select distinct ms.AdminNo , ms.ChangeDate, 4 as SEQ ,tp.TagName04 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								     select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName05 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								     select distinct ms.AdminNo , ms.ChangeDate, 5 as SEQ ,tp.TagName05 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								    select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName06 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								    select distinct ms.AdminNo , ms.ChangeDate, 6 as SEQ ,tp.TagName06 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								    select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName07 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								    select distinct ms.AdminNo , ms.ChangeDate, 7 as SEQ ,tp.TagName07 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								    select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName08 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								    select distinct ms.AdminNo , ms.ChangeDate, 8 as SEQ ,tp.TagName08 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								    select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName09 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								    select distinct ms.AdminNo , ms.ChangeDate, 9 as SEQ ,tp.TagName09 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 								     union all 
-								    select distinct ms.AdminNo , ms.ChangeDate, 0 as SEQ ,tp.TagName10 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
+								    select distinct ms.AdminNo , ms.ChangeDate, 10 as SEQ ,tp.TagName10 as TaggedName from M_Sku ms inner join #tempItem tp on ms.ItemCD = tp.ITemCD and ms.ChangeDate = tp.ChangeDate and ms.DeleteFlg = 0
 								  
 
-								) t where t.TaggedName != '' order by AdminNO, ChangeDate 
+								) t where t.TaggedName != '' order by AdminNO , ChangeDate 
 
 							End
 						
