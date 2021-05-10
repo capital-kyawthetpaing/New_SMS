@@ -8,13 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
---  ======================================================================
---       Program Call    MasterSuutsuroku_Item
---       Program ID      M_ItemSelectoutput
---       Create date:    2019.5.27
---    ======================================================================
-Create PROCEDURE M_ItemSelectoutput
+Create PROCEDURE [dbo].[M_ItemSelectoutput]
 
 		@ChangeDate as date,
 	@VendorCD as varchar(13),
@@ -139,7 +133,7 @@ BEGIN
 		,fim.KanaName as 'カナ名'
 		,fim.ITEMShortName as '略名'
 		,fim.EnglishName as '英語名'
-		,fim.MainVendorCD as '主要仕入先CD'
+		,Cast( fim.MainVendorCD as varchar(20)) as '主要仕入先CD'
 		,(select top 1 VendorName  from  F_Vendor(getdate()) fv where fv.VendorCD =@VendorCD  )  as '主要仕入先名' 
 		,fim.BrandCD as 'ブランドCD'
 		,(select top 1 BrandName  from   M_Brand mb where mb.BrandCD =@brandCD  )  as 'ブランド名' 
@@ -309,4 +303,3 @@ select msku.ITemCD, msku.AdminNO
 					,@OperateMode    
 					,@KeyItem
 END
-
