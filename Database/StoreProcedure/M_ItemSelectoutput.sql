@@ -134,7 +134,7 @@ BEGIN
 		,fim.ITEMShortName as '略名'
 		,fim.EnglishName as '英語名'
 		,Cast( fim.MainVendorCD as varchar(20)) as '主要仕入先CD'
-		,(select top 1 VendorName  from  F_Vendor(getdate()) fv where fv.VendorCD =@VendorCD  )  as '主要仕入先名' 
+		,(select top 1 VendorName  from  F_Vendor(getdate()) fv where fv.VendorCD =fim.MainVendorCD  )  as '主要仕入先名' 
 		,fim.BrandCD as 'ブランドCD'
 		,(select top 1 BrandName  from   M_Brand mb where mb.BrandCD =@brandCD  )  as 'ブランド名' 
 		,fim.makerItem as 'メーカー商品CD'

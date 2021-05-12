@@ -54,7 +54,7 @@ namespace MasterTorikomi_Item
             dtMessage = msIbl.M_MessageSelectAll();
             this.ModeVisible = false;
             this.Text = "Itemマスター取込	";
-
+            Btn_F12.Text = "取込(F12)";
         }
 
         private void MasterTorikomi_Item_KeyUp(object sender, KeyEventArgs e)
@@ -65,6 +65,7 @@ namespace MasterTorikomi_Item
         private void FalseKey()
         {
             F2Visible = F3Visible = F4Visible = F5Visible = F7Visible = F8Visible = F9Visible = F10Visible = F11Visible = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)

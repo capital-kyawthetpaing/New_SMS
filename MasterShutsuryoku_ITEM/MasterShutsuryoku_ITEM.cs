@@ -65,6 +65,7 @@ namespace MasterShutsuryoku_ITEM
             AddCol();
             RB_all.Focus();
             this.Text = "ITEMマスター出力	";
+            Btn_F12.Text = "Excel出力(F12)";
         }
         private void AddCol()
         {
@@ -561,9 +562,9 @@ namespace MasterShutsuryoku_ITEM
                         var IntCol = IntColName().Split(',');
                         if (IntCol.Contains(all.ToString())  )
                         {
-                            if (all.ToString() == "主要仕入先CD")
-                                dt.Columns.Add(all.ToString(), typeof(string));
-                            else
+                            //if (all.ToString() == "主要仕入先CD")
+                            //    dt.Columns.Add(all.ToString(), typeof(string));
+                            //else
 
                             dt.Columns.Add(all.ToString(), typeof(int));
                         }
@@ -679,7 +680,7 @@ namespace MasterShutsuryoku_ITEM
         }
         private string IntColName()
         {
-            var lst = "データ区分,削除,諸口区分,主要仕入先CD,展開サイズ数,展開カラー数,セット品区分,プレゼント品区分,サンプル品区分,値引商品区分,Webストア取扱区分,実店舗取扱区分,在庫管理対象区分,架空商品区分,直送品区分,予約品区分,特記区分," +
+            var lst = "データ区分,削除,諸口区分,展開サイズ数,展開カラー数,セット品区分,プレゼント品区分,サンプル品区分,値引商品区分,Webストア取扱区分,実店舗取扱区分,在庫管理対象区分,架空商品区分,直送品区分,予約品区分,特記区分," +
                 "送料区分,要加工品区分,要確認品区分,Web在庫連携区分,販売停止品区分,廃番品区分,完売品区分,自社在庫連携対象,メーカー在庫連携対象,店舗在庫連携対象,Net発注不可区分,EDI発注可能区分,自動発注対象区分,カタログ掲載有無,小包梱包可能区分,税率区分," +
                 "小包梱包可能,税率区分,原価計算方法,Sale対象外区分,標準原価,税込定価,税抜定価,発注税込価格,発注税抜価格,掛率,年度,発注ロット";
 
@@ -738,45 +739,50 @@ namespace MasterShutsuryoku_ITEM
             ds_Entity = GetStockEntity();
             var result = new DataTable();
             var dt = zaibl.M_ItemSelectOutput(msku_Entity, msInfo_Entity, msT_Entity, ds_Entity, type, chktype, chkunApprove);
+            if (dt.Rows.Count == 0)
+            {
+                bbl.ShowMessage("E128");
+                return;
+            }
             var name = "";
            // = null;
             if (RB_all.Checked)
             {
                 result= GetDt(TYPE.all, dt);
-                name = "Subete ";
+                name = "All";
             }
             else if (RB_BaseInfo.Checked)
             {
                 result = GetDt(TYPE.basic, dt);
-                name = "kihon";
+                name = "Kihon";
             }
             else if (RB_attributeinfo.Checked)
             {
                 result = GetDt(TYPE.attribute, dt);
-                name = "zokusei ";
+                name = "Zokusei ";
             }
 
             else if (RB_priceinfo.Checked)
             {
                result = GetDt(TYPE.price, dt);
-                name = "kakaku";
+                name = "Kakaku";
             }
 
             else if (RB_Catloginfo.Checked)
             {
                 result = GetDt(TYPE.catarogu, dt);
-                name = "katarogu";
+                name = "Catalog";
             }
             else if (RB_tagInfo.Checked)
             {
                 result = GetDt(TYPE.taggu, dt);
 
-                name = "tagu";
+                name = "Tag";
             }
             else
             {
                 result = GetDt(TYPE.saito, dt);
-                name = "saito";
+                name = "Site";
             }
 
             if (result != null)
@@ -836,7 +842,7 @@ namespace MasterShutsuryoku_ITEM
 
                 //foreach (DataRow dr in dtDatao.Rows)
                 //    dr["MainVendorCD"] = dr[""].ToString();
-
+                fname =fname+"_"+ DateTime.Now.ToString("yyyyMMdd HH:mm:ss").Replace(" ", "_").Replace(":", "");
                 if (dtDatao.Columns.Contains("AdminNO"))
                 {
                     dtDatao.Columns.Remove("AdminNO");
@@ -867,7 +873,16 @@ namespace MasterShutsuryoku_ITEM
 
                         using (XLWorkbook wb = new XLWorkbook())
                         {
+
+                           
                             wb.Worksheets.Add(dtDatao, "worksheet");
+                            //  wb.Worksheet("").AddConditionalFormat();// = IXLConditionalFormat;
+                            try
+                            {
+                                wb.Worksheet("worksheet").Columns("11").Style.NumberFormat.SetNumberFormatId(49);
+                               // wb.Worksheet("worksheet").Columns("10").SetDataType(XLCellValues.Text);
+                            }
+                            catch { }
                             wb.SaveAs(savedialog.FileName);
                             bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                         }

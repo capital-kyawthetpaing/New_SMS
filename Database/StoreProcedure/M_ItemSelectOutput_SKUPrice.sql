@@ -12,7 +12,8 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE M_ItemSelectOutput_SKUPrice
+
+CREATE PROCEDURE [dbo].[M_ItemSelectOutput_SKUPrice]
 	-- Add the parameters for the stored procedure here
 	@CustomerCD as varchar(20),
 	@ChangeDate as date,
@@ -236,19 +237,19 @@ BEGIN
 		end	
 																	
 	select 
-	 1 								 データ区分
+	 cast (1 as int) 								 データ区分
 
 	,fc.CustomerCD							  顧客CD		
 	,fc.CustomerName						  顧客名称					
-	,fsp.TekiyouKaisiDate					  適用開始日				
-	,fsp.TekiyouShuuryouDate				  適用終了日				
-	,fsp.AdminNO							  AdminNO					
-	,fs.JanCD								  JANCD					
-	,fs.SKUCD								  SKUCD					
+	,Cast (fsp.TekiyouKaisiDate	as varchar)				  適用開始日				
+	,cast(fsp.TekiyouShuuryouDate as varchar)				  適用終了日				
+	,CAst (fsp.AdminNO	 as int)						  AdminNO					
+	,Cast(fs.JanCD as varchar)								  JANCD					
+	,cast(fs.SKUCD as varchar)								  SKUCD					
 	,fs.SKUName								  商品名					
-	,fsp.SalePriceOutTax					  税抜単価					
+	,Cast(fsp.SalePriceOutTax as int)					  税抜単価					
 	,fsp.Remarks							  備考						
-	,fsp.DeleteFlg				 			  削除FLG					
+	,cast(fsp.DeleteFlg as int)				 			  削除FLG					
 
     from #TAdminNo ta 
 	left outer join F_SKu(getdate()) fs on fs.adminno = ta.Adminno 
@@ -263,4 +264,3 @@ BEGIN
 				exec dbo.L_Log_Insert @Operator,@Program,@PC,@ProcessMode,@KeyItem
 					
 END
-GO
