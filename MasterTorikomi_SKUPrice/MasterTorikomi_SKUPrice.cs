@@ -347,5 +347,10 @@ namespace MasterTorikomi_SKUPrice
         {
             MoveNextControl(e);
         }
+
+        private void BT_Torikomi_Click(object sender, EventArgs e)
+        {
+            InputExcel();
+        }
     }
 }
