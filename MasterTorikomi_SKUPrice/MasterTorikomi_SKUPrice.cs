@@ -30,8 +30,8 @@ namespace MasterTorikomi_SKUPrice
         {
             InitializeComponent();
             mskup = new M_SKUPrice_Entity();
-            mskupbl = new MasterTorikomi_SKUPrice_BL(); 
-
+            mskupbl = new MasterTorikomi_SKUPrice_BL();
+            bbl = new Base_BL();
             sbl = new SKU_BL();
         }
 
