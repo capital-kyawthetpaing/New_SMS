@@ -531,6 +531,7 @@
     <Content Include="StoreProcedure\M_StoreButtonGroup_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_StoreButtonGroup_SelectAll.sql" />
     <Content Include="StoreProcedure\M_StoreButton_Insert_Update.sql" />
+    <Content Include="StoreProcedure\M_StoreCD_SelectAll_NoPara.sql" />
     <Content Include="StoreProcedure\M_StoreClose_Check.sql" />
     <Content Include="StoreProcedure\M_StoreClose_Insert.sql" />
     <Content Include="StoreProcedure\M_StoreClose_Select.sql" />
@@ -552,6 +553,7 @@
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_TankaCD_SelectAll_NoPara.sql" />
     <Content Include="StoreProcedure\M_TeniKaiSelectbyJAN.sql" />
     <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
     <Content Include="StoreProcedure\M_TenjiKaiJuuChuu_Select.sql" />
