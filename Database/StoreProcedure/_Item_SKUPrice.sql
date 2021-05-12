@@ -7,7 +7,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[_Item_SKUPrice]
+Create PROCEDURE [dbo].[_Item_SKUPrice]
 	-- Add the parameters for the stored procedure here
 	 @xml as xml 
 	 ,@opt as varchar(20)
@@ -292,20 +292,23 @@ insert into #tempItem
 			--,msp.TekiyouShuuryouDate = null
 			   msp.PriceWithTax =tim.PriceWithTax
 			  ,msp.PriceWithoutTax =tim.PriceOutTax
-			  ,msp.GeneralPriceWithTax = 100
+			  ,msp.Generalrate = 100
 			--,msp.GeneralPriceOutTax = tim.PriceOutTax
 			--,msp.MemberRate = 100
-			--,msp.MemberPriceWithTax = tim.PriceWithTax
-			--,msp.MemberPriceOutTax =tim.PriceOutTax
+			,msp.GeneralPriceOutTax = tim.PriceOutTax
+			,msp.GeneralPriceWithTax = tim.PriceWithTax
+
+			,msp.MemberPriceWithTax = tim.PriceWithTax
+			,msp.MemberPriceOutTax =tim.PriceOutTax
 			--,msp.ClientRate =100
-			--,msp.ClientPriceWithTax = tim.PriceWithTax
-			--,msp.ClientPriceOutTax = tim.PriceOutTax
+			,msp.ClientPriceWithTax = tim.PriceWithTax
+			,msp.ClientPriceOutTax = tim.PriceOutTax
 			--,msp.SaleRate = 100
-			--,msp.SalePriceWithTax = tim.PriceWithTax
-			--,msp.SalePriceOutTax =tim.PriceOutTax
+			,msp.SalePriceWithTax = tim.PriceWithTax
+			,msp.SalePriceOutTax =tim.PriceOutTax
 			--,msp.WebRate =100
-			--,msp.WebPriceWithTax =tim.PriceWithTax
-			--,msp.WebPriceOutTax =tim.PriceOutTax
+			,msp.WebPriceWithTax =tim.PriceWithTax
+			,msp.WebPriceOutTax =tim.PriceOutTax
 			,msp.Remarks = null
 			,msp.DeleteFlg =0
 			,msp.UsedFlg =0

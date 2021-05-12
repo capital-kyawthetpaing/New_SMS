@@ -44,6 +44,7 @@ namespace MasterTorikomi_Item
             StartProgram();
             FalseKey();
             this.KeyUp += MasterTorikomi_Item_KeyUp;
+            RB_all.Checked = true;
             RB_all.Focus();
 
             dtBrand = mtbl.M_Brand_SelectAll_NoPara();
@@ -53,6 +54,7 @@ namespace MasterTorikomi_Item
             dtMessage = msIbl.M_MessageSelectAll();
             this.ModeVisible = false;
             this.Text = "Itemマスター取込	";
+
         }
 
         private void MasterTorikomi_Item_KeyUp(object sender, KeyEventArgs e)
@@ -1710,6 +1712,25 @@ namespace MasterTorikomi_Item
                     //{
                     if (CheckPartial(dt))
                     {
+                        try {
+                            if (dt.Columns.Contains("サイト商品CD"))
+                            {
+                                try
+                                {
+                                    dt.Columns.Remove("商品情報アドレス");
+                                }
+                                catch
+                                {
+
+                                }
+                                dt.Columns["サイト商品CD"].ColumnName = "商品情報アドレス";
+                                dt.AcceptChanges();
+                            }
+                           
+                        }
+                      
+                        catch { }
+                       
                         M_ITEM_Entity mie = new M_ITEM_Entity();
                         mie.Operator = InOperatorCD;
                         mie.PC = Environment.MachineName;

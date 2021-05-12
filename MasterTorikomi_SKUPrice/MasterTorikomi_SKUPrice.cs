@@ -74,6 +74,7 @@ namespace MasterTorikomi_SKUPrice
             }
             else
             {
+                //if (bbl.ShowMessage("Q001") == DialogResult.Yes)
                 if (bbl.ShowMessage("Q001", "取込処理") == DialogResult.Yes)
                 {
                     DataTable dt = ExcelToDatatable(filePath);
@@ -346,6 +347,11 @@ namespace MasterTorikomi_SKUPrice
         private void MasterTorikomi_SKU_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void BT_Torikomi_Click(object sender, EventArgs e)
+        {
+            InputExcel();
         }
     }
 }

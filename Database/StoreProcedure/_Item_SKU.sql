@@ -531,6 +531,16 @@ insert into #tempItem
 
 								 Update #tempSKU set SizeNo = Cast (  Left(RIGHT(SKUCD, 8), 4)  as int) , ColorNo = Cast (  RIGHT(SKUCD, 4)  as int)
 							     
+								  select *  into  #t1	from  ( select ROW_NUMBER() Over(order by AdminNo  ) as pk ,*  from  #tempSKU ) a order by AdminNo 
+
+								select *  into #t2  from  (select ROW_NUMBER() Over(order by AdminNo desc ) as pk ,* from  #tempSKU ) a order by AdminNo  desc
+
+
+								update tb set tb.AdminNo=ta.AdminNo from #t1 ta inner join   #t2 tb on  ta.pk = tb.pk
+
+								alter table #t2
+								drop column  pk
+
 								 Update 
 								 tsku
 								 set 
@@ -627,12 +637,16 @@ insert into #tempItem
 								  										  =@Date		
 								from M_SKU tsku
 						 
-								 inner join #tempSKU titem on  (tsku.SKUCD = titem.SKUCD) and tsku.ChangeDate = titem.ChangeDate
+								 inner join #t2 titem on  (tsku.SKUCD = titem.SKUCD) and tsku.ChangeDate = titem.ChangeDate
 								
 
 							     insert into M_SKU
-								 select * from #tempSKU tp where tp.AdminNO not in 
+								 select * from #t2 tp where tp.AdminNO not in 
 								 (select ms.AdminNO from M_SKU ms inner join #tempSKU tk on  ms.SKUCD = tk.SKUCD and ms.ChangeDate = tk.ChangeDate ) order by AdminNo,SKUCD asc
+
+								 drop table #t2
+								 drop table #t1
+
 
 																										
 								--	Delete  from M_SKU where AdminNO =1

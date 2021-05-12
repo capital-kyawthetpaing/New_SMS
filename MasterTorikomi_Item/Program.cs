@@ -14,6 +14,8 @@ namespace MasterTorikomi_Item
         [STAThread]
         static void Main()
         {
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MasterTorikomi_Item());

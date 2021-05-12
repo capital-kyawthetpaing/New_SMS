@@ -559,8 +559,12 @@ namespace MasterShutsuryoku_ITEM
                     if (all != Subete.Count)
                     {
                         var IntCol = IntColName().Split(',');
-                        if (IntCol.Contains(all.ToString()))
+                        if (IntCol.Contains(all.ToString())  )
                         {
+                            if (all.ToString() == "主要仕入先CD")
+                                dt.Columns.Add(all.ToString(), typeof(string));
+                            else
+
                             dt.Columns.Add(all.ToString(), typeof(int));
                         }
                         else
@@ -825,9 +829,13 @@ namespace MasterShutsuryoku_ITEM
         }
         private void Excel(DataTable dtDatao,string fname=null)
         {
+            
             try
             {
-               
+                //dtDatao.Columns.Add("MainVendorCD",typeof(string));
+
+                //foreach (DataRow dr in dtDatao.Rows)
+                //    dr["MainVendorCD"] = dr[""].ToString();
 
                 if (dtDatao.Columns.Contains("AdminNO"))
                 {
