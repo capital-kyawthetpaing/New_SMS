@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.TB_FileName = new CKM_Controls.CKM_TextBox();
             this.BT_FileName = new CKM_Controls.CKM_Button();
             this.BT_Torikomi = new CKM_Controls.CKM_Button();
             this.GV_SKUPrice = new CKM_Controls.CKM_GridView();
+            this.colSettingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colskuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,11 +53,11 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Size = new System.Drawing.Size(1682, 0);
+            this.PanelHeader.Size = new System.Drawing.Size(1782, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1148, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1248, 0);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -135,33 +138,36 @@
             this.BT_Torikomi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Torikomi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_Torikomi.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_Torikomi.Location = new System.Drawing.Point(1463, 66);
+            this.BT_Torikomi.Location = new System.Drawing.Point(1669, 71);
             this.BT_Torikomi.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Torikomi.Name = "BT_Torikomi";
             this.BT_Torikomi.Size = new System.Drawing.Size(100, 28);
             this.BT_Torikomi.TabIndex = 112;
             this.BT_Torikomi.Text = "取込(F12)";
             this.BT_Torikomi.UseVisualStyleBackColor = false;
+            this.BT_Torikomi.Click += new System.EventHandler(this.BT_Torikomi_Click);
             // 
             // GV_SKUPrice
             // 
             this.GV_SKUPrice.AllowUserToAddRows = false;
             this.GV_SKUPrice.AllowUserToDeleteRows = false;
             this.GV_SKUPrice.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_SKUPrice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_SKUPrice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GV_SKUPrice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_SKUPrice.CheckCol = null;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_SKUPrice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_SKUPrice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GV_SKUPrice.ColumnHeadersHeight = 25;
             this.GV_SKUPrice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSettingName,
+            this.colStoreName,
             this.colSKU,
             this.colJan,
             this.colskuname,
@@ -170,26 +176,44 @@
             this.Column2,
             this.Column3,
             this.colError});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_SKUPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this.GV_SKUPrice.EnableHeadersVisualStyles = false;
             this.GV_SKUPrice.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_SKUPrice.Location = new System.Drawing.Point(59, 108);
             this.GV_SKUPrice.Name = "GV_SKUPrice";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_SKUPrice.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_SKUPrice.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GV_SKUPrice.RowHeight_ = 20;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.GV_SKUPrice.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.GV_SKUPrice.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.GV_SKUPrice.RowTemplate.Height = 20;
-            this.GV_SKUPrice.Size = new System.Drawing.Size(1510, 650);
+            this.GV_SKUPrice.Size = new System.Drawing.Size(1710, 650);
             this.GV_SKUPrice.TabIndex = 113;
             this.GV_SKUPrice.UseRowNo = true;
             this.GV_SKUPrice.UseSetting = false;
+            // 
+            // colSettingName
+            // 
+            this.colSettingName.HeaderText = "単価設定名";
+            this.colSettingName.Name = "colSettingName";
+            // 
+            // colStoreName
+            // 
+            this.colStoreName.HeaderText = "店舗名";
+            this.colStoreName.Name = "colStoreName";
             // 
             // colSKU
             // 
@@ -251,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1684, 811);
+            this.ClientSize = new System.Drawing.Size(1784, 811);
             this.Controls.Add(this.GV_SKUPrice);
             this.Controls.Add(this.BT_Torikomi);
             this.Controls.Add(this.BT_FileName);
@@ -289,6 +313,8 @@
         private CKM_Controls.CKM_Button BT_FileName;
         private CKM_Controls.CKM_Button BT_Torikomi;
         private CKM_Controls.CKM_GridView GV_SKUPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSettingName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStoreName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colskuname;
