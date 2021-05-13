@@ -1841,7 +1841,7 @@ BEGIN
                    ,1 As NumberRows
                    ,tbl.CommentInStore
                    ,tbl.CommentOutStore
-                   ,(CASE DM.DirectFLG WHEN 1 THEN 1 ELSE DM.HikiateFLG END)
+                   ,(CASE DM.DirectFLG WHEN 1 THEN 1 ELSE DM.HikiateFLG END)	--ˆø“–OK‚È‚ç1
                    ,0   --UpdateCancelKBN]
                    ,NULL    --DeliveryOrderComIn]
                    ,NULL    --DeliveryOrderComOut]                        
