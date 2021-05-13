@@ -339,14 +339,18 @@ namespace MasterShutsuryoku_CustomerSKUPrice
 
 
             var dt = zaibl.M_ItemSelectOutput_SKUPrice(msku_Entity, msInfo_Entity, msT_Entity, ds_Entity, type, chktype, chkunApprove);
-           
+            if (dt.Rows.Count == 0)
+            {
+                bbl.ShowMessage("E128");
+                return;
+            }
             if (result != null)
             {
                 Excel(dt, "");
             }
             else
             {
-                MessageBox.Show("There is no data to export");
+                bbl.ShowMessage("E128");
             }
 
         }
@@ -471,7 +475,7 @@ namespace MasterShutsuryoku_CustomerSKUPrice
                 //{
                 //    dtDatao.Columns.Remove("AdminNO");
                 //}
-                fname = DateTime.Now.ToString("yyyyMMdd HH:mm:ss").Replace(" ","").Replace(":","");
+                fname =   DateTime.Now.ToString("yyyyMMdd HH:mm:ss").Replace(" ", "_").Replace(":", "");
                 string folderPath = "C:\\SMS\\MasterShutsuryoku_CustomerSKUPrice\\";
                 if (!Directory.Exists(folderPath))
                 {
