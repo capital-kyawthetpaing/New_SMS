@@ -876,11 +876,9 @@ namespace MasterShutsuryoku_ITEM
 
                            
                             wb.Worksheets.Add(dtDatao, "worksheet");
-                            //  wb.Worksheet("").AddConditionalFormat();// = IXLConditionalFormat;
                             try
                             {
-                                wb.Worksheet("worksheet").Columns("11").Style.NumberFormat.SetNumberFormatId(49);
-                               // wb.Worksheet("worksheet").Columns("10").SetDataType(XLCellValues.Text);
+                                TextFormat(wb, dtDatao);
                             }
                             catch { }
                             wb.SaveAs(savedialog.FileName);
@@ -896,7 +894,48 @@ namespace MasterShutsuryoku_ITEM
             }
         }
 
-        
+        private void TextFormat(XLWorkbook wb, DataTable dt)
+        {
+            var fm = wb.Worksheet("worksheet");
+            //var c = wb.Worksheet("worksheet").Columns("").Count();
+            string StringCols = "ITEMCD"
+                           + ",商品名"
+                           + ",カナ名"
+                           + ",略名"
+                           + ",英語名"
+                           + ",主要仕入先CD"
+                           + ",ブランドCD"
+                           + ",メーカー商品CD"
+                           + ",単位CD"
+                           + ",競技CD"
+                           + ",商品分類CD"
+                           + ",セグメントCD"
+                           + ",カタログ番号"
+                           + ",カタログページ"
+                           + ",カタログ情報"
+                           + ",指示書番号"
+                           + ",商品情報アドレス"
+                           + ",ITEMタグ1"
+                           + ",ITEMタグ2"
+                           + ",ITEMタグ3"
+                           + ",ITEMタグ4"
+                           + ",ITEMタグ5"
+                           + ",ITEMタグ6"
+                           + ",ITEMタグ7"
+                           + ",ITEMタグ8"
+                           + ",ITEMタグ9"
+                           + ",ITEMタグ10";
+            int cc = 0;
+            foreach (DataColumn dc in dt.Columns)
+            {
+                cc++;
+                if (StringCols.Split(',').Contains(dc.ColumnName))
+                {
+                    fm.Columns(cc.ToString()).Style.NumberFormat.SetNumberFormatId(49);
+                }
+            }
+        }
+       
 
         private void CanCelData()
         {
