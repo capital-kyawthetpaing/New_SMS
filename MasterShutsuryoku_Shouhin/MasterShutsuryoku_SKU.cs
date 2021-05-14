@@ -552,7 +552,7 @@ namespace MasterShutsuryoku_Shouhin
 
         private void TextFormat(XLWorkbook wb, DataTable dt)
         {
-            var fm = wb.Worksheet("worksheet");
+            var fm = wb.Worksheet("Sheet1");
             //var c = wb.Worksheet("worksheet").Columns("").Count();
             string StringCols = "ITEMCD"
                            + ",商品名"
