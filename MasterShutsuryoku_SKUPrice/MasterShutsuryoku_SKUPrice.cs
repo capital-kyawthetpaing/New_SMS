@@ -331,9 +331,21 @@ namespace MasterShutsuryoku_SKUPrice
                                 worksheet = workbook.ActiveSheet;
                                 worksheet.Name = "Sheet1";
 
+                                //using (XLWorkbook wb = new XLWorkbook())
+                                //{
+                                //    wb.Worksheets.Add(dt, "Sheet1");
+                                //    wb.SaveAs(savedialog.FileName);
+                                //    bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                                //}
+
                                 using (XLWorkbook wb = new XLWorkbook())
                                 {
                                     wb.Worksheets.Add(dt, "Sheet1");
+                                    try
+                                    {
+                                        TextFormat(wb, dt);
+                                    }
+                                    catch { }
                                     wb.SaveAs(savedialog.FileName);
                                     bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                                 }
@@ -526,6 +538,48 @@ namespace MasterShutsuryoku_SKUPrice
 
             return true;
 
+        }
+
+        private void TextFormat(XLWorkbook wb, DataTable dt)
+        {
+            var fm = wb.Worksheet("Sheet1");
+            //var c = wb.Worksheet("worksheet").Columns("").Count();
+            string StringCols = "ITEMCD"
+                           + ",商品名"
+                           + ",カナ名"
+                           + ",略名"
+                           + ",英語名"
+                           + ",主要仕入先CD"
+                           + ",ブランドCD"
+                           + ",メーカー商品CD"
+                           + ",単位CD"
+                           + ",競技CD"
+                           + ",商品分類CD"
+                           + ",セグメントCD"
+                           + ",カタログ番号"
+                           + ",カタログページ"
+                           + ",カタログ情報"
+                           + ",指示書番号"
+                           + ",商品情報アドレス"
+                           + ",タグ1"
+                           + ",タグ2"
+                           + ",タグ3"
+                           + ",タグ4"
+                           + ",タグ5"
+                           + ",タグ6"
+                           + ",タグ7"
+                           + ",タグ8"
+                           + ",タグ9"
+                           + ",タグ10";
+            int cc = 0;
+            foreach (DataColumn dc in dt.Columns)
+            {
+                cc++;
+                if (StringCols.Split(',').Contains(dc.ColumnName))
+                {
+                    fm.Columns(cc.ToString()).Style.NumberFormat.SetNumberFormatId(49);
+                }
+            }
         }
 
     }
