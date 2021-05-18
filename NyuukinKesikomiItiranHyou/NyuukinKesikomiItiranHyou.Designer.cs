@@ -231,6 +231,7 @@
             this.txtInputDateT.isMaxLengthErr = false;
             this.txtInputDateT.IsNumber = true;
             this.txtInputDateT.IsShop = false;
+            this.txtInputDateT.IsTimemmss = false;
             this.txtInputDateT.Length = 10;
             this.txtInputDateT.Location = new System.Drawing.Point(285, 42);
             this.txtInputDateT.MaxLength = 10;
@@ -262,6 +263,7 @@
             this.txtInputDateF.isMaxLengthErr = false;
             this.txtInputDateF.IsNumber = true;
             this.txtInputDateF.IsShop = false;
+            this.txtInputDateF.IsTimemmss = false;
             this.txtInputDateF.Length = 10;
             this.txtInputDateF.Location = new System.Drawing.Point(150, 42);
             this.txtInputDateF.MaxLength = 10;
@@ -292,6 +294,7 @@
             this.txtCollectDateT.isMaxLengthErr = false;
             this.txtCollectDateT.IsNumber = true;
             this.txtCollectDateT.IsShop = false;
+            this.txtCollectDateT.IsTimemmss = false;
             this.txtCollectDateT.Length = 10;
             this.txtCollectDateT.Location = new System.Drawing.Point(286, 14);
             this.txtCollectDateT.MaxLength = 10;
@@ -323,6 +326,7 @@
             this.txtCollectDateF.isMaxLengthErr = false;
             this.txtCollectDateF.IsNumber = true;
             this.txtCollectDateF.IsShop = false;
+            this.txtCollectDateF.IsTimemmss = false;
             this.txtCollectDateF.Length = 10;
             this.txtCollectDateF.Location = new System.Drawing.Point(150, 14);
             this.txtCollectDateF.MaxLength = 10;
