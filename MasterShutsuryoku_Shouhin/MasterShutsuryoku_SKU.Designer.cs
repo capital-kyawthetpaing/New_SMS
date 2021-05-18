@@ -531,7 +531,7 @@
             this.LB_ChangeDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.LB_ChangeDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LB_ChangeDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ChangeDate.Location = new System.Drawing.Point(1412, 4);
+            this.LB_ChangeDate.Location = new System.Drawing.Point(1281, 7);
             this.LB_ChangeDate.Name = "LB_ChangeDate";
             this.LB_ChangeDate.Size = new System.Drawing.Size(80, 19);
             this.LB_ChangeDate.TabIndex = 95;
@@ -547,7 +547,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(1366, 7);
+            this.ckM_Label5.Location = new System.Drawing.Point(1235, 10);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label5.TabIndex = 80;
