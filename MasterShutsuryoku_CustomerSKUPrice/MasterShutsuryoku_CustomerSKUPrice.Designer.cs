@@ -211,7 +211,7 @@
             this.PanelHeader.Controls.Add(this.CKB_searchsuru);
             this.PanelHeader.Controls.Add(this.RB_item);
             this.PanelHeader.Controls.Add(this.RB_Makashohincd);
-            this.PanelHeader.Size = new System.Drawing.Size(1682, 389);
+            this.PanelHeader.Size = new System.Drawing.Size(1682, 354);
             this.PanelHeader.Controls.SetChildIndex(this.RB_Makashohincd, 0);
             this.PanelHeader.Controls.SetChildIndex(this.RB_item, 0);
             this.PanelHeader.Controls.SetChildIndex(this.CKB_searchsuru, 0);
@@ -2124,7 +2124,7 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "MasterShutsuryoku_CustomerSKUPrice";
-            this.PanelHeaderHeight = 445;
+            this.PanelHeaderHeight = 410;
             this.Text = "MasterShutsuryoku_CustomerSKUPrice";
             this.Load += new System.EventHandler(this.MasterShutsuryoku_CustomerSKUPrice_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MasterShutsuryoku_CustomerSKUPrice_KeyUp);
