@@ -41,7 +41,7 @@ namespace MasterTorikomi_SKUPrice
             StartProgram();
             ModeVisible = false;
             Btn_F12.Text = "取込(F12)";
-
+           
             dtSKU = sbl.M_SKU_SelectAll_NOPara();
             dtTankaCD = mskupbl.M_TankaCD_SelectAll_NoPara();
             dtStoreCD = mskupbl.M_StoreCD_SelectAll_NoPara();
@@ -249,7 +249,7 @@ namespace MasterTorikomi_SKUPrice
                 {
                     String query = " TankaCD = '" + dt.Rows[i]["単価設定CD"].ToString() + "'";
 
-                    var result = dtSKU.Select(query);
+                    var result = dtTankaCD.Select(query);
                     if (result.Count() == 0)
                     {
                         dt.Rows[i]["EItem"] = "単価設定CD";
@@ -266,7 +266,7 @@ namespace MasterTorikomi_SKUPrice
                 {
                     String query = " StoreCD = '" + dt.Rows[i]["店舗CD"].ToString() + "'";
 
-                    var result = dtSKU.Select(query);
+                    var result = dtStoreCD.Select(query);
                     if (result.Count() == 0)
                     {
                         dt.Rows[i]["EItem"] = "店舗CD";
@@ -304,11 +304,11 @@ namespace MasterTorikomi_SKUPrice
                     dt.Rows[i]["Error"] = "E102";
                 }
 
-                if (String.IsNullOrEmpty(dt.Rows[i]["改定日"].ToString()))
-                {
-                    dt.Rows[i]["EItem"] = "改定日";
-                    dt.Rows[i]["Error"] = "E102";
-                }
+                //if (String.IsNullOrEmpty(dt.Rows[i]["改定日"].ToString()))
+                //{
+                //    dt.Rows[i]["EItem"] = "改定日";
+                //    dt.Rows[i]["Error"] = "E102";
+                //}
 
                 if (!String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
                 {

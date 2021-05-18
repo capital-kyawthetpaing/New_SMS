@@ -42,10 +42,10 @@
             this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colskuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colColr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colError = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GV_SKUPrice)).BeginInit();
@@ -170,10 +170,10 @@
             this.colStoreName,
             this.colSKU,
             this.colJan,
+            this.colDate,
             this.colskuname,
             this.colColr,
             this.Column1,
-            this.Column2,
             this.Column3,
             this.colError});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -230,12 +230,18 @@
             this.colJan.Name = "colJan";
             this.colJan.Width = 120;
             // 
+            // colDate
+            // 
+            this.colDate.HeaderText = "適用日";
+            this.colDate.Name = "colDate";
+            this.colDate.Width = 130;
+            // 
             // colskuname
             // 
             this.colskuname.DataPropertyName = "商品名";
             this.colskuname.HeaderText = "商品名";
             this.colskuname.Name = "colskuname";
-            this.colskuname.Width = 430;
+            this.colskuname.Width = 450;
             // 
             // colColr
             // 
@@ -250,13 +256,6 @@
             this.Column1.HeaderText = "セイズ";
             this.Column1.Name = "Column1";
             this.Column1.Width = 130;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "メーカー商品CD";
-            this.Column2.HeaderText = "メーカー商品CD";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 170;
             // 
             // Column3
             // 
@@ -289,6 +288,7 @@
             this.F5Visible = false;
             this.F7Visible = false;
             this.F8Visible = false;
+            this.F9Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "MasterTorikomi_SKUPrice";
@@ -317,10 +317,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStoreName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colskuname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colColr;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colError;
     }

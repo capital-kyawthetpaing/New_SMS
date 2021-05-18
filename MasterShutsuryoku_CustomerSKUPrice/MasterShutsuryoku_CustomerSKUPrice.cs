@@ -387,6 +387,7 @@ namespace MasterShutsuryoku_CustomerSKUPrice
             TB_SaiShuhenkobiT.Text = String.Empty;
             jan.Clear();
             sku.Clear();
+            txtCustomerCD.Clear();
             Shiiresaki.Clear();
             SearchBrand.Clear();
             Maker.Clear();
@@ -403,7 +404,7 @@ namespace MasterShutsuryoku_CustomerSKUPrice
             SC_char1.LabelText = "";
             //GV_Zaiko.DataSource = null;
             //dtData.Clear();
-
+            txtCustomerCD.Focus();
         }
         protected override void EndSec()
         {
