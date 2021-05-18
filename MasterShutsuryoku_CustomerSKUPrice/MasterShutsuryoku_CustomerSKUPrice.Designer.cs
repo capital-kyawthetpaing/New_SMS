@@ -315,6 +315,7 @@
             this.ckM_CKB_suru.TabStop = false;
             this.ckM_CKB_suru.Text = "する";
             this.ckM_CKB_suru.UseVisualStyleBackColor = true;
+            this.ckM_CKB_suru.Visible = false;
             // 
             // ckM_LB_Zaikosu_hyoji
             // 
@@ -332,6 +333,7 @@
             this.ckM_LB_Zaikosu_hyoji.Text = "在庫数０表示";
             this.ckM_LB_Zaikosu_hyoji.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_LB_Zaikosu_hyoji.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckM_LB_Zaikosu_hyoji.Visible = false;
             // 
             // LB_ChangeDate
             // 
