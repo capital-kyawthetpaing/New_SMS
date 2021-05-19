@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_M_CustomerSKUPrice));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -161,7 +160,7 @@
             this.gvItem.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gvItem.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -178,14 +177,6 @@
             this.colSize,
             this.EItem,
             this.Error});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvItem.EnableHeadersVisualStyles = false;
             this.gvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvItem.Location = new System.Drawing.Point(86, 118);
@@ -196,6 +187,7 @@
             this.gvItem.TabIndex = 3;
             this.gvItem.UseRowNo = true;
             this.gvItem.UseSetting = false;
+            this.gvItem.Paint += new System.Windows.Forms.PaintEventHandler(this.gvItem_Paint);
             // 
             // colCusotmer
             // 
@@ -213,6 +205,7 @@
             this.colSKUCD.MaxInputLength = 30;
             this.colSKUCD.Name = "colSKUCD";
             this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Width = 140;
             // 
             // colJanCD
             // 
@@ -221,6 +214,7 @@
             this.colJanCD.MaxInputLength = 13;
             this.colJanCD.Name = "colJanCD";
             this.colJanCD.ReadOnly = true;
+            this.colJanCD.Width = 120;
             // 
             // colAppDate
             // 
@@ -241,7 +235,7 @@
             this.ItemName.MaxInputLength = 80;
             this.ItemName.Name = "ItemName";
             this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 330;
+            this.ItemName.Width = 360;
             // 
             // colColor
             // 
@@ -267,18 +261,17 @@
             // EItem
             // 
             this.EItem.DataPropertyName = "EItem";
-            this.EItem.HeaderText = "エラー項目名";
+            this.EItem.HeaderText = "エラー";
             this.EItem.Name = "EItem";
             this.EItem.ReadOnly = true;
-            this.EItem.Width = 150;
             // 
             // Error
             // 
             this.Error.DataPropertyName = "Error";
-            this.Error.HeaderText = "エラー名";
+            this.Error.HeaderText = "";
             this.Error.Name = "Error";
             this.Error.ReadOnly = true;
-            this.Error.Width = 430;
+            this.Error.Width = 375;
             // 
             // MasterTorikomi_M_CustomerSKUPrice
             // 

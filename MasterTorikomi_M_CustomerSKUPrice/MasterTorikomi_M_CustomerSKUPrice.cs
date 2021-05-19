@@ -645,5 +645,28 @@ namespace MasterTorikomi_M_CustomerSKUPrice
             return false;
         }
 
+        private void gvItem_Paint(object sender, PaintEventArgs e)
+        {
+            for (int j = 7; j < 9;)
+            {
+                string[] monthes = { "", "エラー" };
+                Rectangle r1 = this.gvItem.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.gvItem.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+                e.Graphics.FillRectangle(new SolidBrush(this.gvItem.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                format.Alignment = StringAlignment.Center;
+                e.Graphics.DrawString(monthes[j / 6],
+                this.gvItem.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.gvItem.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j += 8;
+            }
+        }
     }
 }
