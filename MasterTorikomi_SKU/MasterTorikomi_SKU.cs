@@ -51,13 +51,14 @@ namespace MasterTorikomi_SKU
             InProgramID = "MasterTorikomi_SKU";
             StartProgram();
             RB_all.Checked = true;
-           
+            
             dtBrand = mtbl.M_Brand_SelectAll_NoPara();
             dtMultiP = mtbl.M_Multipurpose_SelectAll();
             dtVendor = mtbl.M_Vendor_SelectAll();
             dtskuintial = msIbl.M_SKUInitial_SelectAll();
             dtSKU = sbl.M_SKU_SelectAll_NOPara();
             //dtAPI = apbl.M_API_Select();
+            this.ModeVisible = false;
         }
         public override void FunctionProcess(int index)
         {
