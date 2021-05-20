@@ -681,8 +681,8 @@ namespace TempoRegiHanbaiTouroku
                 //領収書必要ONの場合、1。以外は0．													
 
                 //2020/07/20 Y.Nishikawa CHG 引数を整備↓↓
-                //string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+                //string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
                 //2020/07/20 Y.Nishikawa CHG 引数を整備↑↑
                 a = filePath;
                 b = cmdLine;
