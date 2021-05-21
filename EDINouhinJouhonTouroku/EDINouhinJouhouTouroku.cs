@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
-using CrystalDecisions.Shared;
+//using CrystalDecisions.Shared;
 
 namespace EDINouhinJouhonTouroku
 {
