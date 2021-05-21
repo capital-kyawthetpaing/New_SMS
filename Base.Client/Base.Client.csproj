@@ -173,16 +173,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RequiredSource\CrystalDecisions.CrystalReports.Engine.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RequiredSource\CrystalDecisions.ReportSource.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RequiredSource\CrystalDecisions.Shared.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RequiredSource\CrystalDecisions.Windows.Forms.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RequiredSource\CSControl.dll" />
     <Content Include="RequiredSource\Microsoft.PointOfService.dll" />
