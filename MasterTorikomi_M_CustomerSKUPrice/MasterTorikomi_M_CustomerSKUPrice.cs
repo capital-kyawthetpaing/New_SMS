@@ -206,6 +206,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Cancel();
+                        gvItem.DataSource = null;
                     }
                     break;
                 case 11:
@@ -300,7 +301,6 @@ namespace MasterTorikomi_M_CustomerSKUPrice
         private void Cancel()
         {
             Cursor = Cursors.WaitCursor;
-
             try
             {
 
@@ -315,7 +315,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                 dtCustomer = cbl.M_Customer_Select_byCustomerSKUprice(ce);
 
                 button1.Focus();
-                            }
+            }
             catch
             {
 
@@ -668,5 +668,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                 j += 8;
             }
         }
+
+       
     }
 }
