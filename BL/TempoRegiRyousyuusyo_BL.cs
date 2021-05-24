@@ -61,10 +61,10 @@ namespace BL
         /// <param name="salesNo">お買上番号</param>
         /// <param name="isIssued">再発行(true=再発行、false=未発行)</param>
         /// <returns>レシートデータ</returns>
-        public DataTable D_ReceiptSelect(string salesNo = "", bool isIssued = false)
+        public DataTable D_ReceiptSelect(string salesNo = "", bool isIssued = false,string StoreCD ="" )
         {
-            var dl = new TempoRegiRyousyuusyo_DL();
-            return dl.D_ReceiptSelectData(salesNo, isIssued);
+            TempoRegiRyousyuusyo_DL dl = new TempoRegiRyousyuusyo_DL();
+            return dl.D_ReceiptSelectData(salesNo,isIssued, StoreCD);
         }
 
         /// <summary>
@@ -81,5 +81,18 @@ namespace BL
             var dl = new TempoRegiRyousyuusyo_DL();
             return dl.D_DepositHistory_UpdateIssued(salesNo, isIssued, operatorCd, programId, pcId);
         }
+        public byte[] GetLogo(string StoreCD)
+        {
+            D_StoreLogo dl = new D_StoreLogo();
+            var dt = dl.GetLogo(StoreCD);
+            if (dt.Rows.Count > 0)
+            {
+                return (byte[])(dt.Rows[0]["Picture"]);
+
+            }
+            else
+                return null; 
+        }
+       
     }
 }

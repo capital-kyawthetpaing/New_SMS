@@ -80,7 +80,7 @@ namespace TempoRegiTorihikiReceipt
         /// BL
         /// </summary>
         TempoRegiTorihikiReceipt_BL bl = new TempoRegiTorihikiReceipt_BL();
-
+        Base.Client.Viewer vr = new Viewer();
         /// <summary>
         /// 店舗ジャーナル印刷 コンストラクタ
         /// </summary>
@@ -112,7 +112,7 @@ namespace TempoRegiTorihikiReceipt
 
             //コマンドライン引数を配列で取得する
           string[] cmds = Environment.GetCommandLineArgs();// 
-             ///   string[] cmds = new string[] { "C:\\", "01", "haspo1", "MYA040_PC", "2", "70" };// 
+            //  string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "3", "2692" };// 
                                                                //MessageBox.Show(cmds.Length.ToString());
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
             {
@@ -262,6 +262,7 @@ namespace TempoRegiTorihikiReceipt
                                 reportModeDepositMiscDeposit.Refresh();
                                 reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
                                 ReadyToPrinter = reportModeDepositMiscDeposit;
+                                
                                 reportModeDepositMiscDeposit.PrintToPrinter(0, false, 0, 0);
                                 y = "1 " + reportModeDepositMiscDeposit.PrintOptions.PrinterName;
                                 //   MessageBox.Show("First Con" + Environment.NewLine + torihikiReceiptDataSet.MiscDepositTable.Rows.Count.ToString());
@@ -324,6 +325,8 @@ namespace TempoRegiTorihikiReceipt
                             reportModePayment.Refresh();
                             reportModePayment.PrintOptions.PrinterName = StorePrinterName;
                             ReadyToPrinter = reportModePayment;
+                            //vr.CrystalReportViewer1.ReportSource = reportModePayment;
+                            //vr.ShowDialog();
                             reportModePayment.PrintToPrinter(0, false, 0, 0);
                         }
                         else
@@ -341,7 +344,7 @@ namespace TempoRegiTorihikiReceipt
 
                             var reportModeExchange = new TempoRegiTorihikiReceipt_Exchange();
 
-                            reportModeExchange.SetDataSource(torihikiReceiptDataSet);
+                            reportModeExchange.SetDataSource(torihikiReceiptDataSet); 
                             reportModeExchange.Refresh();
 
                             reportModeExchange.PrintOptions.PrinterName = StorePrinterName;
