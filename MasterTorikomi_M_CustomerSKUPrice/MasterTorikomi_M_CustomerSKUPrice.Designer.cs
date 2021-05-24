@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTorikomi_M_CustomerSKUPrice));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
@@ -75,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(585, 76);
+            this.button1.Location = new System.Drawing.Point(675, 76);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 23);
             this.button1.TabIndex = 1;
@@ -125,7 +124,7 @@
             this.inputPath.MoveNext = true;
             this.inputPath.Name = "inputPath";
             this.inputPath.ReadOnly = true;
-            this.inputPath.Size = new System.Drawing.Size(500, 19);
+            this.inputPath.Size = new System.Drawing.Size(590, 19);
             this.inputPath.TabIndex = 0;
             this.inputPath.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.inputPath.UseColorSizMode = false;
@@ -155,18 +154,18 @@
             this.gvItem.AllowUserToDeleteRows = false;
             this.gvItem.AllowUserToResizeColumns = false;
             this.gvItem.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.gvItem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvItem.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gvItem.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.gvItem.ColumnHeadersHeight = 25;
             this.gvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCusotmer,
@@ -178,14 +177,6 @@
             this.colSize,
             this.EItem,
             this.Error});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvItem.EnableHeadersVisualStyles = false;
             this.gvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvItem.Location = new System.Drawing.Point(86, 118);
@@ -196,6 +187,7 @@
             this.gvItem.TabIndex = 3;
             this.gvItem.UseRowNo = true;
             this.gvItem.UseSetting = false;
+            this.gvItem.Paint += new System.Windows.Forms.PaintEventHandler(this.gvItem_Paint);
             // 
             // colCusotmer
             // 
@@ -213,6 +205,7 @@
             this.colSKUCD.MaxInputLength = 30;
             this.colSKUCD.Name = "colSKUCD";
             this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Width = 140;
             // 
             // colJanCD
             // 
@@ -221,14 +214,15 @@
             this.colJanCD.MaxInputLength = 13;
             this.colJanCD.Name = "colJanCD";
             this.colJanCD.ReadOnly = true;
+            this.colJanCD.Width = 120;
             // 
             // colAppDate
             // 
             this.colAppDate.DataPropertyName = "AppDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colAppDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.colAppDate.DefaultCellStyle = dataGridViewCellStyle13;
             this.colAppDate.HeaderText = "適用日";
             this.colAppDate.MaxInputLength = 10;
             this.colAppDate.Name = "colAppDate";
@@ -241,14 +235,14 @@
             this.ItemName.MaxInputLength = 80;
             this.ItemName.Name = "ItemName";
             this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 330;
+            this.ItemName.Width = 360;
             // 
             // colColor
             // 
             this.colColor.DataPropertyName = "Color";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.NullValue = null;
-            this.colColor.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.NullValue = null;
+            this.colColor.DefaultCellStyle = dataGridViewCellStyle14;
             this.colColor.HeaderText = "カラー";
             this.colColor.MaxInputLength = 20;
             this.colColor.Name = "colColor";
@@ -257,8 +251,8 @@
             // colSize
             // 
             this.colSize.DataPropertyName = "Size";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colSize.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colSize.DefaultCellStyle = dataGridViewCellStyle15;
             this.colSize.HeaderText = "サイズ";
             this.colSize.MaxInputLength = 20;
             this.colSize.Name = "colSize";
@@ -267,18 +261,17 @@
             // EItem
             // 
             this.EItem.DataPropertyName = "EItem";
-            this.EItem.HeaderText = "エラー項目名";
+            this.EItem.HeaderText = "エラー";
             this.EItem.Name = "EItem";
             this.EItem.ReadOnly = true;
-            this.EItem.Width = 150;
             // 
             // Error
             // 
             this.Error.DataPropertyName = "Error";
-            this.Error.HeaderText = "エラー名";
+            this.Error.HeaderText = "";
             this.Error.Name = "Error";
             this.Error.ReadOnly = true;
-            this.Error.Width = 430;
+            this.Error.Width = 375;
             // 
             // MasterTorikomi_M_CustomerSKUPrice
             // 
