@@ -75,7 +75,11 @@ namespace SyukkaShijisho
                 ssbl = new ShukkaShijiTouroku_BL();
                 CboSouko.Bind(ymd);
                 CboCarrierCD.Bind(ymd);
-          
+
+                string stores = GetAllAvailableStores();
+                ScInstructionNO.Value1 = InOperatorCD;
+                ScInstructionNO.Value2 = stores;
+
                 SetFuncKeyAll(this, "100001000011");
                 Scr_Clr(0);
 

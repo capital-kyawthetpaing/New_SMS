@@ -455,7 +455,8 @@ namespace Search
                         StoreCD = mse.StoreCD,
                         SoukoType = "3",
                         ChangeDate = ymd,
-                        DeleteFlg = "0"
+                        DeleteFlg = "0",
+                        searchType = "2"
                     };
 
                     DataTable mdt = snbl.M_Souko_Search(me);
