@@ -198,8 +198,7 @@ namespace SyukkaShijisho
             }
             if (!okFlg)
             { 
-                //Ｅ１８０
-                bbl.ShowMessage("E180");
+                bbl.ShowMessage("E111");
                 detailControls[(int)EIndex.Chk1].Focus();
                 return null;
             }
@@ -592,7 +591,7 @@ namespace SyukkaShijisho
                     EndSec();
                 }
             }
-
+            ChkMihakko.Checked = true;
             ChkSaihakko.Checked = false;
             detailControls[(int)EIndex.InstructionNO].Enabled = false;
             detailControls[(int)EIndex.DeliveryPlanDate].Text = ymd;
