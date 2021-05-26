@@ -455,7 +455,8 @@ namespace Search
                         StoreCD = mse.StoreCD,
                         SoukoType = "3",
                         ChangeDate = ymd,
-                        DeleteFlg = "0"
+                        DeleteFlg = "0",
+                        searchType = "2"
                     };
 
                     DataTable mdt = snbl.M_Souko_Search(me);
@@ -465,10 +466,10 @@ namespace Search
                     }
                 }
 
-                for(int i= (int)EIndex.DayStart; i <= (int)EIndex.PlanDateEnd; i++)
-                {
-                    detailControls[i].Text = ymd;
-                }
+                //for(int i= (int)EIndex.DayStart; i <= (int)EIndex.PlanDateEnd; i++)
+                //{
+                //    detailControls[i].Text = ymd;
+                //}
                 detailControls[(int)EIndex.StaffCD].Text = OperatorCD;
                 ScStaff.LabelText = mse.StaffName;
 
