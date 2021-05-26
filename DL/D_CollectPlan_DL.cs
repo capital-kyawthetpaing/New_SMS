@@ -53,51 +53,51 @@ namespace DL
                 { "@DetailOn", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dce.DetailOn } },
             };
 
-            if (dce.PrintFLG == "1")
-            {
-                DataTable dt1 = SelectData(dic, sp);
-                DataRow[] drs1 = dt1.Select(" BillingNO IS NOT NULL");
-                DataTable newdt1 = dt1.Clone();
+            //if (dce.PrintFLG == "1")
+            //{
+            //    DataTable dt1 = SelectData(dic, sp);
+            //    DataRow[] drs1 = dt1.Select(" BillingNO IS NOT NULL");
+            //    DataTable newdt1 = dt1.Clone();
 
-                foreach (var dr in drs1)
-                {
-                    //消込済分印刷=OFFの場合　PaymentProgressKBN＜＝１
-                    if (dce.PaymentProgressKBN == "0")
-                        if (Convert.ToInt16( dr["PaymentProgressKBN"]) > 1)
-                            continue;
+            //    foreach (var dr in drs1)
+            //    {
+            //        //消込済分印刷=OFFの場合　PaymentProgressKBN＜＝１
+            //        if (dce.PaymentProgressKBN == "0")
+            //            if (Convert.ToInt16( dr["PaymentProgressKBN"]) > 1)
+            //                continue;
 
-                    //newdt.Rows.Add(dr)ではダメ。
-                    //drはdtに所属している行なので、別のDataTableであるnewdtにはAddできない。
-                    //よって、newdtの新しい行を作成し、その各列の値をdrと全く同じにし、それをnewdtに追加すれば良い。
-                    DataRow newrow1 = newdt1.NewRow();
-                    newrow1.ItemArray = dr.ItemArray;
-                    newdt1.Rows.Add(newrow1);
-                }
-                return newdt1;
-            }
-            else
-            {
-                //消込済分印刷=OFFの場合　PaymentProgressKBN＜＝１
-                if (dce.PaymentProgressKBN == "0")
-                {
-                    DataTable dt1 = SelectData(dic, sp);
-                    DataRow[] drs1 = dt1.Select(" PaymentProgressKBN <= 1");
-                    DataTable newdt1 = dt1.Clone();
+            //        //newdt.Rows.Add(dr)ではダメ。
+            //        //drはdtに所属している行なので、別のDataTableであるnewdtにはAddできない。
+            //        //よって、newdtの新しい行を作成し、その各列の値をdrと全く同じにし、それをnewdtに追加すれば良い。
+            //        DataRow newrow1 = newdt1.NewRow();
+            //        newrow1.ItemArray = dr.ItemArray;
+            //        newdt1.Rows.Add(newrow1);
+            //    }
+            //    return newdt1;
+            //}
+            //else
+            //{
+            //    //消込済分印刷=OFFの場合　PaymentProgressKBN＜＝１
+            //    if (dce.PaymentProgressKBN == "0")
+            //    {
+            //        DataTable dt1 = SelectData(dic, sp);
+            //        DataRow[] drs1 = dt1.Select(" PaymentProgressKBN <= 1");
+            //        DataTable newdt1 = dt1.Clone();
 
-                    foreach (var dr in drs1)
-                    {
-                        //newdt.Rows.Add(dr)ではダメ。
-                        //drはdtに所属している行なので、別のDataTableであるnewdtにはAddできない。
-                        //よって、newdtの新しい行を作成し、その各列の値をdrと全く同じにし、それをnewdtに追加すれば良い。
-                        DataRow newrow1 = newdt1.NewRow();
-                        newrow1.ItemArray = dr.ItemArray;
-                        newdt1.Rows.Add(newrow1);
-                    }
-                    return newdt1;
-                }
-                else
+            //        foreach (var dr in drs1)
+            //        {
+            //            //newdt.Rows.Add(dr)ではダメ。
+            //            //drはdtに所属している行なので、別のDataTableであるnewdtにはAddできない。
+            //            //よって、newdtの新しい行を作成し、その各列の値をdrと全く同じにし、それをnewdtに追加すれば良い。
+            //            DataRow newrow1 = newdt1.NewRow();
+            //            newrow1.ItemArray = dr.ItemArray;
+            //            newdt1.Rows.Add(newrow1);
+            //        }
+            //        return newdt1;
+            //    }
+            //    else
                     return SelectData(dic, sp);
-            }
+            //}
 
         
         }
