@@ -90,7 +90,7 @@ namespace KeihiltiranHyou
                 {
                     MessageBox.Show(ex.Message);
                 }
-              //  var dt = DateTime.Now;
+                var dt = DateTime.Now;
                 var val = dt.Year.ToString() + "/" + dt.Month.ToString().PadLeft(2, '0').ToString() + "/" + dt.Day.ToString().PadLeft(2, '0').ToString();
                 txtRecordFrom.Text = val;
                 txtRecordTo.Text = val;
