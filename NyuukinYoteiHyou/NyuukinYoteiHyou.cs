@@ -418,10 +418,7 @@ namespace NyuukinYoteiHyou
                 StaffCD = ScStaff.TxtCode.Text,
             };
 
-            if (ckM_RadioButton1.Checked)
-            {
-            }
-            else if (ckM_RadioButton2.Checked)
+            if (ckM_RadioButton2.Checked)
             {
                 //請求締済
                 dse.PrintFLG = "1";
