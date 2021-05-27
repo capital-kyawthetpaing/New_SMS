@@ -183,6 +183,7 @@
             this.txtDateTo1.isMaxLengthErr = false;
             this.txtDateTo1.IsNumber = true;
             this.txtDateTo1.IsShop = false;
+            this.txtDateTo1.IsTimemmss = false;
             this.txtDateTo1.Length = 10;
             this.txtDateTo1.Location = new System.Drawing.Point(320, 81);
             this.txtDateTo1.MaxLength = 10;
@@ -214,6 +215,7 @@
             this.txtDateFrom1.isMaxLengthErr = false;
             this.txtDateFrom1.IsNumber = true;
             this.txtDateFrom1.IsShop = false;
+            this.txtDateFrom1.IsTimemmss = false;
             this.txtDateFrom1.Length = 10;
             this.txtDateFrom1.Location = new System.Drawing.Point(167, 81);
             this.txtDateFrom1.MaxLength = 10;
@@ -244,6 +246,7 @@
             this.txtShipmentDate.isMaxLengthErr = false;
             this.txtShipmentDate.IsNumber = true;
             this.txtShipmentDate.IsShop = false;
+            this.txtShipmentDate.IsTimemmss = false;
             this.txtShipmentDate.Length = 10;
             this.txtShipmentDate.Location = new System.Drawing.Point(167, 112);
             this.txtShipmentDate.MaxLength = 10;
@@ -296,6 +299,7 @@
             this.ScPickingNo1.Size = new System.Drawing.Size(133, 28);
             this.ScPickingNo1.Stype = Search.CKM_SearchControl.SearchType.ピッキング番号;
             this.ScPickingNo1.TabIndex = 0;
+            this.ScPickingNo1.test = null;
             this.ScPickingNo1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScPickingNo1.UseChangeDate = false;
             this.ScPickingNo1.Value1 = null;
@@ -344,6 +348,7 @@
             this.ScPickingNo2.Size = new System.Drawing.Size(133, 27);
             this.ScPickingNo2.Stype = Search.CKM_SearchControl.SearchType.ピッキング番号;
             this.ScPickingNo2.TabIndex = 0;
+            this.ScPickingNo2.test = null;
             this.ScPickingNo2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScPickingNo2.UseChangeDate = false;
             this.ScPickingNo2.Value1 = null;
@@ -388,6 +393,7 @@
             this.txtDateTo2.isMaxLengthErr = false;
             this.txtDateTo2.IsNumber = true;
             this.txtDateTo2.IsShop = false;
+            this.txtDateTo2.IsTimemmss = false;
             this.txtDateTo2.Length = 10;
             this.txtDateTo2.Location = new System.Drawing.Point(319, 252);
             this.txtDateTo2.MaxLength = 10;
@@ -419,6 +425,7 @@
             this.txtDateFrom2.isMaxLengthErr = false;
             this.txtDateFrom2.IsNumber = true;
             this.txtDateFrom2.IsShop = false;
+            this.txtDateFrom2.IsTimemmss = false;
             this.txtDateFrom2.Length = 10;
             this.txtDateFrom2.Location = new System.Drawing.Point(167, 253);
             this.txtDateFrom2.MaxLength = 10;
