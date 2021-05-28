@@ -534,6 +534,7 @@ namespace ShukkaShijiTouroku
                             case (int)ClsGridShukka.ColNO.PrintDate:
                             case (int)ClsGridShukka.ColNO.ShippingDate:
                                 {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Selectable = false;
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
