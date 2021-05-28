@@ -59,6 +59,7 @@ namespace MasterTorikomi_SKU
             dtSKU = sbl.M_SKU_SelectAll_NOPara();
             //dtAPI = apbl.M_API_Select();
             this.ModeVisible = false;
+            Btn_F12.Text = "取込(F12)";
         }
         public override void FunctionProcess(int index)
         {
