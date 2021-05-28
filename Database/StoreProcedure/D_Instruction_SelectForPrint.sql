@@ -247,7 +247,13 @@ BEGIN
     	    ,'' AS DecidedDeliveryDate      
             ,DI.InstructionNO                                               
             ,DI.DeliveryPlanNO             
-            ,DI.DeliveryName                                                
+            --,DI.DeliveryName
+            ,(SELECT top 1 M.SoukoName
+                FROM M_Souko AS M 
+                WHERE M.ChangeDate <= DI.DeliveryPlanDate
+                 AND M.SoukoCD = DI.DeliverySoukoCD
+                  AND M.DeleteFlg = 0
+                 ORDER BY M.ChangeDate desc) AS DeliveryName                                                
             ,DI.CommentInStore
             ,DI.CommentOutStore
 

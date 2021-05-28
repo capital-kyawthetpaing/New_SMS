@@ -102,6 +102,7 @@
     <Compile Include="D_StockReplica_DL.cs" />
     <Compile Include="D_Stock_DL.cs" />
     <Compile Include="D_StoreCalculation_DL.cs" />
+    <Compile Include="D_StoreLogo.cs" />
     <Compile Include="D_StorePayment_DL.cs" />
     <Compile Include="D_TenzikaiJuchuu_DL.cs" />
     <Compile Include="D_Warehousing_DL.cs" />

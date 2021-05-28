@@ -75,7 +75,11 @@ namespace SyukkaShijisho
                 ssbl = new ShukkaShijiTouroku_BL();
                 CboSouko.Bind(ymd);
                 CboCarrierCD.Bind(ymd);
-          
+
+                string stores = GetAllAvailableStores();
+                ScInstructionNO.Value1 = InOperatorCD;
+                ScInstructionNO.Value2 = stores;
+
                 SetFuncKeyAll(this, "100001000011");
                 Scr_Clr(0);
 
@@ -198,8 +202,7 @@ namespace SyukkaShijisho
             }
             if (!okFlg)
             { 
-                //Ｅ１８０
-                bbl.ShowMessage("E180");
+                bbl.ShowMessage("E111");
                 detailControls[(int)EIndex.Chk1].Focus();
                 return null;
             }
@@ -592,7 +595,7 @@ namespace SyukkaShijisho
                     EndSec();
                 }
             }
-
+            ChkMihakko.Checked = true;
             ChkSaihakko.Checked = false;
             detailControls[(int)EIndex.InstructionNO].Enabled = false;
             detailControls[(int)EIndex.DeliveryPlanDate].Text = ymd;

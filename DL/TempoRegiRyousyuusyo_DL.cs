@@ -70,12 +70,14 @@ namespace DL
         /// <param name="salesNO">お買上番号</param>
         /// <param name="isIssued">再発行(true=再発行、false=未発行)</param>
         /// <returns>レシートデータ</returns>
-        public DataTable D_ReceiptSelectData(string salesNO = "", bool isIssued = false)
+        public DataTable D_ReceiptSelectData( string salesNO = "",bool isIssued = false,string StoreCD = "")
         {
+
             string sp = "D_Receipt_Select";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = StoreCD } },
                 { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = salesNO } },
                 { "@IsIssued", new ValuePair { value1 = SqlDbType.TinyInt, value2 = Convert.ToByte(isIssued).ToString()} },
             };
@@ -112,5 +114,6 @@ namespace DL
 
             return ret;
         }
+       
     }
 }

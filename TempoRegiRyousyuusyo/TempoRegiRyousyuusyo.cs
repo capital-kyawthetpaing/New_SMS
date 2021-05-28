@@ -276,8 +276,9 @@ namespace TempoRegiRyousyuusyo
                         {
                             // レシートチェックボックスにチェックあり
 
+                            string SCD = StoreCD.TrimEnd();
                             // 店舗取引履歴
-                            DataTable receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
+                            DataTable receiptData = bl.D_ReceiptSelect(  txtSalesNO.Text,    chkReissue.Checked , StoreCD );
                             //if ((!IsHanbaiTouroku))
                             //{
                             if (receiptData.Rows.Count > 0)
@@ -395,9 +396,15 @@ namespace TempoRegiRyousyuusyo
                 report.Refresh();
               //  MessageBox.Show(report.PrintOptions.PrinterName + "  "+ StorePrinterName);
                 report.PrintOptions.PrinterName = StorePrinterName;
-             //   MessageBox.Show(report.PrintOptions.PrinterName);
+                //   MessageBox.Show(report.PrintOptions.PrinterName);
                 report.PrintToPrinter(0, false, 0, 0);
-              //  MessageBox.Show(report.PrintOptions.PrinterName);
+                //Base.Client.Viewer vr = new Viewer();
+                //vr.CrystalReportViewer1.ReportSource = report;
+                //vr.ShowDialog();
+                //  MessageBox.Show(report.PrintOptions.PrinterName);
+
+
+
             }
             catch(Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -411,7 +418,7 @@ namespace TempoRegiRyousyuusyo
         private void OutputReceipt(DataTable data)
         {
             var receiptDataSet = new Receipt_DataSet();
-
+           // var imgLogo = bl.GetLogo(StoreCD);
             for (var index = 0; index < data.Rows.Count; index++)
             {
                 var row = data.Rows[index];
@@ -431,8 +438,8 @@ namespace TempoRegiRyousyuusyo
                 if (receiptDataSet.StoreTable.Rows.Count == 0)
                 {
                     var store = receiptDataSet.StoreTable.NewStoreTableRow();
-                    if(!(row["Logo"] is System.DBNull))
-                        store.Logo = (byte[])row["Logo"];
+                     if(!(row["Logo"] is System.DBNull))    // PTK changed M_Image to M_StoreImage 2021-05-24
+                    store.Logo = (byte[])(row["Logo"]);
                     store.CompanyName = Convert.ToString(row["CompanyName"]);
                     store.StoreName = Convert.ToString(row["StoreName"]);                       // 店舗名
                     store.Address1 = Convert.ToString(row["Address1"]);                         // 住所1
@@ -552,6 +559,10 @@ namespace TempoRegiRyousyuusyo
             report.PrintOptions.PrinterName = StorePrinterName;
             report.PrintToPrinter(0, false, 0, 0);
 
+            ////___
+            //Base.Client.Viewer vr = new Viewer();
+            //vr.CrystalReportViewer1.ReportSource = report;
+            //vr.ShowDialog();
             // 発行済更新、ログ更新
             bl.D_UpdateDepositHistory(txtSalesNO.Text, true, InOperatorCD, InProgramID, InPcID);
         }
@@ -562,6 +573,7 @@ namespace TempoRegiRyousyuusyo
         /// <returns>日時</returns>
         private string ConvertDateTime(object value, bool dateOnly)
         {
+            //value = Convert.ToDateTime(value).ToString("yyyy/MM/dd hh:mm:ss");
             var result = string.Empty;
 
             var dateTime = Convert.ToString(value);
@@ -570,7 +582,7 @@ namespace TempoRegiRyousyuusyo
                 result = dateOnly ? dateTime.Substring(0, "yyyy/MM/dd".Length) : dateTime.Substring(0, dateTime.LastIndexOf(':'));
             }
 
-            return result;
+            return result.Replace("-","/");
         }
 
         /// <summary>

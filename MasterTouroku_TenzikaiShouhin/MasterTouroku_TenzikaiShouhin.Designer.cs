@@ -893,6 +893,7 @@
             this.TB_StartDate.isMaxLengthErr = false;
             this.TB_StartDate.IsNumber = true;
             this.TB_StartDate.IsShop = false;
+            this.TB_StartDate.IsTimemmss = false;
             this.TB_StartDate.Length = 10;
             this.TB_StartDate.Location = new System.Drawing.Point(1396, 126);
             this.TB_StartDate.MaxLength = 10;
@@ -1424,6 +1425,7 @@
             this.colorname_1.isMaxLengthErr = false;
             this.colorname_1.IsNumber = true;
             this.colorname_1.IsShop = false;
+            this.colorname_1.IsTimemmss = false;
             this.colorname_1.Length = 20;
             this.colorname_1.Location = new System.Drawing.Point(1065, 0);
             this.colorname_1.MaxLength = 20;
@@ -1470,6 +1472,7 @@
             this.colcd_1.isMaxLengthErr = false;
             this.colcd_1.IsNumber = true;
             this.colcd_1.IsShop = false;
+            this.colcd_1.IsTimemmss = false;
             this.colcd_1.Length = 10;
             this.colcd_1.Location = new System.Drawing.Point(979, 0);
             this.colcd_1.MaxLength = 10;
@@ -1546,6 +1549,7 @@
             this.salepriceout5_1.isMaxLengthErr = false;
             this.salepriceout5_1.IsNumber = true;
             this.salepriceout5_1.IsShop = false;
+            this.salepriceout5_1.IsTimemmss = false;
             this.salepriceout5_1.Length = 9;
             this.salepriceout5_1.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_1.MaxLength = 9;
@@ -1577,6 +1581,7 @@
             this.shouhin_1.isMaxLengthErr = false;
             this.shouhin_1.IsNumber = true;
             this.shouhin_1.IsShop = false;
+            this.shouhin_1.IsTimemmss = false;
             this.shouhin_1.Length = 80;
             this.shouhin_1.Location = new System.Drawing.Point(479, 0);
             this.shouhin_1.MaxLength = 80;
@@ -1637,6 +1642,7 @@
             this.shiire_1.isMaxLengthErr = false;
             this.shiire_1.IsNumber = true;
             this.shiire_1.IsShop = false;
+            this.shiire_1.IsTimemmss = false;
             this.shiire_1.Length = 9;
             this.shiire_1.Location = new System.Drawing.Point(28, 19);
             this.shiire_1.MaxLength = 9;
@@ -1698,6 +1704,7 @@
             this.sizecd_1.isMaxLengthErr = false;
             this.sizecd_1.IsNumber = true;
             this.sizecd_1.IsShop = false;
+            this.sizecd_1.IsTimemmss = false;
             this.sizecd_1.Length = 10;
             this.sizecd_1.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_1.MaxLength = 10;
@@ -1742,6 +1749,7 @@
             this.hyoteidatem_1.isMaxLengthErr = false;
             this.hyoteidatem_1.IsNumber = true;
             this.hyoteidatem_1.IsShop = false;
+            this.hyoteidatem_1.IsTimemmss = false;
             this.hyoteidatem_1.Length = 100;
             this.hyoteidatem_1.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_1.MaxLength = 100;
@@ -1773,6 +1781,7 @@
             this.sizeName_1.isMaxLengthErr = false;
             this.sizeName_1.IsNumber = true;
             this.sizeName_1.IsShop = false;
+            this.sizeName_1.IsTimemmss = false;
             this.sizeName_1.Length = 20;
             this.sizeName_1.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_1.MaxLength = 20;
@@ -1804,6 +1813,7 @@
             this.salepriceout4_1.isMaxLengthErr = false;
             this.salepriceout4_1.IsNumber = true;
             this.salepriceout4_1.IsShop = false;
+            this.salepriceout4_1.IsTimemmss = false;
             this.salepriceout4_1.Length = 9;
             this.salepriceout4_1.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_1.MaxLength = 9;
@@ -1835,6 +1845,7 @@
             this.salepriceout3_1.isMaxLengthErr = false;
             this.salepriceout3_1.IsNumber = true;
             this.salepriceout3_1.IsShop = false;
+            this.salepriceout3_1.IsTimemmss = false;
             this.salepriceout3_1.Length = 9;
             this.salepriceout3_1.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_1.MaxLength = 9;
@@ -1866,6 +1877,7 @@
             this.salepriceout2_1.isMaxLengthErr = false;
             this.salepriceout2_1.IsNumber = true;
             this.salepriceout2_1.IsShop = false;
+            this.salepriceout2_1.IsTimemmss = false;
             this.salepriceout2_1.Length = 9;
             this.salepriceout2_1.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_1.MaxLength = 9;
@@ -1897,6 +1909,7 @@
             this.salepriceout1_1.isMaxLengthErr = false;
             this.salepriceout1_1.IsNumber = true;
             this.salepriceout1_1.IsShop = false;
+            this.salepriceout1_1.IsTimemmss = false;
             this.salepriceout1_1.Length = 9;
             this.salepriceout1_1.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_1.MaxLength = 9;
@@ -1928,6 +1941,7 @@
             this.salepriceout_1.isMaxLengthErr = false;
             this.salepriceout_1.IsNumber = true;
             this.salepriceout_1.IsShop = false;
+            this.salepriceout_1.IsTimemmss = false;
             this.salepriceout_1.Length = 9;
             this.salepriceout_1.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_1.MaxLength = 9;
@@ -1959,6 +1973,7 @@
             this.sku_1.isMaxLengthErr = false;
             this.sku_1.IsNumber = true;
             this.sku_1.IsShop = false;
+            this.sku_1.IsTimemmss = false;
             this.sku_1.Length = 30;
             this.sku_1.Location = new System.Drawing.Point(269, 0);
             this.sku_1.MaxLength = 30;
@@ -2002,6 +2017,7 @@
             this.joutai_1.isMaxLengthErr = false;
             this.joutai_1.IsNumber = true;
             this.joutai_1.IsShop = false;
+            this.joutai_1.IsTimemmss = false;
             this.joutai_1.Length = 9;
             this.joutai_1.Location = new System.Drawing.Point(138, 19);
             this.joutai_1.MaxLength = 9;
@@ -2033,6 +2049,7 @@
             this.remark_1.isMaxLengthErr = false;
             this.remark_1.IsNumber = true;
             this.remark_1.IsShop = false;
+            this.remark_1.IsTimemmss = false;
             this.remark_1.Length = 500;
             this.remark_1.Location = new System.Drawing.Point(1165, 19);
             this.remark_1.MaxLength = 500;
@@ -2240,6 +2257,7 @@
             this.colorname_13.isMaxLengthErr = false;
             this.colorname_13.IsNumber = true;
             this.colorname_13.IsShop = false;
+            this.colorname_13.IsTimemmss = false;
             this.colorname_13.Length = 20;
             this.colorname_13.Location = new System.Drawing.Point(1065, 0);
             this.colorname_13.MaxLength = 20;
@@ -2286,6 +2304,7 @@
             this.colcd_13.isMaxLengthErr = false;
             this.colcd_13.IsNumber = true;
             this.colcd_13.IsShop = false;
+            this.colcd_13.IsTimemmss = false;
             this.colcd_13.Length = 10;
             this.colcd_13.Location = new System.Drawing.Point(979, 0);
             this.colcd_13.MaxLength = 10;
@@ -2362,6 +2381,7 @@
             this.salepriceout5_13.isMaxLengthErr = false;
             this.salepriceout5_13.IsNumber = true;
             this.salepriceout5_13.IsShop = false;
+            this.salepriceout5_13.IsTimemmss = false;
             this.salepriceout5_13.Length = 9;
             this.salepriceout5_13.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_13.MaxLength = 9;
@@ -2393,6 +2413,7 @@
             this.shouhin_13.isMaxLengthErr = false;
             this.shouhin_13.IsNumber = true;
             this.shouhin_13.IsShop = false;
+            this.shouhin_13.IsTimemmss = false;
             this.shouhin_13.Length = 80;
             this.shouhin_13.Location = new System.Drawing.Point(479, 0);
             this.shouhin_13.MaxLength = 80;
@@ -2453,6 +2474,7 @@
             this.shiire_13.isMaxLengthErr = false;
             this.shiire_13.IsNumber = true;
             this.shiire_13.IsShop = false;
+            this.shiire_13.IsTimemmss = false;
             this.shiire_13.Length = 9;
             this.shiire_13.Location = new System.Drawing.Point(28, 19);
             this.shiire_13.MaxLength = 9;
@@ -2514,6 +2536,7 @@
             this.sizecd_13.isMaxLengthErr = false;
             this.sizecd_13.IsNumber = true;
             this.sizecd_13.IsShop = false;
+            this.sizecd_13.IsTimemmss = false;
             this.sizecd_13.Length = 10;
             this.sizecd_13.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_13.MaxLength = 10;
@@ -2558,6 +2581,7 @@
             this.hyoteidatem_13.isMaxLengthErr = false;
             this.hyoteidatem_13.IsNumber = true;
             this.hyoteidatem_13.IsShop = false;
+            this.hyoteidatem_13.IsTimemmss = false;
             this.hyoteidatem_13.Length = 100;
             this.hyoteidatem_13.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_13.MaxLength = 100;
@@ -2589,6 +2613,7 @@
             this.sizeName_13.isMaxLengthErr = false;
             this.sizeName_13.IsNumber = true;
             this.sizeName_13.IsShop = false;
+            this.sizeName_13.IsTimemmss = false;
             this.sizeName_13.Length = 20;
             this.sizeName_13.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_13.MaxLength = 20;
@@ -2620,6 +2645,7 @@
             this.salepriceout4_13.isMaxLengthErr = false;
             this.salepriceout4_13.IsNumber = true;
             this.salepriceout4_13.IsShop = false;
+            this.salepriceout4_13.IsTimemmss = false;
             this.salepriceout4_13.Length = 9;
             this.salepriceout4_13.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_13.MaxLength = 9;
@@ -2651,6 +2677,7 @@
             this.salepriceout3_13.isMaxLengthErr = false;
             this.salepriceout3_13.IsNumber = true;
             this.salepriceout3_13.IsShop = false;
+            this.salepriceout3_13.IsTimemmss = false;
             this.salepriceout3_13.Length = 9;
             this.salepriceout3_13.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_13.MaxLength = 9;
@@ -2682,6 +2709,7 @@
             this.salepriceout2_13.isMaxLengthErr = false;
             this.salepriceout2_13.IsNumber = true;
             this.salepriceout2_13.IsShop = false;
+            this.salepriceout2_13.IsTimemmss = false;
             this.salepriceout2_13.Length = 9;
             this.salepriceout2_13.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_13.MaxLength = 9;
@@ -2713,6 +2741,7 @@
             this.salepriceout1_13.isMaxLengthErr = false;
             this.salepriceout1_13.IsNumber = true;
             this.salepriceout1_13.IsShop = false;
+            this.salepriceout1_13.IsTimemmss = false;
             this.salepriceout1_13.Length = 9;
             this.salepriceout1_13.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_13.MaxLength = 9;
@@ -2744,6 +2773,7 @@
             this.salepriceout_13.isMaxLengthErr = false;
             this.salepriceout_13.IsNumber = true;
             this.salepriceout_13.IsShop = false;
+            this.salepriceout_13.IsTimemmss = false;
             this.salepriceout_13.Length = 9;
             this.salepriceout_13.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_13.MaxLength = 9;
@@ -2775,6 +2805,7 @@
             this.sku_13.isMaxLengthErr = false;
             this.sku_13.IsNumber = true;
             this.sku_13.IsShop = false;
+            this.sku_13.IsTimemmss = false;
             this.sku_13.Length = 30;
             this.sku_13.Location = new System.Drawing.Point(269, 0);
             this.sku_13.MaxLength = 30;
@@ -2818,6 +2849,7 @@
             this.joutai_13.isMaxLengthErr = false;
             this.joutai_13.IsNumber = true;
             this.joutai_13.IsShop = false;
+            this.joutai_13.IsTimemmss = false;
             this.joutai_13.Length = 9;
             this.joutai_13.Location = new System.Drawing.Point(138, 19);
             this.joutai_13.MaxLength = 9;
@@ -2848,6 +2880,7 @@
             this.remark_13.isMaxLengthErr = false;
             this.remark_13.IsNumber = true;
             this.remark_13.IsShop = false;
+            this.remark_13.IsTimemmss = false;
             this.remark_13.Length = 500;
             this.remark_13.Location = new System.Drawing.Point(1165, 19);
             this.remark_13.MaxLength = 500;
@@ -2953,6 +2986,7 @@
             this.colorname_12.isMaxLengthErr = false;
             this.colorname_12.IsNumber = true;
             this.colorname_12.IsShop = false;
+            this.colorname_12.IsTimemmss = false;
             this.colorname_12.Length = 20;
             this.colorname_12.Location = new System.Drawing.Point(1065, 0);
             this.colorname_12.MaxLength = 20;
@@ -2999,6 +3033,7 @@
             this.colcd_12.isMaxLengthErr = false;
             this.colcd_12.IsNumber = true;
             this.colcd_12.IsShop = false;
+            this.colcd_12.IsTimemmss = false;
             this.colcd_12.Length = 10;
             this.colcd_12.Location = new System.Drawing.Point(979, 0);
             this.colcd_12.MaxLength = 10;
@@ -3075,6 +3110,7 @@
             this.salepriceout5_12.isMaxLengthErr = false;
             this.salepriceout5_12.IsNumber = true;
             this.salepriceout5_12.IsShop = false;
+            this.salepriceout5_12.IsTimemmss = false;
             this.salepriceout5_12.Length = 9;
             this.salepriceout5_12.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_12.MaxLength = 9;
@@ -3106,6 +3142,7 @@
             this.shouhin_12.isMaxLengthErr = false;
             this.shouhin_12.IsNumber = true;
             this.shouhin_12.IsShop = false;
+            this.shouhin_12.IsTimemmss = false;
             this.shouhin_12.Length = 80;
             this.shouhin_12.Location = new System.Drawing.Point(479, 0);
             this.shouhin_12.MaxLength = 80;
@@ -3166,6 +3203,7 @@
             this.shiire_12.isMaxLengthErr = false;
             this.shiire_12.IsNumber = true;
             this.shiire_12.IsShop = false;
+            this.shiire_12.IsTimemmss = false;
             this.shiire_12.Length = 9;
             this.shiire_12.Location = new System.Drawing.Point(28, 19);
             this.shiire_12.MaxLength = 9;
@@ -3227,6 +3265,7 @@
             this.sizecd_12.isMaxLengthErr = false;
             this.sizecd_12.IsNumber = true;
             this.sizecd_12.IsShop = false;
+            this.sizecd_12.IsTimemmss = false;
             this.sizecd_12.Length = 10;
             this.sizecd_12.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_12.MaxLength = 10;
@@ -3271,6 +3310,7 @@
             this.hyoteidatem_12.isMaxLengthErr = false;
             this.hyoteidatem_12.IsNumber = true;
             this.hyoteidatem_12.IsShop = false;
+            this.hyoteidatem_12.IsTimemmss = false;
             this.hyoteidatem_12.Length = 100;
             this.hyoteidatem_12.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_12.MaxLength = 100;
@@ -3302,6 +3342,7 @@
             this.sizeName_12.isMaxLengthErr = false;
             this.sizeName_12.IsNumber = true;
             this.sizeName_12.IsShop = false;
+            this.sizeName_12.IsTimemmss = false;
             this.sizeName_12.Length = 20;
             this.sizeName_12.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_12.MaxLength = 20;
@@ -3333,6 +3374,7 @@
             this.salepriceout4_12.isMaxLengthErr = false;
             this.salepriceout4_12.IsNumber = true;
             this.salepriceout4_12.IsShop = false;
+            this.salepriceout4_12.IsTimemmss = false;
             this.salepriceout4_12.Length = 9;
             this.salepriceout4_12.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_12.MaxLength = 9;
@@ -3364,6 +3406,7 @@
             this.salepriceout3_12.isMaxLengthErr = false;
             this.salepriceout3_12.IsNumber = true;
             this.salepriceout3_12.IsShop = false;
+            this.salepriceout3_12.IsTimemmss = false;
             this.salepriceout3_12.Length = 9;
             this.salepriceout3_12.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_12.MaxLength = 9;
@@ -3395,6 +3438,7 @@
             this.salepriceout2_12.isMaxLengthErr = false;
             this.salepriceout2_12.IsNumber = true;
             this.salepriceout2_12.IsShop = false;
+            this.salepriceout2_12.IsTimemmss = false;
             this.salepriceout2_12.Length = 9;
             this.salepriceout2_12.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_12.MaxLength = 9;
@@ -3426,6 +3470,7 @@
             this.salepriceout1_12.isMaxLengthErr = false;
             this.salepriceout1_12.IsNumber = true;
             this.salepriceout1_12.IsShop = false;
+            this.salepriceout1_12.IsTimemmss = false;
             this.salepriceout1_12.Length = 9;
             this.salepriceout1_12.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_12.MaxLength = 9;
@@ -3457,6 +3502,7 @@
             this.salepriceout_12.isMaxLengthErr = false;
             this.salepriceout_12.IsNumber = true;
             this.salepriceout_12.IsShop = false;
+            this.salepriceout_12.IsTimemmss = false;
             this.salepriceout_12.Length = 9;
             this.salepriceout_12.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_12.MaxLength = 9;
@@ -3488,6 +3534,7 @@
             this.sku_12.isMaxLengthErr = false;
             this.sku_12.IsNumber = true;
             this.sku_12.IsShop = false;
+            this.sku_12.IsTimemmss = false;
             this.sku_12.Length = 30;
             this.sku_12.Location = new System.Drawing.Point(269, 0);
             this.sku_12.MaxLength = 30;
@@ -3531,6 +3578,7 @@
             this.joutai_12.isMaxLengthErr = false;
             this.joutai_12.IsNumber = true;
             this.joutai_12.IsShop = false;
+            this.joutai_12.IsTimemmss = false;
             this.joutai_12.Length = 9;
             this.joutai_12.Location = new System.Drawing.Point(138, 19);
             this.joutai_12.MaxLength = 9;
@@ -3561,6 +3609,7 @@
             this.remark_12.isMaxLengthErr = false;
             this.remark_12.IsNumber = true;
             this.remark_12.IsShop = false;
+            this.remark_12.IsTimemmss = false;
             this.remark_12.Length = 500;
             this.remark_12.Location = new System.Drawing.Point(1165, 19);
             this.remark_12.MaxLength = 500;
@@ -3666,6 +3715,7 @@
             this.colorname_11.isMaxLengthErr = false;
             this.colorname_11.IsNumber = true;
             this.colorname_11.IsShop = false;
+            this.colorname_11.IsTimemmss = false;
             this.colorname_11.Length = 20;
             this.colorname_11.Location = new System.Drawing.Point(1065, 0);
             this.colorname_11.MaxLength = 20;
@@ -3712,6 +3762,7 @@
             this.colcd_11.isMaxLengthErr = false;
             this.colcd_11.IsNumber = true;
             this.colcd_11.IsShop = false;
+            this.colcd_11.IsTimemmss = false;
             this.colcd_11.Length = 10;
             this.colcd_11.Location = new System.Drawing.Point(979, 0);
             this.colcd_11.MaxLength = 10;
@@ -3788,6 +3839,7 @@
             this.salepriceout5_11.isMaxLengthErr = false;
             this.salepriceout5_11.IsNumber = true;
             this.salepriceout5_11.IsShop = false;
+            this.salepriceout5_11.IsTimemmss = false;
             this.salepriceout5_11.Length = 9;
             this.salepriceout5_11.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_11.MaxLength = 9;
@@ -3819,6 +3871,7 @@
             this.shouhin_11.isMaxLengthErr = false;
             this.shouhin_11.IsNumber = true;
             this.shouhin_11.IsShop = false;
+            this.shouhin_11.IsTimemmss = false;
             this.shouhin_11.Length = 80;
             this.shouhin_11.Location = new System.Drawing.Point(479, 0);
             this.shouhin_11.MaxLength = 80;
@@ -3879,6 +3932,7 @@
             this.shiire_11.isMaxLengthErr = false;
             this.shiire_11.IsNumber = true;
             this.shiire_11.IsShop = false;
+            this.shiire_11.IsTimemmss = false;
             this.shiire_11.Length = 9;
             this.shiire_11.Location = new System.Drawing.Point(28, 19);
             this.shiire_11.MaxLength = 9;
@@ -3940,6 +3994,7 @@
             this.sizecd_11.isMaxLengthErr = false;
             this.sizecd_11.IsNumber = true;
             this.sizecd_11.IsShop = false;
+            this.sizecd_11.IsTimemmss = false;
             this.sizecd_11.Length = 10;
             this.sizecd_11.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_11.MaxLength = 10;
@@ -3984,6 +4039,7 @@
             this.hyoteidatem_11.isMaxLengthErr = false;
             this.hyoteidatem_11.IsNumber = true;
             this.hyoteidatem_11.IsShop = false;
+            this.hyoteidatem_11.IsTimemmss = false;
             this.hyoteidatem_11.Length = 100;
             this.hyoteidatem_11.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_11.MaxLength = 100;
@@ -4015,6 +4071,7 @@
             this.sizeName_11.isMaxLengthErr = false;
             this.sizeName_11.IsNumber = true;
             this.sizeName_11.IsShop = false;
+            this.sizeName_11.IsTimemmss = false;
             this.sizeName_11.Length = 20;
             this.sizeName_11.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_11.MaxLength = 20;
@@ -4046,6 +4103,7 @@
             this.salepriceout4_11.isMaxLengthErr = false;
             this.salepriceout4_11.IsNumber = true;
             this.salepriceout4_11.IsShop = false;
+            this.salepriceout4_11.IsTimemmss = false;
             this.salepriceout4_11.Length = 9;
             this.salepriceout4_11.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_11.MaxLength = 9;
@@ -4077,6 +4135,7 @@
             this.salepriceout3_11.isMaxLengthErr = false;
             this.salepriceout3_11.IsNumber = true;
             this.salepriceout3_11.IsShop = false;
+            this.salepriceout3_11.IsTimemmss = false;
             this.salepriceout3_11.Length = 9;
             this.salepriceout3_11.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_11.MaxLength = 9;
@@ -4108,6 +4167,7 @@
             this.salepriceout2_11.isMaxLengthErr = false;
             this.salepriceout2_11.IsNumber = true;
             this.salepriceout2_11.IsShop = false;
+            this.salepriceout2_11.IsTimemmss = false;
             this.salepriceout2_11.Length = 9;
             this.salepriceout2_11.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_11.MaxLength = 9;
@@ -4139,6 +4199,7 @@
             this.salepriceout1_11.isMaxLengthErr = false;
             this.salepriceout1_11.IsNumber = true;
             this.salepriceout1_11.IsShop = false;
+            this.salepriceout1_11.IsTimemmss = false;
             this.salepriceout1_11.Length = 9;
             this.salepriceout1_11.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_11.MaxLength = 9;
@@ -4170,6 +4231,7 @@
             this.salepriceout_11.isMaxLengthErr = false;
             this.salepriceout_11.IsNumber = true;
             this.salepriceout_11.IsShop = false;
+            this.salepriceout_11.IsTimemmss = false;
             this.salepriceout_11.Length = 9;
             this.salepriceout_11.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_11.MaxLength = 9;
@@ -4201,6 +4263,7 @@
             this.sku_11.isMaxLengthErr = false;
             this.sku_11.IsNumber = true;
             this.sku_11.IsShop = false;
+            this.sku_11.IsTimemmss = false;
             this.sku_11.Length = 30;
             this.sku_11.Location = new System.Drawing.Point(269, 0);
             this.sku_11.MaxLength = 30;
@@ -4244,6 +4307,7 @@
             this.joutai_11.isMaxLengthErr = false;
             this.joutai_11.IsNumber = true;
             this.joutai_11.IsShop = false;
+            this.joutai_11.IsTimemmss = false;
             this.joutai_11.Length = 9;
             this.joutai_11.Location = new System.Drawing.Point(138, 19);
             this.joutai_11.MaxLength = 9;
@@ -4274,6 +4338,7 @@
             this.remark_11.isMaxLengthErr = false;
             this.remark_11.IsNumber = true;
             this.remark_11.IsShop = false;
+            this.remark_11.IsTimemmss = false;
             this.remark_11.Length = 500;
             this.remark_11.Location = new System.Drawing.Point(1165, 19);
             this.remark_11.MaxLength = 500;
@@ -4379,6 +4444,7 @@
             this.colorname_10.isMaxLengthErr = false;
             this.colorname_10.IsNumber = true;
             this.colorname_10.IsShop = false;
+            this.colorname_10.IsTimemmss = false;
             this.colorname_10.Length = 20;
             this.colorname_10.Location = new System.Drawing.Point(1065, 0);
             this.colorname_10.MaxLength = 20;
@@ -4425,6 +4491,7 @@
             this.colcd_10.isMaxLengthErr = false;
             this.colcd_10.IsNumber = true;
             this.colcd_10.IsShop = false;
+            this.colcd_10.IsTimemmss = false;
             this.colcd_10.Length = 10;
             this.colcd_10.Location = new System.Drawing.Point(979, 0);
             this.colcd_10.MaxLength = 10;
@@ -4501,6 +4568,7 @@
             this.salepriceout5_10.isMaxLengthErr = false;
             this.salepriceout5_10.IsNumber = true;
             this.salepriceout5_10.IsShop = false;
+            this.salepriceout5_10.IsTimemmss = false;
             this.salepriceout5_10.Length = 9;
             this.salepriceout5_10.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_10.MaxLength = 9;
@@ -4532,6 +4600,7 @@
             this.shouhin_10.isMaxLengthErr = false;
             this.shouhin_10.IsNumber = true;
             this.shouhin_10.IsShop = false;
+            this.shouhin_10.IsTimemmss = false;
             this.shouhin_10.Length = 80;
             this.shouhin_10.Location = new System.Drawing.Point(479, 0);
             this.shouhin_10.MaxLength = 80;
@@ -4592,6 +4661,7 @@
             this.shiire_10.isMaxLengthErr = false;
             this.shiire_10.IsNumber = true;
             this.shiire_10.IsShop = false;
+            this.shiire_10.IsTimemmss = false;
             this.shiire_10.Length = 9;
             this.shiire_10.Location = new System.Drawing.Point(28, 19);
             this.shiire_10.MaxLength = 9;
@@ -4653,6 +4723,7 @@
             this.sizecd_10.isMaxLengthErr = false;
             this.sizecd_10.IsNumber = true;
             this.sizecd_10.IsShop = false;
+            this.sizecd_10.IsTimemmss = false;
             this.sizecd_10.Length = 10;
             this.sizecd_10.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_10.MaxLength = 10;
@@ -4697,6 +4768,7 @@
             this.hyoteidatem_10.isMaxLengthErr = false;
             this.hyoteidatem_10.IsNumber = true;
             this.hyoteidatem_10.IsShop = false;
+            this.hyoteidatem_10.IsTimemmss = false;
             this.hyoteidatem_10.Length = 100;
             this.hyoteidatem_10.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_10.MaxLength = 100;
@@ -4728,6 +4800,7 @@
             this.sizeName_10.isMaxLengthErr = false;
             this.sizeName_10.IsNumber = true;
             this.sizeName_10.IsShop = false;
+            this.sizeName_10.IsTimemmss = false;
             this.sizeName_10.Length = 20;
             this.sizeName_10.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_10.MaxLength = 20;
@@ -4759,6 +4832,7 @@
             this.salepriceout4_10.isMaxLengthErr = false;
             this.salepriceout4_10.IsNumber = true;
             this.salepriceout4_10.IsShop = false;
+            this.salepriceout4_10.IsTimemmss = false;
             this.salepriceout4_10.Length = 9;
             this.salepriceout4_10.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_10.MaxLength = 9;
@@ -4790,6 +4864,7 @@
             this.salepriceout3_10.isMaxLengthErr = false;
             this.salepriceout3_10.IsNumber = true;
             this.salepriceout3_10.IsShop = false;
+            this.salepriceout3_10.IsTimemmss = false;
             this.salepriceout3_10.Length = 9;
             this.salepriceout3_10.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_10.MaxLength = 9;
@@ -4821,6 +4896,7 @@
             this.salepriceout2_10.isMaxLengthErr = false;
             this.salepriceout2_10.IsNumber = true;
             this.salepriceout2_10.IsShop = false;
+            this.salepriceout2_10.IsTimemmss = false;
             this.salepriceout2_10.Length = 9;
             this.salepriceout2_10.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_10.MaxLength = 9;
@@ -4852,6 +4928,7 @@
             this.salepriceout1_10.isMaxLengthErr = false;
             this.salepriceout1_10.IsNumber = true;
             this.salepriceout1_10.IsShop = false;
+            this.salepriceout1_10.IsTimemmss = false;
             this.salepriceout1_10.Length = 9;
             this.salepriceout1_10.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_10.MaxLength = 9;
@@ -4883,6 +4960,7 @@
             this.salepriceout_10.isMaxLengthErr = false;
             this.salepriceout_10.IsNumber = true;
             this.salepriceout_10.IsShop = false;
+            this.salepriceout_10.IsTimemmss = false;
             this.salepriceout_10.Length = 9;
             this.salepriceout_10.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_10.MaxLength = 9;
@@ -4914,6 +4992,7 @@
             this.sku_10.isMaxLengthErr = false;
             this.sku_10.IsNumber = true;
             this.sku_10.IsShop = false;
+            this.sku_10.IsTimemmss = false;
             this.sku_10.Length = 30;
             this.sku_10.Location = new System.Drawing.Point(269, 0);
             this.sku_10.MaxLength = 30;
@@ -4957,6 +5036,7 @@
             this.joutai_10.isMaxLengthErr = false;
             this.joutai_10.IsNumber = true;
             this.joutai_10.IsShop = false;
+            this.joutai_10.IsTimemmss = false;
             this.joutai_10.Length = 9;
             this.joutai_10.Location = new System.Drawing.Point(138, 19);
             this.joutai_10.MaxLength = 9;
@@ -4987,6 +5067,7 @@
             this.remark_10.isMaxLengthErr = false;
             this.remark_10.IsNumber = true;
             this.remark_10.IsShop = false;
+            this.remark_10.IsTimemmss = false;
             this.remark_10.Length = 500;
             this.remark_10.Location = new System.Drawing.Point(1165, 19);
             this.remark_10.MaxLength = 500;
@@ -5100,6 +5181,7 @@
             this.colorname_9.isMaxLengthErr = false;
             this.colorname_9.IsNumber = true;
             this.colorname_9.IsShop = false;
+            this.colorname_9.IsTimemmss = false;
             this.colorname_9.Length = 20;
             this.colorname_9.Location = new System.Drawing.Point(1065, 0);
             this.colorname_9.MaxLength = 20;
@@ -5130,6 +5212,7 @@
             this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
+            this.ckM_TextBox3.IsTimemmss = false;
             this.ckM_TextBox3.Length = 9;
             this.ckM_TextBox3.Location = new System.Drawing.Point(1025, 105);
             this.ckM_TextBox3.MaxLength = 9;
@@ -5192,6 +5275,7 @@
             this.colcd_9.isMaxLengthErr = false;
             this.colcd_9.IsNumber = true;
             this.colcd_9.IsShop = false;
+            this.colcd_9.IsTimemmss = false;
             this.colcd_9.Length = 10;
             this.colcd_9.Location = new System.Drawing.Point(979, 0);
             this.colcd_9.MaxLength = 10;
@@ -5222,6 +5306,7 @@
             this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
+            this.ckM_TextBox6.IsTimemmss = false;
             this.ckM_TextBox6.Length = 9;
             this.ckM_TextBox6.Location = new System.Drawing.Point(939, 105);
             this.ckM_TextBox6.MaxLength = 9;
@@ -5312,6 +5397,7 @@
             this.salepriceout5_9.isMaxLengthErr = false;
             this.salepriceout5_9.IsNumber = true;
             this.salepriceout5_9.IsShop = false;
+            this.salepriceout5_9.IsTimemmss = false;
             this.salepriceout5_9.Length = 9;
             this.salepriceout5_9.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_9.MaxLength = 9;
@@ -5342,6 +5428,7 @@
             this.ckM_TextBox9.isMaxLengthErr = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
+            this.ckM_TextBox9.IsTimemmss = false;
             this.ckM_TextBox9.Length = 20;
             this.ckM_TextBox9.Location = new System.Drawing.Point(698, 124);
             this.ckM_TextBox9.MaxLength = 20;
@@ -5373,6 +5460,7 @@
             this.shouhin_9.isMaxLengthErr = false;
             this.shouhin_9.IsNumber = true;
             this.shouhin_9.IsShop = false;
+            this.shouhin_9.IsTimemmss = false;
             this.shouhin_9.Length = 80;
             this.shouhin_9.Location = new System.Drawing.Point(479, 0);
             this.shouhin_9.MaxLength = 80;
@@ -5433,6 +5521,7 @@
             this.ckM_TextBox12.isMaxLengthErr = false;
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
+            this.ckM_TextBox12.IsTimemmss = false;
             this.ckM_TextBox12.Length = 9;
             this.ckM_TextBox12.Location = new System.Drawing.Point(439, 105);
             this.ckM_TextBox12.MaxLength = 9;
@@ -5569,6 +5658,7 @@
             this.shiire_9.isMaxLengthErr = false;
             this.shiire_9.IsNumber = true;
             this.shiire_9.IsShop = false;
+            this.shiire_9.IsTimemmss = false;
             this.shiire_9.Length = 9;
             this.shiire_9.Location = new System.Drawing.Point(28, 19);
             this.shiire_9.MaxLength = 9;
@@ -5600,6 +5690,7 @@
             this.sizecd_9.isMaxLengthErr = false;
             this.sizecd_9.IsNumber = true;
             this.sizecd_9.IsShop = false;
+            this.sizecd_9.IsTimemmss = false;
             this.sizecd_9.Length = 10;
             this.sizecd_9.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_9.MaxLength = 10;
@@ -5644,6 +5735,7 @@
             this.hyoteidatem_9.isMaxLengthErr = false;
             this.hyoteidatem_9.IsNumber = true;
             this.hyoteidatem_9.IsShop = false;
+            this.hyoteidatem_9.IsTimemmss = false;
             this.hyoteidatem_9.Length = 100;
             this.hyoteidatem_9.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_9.MaxLength = 100;
@@ -5675,6 +5767,7 @@
             this.sizeName_9.isMaxLengthErr = false;
             this.sizeName_9.IsNumber = true;
             this.sizeName_9.IsShop = false;
+            this.sizeName_9.IsTimemmss = false;
             this.sizeName_9.Length = 20;
             this.sizeName_9.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_9.MaxLength = 20;
@@ -5706,6 +5799,7 @@
             this.salepriceout4_9.isMaxLengthErr = false;
             this.salepriceout4_9.IsNumber = true;
             this.salepriceout4_9.IsShop = false;
+            this.salepriceout4_9.IsTimemmss = false;
             this.salepriceout4_9.Length = 9;
             this.salepriceout4_9.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_9.MaxLength = 9;
@@ -5737,6 +5831,7 @@
             this.salepriceout3_9.isMaxLengthErr = false;
             this.salepriceout3_9.IsNumber = true;
             this.salepriceout3_9.IsShop = false;
+            this.salepriceout3_9.IsTimemmss = false;
             this.salepriceout3_9.Length = 9;
             this.salepriceout3_9.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_9.MaxLength = 9;
@@ -5768,6 +5863,7 @@
             this.salepriceout2_9.isMaxLengthErr = false;
             this.salepriceout2_9.IsNumber = true;
             this.salepriceout2_9.IsShop = false;
+            this.salepriceout2_9.IsTimemmss = false;
             this.salepriceout2_9.Length = 9;
             this.salepriceout2_9.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_9.MaxLength = 9;
@@ -5799,6 +5895,7 @@
             this.salepriceout1_9.isMaxLengthErr = false;
             this.salepriceout1_9.IsNumber = true;
             this.salepriceout1_9.IsShop = false;
+            this.salepriceout1_9.IsTimemmss = false;
             this.salepriceout1_9.Length = 9;
             this.salepriceout1_9.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_9.MaxLength = 9;
@@ -5830,6 +5927,7 @@
             this.salepriceout_9.isMaxLengthErr = false;
             this.salepriceout_9.IsNumber = true;
             this.salepriceout_9.IsShop = false;
+            this.salepriceout_9.IsTimemmss = false;
             this.salepriceout_9.Length = 9;
             this.salepriceout_9.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_9.MaxLength = 9;
@@ -5861,6 +5959,7 @@
             this.sku_9.isMaxLengthErr = false;
             this.sku_9.IsNumber = true;
             this.sku_9.IsShop = false;
+            this.sku_9.IsTimemmss = false;
             this.sku_9.Length = 30;
             this.sku_9.Location = new System.Drawing.Point(269, 0);
             this.sku_9.MaxLength = 30;
@@ -5904,6 +6003,7 @@
             this.joutai_9.isMaxLengthErr = false;
             this.joutai_9.IsNumber = true;
             this.joutai_9.IsShop = false;
+            this.joutai_9.IsTimemmss = false;
             this.joutai_9.Length = 9;
             this.joutai_9.Location = new System.Drawing.Point(138, 19);
             this.joutai_9.MaxLength = 9;
@@ -5934,6 +6034,7 @@
             this.remark_9.isMaxLengthErr = false;
             this.remark_9.IsNumber = true;
             this.remark_9.IsShop = false;
+            this.remark_9.IsTimemmss = false;
             this.remark_9.Length = 500;
             this.remark_9.Location = new System.Drawing.Point(1165, 19);
             this.remark_9.MaxLength = 500;
@@ -6039,6 +6140,7 @@
             this.colorname_8.isMaxLengthErr = false;
             this.colorname_8.IsNumber = true;
             this.colorname_8.IsShop = false;
+            this.colorname_8.IsTimemmss = false;
             this.colorname_8.Length = 20;
             this.colorname_8.Location = new System.Drawing.Point(1065, 0);
             this.colorname_8.MaxLength = 20;
@@ -6085,6 +6187,7 @@
             this.colcd_8.isMaxLengthErr = false;
             this.colcd_8.IsNumber = true;
             this.colcd_8.IsShop = false;
+            this.colcd_8.IsTimemmss = false;
             this.colcd_8.Length = 10;
             this.colcd_8.Location = new System.Drawing.Point(979, 0);
             this.colcd_8.MaxLength = 10;
@@ -6161,6 +6264,7 @@
             this.salepriceout5_8.isMaxLengthErr = false;
             this.salepriceout5_8.IsNumber = true;
             this.salepriceout5_8.IsShop = false;
+            this.salepriceout5_8.IsTimemmss = false;
             this.salepriceout5_8.Length = 9;
             this.salepriceout5_8.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_8.MaxLength = 9;
@@ -6192,6 +6296,7 @@
             this.shouhin_8.isMaxLengthErr = false;
             this.shouhin_8.IsNumber = true;
             this.shouhin_8.IsShop = false;
+            this.shouhin_8.IsTimemmss = false;
             this.shouhin_8.Length = 80;
             this.shouhin_8.Location = new System.Drawing.Point(479, 0);
             this.shouhin_8.MaxLength = 80;
@@ -6252,6 +6357,7 @@
             this.shiire_8.isMaxLengthErr = false;
             this.shiire_8.IsNumber = true;
             this.shiire_8.IsShop = false;
+            this.shiire_8.IsTimemmss = false;
             this.shiire_8.Length = 9;
             this.shiire_8.Location = new System.Drawing.Point(28, 19);
             this.shiire_8.MaxLength = 9;
@@ -6313,6 +6419,7 @@
             this.sizecd_8.isMaxLengthErr = false;
             this.sizecd_8.IsNumber = true;
             this.sizecd_8.IsShop = false;
+            this.sizecd_8.IsTimemmss = false;
             this.sizecd_8.Length = 10;
             this.sizecd_8.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_8.MaxLength = 10;
@@ -6357,6 +6464,7 @@
             this.hyoteidatem_8.isMaxLengthErr = false;
             this.hyoteidatem_8.IsNumber = true;
             this.hyoteidatem_8.IsShop = false;
+            this.hyoteidatem_8.IsTimemmss = false;
             this.hyoteidatem_8.Length = 100;
             this.hyoteidatem_8.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_8.MaxLength = 100;
@@ -6388,6 +6496,7 @@
             this.sizeName_8.isMaxLengthErr = false;
             this.sizeName_8.IsNumber = true;
             this.sizeName_8.IsShop = false;
+            this.sizeName_8.IsTimemmss = false;
             this.sizeName_8.Length = 20;
             this.sizeName_8.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_8.MaxLength = 20;
@@ -6419,6 +6528,7 @@
             this.salepriceout4_8.isMaxLengthErr = false;
             this.salepriceout4_8.IsNumber = true;
             this.salepriceout4_8.IsShop = false;
+            this.salepriceout4_8.IsTimemmss = false;
             this.salepriceout4_8.Length = 9;
             this.salepriceout4_8.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_8.MaxLength = 9;
@@ -6450,6 +6560,7 @@
             this.salepriceout3_8.isMaxLengthErr = false;
             this.salepriceout3_8.IsNumber = true;
             this.salepriceout3_8.IsShop = false;
+            this.salepriceout3_8.IsTimemmss = false;
             this.salepriceout3_8.Length = 9;
             this.salepriceout3_8.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_8.MaxLength = 9;
@@ -6481,6 +6592,7 @@
             this.salepriceout2_8.isMaxLengthErr = false;
             this.salepriceout2_8.IsNumber = true;
             this.salepriceout2_8.IsShop = false;
+            this.salepriceout2_8.IsTimemmss = false;
             this.salepriceout2_8.Length = 9;
             this.salepriceout2_8.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_8.MaxLength = 9;
@@ -6512,6 +6624,7 @@
             this.salepriceout1_8.isMaxLengthErr = false;
             this.salepriceout1_8.IsNumber = true;
             this.salepriceout1_8.IsShop = false;
+            this.salepriceout1_8.IsTimemmss = false;
             this.salepriceout1_8.Length = 9;
             this.salepriceout1_8.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_8.MaxLength = 9;
@@ -6543,6 +6656,7 @@
             this.salepriceout_8.isMaxLengthErr = false;
             this.salepriceout_8.IsNumber = true;
             this.salepriceout_8.IsShop = false;
+            this.salepriceout_8.IsTimemmss = false;
             this.salepriceout_8.Length = 9;
             this.salepriceout_8.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_8.MaxLength = 9;
@@ -6574,6 +6688,7 @@
             this.sku_8.isMaxLengthErr = false;
             this.sku_8.IsNumber = true;
             this.sku_8.IsShop = false;
+            this.sku_8.IsTimemmss = false;
             this.sku_8.Length = 30;
             this.sku_8.Location = new System.Drawing.Point(269, 0);
             this.sku_8.MaxLength = 30;
@@ -6617,6 +6732,7 @@
             this.joutai_8.isMaxLengthErr = false;
             this.joutai_8.IsNumber = true;
             this.joutai_8.IsShop = false;
+            this.joutai_8.IsTimemmss = false;
             this.joutai_8.Length = 9;
             this.joutai_8.Location = new System.Drawing.Point(138, 19);
             this.joutai_8.MaxLength = 9;
@@ -6647,6 +6763,7 @@
             this.remark_8.isMaxLengthErr = false;
             this.remark_8.IsNumber = true;
             this.remark_8.IsShop = false;
+            this.remark_8.IsTimemmss = false;
             this.remark_8.Length = 500;
             this.remark_8.Location = new System.Drawing.Point(1165, 19);
             this.remark_8.MaxLength = 500;
@@ -6752,6 +6869,7 @@
             this.colorname_7.isMaxLengthErr = false;
             this.colorname_7.IsNumber = true;
             this.colorname_7.IsShop = false;
+            this.colorname_7.IsTimemmss = false;
             this.colorname_7.Length = 20;
             this.colorname_7.Location = new System.Drawing.Point(1065, 0);
             this.colorname_7.MaxLength = 20;
@@ -6798,6 +6916,7 @@
             this.colcd_7.isMaxLengthErr = false;
             this.colcd_7.IsNumber = true;
             this.colcd_7.IsShop = false;
+            this.colcd_7.IsTimemmss = false;
             this.colcd_7.Length = 10;
             this.colcd_7.Location = new System.Drawing.Point(979, 0);
             this.colcd_7.MaxLength = 10;
@@ -6874,6 +6993,7 @@
             this.salepriceout5_7.isMaxLengthErr = false;
             this.salepriceout5_7.IsNumber = true;
             this.salepriceout5_7.IsShop = false;
+            this.salepriceout5_7.IsTimemmss = false;
             this.salepriceout5_7.Length = 9;
             this.salepriceout5_7.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_7.MaxLength = 9;
@@ -6905,6 +7025,7 @@
             this.shouhin_7.isMaxLengthErr = false;
             this.shouhin_7.IsNumber = true;
             this.shouhin_7.IsShop = false;
+            this.shouhin_7.IsTimemmss = false;
             this.shouhin_7.Length = 80;
             this.shouhin_7.Location = new System.Drawing.Point(479, 0);
             this.shouhin_7.MaxLength = 80;
@@ -6965,6 +7086,7 @@
             this.shiire_7.isMaxLengthErr = false;
             this.shiire_7.IsNumber = true;
             this.shiire_7.IsShop = false;
+            this.shiire_7.IsTimemmss = false;
             this.shiire_7.Length = 9;
             this.shiire_7.Location = new System.Drawing.Point(28, 19);
             this.shiire_7.MaxLength = 9;
@@ -7026,6 +7148,7 @@
             this.sizecd_7.isMaxLengthErr = false;
             this.sizecd_7.IsNumber = true;
             this.sizecd_7.IsShop = false;
+            this.sizecd_7.IsTimemmss = false;
             this.sizecd_7.Length = 10;
             this.sizecd_7.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_7.MaxLength = 10;
@@ -7070,6 +7193,7 @@
             this.hyoteidatem_7.isMaxLengthErr = false;
             this.hyoteidatem_7.IsNumber = true;
             this.hyoteidatem_7.IsShop = false;
+            this.hyoteidatem_7.IsTimemmss = false;
             this.hyoteidatem_7.Length = 100;
             this.hyoteidatem_7.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_7.MaxLength = 100;
@@ -7101,6 +7225,7 @@
             this.sizeName_7.isMaxLengthErr = false;
             this.sizeName_7.IsNumber = true;
             this.sizeName_7.IsShop = false;
+            this.sizeName_7.IsTimemmss = false;
             this.sizeName_7.Length = 20;
             this.sizeName_7.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_7.MaxLength = 20;
@@ -7132,6 +7257,7 @@
             this.salepriceout4_7.isMaxLengthErr = false;
             this.salepriceout4_7.IsNumber = true;
             this.salepriceout4_7.IsShop = false;
+            this.salepriceout4_7.IsTimemmss = false;
             this.salepriceout4_7.Length = 9;
             this.salepriceout4_7.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_7.MaxLength = 9;
@@ -7163,6 +7289,7 @@
             this.salepriceout3_7.isMaxLengthErr = false;
             this.salepriceout3_7.IsNumber = true;
             this.salepriceout3_7.IsShop = false;
+            this.salepriceout3_7.IsTimemmss = false;
             this.salepriceout3_7.Length = 9;
             this.salepriceout3_7.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_7.MaxLength = 9;
@@ -7194,6 +7321,7 @@
             this.salepriceout2_7.isMaxLengthErr = false;
             this.salepriceout2_7.IsNumber = true;
             this.salepriceout2_7.IsShop = false;
+            this.salepriceout2_7.IsTimemmss = false;
             this.salepriceout2_7.Length = 9;
             this.salepriceout2_7.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_7.MaxLength = 9;
@@ -7225,6 +7353,7 @@
             this.salepriceout1_7.isMaxLengthErr = false;
             this.salepriceout1_7.IsNumber = true;
             this.salepriceout1_7.IsShop = false;
+            this.salepriceout1_7.IsTimemmss = false;
             this.salepriceout1_7.Length = 9;
             this.salepriceout1_7.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_7.MaxLength = 9;
@@ -7256,6 +7385,7 @@
             this.salepriceout_7.isMaxLengthErr = false;
             this.salepriceout_7.IsNumber = true;
             this.salepriceout_7.IsShop = false;
+            this.salepriceout_7.IsTimemmss = false;
             this.salepriceout_7.Length = 9;
             this.salepriceout_7.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_7.MaxLength = 9;
@@ -7287,6 +7417,7 @@
             this.sku_7.isMaxLengthErr = false;
             this.sku_7.IsNumber = true;
             this.sku_7.IsShop = false;
+            this.sku_7.IsTimemmss = false;
             this.sku_7.Length = 30;
             this.sku_7.Location = new System.Drawing.Point(269, 0);
             this.sku_7.MaxLength = 30;
@@ -7330,6 +7461,7 @@
             this.joutai_7.isMaxLengthErr = false;
             this.joutai_7.IsNumber = true;
             this.joutai_7.IsShop = false;
+            this.joutai_7.IsTimemmss = false;
             this.joutai_7.Length = 9;
             this.joutai_7.Location = new System.Drawing.Point(138, 19);
             this.joutai_7.MaxLength = 9;
@@ -7360,6 +7492,7 @@
             this.remark_7.isMaxLengthErr = false;
             this.remark_7.IsNumber = true;
             this.remark_7.IsShop = false;
+            this.remark_7.IsTimemmss = false;
             this.remark_7.Length = 500;
             this.remark_7.Location = new System.Drawing.Point(1165, 19);
             this.remark_7.MaxLength = 500;
@@ -7465,6 +7598,7 @@
             this.colorname_6.isMaxLengthErr = false;
             this.colorname_6.IsNumber = true;
             this.colorname_6.IsShop = false;
+            this.colorname_6.IsTimemmss = false;
             this.colorname_6.Length = 20;
             this.colorname_6.Location = new System.Drawing.Point(1065, 0);
             this.colorname_6.MaxLength = 20;
@@ -7511,6 +7645,7 @@
             this.colcd_6.isMaxLengthErr = false;
             this.colcd_6.IsNumber = true;
             this.colcd_6.IsShop = false;
+            this.colcd_6.IsTimemmss = false;
             this.colcd_6.Length = 10;
             this.colcd_6.Location = new System.Drawing.Point(979, 0);
             this.colcd_6.MaxLength = 10;
@@ -7587,6 +7722,7 @@
             this.salepriceout5_6.isMaxLengthErr = false;
             this.salepriceout5_6.IsNumber = true;
             this.salepriceout5_6.IsShop = false;
+            this.salepriceout5_6.IsTimemmss = false;
             this.salepriceout5_6.Length = 9;
             this.salepriceout5_6.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_6.MaxLength = 9;
@@ -7618,6 +7754,7 @@
             this.shouhin_6.isMaxLengthErr = false;
             this.shouhin_6.IsNumber = true;
             this.shouhin_6.IsShop = false;
+            this.shouhin_6.IsTimemmss = false;
             this.shouhin_6.Length = 80;
             this.shouhin_6.Location = new System.Drawing.Point(479, 0);
             this.shouhin_6.MaxLength = 80;
@@ -7678,6 +7815,7 @@
             this.shiire_6.isMaxLengthErr = false;
             this.shiire_6.IsNumber = true;
             this.shiire_6.IsShop = false;
+            this.shiire_6.IsTimemmss = false;
             this.shiire_6.Length = 9;
             this.shiire_6.Location = new System.Drawing.Point(28, 19);
             this.shiire_6.MaxLength = 9;
@@ -7739,6 +7877,7 @@
             this.sizecd_6.isMaxLengthErr = false;
             this.sizecd_6.IsNumber = true;
             this.sizecd_6.IsShop = false;
+            this.sizecd_6.IsTimemmss = false;
             this.sizecd_6.Length = 10;
             this.sizecd_6.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_6.MaxLength = 10;
@@ -7783,6 +7922,7 @@
             this.hyoteidatem_6.isMaxLengthErr = false;
             this.hyoteidatem_6.IsNumber = true;
             this.hyoteidatem_6.IsShop = false;
+            this.hyoteidatem_6.IsTimemmss = false;
             this.hyoteidatem_6.Length = 100;
             this.hyoteidatem_6.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_6.MaxLength = 100;
@@ -7814,6 +7954,7 @@
             this.sizeName_6.isMaxLengthErr = false;
             this.sizeName_6.IsNumber = true;
             this.sizeName_6.IsShop = false;
+            this.sizeName_6.IsTimemmss = false;
             this.sizeName_6.Length = 20;
             this.sizeName_6.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_6.MaxLength = 20;
@@ -7845,6 +7986,7 @@
             this.salepriceout4_6.isMaxLengthErr = false;
             this.salepriceout4_6.IsNumber = true;
             this.salepriceout4_6.IsShop = false;
+            this.salepriceout4_6.IsTimemmss = false;
             this.salepriceout4_6.Length = 9;
             this.salepriceout4_6.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_6.MaxLength = 9;
@@ -7876,6 +8018,7 @@
             this.salepriceout3_6.isMaxLengthErr = false;
             this.salepriceout3_6.IsNumber = true;
             this.salepriceout3_6.IsShop = false;
+            this.salepriceout3_6.IsTimemmss = false;
             this.salepriceout3_6.Length = 9;
             this.salepriceout3_6.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_6.MaxLength = 9;
@@ -7907,6 +8050,7 @@
             this.salepriceout2_6.isMaxLengthErr = false;
             this.salepriceout2_6.IsNumber = true;
             this.salepriceout2_6.IsShop = false;
+            this.salepriceout2_6.IsTimemmss = false;
             this.salepriceout2_6.Length = 9;
             this.salepriceout2_6.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_6.MaxLength = 9;
@@ -7938,6 +8082,7 @@
             this.salepriceout1_6.isMaxLengthErr = false;
             this.salepriceout1_6.IsNumber = true;
             this.salepriceout1_6.IsShop = false;
+            this.salepriceout1_6.IsTimemmss = false;
             this.salepriceout1_6.Length = 9;
             this.salepriceout1_6.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_6.MaxLength = 9;
@@ -7969,6 +8114,7 @@
             this.salepriceout_6.isMaxLengthErr = false;
             this.salepriceout_6.IsNumber = true;
             this.salepriceout_6.IsShop = false;
+            this.salepriceout_6.IsTimemmss = false;
             this.salepriceout_6.Length = 9;
             this.salepriceout_6.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_6.MaxLength = 9;
@@ -8000,6 +8146,7 @@
             this.sku_6.isMaxLengthErr = false;
             this.sku_6.IsNumber = true;
             this.sku_6.IsShop = false;
+            this.sku_6.IsTimemmss = false;
             this.sku_6.Length = 30;
             this.sku_6.Location = new System.Drawing.Point(269, 0);
             this.sku_6.MaxLength = 30;
@@ -8043,6 +8190,7 @@
             this.joutai_6.isMaxLengthErr = false;
             this.joutai_6.IsNumber = true;
             this.joutai_6.IsShop = false;
+            this.joutai_6.IsTimemmss = false;
             this.joutai_6.Length = 9;
             this.joutai_6.Location = new System.Drawing.Point(138, 19);
             this.joutai_6.MaxLength = 9;
@@ -8073,6 +8221,7 @@
             this.remark_6.isMaxLengthErr = false;
             this.remark_6.IsNumber = true;
             this.remark_6.IsShop = false;
+            this.remark_6.IsTimemmss = false;
             this.remark_6.Length = 500;
             this.remark_6.Location = new System.Drawing.Point(1165, 19);
             this.remark_6.MaxLength = 500;
@@ -8178,6 +8327,7 @@
             this.colorname_5.isMaxLengthErr = false;
             this.colorname_5.IsNumber = true;
             this.colorname_5.IsShop = false;
+            this.colorname_5.IsTimemmss = false;
             this.colorname_5.Length = 20;
             this.colorname_5.Location = new System.Drawing.Point(1065, 0);
             this.colorname_5.MaxLength = 20;
@@ -8224,6 +8374,7 @@
             this.colcd_5.isMaxLengthErr = false;
             this.colcd_5.IsNumber = true;
             this.colcd_5.IsShop = false;
+            this.colcd_5.IsTimemmss = false;
             this.colcd_5.Length = 10;
             this.colcd_5.Location = new System.Drawing.Point(979, 0);
             this.colcd_5.MaxLength = 10;
@@ -8300,6 +8451,7 @@
             this.salepriceout5_5.isMaxLengthErr = false;
             this.salepriceout5_5.IsNumber = true;
             this.salepriceout5_5.IsShop = false;
+            this.salepriceout5_5.IsTimemmss = false;
             this.salepriceout5_5.Length = 9;
             this.salepriceout5_5.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_5.MaxLength = 9;
@@ -8331,6 +8483,7 @@
             this.shouhin_5.isMaxLengthErr = false;
             this.shouhin_5.IsNumber = true;
             this.shouhin_5.IsShop = false;
+            this.shouhin_5.IsTimemmss = false;
             this.shouhin_5.Length = 80;
             this.shouhin_5.Location = new System.Drawing.Point(479, 0);
             this.shouhin_5.MaxLength = 80;
@@ -8391,6 +8544,7 @@
             this.shiire_5.isMaxLengthErr = false;
             this.shiire_5.IsNumber = true;
             this.shiire_5.IsShop = false;
+            this.shiire_5.IsTimemmss = false;
             this.shiire_5.Length = 9;
             this.shiire_5.Location = new System.Drawing.Point(28, 19);
             this.shiire_5.MaxLength = 9;
@@ -8452,6 +8606,7 @@
             this.sizecd_5.isMaxLengthErr = false;
             this.sizecd_5.IsNumber = true;
             this.sizecd_5.IsShop = false;
+            this.sizecd_5.IsTimemmss = false;
             this.sizecd_5.Length = 10;
             this.sizecd_5.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_5.MaxLength = 10;
@@ -8496,6 +8651,7 @@
             this.hyoteidatem_5.isMaxLengthErr = false;
             this.hyoteidatem_5.IsNumber = true;
             this.hyoteidatem_5.IsShop = false;
+            this.hyoteidatem_5.IsTimemmss = false;
             this.hyoteidatem_5.Length = 100;
             this.hyoteidatem_5.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_5.MaxLength = 100;
@@ -8527,6 +8683,7 @@
             this.sizeName_5.isMaxLengthErr = false;
             this.sizeName_5.IsNumber = true;
             this.sizeName_5.IsShop = false;
+            this.sizeName_5.IsTimemmss = false;
             this.sizeName_5.Length = 20;
             this.sizeName_5.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_5.MaxLength = 20;
@@ -8558,6 +8715,7 @@
             this.salepriceout4_5.isMaxLengthErr = false;
             this.salepriceout4_5.IsNumber = true;
             this.salepriceout4_5.IsShop = false;
+            this.salepriceout4_5.IsTimemmss = false;
             this.salepriceout4_5.Length = 9;
             this.salepriceout4_5.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_5.MaxLength = 9;
@@ -8589,6 +8747,7 @@
             this.salepriceout3_5.isMaxLengthErr = false;
             this.salepriceout3_5.IsNumber = true;
             this.salepriceout3_5.IsShop = false;
+            this.salepriceout3_5.IsTimemmss = false;
             this.salepriceout3_5.Length = 9;
             this.salepriceout3_5.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_5.MaxLength = 9;
@@ -8620,6 +8779,7 @@
             this.salepriceout2_5.isMaxLengthErr = false;
             this.salepriceout2_5.IsNumber = true;
             this.salepriceout2_5.IsShop = false;
+            this.salepriceout2_5.IsTimemmss = false;
             this.salepriceout2_5.Length = 9;
             this.salepriceout2_5.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_5.MaxLength = 9;
@@ -8651,6 +8811,7 @@
             this.salepriceout1_5.isMaxLengthErr = false;
             this.salepriceout1_5.IsNumber = true;
             this.salepriceout1_5.IsShop = false;
+            this.salepriceout1_5.IsTimemmss = false;
             this.salepriceout1_5.Length = 9;
             this.salepriceout1_5.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_5.MaxLength = 9;
@@ -8682,6 +8843,7 @@
             this.salepriceout_5.isMaxLengthErr = false;
             this.salepriceout_5.IsNumber = true;
             this.salepriceout_5.IsShop = false;
+            this.salepriceout_5.IsTimemmss = false;
             this.salepriceout_5.Length = 9;
             this.salepriceout_5.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_5.MaxLength = 9;
@@ -8713,6 +8875,7 @@
             this.sku_5.isMaxLengthErr = false;
             this.sku_5.IsNumber = true;
             this.sku_5.IsShop = false;
+            this.sku_5.IsTimemmss = false;
             this.sku_5.Length = 30;
             this.sku_5.Location = new System.Drawing.Point(269, 0);
             this.sku_5.MaxLength = 30;
@@ -8756,6 +8919,7 @@
             this.joutai_5.isMaxLengthErr = false;
             this.joutai_5.IsNumber = true;
             this.joutai_5.IsShop = false;
+            this.joutai_5.IsTimemmss = false;
             this.joutai_5.Length = 9;
             this.joutai_5.Location = new System.Drawing.Point(138, 19);
             this.joutai_5.MaxLength = 9;
@@ -8786,6 +8950,7 @@
             this.remark_5.isMaxLengthErr = false;
             this.remark_5.IsNumber = true;
             this.remark_5.IsShop = false;
+            this.remark_5.IsTimemmss = false;
             this.remark_5.Length = 500;
             this.remark_5.Location = new System.Drawing.Point(1165, 19);
             this.remark_5.MaxLength = 500;
@@ -8891,6 +9056,7 @@
             this.colorname_4.isMaxLengthErr = false;
             this.colorname_4.IsNumber = true;
             this.colorname_4.IsShop = false;
+            this.colorname_4.IsTimemmss = false;
             this.colorname_4.Length = 20;
             this.colorname_4.Location = new System.Drawing.Point(1065, 0);
             this.colorname_4.MaxLength = 20;
@@ -8937,6 +9103,7 @@
             this.colcd_4.isMaxLengthErr = false;
             this.colcd_4.IsNumber = true;
             this.colcd_4.IsShop = false;
+            this.colcd_4.IsTimemmss = false;
             this.colcd_4.Length = 10;
             this.colcd_4.Location = new System.Drawing.Point(979, 0);
             this.colcd_4.MaxLength = 10;
@@ -9013,6 +9180,7 @@
             this.salepriceout5_4.isMaxLengthErr = false;
             this.salepriceout5_4.IsNumber = true;
             this.salepriceout5_4.IsShop = false;
+            this.salepriceout5_4.IsTimemmss = false;
             this.salepriceout5_4.Length = 9;
             this.salepriceout5_4.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_4.MaxLength = 9;
@@ -9044,6 +9212,7 @@
             this.shouhin_4.isMaxLengthErr = false;
             this.shouhin_4.IsNumber = true;
             this.shouhin_4.IsShop = false;
+            this.shouhin_4.IsTimemmss = false;
             this.shouhin_4.Length = 80;
             this.shouhin_4.Location = new System.Drawing.Point(479, 0);
             this.shouhin_4.MaxLength = 80;
@@ -9104,6 +9273,7 @@
             this.shiire_4.isMaxLengthErr = false;
             this.shiire_4.IsNumber = true;
             this.shiire_4.IsShop = false;
+            this.shiire_4.IsTimemmss = false;
             this.shiire_4.Length = 9;
             this.shiire_4.Location = new System.Drawing.Point(28, 19);
             this.shiire_4.MaxLength = 9;
@@ -9165,6 +9335,7 @@
             this.sizecd_4.isMaxLengthErr = false;
             this.sizecd_4.IsNumber = true;
             this.sizecd_4.IsShop = false;
+            this.sizecd_4.IsTimemmss = false;
             this.sizecd_4.Length = 10;
             this.sizecd_4.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_4.MaxLength = 10;
@@ -9209,6 +9380,7 @@
             this.hyoteidatem_4.isMaxLengthErr = false;
             this.hyoteidatem_4.IsNumber = true;
             this.hyoteidatem_4.IsShop = false;
+            this.hyoteidatem_4.IsTimemmss = false;
             this.hyoteidatem_4.Length = 100;
             this.hyoteidatem_4.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_4.MaxLength = 100;
@@ -9240,6 +9412,7 @@
             this.sizeName_4.isMaxLengthErr = false;
             this.sizeName_4.IsNumber = true;
             this.sizeName_4.IsShop = false;
+            this.sizeName_4.IsTimemmss = false;
             this.sizeName_4.Length = 20;
             this.sizeName_4.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_4.MaxLength = 20;
@@ -9271,6 +9444,7 @@
             this.salepriceout4_4.isMaxLengthErr = false;
             this.salepriceout4_4.IsNumber = true;
             this.salepriceout4_4.IsShop = false;
+            this.salepriceout4_4.IsTimemmss = false;
             this.salepriceout4_4.Length = 9;
             this.salepriceout4_4.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_4.MaxLength = 9;
@@ -9302,6 +9476,7 @@
             this.salepriceout3_4.isMaxLengthErr = false;
             this.salepriceout3_4.IsNumber = true;
             this.salepriceout3_4.IsShop = false;
+            this.salepriceout3_4.IsTimemmss = false;
             this.salepriceout3_4.Length = 9;
             this.salepriceout3_4.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_4.MaxLength = 9;
@@ -9333,6 +9508,7 @@
             this.salepriceout2_4.isMaxLengthErr = false;
             this.salepriceout2_4.IsNumber = true;
             this.salepriceout2_4.IsShop = false;
+            this.salepriceout2_4.IsTimemmss = false;
             this.salepriceout2_4.Length = 9;
             this.salepriceout2_4.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_4.MaxLength = 9;
@@ -9364,6 +9540,7 @@
             this.salepriceout1_4.isMaxLengthErr = false;
             this.salepriceout1_4.IsNumber = true;
             this.salepriceout1_4.IsShop = false;
+            this.salepriceout1_4.IsTimemmss = false;
             this.salepriceout1_4.Length = 9;
             this.salepriceout1_4.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_4.MaxLength = 9;
@@ -9395,6 +9572,7 @@
             this.salepriceout_4.isMaxLengthErr = false;
             this.salepriceout_4.IsNumber = true;
             this.salepriceout_4.IsShop = false;
+            this.salepriceout_4.IsTimemmss = false;
             this.salepriceout_4.Length = 9;
             this.salepriceout_4.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_4.MaxLength = 9;
@@ -9426,6 +9604,7 @@
             this.sku_4.isMaxLengthErr = false;
             this.sku_4.IsNumber = true;
             this.sku_4.IsShop = false;
+            this.sku_4.IsTimemmss = false;
             this.sku_4.Length = 30;
             this.sku_4.Location = new System.Drawing.Point(269, 0);
             this.sku_4.MaxLength = 30;
@@ -9469,6 +9648,7 @@
             this.joutai_4.isMaxLengthErr = false;
             this.joutai_4.IsNumber = true;
             this.joutai_4.IsShop = false;
+            this.joutai_4.IsTimemmss = false;
             this.joutai_4.Length = 9;
             this.joutai_4.Location = new System.Drawing.Point(138, 19);
             this.joutai_4.MaxLength = 9;
@@ -9499,6 +9679,7 @@
             this.remark_4.isMaxLengthErr = false;
             this.remark_4.IsNumber = true;
             this.remark_4.IsShop = false;
+            this.remark_4.IsTimemmss = false;
             this.remark_4.Length = 500;
             this.remark_4.Location = new System.Drawing.Point(1165, 19);
             this.remark_4.MaxLength = 500;
@@ -9604,6 +9785,7 @@
             this.colorname_3.isMaxLengthErr = false;
             this.colorname_3.IsNumber = true;
             this.colorname_3.IsShop = false;
+            this.colorname_3.IsTimemmss = false;
             this.colorname_3.Length = 20;
             this.colorname_3.Location = new System.Drawing.Point(1065, 0);
             this.colorname_3.MaxLength = 20;
@@ -9650,6 +9832,7 @@
             this.colcd_3.isMaxLengthErr = false;
             this.colcd_3.IsNumber = true;
             this.colcd_3.IsShop = false;
+            this.colcd_3.IsTimemmss = false;
             this.colcd_3.Length = 10;
             this.colcd_3.Location = new System.Drawing.Point(979, 0);
             this.colcd_3.MaxLength = 10;
@@ -9726,6 +9909,7 @@
             this.salepriceout5_3.isMaxLengthErr = false;
             this.salepriceout5_3.IsNumber = true;
             this.salepriceout5_3.IsShop = false;
+            this.salepriceout5_3.IsTimemmss = false;
             this.salepriceout5_3.Length = 9;
             this.salepriceout5_3.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_3.MaxLength = 9;
@@ -9757,6 +9941,7 @@
             this.shouhin_3.isMaxLengthErr = false;
             this.shouhin_3.IsNumber = true;
             this.shouhin_3.IsShop = false;
+            this.shouhin_3.IsTimemmss = false;
             this.shouhin_3.Length = 80;
             this.shouhin_3.Location = new System.Drawing.Point(479, 0);
             this.shouhin_3.MaxLength = 80;
@@ -9817,6 +10002,7 @@
             this.shiire_3.isMaxLengthErr = false;
             this.shiire_3.IsNumber = true;
             this.shiire_3.IsShop = false;
+            this.shiire_3.IsTimemmss = false;
             this.shiire_3.Length = 9;
             this.shiire_3.Location = new System.Drawing.Point(28, 19);
             this.shiire_3.MaxLength = 9;
@@ -9878,6 +10064,7 @@
             this.sizecd_3.isMaxLengthErr = false;
             this.sizecd_3.IsNumber = true;
             this.sizecd_3.IsShop = false;
+            this.sizecd_3.IsTimemmss = false;
             this.sizecd_3.Length = 10;
             this.sizecd_3.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_3.MaxLength = 10;
@@ -9922,6 +10109,7 @@
             this.hyoteidatem_3.isMaxLengthErr = false;
             this.hyoteidatem_3.IsNumber = true;
             this.hyoteidatem_3.IsShop = false;
+            this.hyoteidatem_3.IsTimemmss = false;
             this.hyoteidatem_3.Length = 100;
             this.hyoteidatem_3.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_3.MaxLength = 100;
@@ -9953,6 +10141,7 @@
             this.sizeName_3.isMaxLengthErr = false;
             this.sizeName_3.IsNumber = true;
             this.sizeName_3.IsShop = false;
+            this.sizeName_3.IsTimemmss = false;
             this.sizeName_3.Length = 20;
             this.sizeName_3.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_3.MaxLength = 20;
@@ -9984,6 +10173,7 @@
             this.salepriceout4_3.isMaxLengthErr = false;
             this.salepriceout4_3.IsNumber = true;
             this.salepriceout4_3.IsShop = false;
+            this.salepriceout4_3.IsTimemmss = false;
             this.salepriceout4_3.Length = 9;
             this.salepriceout4_3.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_3.MaxLength = 9;
@@ -10015,6 +10205,7 @@
             this.salepriceout3_3.isMaxLengthErr = false;
             this.salepriceout3_3.IsNumber = true;
             this.salepriceout3_3.IsShop = false;
+            this.salepriceout3_3.IsTimemmss = false;
             this.salepriceout3_3.Length = 9;
             this.salepriceout3_3.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_3.MaxLength = 9;
@@ -10046,6 +10237,7 @@
             this.salepriceout2_3.isMaxLengthErr = false;
             this.salepriceout2_3.IsNumber = true;
             this.salepriceout2_3.IsShop = false;
+            this.salepriceout2_3.IsTimemmss = false;
             this.salepriceout2_3.Length = 9;
             this.salepriceout2_3.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_3.MaxLength = 9;
@@ -10077,6 +10269,7 @@
             this.salepriceout1_3.isMaxLengthErr = false;
             this.salepriceout1_3.IsNumber = true;
             this.salepriceout1_3.IsShop = false;
+            this.salepriceout1_3.IsTimemmss = false;
             this.salepriceout1_3.Length = 9;
             this.salepriceout1_3.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_3.MaxLength = 9;
@@ -10108,6 +10301,7 @@
             this.salepriceout_3.isMaxLengthErr = false;
             this.salepriceout_3.IsNumber = true;
             this.salepriceout_3.IsShop = false;
+            this.salepriceout_3.IsTimemmss = false;
             this.salepriceout_3.Length = 9;
             this.salepriceout_3.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_3.MaxLength = 9;
@@ -10139,6 +10333,7 @@
             this.sku_3.isMaxLengthErr = false;
             this.sku_3.IsNumber = true;
             this.sku_3.IsShop = false;
+            this.sku_3.IsTimemmss = false;
             this.sku_3.Length = 30;
             this.sku_3.Location = new System.Drawing.Point(269, 0);
             this.sku_3.MaxLength = 30;
@@ -10182,6 +10377,7 @@
             this.joutai_3.isMaxLengthErr = false;
             this.joutai_3.IsNumber = true;
             this.joutai_3.IsShop = false;
+            this.joutai_3.IsTimemmss = false;
             this.joutai_3.Length = 9;
             this.joutai_3.Location = new System.Drawing.Point(138, 19);
             this.joutai_3.MaxLength = 9;
@@ -10212,6 +10408,7 @@
             this.remark_3.isMaxLengthErr = false;
             this.remark_3.IsNumber = true;
             this.remark_3.IsShop = false;
+            this.remark_3.IsTimemmss = false;
             this.remark_3.Length = 500;
             this.remark_3.Location = new System.Drawing.Point(1165, 19);
             this.remark_3.MaxLength = 500;
@@ -10320,6 +10517,7 @@
             this.colorname_2.isMaxLengthErr = false;
             this.colorname_2.IsNumber = true;
             this.colorname_2.IsShop = false;
+            this.colorname_2.IsTimemmss = false;
             this.colorname_2.Length = 20;
             this.colorname_2.Location = new System.Drawing.Point(1065, 0);
             this.colorname_2.MaxLength = 20;
@@ -10366,6 +10564,7 @@
             this.colcd_2.isMaxLengthErr = false;
             this.colcd_2.IsNumber = true;
             this.colcd_2.IsShop = false;
+            this.colcd_2.IsTimemmss = false;
             this.colcd_2.Length = 10;
             this.colcd_2.Location = new System.Drawing.Point(979, 0);
             this.colcd_2.MaxLength = 10;
@@ -10442,6 +10641,7 @@
             this.salepriceout5_2.isMaxLengthErr = false;
             this.salepriceout5_2.IsNumber = true;
             this.salepriceout5_2.IsShop = false;
+            this.salepriceout5_2.IsTimemmss = false;
             this.salepriceout5_2.Length = 9;
             this.salepriceout5_2.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_2.MaxLength = 9;
@@ -10473,6 +10673,7 @@
             this.shouhin_2.isMaxLengthErr = false;
             this.shouhin_2.IsNumber = true;
             this.shouhin_2.IsShop = false;
+            this.shouhin_2.IsTimemmss = false;
             this.shouhin_2.Length = 80;
             this.shouhin_2.Location = new System.Drawing.Point(479, 0);
             this.shouhin_2.MaxLength = 80;
@@ -10533,6 +10734,7 @@
             this.shiire_2.isMaxLengthErr = false;
             this.shiire_2.IsNumber = true;
             this.shiire_2.IsShop = false;
+            this.shiire_2.IsTimemmss = false;
             this.shiire_2.Length = 9;
             this.shiire_2.Location = new System.Drawing.Point(28, 19);
             this.shiire_2.MaxLength = 9;
@@ -10594,6 +10796,7 @@
             this.sizecd_2.isMaxLengthErr = false;
             this.sizecd_2.IsNumber = true;
             this.sizecd_2.IsShop = false;
+            this.sizecd_2.IsTimemmss = false;
             this.sizecd_2.Length = 10;
             this.sizecd_2.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_2.MaxLength = 10;
@@ -10638,6 +10841,7 @@
             this.hyoteidatem_2.isMaxLengthErr = false;
             this.hyoteidatem_2.IsNumber = true;
             this.hyoteidatem_2.IsShop = false;
+            this.hyoteidatem_2.IsTimemmss = false;
             this.hyoteidatem_2.Length = 100;
             this.hyoteidatem_2.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_2.MaxLength = 100;
@@ -10669,6 +10873,7 @@
             this.sizeName_2.isMaxLengthErr = false;
             this.sizeName_2.IsNumber = true;
             this.sizeName_2.IsShop = false;
+            this.sizeName_2.IsTimemmss = false;
             this.sizeName_2.Length = 20;
             this.sizeName_2.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_2.MaxLength = 20;
@@ -10700,6 +10905,7 @@
             this.salepriceout4_2.isMaxLengthErr = false;
             this.salepriceout4_2.IsNumber = true;
             this.salepriceout4_2.IsShop = false;
+            this.salepriceout4_2.IsTimemmss = false;
             this.salepriceout4_2.Length = 9;
             this.salepriceout4_2.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_2.MaxLength = 9;
@@ -10731,6 +10937,7 @@
             this.salepriceout3_2.isMaxLengthErr = false;
             this.salepriceout3_2.IsNumber = true;
             this.salepriceout3_2.IsShop = false;
+            this.salepriceout3_2.IsTimemmss = false;
             this.salepriceout3_2.Length = 9;
             this.salepriceout3_2.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_2.MaxLength = 9;
@@ -10762,6 +10969,7 @@
             this.salepriceout2_2.isMaxLengthErr = false;
             this.salepriceout2_2.IsNumber = true;
             this.salepriceout2_2.IsShop = false;
+            this.salepriceout2_2.IsTimemmss = false;
             this.salepriceout2_2.Length = 9;
             this.salepriceout2_2.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_2.MaxLength = 9;
@@ -10793,6 +11001,7 @@
             this.salepriceout1_2.isMaxLengthErr = false;
             this.salepriceout1_2.IsNumber = true;
             this.salepriceout1_2.IsShop = false;
+            this.salepriceout1_2.IsTimemmss = false;
             this.salepriceout1_2.Length = 9;
             this.salepriceout1_2.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_2.MaxLength = 9;
@@ -10824,6 +11033,7 @@
             this.salepriceout_2.isMaxLengthErr = false;
             this.salepriceout_2.IsNumber = true;
             this.salepriceout_2.IsShop = false;
+            this.salepriceout_2.IsTimemmss = false;
             this.salepriceout_2.Length = 9;
             this.salepriceout_2.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_2.MaxLength = 9;
@@ -10855,6 +11065,7 @@
             this.sku_2.isMaxLengthErr = false;
             this.sku_2.IsNumber = true;
             this.sku_2.IsShop = false;
+            this.sku_2.IsTimemmss = false;
             this.sku_2.Length = 30;
             this.sku_2.Location = new System.Drawing.Point(269, 0);
             this.sku_2.MaxLength = 30;
@@ -10898,6 +11109,7 @@
             this.joutai_2.isMaxLengthErr = false;
             this.joutai_2.IsNumber = true;
             this.joutai_2.IsShop = false;
+            this.joutai_2.IsTimemmss = false;
             this.joutai_2.Length = 9;
             this.joutai_2.Location = new System.Drawing.Point(138, 19);
             this.joutai_2.MaxLength = 9;
@@ -10928,6 +11140,7 @@
             this.remark_2.isMaxLengthErr = false;
             this.remark_2.IsNumber = true;
             this.remark_2.IsShop = false;
+            this.remark_2.IsTimemmss = false;
             this.remark_2.Length = 500;
             this.remark_2.Location = new System.Drawing.Point(1165, 19);
             this.remark_2.MaxLength = 500;
