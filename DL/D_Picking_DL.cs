@@ -104,7 +104,7 @@ namespace DL
                 { "@ShippingPlanDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.ShippingPlanDateFrom } },
                 { "@ShippingPlanDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.ShippingPlanDateTo } },
                 { "@ShippingDate", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.ShippingDate } },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.Operator } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.InsertOperator } },
             };
 
             UseTransaction = true;
@@ -124,7 +124,7 @@ namespace DL
             {
                 { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.SoukoCD} },
                 { "@PickingNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PickingNO} },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.Operator } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.InsertOperator } },
             };
 
             UseTransaction = true;
@@ -146,7 +146,7 @@ namespace DL
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD} },
                 { "@ShippingPlanDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.ShippingPlanDateFrom } },
                 { "@ShippingPlanDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.ShippingPlanDateTo } },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.Operator } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpe.InsertOperator } },
             };
 
             UseTransaction = true;

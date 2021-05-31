@@ -124,8 +124,8 @@ namespace PickingList
                     {
                         SoukoCD = cboSouko.SelectedValue.ToString(),
                         StoreCD = StoreCD,
-                        ShippingPlanDateFrom = txtDateFrom1.Text,
-                        ShippingPlanDateTo = txtDateTo1.Text,
+                        ShippingPlanDateFrom = txtDateFrom1.Text.Replace('/','-'),
+                        ShippingPlanDateTo = txtDateTo1.Text.Replace('/', '-'),
                         ShippingDate = txtShipmentDate.Text,
                         InsertOperator = InOperatorCD,
                         ProgramID=this.InProgramID,
@@ -178,17 +178,22 @@ namespace PickingList
                 try
                 {
 
-                    if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) || (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
-                        || (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) || (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
-                    {
-                        bbl.ShowMessage("E128");
+                    //if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) || (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
+                    //    || (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) || (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
+                    //{
+                    //    bbl.ShowMessage("E128");
                         
-                    }
-                    else
+                    //}
+                    //else
+                    //{
+                    //if (dtPrintData1 == null || dtPrintData1.Rows.Count <= 0)
+                    //{
+                    //    bbl.ShowMessage("E128");
+                    //}
+                    if (chkUnissued1.Checked == true)
                     {
-                        if (chkUnissued1.Checked == true && dtPrintData1.Rows.Count > 0)
-                        {
-
+                       if(dtPrintData1.Rows.Count > 0)
+                       {
                             DialogResult ret;
                             PickingList_Report Report = new PickingList_Report();
 
@@ -260,10 +265,18 @@ namespace PickingList
                             plbl.D_Picking_Update(dtPrintData1.Rows[0]["PickingNO"].ToString(), InOperatorCD);
 
                         }
-
-                        if (chkUnissued2.Checked == true && dtPrintData2.Rows.Count > 0)
+                        else
                         {
+                            plbl.ShowMessage("E128");
+                        }
 
+                    }
+                       
+
+                    if (chkUnissued2.Checked == true)
+                    {
+                        if (dtPrintData2.Rows.Count > 0)
+                        {
                             DialogResult ret;
                             PickingList_Report Report2 = new PickingList_Report();
 
@@ -337,10 +350,17 @@ namespace PickingList
 
                             plbl.D_Picking_Update(dtPrintData2.Rows[0]["PickingNO"].ToString(), InOperatorCD);
                         }
-
-                        if (chkReissued1.Checked == true && dtPrintData3.Rows.Count > 0)
+                        else
                         {
+                            bbl.ShowMessage("E128");
+                        }
+                    }
+                            
 
+                    if (chkReissued1.Checked == true)
+                    {
+                        if (dtPrintData3.Rows.Count > 0)
+                        {
                             DialogResult ret;
                             PickingList_Motori_Report Reportm = new PickingList_Motori_Report();
 
@@ -414,10 +434,17 @@ namespace PickingList
 
                             plbl.D_Picking_Update(dtPrintData3.Rows[0]["PickingNO"].ToString(), InOperatorCD);
                         }
-
-                        if (chkReissued2.Checked == true && dtPrintData4.Rows.Count > 0)
+                        else
                         {
+                            bbl.ShowMessage("E128");
+                        }
+                    }
+                           
 
+                    if (chkReissued2.Checked == true)
+                    {
+                        if (dtPrintData4.Rows.Count > 0)
+                        {
                             DialogResult ret;
                             PickingList_Motori_Report Reportm2 = new PickingList_Motori_Report();
 
@@ -491,8 +518,12 @@ namespace PickingList
                             plbl.D_Picking_Update(dtPrintData4.Rows[0]["PickingNO"].ToString(), InOperatorCD);
 
                         }
+                        else
+                        {
+                            bbl.ShowMessage("E128");
+                        }
                     }
-                    
+                         
                 }
                 finally
                 {
