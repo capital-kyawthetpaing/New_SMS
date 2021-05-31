@@ -3479,6 +3479,10 @@ namespace NyuukinNyuuryoku_Detail
             if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)
                 return;
 
+            //修正時も入力可に
+            if (OperationMode == EOperationMode.UPDATE)
+                return;
+
             //入金照会からの新規消込または修正時
             //　入金日、入金金種も入力不可
             detailControls[(int)EIndex.CollectDate].Enabled = false;
