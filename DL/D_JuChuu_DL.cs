@@ -515,6 +515,25 @@ namespace DL
 
             return ret;
         }
+        public bool NayoseSyoriAll_Exec(D_Juchuu_Entity dje)
+        {
+            string sp = "PRC_NayoseSyoriAll";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@Operator", SqlDbType.VarChar, dje.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dje.PC);
+
+            UseTransaction = true;
+
+            string outPutParam = "";    //未使用
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+
+            return ret;
+        }
         public bool DeleteTemporaryReserve(D_Juchuu_Entity de)
         {
             string sp = "DeleteTemporaryReserve";

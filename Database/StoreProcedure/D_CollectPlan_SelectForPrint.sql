@@ -57,11 +57,11 @@ BEGIN
                      ELSE NULL END) AS DelayDays
               ,DH.JuchuuNO
               ,DH.SalesNO
-              ,DS.SalesDate
+              ,CONVERT(varchar,DS.SalesDate,111) AS SalesDate
               ,DH.BillingNO
               ,DH.CollectPlanGaku	--Å¿‹Šz
               
-              ,A.CollectDate	--“ü‹à“ú
+              ,CONVERT(varchar,A.CollectDate,111) AS CollectDate	--“ü‹à“ú
               ,A.CollectNO
               ,A.CollectGaku	--“ü‹àŠz
               ,DH.CollectPlanGaku-A.CollectGaku AS KaisyuGaku	--‰ñû—\’èŠz=Å¿‹Šz|“ü‹àŠz
@@ -172,11 +172,11 @@ BEGIN
                      ELSE NULL END) AS DelayDays
               ,DH.JuchuuNO
               ,DH.SalesNO
-              ,DS.SalesDate
+              ,CONVERT(varchar,DS.SalesDate,111) AS SalesDate
               ,DH.BillingNO
               ,DH.CollectPlanGaku	--Å¿‹Šz
               
-              ,A.CollectDate
+              ,CONVERT(varchar,A.CollectDate,111) AS CollectDate
               ,A.CollectNO
               ,A.CollectGaku	--“ü‹àŠz
               ,DH.CollectPlanGaku-A.CollectGaku AS KaisyuGaku	--‰ñû—\’èŠz=Å¿‹Šz|“ü‹àŠz

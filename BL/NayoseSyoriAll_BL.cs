@@ -17,9 +17,9 @@ namespace BL
         /// 名寄せ結果登録更新処理
         /// NayoseKekkaTourokuより更新時に使用
         /// </summary>
-        public bool NayoseKekkaTouroku_Exec(D_Juchuu_Entity dme, DataTable dt)
+        public bool NayoseSyoriAll_Exec(D_Juchuu_Entity dme, DataTable dt)
         {
-            return dl.NayoseKekkaTouroku_Exec(dme, dt);
+            return dl.NayoseSyoriAll_Exec(dme);
         }
 
         /// <summary>

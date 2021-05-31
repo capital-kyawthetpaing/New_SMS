@@ -61,7 +61,8 @@ namespace NayoseSyoriAll
                 Btn_F10.Text = "";
                 Btn_F11.Text = "";
 
-                string ymd = bbl.GetDate();
+                Btn_F12.Focus();
+
                 nkbl = new NayoseSyoriAll_BL();
                             }
             catch (Exception ex)
@@ -229,7 +230,7 @@ namespace NayoseSyoriAll
       
             //更新処理
             dje = GetEntity();
-            //nkbl.NayoseSyoriAll_Exec(dje,dt);
+            nkbl.NayoseSyoriAll_Exec(dje);
 
             //ログファイルへの更新
             bbl.L_Log_Insert(Get_L_Log_Entity());
