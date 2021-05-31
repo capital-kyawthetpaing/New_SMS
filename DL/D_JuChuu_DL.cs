@@ -528,9 +528,16 @@ namespace DL
 
             UseTransaction = true;
 
-            string outPutParam = "";    //未使用
+            //OUTパラメータの追加
+            string outPutParam = "@OutErrNo";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
+            UseTransaction = true;
 
             bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                dje.ReturnFLG = outPutParam;
 
             return ret;
         }
