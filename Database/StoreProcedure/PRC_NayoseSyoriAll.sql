@@ -1,5 +1,149 @@
 DROP  PROCEDURE [dbo].[PRC_NayoseSyoriAll]
 GO
+DROP  PROCEDURE [dbo].[PRC_NayoseSyoriAll_Sub]
+GO
+
+CREATE PROCEDURE PRC_NayoseSyoriAll_Sub
+    (@JuchuuNO   varchar(11),
+     @Operator   varchar(10),
+     @SYSDATETIME  datetime
+)AS
+
+--********************************************--
+--                                            --
+--                 処理開始                   --
+--                                            --
+--********************************************--
+
+BEGIN
+	--上記Select件数が1件の時、D_Juchuu.保留FLG、名寄せ対象FLGに1をUpdate。
+    UPDATE D_Juchuu SET
+         [OnHoldFLG]         = 1
+        ,[IdentificationFLG] = 1
+        ,[UpdateOperator]    = @Operator  
+        ,[UpdateDateTime]    = @SYSDATETIME
+    WHERE JuchuuNO = @JuchuuNO
+    ;
+    
+    --テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード追加。
+    INSERT INTO D_JuchuuOnHold
+       ([JuchuuNO]
+       ,[OnHoldRows]
+       ,[OnHoldCD]
+       ,[OccorDateTime]
+       ,[DisappeareDateTime]
+       ,[Remarks]
+       ,[StaffCD]
+       ,[InsertOperator]
+       ,[InsertDateTime]
+       ,[UpdateOperator]
+       ,[UpdateDateTime])
+    SELECT
+       @JuchuuNO
+       ,1 AS OnHoldRows
+       ,'001' AS OnHoldCD
+       ,@SYSDATETIME AS OccorDateTime
+       ,NULL AS DisappeareDateTime
+       ,NULL AS Remarks
+       ,@Operator AS StaffCD
+       ,@Operator AS InsertOperator
+       ,@SYSDATETIME AS InsertDateTime
+       ,@Operator AS UpdateOperator
+       ,@SYSDATETIME AS UpdateDateTime
+    FROM DUAL
+    WHERE NOT EXISTS(SELECT 1 FROM D_JuchuuOnHold AS DJ
+                      WHERE DJ.JuchuuNO = @JuchuuNO
+                        AND DJ.OnHoldCD = '001')
+    ;
+
+    --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。
+    UPDATE D_JuchuuStatus SET
+       [OnHoldFLG] = 0
+      ,[WarningFLG] = 0
+      ,[IncludeFLG] = 0
+      ,[GiftFLG] = 0
+      ,[NoshiFLG] = 0
+      ,[SpecFLG] = 0
+      ,[NouhinsyoFLG] = 0
+      ,[RyousyusyoFLG] = 0
+      ,[SeikyuusyoFLG] = 0
+      ,[SonotoFLG] = 0
+      ,[OrderMailFLG] = 0
+      ,[NyuukaYoteiMailFLG] = 0
+      ,[SyukkaYoteiMailFLG] = 0
+      ,[SyukkaAnnaiMailFLG] = 0
+      ,[NyuukinMailFLG] = 0
+      ,[FollowupMailFLG] = 0
+      ,[Demand1MailFLG] = 0
+      ,[Demand2MailFLG] = 0
+      ,[Demand3MailFLG] = 0
+      ,[Demand4MailFLG] = 0
+      ,[UpdateOperator] = @Operator
+      ,[UpdateDateTime] = @SYSDATETIME
+    WHERE JuchuuNO = @JuchuuNO
+    ;
+    
+    IF @@ROWCOUNT = 0
+    BEGIN
+        INSERT INTO D_JuchuuStatus
+           ([JuchuuNO]
+           ,[OnHoldFLG]
+           ,[WarningFLG]
+           ,[IncludeFLG]
+           ,[GiftFLG]
+           ,[NoshiFLG]
+           ,[SpecFLG]
+           ,[NouhinsyoFLG]
+           ,[RyousyusyoFLG]
+           ,[SeikyuusyoFLG]
+           ,[SonotoFLG]
+           ,[OrderMailFLG]
+           ,[NyuukaYoteiMailFLG]
+           ,[SyukkaYoteiMailFLG]
+           ,[SyukkaAnnaiMailFLG]
+           ,[NyuukinMailFLG]
+           ,[FollowupMailFLG]
+           ,[Demand1MailFLG]
+           ,[Demand2MailFLG]
+           ,[Demand3MailFLG]
+           ,[Demand4MailFLG]
+           ,[InsertOperator]
+           ,[InsertDateTime]
+           ,[UpdateOperator]
+           ,[UpdateDateTime])
+        SELECT 
+            @JuchuuNO
+           ,0 AS OnHoldFLG
+           ,0 AS WarningFLG
+           ,0 AS IncludeFLG
+           ,0 AS GiftFLG
+           ,0 AS NoshiFLG
+           ,0 AS SpecFLG
+           ,0 AS NouhinsyoFLG
+           ,0 AS RyousyusyoFLG
+           ,0 AS SeikyuusyoFLG
+           ,0 AS SonotoFLG
+           ,0 AS OrderMailFLG
+           ,0 AS NyuukaYoteiMailFLG
+           ,0 AS SyukkaYoteiMailFLG
+           ,0 AS SyukkaAnnaiMailFLG
+           ,0 AS NyuukinMailFLG
+           ,0 AS FollowupMailFLG
+           ,0 AS Demand1MailFLG
+           ,0 AS Demand2MailFLG
+           ,0 AS Demand3MailFLG
+           ,0 AS Demand4MailFLG
+           ,@Operator AS InsertOperator
+           ,@SYSDATETIME AS InsertDateTime
+           ,@Operator AS UpdateOperator
+           ,@SYSDATETIME AS UpdateDateTime
+         FROM DUAL
+         ;
+	END
+END
+
+GO
+
 
 --  ======================================================================
 --       Program Call    名寄せ結果登録
@@ -118,150 +262,138 @@ BEGIN
                 ,[UpdateDateTime]    = @SYSDATETIME
             WHERE JuchuuNO = @JuchuuNO
             ;
-       		
-       		--テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード変更。(※1）
-			
-			--テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード追加もしくは変更。
-			
-			--次の「1.受注ワークを1件リード」へ。
-		END
-		ELSE IF @CNT1 = 0
-		BEGIN
-			--上記Select件数が0件の時、②の名寄せチェックへ
-			
-			--②名前 ＆ 電話番号
-        	SET @CNT2= (SELECT FC.CustomerCD
-	                      from D_Juchuu AS DH
-	                     INNER JOIN F_Customer(GETDATE()) FC
-	                        ON FC.CustomerName = DH.CustomerName
-	                       AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
-	                       AND FC.StoreKBN = 1
-	                     WHERE DH.JuchuuNO = @JuchuuNO
-	                       AND DH.DeleteDateTime IS NULL
-	        			)
-	        IF @CNT2 >= 1
-	        BEGIN
-	        	--上記Select件数が1件の時、D_Juchuu.保留FLG、名寄せ対象FLGに1をUpdate。
-	            UPDATE D_Juchuu SET
-	                 [OnHoldFLG]         = 1
-	                ,[IdentificationFLG] = 1
-	                ,[UpdateOperator]    = @Operator  
-	                ,[UpdateDateTime]    = @SYSDATETIME
-	            WHERE JuchuuNO = @JuchuuNO
-	            ;
-	            
-	            --テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード追加。
-	            
-	            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。
-	            
-	            --次の「1.受注ワークを1件リード」へ。
-	        END
-	        ELSE IF @CNT2 = 0
-	        BEGIN
-	        	--上記Select件数が0件の時、③の名寄せチェックへ
-	        	
-				--③名前 ＆ メールアドレス
-		        SET @CNT3 = (SELECT FC.CustomerCD
-		                       from D_Juchuu AS DH
-		                      INNER JOIN F_Customer(GETDATE()) FC
-		                         ON FC.CustomerName = DH.CustomerName
-		                        AND dbo.Fnc_MailAdress(FC.MailAddress) = dbo.Fnc_MailAdress(DH.MailAddress) 
-		                        AND FC.StoreKBN = 1
-		                      WHERE DH.JuchuuNO = @JuchuuNO
-		                        AND DH.DeleteDateTime IS NULL
-		        			)
-		        IF @CNT3 >= 1
-		        BEGIN
-		        	--上記Select件数が1件の時、
-		        	--D_Juchuu.保留FLG、名寄せ対象FLGに1をUpdate。
-		            UPDATE D_Juchuu SET
-		                 [OnHoldFLG]         = 1
-		                ,[IdentificationFLG] = 1
-		                ,[UpdateOperator]    = @Operator  
-		                ,[UpdateDateTime]    = @SYSDATETIME
-		            WHERE JuchuuNO = @JuchuuNO
-		            ;
-		            
-		            --テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード追加。
-		            
-		            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。
-		            
-	            	--次の「1.受注ワークを1件リード」へ。
+            
+            --テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード変更。(※1）
+            Update D_JuchuuOnHold set
+                 [DisappeareDateTime] = @SYSDATETIME	--解消日時
+                ,[UpdateOperator]     = @Operator  
+                ,[UpdateDateTime]     = @SYSDATETIME
+             WHERE D_JuchuuOnHold.JuchuuNO = @JuchuuNO
+               AND D_JuchuuOnHold.OnHoldCD = '001'
+               ;
 
-		        END
-		        ELSE IF @CNT3 = 0
-		        BEGIN
-		        	--④の名寄せチェックへ
-		        	--④名前 ＆ 住所１	
-		        	SET @CNT4= (SELECT FC.CustomerCD
-			                      from D_Juchuu AS DH
-			                     INNER JOIN F_Customer(GETDATE()) FC
-			                        ON FC.CustomerName = DH.CustomerName
-			                       AND dbo.Fnc_AdressHalfToFull(FC.Address1) = dbo.Fnc_AdressHalfToFull(DH.Address1)
-			                       AND FC.StoreKBN = 1
-			                     WHERE DH.JuchuuNO = @JuchuuNO
-			                       AND DH.DeleteDateTime IS NULL
-			        			)
-		        	IF @CNT4 >= 1
-		        	BEGIN
-		        		--上記Select件数が1件の時、
-			        	--D_Juchuu.保留FLG、名寄せ対象FLGに1をUpdate。
-			            UPDATE D_Juchuu SET
-			                 [OnHoldFLG]         = 1
-			                ,[IdentificationFLG] = 1
-			                ,[UpdateOperator]    = @Operator  
-			                ,[UpdateDateTime]    = @SYSDATETIME
-			            WHERE JuchuuNO = @JuchuuNO
-			            ;
-		            
-                        --テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード追加。
-                        
-                        --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。
+            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード追加もしくは変更。
+            --Update(①の※1、⑤の※1の時）
+            UPDATE D_JuchuuStatus SET
+                 [OnHoldFLG] = 0    --保留有無FLG
+                ,[UpdateOperator]    = @Operator  
+                ,[UpdateDateTime]    = @SYSDATETIME
+             WHERE D_JuchuuStatus.JuchuuNO = @JuchuuNO
+               ;
+            --次の「1.受注ワークを1件リード」へ。
+        END
+        ELSE IF @CNT1 = 0
+        BEGIN
+            --上記Select件数が0件の時、②の名寄せチェックへ
+            
+            --②名前 ＆ 電話番号
+            SET @CNT2= (SELECT FC.CustomerCD
+                          from D_Juchuu AS DH
+                         INNER JOIN F_Customer(GETDATE()) FC
+                            ON FC.CustomerName = DH.CustomerName
+                           AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
+                           AND FC.StoreKBN = 1
+                         WHERE DH.JuchuuNO = @JuchuuNO
+                           AND DH.DeleteDateTime IS NULL
+                        )
+            IF @CNT2 >= 1
+            BEGIN
+                EXEC PRC_NayoseSyoriAll_Sub
+                    @JuchuuNO
+                    ,@Operator 
+                    ,@SYSDATETIME
+                    ;
+
+                --次の「1.受注ワークを1件リード」へ。
+            END
+            ELSE IF @CNT2 = 0
+            BEGIN
+                --上記Select件数が0件の時、③の名寄せチェックへ
+                
+                --③名前 ＆ メールアドレス
+                SET @CNT3 = (SELECT FC.CustomerCD
+                               from D_Juchuu AS DH
+                              INNER JOIN F_Customer(GETDATE()) FC
+                                 ON FC.CustomerName = DH.CustomerName
+                                AND dbo.Fnc_MailAdress(FC.MailAddress) = dbo.Fnc_MailAdress(DH.MailAddress) 
+                                AND FC.StoreKBN = 1
+                              WHERE DH.JuchuuNO = @JuchuuNO
+                                AND DH.DeleteDateTime IS NULL
+                            )
+                IF @CNT3 >= 1
+                BEGIN
+                    --上記Select件数が1件の時、
+                    EXEC PRC_NayoseSyoriAll_Sub
+                        @JuchuuNO
+                        ,@Operator 
+                        ,@SYSDATETIME
+                        ;
+                    
+                    --次の「1.受注ワークを1件リード」へ。
+                END
+                ELSE IF @CNT3 = 0
+                BEGIN
+                    --④の名寄せチェックへ
+                    --④名前 ＆ 住所１  
+                    SET @CNT4= (SELECT FC.CustomerCD
+                                  from D_Juchuu AS DH
+                                 INNER JOIN F_Customer(GETDATE()) FC
+                                    ON FC.CustomerName = DH.CustomerName
+                                   AND dbo.Fnc_AdressHalfToFull(FC.Address1) = dbo.Fnc_AdressHalfToFull(DH.Address1)
+                                   AND FC.StoreKBN = 1
+                                 WHERE DH.JuchuuNO = @JuchuuNO
+                                   AND DH.DeleteDateTime IS NULL
+                                )
+                    IF @CNT4 >= 1
+                    BEGIN
+                        --上記Select件数が1件の時、
+                        EXEC PRC_NayoseSyoriAll_Sub
+                            @JuchuuNO
+                            ,@Operator 
+                            ,@SYSDATETIME
+                            ;
                         
                         --次の「1.受注ワークを1件リード」へ。
 
-		        	END
-		        	ELSE IF @CNT4 = 0
-		        	BEGIN
-		        		--上記Select件数が0件の時、
-		        		--⑤の顧客マスタ登録へ
-		        		--テーブル転送仕様Ａに従って顧客マスタのレコード追加。
-		        		
-		        		
-		        		
-		        		--採番した顧客CDをD_Juchuu.顧客CDにUpdate。
-			            UPDATE D_Juchuu SET
-			                 [CustomerCD]        = @CustomerCD
-			                ,[UpdateOperator]    = @Operator  
-			                ,[UpdateDateTime]    = @SYSDATETIME
-			            WHERE JuchuuNO = @JuchuuNO
-			            ;
+                    END
+                    ELSE IF @CNT4 = 0
+                    BEGIN
+                        --上記Select件数が0件の時、
+                        --⑤の顧客マスタ登録へ
+                        --テーブル転送仕様Ａに従って顧客マスタのレコード追加。
+                        
+                        
+                        
+                        --採番した顧客CDをD_Juchuu.顧客CDにUpdate。
+                        UPDATE D_Juchuu SET
+                             [CustomerCD]        = @CustomerCD
+                            ,[UpdateOperator]    = @Operator  
+                            ,[UpdateDateTime]    = @SYSDATETIME
+                        WHERE JuchuuNO = @JuchuuNO
+                        ;
 
-		        		
-
-
-		        	END
-		        END		        
-	        END
-	    END
-		ELSE
-		BEGIN
-			--上記Select件数が複数件の時、
-			--D_Juchuu.保留FLG、名寄せ対象FLGに1をUpdate。
-            UPDATE D_Juchuu SET
-                 [OnHoldFLG]         = 1
-                ,[IdentificationFLG] = 1
-                ,[UpdateOperator]    = @Operator  
-                ,[UpdateDateTime]    = @SYSDATETIME
-            WHERE JuchuuNO = @JuchuuNO
-            ;
-            
-            --テーブル転送仕様Ｂに従って受注保留警告(D_JuchuuOnHold)のレコード追加。
-            
-            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード追加もしくは変更。
+                        --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。(※1)
+                        --Update(①の※1、⑤の※1の時）
+                        UPDATE D_JuchuuStatus SET
+                             [OnHoldFLG] = 0    --保留有無FLG
+                            ,[UpdateOperator]    = @Operator  
+                            ,[UpdateDateTime]    = @SYSDATETIME
+                         WHERE D_JuchuuStatus.JuchuuNO = @JuchuuNO
+                           ;
+                    END
+                END             
+            END
+        END
+        ELSE
+        BEGIN
+            --上記Select件数が複数件の時、
+            EXEC PRC_NayoseSyoriAll_Sub
+                @JuchuuNO
+                ,@Operator 
+                ,@SYSDATETIME
+                ;
             
             --次の「1.受注ワークを1件リード」へ。
-
 		END
         
     END     --LOOPの終わり***************************************CUR_Stock
@@ -276,29 +408,6 @@ BEGIN
         return @W_ERR;
     END
 
-/*
-	                                                                        
-	--テーブル転送仕様Ａ
-    UPDATE D_Juchuu SET
-        [CustomerCD]             = tbl.CustomerCD
-       ,[IdentificationFLG]      = 0
-       ,[NayoseKekkaTourokuDate] = CONVERT(date,@SYSDATETIME)
-       ,[UpdateOperator]         = @Operator  
-       ,[UpdateDateTime]         = @SYSDATETIME
-    FROM @Table tbl
-    WHERE D_Juchuu.JuchuuNO = tbl.JuchuuNo
-    ;
-    
-    --テーブル転送仕様Ｂ
-    UPDATE D_JuchuuOnHold SET
-        [DisappeareDateTime]     = @SYSDATETIME
-       ,[UpdateOperator]         = @Operator  
-       ,[UpdateDateTime]         = @SYSDATETIME
-    FROM @Table tbl
-    WHERE D_JuchuuOnHold.JuchuuNO = tbl.JuchuuNo
-    AND D_JuchuuOnHold.OnHoldCD = '001'
-    ;    
-*/
     --処理履歴データへ更新
     SET @KeyItem = '';
         
