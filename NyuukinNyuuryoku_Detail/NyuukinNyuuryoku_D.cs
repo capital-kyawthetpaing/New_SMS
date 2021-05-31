@@ -2706,7 +2706,7 @@ namespace NyuukinNyuuryoku_Detail
                             }
                             ScCustomer.BtnSearch.Enabled = Kbn == 0 ? true : false;
                             //if (Kbn.Equals(1))
-                            //    btnNyuukinmoto.Enabled = false;
+                            btnNyuukinmoto.Enabled = Kbn == 0 ? true : false;
                         }
                         break;
                     case 3:
