@@ -933,6 +933,15 @@ namespace PickingNyuuryoku
 
                 case (int)EIndex.ShippingPlanDateFrom:
                 case (int)EIndex.ShippingPlanDateTo:
+                    //出荷予定日(To) 入力必須(Entry required)
+                    if(index == (int)EIndex.ShippingPlanDateTo && keyControls[index].Enabled)
+                    {
+                        if (string.IsNullOrWhiteSpace(keyControls[index].Text))
+                        {
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                    }
                     if (string.IsNullOrWhiteSpace(keyControls[index].Text))
                         return true;
 
@@ -978,31 +987,13 @@ namespace PickingNyuuryoku
             //ピッキング(D_Picking)に存在しない場合、Error 「登録されていないピッキング番号」
             if (dt.Rows.Count == 0)
             {
-                bbl.ShowMessage("E138", "ピッキング番号");
+                bbl.ShowMessage("E128");
                 Scr_Clr(1);
                 previousCtrl.Focus();
                 return false;
             }
             else
             {
-                //DeleteDateTime 「削除されたピッキング番号」
-                if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
-                {
-                    bbl.ShowMessage("E140", "ピッキング番号");
-                    Scr_Clr(1);
-                    previousCtrl.Focus();
-                    return false;
-                }
-
-                ////権限がない場合（以下のSelectができない場合）Error　「権限のないピッキング番号」
-                //if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
-                //{
-                //    bbl.ShowMessage("E139", "ピッキング番号");
-                //    Scr_Clr(1);
-                //    previousCtrl.Focus();
-                //    return false;
-                //}
-
                 //画面セットなしの場合、処理正常終了
                 if (set == false)
                 {
@@ -2006,6 +1997,55 @@ namespace PickingNyuuryoku
                         break;
                 }
             }
+        }
+
+        private void Btn_SelectAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //明細チェックボックスONかつ今回入金額に未入金額をセット。
+                ChangeCheck(true);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        private void Btn_NoSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //明細チェックボックスOFFかつ今回入金額にゼロをセット。
+                ChangeCheck(false);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        private void ChangeCheck(bool check)
+        {
+            // 明細部  画面の範囲の内容を配列にセット
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+            //明細部チェック
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].PickingNO) == false)
+                {
+                    mGrid.g_DArray[RW].Chk = check;
+                }
+            }
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
         }
     }
 }

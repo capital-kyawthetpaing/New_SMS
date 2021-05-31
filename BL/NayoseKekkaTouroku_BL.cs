@@ -32,6 +32,16 @@ namespace BL
 
             return dt;
         }
-        
+        /// <summary>
+        /// 名寄せ結果登録データ取得処理
+        /// NayoseKekkaTourokuよりデータ抽出時に使用
+        /// </summary>
+        public DataTable M_Customer_SelectForNayose(M_Customer_Entity me)
+        {
+            M_Customer_DL mdl = new M_Customer_DL();
+            DataTable dt = mdl.M_Customer_SelectForNayose(me);
+
+            return dt;
+        }
     }
 }
