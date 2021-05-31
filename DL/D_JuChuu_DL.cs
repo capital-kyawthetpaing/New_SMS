@@ -479,6 +479,42 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        /// <summary>
+        /// 名寄せ結果登録データ取得処理
+        /// NayoseKekkaTourokuよりデータ抽出時に使用
+        /// </summary>
+        public DataTable D_Juchu_SelectForNayose(D_Juchuu_Entity de)
+        {
+            string sp = "D_Juchu_SelectForNayose";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SiteKBN", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SiteKBN } },
+                { "@NayoseKekkaTourokuDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.NayoseKekkaTourokuDate } },
+            };
+
+            return SelectData(dic, sp);
+        }
+        public bool NayoseKekkaTouroku_Exec(D_Juchuu_Entity dje, DataTable dt)
+        {
+            string sp = "PRC_NayoseKekkaTouroku";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParam(command, "@Operator", SqlDbType.VarChar, dje.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dje.PC);
+
+            UseTransaction = true;
+
+            string outPutParam = "";    //未使用
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+
+            return ret;
+        }
         public bool DeleteTemporaryReserve(D_Juchuu_Entity de)
         {
             string sp = "DeleteTemporaryReserve";

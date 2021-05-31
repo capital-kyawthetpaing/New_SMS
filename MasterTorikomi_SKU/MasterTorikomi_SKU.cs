@@ -59,6 +59,7 @@ namespace MasterTorikomi_SKU
             dtSKU = sbl.M_SKU_SelectAll_NOPara();
             //dtAPI = apbl.M_API_Select();
             this.ModeVisible = false;
+            Btn_F12.Text = "取込(F12)";
         }
         public override void FunctionProcess(int index)
         {
@@ -146,7 +147,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "1")
                     {
@@ -193,7 +194,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "2")
                     {
@@ -226,7 +227,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "3")
                     {
@@ -262,7 +263,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "4")
                     {
@@ -290,7 +291,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "5")
                     {
@@ -317,7 +318,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "6")
                     {
@@ -342,7 +343,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "7")
                     {
@@ -366,7 +367,7 @@ namespace MasterTorikomi_SKU
                     bbl.ShowMessage("E137");
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "8")
                     {
@@ -401,7 +402,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "1")
                     {
@@ -415,7 +416,7 @@ namespace MasterTorikomi_SKU
                 {
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "2")
                     {
@@ -431,7 +432,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "3")
                     {
@@ -446,7 +447,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "4")
                     {
@@ -460,7 +461,7 @@ namespace MasterTorikomi_SKU
                 {
                     return false;
                 }
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "5")
                     {
@@ -475,7 +476,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "6")
                     {
@@ -491,7 +492,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "7")
                     {
@@ -507,7 +508,7 @@ namespace MasterTorikomi_SKU
                     return false;
                 }
 
-                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
+                if (!String.IsNullOrEmpty(dt.Rows[0]["データ区分"].ToString()))
                 {
                     if (kibun != "8")
                     {

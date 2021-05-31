@@ -466,10 +466,10 @@ namespace Search
                     }
                 }
 
-                //for(int i= (int)EIndex.DayStart; i <= (int)EIndex.PlanDateEnd; i++)
-                //{
-                //    detailControls[i].Text = ymd;
-                //}
+                for (int i = (int)EIndex.DayStart; i <= (int)EIndex.DayEnd; i++)
+                {
+                    detailControls[i].Text = ymd;
+                }
                 detailControls[(int)EIndex.StaffCD].Text = OperatorCD;
                 ScStaff.LabelText = mse.StaffName;
 

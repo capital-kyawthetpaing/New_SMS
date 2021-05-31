@@ -133,6 +133,7 @@
     <Compile Include="Nyuukin_Ichihanyou_BL.cs" />
     <Compile Include="NyuusyukkinYoteiList_BL.cs" />
     <Compile Include="PickingList_BL.cs" />
+    <Compile Include="NayoseKekkaTouroku_BL.cs" />
     <Compile Include="PickingNyuuryoku_BL.cs" />
     <Compile Include="RakutenAPI_BL.cs" />
     <Compile Include="SaikenKanriHyou_BL.cs" />
