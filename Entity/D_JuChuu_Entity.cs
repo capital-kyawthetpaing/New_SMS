@@ -105,6 +105,13 @@ namespace Entity
         public string LastArriveDate { get; set; }
         public string LastSalesDate { get; set; }
         public string MitsumoriNO { get; set; }
+        public string TenzikaiJuchuuNO { get; set; }
+        public string MailAddress { get; set; }
+        public string CommentCustomer { get; set; }
+        public string CommentCapital { get; set; }
+        public string KaolaetcFLG { get; set; }
+        public string NayoseKekkaTourokuDate { get; set; }
+
         public string JuchuuDateTime { get; set; }
 
         //[D_StoreJuchuu]

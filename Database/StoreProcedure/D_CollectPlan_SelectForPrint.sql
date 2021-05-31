@@ -31,22 +31,22 @@ BEGIN
         SELECT DH.StoreCD
               ,(SELECT top 1 A.StoreName
                 FROM M_Store A 
-                WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.NextCollectPlanDate
+                WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate desc) AS StoreName
               ,(SELECT TOP 1 A.StaffCD
                 FROM M_Customer AS A
-                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate) 
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate DESC) AS StaffCD
               ,(SELECT TOP 1 B.StaffName
                 FROM M_Staff AS B
                 WHERE B.StaffCD = (SELECT TOP 1 A.StaffCD
                                    FROM M_Customer AS A
-                                   WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                                   WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                                    AND A.DeleteFlg = 0
                                    ORDER BY A.ChangeDate DESC)
-                AND B.ChangeDate <= DH.NextCollectPlanDate
+                AND B.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                 AND B.DeleteFlg = 0
                 ORDER BY B.ChangeDate DESC) AS StaffName
 
@@ -57,11 +57,11 @@ BEGIN
                      ELSE NULL END) AS DelayDays
               ,DH.JuchuuNO
               ,DH.SalesNO
-              ,DS.SalesDate
+              ,CONVERT(varchar,DS.SalesDate,111) AS SalesDate
               ,DH.BillingNO
               ,DH.CollectPlanGaku	--Åž¿‹Šz
               
-              ,A.CollectDate	--“ü‹à“ú
+              ,CONVERT(varchar,A.CollectDate,111) AS CollectDate	--“ü‹à“ú
               ,A.CollectNO
               ,A.CollectGaku	--“ü‹àŠz
               ,DH.CollectPlanGaku-A.CollectGaku AS KaisyuGaku	--‰ñŽû—\’èŠz=Åž¿‹Šz|“ü‹àŠz
@@ -69,7 +69,7 @@ BEGIN
               ,DB.BillingCustomerCD
               ,(SELECT TOP 1 A.CustomerName
                 FROM M_Customer AS A
-                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate DESC) AS CustomerName
                         
@@ -117,21 +117,23 @@ BEGIN
             ) AS A
             ON A.CollectPlanNO = DH.CollectPlanNO
 
-            WHERE DH.NextCollectPlanDate >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE DH.NextCollectPlanDate END)
-            AND DH.NextCollectPlanDate   <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE DH.NextCollectPlanDate END)
+            WHERE ISNULL(DH.NextCollectPlanDate,'') >= (CASE WHEN ISNULL(@DateFrom,'') <> '' THEN CONVERT(DATE, @DateFrom) ELSE ISNULL(DH.NextCollectPlanDate,'') END)
+            AND ISNULL(DH.NextCollectPlanDate,'')   <= (CASE WHEN ISNULL(@DateTo,'') <> ''   THEN CONVERT(DATE, @DateTo)   ELSE ISNULL(DH.NextCollectPlanDate,'') END)
             AND DH.StoreCD = @StoreCD
-            AND DH.CustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
+            AND DH.CustomerCD = (CASE WHEN ISNULL(@CustomerCD,'') <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
 
             AND DH.DeleteDateTime IS NULL
             AND EXISTS(SELECT A.StaffCD
                        FROM M_Customer AS A
                        WHERE A.CustomerCD = DH.CustomerCD 
-                       AND A.ChangeDate <= DH.NextCollectPlanDate 
+                       AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate) 
                        AND A.DeleteFlg = 0
-                       AND A.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE A.StaffCD END)
+                       AND A.StaffCD = (CASE WHEN ISNULL(@StaffCD,'') <> '' THEN @StaffCD ELSE A.StaffCD END)
                        )
             AND DH.InvalidFLG = 0
             AND DH.BillingType = 2
+            AND ((@PrintFLG = 1 AND DH.BillingNO IS NOT NULL) OR @PrintFLG = 0)
+            AND (@PaymentProgressKBN = 1 OR (@PaymentProgressKBN = 0 AND DH.PaymentProgressKBN <= 1))
 
         ORDER BY StoreCD,StaffCD,NextCollectPlanDate,SalesDate
         ;
@@ -142,13 +144,13 @@ BEGIN
               ,(SELECT top 1 A.StoreName
                 FROM M_Store A 
                 WHERE A.StoreCD = DH.StoreCD 
-                AND A.ChangeDate <= DH.NextCollectPlanDate
+                AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                 AND A.DeleteFlg = 0
               ORDER BY A.ChangeDate desc) AS StoreName
               ,(SELECT TOP 1 A.StaffCD
                 FROM M_Customer AS A
                 WHERE A.CustomerCD = DH.CustomerCD 
-                AND A.ChangeDate <= DH.NextCollectPlanDate 
+                AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate DESC) AS StaffCD
               ,(SELECT TOP 1 B.StaffName
@@ -156,10 +158,10 @@ BEGIN
                 WHERE B.StaffCD = (SELECT TOP 1 A.StaffCD
                                    FROM M_Customer AS A
                                    WHERE A.CustomerCD = DH.CustomerCD 
-                                   AND A.ChangeDate <= DH.NextCollectPlanDate 
+                                   AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                                    AND A.DeleteFlg = 0
                                    ORDER BY A.ChangeDate DESC)
-                AND B.ChangeDate <= DH.NextCollectPlanDate
+                AND B.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate)
                 AND B.DeleteFlg = 0
                 ORDER BY B.ChangeDate DESC) AS StaffName
                 
@@ -170,11 +172,11 @@ BEGIN
                      ELSE NULL END) AS DelayDays
               ,DH.JuchuuNO
               ,DH.SalesNO
-              ,DS.SalesDate
+              ,CONVERT(varchar,DS.SalesDate,111) AS SalesDate
               ,DH.BillingNO
               ,DH.CollectPlanGaku	--Åž¿‹Šz
               
-              ,A.CollectDate
+              ,CONVERT(varchar,A.CollectDate,111) AS CollectDate
               ,A.CollectNO
               ,A.CollectGaku	--“ü‹àŠz
               ,DH.CollectPlanGaku-A.CollectGaku AS KaisyuGaku	--‰ñŽû—\’èŠz=Åž¿‹Šz|“ü‹àŠz
@@ -182,7 +184,7 @@ BEGIN
               ,DB.BillingCustomerCD
               ,(SELECT TOP 1 A.CustomerName
                 FROM M_Customer AS A
-                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate) 
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate DESC) AS CustomerName
                         
@@ -223,21 +225,23 @@ BEGIN
             ) AS A
             ON A.CollectPlanNO = DH.CollectPlanNO
             
-            WHERE DH.NextCollectPlanDate >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE DH.NextCollectPlanDate END)
-            AND DH.NextCollectPlanDate   <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE DH.NextCollectPlanDate END)
+            WHERE ISNULL(DH.NextCollectPlanDate,'') >= (CASE WHEN ISNULL(@DateFrom,'') <> '' THEN CONVERT(DATE, @DateFrom) ELSE ISNULL(DH.NextCollectPlanDate,'') END)
+            AND ISNULL(DH.NextCollectPlanDate,'')   <= (CASE WHEN ISNULL(@DateTo,'') <> ''   THEN CONVERT(DATE, @DateTo)   ELSE ISNULL(DH.NextCollectPlanDate,'') END)
             AND DH.StoreCD = @StoreCD
-            AND DH.CustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
+            AND DH.CustomerCD = (CASE WHEN ISNULL(@CustomerCD,'') <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
 
             AND DH.DeleteDateTime IS NULL
             AND EXISTS(SELECT A.StaffCD
                        FROM M_Customer AS A
                        WHERE A.CustomerCD = DH.CustomerCD 
-                       AND A.ChangeDate <= DH.NextCollectPlanDate 
+                       AND A.ChangeDate <= ISNULL(DH.NextCollectPlanDate,DH.FirstCollectPlanDate) 
                        AND A.DeleteFlg = 0
-                       AND A.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE A.StaffCD END)
+                       AND A.StaffCD = (CASE WHEN ISNULL(@StaffCD,'') <> '' THEN @StaffCD ELSE A.StaffCD END)
                        )
             AND DH.InvalidFLG = 0
             AND DH.BillingType = 2
+            AND ((@PrintFLG = 1 AND DH.BillingNO IS NOT NULL) OR @PrintFLG = 0)
+            AND (@PaymentProgressKBN = 1 OR (@PaymentProgressKBN = 0 AND DH.PaymentProgressKBN <= 1))
 
         ORDER BY StoreCD,StaffCD,NextCollectPlanDate,SalesDate
         ;

@@ -35,6 +35,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
         {
             InitializeComponent();
         }
+
         //得意先別商品別単価マスタ取込
         private void MasterTorikomi_M_CustomerSKUPrice_Load(object sender, EventArgs e)
         {
@@ -206,7 +207,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Cancel();
-                        gvItem.DataSource = null;
+                        inputPath.Focus();
                     }
                     break;
                 case 11:
@@ -243,6 +244,7 @@ namespace MasterTorikomi_M_CustomerSKUPrice
                         return;
                     }
                     var dt = gvItem.DataSource as DataTable;
+                   
                     if (dt == null)
                     {
                         MessageBox.Show("Please import first");

@@ -116,7 +116,8 @@ namespace CKM_Controls
             在庫情報,
             出荷倉庫,
             箱サイズ,
-            希望時間帯
+            希望時間帯,
+            サイト種類
         }
 
         private int length = 10;
@@ -336,7 +337,7 @@ namespace CKM_Controls
                 case CboType.発注フラグ:  //20200316
                 case CboType.年度フラグ://20200427
                 case CboType.シーズンフラグ://20200427
-
+                case CboType.サイト種類:
 
                     MultiPorpose_BL mbl = new MultiPorpose_BL();
                     M_MultiPorpose_Entity me = new M_MultiPorpose_Entity();
@@ -418,7 +419,11 @@ namespace CKM_Controls
                             me.ID = MultiPorpose_BL.ID_Season;
                             kbn = 2;
                             break;
-                        
+                        case CboType.サイト種類:
+                            me.ID = MultiPorpose_BL.ID_Site;
+                            kbn = 2;
+                            break;
+
                     }
                     if (type != null)
                     {
@@ -592,6 +597,8 @@ namespace CKM_Controls
                     DataTable dtTime = cbtl.M_CarrierDeliveryTime_Bind(mcte);
                     BindCombo("DeliveryTime", "DeliveryTimeName", dtTime);
                     break;
+
+
             }
         }
         public void GetLoginInformations()

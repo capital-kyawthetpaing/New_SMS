@@ -218,6 +218,61 @@ namespace DL
             }
         }
 
+        //public string InsertUpdateDeleteData_New(string sSQL, string conStr, params SqlParameter[] para)
+        //{
+        //    if (UseTran)
+        //    {
+        //        using (SqlConnection sqlConnection = new SqlConnection(conStr))
+        //        {
+        //            sqlConnection.Open();
+        //            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+        //            SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();
+        //            sqlCommand.Connection = sqlConnection;
+        //            sqlCommand.Transaction = sqlTransaction;
+        //            sqlCommand.CommandType = CommandType.StoredProcedure;
+        //            sqlCommand.CommandText = sSQL;
+        //            if (para != null)
+        //                para = ChangeToDBNull(para);
+        //            sqlCommand.Parameters.AddRange(para);
+
+        //            try
+        //            {
+        //                sqlCommand.ExecuteNonQuery();
+        //                sqlTransaction.Commit();
+        //                return "true";
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                sqlTransaction.Rollback();
+        //                throw ex;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        try
+        //        {
+        //            var newCon = new SqlConnection(conStr);
+        //            if (para != null)
+        //                para = ChangeToDBNull(para);
+        //            SqlCommand cmd = new SqlCommand(sSQL, newCon)
+        //            {
+        //                CommandType = CommandType.StoredProcedure
+        //            };
+        //            cmd.Parameters.AddRange(para);
+        //            cmd.Connection.Open();
+        //            cmd.ExecuteNonQuery();
+        //            cmd.Connection.Close();
+        //            return "true";
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //    }
+
+        //}
+
         public DataTable Select_SearchName(Dictionary<string, ValuePair> dic, string sp)
         {
 
