@@ -63,6 +63,7 @@ namespace NyuukinNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
+                Btn_F7.Text = "削除(F7)";
                 Btn_F8.Text = "新規消込(F8)";
                 Btn_F10.Text = "修正(F10)";
                 Btn_F12.Text = "新規入金(F12)";
@@ -134,7 +135,8 @@ namespace NyuukinNyuuryoku
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
-                Btn_F10.Enabled = true;                  
+                Btn_F10.Enabled = true;
+                Btn_F7.Enabled = true;
 
             }
             else
@@ -211,6 +213,12 @@ namespace NyuukinNyuuryoku
                     //修正モードで、入金入力を表示（売上単位）
                     //修正モード:値10, 明細.入金番号, 明細.入金消込番号
                     cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no + " " + confirmNO;
+                }
+                else if (kbn.Equals(4))
+                {
+                    //削除モードで、入金入力を表示（売上単位）
+                    //削除モード:値11, 明細.入金番号, 明細.入金消込番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 11 " + no + " " + confirmNO;
                 }
             }            
             
@@ -502,6 +510,9 @@ namespace NyuukinNyuuryoku
 
                         break;
                     }
+                case 6://F7:削除
+                    ExecDetail(4);
+                    break;
                 case 7://F8:新規消込
                     ExecDetail(0);
                     break;
@@ -591,6 +602,7 @@ namespace NyuukinNyuuryoku
                         F9Visible = false;
                         break;
                 }
+                Btn_F7.Enabled = false;
                 Btn_F8.Enabled = false;
                 Btn_F10.Enabled = false;
             }
@@ -665,6 +677,7 @@ namespace NyuukinNyuuryoku
 
                 //カーソルが明細に存在する場合に「修正(F10)」として表示
                 Btn_F10.Enabled = true;
+                Btn_F7.Enabled = true;
             }
             catch (Exception ex)
             {

@@ -994,6 +994,14 @@ namespace NyuukinNyuuryoku_Detail
                             keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
                             CheckKey((int)EIndex.ConfirmNO, true);
                         }
+                        else if (mode.Equals("11"))
+                        {
+                            ChangeOperationMode(EOperationMode.DELETE);
+                            mKidouMode = 11;
+                            string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                            keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                            CheckKey((int)EIndex.ConfirmNO, true);
+                        }
                         SetFocus();
                     }                    
 
@@ -2487,7 +2495,10 @@ namespace NyuukinNyuuryoku_Detail
             //更新処理
             nnbl.D_Collect_Exec(dce,dt, (short)OperationMode);
 
-            bbl.ShowMessage("I101");
+            if (OperationMode == EOperationMode.DELETE)
+                bbl.ShowMessage("I102");
+            else
+                bbl.ShowMessage("I101");
 
             if (mKidouMode.Equals(0))
                 //更新後画面クリア
