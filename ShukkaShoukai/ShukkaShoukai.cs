@@ -119,13 +119,20 @@ namespace ShukkaShoukai
 
             if (chkShipmentOfSale.Checked && chkShipmentOfTransfer.Checked)
             {
-                return string.Empty;
+                chk = "2";
+                return chk;
+            }
+            else if(chkShipmentOfSale.Checked)
+            {
+                chk = "0";               
+                return chk;
             }
             else
             {
-                chk = chkShipmentOfSale.Checked ? "0" : "1";
+                chk = "1";
                 return chk;
             }
+
         }
 
         public string CheckValue2()
@@ -134,11 +141,17 @@ namespace ShukkaShoukai
 
             if(chkAlready.Checked && chkNot .Checked )
             {
-                return string.Empty;
+                chk1 = "2";
+                return chk1;
+            }
+            else if(chkAlready.Checked)
+            {
+                chk1 = "0";
+                return chk1;
             }
             else
             {
-                chk1 = chkAlready.Checked ? "0" : "1";
+                chk1 = "1";
                 return chk1;
             }
         }
