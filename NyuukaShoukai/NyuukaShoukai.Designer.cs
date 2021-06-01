@@ -31,6 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNyuukaShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -60,6 +66,16 @@
             this.ScSupplier = new Search.CKM_SearchControl();
             this.cboSourceWH = new CKM_Controls.CKM_ComboBox();
             this.dgvNyuukaShoukai = new CKM_Controls.CKM_GridView();
+            this.txtArrivalDay1 = new CKM_Controls.CKM_TextBox();
+            this.txtArrivalDay2 = new CKM_Controls.CKM_TextBox();
+            this.txtStockDate1 = new CKM_Controls.CKM_TextBox();
+            this.txtStockDate2 = new CKM_Controls.CKM_TextBox();
+            this.txtPurchaseDate1 = new CKM_Controls.CKM_TextBox();
+            this.txtPurchaseDate2 = new CKM_Controls.CKM_TextBox();
+            this.btnDisplay = new CKM_Controls.CKM_Button();
+            this.panelDetail = new System.Windows.Forms.Panel();
+            this.panelcombo2 = new System.Windows.Forms.Panel();
+            this.panelcombo1 = new System.Windows.Forms.Panel();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCalcuArrivalPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,16 +95,6 @@
             this.colArrivalNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPurchaseNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtArrivalDay1 = new CKM_Controls.CKM_TextBox();
-            this.txtArrivalDay2 = new CKM_Controls.CKM_TextBox();
-            this.txtStockDate1 = new CKM_Controls.CKM_TextBox();
-            this.txtStockDate2 = new CKM_Controls.CKM_TextBox();
-            this.txtPurchaseDate1 = new CKM_Controls.CKM_TextBox();
-            this.txtPurchaseDate2 = new CKM_Controls.CKM_TextBox();
-            this.btnDisplay = new CKM_Controls.CKM_Button();
-            this.panelDetail = new System.Windows.Forms.Panel();
-            this.panelcombo2 = new System.Windows.Forms.Panel();
-            this.panelcombo1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNyuukaShoukai)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.panelcombo2.SuspendLayout();
@@ -171,6 +177,7 @@
             this.txtDeliveryNote.isMaxLengthErr = false;
             this.txtDeliveryNote.IsNumber = true;
             this.txtDeliveryNote.IsShop = false;
+            this.txtDeliveryNote.IsTimemmss = false;
             this.txtDeliveryNote.Length = 15;
             this.txtDeliveryNote.Location = new System.Drawing.Point(142, 215);
             this.txtDeliveryNote.MaxLength = 15;
@@ -504,6 +511,7 @@
             this.ScItem.Size = new System.Drawing.Size(223, 27);
             this.ScItem.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.ScItem.TabIndex = 14;
+            this.ScItem.test = null;
             this.ScItem.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScItem.UseChangeDate = false;
             this.ScItem.Value1 = null;
@@ -533,6 +541,7 @@
             this.ScSKUCD.Size = new System.Drawing.Size(223, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.ScSKUCD.TabIndex = 15;
+            this.ScSKUCD.test = null;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
             this.ScSKUCD.Value1 = null;
@@ -562,6 +571,7 @@
             this.ScJanCD.Size = new System.Drawing.Size(633, 27);
             this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
             this.ScJanCD.TabIndex = 16;
+            this.ScJanCD.test = null;
             this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScJanCD.UseChangeDate = false;
             this.ScJanCD.Value1 = null;
@@ -588,6 +598,7 @@
             this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
+            this.txtProductName.IsTimemmss = false;
             this.txtProductName.Length = 80;
             this.txtProductName.Location = new System.Drawing.Point(933, 218);
             this.txtProductName.MaxLength = 80;
@@ -621,6 +632,7 @@
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScSupplier.TabIndex = 12;
+            this.ScSupplier.test = null;
             this.ScSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSupplier.UseChangeDate = false;
             this.ScSupplier.Value1 = null;
@@ -655,7 +667,7 @@
             this.dgvNyuukaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvNyuukaShoukai.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -682,6 +694,14 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
@@ -692,154 +712,6 @@
             this.dgvNyuukaShoukai.TabIndex = 35;
             this.dgvNyuukaShoukai.UseRowNo = true;
             this.dgvNyuukaShoukai.UseSetting = true;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "ArrivalDate";
-            this.colDate.HeaderText = "入荷日";
-            this.colDate.MaxInputLength = 10;
-            this.colDate.Name = "colDate";
-            // 
-            // colCalcuArrivalPlanDate
-            // 
-            this.colCalcuArrivalPlanDate.DataPropertyName = "CalcuArrivalPlanDate";
-            this.colCalcuArrivalPlanDate.HeaderText = "入荷予定日";
-            this.colCalcuArrivalPlanDate.MaxInputLength = 10;
-            this.colCalcuArrivalPlanDate.Name = "colCalcuArrivalPlanDate";
-            // 
-            // colPurchaseDate
-            // 
-            this.colPurchaseDate.DataPropertyName = "PurchaseDate";
-            this.colPurchaseDate.HeaderText = "仕入日";
-            this.colPurchaseDate.MaxInputLength = 10;
-            this.colPurchaseDate.Name = "colPurchaseDate";
-            // 
-            // colGoods
-            // 
-            this.colGoods.DataPropertyName = "Goods";
-            this.colGoods.HeaderText = "入庫区分";
-            this.colGoods.MaxInputLength = 8;
-            this.colGoods.Name = "colGoods";
-            // 
-            // colSKUCD
-            // 
-            this.colSKUCD.DataPropertyName = "SKUCD";
-            this.colSKUCD.HeaderText = "SKUCD";
-            this.colSKUCD.MaxInputLength = 30;
-            this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.Width = 300;
-            // 
-            // colJanCD
-            // 
-            this.colJanCD.DataPropertyName = "JanCD";
-            this.colJanCD.HeaderText = "JANCD";
-            this.colJanCD.MaxInputLength = 13;
-            this.colJanCD.Name = "colJanCD";
-            this.colJanCD.Width = 150;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.MaxInputLength = 80;
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.Width = 500;
-            // 
-            // colColorName
-            // 
-            this.colColorName.DataPropertyName = "ColorName";
-            this.colColorName.HeaderText = "カラー";
-            this.colColorName.MaxInputLength = 20;
-            this.colColorName.Name = "colColorName";
-            this.colColorName.Width = 200;
-            // 
-            // colSizeName
-            // 
-            this.colSizeName.DataPropertyName = "SizeName";
-            this.colSizeName.HeaderText = "サイズ";
-            this.colSizeName.MaxInputLength = 20;
-            this.colSizeName.Name = "colSizeName";
-            this.colSizeName.Width = 200;
-            // 
-            // colArrivalPlanSu
-            // 
-            this.colArrivalPlanSu.DataPropertyName = "ArrivalPlanSu";
-            this.colArrivalPlanSu.HeaderText = "予定数";
-            this.colArrivalPlanSu.MaxInputLength = 6;
-            this.colArrivalPlanSu.Name = "colArrivalPlanSu";
-            this.colArrivalPlanSu.Width = 60;
-            // 
-            // colArrivalSu
-            // 
-            this.colArrivalSu.DataPropertyName = "ArrivalSu";
-            this.colArrivalSu.HeaderText = "入荷数";
-            this.colArrivalSu.MaxInputLength = 6;
-            this.colArrivalSu.Name = "colArrivalSu";
-            this.colArrivalSu.Width = 60;
-            // 
-            // colVendorName
-            // 
-            this.colVendorName.DataPropertyName = "VendorName";
-            this.colVendorName.HeaderText = "仕入先";
-            this.colVendorName.MaxInputLength = 51;
-            this.colVendorName.Name = "colVendorName";
-            this.colVendorName.Width = 400;
-            // 
-            // colSoukoName
-            // 
-            this.colSoukoName.DataPropertyName = "SoukoName";
-            this.colSoukoName.HeaderText = "移動元倉庫";
-            this.colSoukoName.MaxInputLength = 40;
-            this.colSoukoName.Name = "colSoukoName";
-            this.colSoukoName.Width = 300;
-            // 
-            // colDirectDelivery
-            // 
-            this.colDirectDelivery.DataPropertyName = "Directdelivery";
-            this.colDirectDelivery.HeaderText = "直送";
-            this.colDirectDelivery.MaxInputLength = 2;
-            this.colDirectDelivery.Name = "colDirectDelivery";
-            this.colDirectDelivery.Width = 50;
-            // 
-            // colReserveNum
-            // 
-            this.colReserveNum.DataPropertyName = "ReserveNumber";
-            this.colReserveNum.HeaderText = "受注番号";
-            this.colReserveNum.MaxInputLength = 11;
-            this.colReserveNum.Name = "colReserveNum";
-            this.colReserveNum.Width = 110;
-            // 
-            // colNumber
-            // 
-            this.colNumber.DataPropertyName = "Number";
-            this.colNumber.HeaderText = "発注番号";
-            this.colNumber.MaxInputLength = 11;
-            this.colNumber.Name = "colNumber";
-            this.colNumber.Width = 110;
-            // 
-            // colArrivalNO
-            // 
-            this.colArrivalNO.DataPropertyName = "ArrivalNO";
-            this.colArrivalNO.HeaderText = "入荷番号";
-            this.colArrivalNO.MaxInputLength = 11;
-            this.colArrivalNO.Name = "colArrivalNO";
-            this.colArrivalNO.Width = 110;
-            // 
-            // colPurchaseNO
-            // 
-            this.colPurchaseNO.DataPropertyName = "PurchaseNO";
-            this.colPurchaseNO.HeaderText = "仕入番号";
-            this.colPurchaseNO.MaxInputLength = 11;
-            this.colPurchaseNO.Name = "colPurchaseNO";
-            this.colPurchaseNO.Width = 110;
-            // 
-            // colVendor
-            // 
-            this.colVendor.DataPropertyName = "VendorDeliveryNo";
-            this.colVendor.HeaderText = "納品書番号";
-            this.colVendor.MaxInputLength = 15;
-            this.colVendor.Name = "colVendor";
-            this.colVendor.Width = 150;
             // 
             // txtArrivalDay1
             // 
@@ -861,6 +733,7 @@
             this.txtArrivalDay1.isMaxLengthErr = false;
             this.txtArrivalDay1.IsNumber = true;
             this.txtArrivalDay1.IsShop = false;
+            this.txtArrivalDay1.IsTimemmss = false;
             this.txtArrivalDay1.Length = 8;
             this.txtArrivalDay1.Location = new System.Drawing.Point(142, 58);
             this.txtArrivalDay1.MaxLength = 8;
@@ -892,6 +765,7 @@
             this.txtArrivalDay2.isMaxLengthErr = false;
             this.txtArrivalDay2.IsNumber = true;
             this.txtArrivalDay2.IsShop = false;
+            this.txtArrivalDay2.IsTimemmss = false;
             this.txtArrivalDay2.Length = 8;
             this.txtArrivalDay2.Location = new System.Drawing.Point(281, 58);
             this.txtArrivalDay2.MaxLength = 8;
@@ -924,6 +798,7 @@
             this.txtStockDate1.isMaxLengthErr = false;
             this.txtStockDate1.IsNumber = true;
             this.txtStockDate1.IsShop = false;
+            this.txtStockDate1.IsTimemmss = false;
             this.txtStockDate1.Length = 8;
             this.txtStockDate1.Location = new System.Drawing.Point(142, 100);
             this.txtStockDate1.MaxLength = 8;
@@ -955,6 +830,7 @@
             this.txtStockDate2.isMaxLengthErr = false;
             this.txtStockDate2.IsNumber = true;
             this.txtStockDate2.IsShop = false;
+            this.txtStockDate2.IsTimemmss = false;
             this.txtStockDate2.Length = 8;
             this.txtStockDate2.Location = new System.Drawing.Point(281, 100);
             this.txtStockDate2.MaxLength = 8;
@@ -987,6 +863,7 @@
             this.txtPurchaseDate1.isMaxLengthErr = false;
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
+            this.txtPurchaseDate1.IsTimemmss = false;
             this.txtPurchaseDate1.Length = 8;
             this.txtPurchaseDate1.Location = new System.Drawing.Point(142, 176);
             this.txtPurchaseDate1.MaxLength = 8;
@@ -1018,6 +895,7 @@
             this.txtPurchaseDate2.isMaxLengthErr = false;
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
+            this.txtPurchaseDate2.IsTimemmss = false;
             this.txtPurchaseDate2.Length = 8;
             this.txtPurchaseDate2.Location = new System.Drawing.Point(281, 176);
             this.txtPurchaseDate2.MaxLength = 8;
@@ -1109,6 +987,164 @@
             this.panelcombo1.Size = new System.Drawing.Size(300, 40);
             this.panelcombo1.TabIndex = 0;
             // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "ArrivalDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colDate.HeaderText = "入荷日";
+            this.colDate.MaxInputLength = 10;
+            this.colDate.Name = "colDate";
+            this.colDate.Width = 90;
+            // 
+            // colCalcuArrivalPlanDate
+            // 
+            this.colCalcuArrivalPlanDate.DataPropertyName = "CalcuArrivalPlanDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colCalcuArrivalPlanDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colCalcuArrivalPlanDate.HeaderText = "入荷予定日";
+            this.colCalcuArrivalPlanDate.MaxInputLength = 10;
+            this.colCalcuArrivalPlanDate.Name = "colCalcuArrivalPlanDate";
+            this.colCalcuArrivalPlanDate.Width = 90;
+            // 
+            // colPurchaseDate
+            // 
+            this.colPurchaseDate.DataPropertyName = "PurchaseDate";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPurchaseDate.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colPurchaseDate.HeaderText = "仕入日";
+            this.colPurchaseDate.MaxInputLength = 10;
+            this.colPurchaseDate.Name = "colPurchaseDate";
+            this.colPurchaseDate.Width = 90;
+            // 
+            // colGoods
+            // 
+            this.colGoods.DataPropertyName = "Goods";
+            this.colGoods.HeaderText = "入庫区分";
+            this.colGoods.MaxInputLength = 8;
+            this.colGoods.Name = "colGoods";
+            this.colGoods.Width = 90;
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.MaxInputLength = 30;
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.Width = 270;
+            // 
+            // colJanCD
+            // 
+            this.colJanCD.DataPropertyName = "JanCD";
+            this.colJanCD.HeaderText = "JANCD";
+            this.colJanCD.MaxInputLength = 13;
+            this.colJanCD.Name = "colJanCD";
+            this.colJanCD.Width = 130;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品名";
+            this.colSKUName.MaxInputLength = 80;
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.Width = 430;
+            // 
+            // colColorName
+            // 
+            this.colColorName.DataPropertyName = "ColorName";
+            this.colColorName.HeaderText = "カラー";
+            this.colColorName.MaxInputLength = 20;
+            this.colColorName.Name = "colColorName";
+            this.colColorName.Width = 130;
+            // 
+            // colSizeName
+            // 
+            this.colSizeName.DataPropertyName = "SizeName";
+            this.colSizeName.HeaderText = "サイズ";
+            this.colSizeName.MaxInputLength = 20;
+            this.colSizeName.Name = "colSizeName";
+            this.colSizeName.Width = 130;
+            // 
+            // colArrivalPlanSu
+            // 
+            this.colArrivalPlanSu.DataPropertyName = "ArrivalPlanSu";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colArrivalPlanSu.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colArrivalPlanSu.HeaderText = "予定数";
+            this.colArrivalPlanSu.MaxInputLength = 6;
+            this.colArrivalPlanSu.Name = "colArrivalPlanSu";
+            this.colArrivalPlanSu.Width = 60;
+            // 
+            // colArrivalSu
+            // 
+            this.colArrivalSu.DataPropertyName = "ArrivalSu";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colArrivalSu.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colArrivalSu.HeaderText = "入荷数";
+            this.colArrivalSu.MaxInputLength = 6;
+            this.colArrivalSu.Name = "colArrivalSu";
+            this.colArrivalSu.Width = 60;
+            // 
+            // colVendorName
+            // 
+            this.colVendorName.DataPropertyName = "VendorName";
+            this.colVendorName.HeaderText = "仕入先";
+            this.colVendorName.MaxInputLength = 51;
+            this.colVendorName.Name = "colVendorName";
+            this.colVendorName.Width = 300;
+            // 
+            // colSoukoName
+            // 
+            this.colSoukoName.DataPropertyName = "SoukoName";
+            this.colSoukoName.HeaderText = "移動元倉庫";
+            this.colSoukoName.MaxInputLength = 40;
+            this.colSoukoName.Name = "colSoukoName";
+            this.colSoukoName.Width = 250;
+            // 
+            // colDirectDelivery
+            // 
+            this.colDirectDelivery.DataPropertyName = "Directdelivery";
+            this.colDirectDelivery.HeaderText = "直送";
+            this.colDirectDelivery.MaxInputLength = 2;
+            this.colDirectDelivery.Name = "colDirectDelivery";
+            this.colDirectDelivery.Width = 50;
+            // 
+            // colReserveNum
+            // 
+            this.colReserveNum.DataPropertyName = "ReserveNumber";
+            this.colReserveNum.HeaderText = "受注番号";
+            this.colReserveNum.MaxInputLength = 11;
+            this.colReserveNum.Name = "colReserveNum";
+            // 
+            // colNumber
+            // 
+            this.colNumber.DataPropertyName = "Number";
+            this.colNumber.HeaderText = "発注番号";
+            this.colNumber.MaxInputLength = 11;
+            this.colNumber.Name = "colNumber";
+            // 
+            // colArrivalNO
+            // 
+            this.colArrivalNO.DataPropertyName = "ArrivalNO";
+            this.colArrivalNO.HeaderText = "入荷番号";
+            this.colArrivalNO.MaxInputLength = 11;
+            this.colArrivalNO.Name = "colArrivalNO";
+            // 
+            // colPurchaseNO
+            // 
+            this.colPurchaseNO.DataPropertyName = "PurchaseNO";
+            this.colPurchaseNO.HeaderText = "仕入番号";
+            this.colPurchaseNO.MaxInputLength = 11;
+            this.colPurchaseNO.Name = "colPurchaseNO";
+            // 
+            // colVendor
+            // 
+            this.colVendor.DataPropertyName = "VendorDeliveryNo";
+            this.colVendor.HeaderText = "納品書番号";
+            this.colVendor.MaxInputLength = 15;
+            this.colVendor.Name = "colVendor";
+            this.colVendor.Width = 130;
+            // 
             // FrmNyuukaShoukai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1174,6 +1210,8 @@
         private CKM_Controls.CKM_TextBox txtArrivalDay1;
         private CKM_Controls.CKM_Button btnDisplay;
         private System.Windows.Forms.Panel panelDetail;
+        private System.Windows.Forms.Panel panelcombo2;
+        private System.Windows.Forms.Panel panelcombo1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCalcuArrivalPlanDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseDate;
@@ -1193,7 +1231,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colArrivalNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
-        private System.Windows.Forms.Panel panelcombo2;
-        private System.Windows.Forms.Panel panelcombo1;
     }
 }
