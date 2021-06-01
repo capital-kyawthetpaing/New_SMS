@@ -18,6 +18,7 @@ namespace NayoseSyoriAll
 
         private NayoseSyoriAll_BL nkbl;
         private D_Juchuu_Entity dje;
+        private bool mAutoMode = false;
 
         public NayoseSyoriAll()
         {
@@ -53,6 +54,14 @@ namespace NayoseSyoriAll
                 Btn_F12.Focus();
 
                 nkbl = new NayoseSyoriAll_BL();
+
+                //コマンドライン引数を配列で取得する
+                string[] cmds = System.Environment.GetCommandLineArgs();
+                if (cmds.Length - 1 > (int)ECmdLine.PcID)
+                {
+                    mAutoMode = true;
+                    ExecSec();
+                }
             }
             catch (Exception ex)
             {
@@ -80,22 +89,30 @@ namespace NayoseSyoriAll
 
         protected override void ExecSec()
         {
-            //Ｑ００２		
-            if (bbl.ShowMessage("Q002") != DialogResult.Yes)
-                return;
-
+            if (!mAutoMode)
+            {
+                //Ｑ００２		
+                if (bbl.ShowMessage("Q002") != DialogResult.Yes)
+                    return;
+            }
             //更新処理
             dje = GetEntity();
             nkbl.NayoseSyoriAll_Exec(dje);
 
-            if (!string.IsNullOrWhiteSpace(dje.ReturnFLG))
+            if (!mAutoMode)
             {
-                bbl.ShowMessage(dje.ReturnFLG);
-                return;
+                if (!string.IsNullOrWhiteSpace(dje.ReturnFLG))
+                {
+                    bbl.ShowMessage(dje.ReturnFLG);
+                    return;
+                }
+
+                bbl.ShowMessage("I002");
             }
-
-            bbl.ShowMessage("I002");
-
+            else
+            {
+                EndSec();
+            }
         }
 
         /// <summary>

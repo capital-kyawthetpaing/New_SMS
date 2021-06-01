@@ -1,6 +1,14 @@
-DROP  PROCEDURE [dbo].[PRC_NayoseSyoriAll]
-GO
-DROP  PROCEDURE [dbo].[PRC_NayoseSyoriAll_Sub]
+BEGIN TRY 
+ DROP PROCEDURE [dbo].[PRC_NayoseSyoriAll]
+END TRY
+
+BEGIN CATCH END CATCH 
+
+BEGIN TRY 
+ DROP PROCEDURE [dbo].[PRC_NayoseSyoriAll_Sub]
+END TRY
+
+BEGIN CATCH END CATCH 
 GO
 
 CREATE PROCEDURE PRC_NayoseSyoriAll_Sub
@@ -40,7 +48,7 @@ BEGIN
        ,[UpdateDateTime])
     SELECT
        @JuchuuNO
-       ,1 AS OnHoldRows
+       ,ISNULL((SELECT MAX(D.OnHoldRows) FROM D_JuchuuOnHold As D WHERE D.JuchuuNO = @JuchuuNO),0)+1 AS OnHoldRows
        ,'001' AS OnHoldCD
        ,@SYSDATETIME AS OccorDateTime
        ,NULL AS DisappeareDateTime
@@ -354,15 +362,198 @@ BEGIN
                             ;
                         
                         --次の「1.受注ワークを1件リード」へ。
-
                     END
                     ELSE IF @CNT4 = 0
                     BEGIN
                         --上記Select件数が0件の時、
                         --⑤の顧客マスタ登録へ
                         --テーブル転送仕様Ａに従って顧客マスタのレコード追加。
+                        SET @CustomerCD =(SELECT CustomerCount+1 FROM M_CustomerCounter WHERE MainKEY = 1);
+
+                        UPDATE M_CustomerCounter SET
+                        	[CustomerCount] = [CustomerCount] +1
+                        WHERE MainKEY = 1
+                        ;
                         
-                        
+                        INSERT INTO [M_Customer]
+                                   ([CustomerCD]
+                                   ,[ChangeDate]
+                                   ,[VariousFLG]
+                                   ,[CustomerName]
+                                   ,[LastName]
+                                   ,[FirstName]
+                                   ,[LongName1]
+                                   ,[LongName2]
+                                   ,[KanaName]
+                                   ,[StoreKBN]
+                                   ,[CustomerKBN]
+                                   ,[StoreTankaKBN]
+                                   ,[AliasKBN]
+                                   ,[BillingType]
+                                   ,[GroupName]
+                                   ,[BillingFLG]
+                                   ,[CollectFLG]
+                                   ,[BillingCD]
+                                   ,[CollectCD]
+                                   ,[BirthDate]
+                                   ,[Sex]
+                                   ,[Tel11]
+                                   ,[Tel12]
+                                   ,[Tel13]
+                                   ,[Tel21]
+                                   ,[Tel22]
+                                   ,[Tel23]
+                                   ,[ZipCD1]
+                                   ,[ZipCD2]
+                                   ,[Address1]
+                                   ,[Address2]
+                                   ,[MailAddress]
+                                   ,[TankaCD]
+                                   ,[PointFLG]
+                                   ,[LastPoint]
+                                   ,[WaitingPoint]
+                                   ,[TotalPoint]
+                                   ,[TotalPurchase]
+                                   ,[UnpaidAmount]
+                                   ,[UnpaidCount]
+                                   ,[LastSalesDate]
+                                   ,[LastSalesStoreCD]
+                                   ,[MainStoreCD]
+                                   ,[StaffCD]
+                                   ,[AttentionFLG]
+                                   ,[ConfirmFLG]
+                                   ,[ConfirmComment]
+                                   ,[BillingCloseDate]
+                                   ,[CollectPlanMonth]
+                                   ,[CollectPlanDate]
+                                   ,[HolidayKBN]
+                                   ,[TaxTiming]
+                                   ,[TaxPrintKBN]
+                                   ,[TaxFractionKBN]
+                                   ,[AmountFractionKBN]
+                                   ,[CreditLevel]
+                                   ,[CreditCard]
+                                   ,[CreditInsurance]
+                                   ,[CreditDeposit]
+                                   ,[CreditETC]
+                                   ,[CreditAmount]
+                                   ,[CreditAdditionAmount]
+                                   ,[CreditCheckKBN]
+                                   ,[CreditMessage]
+                                   ,[FareLevel]
+                                   ,[Fare]
+                                   ,[PaymentMethodCD]
+                                   ,[KouzaCD]
+                                   ,[DisplayOrder]
+                                   ,[PaymentUnit]
+                                   ,[NoInvoiceFlg]
+                                   ,[CountryKBN]
+                                   ,[CountryName]
+                                   ,[RegisteredNumber]
+                                   ,[DMFlg]
+                                   ,[RemarksOutStore]
+                                   ,[RemarksInStore]
+                                   ,[AnalyzeCD1]
+                                   ,[AnalyzeCD2]
+                                   ,[AnalyzeCD3]
+                                   ,[DeleteFlg]
+                                   ,[UsedFlg]
+                                   ,[InsertOperator]
+                                   ,[InsertDateTime]
+                                   ,[UpdateOperator]
+                                   ,[UpdateDateTime])
+                             SELECT
+                                    @CustomerCD
+                                   ,GETDATE() --ChangeDate
+                                   ,0 --VariousFLG, tinyint,>
+                                   ,DH.CustomerName
+                                   ,NULL--<LastName, varchar(20),>
+                                   ,NULL--<FirstName, varchar(20),>
+                                   ,NULL--<LongName1, varchar(50),>
+                                   ,NULL--<LongName2, varchar(50),>
+                                   ,DH.CustomerKanaName
+                                   ,1	--StoreKBN, tinyint,>
+                                   ,0	--CustomerKBN, tinyint,>
+                                   ,1	--StoreTankaKBN, tinyint,>
+                                   ,1	--AliasKBN, tinyint,>
+                                   ,1	--BillingType, tinyint,>
+                                   ,NULL	--<GroupName, varchar(40),>
+                                   ,1	--BillingFLG, tinyint,>
+                                   ,1	--CollectFLG, tinyint,>
+                                   ,@CustomerCD	--BillingCD, varchar(13),>
+                                   ,@CustomerCD	--CollectCD, varchar(13),>
+                                   ,NULL	--<BirthDate, date,>
+                                   ,0	--Sex, tinyint,>
+                                   ,DH.Tel11
+                                   ,DH.Tel12
+                                   ,DH.Tel13
+                                   ,DH.Tel21
+                                   ,DH.Tel22
+                                   ,DH.Tel23
+                                   ,DH.ZipCD1
+                                   ,DH.ZipCD2
+                                   ,DH.Address1
+                                   ,DH.Address2
+                                   ,DH.MailAddress
+                                   ,'0000000000000'		--TankaCD, varchar(13),>
+                                   ,0	--PointFLG, tinyint,>
+                                   ,0	--LastPoint, money,>
+                                   ,0	--WaitingPoint, money,>
+                                   ,0	--TotalPoint, money,>
+                                   ,0	--TotalPurchase, money,>
+                                   ,0	--UnpaidAmount, money,>
+                                   ,0	--UnpaidCount, money,>
+                                   ,NULL	--LastSalesDate, date,>
+                                   ,NULL	--LastSalesStoreCD, varchar(4),>
+                                   ,NULL	--MainStoreCD, varchar(4),>
+                                   ,NULL	--StaffCD, varchar(10),>
+                                   ,0	--AttentionFLG, tinyint,>
+                                   ,0	--ConfirmFLG, tinyint,>
+                                   ,NULL	--ConfirmComment, varchar(50),>
+                                   ,0	--BillingCloseDate, tinyint,>
+                                   ,0	--CollectPlanMonth, tinyint,>
+                                   ,0	--CollectPlanDate, tinyint,>
+                                   ,0	--HolidayKBN, tinyint,>
+                                   ,0	--TaxTiming, tinyint,>
+                                   ,0	--TaxPrintKBN, tinyint,>
+                                   ,0	--TaxFractionKBN, tinyint,>
+                                   ,0	--AmountFractionKBN, tinyint,>
+                                   ,0	--CreditLevel, tinyint,>
+                                   ,0	--CreditCard, money,>
+                                   ,0	--CreditInsurance, money,>
+                                   ,0	--CreditDeposit, money,>
+                                   ,0	--CreditETC, money,>
+                                   ,0	--CreditAmount, money,>
+                                   ,0	--CreditAdditionAmount, money,>
+                                   ,0	--CreditCheckKBN, tinyint,>
+                                   ,NULL	--CreditMessage, varchar(100),>
+                                   ,0	--FareLevel, money,>
+                                   ,0	--Fare, money,>
+                                   ,NULL	--PaymentMethodCD, varchar(3),>
+                                   ,NULL	--KouzaCD, varchar(3),>
+                                   ,0	--DisplayOrder, int,>
+                                   ,0	--PaymentUnit, tinyint,>
+                                   ,0	--NoInvoiceFlg, tinyint,>
+                                   ,0	--CountryKBN, tinyint,>
+                                   ,NULL	--CountryName, varchar(30),>
+                                   ,NULL	--RegisteredNumber, varchar(15),>
+                                   ,0	--DMFlg, tinyint,>
+                                   ,NULL	--RemarksOutStore, varchar(500),>
+                                   ,NULL	--RemarksInStore, varchar(500),>
+                                   ,NULL	--AnalyzeCD1, varchar(10),>
+                                   ,NULL	--AnalyzeCD2, varchar(10),>
+                                   ,NULL	--AnalyzeCD3, varchar(10),>
+                                   ,0	--DeleteFlg, tinyint,>
+                                   ,1	--UsedFlg, tinyint,>
+                                   ,@Operator AS InsertOperator
+                                   ,@SYSDATETIME AS InsertDateTime
+                                   ,@Operator AS UpdateOperator
+                                   ,@SYSDATETIME AS UpdateDateTime
+                                  from D_Juchuu AS DH
+                                 WHERE DH.JuchuuNO = @JuchuuNO
+                                   AND DH.DeleteDateTime IS NULL
+                                   ;
+
                         
                         --採番した顧客CDをD_Juchuu.顧客CDにUpdate。
                         UPDATE D_Juchuu SET
@@ -396,7 +587,7 @@ BEGIN
             --次の「1.受注ワークを1件リード」へ。
 		END
         
-    END     --LOOPの終わり***************************************CUR_Stock
+    END     --LOOPの終わり***************************************CUR_Juchu
     
     --カーソルを閉じる
     CLOSE CUR_Juchu;

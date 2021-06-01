@@ -1,7 +1,10 @@
 
 /****** Object:  StoredProcedure [dbo].[PRC_NyuukaNyuuryoku]    Script Date: 2020/10/01 19:36:58 ******/
-DROP PROCEDURE [dbo].[PRC_NyuukaNyuuryoku]
-GO
+BEGIN TRY 
+ DROP PROCEDURE [dbo].[PRC_NyuukaNyuuryoku]
+END TRY
+
+BEGIN CATCH END CATCH 
 
 --DROP TYPE [dbo].[T_NyuukaN]
 
