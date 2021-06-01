@@ -60,6 +60,9 @@ namespace NyuukinItiranHyou
             }
             cboStoreAuthorizations.Bind(string.Empty, "2");
             cboStoreAuthorizations.SelectedValue = StoreCD;
+            string data = InOperatorCD;
+            string date = DateTime.Today.ToShortDateString();
+            cbo_torikomi.Bind(date, data);
             //cbo.Bind(string.Empty);
             SetRequireField();
         }
@@ -151,8 +154,9 @@ namespace NyuukinItiranHyou
             search_customer.TxtCode.Text = "";
             search_customer.LabelText = "";
             rdb_one.Checked = true;
-            
-            BindCombo();
+            paymentstart.Focus();
+            paymentstart.Select();
+            //BindCombo();
         }
         private void ckM_SearchControl2_Load(object sender, EventArgs e)
         {
