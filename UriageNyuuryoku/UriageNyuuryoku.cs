@@ -1602,6 +1602,7 @@ namespace UriageNyuuryoku
                         {
                             //警告メッセージを表示する
                             bbl.ShowMessage(errno);
+                            return false;
                         }
                     }
                 }
