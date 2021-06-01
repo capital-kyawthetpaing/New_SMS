@@ -174,9 +174,16 @@ namespace NyuukinNyuuryoku
             System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName("NyuukinNyuuryoku_Detail");
             if (hProcesses.Length > 0)
             {
-                //SetForegroundWindow(hProcesses[0].MainWindowHandle);
-                Microsoft.VisualBasic.Interaction.AppActivate(hProcesses[0].Id);
-                return;
+                try
+                {
+                    //SetForegroundWindow(hProcesses[0].MainWindowHandle);
+                    Microsoft.VisualBasic.Interaction.AppActivate(hProcesses[0].Id);
+                    return;
+                }
+                catch(Exception ex)
+                {
+                    //Processes 終了してしまった場合は以下を続行
+                }
             }
 
             string cmdLine = "";
