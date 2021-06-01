@@ -1,5 +1,9 @@
-DROP  PROCEDURE [dbo].[PRC_NayoseKekkaTouroku]
-GO
+BEGIN TRY 
+ DROP PROCEDURE [dbo].[PRC_NayoseKekkaTouroku]
+END TRY
+
+BEGIN CATCH END CATCH 
+
 DROP TYPE [dbo].[T_Nayose]
 GO
 

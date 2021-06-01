@@ -56,6 +56,7 @@ namespace NyuukaShoukai
             BindCombo();
             cboWarehouse.Focus();
             SetRequireField();
+            ModeVisible = false;
             
         }
         private void BindCombo()
@@ -189,6 +190,7 @@ namespace NyuukaShoukai
                 {
                     nkskbl.ShowMessage("E128");
                     cboWarehouse.Focus();
+                    dgvNyuukaShoukai.DataSource = string.Empty;
                 }
                
             }
@@ -204,7 +206,43 @@ namespace NyuukaShoukai
         {
             if(ErrorCheck())
             {
-                if(dtSearch.Rows.Count > 0)
+                dape = new D_ArrivalPlan_Entity
+                {
+                    SoukoCD = cboWarehouse.SelectedValue.ToString(),
+                    CalcuArrivalPlanDate1 = txtStockDate1.Text,
+                    CalcuArrivalPlanDate2 = txtStockDate2.Text,
+                    //FrmSoukoCD = cboSourceWH.SelectedValue.ToString(),
+                    ITEMCD = ScItem.TxtCode.Text,
+                    JanCD = ScJanCD.TxtCode.Text,
+                    SKUCD = ScSKUCD.TxtCode.Text,
+                    statusFlg = CheckValue1(),
+                    DisplayFlg = CheckValue2(),
+                };
+
+                if (cboSourceWH.SelectedValue.ToString() == "-1")
+                {
+                    dape.FrmSoukoCD = string.Empty;
+                }
+
+                dae = new D_Arrival_Entity
+                {
+                    ArrivalDate1 = txtArrivalDay1.Text,
+                    ArrivalDate2 = txtArrivalDay2.Text,
+                    PurchaseSu = "0",
+                    VendorDeliveryNo = txtDeliveryNote.Text,
+                };
+
+                dpe = new D_Purchase_Entity
+                {
+                    PurchaseDateFrom = txtPurchaseDate1.Text,
+                    PurchaseDateTo = txtPurchaseDate2.Text,
+                    VendorCD = ScSupplier.TxtCode.Text,
+                };
+
+
+                dtSearch = nkskbl.D_ArrivalPlan_Select(dape, dae, dpe);
+
+                if (dtSearch.Rows.Count > 0)
                 {
                     DataTable dtExport = dtSearch;
                     dtExport = ChangeDataColumnName(dtExport);

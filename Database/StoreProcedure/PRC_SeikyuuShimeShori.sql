@@ -1,14 +1,18 @@
- BEGIN TRY 
- Drop Procedure dbo.[PRC_SeikyuuShimeShori]
-END try
-BEGIN CATCH END CATCH 
+/****** Object:  StoredProcedure [dbo].[PRC_SeikyuuShimeShori]    Script Date: 2021/05/31 13:35:55 ******/
+IF EXISTS (SELECT * FROM sys.procedures WHERE name like '%PRC_SeikyuuShimeShori%' and type like '%P%')
+DROP PROCEDURE [dbo].[PRC_SeikyuuShimeShori]
+GO
+
+/****** Object:  StoredProcedure [dbo].[PRC_SeikyuuShimeShori]    Script Date: 2021/05/31 13:35:55 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 /****** Object:  StoredProcedure [PRC_SeikyuuShimeShori]    */
-CREATE PROCEDURE PRC_SeikyuuShimeShori(
+CREATE PROCEDURE [dbo].[PRC_SeikyuuShimeShori](
     -- Add the parameters for the stored procedure here
     @Syori    tinyint,        -- 処理区分（1:請求締,2:請求締キャンセル,3:請求確定）
     @StoreCD  varchar(4),
@@ -173,7 +177,10 @@ BEGIN
             AND DC.DeleteDateTime IS Null       
             AND DC.StoreCD = @StoreCD
             AND DC.CustomerCD = (CASE WHEN ISNULL(@CustomerCD,'') <> '' THEN @CustomerCD ELSE DC.CustomerCD END)
-            AND DC.BillingDate <= CONVERT(date, @ChangeDate)   
+			--2021/05/31 Y.Nishikawa CHG 未締時はBillingDateはNULL状態↓↓
+			--AND DC.BillingDate <= CONVERT(date, @ChangeDate)   
+			AND (DC.BillingDate IS NULL OR (DC.BillingDate IS NOT NULL AND DC.BillingDate <= CONVERT(date, @ChangeDate)))
+			--2021/05/31 Y.Nishikawa CHG 未締時はBillingDateはNULL状態↑↑
             AND DC.InvalidFLG = 0
             AND DC.BillingConfirmFlg = 0
             AND DC.BillingType = 2
@@ -406,7 +413,10 @@ BEGIN
                 AND DC.DeleteDateTime IS Null       
                 AND DC.StoreCD = @StoreCD
                 AND DC.CustomerCD = (CASE WHEN ISNULL(@CustomerCD,'') <> '' THEN @CustomerCD ELSE DC.CustomerCD END)
-                AND DC.BillingDate <= CONVERT(date, @ChangeDate)   
+                --2021/05/31 Y.Nishikawa CHG 未締時はBillingDateはNULL状態↓↓
+			    --AND DC.BillingDate <= CONVERT(date, @ChangeDate)   
+			    AND (DC.BillingDate IS NULL OR (DC.BillingDate IS NOT NULL AND DC.BillingDate <= CONVERT(date, @ChangeDate)))
+			    --2021/05/31 Y.Nishikawa CHG 未締時はBillingDateはNULL状態↑↑   
                 AND DC.InvalidFLG = 0
                 AND DC.BillingConfirmFlg = 0
                 AND DC.BillingType = 2
@@ -438,8 +448,12 @@ BEGIN
                 AND D_CollectPlan.DeleteOperator IS Null
                 AND D_CollectPlan.DeleteDateTime IS Null
                 AND D_CollectPlan.StoreCD = @StoreCD
-                AND D_CollectPlan.CustomerCD = @W_COL1       --★
-                AND D_CollectPlan.BillingDate <= CONVERT(date, @ChangeDate)   
+                AND D_CollectPlan.CustomerCD = @W_COL1       --★ 
+				--2021/05/31 Y.Nishikawa CHG 未締時はBillingDateはNULL状態↓↓
+			    --AND D_CollectPlan.BillingDate <= CONVERT(date, @ChangeDate)   
+			    AND (D_CollectPlan.BillingDate IS NULL OR (D_CollectPlan.BillingDate IS NOT NULL AND D_CollectPlan.BillingDate <= CONVERT(date, @ChangeDate)))
+			    --2021/05/31 Y.Nishikawa CHG 未締時はBillingDateはNULL状態↑↑   
+
                 AND D_CollectPlan.InvalidFLG = 0
                 AND D_CollectPlan.BillingConfirmFlg = 0
                 AND D_CollectPlan.BillingType = 2
@@ -832,4 +846,5 @@ BEGIN
 END
 
 GO
+
 

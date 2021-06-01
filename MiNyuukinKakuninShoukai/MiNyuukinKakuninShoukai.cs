@@ -78,7 +78,7 @@ namespace MiNyuukinKakuninShoukai
                 string ymd = bbl.GetDate();
                 mibl = new MiNyuukinKakuninShoukai_BL();
                 CboStoreCD.Bind(ymd);
-                Bind(CboPaymentMethodCD, 1);
+                Bind(CboPaymentMethodCD, 2);
 
                 Scr_Clr(0);
 
