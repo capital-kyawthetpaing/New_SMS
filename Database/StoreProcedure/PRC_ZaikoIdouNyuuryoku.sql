@@ -1536,9 +1536,9 @@ BEGIN
                                ,tbl.JanCD
                                ,tbl.SKUCD
                                ,tbl.AdminNO
-                               ,0 AS ReserveSu --ñæç◊ì¸â◊êî
+                               ,@WUpdSu AS ReserveSu --ñæç◊ì¸â◊êî
                                ,NULL    --ShippingPossibleDate
-                               ,0       --ShippingPossibleSU
+                               ,@WUpdSu AS ShippingPossibleSU
                                ,NULL    --ShippingOrderNO
                                ,0       --ShippingOrderRows
                                ,NULL    --CompletedPickingNO
@@ -2295,9 +2295,9 @@ BEGIN
                                    ,tbl.JanCD
                                    ,tbl.SKUCD
                                    ,tbl.AdminNO
-                                   ,0 AS ReserveSu --ñæç◊ì¸â◊êî
+                                   ,@WUpdSu AS ReserveSu --ñæç◊ì¸â◊êî
                                    ,NULL    --ShippingPossibleDate
-                                   ,0       --ShippingPossibleSU
+                                   ,@WUpdSu AS ShippingPossibleSU
                                    ,NULL    --ShippingOrderNO
                                    ,0       --ShippingOrderRows
                                    ,NULL    --CompletedPickingNO

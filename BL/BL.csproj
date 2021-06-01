@@ -125,6 +125,7 @@
     <Compile Include="JuchuuTorikomiAPI_BL.cs" />
     <Compile Include="MasterTouroku_Program_BL.cs" />
     <Compile Include="M_SKUInitial_BL.cs" />
+    <Compile Include="NayoseSyoriAll_BL.cs" />
     <Compile Include="NyuukaNyuuryoku_BL.cs" />
     <Compile Include="NyuukaShoukai_BL.cs" />
     <Compile Include="NyuukinKesikomiItiranHyou_BL.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Nyuukin_Ichihanyou_BL.cs" />
     <Compile Include="NyuusyukkinYoteiList_BL.cs" />
     <Compile Include="PickingList_BL.cs" />
+    <Compile Include="NayoseKekkaTouroku_BL.cs" />
     <Compile Include="PickingNyuuryoku_BL.cs" />
     <Compile Include="RakutenAPI_BL.cs" />
     <Compile Include="SaikenKanriHyou_BL.cs" />

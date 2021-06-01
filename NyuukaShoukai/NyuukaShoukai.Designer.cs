@@ -31,6 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNyuukaShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -132,7 +137,7 @@
             this.statusChk1.Checked = true;
             this.statusChk1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusChk1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.statusChk1.Location = new System.Drawing.Point(142, 140);
+            this.statusChk1.Location = new System.Drawing.Point(142, 146);
             this.statusChk1.Name = "statusChk1";
             this.statusChk1.Size = new System.Drawing.Size(44, 16);
             this.statusChk1.TabIndex = 5;
@@ -145,7 +150,7 @@
             this.statusChk2.Checked = true;
             this.statusChk2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusChk2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.statusChk2.Location = new System.Drawing.Point(205, 139);
+            this.statusChk2.Location = new System.Drawing.Point(205, 145);
             this.statusChk2.Name = "statusChk2";
             this.statusChk2.Size = new System.Drawing.Size(37, 16);
             this.statusChk2.TabIndex = 6;
@@ -171,6 +176,7 @@
             this.txtDeliveryNote.isMaxLengthErr = false;
             this.txtDeliveryNote.IsNumber = true;
             this.txtDeliveryNote.IsShop = false;
+            this.txtDeliveryNote.IsTimemmss = false;
             this.txtDeliveryNote.Length = 15;
             this.txtDeliveryNote.Location = new System.Drawing.Point(142, 215);
             this.txtDeliveryNote.MaxLength = 15;
@@ -207,7 +213,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(95, 61);
+            this.ckM_Label2.Location = new System.Drawing.Point(95, 70);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 20;
@@ -224,7 +230,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(69, 103);
+            this.ckM_Label3.Location = new System.Drawing.Point(69, 109);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label3.TabIndex = 21;
@@ -241,7 +247,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(82, 142);
+            this.ckM_Label4.Location = new System.Drawing.Point(82, 148);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label4.TabIndex = 22;
@@ -292,7 +298,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(253, 62);
+            this.ckM_Label7.Location = new System.Drawing.Point(253, 71);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label7.TabIndex = 25;
@@ -309,7 +315,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(253, 102);
+            this.ckM_Label8.Location = new System.Drawing.Point(253, 114);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label8.TabIndex = 26;
@@ -360,7 +366,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(897, 108);
+            this.ckM_Label11.Location = new System.Drawing.Point(897, 116);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(33, 12);
             this.ckM_Label11.TabIndex = 29;
@@ -377,7 +383,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(890, 142);
+            this.ckM_Label12.Location = new System.Drawing.Point(890, 151);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label12.TabIndex = 30;
@@ -394,7 +400,7 @@
             this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label13.Location = new System.Drawing.Point(889, 178);
+            this.ckM_Label13.Location = new System.Drawing.Point(889, 185);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label13.TabIndex = 31;
@@ -496,7 +502,7 @@
             this.ScItem.IsCopy = false;
             this.ScItem.LabelText = "";
             this.ScItem.LabelVisible = false;
-            this.ScItem.Location = new System.Drawing.Point(934, 99);
+            this.ScItem.Location = new System.Drawing.Point(934, 107);
             this.ScItem.Margin = new System.Windows.Forms.Padding(0);
             this.ScItem.Name = "ScItem";
             this.ScItem.NameWidth = 350;
@@ -504,6 +510,7 @@
             this.ScItem.Size = new System.Drawing.Size(223, 27);
             this.ScItem.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.ScItem.TabIndex = 14;
+            this.ScItem.test = null;
             this.ScItem.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScItem.UseChangeDate = false;
             this.ScItem.Value1 = null;
@@ -525,7 +532,7 @@
             this.ScSKUCD.IsCopy = false;
             this.ScSKUCD.LabelText = "";
             this.ScSKUCD.LabelVisible = false;
-            this.ScSKUCD.Location = new System.Drawing.Point(934, 134);
+            this.ScSKUCD.Location = new System.Drawing.Point(934, 143);
             this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
             this.ScSKUCD.NameWidth = 350;
@@ -533,6 +540,7 @@
             this.ScSKUCD.Size = new System.Drawing.Size(223, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.ScSKUCD.TabIndex = 15;
+            this.ScSKUCD.test = null;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
             this.ScSKUCD.Value1 = null;
@@ -554,7 +562,7 @@
             this.ScJanCD.IsCopy = false;
             this.ScJanCD.LabelText = "";
             this.ScJanCD.LabelVisible = false;
-            this.ScJanCD.Location = new System.Drawing.Point(933, 171);
+            this.ScJanCD.Location = new System.Drawing.Point(933, 178);
             this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScJanCD.Name = "ScJanCD";
             this.ScJanCD.NameWidth = 280;
@@ -562,6 +570,7 @@
             this.ScJanCD.Size = new System.Drawing.Size(633, 27);
             this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
             this.ScJanCD.TabIndex = 16;
+            this.ScJanCD.test = null;
             this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScJanCD.UseChangeDate = false;
             this.ScJanCD.Value1 = null;
@@ -588,6 +597,7 @@
             this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
+            this.txtProductName.IsTimemmss = false;
             this.txtProductName.Length = 80;
             this.txtProductName.Location = new System.Drawing.Point(933, 218);
             this.txtProductName.MaxLength = 80;
@@ -621,6 +631,7 @@
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScSupplier.TabIndex = 12;
+            this.ScSupplier.test = null;
             this.ScSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSupplier.UseChangeDate = false;
             this.ScSupplier.Value1 = null;
@@ -696,23 +707,32 @@
             // colDate
             // 
             this.colDate.DataPropertyName = "ArrivalDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.colDate.HeaderText = "入荷日";
             this.colDate.MaxInputLength = 10;
             this.colDate.Name = "colDate";
+            this.colDate.Width = 90;
             // 
             // colCalcuArrivalPlanDate
             // 
             this.colCalcuArrivalPlanDate.DataPropertyName = "CalcuArrivalPlanDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colCalcuArrivalPlanDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.colCalcuArrivalPlanDate.HeaderText = "入荷予定日";
             this.colCalcuArrivalPlanDate.MaxInputLength = 10;
             this.colCalcuArrivalPlanDate.Name = "colCalcuArrivalPlanDate";
+            this.colCalcuArrivalPlanDate.Width = 90;
             // 
             // colPurchaseDate
             // 
             this.colPurchaseDate.DataPropertyName = "PurchaseDate";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPurchaseDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.colPurchaseDate.HeaderText = "仕入日";
             this.colPurchaseDate.MaxInputLength = 10;
             this.colPurchaseDate.Name = "colPurchaseDate";
+            this.colPurchaseDate.Width = 90;
             // 
             // colGoods
             // 
@@ -720,6 +740,7 @@
             this.colGoods.HeaderText = "入庫区分";
             this.colGoods.MaxInputLength = 8;
             this.colGoods.Name = "colGoods";
+            this.colGoods.Width = 90;
             // 
             // colSKUCD
             // 
@@ -727,7 +748,7 @@
             this.colSKUCD.HeaderText = "SKUCD";
             this.colSKUCD.MaxInputLength = 30;
             this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.Width = 300;
+            this.colSKUCD.Width = 270;
             // 
             // colJanCD
             // 
@@ -735,7 +756,7 @@
             this.colJanCD.HeaderText = "JANCD";
             this.colJanCD.MaxInputLength = 13;
             this.colJanCD.Name = "colJanCD";
-            this.colJanCD.Width = 150;
+            this.colJanCD.Width = 130;
             // 
             // colSKUName
             // 
@@ -743,7 +764,7 @@
             this.colSKUName.HeaderText = "商品名";
             this.colSKUName.MaxInputLength = 80;
             this.colSKUName.Name = "colSKUName";
-            this.colSKUName.Width = 500;
+            this.colSKUName.Width = 430;
             // 
             // colColorName
             // 
@@ -751,7 +772,7 @@
             this.colColorName.HeaderText = "カラー";
             this.colColorName.MaxInputLength = 20;
             this.colColorName.Name = "colColorName";
-            this.colColorName.Width = 200;
+            this.colColorName.Width = 130;
             // 
             // colSizeName
             // 
@@ -759,11 +780,13 @@
             this.colSizeName.HeaderText = "サイズ";
             this.colSizeName.MaxInputLength = 20;
             this.colSizeName.Name = "colSizeName";
-            this.colSizeName.Width = 200;
+            this.colSizeName.Width = 130;
             // 
             // colArrivalPlanSu
             // 
             this.colArrivalPlanSu.DataPropertyName = "ArrivalPlanSu";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colArrivalPlanSu.DefaultCellStyle = dataGridViewCellStyle6;
             this.colArrivalPlanSu.HeaderText = "予定数";
             this.colArrivalPlanSu.MaxInputLength = 6;
             this.colArrivalPlanSu.Name = "colArrivalPlanSu";
@@ -772,6 +795,8 @@
             // colArrivalSu
             // 
             this.colArrivalSu.DataPropertyName = "ArrivalSu";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colArrivalSu.DefaultCellStyle = dataGridViewCellStyle7;
             this.colArrivalSu.HeaderText = "入荷数";
             this.colArrivalSu.MaxInputLength = 6;
             this.colArrivalSu.Name = "colArrivalSu";
@@ -783,7 +808,7 @@
             this.colVendorName.HeaderText = "仕入先";
             this.colVendorName.MaxInputLength = 51;
             this.colVendorName.Name = "colVendorName";
-            this.colVendorName.Width = 400;
+            this.colVendorName.Width = 300;
             // 
             // colSoukoName
             // 
@@ -791,7 +816,7 @@
             this.colSoukoName.HeaderText = "移動元倉庫";
             this.colSoukoName.MaxInputLength = 40;
             this.colSoukoName.Name = "colSoukoName";
-            this.colSoukoName.Width = 300;
+            this.colSoukoName.Width = 250;
             // 
             // colDirectDelivery
             // 
@@ -807,7 +832,6 @@
             this.colReserveNum.HeaderText = "受注番号";
             this.colReserveNum.MaxInputLength = 11;
             this.colReserveNum.Name = "colReserveNum";
-            this.colReserveNum.Width = 110;
             // 
             // colNumber
             // 
@@ -815,7 +839,6 @@
             this.colNumber.HeaderText = "発注番号";
             this.colNumber.MaxInputLength = 11;
             this.colNumber.Name = "colNumber";
-            this.colNumber.Width = 110;
             // 
             // colArrivalNO
             // 
@@ -823,7 +846,6 @@
             this.colArrivalNO.HeaderText = "入荷番号";
             this.colArrivalNO.MaxInputLength = 11;
             this.colArrivalNO.Name = "colArrivalNO";
-            this.colArrivalNO.Width = 110;
             // 
             // colPurchaseNO
             // 
@@ -831,7 +853,6 @@
             this.colPurchaseNO.HeaderText = "仕入番号";
             this.colPurchaseNO.MaxInputLength = 11;
             this.colPurchaseNO.Name = "colPurchaseNO";
-            this.colPurchaseNO.Width = 110;
             // 
             // colVendor
             // 
@@ -839,7 +860,7 @@
             this.colVendor.HeaderText = "納品書番号";
             this.colVendor.MaxInputLength = 15;
             this.colVendor.Name = "colVendor";
-            this.colVendor.Width = 150;
+            this.colVendor.Width = 130;
             // 
             // txtArrivalDay1
             // 
@@ -861,8 +882,9 @@
             this.txtArrivalDay1.isMaxLengthErr = false;
             this.txtArrivalDay1.IsNumber = true;
             this.txtArrivalDay1.IsShop = false;
+            this.txtArrivalDay1.IsTimemmss = false;
             this.txtArrivalDay1.Length = 8;
-            this.txtArrivalDay1.Location = new System.Drawing.Point(142, 58);
+            this.txtArrivalDay1.Location = new System.Drawing.Point(142, 67);
             this.txtArrivalDay1.MaxLength = 8;
             this.txtArrivalDay1.MoveNext = true;
             this.txtArrivalDay1.Name = "txtArrivalDay1";
@@ -892,8 +914,9 @@
             this.txtArrivalDay2.isMaxLengthErr = false;
             this.txtArrivalDay2.IsNumber = true;
             this.txtArrivalDay2.IsShop = false;
+            this.txtArrivalDay2.IsTimemmss = false;
             this.txtArrivalDay2.Length = 8;
-            this.txtArrivalDay2.Location = new System.Drawing.Point(281, 58);
+            this.txtArrivalDay2.Location = new System.Drawing.Point(281, 67);
             this.txtArrivalDay2.MaxLength = 8;
             this.txtArrivalDay2.MoveNext = true;
             this.txtArrivalDay2.Name = "txtArrivalDay2";
@@ -924,8 +947,9 @@
             this.txtStockDate1.isMaxLengthErr = false;
             this.txtStockDate1.IsNumber = true;
             this.txtStockDate1.IsShop = false;
+            this.txtStockDate1.IsTimemmss = false;
             this.txtStockDate1.Length = 8;
-            this.txtStockDate1.Location = new System.Drawing.Point(142, 100);
+            this.txtStockDate1.Location = new System.Drawing.Point(142, 105);
             this.txtStockDate1.MaxLength = 8;
             this.txtStockDate1.MoveNext = true;
             this.txtStockDate1.Name = "txtStockDate1";
@@ -955,8 +979,9 @@
             this.txtStockDate2.isMaxLengthErr = false;
             this.txtStockDate2.IsNumber = true;
             this.txtStockDate2.IsShop = false;
+            this.txtStockDate2.IsTimemmss = false;
             this.txtStockDate2.Length = 8;
-            this.txtStockDate2.Location = new System.Drawing.Point(281, 100);
+            this.txtStockDate2.Location = new System.Drawing.Point(281, 105);
             this.txtStockDate2.MaxLength = 8;
             this.txtStockDate2.MoveNext = true;
             this.txtStockDate2.Name = "txtStockDate2";
@@ -987,6 +1012,7 @@
             this.txtPurchaseDate1.isMaxLengthErr = false;
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
+            this.txtPurchaseDate1.IsTimemmss = false;
             this.txtPurchaseDate1.Length = 8;
             this.txtPurchaseDate1.Location = new System.Drawing.Point(142, 176);
             this.txtPurchaseDate1.MaxLength = 8;
@@ -1018,6 +1044,7 @@
             this.txtPurchaseDate2.isMaxLengthErr = false;
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
+            this.txtPurchaseDate2.IsTimemmss = false;
             this.txtPurchaseDate2.Length = 8;
             this.txtPurchaseDate2.Location = new System.Drawing.Point(281, 176);
             this.txtPurchaseDate2.MaxLength = 8;
@@ -1174,6 +1201,8 @@
         private CKM_Controls.CKM_TextBox txtArrivalDay1;
         private CKM_Controls.CKM_Button btnDisplay;
         private System.Windows.Forms.Panel panelDetail;
+        private System.Windows.Forms.Panel panelcombo2;
+        private System.Windows.Forms.Panel panelcombo1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCalcuArrivalPlanDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseDate;
@@ -1193,7 +1222,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colArrivalNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
-        private System.Windows.Forms.Panel panelcombo2;
-        private System.Windows.Forms.Panel panelcombo1;
     }
 }

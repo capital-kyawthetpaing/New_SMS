@@ -15,7 +15,7 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@FileKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.FileKBN } },
+                { "@FileKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 =  mse.FileKBN} },
             };
             return SelectData(dic, "M_Settlement_Bind");
         }

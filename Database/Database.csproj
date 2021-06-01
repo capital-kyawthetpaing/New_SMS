@@ -593,12 +593,9 @@
     <Content Include="StoreProcedure\M_ZipCode_Update.sql" />
     <Content Include="StoreProcedure\M_ZipCode_YuubinBangou_Select.sql" />
     <Content Include="StoreProcedure\NyuukinKesikomiItiranHyou_Report.sql" />
-    <Content Include="StoreProcedure\PickingList_InsertUpdateSelect.sql" />
     <Content Include="StoreProcedure\PickingList_InsertUpdateSelect_Check1.sql" />
     <Content Include="StoreProcedure\PickingList_InsertUpdateSelect_Check2.sql" />
     <Content Include="StoreProcedure\PickingList_InsertUpdateSelect_Check3.sql" />
-    <Content Include="StoreProcedure\PickingList_InsertUpdate_Check1.sql" />
-    <Content Include="StoreProcedure\PickingList_InsertUpdate_Check3.sql" />
     <Content Include="StoreProcedure\PRC_EDIOrder_Insert.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiSaikenKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiSaimuKeisanSyori.sql" />
