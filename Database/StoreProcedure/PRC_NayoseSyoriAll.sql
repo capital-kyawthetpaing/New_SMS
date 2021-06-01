@@ -281,7 +281,7 @@ BEGIN
                AND D_JuchuuOnHold.OnHoldCD = '001'
                ;
 
-            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード追加もしくは変更。
+            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。(※1)
             --Update(①の※1、⑤の※1の時）
             UPDATE D_JuchuuStatus SET
                  [OnHoldFLG] = 0    --保留有無FLG
@@ -289,6 +289,19 @@ BEGIN
                 ,[UpdateDateTime]    = @SYSDATETIME
              WHERE D_JuchuuStatus.JuchuuNO = @JuchuuNO
                ;
+            
+            --D_Juchuu.保留FLGに0をUpdate。
+            UPDATE D_Juchuu SET
+                 [OnHoldFLG]         = 0
+                ,[UpdateOperator]    = @Operator  
+                ,[UpdateDateTime]    = @SYSDATETIME
+            WHERE JuchuuNO = @JuchuuNO
+              AND NOT EXISTS(SELECT 1 FROM D_JuchuuOnHold AS D
+                                     WHERE D.JuchuuNO = D_Juchuu.JuchuuNO
+                                       AND D.OnHoldCD <> '001'
+                                       AND D.DisappeareDateTime IS NOT NULL)
+            ;
+            
             --次の「1.受注ワークを1件リード」へ。
         END
         ELSE IF @CNT1 = 0
