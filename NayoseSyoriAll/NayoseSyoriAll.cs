@@ -59,8 +59,13 @@ namespace NayoseSyoriAll
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
-                    mAutoMode = true;
-                    ExecSec();
+                    string mode = cmds[(int)ECmdLine.PcID + 1];   //
+
+                    if (mode.Equals("1"))
+                    {
+                        mAutoMode = true;
+                        ExecSec();
+                    }
                 }
             }
             catch (Exception ex)
