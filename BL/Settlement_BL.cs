@@ -18,7 +18,8 @@ namespace BL
         }
         public DataTable M_Settlement_Bind(M_Settlement_Entity mse)
         {
-            return dl.M_Settlement_Bind(mse);
+            mse.FileKBN = mse.FileKBN == "1" ? "1" : mse.FileKBN;
+                return dl.M_Settlement_Bind(mse);
         }
     }
 }

@@ -104,10 +104,10 @@
             this.search_customer.Location = new System.Drawing.Point(100, 124);
             this.search_customer.Margin = new System.Windows.Forms.Padding(0);
             this.search_customer.Name = "search_customer";
-            this.search_customer.NameWidth = 310;
+            this.search_customer.NameWidth = 500;
             this.search_customer.SearchEnable = true;
-            this.search_customer.Size = new System.Drawing.Size(444, 30);
-            this.search_customer.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.search_customer.Size = new System.Drawing.Size(634, 30);
+            this.search_customer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.search_customer.TabIndex = 6;
             this.search_customer.test = null;
             this.search_customer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -329,6 +329,7 @@
             this.paymentinputend.isMaxLengthErr = false;
             this.paymentinputend.IsNumber = true;
             this.paymentinputend.IsShop = false;
+            this.paymentinputend.IsTimemmss = false;
             this.paymentinputend.Length = 10;
             this.paymentinputend.Location = new System.Drawing.Point(261, 58);
             this.paymentinputend.MaxLength = 10;
@@ -360,6 +361,7 @@
             this.paymentend.isMaxLengthErr = false;
             this.paymentend.IsNumber = true;
             this.paymentend.IsShop = false;
+            this.paymentend.IsTimemmss = false;
             this.paymentend.Length = 10;
             this.paymentend.Location = new System.Drawing.Point(261, 26);
             this.paymentend.MaxLength = 10;
@@ -391,6 +393,7 @@
             this.paymentinputstart.isMaxLengthErr = false;
             this.paymentinputstart.IsNumber = true;
             this.paymentinputstart.IsShop = false;
+            this.paymentinputstart.IsTimemmss = false;
             this.paymentinputstart.Length = 10;
             this.paymentinputstart.Location = new System.Drawing.Point(100, 58);
             this.paymentinputstart.MaxLength = 10;
@@ -421,6 +424,7 @@
             this.paymentstart.isMaxLengthErr = false;
             this.paymentstart.IsNumber = true;
             this.paymentstart.IsShop = false;
+            this.paymentstart.IsTimemmss = false;
             this.paymentstart.Length = 10;
             this.paymentstart.Location = new System.Drawing.Point(100, 26);
             this.paymentstart.MaxLength = 10;
