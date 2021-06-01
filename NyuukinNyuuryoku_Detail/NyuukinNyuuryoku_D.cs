@@ -1001,7 +1001,9 @@ namespace NyuukinNyuuryoku_Detail
                     Btn_F3.Text = "";
                     Btn_F4.Text = "";
                     Btn_F5.Text = "";
-                    Btn_F6.Text = "";
+
+                    if(mKidouMode!=1)
+                        Btn_F6.Text = "";
 
                 }
                 //ChangeOperationMode(EOperationMode.INSERT);
