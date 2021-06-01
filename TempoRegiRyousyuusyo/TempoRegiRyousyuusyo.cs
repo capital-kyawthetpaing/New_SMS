@@ -557,12 +557,12 @@ namespace TempoRegiRyousyuusyo
             report.SetDataSource(receiptDataSet);
             report.Refresh();
             report.PrintOptions.PrinterName = StorePrinterName;
-            report.PrintToPrinter(0, false, 0, 0);
+            //report.PrintToPrinter(0, false, 0, 0);
 
             ////___
-            //Base.Client.Viewer vr = new Viewer();
-            //vr.CrystalReportViewer1.ReportSource = report;
-            //vr.ShowDialog();
+            Base.Client.Viewer vr = new Viewer();
+            vr.CrystalReportViewer1.ReportSource = report;
+            vr.ShowDialog();
             // 発行済更新、ログ更新
             bl.D_UpdateDepositHistory(txtSalesNO.Text, true, InOperatorCD, InProgramID, InPcID);
         }

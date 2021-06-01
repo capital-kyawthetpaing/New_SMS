@@ -994,6 +994,14 @@ namespace NyuukinNyuuryoku_Detail
                             keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
                             CheckKey((int)EIndex.ConfirmNO, true);
                         }
+                        else if (mode.Equals("11"))
+                        {
+                            ChangeOperationMode(EOperationMode.DELETE);
+                            mKidouMode = 11;
+                            string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                            keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                            CheckKey((int)EIndex.ConfirmNO, true);
+                        }
                         SetFocus();
                     }                    
 
@@ -1001,7 +1009,9 @@ namespace NyuukinNyuuryoku_Detail
                     Btn_F3.Text = "";
                     Btn_F4.Text = "";
                     Btn_F5.Text = "";
-                    Btn_F6.Text = "";
+
+                    if(mKidouMode!=1)
+                        Btn_F6.Text = "";
 
                 }
                 //ChangeOperationMode(EOperationMode.INSERT);
@@ -2485,7 +2495,10 @@ namespace NyuukinNyuuryoku_Detail
             //更新処理
             nnbl.D_Collect_Exec(dce,dt, (short)OperationMode);
 
-            bbl.ShowMessage("I101");
+            if (OperationMode == EOperationMode.DELETE)
+                bbl.ShowMessage("I102");
+            else
+                bbl.ShowMessage("I101");
 
             if (mKidouMode.Equals(0))
                 //更新後画面クリア
@@ -2706,7 +2719,7 @@ namespace NyuukinNyuuryoku_Detail
                             }
                             ScCustomer.BtnSearch.Enabled = Kbn == 0 ? true : false;
                             //if (Kbn.Equals(1))
-                            //    btnNyuukinmoto.Enabled = false;
+                            btnNyuukinmoto.Enabled = Kbn == 0 ? true : false;
                         }
                         break;
                     case 3:
@@ -3477,6 +3490,10 @@ namespace NyuukinNyuuryoku_Detail
                 return;
 
             if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)
+                return;
+
+            //修正時も入力可に
+            if (OperationMode == EOperationMode.UPDATE)
                 return;
 
             //入金照会からの新規消込または修正時
