@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmShukkaShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -55,6 +57,12 @@
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.dgvShukkaShoukai = new CKM_Controls.CKM_GridView();
+            this.panelDetail = new System.Windows.Forms.Panel();
+            this.cboShipping = new CKM_Controls.CKM_ComboBox();
+            this.SC_Order = new Search.CKM_SearchControl();
+            this.SC_JanCD = new Search.CKM_SearchControl();
+            this.Sc_SKUCD = new Search.CKM_SearchControl();
+            this.Sc_Item = new Search.CKM_SearchControl();
             this.colShippingN0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colShippingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,12 +77,6 @@
             this.colCarrierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelDetail = new System.Windows.Forms.Panel();
-            this.cboShipping = new CKM_Controls.CKM_ComboBox();
-            this.SC_Order = new Search.CKM_SearchControl();
-            this.SC_JanCD = new Search.CKM_SearchControl();
-            this.Sc_SKUCD = new Search.CKM_SearchControl();
-            this.Sc_Item = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShukkaShoukai)).BeginInit();
@@ -234,6 +236,7 @@
             this.txtShippingStartDate.isMaxLengthErr = false;
             this.txtShippingStartDate.IsNumber = true;
             this.txtShippingStartDate.IsShop = false;
+            this.txtShippingStartDate.IsTimemmss = false;
             this.txtShippingStartDate.Length = 8;
             this.txtShippingStartDate.Location = new System.Drawing.Point(102, 40);
             this.txtShippingStartDate.MaxLength = 8;
@@ -264,6 +267,7 @@
             this.txtShippingEndDate.isMaxLengthErr = false;
             this.txtShippingEndDate.IsNumber = true;
             this.txtShippingEndDate.IsShop = false;
+            this.txtShippingEndDate.IsTimemmss = false;
             this.txtShippingEndDate.Length = 8;
             this.txtShippingEndDate.Location = new System.Drawing.Point(266, 40);
             this.txtShippingEndDate.MaxLength = 8;
@@ -417,6 +421,7 @@
             this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
+            this.txtProductName.IsTimemmss = false;
             this.txtProductName.Length = 80;
             this.txtProductName.Location = new System.Drawing.Point(1056, 121);
             this.txtProductName.MaxLength = 80;
@@ -558,7 +563,7 @@
             this.dgvShukkaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvShukkaShoukai.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -580,14 +585,6 @@
             this.colCarrierName,
             this.colSalesDate,
             this.colStaffName});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShukkaShoukai.EnableHeadersVisualStyles = false;
             this.dgvShukkaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.Location = new System.Drawing.Point(29, 23);
@@ -598,6 +595,152 @@
             this.dgvShukkaShoukai.TabIndex = 13;
             this.dgvShukkaShoukai.UseRowNo = true;
             this.dgvShukkaShoukai.UseSetting = true;
+            // 
+            // panelDetail
+            // 
+            this.panelDetail.Controls.Add(this.dgvShukkaShoukai);
+            this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDetail.Location = new System.Drawing.Point(0, 250);
+            this.panelDetail.Name = "panelDetail";
+            this.panelDetail.Size = new System.Drawing.Size(1776, 679);
+            this.panelDetail.TabIndex = 13;
+            // 
+            // cboShipping
+            // 
+            this.cboShipping.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboShipping.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboShipping.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.配送会社;
+            this.cboShipping.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboShipping.Flag = 0;
+            this.cboShipping.FormattingEnabled = true;
+            this.cboShipping.Length = 10;
+            this.cboShipping.Location = new System.Drawing.Point(1056, 10);
+            this.cboShipping.MaxLength = 10;
+            this.cboShipping.MoveNext = true;
+            this.cboShipping.Name = "cboShipping";
+            this.cboShipping.Size = new System.Drawing.Size(265, 20);
+            this.cboShipping.TabIndex = 10;
+            // 
+            // SC_Order
+            // 
+            this.SC_Order.AutoSize = true;
+            this.SC_Order.ChangeDate = "";
+            this.SC_Order.ChangeDateWidth = 100;
+            this.SC_Order.Code = "";
+            this.SC_Order.CodeWidth = 100;
+            this.SC_Order.CodeWidth1 = 100;
+            this.SC_Order.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_Order.DataCheck = false;
+            this.SC_Order.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Order.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_Order.IsCopy = false;
+            this.SC_Order.LabelText = "";
+            this.SC_Order.LabelVisible = false;
+            this.SC_Order.Location = new System.Drawing.Point(430, 60);
+            this.SC_Order.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_Order.Name = "SC_Order";
+            this.SC_Order.NameWidth = 600;
+            this.SC_Order.SearchEnable = true;
+            this.SC_Order.Size = new System.Drawing.Size(133, 28);
+            this.SC_Order.Stype = Search.CKM_SearchControl.SearchType.受注番号;
+            this.SC_Order.TabIndex = 6;
+            this.SC_Order.test = null;
+            this.SC_Order.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_Order.UseChangeDate = false;
+            this.SC_Order.Value1 = null;
+            this.SC_Order.Value2 = null;
+            this.SC_Order.Value3 = null;
+            this.SC_Order.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Order_CodeKeyDownEvent);
+            // 
+            // SC_JanCD
+            // 
+            this.SC_JanCD.AutoSize = true;
+            this.SC_JanCD.ChangeDate = "";
+            this.SC_JanCD.ChangeDateWidth = 100;
+            this.SC_JanCD.Code = "";
+            this.SC_JanCD.CodeWidth = 600;
+            this.SC_JanCD.CodeWidth1 = 600;
+            this.SC_JanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_JanCD.DataCheck = false;
+            this.SC_JanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_JanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_JanCD.IsCopy = false;
+            this.SC_JanCD.LabelText = "";
+            this.SC_JanCD.LabelVisible = false;
+            this.SC_JanCD.Location = new System.Drawing.Point(1056, 88);
+            this.SC_JanCD.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_JanCD.Name = "SC_JanCD";
+            this.SC_JanCD.NameWidth = 280;
+            this.SC_JanCD.SearchEnable = true;
+            this.SC_JanCD.Size = new System.Drawing.Size(633, 27);
+            this.SC_JanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
+            this.SC_JanCD.TabIndex = 13;
+            this.SC_JanCD.test = null;
+            this.SC_JanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_JanCD.UseChangeDate = false;
+            this.SC_JanCD.Value1 = null;
+            this.SC_JanCD.Value2 = null;
+            this.SC_JanCD.Value3 = null;
+            // 
+            // Sc_SKUCD
+            // 
+            this.Sc_SKUCD.AutoSize = true;
+            this.Sc_SKUCD.ChangeDate = "";
+            this.Sc_SKUCD.ChangeDateWidth = 100;
+            this.Sc_SKUCD.Code = "";
+            this.Sc_SKUCD.CodeWidth = 600;
+            this.Sc_SKUCD.CodeWidth1 = 600;
+            this.Sc_SKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Sc_SKUCD.DataCheck = false;
+            this.Sc_SKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_SKUCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.Sc_SKUCD.IsCopy = false;
+            this.Sc_SKUCD.LabelText = "";
+            this.Sc_SKUCD.LabelVisible = false;
+            this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 59);
+            this.Sc_SKUCD.Margin = new System.Windows.Forms.Padding(0);
+            this.Sc_SKUCD.Name = "Sc_SKUCD";
+            this.Sc_SKUCD.NameWidth = 280;
+            this.Sc_SKUCD.SearchEnable = true;
+            this.Sc_SKUCD.Size = new System.Drawing.Size(633, 27);
+            this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
+            this.Sc_SKUCD.TabIndex = 12;
+            this.Sc_SKUCD.test = null;
+            this.Sc_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.Sc_SKUCD.UseChangeDate = false;
+            this.Sc_SKUCD.Value1 = null;
+            this.Sc_SKUCD.Value2 = null;
+            this.Sc_SKUCD.Value3 = null;
+            // 
+            // Sc_Item
+            // 
+            this.Sc_Item.AutoSize = true;
+            this.Sc_Item.ChangeDate = "";
+            this.Sc_Item.ChangeDateWidth = 100;
+            this.Sc_Item.Code = "";
+            this.Sc_Item.CodeWidth = 600;
+            this.Sc_Item.CodeWidth1 = 600;
+            this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Sc_Item.DataCheck = false;
+            this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_Item.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.Sc_Item.IsCopy = false;
+            this.Sc_Item.LabelText = "";
+            this.Sc_Item.LabelVisible = false;
+            this.Sc_Item.Location = new System.Drawing.Point(1056, 33);
+            this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
+            this.Sc_Item.Name = "Sc_Item";
+            this.Sc_Item.NameWidth = 280;
+            this.Sc_Item.SearchEnable = true;
+            this.Sc_Item.Size = new System.Drawing.Size(633, 27);
+            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.ITEMMulti;
+            this.Sc_Item.TabIndex = 11;
+            this.Sc_Item.test = null;
+            this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.Sc_Item.UseChangeDate = false;
+            this.Sc_Item.Value1 = null;
+            this.Sc_Item.Value2 = null;
+            this.Sc_Item.Value3 = null;
             // 
             // colShippingN0
             // 
@@ -617,6 +760,8 @@
             // colShippingDate
             // 
             this.colShippingDate.DataPropertyName = "ShippingDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colShippingDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.colShippingDate.HeaderText = "出荷日";
             this.colShippingDate.MaxInputLength = 8;
             this.colShippingDate.Name = "colShippingDate";
@@ -673,6 +818,8 @@
             // colShippingSu
             // 
             this.colShippingSu.DataPropertyName = "ShippingSu";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colShippingSu.DefaultCellStyle = dataGridViewCellStyle4;
             this.colShippingSu.HeaderText = "出荷数";
             this.colShippingSu.MaxInputLength = 6;
             this.colShippingSu.Name = "colShippingSu";
@@ -697,6 +844,8 @@
             // colSalesDate
             // 
             this.colSalesDate.DataPropertyName = "SalesDate";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSalesDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.colSalesDate.HeaderText = "売上日";
             this.colSalesDate.MaxInputLength = 8;
             this.colSalesDate.Name = "colSalesDate";
@@ -709,148 +858,6 @@
             this.colStaffName.MaxInputLength = 20;
             this.colStaffName.Name = "colStaffName";
             this.colStaffName.Width = 200;
-            // 
-            // panelDetail
-            // 
-            this.panelDetail.Controls.Add(this.dgvShukkaShoukai);
-            this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDetail.Location = new System.Drawing.Point(0, 250);
-            this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1776, 679);
-            this.panelDetail.TabIndex = 13;
-            // 
-            // cboShipping
-            // 
-            this.cboShipping.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboShipping.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboShipping.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.配送会社;
-            this.cboShipping.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboShipping.Flag = 0;
-            this.cboShipping.FormattingEnabled = true;
-            this.cboShipping.Length = 10;
-            this.cboShipping.Location = new System.Drawing.Point(1056, 10);
-            this.cboShipping.MaxLength = 10;
-            this.cboShipping.MoveNext = true;
-            this.cboShipping.Name = "cboShipping";
-            this.cboShipping.Size = new System.Drawing.Size(265, 20);
-            this.cboShipping.TabIndex = 10;
-            // 
-            // SC_Order
-            // 
-            this.SC_Order.AutoSize = true;
-            this.SC_Order.ChangeDate = "";
-            this.SC_Order.ChangeDateWidth = 100;
-            this.SC_Order.Code = "";
-            this.SC_Order.CodeWidth = 100;
-            this.SC_Order.CodeWidth1 = 100;
-            this.SC_Order.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Order.DataCheck = false;
-            this.SC_Order.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Order.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_Order.IsCopy = false;
-            this.SC_Order.LabelText = "";
-            this.SC_Order.LabelVisible = false;
-            this.SC_Order.Location = new System.Drawing.Point(430, 60);
-            this.SC_Order.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Order.Name = "SC_Order";
-            this.SC_Order.NameWidth = 600;
-            this.SC_Order.SearchEnable = true;
-            this.SC_Order.Size = new System.Drawing.Size(133, 28);
-            this.SC_Order.Stype = Search.CKM_SearchControl.SearchType.受注番号;
-            this.SC_Order.TabIndex = 6;
-            this.SC_Order.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Order.UseChangeDate = false;
-            this.SC_Order.Value1 = null;
-            this.SC_Order.Value2 = null;
-            this.SC_Order.Value3 = null;
-            this.SC_Order.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Order_CodeKeyDownEvent);
-            // 
-            // SC_JanCD
-            // 
-            this.SC_JanCD.AutoSize = true;
-            this.SC_JanCD.ChangeDate = "";
-            this.SC_JanCD.ChangeDateWidth = 100;
-            this.SC_JanCD.Code = "";
-            this.SC_JanCD.CodeWidth = 600;
-            this.SC_JanCD.CodeWidth1 = 600;
-            this.SC_JanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_JanCD.DataCheck = false;
-            this.SC_JanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_JanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_JanCD.IsCopy = false;
-            this.SC_JanCD.LabelText = "";
-            this.SC_JanCD.LabelVisible = false;
-            this.SC_JanCD.Location = new System.Drawing.Point(1056, 88);
-            this.SC_JanCD.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_JanCD.Name = "SC_JanCD";
-            this.SC_JanCD.NameWidth = 280;
-            this.SC_JanCD.SearchEnable = true;
-            this.SC_JanCD.Size = new System.Drawing.Size(633, 27);
-            this.SC_JanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
-            this.SC_JanCD.TabIndex = 13;
-            this.SC_JanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_JanCD.UseChangeDate = false;
-            this.SC_JanCD.Value1 = null;
-            this.SC_JanCD.Value2 = null;
-            this.SC_JanCD.Value3 = null;
-            // 
-            // Sc_SKUCD
-            // 
-            this.Sc_SKUCD.AutoSize = true;
-            this.Sc_SKUCD.ChangeDate = "";
-            this.Sc_SKUCD.ChangeDateWidth = 100;
-            this.Sc_SKUCD.Code = "";
-            this.Sc_SKUCD.CodeWidth = 600;
-            this.Sc_SKUCD.CodeWidth1 = 600;
-            this.Sc_SKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Sc_SKUCD.DataCheck = false;
-            this.Sc_SKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Sc_SKUCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Sc_SKUCD.IsCopy = false;
-            this.Sc_SKUCD.LabelText = "";
-            this.Sc_SKUCD.LabelVisible = false;
-            this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 59);
-            this.Sc_SKUCD.Margin = new System.Windows.Forms.Padding(0);
-            this.Sc_SKUCD.Name = "Sc_SKUCD";
-            this.Sc_SKUCD.NameWidth = 280;
-            this.Sc_SKUCD.SearchEnable = true;
-            this.Sc_SKUCD.Size = new System.Drawing.Size(633, 27);
-            this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
-            this.Sc_SKUCD.TabIndex = 12;
-            this.Sc_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.Sc_SKUCD.UseChangeDate = false;
-            this.Sc_SKUCD.Value1 = null;
-            this.Sc_SKUCD.Value2 = null;
-            this.Sc_SKUCD.Value3 = null;
-            // 
-            // Sc_Item
-            // 
-            this.Sc_Item.AutoSize = true;
-            this.Sc_Item.ChangeDate = "";
-            this.Sc_Item.ChangeDateWidth = 100;
-            this.Sc_Item.Code = "";
-            this.Sc_Item.CodeWidth = 600;
-            this.Sc_Item.CodeWidth1 = 600;
-            this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Sc_Item.DataCheck = false;
-            this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Sc_Item.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Sc_Item.IsCopy = false;
-            this.Sc_Item.LabelText = "";
-            this.Sc_Item.LabelVisible = false;
-            this.Sc_Item.Location = new System.Drawing.Point(1056, 33);
-            this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
-            this.Sc_Item.Name = "Sc_Item";
-            this.Sc_Item.NameWidth = 280;
-            this.Sc_Item.SearchEnable = true;
-            this.Sc_Item.Size = new System.Drawing.Size(633, 27);
-            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.ITEMMulti;
-            this.Sc_Item.TabIndex = 11;
-            this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.Sc_Item.UseChangeDate = false;
-            this.Sc_Item.Value1 = null;
-            this.Sc_Item.Value2 = null;
-            this.Sc_Item.Value3 = null;
             // 
             // FrmShukkaShoukai
             // 
@@ -920,6 +927,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txtCarrierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtSaleDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtStaffName;
+        private CKM_Controls.CKM_ComboBox cboShipping;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShippingN0;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMovement;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShippingDate;
@@ -934,7 +942,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarrierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSalesDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStaffName;
-        private CKM_Controls.CKM_ComboBox cboShipping;
     }
 }
 

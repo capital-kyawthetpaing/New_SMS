@@ -302,8 +302,14 @@ namespace ShukkaShoukai
                     ShippingDateTo = txtShippingEndDate.Text,
                     CarrierCD = cboShipping.SelectedValue.ToString(),
                     ShippingKBN = CheckValue1(),
+
                     InvoiceNO = CheckValue2(),
                 };
+
+                if(mshe.CarrierCD == "-1")
+                {
+                    mshe.CarrierCD = null;
+                }
 
                 dsde = new D_ShippingDetails_Entity
                 {
@@ -318,11 +324,18 @@ namespace ShukkaShoukai
                     DeliverySoukoCD = cboDestinationWarehouse.SelectedValue.ToString(),
                 };
 
+                if(die.DeliverySoukoCD == "-1")
+                {
+                    die.DeliverySoukoCD = null;
+                }
+                
+
                 dtSearch = skskbl.D_Shipping_Select(mshe, dsde, die);
                 if(dtSearch.Rows.Count == 0)
                 {
                     skskbl.ShowMessage("E128");
                     cboWarehouse.Focus();
+                    dgvShukkaShoukai.DataSource = string.Empty;
                 }
                 else
                 {
