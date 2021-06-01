@@ -199,7 +199,13 @@ namespace NyuukinNyuuryoku
                 string no = row.Cells["colCollectNO"].Value.ToString();
                 string confirmNO = row.Cells["colConfirmNO"].Value.ToString();
 
-                if (kbn.Equals(0)　||　string.IsNullOrWhiteSpace(confirmNO))
+                if (kbn.Equals(4))
+                {
+                    //削除モードで、入金入力を表示（売上単位）
+                    //削除モード:値11, 明細.入金番号, 明細.入金消込番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 11 " + no + " " + confirmNO;
+                }
+                else if (kbn.Equals(0)　||　string.IsNullOrWhiteSpace(confirmNO))
                 {
                     //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
                     //（入金額がすべて消込されている場合（消込残額＝０）の場合は、新規消込はできない）
@@ -213,12 +219,6 @@ namespace NyuukinNyuuryoku
                     //修正モードで、入金入力を表示（売上単位）
                     //修正モード:値10, 明細.入金番号, 明細.入金消込番号
                     cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no + " " + confirmNO;
-                }
-                else if (kbn.Equals(4))
-                {
-                    //削除モードで、入金入力を表示（売上単位）
-                    //削除モード:値11, 明細.入金番号, 明細.入金消込番号
-                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 11 " + no + " " + confirmNO;
                 }
             }            
             
