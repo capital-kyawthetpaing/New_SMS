@@ -246,6 +246,7 @@ BEGIN
                      AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
                      AND dbo.Fnc_MailAdress(ISNULL(FC.MailAddress,'')) = dbo.Fnc_MailAdress(ISNULL(DH.MailAddress,''))                                      
                      AND FC.StoreKBN = 1
+                     AND FC.DeleteFlg = 0
                    WHERE DH.JuchuuNO = @JuchuuNO
                      AND DH.DeleteDateTime IS NULL
                     )
@@ -258,6 +259,7 @@ BEGIN
                                   AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
                                   AND dbo.Fnc_MailAdress(ISNULL(FC.MailAddress,'')) = dbo.Fnc_MailAdress(ISNULL(DH.MailAddress,''))                                                 
                                   AND FC.StoreKBN = 1
+                                  AND FC.DeleteFlg = 0
                                 WHERE DH.JuchuuNO = @JuchuuNO
                                   AND DH.DeleteDateTime IS NULL
                                 );
@@ -315,6 +317,7 @@ BEGIN
                             ON FC.CustomerName = DH.CustomerName
                            AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
                            AND FC.StoreKBN = 1
+                           AND FC.DeleteFlg = 0
                          WHERE DH.JuchuuNO = @JuchuuNO
                            AND DH.DeleteDateTime IS NULL
                         )
@@ -339,6 +342,7 @@ BEGIN
                                  ON FC.CustomerName = DH.CustomerName
                                 AND dbo.Fnc_MailAdress(FC.MailAddress) = dbo.Fnc_MailAdress(DH.MailAddress) 
                                 AND FC.StoreKBN = 1
+                                AND FC.DeleteFlg = 0
                               WHERE DH.JuchuuNO = @JuchuuNO
                                 AND DH.DeleteDateTime IS NULL
                             )
@@ -363,6 +367,7 @@ BEGIN
                                     ON FC.CustomerName = DH.CustomerName
                                    AND dbo.Fnc_AdressHalfToFull(FC.Address1) = dbo.Fnc_AdressHalfToFull(DH.Address1)
                                    AND FC.StoreKBN = 1
+                                   AND FC.DeleteFlg = 0
                                  WHERE DH.JuchuuNO = @JuchuuNO
                                    AND DH.DeleteDateTime IS NULL
                                 )

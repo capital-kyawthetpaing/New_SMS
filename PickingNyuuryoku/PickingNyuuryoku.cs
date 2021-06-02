@@ -1991,7 +1991,13 @@ namespace PickingNyuuryoku
                     case (int)ClsGridPicking.ColNO.Chk:
                     case (int)ClsGridPicking.ColNO.ChkModori:
                         break;
-
+                    case (int)ClsGridPicking.ColNO.GYONO:
+                    case (int)ClsGridPicking.ColNO.Space:
+                    case (int)ClsGridPicking.ColNO.Space2:
+                        {
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            break;
+                        }
                     default:
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                         break;
