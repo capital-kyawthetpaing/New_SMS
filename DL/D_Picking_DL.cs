@@ -158,7 +158,7 @@ namespace DL
         /// </summary>
         /// <param name="dpe"></param>
         /// <returns></returns>
-        public bool D_Picking_Update(string pickingNo,string operatorCD)
+        public bool D_Picking_Update(string pickingNo,D_Picking_Entity dpe)
         {
             string sp = "D_Picking_Update";
 
@@ -167,7 +167,9 @@ namespace DL
             command.CommandTimeout = 0;
 
             AddParam(command,"@PickingNO",SqlDbType.VarChar,pickingNo);
-            AddParam(command, "@Operator", SqlDbType.VarChar, operatorCD);
+            AddParam(command, "@Operator", SqlDbType.VarChar, dpe.InsertOperator);
+            AddParam(command, "@Program", SqlDbType.VarChar, pickingNo);
+            AddParam(command, "@PC", SqlDbType.VarChar, dpe.InsertOperator);
 
             UseTransaction = true;
 
