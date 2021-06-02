@@ -413,6 +413,7 @@
             this.ckM_Button1.TabIndex = 735;
             this.ckM_Button1.Text = "名寄せ処理";
             this.ckM_Button1.UseVisualStyleBackColor = false;
+            this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
             // 
             // Pnl_Body
             // 
@@ -529,7 +530,7 @@
             this.Pnl_Body.Controls.Add(this.CHK_EDICK_0);
             this.Pnl_Body.Location = new System.Drawing.Point(16, 193);
             this.Pnl_Body.Name = "Pnl_Body";
-            this.Pnl_Body.Size = new System.Drawing.Size(1256, 461);
+            this.Pnl_Body.Size = new System.Drawing.Size(1276, 461);
             this.Pnl_Body.TabIndex = 343;
             // 
             // IMT_MAIL2_5
@@ -554,7 +555,7 @@
             this.IMT_MAIL2_5.IsShop = false;
             this.IMT_MAIL2_5.IsTimemmss = false;
             this.IMT_MAIL2_5.Length = 80;
-            this.IMT_MAIL2_5.Location = new System.Drawing.Point(764, 399);
+            this.IMT_MAIL2_5.Location = new System.Drawing.Point(785, 399);
             this.IMT_MAIL2_5.MaxLength = 80;
             this.IMT_MAIL2_5.MoveNext = true;
             this.IMT_MAIL2_5.Name = "IMT_MAIL2_5";
@@ -587,7 +588,7 @@
             this.IMT_ADD21_5.IsShop = false;
             this.IMT_ADD21_5.IsTimemmss = false;
             this.IMT_ADD21_5.Length = 80;
-            this.IMT_ADD21_5.Location = new System.Drawing.Point(764, 418);
+            this.IMT_ADD21_5.Location = new System.Drawing.Point(785, 418);
             this.IMT_ADD21_5.MaxLength = 80;
             this.IMT_ADD21_5.MoveNext = true;
             this.IMT_ADD21_5.Name = "IMT_ADD21_5";
@@ -619,7 +620,7 @@
             this.IMT_ADD22_5.IsShop = false;
             this.IMT_ADD22_5.IsTimemmss = false;
             this.IMT_ADD22_5.Length = 80;
-            this.IMT_ADD22_5.Location = new System.Drawing.Point(764, 437);
+            this.IMT_ADD22_5.Location = new System.Drawing.Point(785, 437);
             this.IMT_ADD22_5.MaxLength = 80;
             this.IMT_ADD22_5.MoveNext = true;
             this.IMT_ADD22_5.Name = "IMT_ADD22_5";
@@ -653,7 +654,7 @@
             this.IMT_MAIL2_4.IsShop = false;
             this.IMT_MAIL2_4.IsTimemmss = false;
             this.IMT_MAIL2_4.Length = 80;
-            this.IMT_MAIL2_4.Location = new System.Drawing.Point(764, 323);
+            this.IMT_MAIL2_4.Location = new System.Drawing.Point(785, 323);
             this.IMT_MAIL2_4.MaxLength = 80;
             this.IMT_MAIL2_4.MoveNext = true;
             this.IMT_MAIL2_4.Name = "IMT_MAIL2_4";
@@ -686,7 +687,7 @@
             this.IMT_ADD22_4.IsShop = false;
             this.IMT_ADD22_4.IsTimemmss = false;
             this.IMT_ADD22_4.Length = 80;
-            this.IMT_ADD22_4.Location = new System.Drawing.Point(764, 361);
+            this.IMT_ADD22_4.Location = new System.Drawing.Point(785, 361);
             this.IMT_ADD22_4.MaxLength = 80;
             this.IMT_ADD22_4.MoveNext = true;
             this.IMT_ADD22_4.Name = "IMT_ADD22_4";
@@ -718,7 +719,7 @@
             this.IMT_ADD21_4.IsShop = false;
             this.IMT_ADD21_4.IsTimemmss = false;
             this.IMT_ADD21_4.Length = 80;
-            this.IMT_ADD21_4.Location = new System.Drawing.Point(764, 342);
+            this.IMT_ADD21_4.Location = new System.Drawing.Point(785, 342);
             this.IMT_ADD21_4.MaxLength = 80;
             this.IMT_ADD21_4.MoveNext = true;
             this.IMT_ADD21_4.Name = "IMT_ADD21_4";
@@ -752,7 +753,7 @@
             this.IMT_MAIL2_3.IsShop = false;
             this.IMT_MAIL2_3.IsTimemmss = false;
             this.IMT_MAIL2_3.Length = 80;
-            this.IMT_MAIL2_3.Location = new System.Drawing.Point(764, 247);
+            this.IMT_MAIL2_3.Location = new System.Drawing.Point(785, 247);
             this.IMT_MAIL2_3.MaxLength = 80;
             this.IMT_MAIL2_3.MoveNext = true;
             this.IMT_MAIL2_3.Name = "IMT_MAIL2_3";
@@ -785,7 +786,7 @@
             this.IMT_ADD22_3.IsShop = false;
             this.IMT_ADD22_3.IsTimemmss = false;
             this.IMT_ADD22_3.Length = 80;
-            this.IMT_ADD22_3.Location = new System.Drawing.Point(764, 285);
+            this.IMT_ADD22_3.Location = new System.Drawing.Point(785, 285);
             this.IMT_ADD22_3.MaxLength = 80;
             this.IMT_ADD22_3.MoveNext = true;
             this.IMT_ADD22_3.Name = "IMT_ADD22_3";
@@ -817,7 +818,7 @@
             this.IMT_ADD21_3.IsShop = false;
             this.IMT_ADD21_3.IsTimemmss = false;
             this.IMT_ADD21_3.Length = 80;
-            this.IMT_ADD21_3.Location = new System.Drawing.Point(764, 266);
+            this.IMT_ADD21_3.Location = new System.Drawing.Point(785, 266);
             this.IMT_ADD21_3.MaxLength = 80;
             this.IMT_ADD21_3.MoveNext = true;
             this.IMT_ADD21_3.Name = "IMT_ADD21_3";
@@ -851,7 +852,7 @@
             this.IMT_MAIL2_0.IsShop = false;
             this.IMT_MAIL2_0.IsTimemmss = false;
             this.IMT_MAIL2_0.Length = 80;
-            this.IMT_MAIL2_0.Location = new System.Drawing.Point(764, 19);
+            this.IMT_MAIL2_0.Location = new System.Drawing.Point(785, 19);
             this.IMT_MAIL2_0.MaxLength = 80;
             this.IMT_MAIL2_0.MoveNext = true;
             this.IMT_MAIL2_0.Name = "IMT_MAIL2_0";
@@ -884,7 +885,7 @@
             this.IMT_MAIL2_1.IsShop = false;
             this.IMT_MAIL2_1.IsTimemmss = false;
             this.IMT_MAIL2_1.Length = 80;
-            this.IMT_MAIL2_1.Location = new System.Drawing.Point(764, 95);
+            this.IMT_MAIL2_1.Location = new System.Drawing.Point(785, 95);
             this.IMT_MAIL2_1.MaxLength = 80;
             this.IMT_MAIL2_1.MoveNext = true;
             this.IMT_MAIL2_1.Name = "IMT_MAIL2_1";
@@ -917,7 +918,7 @@
             this.IMT_MAIL2_2.IsShop = false;
             this.IMT_MAIL2_2.IsTimemmss = false;
             this.IMT_MAIL2_2.Length = 80;
-            this.IMT_MAIL2_2.Location = new System.Drawing.Point(764, 171);
+            this.IMT_MAIL2_2.Location = new System.Drawing.Point(785, 171);
             this.IMT_MAIL2_2.MaxLength = 80;
             this.IMT_MAIL2_2.MoveNext = true;
             this.IMT_MAIL2_2.Name = "IMT_MAIL2_2";
@@ -950,7 +951,7 @@
             this.IMT_ADD22_2.IsShop = false;
             this.IMT_ADD22_2.IsTimemmss = false;
             this.IMT_ADD22_2.Length = 80;
-            this.IMT_ADD22_2.Location = new System.Drawing.Point(764, 209);
+            this.IMT_ADD22_2.Location = new System.Drawing.Point(785, 209);
             this.IMT_ADD22_2.MaxLength = 80;
             this.IMT_ADD22_2.MoveNext = true;
             this.IMT_ADD22_2.Name = "IMT_ADD22_2";
@@ -983,7 +984,7 @@
             this.IMT_ADD22_1.IsShop = false;
             this.IMT_ADD22_1.IsTimemmss = false;
             this.IMT_ADD22_1.Length = 80;
-            this.IMT_ADD22_1.Location = new System.Drawing.Point(764, 133);
+            this.IMT_ADD22_1.Location = new System.Drawing.Point(785, 133);
             this.IMT_ADD22_1.MaxLength = 80;
             this.IMT_ADD22_1.MoveNext = true;
             this.IMT_ADD22_1.Name = "IMT_ADD22_1";
@@ -1016,7 +1017,7 @@
             this.IMT_ADD22_0.IsShop = false;
             this.IMT_ADD22_0.IsTimemmss = false;
             this.IMT_ADD22_0.Length = 80;
-            this.IMT_ADD22_0.Location = new System.Drawing.Point(764, 57);
+            this.IMT_ADD22_0.Location = new System.Drawing.Point(785, 57);
             this.IMT_ADD22_0.MaxLength = 80;
             this.IMT_ADD22_0.MoveNext = true;
             this.IMT_ADD22_0.Name = "IMT_ADD22_0";
@@ -1048,7 +1049,7 @@
             this.IMT_ADD21_0.IsShop = false;
             this.IMT_ADD21_0.IsTimemmss = false;
             this.IMT_ADD21_0.Length = 80;
-            this.IMT_ADD21_0.Location = new System.Drawing.Point(764, 38);
+            this.IMT_ADD21_0.Location = new System.Drawing.Point(785, 38);
             this.IMT_ADD21_0.MaxLength = 80;
             this.IMT_ADD21_0.MoveNext = true;
             this.IMT_ADD21_0.Name = "IMT_ADD21_0";
@@ -1081,7 +1082,7 @@
             this.IMT_ADD21_1.IsShop = false;
             this.IMT_ADD21_1.IsTimemmss = false;
             this.IMT_ADD21_1.Length = 80;
-            this.IMT_ADD21_1.Location = new System.Drawing.Point(764, 114);
+            this.IMT_ADD21_1.Location = new System.Drawing.Point(785, 114);
             this.IMT_ADD21_1.MaxLength = 80;
             this.IMT_ADD21_1.MoveNext = true;
             this.IMT_ADD21_1.Name = "IMT_ADD21_1";
@@ -1114,7 +1115,7 @@
             this.IMT_ADD21_2.IsShop = false;
             this.IMT_ADD21_2.IsTimemmss = false;
             this.IMT_ADD21_2.Length = 80;
-            this.IMT_ADD21_2.Location = new System.Drawing.Point(764, 190);
+            this.IMT_ADD21_2.Location = new System.Drawing.Point(785, 190);
             this.IMT_ADD21_2.MaxLength = 80;
             this.IMT_ADD21_2.MoveNext = true;
             this.IMT_ADD21_2.Name = "IMT_ADD21_2";
@@ -1148,12 +1149,12 @@
             this.IMT_SPACE2_5.IsShop = false;
             this.IMT_SPACE2_5.IsTimemmss = false;
             this.IMT_SPACE2_5.Length = 50;
-            this.IMT_SPACE2_5.Location = new System.Drawing.Point(675, 437);
+            this.IMT_SPACE2_5.Location = new System.Drawing.Point(691, 437);
             this.IMT_SPACE2_5.MaxLength = 50;
             this.IMT_SPACE2_5.MoveNext = true;
             this.IMT_SPACE2_5.Name = "IMT_SPACE2_5";
             this.IMT_SPACE2_5.ReadOnly = true;
-            this.IMT_SPACE2_5.Size = new System.Drawing.Size(89, 19);
+            this.IMT_SPACE2_5.Size = new System.Drawing.Size(94, 19);
             this.IMT_SPACE2_5.TabIndex = 660;
             this.IMT_SPACE2_5.Tag = "5";
             this.IMT_SPACE2_5.Text = "999";
@@ -1182,12 +1183,12 @@
             this.IMT_SPACE2_4.IsShop = false;
             this.IMT_SPACE2_4.IsTimemmss = false;
             this.IMT_SPACE2_4.Length = 50;
-            this.IMT_SPACE2_4.Location = new System.Drawing.Point(675, 361);
+            this.IMT_SPACE2_4.Location = new System.Drawing.Point(691, 361);
             this.IMT_SPACE2_4.MaxLength = 50;
             this.IMT_SPACE2_4.MoveNext = true;
             this.IMT_SPACE2_4.Name = "IMT_SPACE2_4";
             this.IMT_SPACE2_4.ReadOnly = true;
-            this.IMT_SPACE2_4.Size = new System.Drawing.Size(89, 19);
+            this.IMT_SPACE2_4.Size = new System.Drawing.Size(94, 19);
             this.IMT_SPACE2_4.TabIndex = 659;
             this.IMT_SPACE2_4.Tag = "4";
             this.IMT_SPACE2_4.Text = "999";
@@ -1216,12 +1217,12 @@
             this.IMT_SPACE2_3.IsShop = false;
             this.IMT_SPACE2_3.IsTimemmss = false;
             this.IMT_SPACE2_3.Length = 50;
-            this.IMT_SPACE2_3.Location = new System.Drawing.Point(675, 285);
+            this.IMT_SPACE2_3.Location = new System.Drawing.Point(691, 285);
             this.IMT_SPACE2_3.MaxLength = 50;
             this.IMT_SPACE2_3.MoveNext = true;
             this.IMT_SPACE2_3.Name = "IMT_SPACE2_3";
             this.IMT_SPACE2_3.ReadOnly = true;
-            this.IMT_SPACE2_3.Size = new System.Drawing.Size(89, 19);
+            this.IMT_SPACE2_3.Size = new System.Drawing.Size(94, 19);
             this.IMT_SPACE2_3.TabIndex = 658;
             this.IMT_SPACE2_3.Tag = "3";
             this.IMT_SPACE2_3.Text = "999";
@@ -1250,12 +1251,12 @@
             this.IMT_SPACE2_2.IsShop = false;
             this.IMT_SPACE2_2.IsTimemmss = false;
             this.IMT_SPACE2_2.Length = 50;
-            this.IMT_SPACE2_2.Location = new System.Drawing.Point(675, 209);
+            this.IMT_SPACE2_2.Location = new System.Drawing.Point(691, 209);
             this.IMT_SPACE2_2.MaxLength = 50;
             this.IMT_SPACE2_2.MoveNext = true;
             this.IMT_SPACE2_2.Name = "IMT_SPACE2_2";
             this.IMT_SPACE2_2.ReadOnly = true;
-            this.IMT_SPACE2_2.Size = new System.Drawing.Size(89, 19);
+            this.IMT_SPACE2_2.Size = new System.Drawing.Size(94, 19);
             this.IMT_SPACE2_2.TabIndex = 657;
             this.IMT_SPACE2_2.Tag = "2";
             this.IMT_SPACE2_2.Text = "999";
@@ -1284,12 +1285,12 @@
             this.IMT_SPACE2_1.IsShop = false;
             this.IMT_SPACE2_1.IsTimemmss = false;
             this.IMT_SPACE2_1.Length = 50;
-            this.IMT_SPACE2_1.Location = new System.Drawing.Point(675, 133);
+            this.IMT_SPACE2_1.Location = new System.Drawing.Point(691, 133);
             this.IMT_SPACE2_1.MaxLength = 50;
             this.IMT_SPACE2_1.MoveNext = true;
             this.IMT_SPACE2_1.Name = "IMT_SPACE2_1";
             this.IMT_SPACE2_1.ReadOnly = true;
-            this.IMT_SPACE2_1.Size = new System.Drawing.Size(89, 19);
+            this.IMT_SPACE2_1.Size = new System.Drawing.Size(94, 19);
             this.IMT_SPACE2_1.TabIndex = 656;
             this.IMT_SPACE2_1.Tag = "1";
             this.IMT_SPACE2_1.Text = "999";
@@ -1318,12 +1319,12 @@
             this.IMT_SPACE2_0.IsShop = false;
             this.IMT_SPACE2_0.IsTimemmss = false;
             this.IMT_SPACE2_0.Length = 50;
-            this.IMT_SPACE2_0.Location = new System.Drawing.Point(675, 57);
+            this.IMT_SPACE2_0.Location = new System.Drawing.Point(691, 57);
             this.IMT_SPACE2_0.MaxLength = 50;
             this.IMT_SPACE2_0.MoveNext = true;
             this.IMT_SPACE2_0.Name = "IMT_SPACE2_0";
             this.IMT_SPACE2_0.ReadOnly = true;
-            this.IMT_SPACE2_0.Size = new System.Drawing.Size(89, 19);
+            this.IMT_SPACE2_0.Size = new System.Drawing.Size(94, 19);
             this.IMT_SPACE2_0.TabIndex = 655;
             this.IMT_SPACE2_0.Tag = "0";
             this.IMT_SPACE2_0.Text = "999";
@@ -1352,12 +1353,12 @@
             this.IMT_ZIP2_5.IsShop = false;
             this.IMT_ZIP2_5.IsTimemmss = false;
             this.IMT_ZIP2_5.Length = 50;
-            this.IMT_ZIP2_5.Location = new System.Drawing.Point(675, 418);
+            this.IMT_ZIP2_5.Location = new System.Drawing.Point(691, 418);
             this.IMT_ZIP2_5.MaxLength = 50;
             this.IMT_ZIP2_5.MoveNext = true;
             this.IMT_ZIP2_5.Name = "IMT_ZIP2_5";
             this.IMT_ZIP2_5.ReadOnly = true;
-            this.IMT_ZIP2_5.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP2_5.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP2_5.TabIndex = 654;
             this.IMT_ZIP2_5.Tag = "5";
             this.IMT_ZIP2_5.Text = "999";
@@ -1386,12 +1387,12 @@
             this.IMT_ZIP2_4.IsShop = false;
             this.IMT_ZIP2_4.IsTimemmss = false;
             this.IMT_ZIP2_4.Length = 50;
-            this.IMT_ZIP2_4.Location = new System.Drawing.Point(675, 342);
+            this.IMT_ZIP2_4.Location = new System.Drawing.Point(691, 342);
             this.IMT_ZIP2_4.MaxLength = 50;
             this.IMT_ZIP2_4.MoveNext = true;
             this.IMT_ZIP2_4.Name = "IMT_ZIP2_4";
             this.IMT_ZIP2_4.ReadOnly = true;
-            this.IMT_ZIP2_4.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP2_4.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP2_4.TabIndex = 653;
             this.IMT_ZIP2_4.Tag = "4";
             this.IMT_ZIP2_4.Text = "999";
@@ -1420,12 +1421,12 @@
             this.IMT_ZIP2_3.IsShop = false;
             this.IMT_ZIP2_3.IsTimemmss = false;
             this.IMT_ZIP2_3.Length = 50;
-            this.IMT_ZIP2_3.Location = new System.Drawing.Point(675, 266);
+            this.IMT_ZIP2_3.Location = new System.Drawing.Point(691, 266);
             this.IMT_ZIP2_3.MaxLength = 50;
             this.IMT_ZIP2_3.MoveNext = true;
             this.IMT_ZIP2_3.Name = "IMT_ZIP2_3";
             this.IMT_ZIP2_3.ReadOnly = true;
-            this.IMT_ZIP2_3.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP2_3.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP2_3.TabIndex = 652;
             this.IMT_ZIP2_3.Tag = "3";
             this.IMT_ZIP2_3.Text = "999";
@@ -1454,12 +1455,12 @@
             this.IMT_ZIP2_2.IsShop = false;
             this.IMT_ZIP2_2.IsTimemmss = false;
             this.IMT_ZIP2_2.Length = 50;
-            this.IMT_ZIP2_2.Location = new System.Drawing.Point(675, 190);
+            this.IMT_ZIP2_2.Location = new System.Drawing.Point(691, 190);
             this.IMT_ZIP2_2.MaxLength = 50;
             this.IMT_ZIP2_2.MoveNext = true;
             this.IMT_ZIP2_2.Name = "IMT_ZIP2_2";
             this.IMT_ZIP2_2.ReadOnly = true;
-            this.IMT_ZIP2_2.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP2_2.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP2_2.TabIndex = 651;
             this.IMT_ZIP2_2.Tag = "2";
             this.IMT_ZIP2_2.Text = "999";
@@ -1488,12 +1489,12 @@
             this.IMT_ZIP2_1.IsShop = false;
             this.IMT_ZIP2_1.IsTimemmss = false;
             this.IMT_ZIP2_1.Length = 50;
-            this.IMT_ZIP2_1.Location = new System.Drawing.Point(675, 114);
+            this.IMT_ZIP2_1.Location = new System.Drawing.Point(691, 114);
             this.IMT_ZIP2_1.MaxLength = 50;
             this.IMT_ZIP2_1.MoveNext = true;
             this.IMT_ZIP2_1.Name = "IMT_ZIP2_1";
             this.IMT_ZIP2_1.ReadOnly = true;
-            this.IMT_ZIP2_1.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP2_1.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP2_1.TabIndex = 650;
             this.IMT_ZIP2_1.Tag = "1";
             this.IMT_ZIP2_1.Text = "999";
@@ -1522,12 +1523,12 @@
             this.IMT_ZIP2_0.IsShop = false;
             this.IMT_ZIP2_0.IsTimemmss = false;
             this.IMT_ZIP2_0.Length = 50;
-            this.IMT_ZIP2_0.Location = new System.Drawing.Point(675, 38);
+            this.IMT_ZIP2_0.Location = new System.Drawing.Point(691, 38);
             this.IMT_ZIP2_0.MaxLength = 50;
             this.IMT_ZIP2_0.MoveNext = true;
             this.IMT_ZIP2_0.Name = "IMT_ZIP2_0";
             this.IMT_ZIP2_0.ReadOnly = true;
-            this.IMT_ZIP2_0.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP2_0.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP2_0.TabIndex = 649;
             this.IMT_ZIP2_0.Tag = "0";
             this.IMT_ZIP2_0.Text = "999";
@@ -1758,7 +1759,7 @@
             this.IMT_NAME_5.MaxLength = 80;
             this.IMT_NAME_5.MoveNext = true;
             this.IMT_NAME_5.Name = "IMT_NAME_5";
-            this.IMT_NAME_5.Size = new System.Drawing.Size(427, 19);
+            this.IMT_NAME_5.Size = new System.Drawing.Size(432, 19);
             this.IMT_NAME_5.TabIndex = 648;
             this.IMT_NAME_5.Tag = "5";
             this.IMT_NAME_5.Text = "XXXXXXXX10XXXX5";
@@ -1791,7 +1792,7 @@
             this.IMT_NAME_4.MaxLength = 80;
             this.IMT_NAME_4.MoveNext = true;
             this.IMT_NAME_4.Name = "IMT_NAME_4";
-            this.IMT_NAME_4.Size = new System.Drawing.Size(427, 19);
+            this.IMT_NAME_4.Size = new System.Drawing.Size(432, 19);
             this.IMT_NAME_4.TabIndex = 647;
             this.IMT_NAME_4.Tag = "4";
             this.IMT_NAME_4.Text = "XXXXXXXX10XXXX5";
@@ -1824,7 +1825,7 @@
             this.IMT_NAME_3.MaxLength = 80;
             this.IMT_NAME_3.MoveNext = true;
             this.IMT_NAME_3.Name = "IMT_NAME_3";
-            this.IMT_NAME_3.Size = new System.Drawing.Size(427, 19);
+            this.IMT_NAME_3.Size = new System.Drawing.Size(432, 19);
             this.IMT_NAME_3.TabIndex = 646;
             this.IMT_NAME_3.Tag = "3";
             this.IMT_NAME_3.Text = "XXXXXXXX10XXXX5";
@@ -1857,7 +1858,7 @@
             this.IMT_NAME_2.MaxLength = 80;
             this.IMT_NAME_2.MoveNext = true;
             this.IMT_NAME_2.Name = "IMT_NAME_2";
-            this.IMT_NAME_2.Size = new System.Drawing.Size(427, 19);
+            this.IMT_NAME_2.Size = new System.Drawing.Size(432, 19);
             this.IMT_NAME_2.TabIndex = 645;
             this.IMT_NAME_2.Tag = "2";
             this.IMT_NAME_2.Text = "XXXXXXXX10XXXX5";
@@ -1890,7 +1891,7 @@
             this.IMT_NAME_1.MaxLength = 80;
             this.IMT_NAME_1.MoveNext = true;
             this.IMT_NAME_1.Name = "IMT_NAME_1";
-            this.IMT_NAME_1.Size = new System.Drawing.Size(427, 19);
+            this.IMT_NAME_1.Size = new System.Drawing.Size(432, 19);
             this.IMT_NAME_1.TabIndex = 644;
             this.IMT_NAME_1.Tag = "1";
             this.IMT_NAME_1.Text = "XXXXXXXX10XXXX5";
@@ -1923,7 +1924,7 @@
             this.IMT_NAME_0.MaxLength = 100;
             this.IMT_NAME_0.MoveNext = true;
             this.IMT_NAME_0.Name = "IMT_NAME_0";
-            this.IMT_NAME_0.Size = new System.Drawing.Size(427, 19);
+            this.IMT_NAME_0.Size = new System.Drawing.Size(432, 19);
             this.IMT_NAME_0.TabIndex = 643;
             this.IMT_NAME_0.Tag = "0";
             this.IMT_NAME_0.Text = "ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ";
@@ -1952,12 +1953,12 @@
             this.IMN_TEL2_5.IsShop = false;
             this.IMN_TEL2_5.IsTimemmss = false;
             this.IMN_TEL2_5.Length = 50;
-            this.IMN_TEL2_5.Location = new System.Drawing.Point(675, 399);
+            this.IMN_TEL2_5.Location = new System.Drawing.Point(691, 399);
             this.IMN_TEL2_5.MaxLength = 50;
             this.IMN_TEL2_5.MoveNext = true;
             this.IMN_TEL2_5.Name = "IMN_TEL2_5";
             this.IMN_TEL2_5.ReadOnly = true;
-            this.IMN_TEL2_5.Size = new System.Drawing.Size(89, 19);
+            this.IMN_TEL2_5.Size = new System.Drawing.Size(94, 19);
             this.IMN_TEL2_5.TabIndex = 581;
             this.IMN_TEL2_5.Tag = "5";
             this.IMN_TEL2_5.Text = "999";
@@ -1986,12 +1987,12 @@
             this.IMN_TEL2_4.IsShop = false;
             this.IMN_TEL2_4.IsTimemmss = false;
             this.IMN_TEL2_4.Length = 50;
-            this.IMN_TEL2_4.Location = new System.Drawing.Point(675, 323);
+            this.IMN_TEL2_4.Location = new System.Drawing.Point(691, 323);
             this.IMN_TEL2_4.MaxLength = 50;
             this.IMN_TEL2_4.MoveNext = true;
             this.IMN_TEL2_4.Name = "IMN_TEL2_4";
             this.IMN_TEL2_4.ReadOnly = true;
-            this.IMN_TEL2_4.Size = new System.Drawing.Size(89, 19);
+            this.IMN_TEL2_4.Size = new System.Drawing.Size(94, 19);
             this.IMN_TEL2_4.TabIndex = 562;
             this.IMN_TEL2_4.Tag = "4";
             this.IMN_TEL2_4.Text = "999";
@@ -2020,12 +2021,12 @@
             this.IMN_TEL2_3.IsShop = false;
             this.IMN_TEL2_3.IsTimemmss = false;
             this.IMN_TEL2_3.Length = 50;
-            this.IMN_TEL2_3.Location = new System.Drawing.Point(675, 247);
+            this.IMN_TEL2_3.Location = new System.Drawing.Point(691, 247);
             this.IMN_TEL2_3.MaxLength = 50;
             this.IMN_TEL2_3.MoveNext = true;
             this.IMN_TEL2_3.Name = "IMN_TEL2_3";
             this.IMN_TEL2_3.ReadOnly = true;
-            this.IMN_TEL2_3.Size = new System.Drawing.Size(89, 19);
+            this.IMN_TEL2_3.Size = new System.Drawing.Size(94, 19);
             this.IMN_TEL2_3.TabIndex = 542;
             this.IMN_TEL2_3.Tag = "3";
             this.IMN_TEL2_3.Text = "999";
@@ -2054,12 +2055,12 @@
             this.IMN_TEL2_2.IsShop = false;
             this.IMN_TEL2_2.IsTimemmss = false;
             this.IMN_TEL2_2.Length = 50;
-            this.IMN_TEL2_2.Location = new System.Drawing.Point(675, 171);
+            this.IMN_TEL2_2.Location = new System.Drawing.Point(691, 171);
             this.IMN_TEL2_2.MaxLength = 50;
             this.IMN_TEL2_2.MoveNext = true;
             this.IMN_TEL2_2.Name = "IMN_TEL2_2";
             this.IMN_TEL2_2.ReadOnly = true;
-            this.IMN_TEL2_2.Size = new System.Drawing.Size(89, 19);
+            this.IMN_TEL2_2.Size = new System.Drawing.Size(94, 19);
             this.IMN_TEL2_2.TabIndex = 29;
             this.IMN_TEL2_2.Tag = "2";
             this.IMN_TEL2_2.Text = "999";
@@ -2088,12 +2089,12 @@
             this.IMN_TEL2_1.IsShop = false;
             this.IMN_TEL2_1.IsTimemmss = false;
             this.IMN_TEL2_1.Length = 50;
-            this.IMN_TEL2_1.Location = new System.Drawing.Point(675, 95);
+            this.IMN_TEL2_1.Location = new System.Drawing.Point(691, 95);
             this.IMN_TEL2_1.MaxLength = 50;
             this.IMN_TEL2_1.MoveNext = true;
             this.IMN_TEL2_1.Name = "IMN_TEL2_1";
             this.IMN_TEL2_1.ReadOnly = true;
-            this.IMN_TEL2_1.Size = new System.Drawing.Size(89, 19);
+            this.IMN_TEL2_1.Size = new System.Drawing.Size(94, 19);
             this.IMN_TEL2_1.TabIndex = 16;
             this.IMN_TEL2_1.Tag = "1";
             this.IMN_TEL2_1.Text = "999";
@@ -2122,12 +2123,12 @@
             this.IMN_TEL2_0.IsShop = false;
             this.IMN_TEL2_0.IsTimemmss = false;
             this.IMN_TEL2_0.Length = 50;
-            this.IMN_TEL2_0.Location = new System.Drawing.Point(675, 19);
+            this.IMN_TEL2_0.Location = new System.Drawing.Point(691, 19);
             this.IMN_TEL2_0.MaxLength = 50;
             this.IMN_TEL2_0.MoveNext = true;
             this.IMN_TEL2_0.Name = "IMN_TEL2_0";
             this.IMN_TEL2_0.ReadOnly = true;
-            this.IMN_TEL2_0.Size = new System.Drawing.Size(89, 19);
+            this.IMN_TEL2_0.Size = new System.Drawing.Size(94, 19);
             this.IMN_TEL2_0.TabIndex = 2;
             this.IMN_TEL2_0.Tag = "0";
             this.IMN_TEL2_0.Text = "999";
@@ -2155,11 +2156,11 @@
             this.IMT_NAME2_5.IsShop = false;
             this.IMT_NAME2_5.IsTimemmss = false;
             this.IMT_NAME2_5.Length = 10;
-            this.IMT_NAME2_5.Location = new System.Drawing.Point(675, 380);
+            this.IMT_NAME2_5.Location = new System.Drawing.Point(691, 380);
             this.IMT_NAME2_5.MaxLength = 10;
             this.IMT_NAME2_5.MoveNext = true;
             this.IMT_NAME2_5.Name = "IMT_NAME2_5";
-            this.IMT_NAME2_5.Size = new System.Drawing.Size(559, 19);
+            this.IMT_NAME2_5.Size = new System.Drawing.Size(564, 19);
             this.IMT_NAME2_5.TabIndex = 578;
             this.IMT_NAME2_5.Tag = "5";
             this.IMT_NAME2_5.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2187,11 +2188,11 @@
             this.IMT_NAME2_4.IsShop = false;
             this.IMT_NAME2_4.IsTimemmss = false;
             this.IMT_NAME2_4.Length = 10;
-            this.IMT_NAME2_4.Location = new System.Drawing.Point(675, 304);
+            this.IMT_NAME2_4.Location = new System.Drawing.Point(691, 304);
             this.IMT_NAME2_4.MaxLength = 10;
             this.IMT_NAME2_4.MoveNext = true;
             this.IMT_NAME2_4.Name = "IMT_NAME2_4";
-            this.IMT_NAME2_4.Size = new System.Drawing.Size(559, 19);
+            this.IMT_NAME2_4.Size = new System.Drawing.Size(564, 19);
             this.IMT_NAME2_4.TabIndex = 559;
             this.IMT_NAME2_4.Tag = "4";
             this.IMT_NAME2_4.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2219,11 +2220,11 @@
             this.IMT_NAME2_3.IsShop = false;
             this.IMT_NAME2_3.IsTimemmss = false;
             this.IMT_NAME2_3.Length = 10;
-            this.IMT_NAME2_3.Location = new System.Drawing.Point(675, 228);
+            this.IMT_NAME2_3.Location = new System.Drawing.Point(691, 228);
             this.IMT_NAME2_3.MaxLength = 10;
             this.IMT_NAME2_3.MoveNext = true;
             this.IMT_NAME2_3.Name = "IMT_NAME2_3";
-            this.IMT_NAME2_3.Size = new System.Drawing.Size(559, 19);
+            this.IMT_NAME2_3.Size = new System.Drawing.Size(564, 19);
             this.IMT_NAME2_3.TabIndex = 539;
             this.IMT_NAME2_3.Tag = "3";
             this.IMT_NAME2_3.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2251,11 +2252,11 @@
             this.IMT_NAME2_2.IsShop = false;
             this.IMT_NAME2_2.IsTimemmss = false;
             this.IMT_NAME2_2.Length = 10;
-            this.IMT_NAME2_2.Location = new System.Drawing.Point(675, 152);
+            this.IMT_NAME2_2.Location = new System.Drawing.Point(691, 152);
             this.IMT_NAME2_2.MaxLength = 10;
             this.IMT_NAME2_2.MoveNext = true;
             this.IMT_NAME2_2.Name = "IMT_NAME2_2";
-            this.IMT_NAME2_2.Size = new System.Drawing.Size(559, 19);
+            this.IMT_NAME2_2.Size = new System.Drawing.Size(564, 19);
             this.IMT_NAME2_2.TabIndex = 28;
             this.IMT_NAME2_2.Tag = "2";
             this.IMT_NAME2_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2283,11 +2284,11 @@
             this.IMT_NAME2_0.IsShop = false;
             this.IMT_NAME2_0.IsTimemmss = false;
             this.IMT_NAME2_0.Length = 10;
-            this.IMT_NAME2_0.Location = new System.Drawing.Point(675, 0);
+            this.IMT_NAME2_0.Location = new System.Drawing.Point(691, 0);
             this.IMT_NAME2_0.MaxLength = 10;
             this.IMT_NAME2_0.MoveNext = true;
             this.IMT_NAME2_0.Name = "IMT_NAME2_0";
-            this.IMT_NAME2_0.Size = new System.Drawing.Size(559, 19);
+            this.IMT_NAME2_0.Size = new System.Drawing.Size(564, 19);
             this.IMT_NAME2_0.TabIndex = 0;
             this.IMT_NAME2_0.Tag = "0";
             this.IMT_NAME2_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2315,11 +2316,11 @@
             this.IMT_NAME2_1.IsShop = false;
             this.IMT_NAME2_1.IsTimemmss = false;
             this.IMT_NAME2_1.Length = 10;
-            this.IMT_NAME2_1.Location = new System.Drawing.Point(675, 76);
+            this.IMT_NAME2_1.Location = new System.Drawing.Point(691, 76);
             this.IMT_NAME2_1.MaxLength = 10;
             this.IMT_NAME2_1.MoveNext = true;
             this.IMT_NAME2_1.Name = "IMT_NAME2_1";
-            this.IMT_NAME2_1.Size = new System.Drawing.Size(559, 19);
+            this.IMT_NAME2_1.Size = new System.Drawing.Size(564, 19);
             this.IMT_NAME2_1.TabIndex = 14;
             this.IMT_NAME2_1.Tag = "1";
             this.IMT_NAME2_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2424,7 +2425,7 @@
             this.IMN_WEBPR_5.MaxLength = 40;
             this.IMN_WEBPR_5.MoveNext = true;
             this.IMN_WEBPR_5.Name = "IMN_WEBPR_5";
-            this.IMN_WEBPR_5.Size = new System.Drawing.Size(89, 19);
+            this.IMN_WEBPR_5.Size = new System.Drawing.Size(94, 19);
             this.IMN_WEBPR_5.TabIndex = 587;
             this.IMN_WEBPR_5.Tag = "5";
             this.IMN_WEBPR_5.Text = " ";
@@ -2453,7 +2454,7 @@
             this.IMT_MAIL_5.IsShop = false;
             this.IMT_MAIL_5.IsTimemmss = false;
             this.IMT_MAIL_5.Length = 80;
-            this.IMT_MAIL_5.Location = new System.Drawing.Point(116, 399);
+            this.IMT_MAIL_5.Location = new System.Drawing.Point(121, 399);
             this.IMT_MAIL_5.MaxLength = 80;
             this.IMT_MAIL_5.MoveNext = true;
             this.IMT_MAIL_5.Name = "IMT_MAIL_5";
@@ -2490,7 +2491,7 @@
             this.IMT_TEL_5.MaxLength = 10;
             this.IMT_TEL_5.MoveNext = true;
             this.IMT_TEL_5.Name = "IMT_TEL_5";
-            this.IMT_TEL_5.Size = new System.Drawing.Size(89, 19);
+            this.IMT_TEL_5.Size = new System.Drawing.Size(94, 19);
             this.IMT_TEL_5.TabIndex = 594;
             this.IMT_TEL_5.Tag = "5";
             this.IMT_TEL_5.Text = " ";
@@ -2519,11 +2520,11 @@
             this.IMT_CLINT_5.IsShop = false;
             this.IMT_CLINT_5.IsTimemmss = false;
             this.IMT_CLINT_5.Length = 20;
-            this.IMT_CLINT_5.Location = new System.Drawing.Point(585, 380);
+            this.IMT_CLINT_5.Location = new System.Drawing.Point(590, 380);
             this.IMT_CLINT_5.MaxLength = 20;
             this.IMT_CLINT_5.MoveNext = true;
             this.IMT_CLINT_5.Name = "IMT_CLINT_5";
-            this.IMT_CLINT_5.Size = new System.Drawing.Size(90, 19);
+            this.IMT_CLINT_5.Size = new System.Drawing.Size(95, 19);
             this.IMT_CLINT_5.TabIndex = 585;
             this.IMT_CLINT_5.Tag = "5";
             this.IMT_CLINT_5.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2556,7 +2557,7 @@
             this.IMT_ZIP_5.MoveNext = true;
             this.IMT_ZIP_5.Name = "IMT_ZIP_5";
             this.IMT_ZIP_5.ReadOnly = true;
-            this.IMT_ZIP_5.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP_5.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP_5.TabIndex = 595;
             this.IMT_ZIP_5.Tag = "5";
             this.IMT_ZIP_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -2585,7 +2586,7 @@
             this.IMT_ITMNM_5.IsShop = false;
             this.IMT_ITMNM_5.IsTimemmss = false;
             this.IMT_ITMNM_5.Length = 80;
-            this.IMT_ITMNM_5.Location = new System.Drawing.Point(116, 418);
+            this.IMT_ITMNM_5.Location = new System.Drawing.Point(121, 418);
             this.IMT_ITMNM_5.MaxLength = 80;
             this.IMT_ITMNM_5.MoveNext = true;
             this.IMT_ITMNM_5.Name = "IMT_ITMNM_5";
@@ -2617,7 +2618,7 @@
             this.IMT_ITMCD_5.IsShop = false;
             this.IMT_ITMCD_5.IsTimemmss = false;
             this.IMT_ITMCD_5.Length = 80;
-            this.IMT_ITMCD_5.Location = new System.Drawing.Point(116, 437);
+            this.IMT_ITMCD_5.Location = new System.Drawing.Point(121, 437);
             this.IMT_ITMCD_5.MaxLength = 80;
             this.IMT_ITMCD_5.MoveNext = true;
             this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
@@ -2655,7 +2656,7 @@
             this.IMN_WEBPR_4.MaxLength = 40;
             this.IMN_WEBPR_4.MoveNext = true;
             this.IMN_WEBPR_4.Name = "IMN_WEBPR_4";
-            this.IMN_WEBPR_4.Size = new System.Drawing.Size(89, 19);
+            this.IMN_WEBPR_4.Size = new System.Drawing.Size(94, 19);
             this.IMN_WEBPR_4.TabIndex = 568;
             this.IMN_WEBPR_4.Tag = "4";
             this.IMN_WEBPR_4.Text = " ";
@@ -2684,7 +2685,7 @@
             this.IMT_MAIL_4.IsShop = false;
             this.IMT_MAIL_4.IsTimemmss = false;
             this.IMT_MAIL_4.Length = 80;
-            this.IMT_MAIL_4.Location = new System.Drawing.Point(116, 323);
+            this.IMT_MAIL_4.Location = new System.Drawing.Point(121, 323);
             this.IMT_MAIL_4.MaxLength = 80;
             this.IMT_MAIL_4.MoveNext = true;
             this.IMT_MAIL_4.Name = "IMT_MAIL_4";
@@ -2721,7 +2722,7 @@
             this.IMT_TEL_4.MaxLength = 10;
             this.IMT_TEL_4.MoveNext = true;
             this.IMT_TEL_4.Name = "IMT_TEL_4";
-            this.IMT_TEL_4.Size = new System.Drawing.Size(89, 19);
+            this.IMT_TEL_4.Size = new System.Drawing.Size(94, 19);
             this.IMT_TEL_4.TabIndex = 575;
             this.IMT_TEL_4.Tag = "4";
             this.IMT_TEL_4.Text = " ";
@@ -2750,11 +2751,11 @@
             this.IMT_CLINT_4.IsShop = false;
             this.IMT_CLINT_4.IsTimemmss = false;
             this.IMT_CLINT_4.Length = 20;
-            this.IMT_CLINT_4.Location = new System.Drawing.Point(585, 304);
+            this.IMT_CLINT_4.Location = new System.Drawing.Point(590, 304);
             this.IMT_CLINT_4.MaxLength = 20;
             this.IMT_CLINT_4.MoveNext = true;
             this.IMT_CLINT_4.Name = "IMT_CLINT_4";
-            this.IMT_CLINT_4.Size = new System.Drawing.Size(90, 19);
+            this.IMT_CLINT_4.Size = new System.Drawing.Size(101, 19);
             this.IMT_CLINT_4.TabIndex = 566;
             this.IMT_CLINT_4.Tag = "4";
             this.IMT_CLINT_4.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2787,7 +2788,7 @@
             this.IMT_ZIP_4.MoveNext = true;
             this.IMT_ZIP_4.Name = "IMT_ZIP_4";
             this.IMT_ZIP_4.ReadOnly = true;
-            this.IMT_ZIP_4.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP_4.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP_4.TabIndex = 576;
             this.IMT_ZIP_4.Tag = "4";
             this.IMT_ZIP_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -2816,7 +2817,7 @@
             this.IMT_ITMNM_4.IsShop = false;
             this.IMT_ITMNM_4.IsTimemmss = false;
             this.IMT_ITMNM_4.Length = 80;
-            this.IMT_ITMNM_4.Location = new System.Drawing.Point(116, 361);
+            this.IMT_ITMNM_4.Location = new System.Drawing.Point(121, 361);
             this.IMT_ITMNM_4.MaxLength = 80;
             this.IMT_ITMNM_4.MoveNext = true;
             this.IMT_ITMNM_4.Name = "IMT_ITMNM_4";
@@ -2848,7 +2849,7 @@
             this.IMT_ITMCD_4.IsShop = false;
             this.IMT_ITMCD_4.IsTimemmss = false;
             this.IMT_ITMCD_4.Length = 80;
-            this.IMT_ITMCD_4.Location = new System.Drawing.Point(116, 342);
+            this.IMT_ITMCD_4.Location = new System.Drawing.Point(121, 342);
             this.IMT_ITMCD_4.MaxLength = 80;
             this.IMT_ITMCD_4.MoveNext = true;
             this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
@@ -2886,7 +2887,7 @@
             this.IMN_WEBPR_3.MaxLength = 40;
             this.IMN_WEBPR_3.MoveNext = true;
             this.IMN_WEBPR_3.Name = "IMN_WEBPR_3";
-            this.IMN_WEBPR_3.Size = new System.Drawing.Size(89, 19);
+            this.IMN_WEBPR_3.Size = new System.Drawing.Size(94, 19);
             this.IMN_WEBPR_3.TabIndex = 548;
             this.IMN_WEBPR_3.Tag = "3";
             this.IMN_WEBPR_3.Text = " ";
@@ -2915,7 +2916,7 @@
             this.IMT_MAIL_3.IsShop = false;
             this.IMT_MAIL_3.IsTimemmss = false;
             this.IMT_MAIL_3.Length = 80;
-            this.IMT_MAIL_3.Location = new System.Drawing.Point(116, 247);
+            this.IMT_MAIL_3.Location = new System.Drawing.Point(121, 247);
             this.IMT_MAIL_3.MaxLength = 80;
             this.IMT_MAIL_3.MoveNext = true;
             this.IMT_MAIL_3.Name = "IMT_MAIL_3";
@@ -2952,7 +2953,7 @@
             this.IMT_TEL_3.MaxLength = 10;
             this.IMT_TEL_3.MoveNext = true;
             this.IMT_TEL_3.Name = "IMT_TEL_3";
-            this.IMT_TEL_3.Size = new System.Drawing.Size(89, 19);
+            this.IMT_TEL_3.Size = new System.Drawing.Size(94, 19);
             this.IMT_TEL_3.TabIndex = 556;
             this.IMT_TEL_3.Tag = "3";
             this.IMT_TEL_3.Text = " ";
@@ -2981,11 +2982,11 @@
             this.IMT_CLINT_3.IsShop = false;
             this.IMT_CLINT_3.IsTimemmss = false;
             this.IMT_CLINT_3.Length = 20;
-            this.IMT_CLINT_3.Location = new System.Drawing.Point(585, 228);
+            this.IMT_CLINT_3.Location = new System.Drawing.Point(590, 228);
             this.IMT_CLINT_3.MaxLength = 20;
             this.IMT_CLINT_3.MoveNext = true;
             this.IMT_CLINT_3.Name = "IMT_CLINT_3";
-            this.IMT_CLINT_3.Size = new System.Drawing.Size(90, 19);
+            this.IMT_CLINT_3.Size = new System.Drawing.Size(101, 19);
             this.IMT_CLINT_3.TabIndex = 546;
             this.IMT_CLINT_3.Tag = "3";
             this.IMT_CLINT_3.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3018,7 +3019,7 @@
             this.IMT_ZIP_3.MoveNext = true;
             this.IMT_ZIP_3.Name = "IMT_ZIP_3";
             this.IMT_ZIP_3.ReadOnly = true;
-            this.IMT_ZIP_3.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP_3.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP_3.TabIndex = 557;
             this.IMT_ZIP_3.Tag = "3";
             this.IMT_ZIP_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3047,7 +3048,7 @@
             this.IMT_ITMNM_3.IsShop = false;
             this.IMT_ITMNM_3.IsTimemmss = false;
             this.IMT_ITMNM_3.Length = 80;
-            this.IMT_ITMNM_3.Location = new System.Drawing.Point(116, 285);
+            this.IMT_ITMNM_3.Location = new System.Drawing.Point(121, 285);
             this.IMT_ITMNM_3.MaxLength = 80;
             this.IMT_ITMNM_3.MoveNext = true;
             this.IMT_ITMNM_3.Name = "IMT_ITMNM_3";
@@ -3079,7 +3080,7 @@
             this.IMT_ITMCD_3.IsShop = false;
             this.IMT_ITMCD_3.IsTimemmss = false;
             this.IMT_ITMCD_3.Length = 80;
-            this.IMT_ITMCD_3.Location = new System.Drawing.Point(116, 266);
+            this.IMT_ITMCD_3.Location = new System.Drawing.Point(121, 266);
             this.IMT_ITMCD_3.MaxLength = 80;
             this.IMT_ITMCD_3.MoveNext = true;
             this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
@@ -3117,7 +3118,7 @@
             this.IMN_WEBPR_2.MaxLength = 40;
             this.IMN_WEBPR_2.MoveNext = true;
             this.IMN_WEBPR_2.Name = "IMN_WEBPR_2";
-            this.IMN_WEBPR_2.Size = new System.Drawing.Size(89, 19);
+            this.IMN_WEBPR_2.Size = new System.Drawing.Size(94, 19);
             this.IMN_WEBPR_2.TabIndex = 38;
             this.IMN_WEBPR_2.Tag = "2";
             this.IMN_WEBPR_2.Text = " ";
@@ -3150,7 +3151,7 @@
             this.IMN_WEBPR_1.MaxLength = 40;
             this.IMN_WEBPR_1.MoveNext = true;
             this.IMN_WEBPR_1.Name = "IMN_WEBPR_1";
-            this.IMN_WEBPR_1.Size = new System.Drawing.Size(89, 19);
+            this.IMN_WEBPR_1.Size = new System.Drawing.Size(94, 19);
             this.IMN_WEBPR_1.TabIndex = 25;
             this.IMN_WEBPR_1.Tag = "1";
             this.IMN_WEBPR_1.Text = " ";
@@ -3183,7 +3184,7 @@
             this.IMN_WEBPR_0.MaxLength = 40;
             this.IMN_WEBPR_0.MoveNext = true;
             this.IMN_WEBPR_0.Name = "IMN_WEBPR_0";
-            this.IMN_WEBPR_0.Size = new System.Drawing.Size(89, 19);
+            this.IMN_WEBPR_0.Size = new System.Drawing.Size(94, 19);
             this.IMN_WEBPR_0.TabIndex = 11;
             this.IMN_WEBPR_0.Tag = "0";
             this.IMN_WEBPR_0.Text = " ";
@@ -3212,7 +3213,7 @@
             this.IMT_MAIL_0.IsShop = false;
             this.IMT_MAIL_0.IsTimemmss = false;
             this.IMT_MAIL_0.Length = 80;
-            this.IMT_MAIL_0.Location = new System.Drawing.Point(116, 19);
+            this.IMT_MAIL_0.Location = new System.Drawing.Point(121, 19);
             this.IMT_MAIL_0.MaxLength = 80;
             this.IMT_MAIL_0.MoveNext = true;
             this.IMT_MAIL_0.Name = "IMT_MAIL_0";
@@ -3245,7 +3246,7 @@
             this.IMT_MAIL_1.IsShop = false;
             this.IMT_MAIL_1.IsTimemmss = false;
             this.IMT_MAIL_1.Length = 80;
-            this.IMT_MAIL_1.Location = new System.Drawing.Point(116, 95);
+            this.IMT_MAIL_1.Location = new System.Drawing.Point(121, 95);
             this.IMT_MAIL_1.MaxLength = 80;
             this.IMT_MAIL_1.MoveNext = true;
             this.IMT_MAIL_1.Name = "IMT_MAIL_1";
@@ -3278,7 +3279,7 @@
             this.IMT_MAIL_2.IsShop = false;
             this.IMT_MAIL_2.IsTimemmss = false;
             this.IMT_MAIL_2.Length = 80;
-            this.IMT_MAIL_2.Location = new System.Drawing.Point(116, 171);
+            this.IMT_MAIL_2.Location = new System.Drawing.Point(121, 171);
             this.IMT_MAIL_2.MaxLength = 80;
             this.IMT_MAIL_2.MoveNext = true;
             this.IMT_MAIL_2.Name = "IMT_MAIL_2";
@@ -3315,7 +3316,7 @@
             this.IMT_TEL_2.MaxLength = 10;
             this.IMT_TEL_2.MoveNext = true;
             this.IMT_TEL_2.Name = "IMT_TEL_2";
-            this.IMT_TEL_2.Size = new System.Drawing.Size(89, 19);
+            this.IMT_TEL_2.Size = new System.Drawing.Size(94, 19);
             this.IMT_TEL_2.TabIndex = 517;
             this.IMT_TEL_2.Tag = "2";
             this.IMT_TEL_2.Text = " ";
@@ -3348,7 +3349,7 @@
             this.IMT_TEL_1.MaxLength = 10;
             this.IMT_TEL_1.MoveNext = true;
             this.IMT_TEL_1.Name = "IMT_TEL_1";
-            this.IMT_TEL_1.Size = new System.Drawing.Size(89, 19);
+            this.IMT_TEL_1.Size = new System.Drawing.Size(94, 19);
             this.IMT_TEL_1.TabIndex = 514;
             this.IMT_TEL_1.Tag = "1";
             this.IMT_TEL_1.Text = " ";
@@ -3381,7 +3382,7 @@
             this.IMT_TEL_0.MaxLength = 10;
             this.IMT_TEL_0.MoveNext = true;
             this.IMT_TEL_0.Name = "IMT_TEL_0";
-            this.IMT_TEL_0.Size = new System.Drawing.Size(89, 19);
+            this.IMT_TEL_0.Size = new System.Drawing.Size(94, 19);
             this.IMT_TEL_0.TabIndex = 511;
             this.IMT_TEL_0.Tag = "0";
             this.IMT_TEL_0.Text = "09012345678";
@@ -3410,11 +3411,11 @@
             this.IMT_CLINT_2.IsShop = false;
             this.IMT_CLINT_2.IsTimemmss = false;
             this.IMT_CLINT_2.Length = 20;
-            this.IMT_CLINT_2.Location = new System.Drawing.Point(585, 152);
+            this.IMT_CLINT_2.Location = new System.Drawing.Point(590, 152);
             this.IMT_CLINT_2.MaxLength = 20;
             this.IMT_CLINT_2.MoveNext = true;
             this.IMT_CLINT_2.Name = "IMT_CLINT_2";
-            this.IMT_CLINT_2.Size = new System.Drawing.Size(90, 19);
+            this.IMT_CLINT_2.Size = new System.Drawing.Size(101, 19);
             this.IMT_CLINT_2.TabIndex = 34;
             this.IMT_CLINT_2.Tag = "2";
             this.IMT_CLINT_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3443,11 +3444,11 @@
             this.IMT_CLINT_1.IsShop = false;
             this.IMT_CLINT_1.IsTimemmss = false;
             this.IMT_CLINT_1.Length = 20;
-            this.IMT_CLINT_1.Location = new System.Drawing.Point(585, 76);
+            this.IMT_CLINT_1.Location = new System.Drawing.Point(590, 76);
             this.IMT_CLINT_1.MaxLength = 20;
             this.IMT_CLINT_1.MoveNext = true;
             this.IMT_CLINT_1.Name = "IMT_CLINT_1";
-            this.IMT_CLINT_1.Size = new System.Drawing.Size(90, 19);
+            this.IMT_CLINT_1.Size = new System.Drawing.Size(101, 19);
             this.IMT_CLINT_1.TabIndex = 21;
             this.IMT_CLINT_1.Tag = "1";
             this.IMT_CLINT_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3476,14 +3477,14 @@
             this.IMT_CLINT_0.IsShop = false;
             this.IMT_CLINT_0.IsTimemmss = false;
             this.IMT_CLINT_0.Length = 20;
-            this.IMT_CLINT_0.Location = new System.Drawing.Point(585, 0);
+            this.IMT_CLINT_0.Location = new System.Drawing.Point(590, 0);
             this.IMT_CLINT_0.MaxLength = 20;
             this.IMT_CLINT_0.MoveNext = true;
             this.IMT_CLINT_0.Name = "IMT_CLINT_0";
-            this.IMT_CLINT_0.Size = new System.Drawing.Size(90, 19);
+            this.IMT_CLINT_0.Size = new System.Drawing.Size(101, 19);
             this.IMT_CLINT_0.TabIndex = 7;
             this.IMT_CLINT_0.Tag = "0";
-            this.IMT_CLINT_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.IMT_CLINT_0.Text = "WWWWWWWWWWWWW";
             this.IMT_CLINT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.IMT_CLINT_0.UseColorSizMode = false;
             // 
@@ -3513,7 +3514,7 @@
             this.IMT_ZIP_0.MoveNext = true;
             this.IMT_ZIP_0.Name = "IMT_ZIP_0";
             this.IMT_ZIP_0.ReadOnly = true;
-            this.IMT_ZIP_0.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP_0.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP_0.TabIndex = 534;
             this.IMT_ZIP_0.Tag = "0";
             this.IMT_ZIP_0.Text = "XXXXXXXX";
@@ -3546,7 +3547,7 @@
             this.IMT_ZIP_1.MoveNext = true;
             this.IMT_ZIP_1.Name = "IMT_ZIP_1";
             this.IMT_ZIP_1.ReadOnly = true;
-            this.IMT_ZIP_1.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP_1.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP_1.TabIndex = 535;
             this.IMT_ZIP_1.Tag = "1";
             this.IMT_ZIP_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3579,7 +3580,7 @@
             this.IMT_ZIP_2.MoveNext = true;
             this.IMT_ZIP_2.Name = "IMT_ZIP_2";
             this.IMT_ZIP_2.ReadOnly = true;
-            this.IMT_ZIP_2.Size = new System.Drawing.Size(89, 19);
+            this.IMT_ZIP_2.Size = new System.Drawing.Size(94, 19);
             this.IMT_ZIP_2.TabIndex = 536;
             this.IMT_ZIP_2.Tag = "2";
             this.IMT_ZIP_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3608,7 +3609,7 @@
             this.IMT_ITMNM_2.IsShop = false;
             this.IMT_ITMNM_2.IsTimemmss = false;
             this.IMT_ITMNM_2.Length = 80;
-            this.IMT_ITMNM_2.Location = new System.Drawing.Point(116, 209);
+            this.IMT_ITMNM_2.Location = new System.Drawing.Point(121, 209);
             this.IMT_ITMNM_2.MaxLength = 80;
             this.IMT_ITMNM_2.MoveNext = true;
             this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
@@ -3641,7 +3642,7 @@
             this.IMT_ITMNM_1.IsShop = false;
             this.IMT_ITMNM_1.IsTimemmss = false;
             this.IMT_ITMNM_1.Length = 80;
-            this.IMT_ITMNM_1.Location = new System.Drawing.Point(116, 133);
+            this.IMT_ITMNM_1.Location = new System.Drawing.Point(121, 133);
             this.IMT_ITMNM_1.MaxLength = 80;
             this.IMT_ITMNM_1.MoveNext = true;
             this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
@@ -3674,7 +3675,7 @@
             this.IMT_ITMNM_0.IsShop = false;
             this.IMT_ITMNM_0.IsTimemmss = false;
             this.IMT_ITMNM_0.Length = 80;
-            this.IMT_ITMNM_0.Location = new System.Drawing.Point(116, 57);
+            this.IMT_ITMNM_0.Location = new System.Drawing.Point(121, 57);
             this.IMT_ITMNM_0.MaxLength = 80;
             this.IMT_ITMNM_0.MoveNext = true;
             this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
@@ -3706,7 +3707,7 @@
             this.IMT_ITMCD_0.IsShop = false;
             this.IMT_ITMCD_0.IsTimemmss = false;
             this.IMT_ITMCD_0.Length = 80;
-            this.IMT_ITMCD_0.Location = new System.Drawing.Point(116, 38);
+            this.IMT_ITMCD_0.Location = new System.Drawing.Point(121, 38);
             this.IMT_ITMCD_0.MaxLength = 80;
             this.IMT_ITMCD_0.MoveNext = true;
             this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
@@ -3739,7 +3740,7 @@
             this.IMT_ITMCD_1.IsShop = false;
             this.IMT_ITMCD_1.IsTimemmss = false;
             this.IMT_ITMCD_1.Length = 80;
-            this.IMT_ITMCD_1.Location = new System.Drawing.Point(116, 114);
+            this.IMT_ITMCD_1.Location = new System.Drawing.Point(121, 114);
             this.IMT_ITMCD_1.MaxLength = 80;
             this.IMT_ITMCD_1.MoveNext = true;
             this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
@@ -3772,7 +3773,7 @@
             this.IMT_ITMCD_2.IsShop = false;
             this.IMT_ITMCD_2.IsTimemmss = false;
             this.IMT_ITMCD_2.Length = 80;
-            this.IMT_ITMCD_2.Location = new System.Drawing.Point(116, 190);
+            this.IMT_ITMCD_2.Location = new System.Drawing.Point(121, 190);
             this.IMT_ITMCD_2.MaxLength = 80;
             this.IMT_ITMCD_2.MoveNext = true;
             this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
@@ -3786,7 +3787,7 @@
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1234, 0);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1255, 0);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 456);
             this.Vsb_Mei_0.TabIndex = 0;
@@ -3799,9 +3800,9 @@
             this.CHK_EDICK_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_5.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_5.Location = new System.Drawing.Point(584, 400);
+            this.CHK_EDICK_5.Location = new System.Drawing.Point(589, 400);
             this.CHK_EDICK_5.Name = "CHK_EDICK_5";
-            this.CHK_EDICK_5.Size = new System.Drawing.Size(90, 56);
+            this.CHK_EDICK_5.Size = new System.Drawing.Size(101, 56);
             this.CHK_EDICK_5.TabIndex = 640;
             this.CHK_EDICK_5.Tag = "5";
             this.CHK_EDICK_5.Text = "　";
@@ -3815,9 +3816,9 @@
             this.CHK_EDICK_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_4.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_4.Location = new System.Drawing.Point(584, 324);
+            this.CHK_EDICK_4.Location = new System.Drawing.Point(589, 324);
             this.CHK_EDICK_4.Name = "CHK_EDICK_4";
-            this.CHK_EDICK_4.Size = new System.Drawing.Size(90, 56);
+            this.CHK_EDICK_4.Size = new System.Drawing.Size(101, 56);
             this.CHK_EDICK_4.TabIndex = 639;
             this.CHK_EDICK_4.Tag = "4";
             this.CHK_EDICK_4.Text = "　";
@@ -3831,9 +3832,9 @@
             this.CHK_EDICK_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_3.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_3.Location = new System.Drawing.Point(584, 247);
+            this.CHK_EDICK_3.Location = new System.Drawing.Point(589, 247);
             this.CHK_EDICK_3.Name = "CHK_EDICK_3";
-            this.CHK_EDICK_3.Size = new System.Drawing.Size(90, 56);
+            this.CHK_EDICK_3.Size = new System.Drawing.Size(101, 56);
             this.CHK_EDICK_3.TabIndex = 638;
             this.CHK_EDICK_3.Tag = "3";
             this.CHK_EDICK_3.Text = "　";
@@ -3847,9 +3848,9 @@
             this.CHK_EDICK_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_2.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_2.Location = new System.Drawing.Point(584, 171);
+            this.CHK_EDICK_2.Location = new System.Drawing.Point(589, 171);
             this.CHK_EDICK_2.Name = "CHK_EDICK_2";
-            this.CHK_EDICK_2.Size = new System.Drawing.Size(90, 56);
+            this.CHK_EDICK_2.Size = new System.Drawing.Size(101, 56);
             this.CHK_EDICK_2.TabIndex = 637;
             this.CHK_EDICK_2.Tag = "2";
             this.CHK_EDICK_2.Text = "　";
@@ -3863,9 +3864,9 @@
             this.CHK_EDICK_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_1.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_1.Location = new System.Drawing.Point(584, 95);
+            this.CHK_EDICK_1.Location = new System.Drawing.Point(589, 95);
             this.CHK_EDICK_1.Name = "CHK_EDICK_1";
-            this.CHK_EDICK_1.Size = new System.Drawing.Size(90, 56);
+            this.CHK_EDICK_1.Size = new System.Drawing.Size(101, 56);
             this.CHK_EDICK_1.TabIndex = 636;
             this.CHK_EDICK_1.Tag = "1";
             this.CHK_EDICK_1.Text = "　";
@@ -3879,9 +3880,9 @@
             this.CHK_EDICK_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_0.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_0.Location = new System.Drawing.Point(584, 19);
+            this.CHK_EDICK_0.Location = new System.Drawing.Point(589, 19);
             this.CHK_EDICK_0.Name = "CHK_EDICK_0";
-            this.CHK_EDICK_0.Size = new System.Drawing.Size(90, 56);
+            this.CHK_EDICK_0.Size = new System.Drawing.Size(101, 56);
             this.CHK_EDICK_0.TabIndex = 635;
             this.CHK_EDICK_0.Tag = "0";
             this.CHK_EDICK_0.Text = "　";
@@ -3920,7 +3921,7 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(765, 50);
+            this.label5.Location = new System.Drawing.Point(786, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(469, 16);
             this.label5.TabIndex = 316;
@@ -3933,7 +3934,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(765, 34);
+            this.label6.Location = new System.Drawing.Point(786, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(469, 16);
             this.label6.TabIndex = 315;
@@ -3946,9 +3947,9 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(676, 50);
+            this.label11.Location = new System.Drawing.Point(692, 50);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 16);
+            this.label11.Size = new System.Drawing.Size(94, 16);
             this.label11.TabIndex = 314;
             this.label11.Text = "　";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3959,9 +3960,9 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.Location = new System.Drawing.Point(676, 34);
+            this.label12.Location = new System.Drawing.Point(692, 34);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 16);
+            this.label12.Size = new System.Drawing.Size(94, 16);
             this.label12.TabIndex = 313;
             this.label12.Text = "郵便番号";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3972,9 +3973,9 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label13.Location = new System.Drawing.Point(676, 18);
+            this.label13.Location = new System.Drawing.Point(692, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 16);
+            this.label13.Size = new System.Drawing.Size(94, 16);
             this.label13.TabIndex = 312;
             this.label13.Text = "電話番号";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3985,7 +3986,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label15.Location = new System.Drawing.Point(765, 18);
+            this.label15.Location = new System.Drawing.Point(786, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(469, 16);
             this.label15.TabIndex = 311;
@@ -3998,7 +3999,7 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(117, 50);
+            this.label10.Location = new System.Drawing.Point(122, 50);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(469, 16);
             this.label10.TabIndex = 310;
@@ -4011,7 +4012,7 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(117, 34);
+            this.label9.Location = new System.Drawing.Point(122, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(469, 16);
             this.label9.TabIndex = 309;
@@ -4026,7 +4027,7 @@
             this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(28, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.Size = new System.Drawing.Size(94, 16);
             this.label4.TabIndex = 308;
             this.label4.Text = "　";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4039,7 +4040,7 @@
             this.label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label24.Location = new System.Drawing.Point(159, 2);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(427, 16);
+            this.label24.Size = new System.Drawing.Size(432, 16);
             this.label24.TabIndex = 306;
             this.label24.Text = "名前";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4078,7 +4079,7 @@
             this.label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(28, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 16);
+            this.label3.Size = new System.Drawing.Size(94, 16);
             this.label3.TabIndex = 303;
             this.label3.Text = "郵便番号";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4089,9 +4090,9 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(676, 2);
+            this.label20.Location = new System.Drawing.Point(692, 2);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(558, 16);
+            this.label20.Size = new System.Drawing.Size(563, 16);
             this.label20.TabIndex = 302;
             this.label20.Text = "名前（赤字は要注意顧客）";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4102,9 +4103,9 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(586, 2);
+            this.label14.Location = new System.Drawing.Point(591, 2);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 16);
+            this.label14.Size = new System.Drawing.Size(101, 16);
             this.label14.TabIndex = 301;
             this.label14.Text = "顧客番号";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4115,9 +4116,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(586, 18);
+            this.label7.Location = new System.Drawing.Point(591, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 48);
+            this.label7.Size = new System.Drawing.Size(101, 48);
             this.label7.TabIndex = 300;
             this.label7.Text = "名寄せする";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4130,7 +4131,7 @@
             this.label47.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label47.Location = new System.Drawing.Point(28, 18);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(89, 16);
+            this.label47.Size = new System.Drawing.Size(94, 16);
             this.label47.TabIndex = 295;
             this.label47.Text = "電話番号";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4141,7 +4142,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(117, 18);
+            this.label2.Location = new System.Drawing.Point(122, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(469, 16);
             this.label2.TabIndex = 282;
@@ -4150,7 +4151,7 @@
             // 
             // IMT_DMY_0
             // 
-            this.IMT_DMY_0.Location = new System.Drawing.Point(884, 32);
+            this.IMT_DMY_0.Location = new System.Drawing.Point(890, 32);
             this.IMT_DMY_0.Name = "IMT_DMY_0";
             this.IMT_DMY_0.Size = new System.Drawing.Size(11, 19);
             this.IMT_DMY_0.TabIndex = 307;

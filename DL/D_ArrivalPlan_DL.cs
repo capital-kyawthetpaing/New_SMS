@@ -21,6 +21,7 @@ namespace DL
                    { "@ITEMCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dape.ITEMCD } },
                    { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dape.JanCD } },
                    { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dape.SKUCD } },
+                   { "@MakerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dape.MakerItem } },
 
                    { "@ArrivalDate1", new ValuePair { value1 = SqlDbType.Date, value2 = dae.ArrivalDate1 } },
                    { "@ArrivalDate2", new ValuePair { value1 = SqlDbType.Date, value2 = dae.ArrivalDate2 } },

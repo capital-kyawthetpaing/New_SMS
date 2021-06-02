@@ -375,6 +375,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NayoseKekkaTouroku", "Nayos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NayoseSyoriAll", "NayoseSyoriAll\NayoseSyoriAll.csproj", "{3B35F119-1781-4C28-BE8E-5930DD6307E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJuchuuKakunin", "WebJuchuuKakunin\WebJuchuuKakunin.csproj", "{1B012755-A3AF-4305-A426-5C12E030E17D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2603,6 +2605,18 @@ Global
 		{3B35F119-1781-4C28-BE8E-5930DD6307E7}.Release|x64.Build.0 = Release|Any CPU
 		{3B35F119-1781-4C28-BE8E-5930DD6307E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B35F119-1781-4C28-BE8E-5930DD6307E7}.Release|x86.Build.0 = Release|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Release|x64.Build.0 = Release|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B012755-A3AF-4305-A426-5C12E030E17D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

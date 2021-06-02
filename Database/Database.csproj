@@ -148,6 +148,7 @@
     <Content Include="StoreProcedure\D_Juchu_SelectAllForSearch_JuchuuProcessNO.sql" />
     <Content Include="StoreProcedure\D_Juchu_SelectAllForShoukai.sql" />
     <Content Include="StoreProcedure\D_Juchu_SelectDataForTempoUriage.sql" />
+    <Content Include="StoreProcedure\D_Juchu_SelectForNayose.sql" />
     <Content Include="StoreProcedure\D_KeihiPrint.sql" />
     <Content Include="StoreProcedure\D_keihiPrint_Log.sql" />
     <Content Include="StoreProcedure\D_MailAddress_SelectAll.sql" />
@@ -381,6 +382,7 @@
     <Content Include="StoreProcedure\M_Customer_Search.sql" />
     <Content Include="StoreProcedure\M_Customer_Select.sql" />
     <Content Include="StoreProcedure\M_Customer_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_Customer_SelectForNayose.sql" />
     <Content Include="StoreProcedure\M_Customer_Select_ByCustomerSKUPRicce.sql" />
     <Content Include="StoreProcedure\M_Customer_UpdateLastPoint.sql" />
     <Content Include="StoreProcedure\M_DenominationKBN_cboSelect.sql" />
@@ -620,6 +622,8 @@
     <Content Include="StoreProcedure\PRC_MasterTouroku_Tempo.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_Tokuisaki.sql" />
     <Content Include="StoreProcedure\PRC_MitsumoriNyuuryoku.sql" />
+    <Content Include="StoreProcedure\PRC_NayoseKekkaTouroku.sql" />
+    <Content Include="StoreProcedure\PRC_NayoseSyoriAll.sql" />
     <Content Include="StoreProcedure\PRC_NyuukaNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_NyuukinNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_PickingNyuuryoku.sql" />

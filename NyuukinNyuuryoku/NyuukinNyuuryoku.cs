@@ -33,14 +33,6 @@ namespace NyuukinNyuuryoku
             COUNT
         }
 
-        /// <summary>
-        /// 検索の種類
-        /// </summary>
-        private enum EsearchKbn : short
-        {
-            Null,
-            Product
-        }
         private Control[] detailControls;
         private D_Collect_Entity doe;
         private NyuukinNyuuryoku_BL nnbl;        
@@ -144,27 +136,6 @@ namespace NyuukinNyuuryoku
                 nnbl.ShowMessage("E128");
             }
         }
-        //// 外部プロセスのウィンドウを起動する
-        //public static void WakeupWindow(IntPtr hWnd)
-        //{
-        //    // メイン・ウィンドウが最小化されていれば元に戻す
-        //    if (IsIconic(hWnd))
-        //    {
-        //        ShowWindowAsync(hWnd, SW_RESTORE);
-        //    }
-
-        //    // メイン・ウィンドウを最前面に表示する
-        //    SetForegroundWindow(hWnd);
-        //}
-        //// 外部プロセスのメイン・ウィンドウを起動するためのWin32 API
-        //[DllImport("user32.dll")]
-        //private static extern bool SetForegroundWindow(IntPtr hWnd);
-        //[DllImport("user32.dll")]
-        //private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
-        //[DllImport("user32.dll")]
-        //private static extern bool IsIconic(IntPtr hWnd);
-        //// ShowWindowAsync関数のパラメータに渡す定義値
-        //private const int SW_RESTORE = 9;  // 画面を元の大きさに戻す
 
         protected override void ExecSec()
         {
@@ -199,7 +170,13 @@ namespace NyuukinNyuuryoku
                 string no = row.Cells["colCollectNO"].Value.ToString();
                 string confirmNO = row.Cells["colConfirmNO"].Value.ToString();
 
-                if (kbn.Equals(0)　||　string.IsNullOrWhiteSpace(confirmNO))
+                if (kbn.Equals(4))
+                {
+                    //削除モードで、入金入力を表示（売上単位）
+                    //削除モード:値11, 明細.入金番号, 明細.入金消込番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 11 " + no + " " + confirmNO;
+                }
+                else if (kbn.Equals(0)　||　string.IsNullOrWhiteSpace(confirmNO))
                 {
                     //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
                     //（入金額がすべて消込されている場合（消込残額＝０）の場合は、新規消込はできない）
@@ -213,12 +190,6 @@ namespace NyuukinNyuuryoku
                     //修正モードで、入金入力を表示（売上単位）
                     //修正モード:値10, 明細.入金番号, 明細.入金消込番号
                     cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no + " " + confirmNO;
-                }
-                else if (kbn.Equals(4))
-                {
-                    //削除モードで、入金入力を表示（売上単位）
-                    //削除モード:値11, 明細.入金番号, 明細.入金消込番号
-                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 11 " + no + " " + confirmNO;
                 }
             }            
             
@@ -468,6 +439,10 @@ namespace NyuukinNyuuryoku
             GvDetail.DataSource = null;
             GvDetail.Enabled = false;
 
+            Btn_F7.Enabled = false;
+            Btn_F8.Enabled = false;
+            Btn_F10.Enabled = false;
+
         }
 
         /// <summary>
@@ -618,20 +593,6 @@ namespace NyuukinNyuuryoku
             try
             {
                 base.FunctionProcess(FuncDisp - 1);
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
-        private void BtnSubF12_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FunctionProcess(FuncExec - 1);
 
             }
             catch (Exception ex)

@@ -117,7 +117,8 @@ namespace CKM_Controls
             出荷倉庫,
             箱サイズ,
             希望時間帯,
-            サイト種類
+            サイト種類,
+            メール発送状況
         }
 
         private int length = 10;
@@ -421,6 +422,10 @@ namespace CKM_Controls
                             break;
                         case CboType.サイト種類:
                             me.ID = MultiPorpose_BL.ID_Site;
+                            kbn = 2;
+                            break;
+                        case CboType.メール発送状況:
+                            me.ID = MultiPorpose_BL.ID_MailKBN;
                             kbn = 2;
                             break;
 

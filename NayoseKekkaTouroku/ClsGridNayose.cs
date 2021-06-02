@@ -9,7 +9,7 @@ namespace NayoseKekkaTouroku
 {
 //'明細部を構成するコントロールのTagに 行番号(0～) をセットしてください。
 //'明細部を構成するコントロールのうち TextBoxコントロール以外はカスタムコントロール(MeisaiControl)を使用してください。(Tabの検知のため)
-    class ClsGridPicking :  GridBase.ClsGridBase
+    class ClsGridNayose :  GridBase.ClsGridBase
     {
         internal struct ST_DArray_Grid
         {
@@ -38,13 +38,8 @@ namespace NayoseKekkaTouroku
 
             //隠し項目
             internal bool OldChk;
-            internal bool OldChkModori;
-            internal string AdminNO;        //M_SKU.AdminNO
-
-            internal string ReserveNO;
-            internal int PickingKBN;
-            internal string PickingNO;
-            internal int PickingRows;
+            internal string AttentionFLG;        //M_Customer.AttentionFLG
+            internal string JuchuuNO;
         }
 
         //列番号定数
@@ -257,6 +252,7 @@ namespace NayoseKekkaTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 w_CtlCol = (int)ColNO.Space2;
 
@@ -266,6 +262,7 @@ namespace NayoseKekkaTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 // 備考
                 w_CtlCol = (int)ColNO.MAIL;
@@ -289,7 +286,7 @@ namespace NayoseKekkaTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
-                w_CtlCol = (int)ColNO.TEL;    //支払予定日
+                w_CtlCol = (int)ColNO.TEL;    
 
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].TEL);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
@@ -297,6 +294,7 @@ namespace NayoseKekkaTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
             }
         }
 
@@ -319,21 +317,37 @@ namespace NayoseKekkaTouroku
                         case (int)ColNO.NAME:
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].NAME);
                             break;
+                        case (int)ColNO.MAIL:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].MAIL);
+                            break;
+                        case (int)ColNO.ZIP:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ZIP);
+                            break;
+                        case (int)ColNO.SiteNm:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SiteNm);
+                            break;
+                        case (int)ColNO.ChkNayose:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkNayose);
+                            break;
                         // 
                         case (int)ColNO.ADD11:
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ADD11);
-                            break;
-                        // 
-                        case (int)ColNO.NAME2:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].NAME2);
                             break;
                         // 
                         case (int)ColNO.ADD12:
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ADD12);
                             break;
                         // 
-                        case (int)ColNO.TEL2:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TEL2);
+                        case (int)ColNO.TEL:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TEL);
+                            break;
+                        // 
+                        case (int)ColNO.Client:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Client);
+                            break;
+                        // 
+                        case (int)ColNO.NAME2:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].NAME2);
                             break;
                         case (int)ColNO.MAIL2:
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].MAIL2);
@@ -341,15 +355,14 @@ namespace NayoseKekkaTouroku
                         case (int)ColNO.ZIP2:     //メーカー商品CD
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ZIP2);
                             break;
+                        case (int)ColNO.TEL2:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TEL2);
+                            break;
                         case (int)ColNO.ADD21:
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ADD21);
                             break;
                         case (int)ColNO.ADD22:
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ADD22);
-                            break;
-                        // 
-                        case (int)ColNO.Client:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Client);
                             break;
                         // 
                         case (int)ColNO.Space1:
@@ -360,21 +373,6 @@ namespace NayoseKekkaTouroku
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Space2);
                             break;
 
-                        case (int)ColNO.MAIL:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].MAIL);
-                            break;
-                        case (int)ColNO.ZIP:     
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ZIP);
-                            break;
-                        case (int)ColNO.SiteNm:     
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SiteNm);
-                            break;
-                        case (int)ColNO.TEL:    
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TEL);
-                            break;
-                        case (int)ColNO.ChkNayose:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkNayose);
-                            break;
                     }
                 }
             }
