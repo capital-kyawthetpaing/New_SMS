@@ -183,8 +183,8 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 0].CellCtl = IMT_ITMCD_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 0].CellCtl = LBL_NAME2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 0].CellCtl = IMT_ITMNM_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 0].CellCtl = IMN_TEL2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 0].CellCtl = IMT_CLINT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 0].CellCtl = LBL_TEL2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 0].CellCtl = LBL_CLINT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 0].CellCtl = IMN_WEBPR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 0].CellCtl = IMT_MAIL_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 0].CellCtl = IMT_ZIP_0;      //メーカー商品CD
@@ -193,10 +193,10 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 0].CellCtl = IMT_NAME_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 0].CellCtl = CHK_EDICK_0;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 0].CellCtl = IMT_ZIP2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 0].CellCtl = IMT_MAIL2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 0].CellCtl = IMT_ADD21_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 0].CellCtl = IMT_ADD22_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 0].CellCtl = LBL_ZIP2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 0].CellCtl = LBL_MAIL2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 0].CellCtl = LBL_ADD21_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 0].CellCtl = LBL_ADD22_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 0].CellCtl = IMT_SPACE2_0;
 
 
@@ -206,8 +206,8 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 1].CellCtl = IMT_ITMCD_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 1].CellCtl = LBL_NAME2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 1].CellCtl = IMT_ITMNM_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 1].CellCtl = IMN_TEL2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 1].CellCtl = IMT_CLINT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 1].CellCtl = LBL_TEL2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 1].CellCtl = LBL_CLINT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 1].CellCtl = IMN_WEBPR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 1].CellCtl = IMT_MAIL_1;
             
@@ -218,10 +218,10 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 1].CellCtl = IMT_NAME_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 1].CellCtl = CHK_EDICK_1;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 1].CellCtl = IMT_ZIP2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 1].CellCtl = IMT_MAIL2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 1].CellCtl = IMT_ADD21_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 1].CellCtl = IMT_ADD22_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 1].CellCtl = LBL_ZIP2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 1].CellCtl = LBL_MAIL2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 1].CellCtl = LBL_ADD21_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 1].CellCtl = LBL_ADD22_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 1].CellCtl = IMT_SPACE2_1;
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
@@ -229,8 +229,8 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 2].CellCtl = IMT_ITMCD_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 2].CellCtl = LBL_NAME2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 2].CellCtl = IMT_ITMNM_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 2].CellCtl = IMN_TEL2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 2].CellCtl = IMT_CLINT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 2].CellCtl = LBL_TEL2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 2].CellCtl = LBL_CLINT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 2].CellCtl = IMN_WEBPR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 2].CellCtl = IMT_MAIL_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 2].CellCtl = IMT_ZIP_2;      //メーカー商品CD
@@ -240,10 +240,10 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 2].CellCtl = IMT_NAME_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 2].CellCtl = CHK_EDICK_2;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 2].CellCtl = IMT_ZIP2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 2].CellCtl = IMT_MAIL2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 2].CellCtl = IMT_ADD21_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 2].CellCtl = IMT_ADD22_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 2].CellCtl = LBL_ZIP2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 2].CellCtl = LBL_MAIL2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 2].CellCtl = LBL_ADD21_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 2].CellCtl = LBL_ADD22_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 2].CellCtl = IMT_SPACE2_2;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
@@ -251,8 +251,8 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 3].CellCtl = IMT_ITMCD_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 3].CellCtl = LBL_NAME2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 3].CellCtl = IMT_ITMNM_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 3].CellCtl = IMN_TEL2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 3].CellCtl = IMT_CLINT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 3].CellCtl = LBL_TEL2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 3].CellCtl = LBL_CLINT_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 3].CellCtl = IMN_WEBPR_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 3].CellCtl = IMT_MAIL_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 3].CellCtl = IMT_ZIP_3;      //メーカー商品CD
@@ -262,10 +262,10 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 3].CellCtl = IMT_NAME_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 3].CellCtl = CHK_EDICK_3;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 3].CellCtl = IMT_ZIP2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 3].CellCtl = IMT_MAIL2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 3].CellCtl = IMT_ADD21_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 3].CellCtl = IMT_ADD22_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 3].CellCtl = LBL_ZIP2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 3].CellCtl = LBL_MAIL2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 3].CellCtl = LBL_ADD21_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 3].CellCtl = LBL_ADD22_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 3].CellCtl = IMT_SPACE2_3;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
@@ -273,8 +273,8 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 4].CellCtl = IMT_ITMCD_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 4].CellCtl = LBL_NAME2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 4].CellCtl = IMT_ITMNM_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 4].CellCtl = IMN_TEL2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 4].CellCtl = IMT_CLINT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 4].CellCtl = LBL_TEL2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 4].CellCtl = LBL_CLINT_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 4].CellCtl = IMN_WEBPR_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 4].CellCtl = IMT_MAIL_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 4].CellCtl = IMT_ZIP_4;      //メーカー商品CD
@@ -284,10 +284,10 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 4].CellCtl = IMT_NAME_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 4].CellCtl = CHK_EDICK_4;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 4].CellCtl = IMT_ZIP2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 4].CellCtl = IMT_MAIL2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 4].CellCtl = IMT_ADD21_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 4].CellCtl = IMT_ADD22_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 4].CellCtl = LBL_ZIP2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 4].CellCtl = LBL_MAIL2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 4].CellCtl = LBL_ADD21_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 4].CellCtl = LBL_ADD22_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 4].CellCtl = IMT_SPACE2_4;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
@@ -295,8 +295,8 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 5].CellCtl = IMT_ITMCD_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 5].CellCtl = LBL_NAME2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 5].CellCtl = IMT_ITMNM_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 5].CellCtl = IMN_TEL2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 5].CellCtl = IMT_CLINT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 5].CellCtl = LBL_TEL2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 5].CellCtl = LBL_CLINT_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 5].CellCtl = IMN_WEBPR_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 5].CellCtl = IMT_MAIL_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 5].CellCtl = IMT_ZIP_5;      //メーカー商品CD
@@ -306,10 +306,10 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 5].CellCtl = IMT_NAME_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 5].CellCtl = CHK_EDICK_5;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 5].CellCtl = IMT_ZIP2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 5].CellCtl = IMT_MAIL2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 5].CellCtl = IMT_ADD21_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 5].CellCtl = IMT_ADD22_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 5].CellCtl = LBL_ZIP2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 5].CellCtl = LBL_MAIL2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 5].CellCtl = LBL_ADD21_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 5].CellCtl = LBL_ADD22_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 5].CellCtl = IMT_SPACE2_5;
         }
 
@@ -635,7 +635,13 @@ namespace NayoseKekkaTouroku
                                         case (int)ClsGridNayose.ColNO.ChkNayose:    // 
                                                          mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
+                                        case (int)ClsGridNayose.ColNO.Client:
                                         case (int)ClsGridNayose.ColNO.NAME2:
+                                        case (int)ClsGridNayose.ColNO.ZIP2:
+                                        case (int)ClsGridNayose.ColNO.ADD21:
+                                        case (int)ClsGridNayose.ColNO.ADD22:
+                                        case (int)ClsGridNayose.ColNO.TEL2:
+                                        case (int)ClsGridNayose.ColNO.MAIL2:
                                             if (mGrid.g_DArray[w_Row].AttentionFLG == "1")
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor= Color.Red;
@@ -1524,17 +1530,18 @@ namespace NayoseKekkaTouroku
         {
             try
             {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                     bool lastCell = false;
 
@@ -1571,7 +1578,24 @@ namespace NayoseKekkaTouroku
                     //行き先がなかったら移動しない
                     S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
+                    switch (CL)
+                    {
+                        case (int)ClsGridNayose.ColNO.ChkNayose:
+                            if (e.Shift)
+                                S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                            else
+                                S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+
+                            break;
+                    }
+                }
             }
             catch (Exception ex)
             {
