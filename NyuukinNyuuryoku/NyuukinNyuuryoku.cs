@@ -468,6 +468,10 @@ namespace NyuukinNyuuryoku
             GvDetail.DataSource = null;
             GvDetail.Enabled = false;
 
+            Btn_F7.Enabled = false;
+            Btn_F8.Enabled = false;
+            Btn_F10.Enabled = false;
+
         }
 
         /// <summary>
