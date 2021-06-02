@@ -1695,9 +1695,13 @@ namespace UriageNyuuryoku
                         if (index == (int)EIndex.SalesNO)
                         {
                             detailControls[(int)EIndex.SalesDate].Text = row["SalesDate"].ToString();
+
+                            if (row["BillingType"].ToString().Equals("1"))
+                                ckM_CheckBox2.Checked = true;
                         }
                         else
                         {
+                            //複写のとき
                             detailControls[(int)EIndex.SalesDate].Text = bbl.GetDate();
                         }
                         mOldSalesDate = detailControls[(int)EIndex.SalesDate].Text;
