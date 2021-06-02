@@ -156,7 +156,7 @@ namespace NyuukaShoukai
                     ITEMCD = ScItem.TxtCode.Text,
                     JanCD = ScJanCD.TxtCode.Text,
                     SKUCD = ScSKUCD.TxtCode.Text,
-                    MakerName = txtProductName.Text,
+                    MakerItem = txtProductName.Text,
                     statusFlg = CheckValue1(),
                     DisplayFlg = CheckValue2(),
                 };
