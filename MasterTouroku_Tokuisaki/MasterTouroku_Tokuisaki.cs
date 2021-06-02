@@ -613,6 +613,11 @@ namespace MasterTouroku_Tokuisaki
                                 radioButton4.Checked = true;
                                 break;
                         }
+                        if(mce.StoreKBN.Equals("1"))
+                        {
+                            radioButton4.Checked = true;
+                        }
+
                         switch (mce.AliasKBN)   //1:様、2:御中
                         {
                             case "1":

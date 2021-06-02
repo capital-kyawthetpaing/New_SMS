@@ -40,7 +40,9 @@ namespace Entity
         public string ITEMCD { get; set; }
         public string statusFlg { get; set; }
         public string DisplayFlg { get; set; }
+        public string MakerItem { get; set; } 
 
-     
+
+
     }
 }

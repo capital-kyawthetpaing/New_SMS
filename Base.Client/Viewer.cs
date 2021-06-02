@@ -31,6 +31,11 @@ namespace Base.Client
                 crystalReportViewer1.ToolPanelView = ToolPanelViewType.None;
             }
         }
+
+        private void Viewer_Load(object sender, EventArgs e)
+        {
+
+        }
         //public virtual void PrintReport()
         //{
         //    ((TempoNouhinsyo_Report)CrystalReportViewer1.ReportSource).PrintToPrinter(0, false, 0, 0);
