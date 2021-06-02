@@ -805,23 +805,9 @@ namespace NayoseKekkaTouroku
                     //入力無くても良い(It is not necessary to input)
                     if (string.IsNullOrWhiteSpace(keyControls[index].Text))
                     {
-                        //入力無しの時
-                        //出荷予定日～JANCD 入力可
-                        Scr_Lock(0, 0, 0);
                         return true;
                     }
-                    else
-                    {
-                        //Errorでない場合、画面転送表01に従って画面表示
-                        //	出荷予定日～JANCD入力不可	ピッキング日へ	
-                        for (int i = (int)EIndex.NayoseKekkaTourokuDate; i <= (int)EIndex.NayoseKekkaTourokuDate; i++)
-                        {
-                            keyControls[i].Enabled = false;
-                        }
-                    }
-
-                    if (set)
-                        return CheckData(set);
+                    
                     break;
 
                
@@ -1000,18 +986,15 @@ namespace NayoseKekkaTouroku
                     mGrid.g_DArray[i].ADD22 = row["M_Address2"].ToString();   // 
                     mGrid.g_DArray[i].TEL2 = row["M_TEL"].ToString();   // 
                     mGrid.g_DArray[i].MAIL2 = row["M_MailAddress"].ToString();   // 
-
-                    mGrid.g_DArray[i].Chk = false;
+                    
                     mGrid.g_DArray[i].ChkNayose = false;
-                    mGrid.g_DArray[i].OldChk = false;
 
                     if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.NayoseKekkaTourokuDate].Text))
                     {
                         //D_Juchuu.CustomerCD＝M_Customer.CustomerCD の時、CheckBox＝ON
                         if (row["CustomerCD"].ToString().Equals(row["M_CustomerCD"].ToString()))
                         {
-                            mGrid.g_DArray[i].Chk = true;
-                            mGrid.g_DArray[i].OldChk = true;
+                            mGrid.g_DArray[i].ChkNayose = true;
                         }
                     }
 
@@ -1615,6 +1598,27 @@ namespace NayoseKekkaTouroku
                
                 //画面より配列セット 
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+                //同一受注番号内で「する」チェックボックスがONの明細があればOFFにする。
+                bool Check = mGrid.g_DArray[w_Row].ChkNayose;
+                if(Check)
+                {
+                    string juchuuNo = mGrid.g_DArray[w_Row].JuchuuNO;
+                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                    {
+                        //更新有効行数
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JuchuuNO))
+                            break;
+
+                        if (mGrid.g_DArray[RW].JuchuuNO.Equals(juchuuNo) && mGrid.g_DArray[RW].ChkNayose)
+                        {
+                            if(RW != w_Row)
+                            {
+                                mGrid.g_DArray[RW].ChkNayose = false;
+                            }
+                        }
+                    }
+                }
 
                 //配列の内容を画面へセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);

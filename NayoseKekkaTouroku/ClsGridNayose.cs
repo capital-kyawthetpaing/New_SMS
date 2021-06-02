@@ -15,7 +15,6 @@ namespace NayoseKekkaTouroku
         {
             // 画面項目
             internal string GYONO;      // №
-            internal bool Chk;
             internal bool ChkNayose;
 
             internal string SiteNm;
@@ -37,7 +36,6 @@ namespace NayoseKekkaTouroku
             internal string Space2;      //
 
             //隠し項目
-            internal bool OldChk;
             internal string AttentionFLG;        //M_Customer.AttentionFLG
             internal string JuchuuNO;
         }
