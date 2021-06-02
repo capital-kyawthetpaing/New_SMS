@@ -164,6 +164,7 @@ namespace NayoseKekkaTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SForeColor(F_GetForeColor_MK(w_CtlCol, w_Row));   //赤字になる場合
                 // 
                 w_CtlCol = (int)ColNO.MAIL2;
 

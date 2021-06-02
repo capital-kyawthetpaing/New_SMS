@@ -181,7 +181,7 @@ namespace NayoseKekkaTouroku
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 0].CellCtl = IMT_ITMCD_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 0].CellCtl = IMT_NAME2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 0].CellCtl = LBL_NAME2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 0].CellCtl = IMT_ITMNM_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 0].CellCtl = IMN_TEL2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 0].CellCtl = IMT_CLINT_0;
@@ -204,7 +204,7 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 1].CellCtl = CHK_DELCK_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 1].CellCtl = IMT_ITMCD_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 1].CellCtl = IMT_NAME2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 1].CellCtl = LBL_NAME2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 1].CellCtl = IMT_ITMNM_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 1].CellCtl = IMN_TEL2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 1].CellCtl = IMT_CLINT_1;
@@ -227,7 +227,7 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 2].CellCtl = CHK_DELCK_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 2].CellCtl = IMT_ITMCD_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 2].CellCtl = IMT_NAME2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 2].CellCtl = LBL_NAME2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 2].CellCtl = IMT_ITMNM_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 2].CellCtl = IMN_TEL2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 2].CellCtl = IMT_CLINT_2;
@@ -249,7 +249,7 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 3].CellCtl = CHK_DELCK_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 3].CellCtl = IMT_ITMCD_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 3].CellCtl = IMT_NAME2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 3].CellCtl = LBL_NAME2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 3].CellCtl = IMT_ITMNM_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 3].CellCtl = IMN_TEL2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 3].CellCtl = IMT_CLINT_3;
@@ -271,7 +271,7 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 4].CellCtl = CHK_DELCK_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 4].CellCtl = IMT_ITMCD_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 4].CellCtl = IMT_NAME2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 4].CellCtl = LBL_NAME2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 4].CellCtl = IMT_ITMNM_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 4].CellCtl = IMN_TEL2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 4].CellCtl = IMT_CLINT_4;
@@ -293,7 +293,7 @@ namespace NayoseKekkaTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 5].CellCtl = CHK_DELCK_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 5].CellCtl = IMT_ITMCD_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 5].CellCtl = IMT_NAME2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 5].CellCtl = LBL_NAME2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 5].CellCtl = IMT_ITMNM_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 5].CellCtl = IMN_TEL2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 5].CellCtl = IMT_CLINT_5;
@@ -633,12 +633,19 @@ namespace NayoseKekkaTouroku
                                     switch (w_Col)
                                     {
                                         case (int)ClsGridNayose.ColNO.ChkNayose:    // 
-                                            ////D_Picking.PickingKBN＝2の時、入力可能				
-                                            //if (mGrid.g_DArray[w_Row].PickingKBN == 2)
-                                            //{
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                            //}
+                                                         mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
+                                        case (int)ClsGridNayose.ColNO.NAME2:
+                                            if (mGrid.g_DArray[w_Row].AttentionFLG == "1")
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor= Color.Red;
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                            }
+                                            else
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor = Color.Black;
+                                            }
+                                            break;
                                     }
                                 }
                             }
@@ -1074,7 +1081,7 @@ namespace NayoseKekkaTouroku
         {
             dje = new D_Juchuu_Entity
             {
-                NayoseKekkaTourokuDate = detailControls[(int)EIndex.NayoseKekkaTourokuDate].Text,
+                NayoseKekkaTourokuDate = keyControls[(int)EIndex.NayoseKekkaTourokuDate].Text,
                 InsertOperator = InOperatorCD,
                 PC = InPcID
             };
@@ -1104,13 +1111,6 @@ namespace NayoseKekkaTouroku
         {
             DataTable dt = new DataTable();
             Para_Add(dt);
-
-            int rowNo = 1;
-
-            if(OperationMode== EOperationMode.UPDATE)
-            {
-                rowNo = m_MaxGyoNo + 1;
-            }
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
@@ -1649,6 +1649,7 @@ namespace NayoseKekkaTouroku
 
                     default:
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
+                        mGrid.g_MK_State[w_Col, w_Row].Cell_Selectable = false;
                         break;
                 }
             }

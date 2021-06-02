@@ -21,13 +21,10 @@ CREATE TYPE T_Nayose AS TABLE
 GO
 
 CREATE PROCEDURE PRC_NayoseKekkaTouroku
-    (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
-    @JuchuuNO    varchar(11),
-
+    (
     @Table       T_Nayose READONLY,
     @Operator    varchar(10),
-    @PC          varchar(30),
-    @OutJuchuuNo varchar(11) OUTPUT
+    @PC          varchar(30)
 )AS
 
 --********************************************--
@@ -68,7 +65,7 @@ BEGIN
     ;    
     
     --処理履歴データへ更新
-    SET @KeyItem = '';
+    SET @KeyItem = NULL;
         
     EXEC L_Log_Insert_SP
         @SYSDATETIME,
@@ -78,7 +75,6 @@ BEGIN
         @OperateModeNm,
         @KeyItem;
 
-    SET @OutJuchuuNo = '';
     
 --<<OWARI>>
   return @W_ERR;
