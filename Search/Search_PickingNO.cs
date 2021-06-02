@@ -157,7 +157,6 @@ namespace Search
             GetData();
             EndSec();
         }
-
         protected override void ExecDisp()
         {
             bool exists = false;
