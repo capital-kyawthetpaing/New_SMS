@@ -16,7 +16,7 @@ namespace PickingList
     public partial class FrmPickingList : FrmMainForm
     {
         string todayDate = DateTime.Now.ToString("yyyy/MM/dd");  
-        D_Picking_Entity dpe1,dpe2,dpe3,dpe4;
+        D_Picking_Entity dpe1,dpe2,dpe3,dpe4,dpe;
         PickingList_BL plbl;
         public FrmPickingList() 
         {
@@ -134,7 +134,7 @@ namespace PickingList
                     dtPrintData1 = plbl.PickingList_InsertUpdateSelect_Check1(dpe1);
                 }
 
-                if (chkUnissued2.Checked == true)
+                if (chkReissued1.Checked == true)
                 {
                     dpe2 = new D_Picking_Entity
                     {
@@ -146,7 +146,7 @@ namespace PickingList
                     dtPrintData2 = plbl.PickingList_InsertUpdateSelect_Check2(dpe2);
                 }
 
-                if (chkReissued1.Checked == true)
+                if (chkUnissued2.Checked == true)
                 {
                     dpe3 = new D_Picking_Entity
                     {
@@ -178,18 +178,6 @@ namespace PickingList
                 try
                 {
 
-                    //if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) || (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
-                    //    || (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) || (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
-                    //{
-                    //    bbl.ShowMessage("E128");
-                        
-                    //}
-                    //else
-                    //{
-                    //if (dtPrintData1 == null || dtPrintData1.Rows.Count <= 0)
-                    //{
-                    //    bbl.ShowMessage("E128");
-                    //}
                     if (chkUnissued1.Checked == true)
                     {
                        if(dtPrintData1.Rows.Count > 0)
@@ -262,7 +250,13 @@ namespace PickingList
                                     break;
                             }
 
-                            plbl.D_Picking_Update(dtPrintData1.Rows[0]["PickingNO"].ToString(), InOperatorCD);
+                            dpe = new D_Picking_Entity
+                            {
+                                InsertOperator = InOperatorCD,
+                                ProgramID = this.InProgramID,
+                                PC = InPcID,
+                            };
+                            plbl.D_Picking_Update(dtPrintData1.Rows[0]["PickingNO"].ToString(), dpe);
 
                         }
                         else
@@ -273,7 +267,7 @@ namespace PickingList
                     }
                        
 
-                    if (chkUnissued2.Checked == true)
+                    if (chkReissued1.Checked == true)
                     {
                         if (dtPrintData2.Rows.Count > 0)
                         {
@@ -348,7 +342,14 @@ namespace PickingList
                                     break;
                             }
 
-                            plbl.D_Picking_Update(dtPrintData2.Rows[0]["PickingNO"].ToString(), InOperatorCD);
+                            dpe = new D_Picking_Entity
+                            {
+                                InsertOperator = InOperatorCD,
+                                ProgramID = this.InProgramID,
+                                PC = InPcID,
+                            };
+
+                            plbl.D_Picking_Update(dtPrintData2.Rows[0]["PickingNO"].ToString(), dpe);
                         }
                         else
                         {
@@ -357,7 +358,7 @@ namespace PickingList
                     }
                             
 
-                    if (chkReissued1.Checked == true)
+                    if (chkUnissued2.Checked == true)
                     {
                         if (dtPrintData3.Rows.Count > 0)
                         {
@@ -367,8 +368,6 @@ namespace PickingList
                             switch (PrintMode)
                             {
                                 case EPrintMode.DIRECT:
-
-
 
                                     //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
                                     ret = plbl.ShowMessage("Q208");
@@ -431,8 +430,14 @@ namespace PickingList
                                     break;
                             }
 
+                            dpe = new D_Picking_Entity
+                            {
+                                InsertOperator = InOperatorCD,
+                                ProgramID = this.InProgramID,
+                                PC = InPcID,
+                            };
 
-                            plbl.D_Picking_Update(dtPrintData3.Rows[0]["PickingNO"].ToString(), InOperatorCD);
+                            plbl.D_Picking_Update(dtPrintData3.Rows[0]["PickingNO"].ToString(), dpe);
                         }
                         else
                         {
@@ -515,7 +520,14 @@ namespace PickingList
                                     break;
                             }
 
-                            plbl.D_Picking_Update(dtPrintData4.Rows[0]["PickingNO"].ToString(), InOperatorCD);
+                            dpe = new D_Picking_Entity
+                            {
+                                InsertOperator = InOperatorCD,
+                                ProgramID = this.InProgramID,
+                                PC = InPcID,
+                            };
+
+                            plbl.D_Picking_Update(dtPrintData4.Rows[0]["PickingNO"].ToString(), dpe);
 
                         }
                         else
@@ -532,6 +544,7 @@ namespace PickingList
             }
 
         }
+
         protected override void EndSec()
         {
             this.Close();
@@ -570,7 +583,7 @@ namespace PickingList
 
             if (chkReissued1.Checked == true)
             {
-                if (!RequireCheck(new Control[] { ScPickingNo1 }))
+                if (!RequireCheck(new Control[] { ScPickingNo1.TxtCode }))
                     return false;
 
                 if (!string.IsNullOrWhiteSpace(txtDateTo1.Text))
@@ -595,12 +608,7 @@ namespace PickingList
                     return false;
                 }
             }
-            //if (chkReissued1.Checked==true && !string.IsNullOrWhiteSpace(txtDateTo1.Text))
-            //    if (!ScPickingNo1.IsExists(2))
-            //    {
-            //        bbl.ShowMessage("E128");
-            //        return false;
-            //    }
+    
 
             if (!txtShipmentDate.DateCheck())
                 return false;
@@ -618,7 +626,7 @@ namespace PickingList
 
             if(chkReissued2.Checked==true)
             {
-                if (!RequireCheck(new Control[] { ScPickingNo2 }))
+                if (!RequireCheck(new Control[] { ScPickingNo2.TxtCode }))
                     return false;
                 if (!ScPickingNo2.IsExists(2))
                 {
@@ -757,6 +765,10 @@ namespace PickingList
         {
             if (chkUnissued1.Checked == true)
             {
+                chkReissued1.Checked = false;
+                chkUnissued2.Checked = false;
+                chkReissued2.Checked = false;
+
                 txtDateFrom1.Enabled = true;
                 txtDateTo1.Enabled = true;
                 txtDateTo1.Text = todayDate;
@@ -764,6 +776,10 @@ namespace PickingList
             }
             else
             {
+                //chkReissued1.Checked = true;
+                //chkUnissued2.Checked = true;
+                //chkReissued2.Checked = true;
+
                 txtDateFrom1.Enabled = false;
                 txtDateTo1.Enabled = false;
                 txtDateFrom1.Text = string.Empty;
@@ -777,10 +793,18 @@ namespace PickingList
         {
             if (chkReissued1.Checked == true)
             {
+                chkUnissued1.Checked = false;
+                chkUnissued2.Checked = false;
+                chkReissued2.Checked = false;
+
                 EnablePanel(panel1);
             }
             else
             {
+                //chkUnissued1.Checked = true;
+                //chkUnissued2.Checked = true;
+                //chkReissued2.Checked = true;
+
                 ScPickingNo1.TxtCode.Text = string.Empty;
                 DisablePanel(panel1);
             }
@@ -790,6 +814,10 @@ namespace PickingList
         {
             if (chkUnissued2.Checked == true)
             {
+                chkUnissued1.Checked = false;
+                chkReissued1.Checked = false;
+                chkReissued2.Checked = false;
+
                 txtDateFrom2.Enabled = true;
                 txtDateTo2.Enabled = true;
                 txtDateTo2.Text = todayDate;
@@ -797,6 +825,10 @@ namespace PickingList
             }
             else
             {
+                //chkUnissued1.Checked = true;
+                //chkReissued1.Checked = true;
+                //chkReissued2.Checked = true;
+
                 txtDateFrom2.Enabled = false;
                 txtDateTo2.Enabled = false;
                 txtDateFrom2.Text = string.Empty;
@@ -808,10 +840,18 @@ namespace PickingList
         {
             if (chkReissued2.Checked == true)
             {
+                chkUnissued1.Checked = false;
+                chkReissued1.Checked = false;
+                chkUnissued1.Checked = false;
+
                 EnablePanel(panel2);
             }
             else
             {
+                //chkUnissued1.Checked = true;
+                //chkReissued1.Checked = true;
+                //chkUnissued1.Checked = true;
+
                 ScPickingNo2.TxtCode.Text = string.Empty;
                 DisablePanel(panel2);
             }

@@ -78,7 +78,7 @@ namespace DL
             string sp = "M_Customer_SelectForNayose";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@CustomerCD", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.StoreKBN } }
+                { "@StoreKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.StoreKBN } }
             };
 
             return SelectData(dic, sp);

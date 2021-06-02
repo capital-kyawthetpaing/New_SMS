@@ -33,9 +33,9 @@ namespace BL
             return dpdl.PickingList_InsertUpdateSelect_Check3(dpe);
         }
 
-        public void D_Picking_Update(string pickingNo,string operatorCD)
+        public void D_Picking_Update(string pickingNo,D_Picking_Entity dpe)
         {
-            dpdl.D_Picking_Update(pickingNo, operatorCD);
+            dpdl.D_Picking_Update(pickingNo, dpe);
         }
 
 

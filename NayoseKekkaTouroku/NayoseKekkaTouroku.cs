@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -40,13 +37,12 @@ namespace NayoseKekkaTouroku
 
         private DataTable dtForUpdate;      //排他用   
         private string mOldJuchuNO = "";    //排他処理のため使用
-        private string mOldPickingDate = "";
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
-        ClsGridPicking mGrid = new ClsGridPicking();
+        ClsGridNayose mGrid = new ClsGridNayose();
         private int m_EnableCnt;
         private int m_dataCnt = 0;        // 修正削除時に画面に展開された行数
-        private int m_MaxPurchaseGyoNo;
+        private int m_MaxGyoNo;
 
         #region -- 明細部をグリッドのように扱うための関数 ↓--------------------
 
@@ -61,10 +57,10 @@ namespace NayoseKekkaTouroku
         {
             int W_CtlRow;
 
-            if (ClsGridPicking.gc_P_GYO <= ClsGridPicking.gMxGyo)
+            if (ClsGridNayose.gc_P_GYO <= ClsGridNayose.gMxGyo)
             {
-                mGrid.g_MK_Max_Row = ClsGridPicking.gMxGyo;               // プログラムＭ内最大行数
-                m_EnableCnt = ClsGridPicking.gMxGyo;
+                mGrid.g_MK_Max_Row = ClsGridNayose.gMxGyo;               // プログラムＭ内最大行数
+                m_EnableCnt = ClsGridNayose.gMxGyo;
             }
             //else
             //{
@@ -72,8 +68,8 @@ namespace NayoseKekkaTouroku
             //    m_EnableCnt = ClsGridMitsumori.gMxGyo;
             //}
 
-            mGrid.g_MK_Ctl_Row = ClsGridPicking.gc_P_GYO;
-            mGrid.g_MK_Ctl_Col = ClsGridPicking.gc_MaxCL;
+            mGrid.g_MK_Ctl_Row = ClsGridNayose.gc_P_GYO;
+            mGrid.g_MK_Ctl_Col = ClsGridNayose.gc_MaxCL;
 
             // スクロールが取れるValueの最大値 (画面の最下行にデータの最下行が来た時点の Value)
             mGrid.g_MK_MaxValue = mGrid.g_MK_Max_Row - mGrid.g_MK_Ctl_Row;
@@ -135,7 +131,7 @@ namespace NayoseKekkaTouroku
 
 
             // データ保持用配列の宣言
-            mGrid.g_DArray = new ClsGridPicking.ST_DArray_Grid[mGrid.g_MK_Max_Row];
+            mGrid.g_DArray = new ClsGridNayose.ST_DArray_Grid[mGrid.g_MK_Max_Row];
 
             // 行の色
             // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
@@ -145,7 +141,7 @@ namespace NayoseKekkaTouroku
             // フォーカス移動順(表示列も含めて、すべての列を設定する)
             mGrid.g_MK_FocusOrder = new int[mGrid.g_MK_Ctl_Col];
 
-            for (int i = (int)ClsGridPicking.ColNO.GYONO; i <= (int)ClsGridPicking.ColNO.COUNT - 1; i++)
+            for (int i = (int)ClsGridNayose.ColNO.GYONO; i <= (int)ClsGridNayose.ColNO.COUNT - 1; i++)
             {
                 mGrid.g_MK_FocusOrder[i] = i;
             }
@@ -155,7 +151,7 @@ namespace NayoseKekkaTouroku
             // 項目のTabIndexセット
             for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
             {
-                for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridPicking.ColNO.COUNT; W_CtlCol++)
+                for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridNayose.ColNO.COUNT; W_CtlCol++)
                 {
                     //switch (W_CtlCol)
                     //{
@@ -183,156 +179,156 @@ namespace NayoseKekkaTouroku
             mGrid.F_CtrlArray_MK(mGrid.g_MK_Ctl_Col, mGrid.g_MK_Ctl_Row);
 
             // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD11, 0].CellCtl = IMT_ITMCD_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME2, 0].CellCtl = IMT_NAME2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD12, 0].CellCtl = IMT_ITMNM_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL2, 0].CellCtl = IMN_TEL2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Client, 0].CellCtl = IMT_CLINT_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space1, 0].CellCtl = IMN_WEBPR_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL, 0].CellCtl = IMT_MAIL_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP, 0].CellCtl = IMT_ZIP_0;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.SiteNm, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL, 0].CellCtl = IMT_TEL_0;    //支払予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME, 0].CellCtl = IMT_NAME_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ChkNayose, 0].CellCtl = CHK_EDICK_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 0].CellCtl = IMT_ITMCD_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 0].CellCtl = LBL_NAME2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 0].CellCtl = IMT_ITMNM_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 0].CellCtl = IMN_TEL2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 0].CellCtl = IMT_CLINT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 0].CellCtl = IMN_WEBPR_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 0].CellCtl = IMT_MAIL_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 0].CellCtl = IMT_ZIP_0;      //メーカー商品CD
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.SiteNm, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL, 0].CellCtl = IMT_TEL_0;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 0].CellCtl = IMT_NAME_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 0].CellCtl = CHK_EDICK_0;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP2, 0].CellCtl = IMT_ZIP2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL2, 0].CellCtl = IMT_MAIL2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD21, 0].CellCtl = IMT_ADD21_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD22, 0].CellCtl = IMT_ADD22_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space2, 0].CellCtl = IMT_SPACE2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 0].CellCtl = IMT_ZIP2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 0].CellCtl = IMT_MAIL2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 0].CellCtl = IMT_ADD21_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 0].CellCtl = IMT_ADD22_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 0].CellCtl = IMT_SPACE2_0;
 
 
             // 2行目
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 1].CellCtl = CHK_DELCK_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD11, 1].CellCtl = IMT_ITMCD_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME2, 1].CellCtl = IMT_NAME2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD12, 1].CellCtl = IMT_ITMNM_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL2, 1].CellCtl = IMN_TEL2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Client, 1].CellCtl = IMT_CLINT_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space1, 1].CellCtl = IMN_WEBPR_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL, 1].CellCtl = IMT_MAIL_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 1].CellCtl = IMT_ITMCD_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 1].CellCtl = LBL_NAME2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 1].CellCtl = IMT_ITMNM_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 1].CellCtl = IMN_TEL2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 1].CellCtl = IMT_CLINT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 1].CellCtl = IMN_WEBPR_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 1].CellCtl = IMT_MAIL_1;
             
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP, 1].CellCtl = IMT_ZIP_1;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.SiteNm, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL, 1].CellCtl = IMT_TEL_1;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 1].CellCtl = IMT_ZIP_1;      //メーカー商品CD
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.SiteNm, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL, 1].CellCtl = IMT_TEL_1;    //支払予定日
             
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME, 1].CellCtl = IMT_NAME_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ChkNayose, 1].CellCtl = CHK_EDICK_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 1].CellCtl = IMT_NAME_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 1].CellCtl = CHK_EDICK_1;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP2, 1].CellCtl = IMT_ZIP2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL2, 1].CellCtl = IMT_MAIL2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD21, 1].CellCtl = IMT_ADD21_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD22, 1].CellCtl = IMT_ADD22_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space2, 1].CellCtl = IMT_SPACE2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 1].CellCtl = IMT_ZIP2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 1].CellCtl = IMT_MAIL2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 1].CellCtl = IMT_ADD21_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 1].CellCtl = IMT_ADD22_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 1].CellCtl = IMT_SPACE2_1;
             // 3行目
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 2].CellCtl = CHK_DELCK_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD11, 2].CellCtl = IMT_ITMCD_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME2, 2].CellCtl = IMT_NAME2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD12, 2].CellCtl = IMT_ITMNM_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL2, 2].CellCtl = IMN_TEL2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Client, 2].CellCtl = IMT_CLINT_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space1, 2].CellCtl = IMN_WEBPR_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL, 2].CellCtl = IMT_MAIL_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP, 2].CellCtl = IMT_ZIP_2;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.SiteNm, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL, 2].CellCtl = IMT_TEL_2;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 2].CellCtl = IMT_ITMCD_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 2].CellCtl = LBL_NAME2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 2].CellCtl = IMT_ITMNM_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 2].CellCtl = IMN_TEL2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 2].CellCtl = IMT_CLINT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 2].CellCtl = IMN_WEBPR_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 2].CellCtl = IMT_MAIL_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 2].CellCtl = IMT_ZIP_2;      //メーカー商品CD
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.SiteNm, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL, 2].CellCtl = IMT_TEL_2;    //支払予定日
             
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME, 2].CellCtl = IMT_NAME_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ChkNayose, 2].CellCtl = CHK_EDICK_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 2].CellCtl = IMT_NAME_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 2].CellCtl = CHK_EDICK_2;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP2, 2].CellCtl = IMT_ZIP2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL2, 2].CellCtl = IMT_MAIL2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD21, 2].CellCtl = IMT_ADD21_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD22, 2].CellCtl = IMT_ADD22_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space2, 2].CellCtl = IMT_SPACE2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 2].CellCtl = IMT_ZIP2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 2].CellCtl = IMT_MAIL2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 2].CellCtl = IMT_ADD21_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 2].CellCtl = IMT_ADD22_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 2].CellCtl = IMT_SPACE2_2;
             // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 3].CellCtl = CHK_DELCK_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD11, 3].CellCtl = IMT_ITMCD_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME2, 3].CellCtl = IMT_NAME2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD12, 3].CellCtl = IMT_ITMNM_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL2, 3].CellCtl = IMN_TEL2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Client, 3].CellCtl = IMT_CLINT_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space1, 3].CellCtl = IMN_WEBPR_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL, 3].CellCtl = IMT_MAIL_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP, 3].CellCtl = IMT_ZIP_3;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.SiteNm, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL, 3].CellCtl = IMT_TEL_3;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 3].CellCtl = IMT_ITMCD_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 3].CellCtl = LBL_NAME2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 3].CellCtl = IMT_ITMNM_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 3].CellCtl = IMN_TEL2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 3].CellCtl = IMT_CLINT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 3].CellCtl = IMN_WEBPR_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 3].CellCtl = IMT_MAIL_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 3].CellCtl = IMT_ZIP_3;      //メーカー商品CD
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.SiteNm, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL, 3].CellCtl = IMT_TEL_3;    //支払予定日
             
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME, 3].CellCtl = IMT_NAME_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ChkNayose, 3].CellCtl = CHK_EDICK_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 3].CellCtl = IMT_NAME_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 3].CellCtl = CHK_EDICK_3;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP2, 3].CellCtl = IMT_ZIP2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL2, 3].CellCtl = IMT_MAIL2_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD21, 3].CellCtl = IMT_ADD21_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD22, 3].CellCtl = IMT_ADD22_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space2, 3].CellCtl = IMT_SPACE2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 3].CellCtl = IMT_ZIP2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 3].CellCtl = IMT_MAIL2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 3].CellCtl = IMT_ADD21_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 3].CellCtl = IMT_ADD22_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 3].CellCtl = IMT_SPACE2_3;
             // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 4].CellCtl = CHK_DELCK_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD11, 4].CellCtl = IMT_ITMCD_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME2, 4].CellCtl = IMT_NAME2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD12, 4].CellCtl = IMT_ITMNM_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL2, 4].CellCtl = IMN_TEL2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Client, 4].CellCtl = IMT_CLINT_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space1, 4].CellCtl = IMN_WEBPR_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL, 4].CellCtl = IMT_MAIL_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP, 4].CellCtl = IMT_ZIP_4;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.SiteNm, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL, 4].CellCtl = IMT_TEL_4;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 4].CellCtl = IMT_ITMCD_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 4].CellCtl = LBL_NAME2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 4].CellCtl = IMT_ITMNM_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 4].CellCtl = IMN_TEL2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 4].CellCtl = IMT_CLINT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 4].CellCtl = IMN_WEBPR_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 4].CellCtl = IMT_MAIL_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 4].CellCtl = IMT_ZIP_4;      //メーカー商品CD
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.SiteNm, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL, 4].CellCtl = IMT_TEL_4;    //支払予定日
             
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME, 4].CellCtl = IMT_NAME_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ChkNayose, 4].CellCtl = CHK_EDICK_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 4].CellCtl = IMT_NAME_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 4].CellCtl = CHK_EDICK_4;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP2, 4].CellCtl = IMT_ZIP2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL2, 4].CellCtl = IMT_MAIL2_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD21, 4].CellCtl = IMT_ADD21_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD22, 4].CellCtl = IMT_ADD22_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space2, 4].CellCtl = IMT_SPACE2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 4].CellCtl = IMT_ZIP2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 4].CellCtl = IMT_MAIL2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 4].CellCtl = IMT_ADD21_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 4].CellCtl = IMT_ADD22_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 4].CellCtl = IMT_SPACE2_4;
             // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
             //mGrid.g_MK_Ctrl[(int)ClsGridHacchuu.ColNO.ChkDel, 5].CellCtl = CHK_DELCK_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD11, 5].CellCtl = IMT_ITMCD_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME2, 5].CellCtl = IMT_NAME2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD12, 5].CellCtl = IMT_ITMNM_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL2, 5].CellCtl = IMN_TEL2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Client, 5].CellCtl = IMT_CLINT_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space1, 5].CellCtl = IMN_WEBPR_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL, 5].CellCtl = IMT_MAIL_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP, 5].CellCtl = IMT_ZIP_5;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.SiteNm, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.TEL, 5].CellCtl = IMT_TEL_5;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD11, 5].CellCtl = IMT_ITMCD_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME2, 5].CellCtl = LBL_NAME2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD12, 5].CellCtl = IMT_ITMNM_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL2, 5].CellCtl = IMN_TEL2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Client, 5].CellCtl = IMT_CLINT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space1, 5].CellCtl = IMN_WEBPR_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL, 5].CellCtl = IMT_MAIL_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP, 5].CellCtl = IMT_ZIP_5;      //メーカー商品CD
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.SiteNm, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.TEL, 5].CellCtl = IMT_TEL_5;    //支払予定日
             
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.NAME, 5].CellCtl = IMT_NAME_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ChkNayose, 5].CellCtl = CHK_EDICK_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.NAME, 5].CellCtl = IMT_NAME_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ChkNayose, 5].CellCtl = CHK_EDICK_5;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ZIP2, 5].CellCtl = IMT_ZIP2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.MAIL2, 5].CellCtl = IMT_MAIL2_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD21, 5].CellCtl = IMT_ADD21_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.ADD22, 5].CellCtl = IMT_ADD22_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridPicking.ColNO.Space2, 5].CellCtl = IMT_SPACE2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ZIP2, 5].CellCtl = IMT_ZIP2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.MAIL2, 5].CellCtl = IMT_MAIL2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD21, 5].CellCtl = IMT_ADD21_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.ADD22, 5].CellCtl = IMT_ADD22_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridNayose.ColNO.Space2, 5].CellCtl = IMT_SPACE2_5;
         }
 
         // 明細部 Tab の処理
         private void S_Grid_0_Event_Tab(int pCol, int pRow, Control pErrSet, Control pMotoControl)
         {
-            mGrid.F_MoveFocus((int)ClsGridPicking.Gen_MK_FocusMove.MvNxt, (int)ClsGridPicking.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+            mGrid.F_MoveFocus((int)ClsGridNayose.Gen_MK_FocusMove.MvNxt, (int)ClsGridNayose.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
 
         // 明細部 Shift+Tab の処理
         private void S_Grid_0_Event_ShiftTab(int pCol, int pRow, Control pErrSet, Control pMotoControl)
         {
-            mGrid.F_MoveFocus((int)ClsGridPicking.Gen_MK_FocusMove.MvPrv, (int)ClsGridPicking.Gen_MK_FocusMove.MvPrv, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+            mGrid.F_MoveFocus((int)ClsGridNayose.Gen_MK_FocusMove.MvPrv, (int)ClsGridNayose.Gen_MK_FocusMove.MvPrv, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
 
         // 明細部 Enter の処理
         private void S_Grid_0_Event_Enter(int pCol, int pRow, Control pErrSet, Control pMotoControl)
         {
-            mGrid.F_MoveFocus((int)ClsGridPicking.Gen_MK_FocusMove.MvNxt, (int)ClsGridPicking.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+            mGrid.F_MoveFocus((int)ClsGridNayose.Gen_MK_FocusMove.MvNxt, (int)ClsGridNayose.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
 
         // 明細部 PageDown の処理
@@ -345,7 +341,7 @@ namespace NayoseKekkaTouroku
             else
                 w_GoRow = pRow + (mGrid.g_MK_Ctl_Row - 1);
 
-            mGrid.F_MoveFocus((int)ClsGridPicking.Gen_MK_FocusMove.MvSet, (int)ClsGridPicking.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
+            mGrid.F_MoveFocus((int)ClsGridNayose.Gen_MK_FocusMove.MvSet, (int)ClsGridNayose.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
         }
 
         // 明細部 PageUp の処理
@@ -358,7 +354,7 @@ namespace NayoseKekkaTouroku
             else
                 w_GoRow = pRow - (mGrid.g_MK_Ctl_Row - 1);
 
-            mGrid.F_MoveFocus((int)ClsGridPicking.Gen_MK_FocusMove.MvSet, (int)ClsGridPicking.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
+            mGrid.F_MoveFocus((int)ClsGridNayose.Gen_MK_FocusMove.MvSet, (int)ClsGridNayose.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
         }
 
         // 明細部 MouseWheel の処理
@@ -627,7 +623,7 @@ namespace NayoseKekkaTouroku
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].PickingNO))
+                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JuchuuNO))
                                 {
                                     continue;
                                 }
@@ -636,13 +632,20 @@ namespace NayoseKekkaTouroku
                                 {
                                     switch (w_Col)
                                     {
-                                        case (int)ClsGridPicking.ColNO.ChkNayose:    // 
-                                            //D_Picking.PickingKBN＝2の時、入力可能				
-                                            if (mGrid.g_DArray[w_Row].PickingKBN == 2)
+                                        case (int)ClsGridNayose.ColNO.ChkNayose:    // 
+                                                         mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                break;
+                                        case (int)ClsGridNayose.ColNO.NAME2:
+                                            if (mGrid.g_DArray[w_Row].AttentionFLG == "1")
                                             {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor= Color.Red;
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                             }
-                                                break;
+                                            else
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor = Color.Black;
+                                            }
+                                            break;
                                     }
                                 }
                             }
@@ -932,13 +935,13 @@ namespace NayoseKekkaTouroku
             //排他処理
             foreach (DataRow row in dt.Rows)
             {                
-                if (mOldJuchuNO != row["JuchuNo"].ToString() && !string.IsNullOrWhiteSpace(row["JuchuNo"].ToString()))
+                if (mOldJuchuNO != row["JuchuuNO"].ToString() && !string.IsNullOrWhiteSpace(row["JuchuuNO"].ToString()))
                 {
-                    ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Jyuchu, row["JuchuNo"].ToString());
+                    ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Jyuchu, row["JuchuuNO"].ToString());
                     if (!ret)
                         return false;
 
-                    mOldJuchuNO = row["JuchuNo"].ToString();
+                    mOldJuchuNO = row["JuchuuNO"].ToString();
 
                     // データを追加
                     DataRow rowForUpdate;
@@ -949,47 +952,27 @@ namespace NayoseKekkaTouroku
                 }
             }
 
-
-            //ピッキング(D_Juchuu)に存在しない場合、Error 「登録されていないピッキング番号」
             if (dt.Rows.Count == 0)
             {
-                bbl.ShowMessage("E138", "ピッキング番号");
+                bbl.ShowMessage("E128");
                 Scr_Clr(1);
                 PreviousCtrl.Focus();
                 return false;
             }
             else
             {
-                //DeleteDateTime 「削除されたピッキング番号」
-                if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
-                {
-                    bbl.ShowMessage("E140", "ピッキング番号");
-                    Scr_Clr(1);
-                    PreviousCtrl.Focus();
-                    return false;
-                }
-
-                ////権限がない場合（以下のSelectができない場合）Error　「権限のないピッキング番号」
-                //if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
-                //{
-                //    bbl.ShowMessage("E139", "ピッキング番号");
-                //    Scr_Clr(1);
-                //    previousCtrl.Focus();
-                //    return false;
-                //}
-
                 //画面セットなしの場合、処理正常終了
                 if (set == false)
                 {
                     return true;
-                }	
+                }
 
                 S_Clear_Grid();   //画面クリア（明細部）
 
                 //明細にデータをセット
                 int i = 0;
                 m_dataCnt = 0;
-                m_MaxPurchaseGyoNo = 0;
+                m_MaxGyoNo = 0;
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -1000,56 +983,44 @@ namespace NayoseKekkaTouroku
                         mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
                         return false;
                     }
-
-                    mGrid.g_DArray[i].SiteNm = row["ShippingPlanDate"].ToString();
-                    mGrid.g_DArray[i].NAME = row["Number"].ToString();
-                    mGrid.g_DArray[i].ADD11 = row["JanCD"].ToString();
-                    mGrid.g_DArray[i].AdminNO = row["AdminNO"].ToString();
-                    mGrid.g_DArray[i].ZIP = row["SKUCD"].ToString();   
-                    
-                    mGrid.g_DArray[i].ADD12 = row["SKUName"].ToString();   // 
-                    mGrid.g_DArray[i].Client = row["ColorName"].ToString();   // 
-                    mGrid.g_DArray[i].NAME2 = row["SizeName"].ToString();   // 
-
-                    mGrid.g_DArray[i].TEL2 = bbl.Z_SetStr(row["ShippingPossibleSu"]);   // 
-
-                    mGrid.g_DArray[i].MAIL = row["DeliveryName"].ToString();   // 
+                    if (row["ROWNUM"].ToString().Equals("1"))
+                    {
+                        mGrid.g_DArray[i].SiteNm = row["SiteName"].ToString();
+                        mGrid.g_DArray[i].NAME = row["CustomerName"].ToString();
+                        mGrid.g_DArray[i].ZIP = row["ZIP"].ToString();
+                        mGrid.g_DArray[i].ADD11 = row["Address1"].ToString();
+                        mGrid.g_DArray[i].ADD12 = row["Address2"].ToString();   // 
+                        mGrid.g_DArray[i].TEL = row["TEL"].ToString();   // 
+                        mGrid.g_DArray[i].MAIL = row["MailAddress"].ToString();   //                      
+                    }
+                    mGrid.g_DArray[i].Client = row["M_CustomerCD"].ToString();   // 
+                    mGrid.g_DArray[i].NAME2 = row["M_CustomerName"].ToString();   // 
+                    mGrid.g_DArray[i].ZIP2 = row["M_ZIP"].ToString();
+                    mGrid.g_DArray[i].ADD21 = row["M_Address1"].ToString();
+                    mGrid.g_DArray[i].ADD22 = row["M_Address2"].ToString();   // 
+                    mGrid.g_DArray[i].TEL2 = row["M_TEL"].ToString();   // 
+                    mGrid.g_DArray[i].MAIL2 = row["M_MailAddress"].ToString();   // 
 
                     mGrid.g_DArray[i].Chk = false;
                     mGrid.g_DArray[i].ChkNayose = false;
                     mGrid.g_DArray[i].OldChk = false;
-                    mGrid.g_DArray[i].OldChkModori = false;
 
-                    if (!string.IsNullOrWhiteSpace(row["PickingDate"].ToString()))
+                    if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.NayoseKekkaTourokuDate].Text))
                     {
-                        if (row["PickingKBN"].ToString() == "1")
-                        {         
-                            //D_Picking.PickingKBN＝1かつD_PickingDetails.PickingDate≠NULLの時、CheckBox＝ON
+                        //D_Juchuu.CustomerCD＝M_Customer.CustomerCD の時、CheckBox＝ON
+                        if (row["CustomerCD"].ToString().Equals(row["M_CustomerCD"].ToString()))
+                        {
                             mGrid.g_DArray[i].Chk = true;
                             mGrid.g_DArray[i].OldChk = true;
-                        }
-                        else if (row["PickingKBN"].ToString() == "2")
-                        {
-                            //D_Picking.PickingKBN＝2かつD_PickingDetails.PickingDate≠NULLの時、CheckBox＝ON
-                            mGrid.g_DArray[i].ChkNayose = true;
-                            mGrid.g_DArray[i].OldChkModori = true;
                         }
                     }
 
                     //税額(Hidden)
-                    mGrid.g_DArray[i].PickingNO = row["PickingNO"].ToString();
-                    mGrid.g_DArray[i].PickingRows = Convert.ToInt16(row["PickingRows"]);
-                    mGrid.g_DArray[i].PickingKBN = Convert.ToInt16(row["PickingKBN"]);
-                    mGrid.g_DArray[i].ReserveNO = row["ReserveNO"].ToString();
-
-                    if (m_MaxPurchaseGyoNo < mGrid.g_DArray[i].PickingRows)
-                        m_MaxPurchaseGyoNo = mGrid.g_DArray[i].PickingRows;
-
+                    mGrid.g_DArray[i].JuchuuNO = row["JuchuuNO"].ToString();
+                    mGrid.g_DArray[i].AttentionFLG = row["AttentionFLG"].ToString();
                     m_dataCnt = i + 1;
                     i++;
                 }
-
-                //mOldPickingDate = detailControls[(int)EIndex.PickingDate].Text;
 
                 mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
 
@@ -1059,8 +1030,9 @@ namespace NayoseKekkaTouroku
             S_BodySeigyo(1, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-            detailControls[0].Focus();
+            
+            //明細の先頭項目へ
+                mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNayose.ColNO.ChkNayose);
 
             return true;
         }
@@ -1109,7 +1081,7 @@ namespace NayoseKekkaTouroku
         {
             dje = new D_Juchuu_Entity
             {
-                NayoseKekkaTourokuDate = detailControls[(int)EIndex.NayoseKekkaTourokuDate].Text,
+                NayoseKekkaTourokuDate = keyControls[(int)EIndex.NayoseKekkaTourokuDate].Text,
                 InsertOperator = InOperatorCD,
                 PC = InPcID
             };
@@ -1131,12 +1103,8 @@ namespace NayoseKekkaTouroku
         // -----------------------------------------------------------
         private void Para_Add(DataTable dt)
         {
-            dt.Columns.Add("PickingNO", typeof(string));
-            dt.Columns.Add("PickingRows", typeof(int));
-            dt.Columns.Add("Chk", typeof(int));
-            dt.Columns.Add("ChkModori", typeof(int));
-            dt.Columns.Add("ReserveNO", typeof(string));
-            dt.Columns.Add("UpdateFlg", typeof(int));
+            dt.Columns.Add("JuchuuNO", typeof(string));
+            dt.Columns.Add("CustomerCD", typeof(string));
         }
 
         private DataTable GetGridEntity()
@@ -1144,63 +1112,26 @@ namespace NayoseKekkaTouroku
             DataTable dt = new DataTable();
             Para_Add(dt);
 
-            int rowNo = 1;
-
-            if(OperationMode== EOperationMode.UPDATE)
-            {
-                rowNo = m_MaxPurchaseGyoNo + 1;
-            }
-
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //更新有効行数
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].PickingNO))
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JuchuuNO))
                     break;
 
-                short updFlg = 0;
-                //変更がある場合1
-                if(!mGrid.g_DArray[RW].Chk.Equals(mGrid.g_DArray[RW].OldChk)) 
-                {
-                    updFlg = 2;
-                }
-                else if (!mGrid.g_DArray[RW].ChkNayose.Equals(mGrid.g_DArray[RW].OldChkModori))
-                {
-                    updFlg = 1;
-                }
-                    short Chk = 0;
-                short ChkModori = 0;
-                if (mGrid.g_DArray[RW].Chk)
-                {
-                    Chk = 1;
-                }
                 if (mGrid.g_DArray[RW].ChkNayose)
-                    ChkModori = 1;
-
-                dt.Rows.Add(mGrid.g_DArray[RW].PickingNO
-                    , bbl.Z_Set(mGrid.g_DArray[RW].PickingRows)
-                    , Chk
-                    , ChkModori
-                    , mGrid.g_DArray[RW].ReserveNO
-                    , updFlg
-                    );
-
-                if(mGrid.g_DArray[RW].PickingRows == 0)
-                    rowNo++;
+                {
+                    dt.Rows.Add(mGrid.g_DArray[RW].JuchuuNO
+                        , mGrid.g_DArray[RW].Client
+                        );
+                }
             }
 
             return dt;
         }
         protected override void ExecSec()
         {
-            //for (int i = (int)EIndex.PickingDate; i <= (int)EIndex.PickingDate; i++)
-            //    if (CheckDetail(i, false) == false)
-            //    {
-            //        detailControls[i].Focus();
-            //        return;
-            //    }
-
             // 明細部  画面の範囲の内容を配列にセット
-            mGrid.S_DispToArray(Vsb_Mei_0.Value);            
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
             DataTable dt = GetGridEntity();
 
@@ -1214,43 +1145,19 @@ namespace NayoseKekkaTouroku
 
             //更新処理
             dje = GetEntity();
-            nkbl.NayoseKekkaTouroku_Exec(dje,dt);
+            nkbl.NayoseKekkaTouroku_Exec(dje, dt);
 
-            //ログファイルへの更新
-            bbl.L_Log_Insert(Get_L_Log_Entity());
-
-                bbl.ShowMessage("I101");
+            bbl.ShowMessage("I101");
 
             //更新後画面クリア
             ChangeOperationMode(OperationMode);
         }
-        /// <summary>
-        /// get Log information
-        /// print log
-        /// </summary>
-        private L_Log_Entity Get_L_Log_Entity()
-        {
-            ////画面指定項目をカンマ編集で羅列（ex."2019/07/01,2019/7/31,ABCDEFG,未出力"）
-            //string item = keyControls[0].Text;
-            //for (int i = 1; i <= (int)EIndex.JanCD; i++)
-            //{
-            //    item += "," + keyControls[i].Text;
-            //}
-
-            L_Log_Entity lle = new L_Log_Entity
-            {
-                InsertOperator = this.InOperatorCD,
-                PC = this.InPcID,
-                Program = this.InProgramID,
-                OperateMode = "寄せ結果登録",
-                KeyItem = ""
-            };
-
-            return lle;
-        }
         private void ChangeOperationMode(EOperationMode mode)
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
+
+            //排他処理を解除
+            DeleteExclusive();
 
             Scr_Clr(0);
 
@@ -1259,7 +1166,6 @@ namespace NayoseKekkaTouroku
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-            keyControls[1].Text = bbl.GetDate();
             keyControls[0].Focus();
 
         }
@@ -1319,7 +1225,6 @@ namespace NayoseKekkaTouroku
                 ((CKM_SearchControl)ctl).LabelText = "";
             }
 
-            mOldPickingDate = "";
             S_Clear_Grid();   //画面クリア（明細部）
 
         }
@@ -1418,6 +1323,15 @@ namespace NayoseKekkaTouroku
         // ==================================================
         protected override void EndSec()
         {
+            try
+            {
+                DeleteExclusive();
+            }
+            catch (Exception ex)
+            {
+                //例外は無視する
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
 
             this.Close();
             //アプリケーションを終了する
@@ -1490,8 +1404,7 @@ namespace NayoseKekkaTouroku
                     if (ret)
                     {
                         //if (index == (int)EIndex.PickingDate)
-                        //    //明細の先頭項目へ
-                        //    mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridPicking.ColNO.ChkNayose);
+                        
 
                         //else if (detailControls.Length - 1 > index)
                         //{
@@ -1647,7 +1560,7 @@ namespace NayoseKekkaTouroku
                         return;
                     }
 
-                    if (CL == (int)ClsGridPicking.ColNO.ChkNayose)
+                    if (CL == (int)ClsGridNayose.ColNO.ChkNayose)
                         if (w_Row == mGrid.g_MK_Max_Row - 1)
                             lastCell = true;
 
@@ -1724,13 +1637,43 @@ namespace NayoseKekkaTouroku
             {
                 switch (w_Col)
                 {
-                    case (int)ClsGridPicking.ColNO.ChkNayose:
+                    case (int)ClsGridNayose.ColNO.ChkNayose:
                         break;
+                    case (int)ClsGridNayose.ColNO.GYONO:
+                    case (int)ClsGridNayose.ColNO.Space1:
+                    case (int)ClsGridNayose.ColNO.Space2:
+                        {
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            break;
+                        }
 
                     default:
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
+                        mGrid.g_MK_State[w_Col, w_Row].Cell_Selectable = false;
                         break;
                 }
+            }
+        }
+
+        private void ckM_Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                D_Juchuu_Entity dje = new  D_Juchuu_Entity
+                {
+                    InsertOperator = InOperatorCD,
+                    PC = InPcID
+                };
+                NayoseSyoriAll_BL nbl = new NayoseSyoriAll_BL();
+                nbl.NayoseSyoriAll_Exec(dje);
+
+                bbl.ShowMessage("I001", "名寄せ処理");
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
     }

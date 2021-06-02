@@ -26,6 +26,11 @@ namespace BL
         public static string ID_ExhibitionSegmentCD = "226";      //セグメント
         public static string ID_TempoKbn = "229";       //実店舗区分
         public static string ID_Site = "232";       //サイト種類
+        public static string ID_MailKBN = "233";       //メール発送状況
+        //public static string ID_Site = "234";      //警告状況
+        //public static string ID_Site = "235";      //配送方法
+        //public static string ID_Site = "236";      //入金状況
+
         public string ID_Store = "302";                 //受注API起動
         public static string ID_YearTerm = "307";       //年度(20)
         public static string ID_Season = "308";         //シーズン(10)
