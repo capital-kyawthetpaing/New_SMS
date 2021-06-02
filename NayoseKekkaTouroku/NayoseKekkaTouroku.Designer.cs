@@ -2146,6 +2146,7 @@
             this.LBL_NAME2_5.TabIndex = 578;
             this.LBL_NAME2_5.Tag = "5";
             this.LBL_NAME2_5.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.LBL_NAME2_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LBL_NAME2_4
             // 
@@ -2158,6 +2159,7 @@
             this.LBL_NAME2_4.TabIndex = 559;
             this.LBL_NAME2_4.Tag = "4";
             this.LBL_NAME2_4.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.LBL_NAME2_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LBL_NAME2_3
             // 
@@ -2170,6 +2172,7 @@
             this.LBL_NAME2_3.TabIndex = 539;
             this.LBL_NAME2_3.Tag = "3";
             this.LBL_NAME2_3.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.LBL_NAME2_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LBL_NAME2_2
             // 
@@ -2182,6 +2185,7 @@
             this.LBL_NAME2_2.TabIndex = 28;
             this.LBL_NAME2_2.Tag = "2";
             this.LBL_NAME2_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.LBL_NAME2_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LBL_NAME2_0
             // 
@@ -2194,6 +2198,7 @@
             this.LBL_NAME2_0.TabIndex = 0;
             this.LBL_NAME2_0.Tag = "0";
             this.LBL_NAME2_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.LBL_NAME2_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LBL_NAME2_1
             // 
@@ -2206,6 +2211,7 @@
             this.LBL_NAME2_1.TabIndex = 14;
             this.LBL_NAME2_1.Tag = "1";
             this.LBL_NAME2_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
+            this.LBL_NAME2_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IMT_GYONO_5
             // 
