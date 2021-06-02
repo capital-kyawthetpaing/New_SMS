@@ -58,7 +58,6 @@ BEGIN
        ,@SYSDATETIME AS InsertDateTime
        ,@Operator AS UpdateOperator
        ,@SYSDATETIME AS UpdateDateTime
-    FROM DUAL
     WHERE NOT EXISTS(SELECT 1 FROM D_JuchuuOnHold AS DJ
                       WHERE DJ.JuchuuNO = @JuchuuNO
                         AND DJ.OnHoldCD = '001')
@@ -119,33 +118,33 @@ BEGIN
            ,[InsertDateTime]
            ,[UpdateOperator]
            ,[UpdateDateTime])
-        SELECT 
+        VALUES( 
             @JuchuuNO
-           ,0 AS OnHoldFLG
-           ,0 AS WarningFLG
-           ,0 AS IncludeFLG
-           ,0 AS GiftFLG
-           ,0 AS NoshiFLG
-           ,0 AS SpecFLG
-           ,0 AS NouhinsyoFLG
-           ,0 AS RyousyusyoFLG
-           ,0 AS SeikyuusyoFLG
-           ,0 AS SonotoFLG
-           ,0 AS OrderMailFLG
-           ,0 AS NyuukaYoteiMailFLG
-           ,0 AS SyukkaYoteiMailFLG
-           ,0 AS SyukkaAnnaiMailFLG
-           ,0 AS NyuukinMailFLG
-           ,0 AS FollowupMailFLG
-           ,0 AS Demand1MailFLG
-           ,0 AS Demand2MailFLG
-           ,0 AS Demand3MailFLG
-           ,0 AS Demand4MailFLG
-           ,@Operator AS InsertOperator
-           ,@SYSDATETIME AS InsertDateTime
-           ,@Operator AS UpdateOperator
-           ,@SYSDATETIME AS UpdateDateTime
-         FROM DUAL
+           ,0 --AS OnHoldFLG
+           ,0 --AS WarningFLG
+           ,0 --AS IncludeFLG
+           ,0 --AS GiftFLG
+           ,0 --AS NoshiFLG
+           ,0 --AS SpecFLG
+           ,0 --AS NouhinsyoFLG
+           ,0 --AS RyousyusyoFLG
+           ,0 --AS SeikyuusyoFLG
+           ,0 --AS SonotoFLG
+           ,0 --AS OrderMailFLG
+           ,0 --AS NyuukaYoteiMailFLG
+           ,0 --AS SyukkaYoteiMailFLG
+           ,0 --AS SyukkaAnnaiMailFLG
+           ,0 --AS NyuukinMailFLG
+           ,0 --AS FollowupMailFLG
+           ,0 --AS Demand1MailFLG
+           ,0 --AS Demand2MailFLG
+           ,0 --AS Demand3MailFLG
+           ,0 --AS Demand4MailFLG
+           ,@Operator    --AS InsertOperator
+           ,@SYSDATETIME --AS InsertDateTime
+           ,@Operator    --AS UpdateOperator
+           ,@SYSDATETIME --AS UpdateDateTime
+         )
          ;
 	END
 END
@@ -197,8 +196,8 @@ BEGIN
               
         from D_Juchuu AS DH                         
         WHERE DH.JuchuuKBN = 1	--受注種別区分              
-            AND DH.CustomerCD IS NULL
-            AND DH.DeleteDateTime IS NULL
+          AND DH.CustomerCD IS NULL
+          AND DH.DeleteDateTime IS NULL
             ;
             
 	DECLARE @CNT1 int;
@@ -245,10 +244,11 @@ BEGIN
                    INNER JOIN F_Customer(GETDATE()) FC
                       ON FC.CustomerName = DH.CustomerName
                      AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
-                     AND dbo.Fnc_MailAdress(FC.MailAddress) = dbo.Fnc_MailAdress(DH.MailAddress)                                      
+                     AND dbo.Fnc_MailAdress(ISNULL(FC.MailAddress,'')) = dbo.Fnc_MailAdress(ISNULL(DH.MailAddress,''))                                      
+                     AND FC.StoreKBN = 1
                    WHERE DH.JuchuuNO = @JuchuuNO
                      AND DH.DeleteDateTime IS NULL
-        			)
+                    )
         IF @CNT1 = 1
         BEGIN
             SET @CustomerCD = (SELECT FC.CustomerCD
@@ -256,7 +256,8 @@ BEGIN
                                 INNER JOIN F_Customer(GETDATE()) FC
                                    ON FC.CustomerName = DH.CustomerName
                                   AND ISNULL(FC.Tel11,'') + '-' + ISNULL(FC.Tel12,'') + '-' + ISNULL(FC.Tel13,'') = ISNULL(DH.Tel11,'') + '-' + ISNULL(DH.Tel12,'') + '-' + ISNULL(DH.Tel13,'')
-                                  AND dbo.Fnc_MailAdress(FC.MailAddress) = dbo.Fnc_MailAdress(DH.MailAddress)                                                  
+                                  AND dbo.Fnc_MailAdress(ISNULL(FC.MailAddress,'')) = dbo.Fnc_MailAdress(ISNULL(DH.MailAddress,''))                                                 
+                                  AND FC.StoreKBN = 1
                                 WHERE DH.JuchuuNO = @JuchuuNO
                                   AND DH.DeleteDateTime IS NULL
                                 );
@@ -280,7 +281,7 @@ BEGIN
                AND D_JuchuuOnHold.OnHoldCD = '001'
                ;
 
-            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード追加もしくは変更。
+            --テーブル転送仕様Ｃに従って受注ステータス(D_JuchuuStatus)のレコード変更。(※1)
             --Update(①の※1、⑤の※1の時）
             UPDATE D_JuchuuStatus SET
                  [OnHoldFLG] = 0    --保留有無FLG
@@ -288,6 +289,19 @@ BEGIN
                 ,[UpdateDateTime]    = @SYSDATETIME
              WHERE D_JuchuuStatus.JuchuuNO = @JuchuuNO
                ;
+            
+            --D_Juchuu.保留FLGに0をUpdate。
+            UPDATE D_Juchuu SET
+                 [OnHoldFLG]         = 0
+                ,[UpdateOperator]    = @Operator  
+                ,[UpdateDateTime]    = @SYSDATETIME
+            WHERE JuchuuNO = @JuchuuNO
+              AND NOT EXISTS(SELECT 1 FROM D_JuchuuOnHold AS D
+                                     WHERE D.JuchuuNO = D_Juchuu.JuchuuNO
+                                       AND D.OnHoldCD <> '001'
+                                       AND D.DisappeareDateTime IS NOT NULL)
+            ;
+            
             --次の「1.受注ワークを1件リード」へ。
         END
         ELSE IF @CNT1 = 0
@@ -295,7 +309,7 @@ BEGIN
             --上記Select件数が0件の時、②の名寄せチェックへ
             
             --②名前 ＆ 電話番号
-            SET @CNT2= (SELECT FC.CustomerCD
+            SET @CNT2= (SELECT COUNT(FC.CustomerCD)
                           from D_Juchuu AS DH
                          INNER JOIN F_Customer(GETDATE()) FC
                             ON FC.CustomerName = DH.CustomerName
@@ -319,7 +333,7 @@ BEGIN
                 --上記Select件数が0件の時、③の名寄せチェックへ
                 
                 --③名前 ＆ メールアドレス
-                SET @CNT3 = (SELECT FC.CustomerCD
+                SET @CNT3 = (SELECT COUNT(FC.CustomerCD)
                                from D_Juchuu AS DH
                               INNER JOIN F_Customer(GETDATE()) FC
                                  ON FC.CustomerName = DH.CustomerName
@@ -343,7 +357,7 @@ BEGIN
                 BEGIN
                     --④の名寄せチェックへ
                     --④名前 ＆ 住所１  
-                    SET @CNT4= (SELECT FC.CustomerCD
+                    SET @CNT4= (SELECT COUNT(FC.CustomerCD)
                                   from D_Juchuu AS DH
                                  INNER JOIN F_Customer(GETDATE()) FC
                                     ON FC.CustomerName = DH.CustomerName
@@ -600,7 +614,7 @@ BEGIN
     END
 
     --処理履歴データへ更新
-    SET @KeyItem = '';
+    SET @KeyItem = NULL;
         
     EXEC L_Log_Insert_SP
         @SYSDATETIME,

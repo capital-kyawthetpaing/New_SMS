@@ -998,8 +998,17 @@ namespace NyuukinNyuuryoku_Detail
                         {
                             ChangeOperationMode(EOperationMode.DELETE);
                             mKidouMode = 11;
-                            string confirmNO = cmds[(int)ECmdLine.PcID + 3];
-                            keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+
+                            if (cmds.Length  > (int)ECmdLine.PcID+3)
+                            {
+                                string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                                keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                            }
+                            else
+                            {
+                                keyControls[(int)EIndex.CollectNO].Text = collectNO;
+                                CheckKey((int)EIndex.CollectNO, true);
+                            }
                             CheckKey((int)EIndex.ConfirmNO, true);
                         }
                         SetFocus();

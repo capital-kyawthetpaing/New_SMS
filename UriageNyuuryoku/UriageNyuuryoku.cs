@@ -1602,6 +1602,7 @@ namespace UriageNyuuryoku
                         {
                             //警告メッセージを表示する
                             bbl.ShowMessage(errno);
+                            return false;
                         }
                     }
                 }
@@ -3046,7 +3047,7 @@ namespace UriageNyuuryoku
 
             dse.SalesDate = detailControls[(int)EIndex.SalesDate].Text;
 
-            if(ckM_CheckBox1.Checked)
+            if (ckM_CheckBox1.Checked)
                 dse.ReturnFlg = "1";
             else
                 dse.ReturnFlg = "0";
@@ -3055,7 +3056,7 @@ namespace UriageNyuuryoku
             dse.CustomerCD = detailControls[(int)EIndex.CustomerCD].Text;
             dse.CustomerName = detailControls[(int)EIndex.CustomerName].Text;
             dse.CustomerName2 = detailControls[(int)EIndex.CustomerName2].Text;
-            dse.BillingType = ckM_CheckBox1.Checked ? "1" : mBillingType;
+            dse.BillingType = ckM_CheckBox2.Checked ? "1" : mBillingType;
             dse.Discount = bbl.Z_SetStr(lblKin5.Text);
             dse.SalesHontaiGaku = lblKin2.Text;// - (mZei8 + mZei10)).ToString();
             //dse.SalesHontaiGaku10 = lblKin2.Text;
