@@ -12,7 +12,7 @@
   <xs:element name="DT_UriageMotoChou" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_UriageMotoChou" msprop:Generator_UserDSName="DT_UriageMotoChou">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_UriageMotoChou" msprop:Generator_TableClassName="DT_UriageMotoChouDataTable" msprop:Generator_TableVarName="tableDT_UriageMotoChou" msprop:Generator_RowChangedName="DT_UriageMotoChouRowChanged" msprop:Generator_TablePropName="_DT_UriageMotoChou" msprop:Generator_RowDeletingName="DT_UriageMotoChouRowDeleting" msprop:Generator_RowChangingName="DT_UriageMotoChouRowChanging" msprop:Generator_RowEvHandlerName="DT_UriageMotoChouRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_UriageMotoChouRowDeleted" msprop:Generator_RowClassName="DT_UriageMotoChouRow" msprop:Generator_UserTableName="DT_UriageMotoChou" msprop:Generator_RowEvArgName="DT_UriageMotoChouRowChangeEvent">
+        <xs:element name="DT_UriageMotoChou" msprop:Generator_TableClassName="DT_UriageMotoChouDataTable" msprop:Generator_TableVarName="tableDT_UriageMotoChou" msprop:Generator_TablePropName="_DT_UriageMotoChou" msprop:Generator_RowDeletingName="DT_UriageMotoChouRowDeleting" msprop:Generator_RowChangingName="DT_UriageMotoChouRowChanging" msprop:Generator_RowEvHandlerName="DT_UriageMotoChouRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_UriageMotoChouRowDeleted" msprop:Generator_UserTableName="DT_UriageMotoChou" msprop:Generator_RowChangedName="DT_UriageMotoChouRowChanged" msprop:Generator_RowEvArgName="DT_UriageMotoChouRowChangeEvent" msprop:Generator_RowClassName="DT_UriageMotoChouRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="YYYYMM" msprop:Generator_ColumnVarNameInTable="columnYYYYMM" msprop:Generator_ColumnPropNameInRow="YYYYMM" msprop:Generator_ColumnPropNameInTable="YYYYMMColumn" msprop:Generator_UserColumnName="YYYYMM" type="xs:string" minOccurs="0" />
@@ -24,6 +24,7 @@
               <xs:element name="LastBalanceGaku" msprop:Generator_ColumnVarNameInTable="columnLastBalanceGaku" msprop:Generator_ColumnPropNameInRow="LastBalanceGaku" msprop:Generator_ColumnPropNameInTable="LastBalanceGakuColumn" msprop:Generator_UserColumnName="LastBalanceGaku" type="xs:string" minOccurs="0" />
               <xs:element name="CustomerCD" msprop:Generator_ColumnVarNameInTable="columnCustomerCD" msprop:Generator_ColumnPropNameInRow="CustomerCD" msprop:Generator_ColumnPropNameInTable="CustomerCDColumn" msprop:Generator_UserColumnName="CustomerCD" type="xs:string" minOccurs="0" />
               <xs:element name="SalesNo" msprop:Generator_ColumnVarNameInTable="columnSalesNo" msprop:Generator_ColumnPropNameInRow="SalesNo" msprop:Generator_ColumnPropNameInTable="SalesNoColumn" msprop:Generator_UserColumnName="SalesNo" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
