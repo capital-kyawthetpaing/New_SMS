@@ -141,6 +141,14 @@ namespace GridBase
 
             public void SBackColor(System.Drawing.Color pColor)
             {
+                if (CellCtl.GetType().Equals(typeof(Label)))
+                {
+                    Label w_Edit;
+                    // Editコントロールのとき
+                    w_Edit = (Label)CellCtl;
+                    w_Edit.BackColor = pColor;
+                    return;
+                }
                 if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                 {
                     CKM_Controls.CKM_TextBox w_Edit;
