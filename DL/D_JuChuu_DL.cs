@@ -503,6 +503,7 @@ namespace DL
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
 
+            AddParam(command, "@NayoseKekkaTourokuDate", SqlDbType.VarChar, dje.NayoseKekkaTourokuDate);
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
             AddParam(command, "@Operator", SqlDbType.VarChar, dje.InsertOperator);
             AddParam(command, "@PC", SqlDbType.VarChar, dje.PC);
