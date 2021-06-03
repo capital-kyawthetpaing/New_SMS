@@ -1589,9 +1589,10 @@
             // 
             // LBL_NAME2_0
             // 
-            this.LBL_NAME2_0.BackColor = System.Drawing.Color.Silver;
+            this.LBL_NAME2_0.BackColor = System.Drawing.Color.White;
             this.LBL_NAME2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LBL_NAME2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.LBL_NAME2_0.ForeColor = System.Drawing.Color.DimGray;
             this.LBL_NAME2_0.Location = new System.Drawing.Point(691, 0);
             this.LBL_NAME2_0.Name = "LBL_NAME2_0";
             this.LBL_NAME2_0.Size = new System.Drawing.Size(564, 19);

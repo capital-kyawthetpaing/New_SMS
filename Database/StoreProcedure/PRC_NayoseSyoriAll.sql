@@ -365,7 +365,7 @@ BEGIN
                                   from D_Juchuu AS DH
                                  INNER JOIN F_Customer(GETDATE()) FC
                                     ON FC.CustomerName = DH.CustomerName
-                                   AND dbo.Fnc_AdressHalfToFull(FC.Address1) = dbo.Fnc_AdressHalfToFull(DH.Address1)
+                                   AND dbo.Fnc_AdressSpacePullOut(dbo.Fnc_AdressHalfToFull(FC.Address1)) = dbo.Fnc_AdressSpacePullOut(dbo.Fnc_AdressHalfToFull(DH.Address1))
                                    AND FC.StoreKBN = 1
                                    AND FC.DeleteFlg = 0
                                  WHERE DH.JuchuuNO = @JuchuuNO

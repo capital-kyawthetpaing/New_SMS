@@ -38,6 +38,7 @@ namespace NayoseKekkaTouroku
             //隠し項目
             internal string AttentionFLG;        //M_Customer.AttentionFLG
             internal string JuchuuNO;
+            internal bool ChkOldNayose;
         }
 
         //列番号定数
