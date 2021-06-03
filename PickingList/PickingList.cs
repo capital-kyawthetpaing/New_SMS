@@ -821,6 +821,7 @@ namespace PickingList
                 txtDateTo1.Enabled = false;
                 txtDateFrom1.Text = string.Empty;
                 txtDateTo1.Text = string.Empty;
+                txtShipmentDate.Text = string.Empty;
             }
         }
 
