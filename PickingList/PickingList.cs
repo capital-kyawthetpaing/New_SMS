@@ -598,11 +598,13 @@ namespace PickingList
                 if (string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
                 {
                     bbl.ShowMessage("E202", "出荷予定日", "出荷予定日");
+                    txtDateTo1.Focus();
                     return false;
                 }
                 if ( !string.IsNullOrWhiteSpace(txtDateTo1.Text) && !string.IsNullOrWhiteSpace(txtShipmentDate.Text))
                 {
                     bbl.ShowMessage("E188", "出荷予定日", "出荷予定日");
+                    txtShipmentDate.Focus();
                     return false;
                 }
             }
@@ -618,6 +620,7 @@ namespace PickingList
                     if (!ScPickingNo1.IsExists(2))
                     {
                         bbl.ShowMessage("E128");
+                        ScPickingNo1.SetFocus(1);
                         return false;
                     }
                 }
@@ -645,6 +648,7 @@ namespace PickingList
                 if (!ScPickingNo2.IsExists(2))
                 {
                     bbl.ShowMessage("E128");
+                    ScPickingNo2.SetFocus(1);
                     return false;
                 }
             }
