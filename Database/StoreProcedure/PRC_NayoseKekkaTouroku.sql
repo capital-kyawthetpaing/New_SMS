@@ -15,13 +15,15 @@ GO
 
 CREATE TYPE T_Nayose AS TABLE
     (
-    [JuchuuNO] [varchar](11) ,
-    [CustomerCD] [varchar](13) 
+    [JuchuuNO]     [varchar](11) ,
+    [CustomerCD]   [varchar](13),
+    [UpdateFlg]    [tinyint]
     )
 GO
 
 CREATE PROCEDURE PRC_NayoseKekkaTouroku
     (
+	@NayoseKekkaTourokuDate as VarChar(10),
     @Table       T_Nayose READONLY,
     @Operator    varchar(10),
     @PC          varchar(30)
@@ -43,6 +45,32 @@ BEGIN
     SET @SYSDATETIME = SYSDATETIME();
     SET @OperateModeNm = '名寄せ結果登録';
     
+    IF ISNULL(@NayoseKekkaTourokuDate,'') <> ''
+    BEGIN
+        --テーブル転送仕様Ａ
+        UPDATE D_Juchuu SET
+            [CustomerCD]             = NULL
+           ,[IdentificationFLG]      = 1
+           ,[NayoseKekkaTourokuDate] = NULL
+           ,[UpdateOperator]         = @Operator  
+           ,[UpdateDateTime]         = @SYSDATETIME
+         FROM @Table tbl
+        WHERE D_Juchuu.JuchuuNO = tbl.JuchuuNo
+          AND tbl.UpdateFlg = 1
+        ;
+        
+        --テーブル転送仕様Ｂ
+        UPDATE D_JuchuuOnHold SET
+            [DisappeareDateTime]     = NULL
+           ,[UpdateOperator]         = @Operator  
+           ,[UpdateDateTime]         = @SYSDATETIME
+         FROM @Table tbl
+        WHERE D_JuchuuOnHold.JuchuuNO = tbl.JuchuuNo
+          AND D_JuchuuOnHold.OnHoldCD = '001'
+          AND tbl.UpdateFlg = 1
+        ; 
+    END
+    
 	--テーブル転送仕様Ａ
     UPDATE D_Juchuu SET
         [CustomerCD]             = tbl.CustomerCD
@@ -50,8 +78,9 @@ BEGIN
        ,[NayoseKekkaTourokuDate] = CONVERT(date,@SYSDATETIME)
        ,[UpdateOperator]         = @Operator  
        ,[UpdateDateTime]         = @SYSDATETIME
-    FROM @Table tbl
+     FROM @Table tbl
     WHERE D_Juchuu.JuchuuNO = tbl.JuchuuNo
+      AND tbl.UpdateFlg = 0
     ;
     
     --テーブル転送仕様Ｂ
@@ -59,9 +88,10 @@ BEGIN
         [DisappeareDateTime]     = @SYSDATETIME
        ,[UpdateOperator]         = @Operator  
        ,[UpdateDateTime]         = @SYSDATETIME
-    FROM @Table tbl
+     FROM @Table tbl
     WHERE D_JuchuuOnHold.JuchuuNO = tbl.JuchuuNo
-    AND D_JuchuuOnHold.OnHoldCD = '001'
+      AND D_JuchuuOnHold.OnHoldCD = '001'
+      AND tbl.UpdateFlg = 0
     ;    
     
     --処理履歴データへ更新
