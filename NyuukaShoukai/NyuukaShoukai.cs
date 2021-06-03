@@ -310,11 +310,17 @@ namespace NyuukaShoukai
 
             if (statusChk1.Checked && statusChk2.Checked)
             {
-                return string.Empty;
+                chk = "2";
+                return chk;
+            }
+            else if (statusChk1.Checked)
+            {
+                chk = "0";
+                return chk;
             }
             else
             {
-                chk = statusChk1.Checked ? "0" : "1";
+                chk = "1";
                 return chk;
             }
         }
@@ -325,11 +331,17 @@ namespace NyuukaShoukai
 
             if (chkDelivery.Checked && ChkArrival.Checked)
             {
-                return string.Empty;
+                chk1 = "2";
+                return chk1;
+            }
+            else if (chkDelivery.Checked)
+            {
+                chk1 = "0";
+                return chk1;
             }
             else
             {
-                chk1 = chkDelivery.Checked ? "0" : "1";
+                chk1 = "1";
                 return chk1;
             }
         }
