@@ -189,7 +189,7 @@
             this.cbo_torikomi.MaxLength = 30;
             this.cbo_torikomi.MoveNext = true;
             this.cbo_torikomi.Name = "cbo_torikomi";
-            this.cbo_torikomi.Size = new System.Drawing.Size(100, 20);
+            this.cbo_torikomi.Size = new System.Drawing.Size(300, 20);
             this.cbo_torikomi.TabIndex = 5;
             // 
             // ckM_Label6
