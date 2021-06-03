@@ -642,14 +642,14 @@ namespace NayoseKekkaTouroku
                                         case (int)ClsGridNayose.ColNO.ADD22:
                                         case (int)ClsGridNayose.ColNO.TEL2:
                                         case (int)ClsGridNayose.ColNO.MAIL2:
+                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                             if (mGrid.g_DArray[w_Row].AttentionFLG == "1")
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor= Color.Red;
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                             }
                                             else
                                             {
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor = Color.Black;
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor = Color.DimGray;
                                             }
                                             break;
                                     }
@@ -1001,6 +1001,7 @@ namespace NayoseKekkaTouroku
                         if (row["CustomerCD"].ToString().Equals(row["M_CustomerCD"].ToString()))
                         {
                             mGrid.g_DArray[i].ChkNayose = true;
+                            mGrid.g_DArray[i].ChkOldNayose = true;
                         }
                     }
 
@@ -1081,7 +1082,7 @@ namespace NayoseKekkaTouroku
         {
             dje = new D_Juchuu_Entity
             {
-                SiteKBN = keyControls[(int)EIndex.CboSite].Text,
+                SiteKBN = CboStoreCD.SelectedIndex>0 ? CboStoreCD.SelectedValue.ToString():"",
                 NayoseKekkaTourokuDate = keyControls[(int)EIndex.NayoseKekkaTourokuDate].Text,
             };
             return dje;
@@ -1094,6 +1095,7 @@ namespace NayoseKekkaTouroku
         {
             dt.Columns.Add("JuchuuNO", typeof(string));
             dt.Columns.Add("CustomerCD", typeof(string));
+            dt.Columns.Add("UpdateFlg", typeof(int));
         }
 
         private DataTable GetGridEntity()
@@ -1107,10 +1109,11 @@ namespace NayoseKekkaTouroku
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JuchuuNO))
                     break;
 
-                if (mGrid.g_DArray[RW].ChkNayose)
+                if (mGrid.g_DArray[RW].ChkNayose || mGrid.g_DArray[RW].ChkOldNayose)
                 {
                     dt.Rows.Add(mGrid.g_DArray[RW].JuchuuNO
                         , mGrid.g_DArray[RW].Client
+                        , !mGrid.g_DArray[RW].ChkNayose  && mGrid.g_DArray[RW].ChkOldNayose ? 1:0
                         );
                 }
             }

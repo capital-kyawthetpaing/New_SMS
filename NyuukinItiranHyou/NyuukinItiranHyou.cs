@@ -154,6 +154,11 @@ namespace NyuukinItiranHyou
             search_customer.TxtCode.Text = "";
             search_customer.LabelText = "";
             rdb_one.Checked = true;
+            cboStoreAuthorizations.Bind(string.Empty, "2");
+            cboStoreAuthorizations.SelectedValue = StoreCD;
+            string data = InOperatorCD;
+            string date = DateTime.Today.ToShortDateString();
+            cbo_torikomi.Bind(date, data);
             paymentstart.Focus();
             paymentstart.Select();
             //BindCombo();

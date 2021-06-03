@@ -174,10 +174,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RequiredSource\CrystalDecisions.CrystalReports.Engine.dll" />
-    <Content Include="RequiredSource\CrystalDecisions.ReportSource.dll" />
-    <Content Include="RequiredSource\CrystalDecisions.Shared.dll" />
-    <Content Include="RequiredSource\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="RequiredSource\CrystalDecisions.CrystalReports.Engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RequiredSource\CrystalDecisions.ReportSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RequiredSource\CrystalDecisions.Shared.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RequiredSource\CrystalDecisions.Windows.Forms.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="RequiredSource\CSControl.dll" />
     <Content Include="RequiredSource\Microsoft.PointOfService.dll" />
   </ItemGroup>
