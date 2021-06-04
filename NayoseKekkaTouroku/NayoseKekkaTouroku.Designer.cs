@@ -394,7 +394,7 @@
             this.CboStoreCD.MoveNext = false;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(132, 20);
-            this.CboStoreCD.TabIndex = 734;
+            this.CboStoreCD.TabIndex = 0;
             // 
             // ckM_Button1
             // 
@@ -410,7 +410,7 @@
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
             this.ckM_Button1.Size = new System.Drawing.Size(115, 28);
-            this.ckM_Button1.TabIndex = 735;
+            this.ckM_Button1.TabIndex = 9;
             this.ckM_Button1.Text = "名寄せ処理";
             this.ckM_Button1.UseVisualStyleBackColor = false;
             this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
@@ -531,7 +531,7 @@
             this.Pnl_Body.Location = new System.Drawing.Point(16, 193);
             this.Pnl_Body.Name = "Pnl_Body";
             this.Pnl_Body.Size = new System.Drawing.Size(1276, 461);
-            this.Pnl_Body.TabIndex = 343;
+            this.Pnl_Body.TabIndex = 10;
             // 
             // LBL_MAIL2_5
             // 
