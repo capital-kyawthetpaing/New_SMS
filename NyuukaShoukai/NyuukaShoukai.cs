@@ -191,7 +191,6 @@ namespace NyuukaShoukai
                 {
                     nkskbl.ShowMessage("E128");
                     cboWarehouse.Focus();
-                    Clear();
                     dgvNyuukaShoukai.DataSource = string.Empty;
                 }
                
@@ -364,7 +363,6 @@ namespace NyuukaShoukai
                 if (dtsouko.Rows.Count == 0)
                 {
                     nkskbl.ShowMessage("E128");
-                    Clear();
                     cboWarehouse.Focus();
                     return false;
                 }
@@ -670,7 +668,6 @@ namespace NyuukaShoukai
                 if (dtsouko.Rows.Count == 0)
                 {
                     nkskbl.ShowMessage("E128");
-                    Clear();
                     cboWarehouse.Focus();                  
                 }
 
@@ -689,7 +686,6 @@ namespace NyuukaShoukai
                     if (dtsouko.Rows.Count == 0)
                     {
                         nkskbl.ShowMessage("E128");
-                        Clear();
                         cboWarehouse.Focus();
                     }
 
