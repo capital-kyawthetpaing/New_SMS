@@ -521,7 +521,19 @@ BEGIN
         WHERE [Number] = @PurchaseNO
         AND [DeleteDateTime] IS NULL           
            ;
-           
+
+        --D_SalesTran           Insert  Tableì]ëóédólÇk ê‘
+        --D_SalesDetailsTran    Insert  Tableì]ëóédólÇl ê‘
+        EXEC INSERT_D_SalesTran
+            @SalesNO 
+            ,3  --ProcessKBN tinyint,
+            ,1  --RecoredKBN
+            ,-1 --SIGN int,
+            ,@Operator
+            ,@SYSDATETIME
+            ,@SalesDate
+            ;
+            
         --Update Tableì]ëóédólÇe
         UPDATE D_Sales SET
             [StoreCD]           = @StoreCD
