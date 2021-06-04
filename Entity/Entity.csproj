@@ -74,6 +74,7 @@
     <Compile Include="D_InventoryControl_Entity.cs" />
     <Compile Include="D_InventoryProcessing_Entity.cs" />
     <Compile Include="D_Inventory_Entity.cs" />
+    <Compile Include="D_JuchuuStatus_Entity.cs" />
     <Compile Include="D_JuChuu_Entity.cs" />
     <Compile Include="D_Mail_Entity.cs" />
     <Compile Include="D_MarkDown_Entity.cs" />

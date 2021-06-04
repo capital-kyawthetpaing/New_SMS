@@ -157,5 +157,28 @@ namespace Entity
         public int ChkMinyuka { get; set; }
         public int ChkMisiire { get; set; }
         public int ChkHachuAll { get; set; }
+
+        //WEB受注確認用
+        public string SiteJuchuuDateFrom { get; set; }
+        public string SiteJuchuuDateTo { get; set; }
+        public string OrderDateFrom { get; set; }
+        public string OrderDateTo { get; set; }
+        public string NyukinDateFrom { get; set; }
+        public string NyukinDateTo { get; set; }
+
+    public string DecidedDeliveryDateFrom { get; set; }
+        public string DecidedDeliveryDateTo { get; set; }
+        public string DeliveryPlanDateFrom { get; set; }
+        public string DeliveryPlanDateTo { get; set; }
+        public string DeliveryDateFrom { get; set; }
+        public string DeliveryDateTo { get; set; }
+        public string DeliveryNoFrom { get; set; }
+        public string DeliveryNoTo { get; set; }
+        public string ComboBox8 { get; set; }//メール発送状況							
+        public string ComboBox7 { get; set; }//警告状況							
+        public string ComboBox6 { get; set; }//配送方法						
+        public string ComboBox5 { get; set; }//入金状況					
+
+
     }
 }
