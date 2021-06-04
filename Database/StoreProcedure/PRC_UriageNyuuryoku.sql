@@ -1026,7 +1026,7 @@ BEGIN
      SELECT
            @BillingNO
            ,1   --BillingType   2019.10.23 add
-           ,DSM.SalesRows AS BillingRows
+           ,ISNULL((SELECT MAX(D.BillingRows) FROM D_BillingDetails AS D WHERE D.BillingNO = @BillingNO),0) + ROW_NUMBER() OVER(ORDER BY DSM.SalesRows) AS BillingRows
            ,DS.StoreCD
            ,CONVERT(date, @SalesDate) AS BillingCloseDate
            ,DS.CustomerCD
