@@ -967,7 +967,7 @@ BEGIN
                ;
 
         END
-        ELSE IF @BillingType = 0
+        ELSE IF @BillingType <> 1
         BEGIN
              --Tableì]ëóédólÇiáAÅ@çÌèú
              UPDATE D_Billing SET
@@ -979,119 +979,128 @@ BEGIN
              WHERE DBM.BillingNO = D_Billing.BillingNO
              AND DBM.SalesNO = @SalesNO
              ;
+             
+             --êøãÅñæç◊
+             --Tableì]ëóédólÇjáAÅ@çÌèú
+             UPDATE D_BillingDetails SET
+                   [UpdateOperator]     =  @Operator  
+                  ,[UpdateDateTime]     =  @SYSDATETIME
+                  ,[DeleteOperator]     =  @Operator  
+                  ,[DeleteDateTime]     =  @SYSDATETIME
+             WHERE SalesNO = @SalesNO
+             ;
         END
         
-        --D_BillingDetails  Update Tableì]ëóédólÇjáAçXêV
-        UPDATE D_BillingDetails SET
-        	[StoreCD]           = DS.StoreCD
-           ,[BillingCloseDate]  = CONVERT(date, @SalesDate)-- AS BillingCloseDate
-           ,[CustomerCD]        = DS.CustomerCD
-           ,[SalesNO]           = DSM.SalesNO
-           ,[SalesRows]         = DSM.SalesRows 
-           ,[CollectPlanNO]     = DM.CollectPlanNO 
-           ,[CollectPlanRows]   = DM.CollectPlanRows 
-           ,[BillingHontaiGaku] = DSM.SalesHontaiGaku 
-           ,[BillingTax]        = DSM.SalesTax 
-           ,[BillingGaku]       = DSM.SalesGaku   --CollectPlanGaku 
-           ,[TaxRitsu]          = DSM.SalesTaxRitsu 
-           ,[UpdateOperator]    = @Operator  
-           ,[UpdateDateTime]    = @SYSDATETIME
-        FROM D_Sales AS DS
-        INNER JOIN D_SalesDetails AS DSM
-        ON DSM.SalesNO = DS.SalesNO
-        AND DSM.DeleteDateTime IS NULL
-        LEFT OUTER JOIN D_CollectPlanDetails AS DM
-        ON DM.SalesNO = DSM.SalesNO
-        AND DM.SalesRows = DSM.SalesRows
-        AND DM.DeleteDateTime IS Null
-        WHERE DSM.SalesNO = @SalesNO
-        AND DSM.SalesNO = D_BillingDetails.SalesNO
-        AND DSM.SalesRows = D_BillingDetails.SalesRows
-        AND DS.DeleteDateTime IS NULL
-        AND D_BillingDetails.DeleteDateTime IS NULL
-        ;
+        IF @BillingType = 1
+        BEGIN
+            --D_BillingDetails  Update Tableì]ëóédólÇjáAçXêV
+            UPDATE D_BillingDetails SET
+                [StoreCD]           = DS.StoreCD
+               ,[BillingCloseDate]  = CONVERT(date, @SalesDate)-- AS BillingCloseDate
+               ,[CustomerCD]        = DS.CustomerCD
+               ,[SalesNO]           = DSM.SalesNO
+               ,[SalesRows]         = DSM.SalesRows 
+               ,[CollectPlanNO]     = DM.CollectPlanNO 
+               ,[CollectPlanRows]   = DM.CollectPlanRows 
+               ,[BillingHontaiGaku] = DSM.SalesHontaiGaku 
+               ,[BillingTax]        = DSM.SalesTax 
+               ,[BillingGaku]       = DSM.SalesGaku   --CollectPlanGaku 
+               ,[TaxRitsu]          = DSM.SalesTaxRitsu 
+               ,[UpdateOperator]    = @Operator  
+               ,[UpdateDateTime]    = @SYSDATETIME
+            FROM D_Sales AS DS
+            INNER JOIN D_SalesDetails AS DSM
+            ON DSM.SalesNO = DS.SalesNO
+            AND DSM.DeleteDateTime IS NULL
+            LEFT OUTER JOIN D_CollectPlanDetails AS DM
+            ON DM.SalesNO = DSM.SalesNO
+            AND DM.SalesRows = DSM.SalesRows
+            AND DM.DeleteDateTime IS Null
+            WHERE DSM.SalesNO = @SalesNO
+            AND DSM.SalesNO = D_BillingDetails.SalesNO
+            AND DSM.SalesRows = D_BillingDetails.SalesRows
+            AND DS.DeleteDateTime IS NULL
+            AND D_BillingDetails.DeleteDateTime IS NULL
+            ;
 
-        --çsí«â¡ï™
-        --D_BillingDetails      Insert  Tableì]ëóédólÇj
-        INSERT INTO [D_BillingDetails]
-           ([BillingNO]
-           ,[BillingType]   --2019.10.23 add
-           ,[BillingRows]
-           ,[StoreCD]
-           ,[BillingCloseDate]
-           ,[CustomerCD]
-           ,[SalesNO]
-           ,[SalesRows]
-           ,[CollectPlanNO]
-           ,[CollectPlanRows]
-           ,[BillingHontaiGaku]
-           ,[BillingTax]
-           ,[BillingGaku]
-           ,[TaxRitsu]
-           ,[InvoiceFLG]
-           ,[InsertOperator]
-           ,[InsertDateTime]
-           ,[UpdateOperator]
-           ,[UpdateDateTime]
-           ,[DeleteOperator]
-           ,[DeleteDateTime])
-     SELECT
-           @BillingNO
-           ,1   --BillingType   2019.10.23 add
-           ,ISNULL((SELECT MAX(D.BillingRows) FROM D_BillingDetails AS D WHERE D.BillingNO = @BillingNO),0) + ROW_NUMBER() OVER(ORDER BY DSM.SalesRows) AS BillingRows
-           ,DS.StoreCD
-           ,CONVERT(date, @SalesDate) AS BillingCloseDate
-           ,DS.CustomerCD
-           ,DSM.SalesNO
-           ,DSM.SalesRows 
-           ,DM.CollectPlanNO 
-           ,DM.CollectPlanRows 
-           ,DSM.SalesHontaiGaku 
-           ,DSM.SalesTax 
-           ,DSM.SalesGaku   --CollectPlanGaku 
-           ,DSM.SalesTaxRitsu 
-           ,0   --InvoiceFLG 
-           ,@Operator  
-           ,@SYSDATETIME
-           ,@Operator  
-           ,@SYSDATETIME
-           ,NULL                  
-           ,NULL
-           
-        FROM D_SalesDetails AS DSM
-        INNER JOIN @Table AS tbl
-        ON tbl.SalesRows = DSM.SalesRows
-       
-        LEFT OUTER JOIN D_CollectPlanDetails AS DM
-        ON DM.SalesNO = DSM.SalesNO
-        AND DM.SalesRows = DSM.SalesRows
-        AND DM.DeleteDateTime IS Null
-        
-        LEFT OUTER JOIN D_Sales AS DS
-        ON DS.SalesNO = DSM.SalesNO
-        AND DS.DeleteDateTime IS Null
-
-        WHERE DSM.SalesNO = @SalesNO    
-        AND DSM.DeleteDateTime IS Null             
-        AND tbl.UpdateFlg = 0
-        ;
-
-		
-		
-        --çsçÌèúï™
-         --êøãÅñæç◊
-         --Tableì]ëóédólÇjáAÅ@çÌèú
-         UPDATE D_BillingDetails SET
-               [UpdateOperator]     =  @Operator  
-              ,[UpdateDateTime]     =  @SYSDATETIME
-              ,[DeleteOperator]     =  @Operator  
-              ,[DeleteDateTime]     =  @SYSDATETIME
-         WHERE SalesNO = @SalesNO
-         AND NOT EXISTS(SELECT 1 FROM @Table AS tbl
-                    WHERE tbl.SalesRows = [D_BillingDetails].SalesRows)
-         ;
+            --çsí«â¡ï™
+            --D_BillingDetails      Insert  Tableì]ëóédólÇj
+            INSERT INTO [D_BillingDetails]
+               ([BillingNO]
+               ,[BillingType]   --2019.10.23 add
+               ,[BillingRows]
+               ,[StoreCD]
+               ,[BillingCloseDate]
+               ,[CustomerCD]
+               ,[SalesNO]
+               ,[SalesRows]
+               ,[CollectPlanNO]
+               ,[CollectPlanRows]
+               ,[BillingHontaiGaku]
+               ,[BillingTax]
+               ,[BillingGaku]
+               ,[TaxRitsu]
+               ,[InvoiceFLG]
+               ,[InsertOperator]
+               ,[InsertDateTime]
+               ,[UpdateOperator]
+               ,[UpdateDateTime]
+               ,[DeleteOperator]
+               ,[DeleteDateTime])
+         SELECT
+               @BillingNO
+               ,1   --BillingType   2019.10.23 add
+               ,ISNULL((SELECT MAX(D.BillingRows) FROM D_BillingDetails AS D WHERE D.BillingNO = @BillingNO),0) + ROW_NUMBER() OVER(ORDER BY DSM.SalesRows) AS BillingRows
+               ,DS.StoreCD
+               ,CONVERT(date, @SalesDate) AS BillingCloseDate
+               ,DS.CustomerCD
+               ,DSM.SalesNO
+               ,DSM.SalesRows 
+               ,DM.CollectPlanNO 
+               ,DM.CollectPlanRows 
+               ,DSM.SalesHontaiGaku 
+               ,DSM.SalesTax 
+               ,DSM.SalesGaku   --CollectPlanGaku 
+               ,DSM.SalesTaxRitsu 
+               ,0   --InvoiceFLG 
+               ,@Operator  
+               ,@SYSDATETIME
+               ,@Operator  
+               ,@SYSDATETIME
+               ,NULL                  
+               ,NULL
                
+            FROM D_SalesDetails AS DSM
+            INNER JOIN @Table AS tbl
+            ON tbl.SalesRows = DSM.SalesRows
+           
+            LEFT OUTER JOIN D_CollectPlanDetails AS DM
+            ON DM.SalesNO = DSM.SalesNO
+            AND DM.SalesRows = DSM.SalesRows
+            AND DM.DeleteDateTime IS Null
+            
+            LEFT OUTER JOIN D_Sales AS DS
+            ON DS.SalesNO = DSM.SalesNO
+            AND DS.DeleteDateTime IS Null
 
+            WHERE DSM.SalesNO = @SalesNO    
+            AND DSM.DeleteDateTime IS Null             
+            AND tbl.UpdateFlg = 0
+            ;
+
+            --çsçÌèúï™
+             --êøãÅñæç◊
+             --Tableì]ëóédólÇjáAÅ@çÌèú
+             UPDATE D_BillingDetails SET
+                   [UpdateOperator]     =  @Operator  
+                  ,[UpdateDateTime]     =  @SYSDATETIME
+                  ,[DeleteOperator]     =  @Operator  
+                  ,[DeleteDateTime]     =  @SYSDATETIME
+             WHERE SalesNO = @SalesNO
+             AND NOT EXISTS(SELECT 1 FROM @Table AS tbl
+                        WHERE tbl.SalesRows = [D_BillingDetails].SalesRows)
+             ;
+		END
 	END
 	    
     --êVãKModeéûÅA
