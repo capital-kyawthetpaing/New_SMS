@@ -32,7 +32,7 @@ BEGIN
         -- Insert statements for procedure here
         SELECT DH.BillingNO AS BillingNO
               ,DM.BillingRows
-           --   ,CEILING(ROW_NUMBER() OVER(PARTITION BY DH.BillingNO ORDER BY DM.BillingRows)/14.0) AS PageNumber
+              ,CEILING(ROW_NUMBER() OVER(PARTITION BY DH.BillingNO ORDER BY DM.BillingRows)/19.0) AS PageNumber
               ,DH.PrintDateTime
               ,(CASE WHEN DH.PrintDateTime IS NULL THEN '' ELSE '＊' END) PrintFlg --＊：請求書再発行
               ,(SELECT TOP 1 A.ZipCD1 + '-' + A.ZipCD2 AS ZipCD 
@@ -226,7 +226,7 @@ BEGIN
     ELSE    --未印刷
         SELECT DH.BillingNO AS BillingNO
               ,DM.BillingRows
-           --   ,CEILING(ROW_NUMBER() OVER(PARTITION BY DH.BillingNO ORDER BY DM.BillingRows)/14.0) AS PageNumber
+              ,CEILING(ROW_NUMBER() OVER(PARTITION BY DH.BillingNO ORDER BY DM.BillingRows)/19.0) AS PageNumber
               ,DH.PrintDateTime
               ,(CASE WHEN DH.PrintDateTime IS NULL THEN '' ELSE '＊' END) PrintFlg --＊：請求書再発行
               ,(SELECT TOP 1 A.ZipCD1 + '-' + A.ZipCD2 AS ZipCD 
