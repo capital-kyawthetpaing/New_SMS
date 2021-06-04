@@ -34,7 +34,9 @@ namespace PickingList
             StartProgram();
             PageloadBind();
             ModeVisible = false;
+
             BindData();
+            //SetRequiredField();
 
         }
 
@@ -60,7 +62,8 @@ namespace PickingList
                 ScPickingNo1.TxtCode.Require(true);
             if (chkReissued2.Checked == true)
                 ScPickingNo2.TxtCode.Require(true);
-            txtDateTo2.Require(true);
+            if(chkUnissued2.Checked==true)
+                txtDateTo2.Require(true);
         }
         public void BindData()
         {
@@ -598,11 +601,13 @@ namespace PickingList
                 if (string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
                 {
                     bbl.ShowMessage("E202", "出荷予定日", "出荷予定日");
+                    txtDateTo1.Focus();
                     return false;
                 }
                 if ( !string.IsNullOrWhiteSpace(txtDateTo1.Text) && !string.IsNullOrWhiteSpace(txtShipmentDate.Text))
                 {
                     bbl.ShowMessage("E188", "出荷予定日", "出荷予定日");
+                    txtShipmentDate.Focus();
                     return false;
                 }
             }
@@ -618,6 +623,7 @@ namespace PickingList
                     if (!ScPickingNo1.IsExists(2))
                     {
                         bbl.ShowMessage("E128");
+                        ScPickingNo1.SetFocus(1);
                         return false;
                     }
                 }
@@ -627,6 +633,9 @@ namespace PickingList
             {
                 if (!txtDateFrom2.DateCheck())
                     return false;
+                if (!RequireCheck(new Control[] { txtDateTo2 }))
+                    return false;
+
                 if (!txtDateTo2.DateCheck())
                     return false;
                 int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
@@ -645,6 +654,7 @@ namespace PickingList
                 if (!ScPickingNo2.IsExists(2))
                 {
                     bbl.ShowMessage("E128");
+                    ScPickingNo2.SetFocus(1);
                     return false;
                 }
             }
@@ -704,15 +714,25 @@ namespace PickingList
 
             if (e.KeyCode == Keys.Enter)
             {
-                if (chkUnissued2.Checked == true && !string.IsNullOrWhiteSpace(txtDateTo2.Text))
+                if (chkUnissued2.Checked == true)
                 {
-                    int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
-                    if (result > 0 || (!string.IsNullOrWhiteSpace(txtDateFrom2.Text) && string.IsNullOrWhiteSpace(txtDateTo2.Text)))
+                    if (string.IsNullOrWhiteSpace(txtDateTo2.Text))
                     {
-                        bbl.ShowMessage("E104");
+                        bbl.ShowMessage("E102");
                         txtDateTo2.Focus();
                     }
+
+                    if(!string.IsNullOrWhiteSpace(txtDateTo2.Text))
+                    {
+                        int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
+                        if (result > 0 || (!string.IsNullOrWhiteSpace(txtDateFrom2.Text) && string.IsNullOrWhiteSpace(txtDateTo2.Text)))
+                        {
+                            bbl.ShowMessage("E104");
+                            txtDateTo2.Focus();
+                        }
+                    }
                 }
+
             }
         }
 
@@ -746,6 +766,11 @@ namespace PickingList
                         ScPickingNo1.SetFocus(1);
                     }
                 }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    ScPickingNo1.SetFocus(1);
+                }
             }
         }
 
@@ -760,6 +785,11 @@ namespace PickingList
                         bbl.ShowMessage("E128");
                         ScPickingNo2.SetFocus(1);
                     }
+                }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    ScPickingNo1.SetFocus(1);
                 }
             }
         }
@@ -791,6 +821,7 @@ namespace PickingList
                 txtDateTo1.Enabled = false;
                 txtDateFrom1.Text = string.Empty;
                 txtDateTo1.Text = string.Empty;
+                txtShipmentDate.Text = string.Empty;
             }
         }
 
