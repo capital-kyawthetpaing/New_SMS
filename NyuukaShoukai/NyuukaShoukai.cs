@@ -29,6 +29,7 @@ namespace NyuukaShoukai
 
 
         DataTable dtSearch = new DataTable();
+        DataTable dtExport = new DataTable();
 
         public FrmNyuukaShoukai()
         {
@@ -49,7 +50,8 @@ namespace NyuukaShoukai
             //Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
             F5Visible = false;
             F7Visible = false;
-            F8Visible = false;          
+            F8Visible = false;
+            F9Visible = false;
             Btn_F10.Text = "Excel出力(F10)";
             F12Visible = false;
 
@@ -57,7 +59,8 @@ namespace NyuukaShoukai
             cboWarehouse.Focus();
             SetRequireField();
             ModeVisible = false;
-            
+            AddCol();
+
         }
         private void BindCombo()
         {
@@ -186,12 +189,14 @@ namespace NyuukaShoukai
                 if(dtSearch.Rows.Count > 0)
                 {
                     dgvNyuukaShoukai.DataSource = dtSearch;
+                    
                 }
                 else
                 {
                     nkskbl.ShowMessage("E128");
                     cboWarehouse.Focus();
                     dgvNyuukaShoukai.DataSource = string.Empty;
+                    dtSearch.Clear();
                 }
                
             }
@@ -243,12 +248,12 @@ namespace NyuukaShoukai
 
 
                 //dtSearch = nkskbl.D_ArrivalPlan_Select(dape, dae, dpe);
-               
-                //dtExport = ChangeDataColumnName(dtExport);
+
+             
                 if (dgvNyuukaShoukai.DataSource != null)
                 {
-                    DataTable dtExport = dtSearch;
-                    dtExport = ChangeDataColumnName(dtExport);
+                    //dtExport = dtSearch;
+                    //dtExport = ChangeDataColumnName(dtExport);
                     string folderPath = "C:\\Excel\\";
                     if (!Directory.Exists(folderPath))
                     {
@@ -262,6 +267,7 @@ namespace NyuukaShoukai
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
+                        
                         if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                         {
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -273,7 +279,7 @@ namespace NyuukaShoukai
 
                             using (XLWorkbook wb = new XLWorkbook())
                             {
-                                wb.Worksheets.Add(dtExport, "test");
+                                wb.Worksheets.Add(dtSearch, "test");
 
                                 wb.SaveAs(savedialog.FileName);
                                 nkskbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
@@ -288,6 +294,32 @@ namespace NyuukaShoukai
             }
         }
 
+        private void AddCol()
+        {
+            if (dtSearch.Columns.Count == 0)
+            {
+                dtSearch.Columns.Add("入荷日");
+                dtSearch.Columns.Add("入荷予定日");
+                dtSearch.Columns.Add("仕入日");
+                dtSearch.Columns.Add("入庫区分");
+                dtSearch.Columns.Add("SKUCD");
+                dtSearch.Columns.Add("JANCD");
+                dtSearch.Columns.Add("商品名");
+                dtSearch.Columns.Add("カラー");
+                dtSearch.Columns.Add("サイズ");
+                dtSearch.Columns.Add("予定数");
+                dtSearch.Columns.Add("入荷数");
+                dtSearch.Columns.Add("仕入先");
+                dtSearch.Columns.Add("移動元倉庫");
+                dtSearch.Columns.Add("直送");
+                dtSearch.Columns.Add("受注番号");
+                dtSearch.Columns.Add("発注番号");
+                dtSearch.Columns.Add("入荷番号");
+                dtSearch.Columns.Add("仕入番号");
+                dtSearch.Columns.Add("納品書番号");
+            }
+        }
+               
         protected DataTable ChangeDataColumnName(DataTable dt)
         {
             dt.Columns["ArrivalDate"].ColumnName = "入荷日";
