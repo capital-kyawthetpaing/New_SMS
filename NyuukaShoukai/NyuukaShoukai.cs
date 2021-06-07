@@ -29,6 +29,7 @@ namespace NyuukaShoukai
 
 
         DataTable dtSearch = new DataTable();
+        DataTable dtExport = new DataTable();
 
         public FrmNyuukaShoukai()
         {
@@ -49,7 +50,8 @@ namespace NyuukaShoukai
             //Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
             F5Visible = false;
             F7Visible = false;
-            F8Visible = false;          
+            F8Visible = false;
+            F9Visible = false;
             Btn_F10.Text = "Excel出力(F10)";
             F12Visible = false;
 
@@ -57,7 +59,8 @@ namespace NyuukaShoukai
             cboWarehouse.Focus();
             SetRequireField();
             ModeVisible = false;
-            
+            AddCol();
+
         }
         private void BindCombo()
         {
@@ -102,9 +105,9 @@ namespace NyuukaShoukai
                     break;
                 case 10:
                     F10();
-                    Clear();
-                    dgvNyuukaShoukai.DataSource = string.Empty;
-                    cboWarehouse.Focus();
+                    //Clear();
+                    //dgvNyuukaShoukai.DataSource = string.Empty;
+                    //cboWarehouse.Focus();
                     break;
                 case 11:
                     F11();
@@ -186,12 +189,14 @@ namespace NyuukaShoukai
                 if(dtSearch.Rows.Count > 0)
                 {
                     dgvNyuukaShoukai.DataSource = dtSearch;
+                    
                 }
                 else
                 {
                     nkskbl.ShowMessage("E128");
                     cboWarehouse.Focus();
                     dgvNyuukaShoukai.DataSource = string.Empty;
+                    dtSearch.Clear();
                 }
                
             }
@@ -207,55 +212,62 @@ namespace NyuukaShoukai
         {
             if(ErrorCheck())
             {
-                dape = new D_ArrivalPlan_Entity
+                //dape = new D_ArrivalPlan_Entity
+                //{
+                //    SoukoCD = cboWarehouse.SelectedValue.ToString(),
+                //    CalcuArrivalPlanDate1 = txtStockDate1.Text,
+                //    CalcuArrivalPlanDate2 = txtStockDate2.Text,
+                //    FrmSoukoCD = cboSourceWH.SelectedValue.ToString(),
+                //    ITEMCD = ScItem.TxtCode.Text,
+                //    JanCD = ScJanCD.TxtCode.Text,
+                //    SKUCD = ScSKUCD.TxtCode.Text,
+                //    MakerItem = txtProductName.Text,
+                //    statusFlg = CheckValue1(),
+                //    DisplayFlg = CheckValue2(),
+                //};
+
+                //if (cboSourceWH.SelectedValue.ToString() == "-1")
+                //{
+                //    dape.FrmSoukoCD = string.Empty;
+                //}
+
+                //dae = new D_Arrival_Entity
+                //{
+                //    ArrivalDate1 = txtArrivalDay1.Text,
+                //    ArrivalDate2 = txtArrivalDay2.Text,
+                //    PurchaseSu = "0",
+                //    VendorDeliveryNo = txtDeliveryNote.Text,
+                //};
+
+                //dpe = new D_Purchase_Entity
+                //{
+                //    PurchaseDateFrom = txtPurchaseDate1.Text,
+                //    PurchaseDateTo = txtPurchaseDate2.Text,
+                //    VendorCD = ScSupplier.TxtCode.Text,
+                //};
+
+
+                //dtSearch = nkskbl.D_ArrivalPlan_Select(dape, dae, dpe);
+
+             
+                if (dgvNyuukaShoukai.DataSource != null)
                 {
-                    SoukoCD = cboWarehouse.SelectedValue.ToString(),
-                    CalcuArrivalPlanDate1 = txtStockDate1.Text,
-                    CalcuArrivalPlanDate2 = txtStockDate2.Text,
-                    FrmSoukoCD = cboSourceWH.SelectedValue.ToString(),
-                    ITEMCD = ScItem.TxtCode.Text,
-                    JanCD = ScJanCD.TxtCode.Text,
-                    SKUCD = ScSKUCD.TxtCode.Text,
-                    MakerItem = txtProductName.Text,
-                    statusFlg = CheckValue1(),
-                    DisplayFlg = CheckValue2(),
-                };
-
-                if (cboSourceWH.SelectedValue.ToString() == "-1")
-                {
-                    dape.FrmSoukoCD = string.Empty;
-                }
-
-                dae = new D_Arrival_Entity
-                {
-                    ArrivalDate1 = txtArrivalDay1.Text,
-                    ArrivalDate2 = txtArrivalDay2.Text,
-                    PurchaseSu = "0",
-                    VendorDeliveryNo = txtDeliveryNote.Text,
-                };
-
-                dpe = new D_Purchase_Entity
-                {
-                    PurchaseDateFrom = txtPurchaseDate1.Text,
-                    PurchaseDateTo = txtPurchaseDate2.Text,
-                    VendorCD = ScSupplier.TxtCode.Text,
-                };
-
-
-                dtSearch = nkskbl.D_ArrivalPlan_Select(dape, dae, dpe);
-
-                if (dtSearch.Rows.Count > 0)
-                {
-                    DataTable dtExport = dtSearch;
-                    dtExport = ChangeDataColumnName(dtExport);
+                    //dtExport = dtSearch;
+                    //dtExport = ChangeDataColumnName(dtExport);
+                    string folderPath = "C:\\Excel\\";
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
                     savedialog.FileName = "ExportFile";
-                    savedialog.InitialDirectory = @"C:\";
+                    savedialog.InitialDirectory = folderPath;
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
+                        
                         if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                         {
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -267,17 +279,53 @@ namespace NyuukaShoukai
 
                             using (XLWorkbook wb = new XLWorkbook())
                             {
-                                wb.Worksheets.Add(dtExport, "test");
+                                wb.Worksheets.Add(dtSearch, "test");
 
                                 wb.SaveAs(savedialog.FileName);
                                 nkskbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
+                                Clear();
+                                dgvNyuukaShoukai.DataSource = string.Empty;
+                                cboWarehouse.Focus();
                             }
                         }
                     }
+                    
+                }
+                else
+                {
+                    nkskbl.ShowMessage("E128");
+                    dgvNyuukaShoukai.DataSource = string.Empty;
+                    cboWarehouse.Focus();
                 }
             }
         }
 
+        private void AddCol()
+        {
+            if (dtSearch.Columns.Count == 0)
+            {
+                dtSearch.Columns.Add("入荷日");
+                dtSearch.Columns.Add("入荷予定日");
+                dtSearch.Columns.Add("仕入日");
+                dtSearch.Columns.Add("入庫区分");
+                dtSearch.Columns.Add("SKUCD");
+                dtSearch.Columns.Add("JANCD");
+                dtSearch.Columns.Add("商品名");
+                dtSearch.Columns.Add("カラー");
+                dtSearch.Columns.Add("サイズ");
+                dtSearch.Columns.Add("予定数");
+                dtSearch.Columns.Add("入荷数");
+                dtSearch.Columns.Add("仕入先");
+                dtSearch.Columns.Add("移動元倉庫");
+                dtSearch.Columns.Add("直送");
+                dtSearch.Columns.Add("受注番号");
+                dtSearch.Columns.Add("発注番号");
+                dtSearch.Columns.Add("入荷番号");
+                dtSearch.Columns.Add("仕入番号");
+                dtSearch.Columns.Add("納品書番号");
+            }
+        }
+               
         protected DataTable ChangeDataColumnName(DataTable dt)
         {
             dt.Columns["ArrivalDate"].ColumnName = "入荷日";
