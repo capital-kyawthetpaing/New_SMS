@@ -306,7 +306,6 @@
             this.ScPickingNo1.Value2 = null;
             this.ScPickingNo1.Value3 = null;
             this.ScPickingNo1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScPickingNo1_CodeKeyDownEvent);
-            this.ScPickingNo1.Enter += new System.EventHandler(this.ScPickingNo1_Enter);
             // 
             // ckM_Label6
             // 
@@ -355,7 +354,6 @@
             this.ScPickingNo2.Value2 = null;
             this.ScPickingNo2.Value3 = null;
             this.ScPickingNo2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScPickingNo2_CodeKeyDownEvent);
-            this.ScPickingNo2.Enter += new System.EventHandler(this.ScPickingNo2_Enter);
             // 
             // ckM_Label7
             // 

@@ -47,28 +47,11 @@ namespace BL
             return dt;
         }
 
-        ///// <summary>
-        ///// 仕入入力取得処理(入荷から)
-        ///// ShiireNyuuryokuFromNyuukaよりデータ抽出時に使用
-        ///// </summary>
-        //public DataTable D_Arrival_SelectAllForShiire(D_Arrival_Entity de)
-        //{
-        //    D_Arrival_DL dadl = new D_Arrival_DL();
-        //    DataTable dt = dadl.D_Arrival_SelectAllForShiire(de);
-
-        //    return dt;
-        //}
-        ///// <summary>
-        ///// 仕入入力取得処理(入荷から)
-        ///// ShiireNyuuryokuFromNyuukaよりデータ抽出時に使用
-        ///// </summary>
-        //public DataTable D_Delivery_SelectAll(D_Arrival_Entity de)
-        //{
-        //    D_Arrival_DL dadl = new D_Arrival_DL();
-        //    DataTable dt = dadl.D_Delivery_SelectAll(de);
-
-        //    return dt;
-        //}
+        public DataTable M_Souko_BindForPicking(M_Souko_Entity me)
+        {
+            M_Souko_DL dl = new M_Souko_DL();
+            return dl.M_Souko_BindForPicking(me);
+        }
 
         /// <summary>
         /// 締処理済チェック　

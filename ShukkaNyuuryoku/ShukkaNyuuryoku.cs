@@ -121,6 +121,10 @@ namespace ShukkaNyuuryoku
                 ScShippingNO.Value2 = stores;
                 ScShippingNO.Value3 = ymd;
 
+                ScInstructionNO.Value1 = InOperatorCD;
+                ScInstructionNO.Value2 = stores;
+                ScInstructionNO.Value3 = ymd;
+
                 ChangeOperationMode(EOperationMode.INSERT);                
                 
             }
@@ -573,7 +577,7 @@ namespace ShukkaNyuuryoku
                                 
                 GvDetail.Rows[i].Cells["colJANCD"].Value = row["JANCD"].ToString();
                 GvDetail.Rows[i].Cells["colSKUName"].Value = row["SKUName"].ToString();
-                GvDetail.Rows[i].Cells["colColorSizeName"].Value = row["ColorName"].ToString() + row["SizeName"].ToString() + row["CommentOutStore"].ToString(); 
+                GvDetail.Rows[i].Cells["colColorSizeName"].Value = row["ColorName"].ToString() + " " + row["SizeName"].ToString() + " " + row["CommentOutStore"].ToString(); 
                 GvDetail.Rows[i].Cells["colInstructionSu"].Value = bbl.Z_Set(row["InstructionSu"]);
                 GvDetail.Rows[i].Cells["colShippingSu"].Value = bbl.Z_Set(row["ShippingSu"]);
                 //隠し項目
@@ -757,7 +761,7 @@ namespace ShukkaNyuuryoku
                     
                     GvDetail.Rows[i].Cells["colJANCD"].Value = row["JANCD"].ToString();
                     GvDetail.Rows[i].Cells["colSKUName"].Value = row["SKUName"].ToString();
-                    GvDetail.Rows[i].Cells["colColorSizeName"].Value = row["ColorName"].ToString() + row["SizeName"].ToString() + row["CommentOutStore"].ToString();
+                    GvDetail.Rows[i].Cells["colColorSizeName"].Value = row["ColorName"].ToString() + " " + row["SizeName"].ToString() + " " + row["CommentOutStore"].ToString();
                     GvDetail.Rows[i].Cells["colInstructionSu"].Value = bbl.Z_Set(row["InstructionSu"]);
                     GvDetail.Rows[i].Cells["colShippingSu"].Value = bbl.Z_Set(row["ShippingSu"]);
                     //隠し項目
@@ -1121,7 +1125,7 @@ namespace ShukkaNyuuryoku
                         mJANCD = selectRow["JANCD"].ToString();
                         lblSKUCD.Text = selectRow["SKUCD"].ToString();
                         lblSkuName.Text = selectRow["SKUName"].ToString();
-                        lblColor.Text = selectRow["ColorName"].ToString() + selectRow["SizeName"].ToString() + selectRow["CommentOutStore"].ToString();
+                        lblColor.Text = selectRow["ColorName"].ToString() + " " + selectRow["SizeName"].ToString() + " " + selectRow["CommentOutStore"].ToString();
                         lblTani.Text = selectRow["TaniName"].ToString();
                         
                         //明細存在チェック
@@ -1920,7 +1924,20 @@ namespace ShukkaNyuuryoku
                         }
                         else if (index == (int)EIndex.ShippingSu)
                         {
-                            BtnSubF12.Focus();
+                            //BtnSubF12.Focus();
+                            detailControls[(int)EIndex.JANCD].Text = "";
+                            detailLabels[(int)EIndex.SKUCD].Text = "";
+                            detailLabels[(int)EIndex.SKUName].Text = "";
+                            detailLabels[(int)EIndex.Color].Text = "";
+                            detailLabels[(int)EIndex.Tani].Text = "";
+                            detailControls[(int)EIndex.ShippingSu].Text = "";
+
+                            mAdminNO = "";
+                            mJANCD = "";
+                            mFlgCancel = false;
+
+                            detailControls[(int)EIndex.JANCD].Focus();
+
                         }
                         else if (detailControls.Length - 1 > index)
                         {
@@ -2084,7 +2101,7 @@ namespace ShukkaNyuuryoku
                 detailControls[(int)EIndex.JANCD].Text = GvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();
                 detailLabels[(int)EIndex.SKUCD].Text = GvDetail.CurrentRow.Cells["colSKUCD"].Value.ToString();
                 detailLabels[(int)EIndex.SKUName].Text = GvDetail.CurrentRow.Cells["colSKUName"].Value.ToString();
-                detailLabels[(int)EIndex.Color].Text = GvDetail.CurrentRow.Cells["colColorName"].Value.ToString() + GvDetail.CurrentRow.Cells["colSizeName"].Value.ToString() + GvDetail.CurrentRow.Cells["colCommentOutStore"].Value.ToString();
+                detailLabels[(int)EIndex.Color].Text = GvDetail.CurrentRow.Cells["colColorName"].Value.ToString() + " " + GvDetail.CurrentRow.Cells["colSizeName"].Value.ToString() + " " + GvDetail.CurrentRow.Cells["colCommentOutStore"].Value.ToString();
                 detailLabels[(int)EIndex.Tani].Text = GvDetail.CurrentRow.Cells["colTani"].Value.ToString();
                 if (OperationMode == EOperationMode.DELETE)
                     detailControls[(int)EIndex.ShippingSu].Text = GvDetail.CurrentRow.Cells["colShippingSu"].Value.ToString();

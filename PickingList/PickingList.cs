@@ -38,6 +38,12 @@ namespace PickingList
             BindData();
             //SetRequiredField();
 
+            //検索用のパラメータ設定
+            string stores = GetAllAvailableStores();
+            ScPickingNo1.Value1 = InOperatorCD;
+            ScPickingNo1.Value2 = stores;
+            ScPickingNo2.Value1 = InOperatorCD;
+            ScPickingNo2.Value2 = stores;
         }
 
         public void PageloadBind()
@@ -680,15 +686,15 @@ namespace PickingList
         }
 
 
-        private void ScPickingNo1_Enter(object sender, EventArgs e)
-        {
-            ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
-        }
+        //private void ScPickingNo1_Enter(object sender, EventArgs e)
+        //{
+        //    ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
+        //}
 
-        private void ScPickingNo2_Enter(object sender, EventArgs e)
-        {
-            ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
-        }
+        //private void ScPickingNo2_Enter(object sender, EventArgs e)
+        //{
+        //    ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
+        //}
 
 
         private void txtDateTo1_KeyDown(object sender, KeyEventArgs e)
