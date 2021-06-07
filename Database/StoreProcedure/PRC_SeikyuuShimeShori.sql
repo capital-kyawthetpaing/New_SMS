@@ -311,7 +311,7 @@ BEGIN
                    ,NULL    --LastCollectDate
                    ,NULL    --CollectStaffCD>
                    ,NULL    --CollectGaku
-                   ,ISNULL((SELECT top 1 A.LastBillingGaku-A.LastCollectGaku-A.BillingGaku
+                   ,ISNULL((SELECT top 1 A.LastBillingGaku-A.LastCollectGaku+A.BillingGaku
                             FROM D_Billing AS A
                             WHERE A.StoreCD = @StoreCD
                             AND A.BillingCustomerCD = @W_COL1

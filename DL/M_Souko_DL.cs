@@ -271,6 +271,23 @@ namespace DL
             };
             return SelectData(dic, "M_Souko_BindForTanaoroshi");
         }
+        /// <summary>
+        /// Select Souko's info
+        /// 指定したStoreCDの倉庫情報をSelect
+        /// </summary>
+        /// <param name="mse">Souko info</param>
+        /// <returns></returns>
+        public DataTable M_Souko_BindForPicking(M_Souko_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.Operator } },
+                { "@SoukoType", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.SoukoType } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } }
+            };
+            return SelectData(dic, "M_Souko_BindForPicking");
+        }
+        
         public DataTable M_Souko_BindForZaikoshoukai(M_Souko_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>

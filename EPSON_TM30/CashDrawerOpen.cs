@@ -52,33 +52,39 @@ namespace EPSON_TM30
             {
                 var msg = ex.Message;
             }
-            m_Drawer.OpenDrawer();
-
-            // ドロワーが開いている間、待ちます。
-
-            
-            while (m_Drawer.DrawerOpened == false)
+            try
             {
-                System.Threading.Thread.Sleep(100);
+                m_Drawer.OpenDrawer();
             }
-            if (IsIdle)
-                return;
-            
-            if (IsWaited)
-            m_Drawer.WaitForDrawerClose(10000, 2000, 100, 1000);
+            catch { }
+            // ドロワーが開いている間、待ちます。
 
             try
             {
-                CloseCashDrawer();
-            }
-            catch
-            {
+                while (m_Drawer.DrawerOpened == false)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+                if (IsIdle)
+                    return;
+
+                if (IsWaited)
+                    m_Drawer.WaitForDrawerClose(10000, 2000, 100, 1000);
+
                 try
                 {
-                    m_Drawer = null;
+                    CloseCashDrawer();
                 }
-                catch { }
+                catch
+                {
+                    try
+                    {
+                        m_Drawer = null;
+                    }
+                    catch { }
+                }
             }
+            catch { }
         }
         public void CloseCashDrawer()
         {

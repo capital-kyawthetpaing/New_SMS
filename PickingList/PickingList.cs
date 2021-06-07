@@ -34,8 +34,16 @@ namespace PickingList
             StartProgram();
             PageloadBind();
             ModeVisible = false;
-            BindData();
 
+            BindData();
+            //SetRequiredField();
+
+            //検索用のパラメータ設定
+            string stores = GetAllAvailableStores();
+            ScPickingNo1.Value1 = InOperatorCD;
+            ScPickingNo1.Value2 = stores;
+            ScPickingNo2.Value1 = InOperatorCD;
+            ScPickingNo2.Value2 = stores;
         }
 
         public void PageloadBind()
@@ -60,7 +68,8 @@ namespace PickingList
                 ScPickingNo1.TxtCode.Require(true);
             if (chkReissued2.Checked == true)
                 ScPickingNo2.TxtCode.Require(true);
-            txtDateTo2.Require(true);
+            if(chkUnissued2.Checked==true)
+                txtDateTo2.Require(true);
         }
         public void BindData()
         {
@@ -578,8 +587,37 @@ namespace PickingList
         {
             if (!RequireCheck(new Control[] { cboSouko }))
                 return false;
-            if (!txtDateFrom1.DateCheck())
-                return false;
+
+            if (chkUnissued1.Checked == true)
+            {
+                if (!txtDateFrom1.DateCheck())
+                    return false;
+                if (!txtDateTo1.DateCheck())
+                    return false;
+                int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
+                if (result > 0 || (!string.IsNullOrWhiteSpace(txtDateFrom1.Text) && string.IsNullOrWhiteSpace(txtDateTo1.Text)))
+                {
+                    bbl.ShowMessage("E104");
+                    txtDateTo1.Focus();
+                    return false;
+                }
+
+                if (!txtShipmentDate.DateCheck())
+                    return false;
+                if (string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
+                {
+                    bbl.ShowMessage("E202", "出荷予定日", "出荷予定日");
+                    txtDateTo1.Focus();
+                    return false;
+                }
+                if ( !string.IsNullOrWhiteSpace(txtDateTo1.Text) && !string.IsNullOrWhiteSpace(txtShipmentDate.Text))
+                {
+                    bbl.ShowMessage("E188", "出荷予定日", "出荷予定日");
+                    txtShipmentDate.Focus();
+                    return false;
+                }
+            }
+
 
             if (chkReissued1.Checked == true)
             {
@@ -591,64 +629,44 @@ namespace PickingList
                     if (!ScPickingNo1.IsExists(2))
                     {
                         bbl.ShowMessage("E128");
+                        ScPickingNo1.SetFocus(1);
                         return false;
                     }
                 }
             }
-           
-            if (chkUnissued1.Checked == true)
-            {
-                if (!txtDateTo1.DateCheck())
-                    return false;
-                int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
-                if (result > 0)
-                {
-                    bbl.ShowMessage("E104");
-                    txtDateTo1.Focus();
-                    return false;
-                }
-            }
-    
-
-            if (!txtShipmentDate.DateCheck())
-                return false;
-
-            if(string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
-            {
-                bbl.ShowMessage("E202", "出荷予定日", "出荷予定日");
-                return false;
-            }
-            if ((!string.IsNullOrWhiteSpace(txtDateFrom1.Text) || !string.IsNullOrWhiteSpace(txtDateTo1.Text)) && !string.IsNullOrWhiteSpace(txtShipmentDate.Text))
-            {
-                bbl.ShowMessage("E188", "出荷予定日", "出荷予定日");
-                return false;
-            }
-
-            if(chkReissued2.Checked==true)
-            {
-                if (!RequireCheck(new Control[] { ScPickingNo2.TxtCode }))
-                    return false;
-                if (!ScPickingNo2.IsExists(2))
-                {
-                    bbl.ShowMessage("E128");
-                    return false;
-                }
-            }
-            if (!txtDateFrom2.DateCheck())
-                return false;
 
             if (chkUnissued2.Checked == true)
             {
+                if (!txtDateFrom2.DateCheck())
+                    return false;
+                if (!RequireCheck(new Control[] { txtDateTo2 }))
+                    return false;
+
                 if (!txtDateTo2.DateCheck())
                     return false;
                 int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
-                if (result > 0)
+                if (result > 0 || (!string.IsNullOrWhiteSpace(txtDateFrom2.Text) && string.IsNullOrWhiteSpace(txtDateTo2.Text)))
                 {
                     bbl.ShowMessage("E104");
                     txtDateTo2.Focus();
                     return false;
                 }
             }
+
+            if (chkReissued2.Checked==true)
+            {
+                if (!RequireCheck(new Control[] { ScPickingNo2.TxtCode }))
+                    return false;
+                if (!ScPickingNo2.IsExists(2))
+                {
+                    bbl.ShowMessage("E128");
+                    ScPickingNo2.SetFocus(1);
+                    return false;
+                }
+            }
+           
+
+            
 
             //if (chkReissued2.Checked == true)
             //    if (!ScPickingNo2.IsExists(2))
@@ -668,15 +686,15 @@ namespace PickingList
         }
 
 
-        private void ScPickingNo1_Enter(object sender, EventArgs e)
-        {
-            ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
-        }
+        //private void ScPickingNo1_Enter(object sender, EventArgs e)
+        //{
+        //    ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
+        //}
 
-        private void ScPickingNo2_Enter(object sender, EventArgs e)
-        {
-            ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
-        }
+        //private void ScPickingNo2_Enter(object sender, EventArgs e)
+        //{
+        //    ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
+        //}
 
 
         private void txtDateTo1_KeyDown(object sender, KeyEventArgs e)
@@ -687,12 +705,13 @@ namespace PickingList
                 if (chkUnissued1.Checked == true && !string.IsNullOrWhiteSpace(txtDateTo1.Text))
                 {
                     int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
-                    if (result > 0)
+                    if (result > 0 || (!string.IsNullOrWhiteSpace(txtDateFrom1.Text) && string.IsNullOrWhiteSpace(txtDateTo1.Text)))
                     {
                         bbl.ShowMessage("E104");
                         txtDateTo1.Focus();
                     }
                 }
+
             }
         }
 
@@ -701,15 +720,25 @@ namespace PickingList
 
             if (e.KeyCode == Keys.Enter)
             {
-                if (chkUnissued2.Checked == true && !string.IsNullOrWhiteSpace(txtDateTo2.Text))
+                if (chkUnissued2.Checked == true)
                 {
-                    int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
-                    if (result > 0)
+                    if (string.IsNullOrWhiteSpace(txtDateTo2.Text))
                     {
-                        bbl.ShowMessage("E104");
+                        bbl.ShowMessage("E102");
                         txtDateTo2.Focus();
                     }
+
+                    if(!string.IsNullOrWhiteSpace(txtDateTo2.Text))
+                    {
+                        int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
+                        if (result > 0 || (!string.IsNullOrWhiteSpace(txtDateFrom2.Text) && string.IsNullOrWhiteSpace(txtDateTo2.Text)))
+                        {
+                            bbl.ShowMessage("E104");
+                            txtDateTo2.Focus();
+                        }
+                    }
                 }
+
             }
         }
 
@@ -743,6 +772,11 @@ namespace PickingList
                         ScPickingNo1.SetFocus(1);
                     }
                 }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    ScPickingNo1.SetFocus(1);
+                }
             }
         }
 
@@ -758,6 +792,11 @@ namespace PickingList
                         ScPickingNo2.SetFocus(1);
                     }
                 }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    ScPickingNo1.SetFocus(1);
+                }
             }
         }
 
@@ -772,6 +811,10 @@ namespace PickingList
                 txtDateFrom1.Enabled = true;
                 txtDateTo1.Enabled = true;
                 txtDateTo1.Text = todayDate;
+                txtShipmentDate.Enabled = true;
+
+                DisablePanel(panel1);
+                DisablePanel(panel2);
 
             }
             else
@@ -784,10 +827,9 @@ namespace PickingList
                 txtDateTo1.Enabled = false;
                 txtDateFrom1.Text = string.Empty;
                 txtDateTo1.Text = string.Empty;
+                txtShipmentDate.Text = string.Empty;
             }
         }
-
-
 
         private void chkReissued1_CheckedChanged(object sender, EventArgs e)
         {
@@ -797,14 +839,17 @@ namespace PickingList
                 chkUnissued2.Checked = false;
                 chkReissued2.Checked = false;
 
+                txtDateFrom1.Enabled = false;
+                txtDateTo1.Enabled = false;
+                txtShipmentDate.Enabled = false;
+                txtDateFrom2.Enabled = false;
+                txtDateTo2.Enabled = false;
+
                 EnablePanel(panel1);
+                DisablePanel(panel2);
             }
             else
             {
-                //chkUnissued1.Checked = true;
-                //chkUnissued2.Checked = true;
-                //chkReissued2.Checked = true;
-
                 ScPickingNo1.TxtCode.Text = string.Empty;
                 DisablePanel(panel1);
             }
@@ -818,17 +863,19 @@ namespace PickingList
                 chkReissued1.Checked = false;
                 chkReissued2.Checked = false;
 
+                txtDateFrom1.Enabled = false;
+                txtDateTo1.Enabled = false;
+                txtShipmentDate.Enabled = false;
+
                 txtDateFrom2.Enabled = true;
                 txtDateTo2.Enabled = true;
                 txtDateTo2.Text = todayDate;
 
+                DisablePanel(panel1);
+                DisablePanel(panel2);
             }
             else
             {
-                //chkUnissued1.Checked = true;
-                //chkReissued1.Checked = true;
-                //chkReissued2.Checked = true;
-
                 txtDateFrom2.Enabled = false;
                 txtDateTo2.Enabled = false;
                 txtDateFrom2.Text = string.Empty;
@@ -842,16 +889,19 @@ namespace PickingList
             {
                 chkUnissued1.Checked = false;
                 chkReissued1.Checked = false;
-                chkUnissued1.Checked = false;
+                chkUnissued2.Checked = false;
 
+                txtDateFrom1.Enabled = false;
+                txtDateTo1.Enabled = false;
+                txtShipmentDate.Enabled = false;
+                txtDateFrom2.Enabled = false;
+                txtDateTo2.Enabled = false;
+
+                DisablePanel(panel1);
                 EnablePanel(panel2);
             }
             else
             {
-                //chkUnissued1.Checked = true;
-                //chkReissued1.Checked = true;
-                //chkUnissued1.Checked = true;
-
                 ScPickingNo2.TxtCode.Text = string.Empty;
                 DisablePanel(panel2);
             }

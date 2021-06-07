@@ -192,7 +192,72 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable D_Juchuu_SelectForWeb(D_Juchuu_Entity dje, D_JuchuuStatus_Entity djse)
+        {
+            string sp = "D_Juchuu_SelectForWeb";
 
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.StoreCD } },
+                { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.KanaName } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CustomerCD } },
+                { "@Tel1", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Tel11 } },
+                { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuNOFrom } },
+                { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuNOTo } },
+
+                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuDateFrom } },
+                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuDateTo } },
+                { "@SalesDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SalesDateFrom } },
+                { "@SalesDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SalesDateTo } },
+                { "@BillingCloseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.BillingCloseDateFrom } },
+                { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.BillingCloseDateTo } },
+                { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CollectClearDateFrom } },
+                { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CollectClearDateTo } },
+
+                { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMihikiate.ToString() } },
+                { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMiuriage.ToString() } },
+                { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMiseikyu.ToString() } },
+                { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMinyukin.ToString() } },
+                { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkAll.ToString() } },
+
+                { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkTujo.ToString() } },
+                { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkHenpin.ToString() } },
+                { "@ChkGaisho", new ValuePair { value1 = SqlDbType.Int, value2 = dje.ValGaisho.ToString() } },
+                { "@ChkTento", new ValuePair { value1 = SqlDbType.Int, value2 = dje.ValTento.ToString() } },
+                { "@ChkWeb", new ValuePair { value1 = SqlDbType.Int, value2 = dje.ValWeb.ToString() } },
+
+                { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMihachu.ToString() } },
+                { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkNokiKaito.ToString() } },
+                { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMinyuka.ToString() } },
+                { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMisiire.ToString() } },
+                { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkHachuAll.ToString() } },
+
+                { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CustomerName } },
+                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.VendorCD } },
+                { "@OrderName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.VendorName } },
+                { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Tel12 } },
+                { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Tel13 } },
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.StaffCD } },
+
+                { "@JuchuuProcessNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuProcessNOFrom } },
+                { "@JuchuuProcessNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuProcessNOTo } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Operator} },
+                //{ "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
+
+            };
+
+            return SelectData(dic, sp);
+        }
+        public DataTable BindForWebJuchuuKakunin(D_Juchuu_Entity de, int kbn)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Kbn", new ValuePair { value1 = SqlDbType.TinyInt, value2 = kbn.ToString() } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = de.ChangeDate } }
+
+            };
+            return SelectData(dic, "BindForWebJuchuuKakunin");
+        }
         /// <summary>
         /// 受注入力更新処理
         /// TempoJuchuuNyuuryokuより更新時に使用
@@ -503,6 +568,7 @@ namespace DL
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
 
+            AddParam(command, "@NayoseKekkaTourokuDate", SqlDbType.VarChar, dje.NayoseKekkaTourokuDate);
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
             AddParam(command, "@Operator", SqlDbType.VarChar, dje.InsertOperator);
             AddParam(command, "@PC", SqlDbType.VarChar, dje.PC);

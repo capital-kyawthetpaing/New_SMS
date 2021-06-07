@@ -1591,18 +1591,21 @@ namespace UriageNyuuryoku
                         return false;
                     }
 
-                    dse.PurchaseNO = dt.Rows[0]["PurchaseNO"].ToString();
-                    dse.StoreCD = dt.Rows[0]["StoreCD"].ToString();
-
-                    //進捗チェック　既に入金消込済みの場合、エラーＥ２４６
-                    ret = mubl.CheckSalesData(dse, out string errno, (short)mTennic);
-                    if (ret)
+                    if (OperationMode != EOperationMode.SHOW)
                     {
-                        if (!string.IsNullOrWhiteSpace(errno))
+                        dse.PurchaseNO = dt.Rows[0]["PurchaseNO"].ToString();
+                        dse.StoreCD = dt.Rows[0]["StoreCD"].ToString();
+
+                        //進捗チェック　既に入金消込済みの場合、エラーＥ２４６
+                        ret = mubl.CheckSalesData(dse, out string errno, (short)mTennic);
+                        if (ret)
                         {
-                            //警告メッセージを表示する
-                            bbl.ShowMessage(errno);
-                            return false;
+                            if (!string.IsNullOrWhiteSpace(errno))
+                            {
+                                //警告メッセージを表示する
+                                bbl.ShowMessage(errno);
+                                return false;
+                            }
                         }
                     }
                 }
@@ -1695,9 +1698,13 @@ namespace UriageNyuuryoku
                         if (index == (int)EIndex.SalesNO)
                         {
                             detailControls[(int)EIndex.SalesDate].Text = row["SalesDate"].ToString();
+
+                            if (row["BillingType"].ToString().Equals("1"))
+                                ckM_CheckBox2.Checked = true;
                         }
                         else
                         {
+                            //複写のとき
                             detailControls[(int)EIndex.SalesDate].Text = bbl.GetDate();
                         }
                         mOldSalesDate = detailControls[(int)EIndex.SalesDate].Text;

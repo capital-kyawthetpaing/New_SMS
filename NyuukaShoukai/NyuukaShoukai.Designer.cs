@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNyuukaShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -666,7 +667,7 @@
             this.dgvNyuukaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvNyuukaShoukai.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -693,6 +694,14 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
@@ -883,9 +892,9 @@
             this.txtArrivalDay1.IsNumber = true;
             this.txtArrivalDay1.IsShop = false;
             this.txtArrivalDay1.IsTimemmss = false;
-            this.txtArrivalDay1.Length = 8;
+            this.txtArrivalDay1.Length = 10;
             this.txtArrivalDay1.Location = new System.Drawing.Point(142, 67);
-            this.txtArrivalDay1.MaxLength = 8;
+            this.txtArrivalDay1.MaxLength = 10;
             this.txtArrivalDay1.MoveNext = true;
             this.txtArrivalDay1.Name = "txtArrivalDay1";
             this.txtArrivalDay1.Size = new System.Drawing.Size(100, 19);
@@ -915,9 +924,9 @@
             this.txtArrivalDay2.IsNumber = true;
             this.txtArrivalDay2.IsShop = false;
             this.txtArrivalDay2.IsTimemmss = false;
-            this.txtArrivalDay2.Length = 8;
+            this.txtArrivalDay2.Length = 10;
             this.txtArrivalDay2.Location = new System.Drawing.Point(281, 67);
-            this.txtArrivalDay2.MaxLength = 8;
+            this.txtArrivalDay2.MaxLength = 10;
             this.txtArrivalDay2.MoveNext = true;
             this.txtArrivalDay2.Name = "txtArrivalDay2";
             this.txtArrivalDay2.Size = new System.Drawing.Size(100, 19);
@@ -948,9 +957,9 @@
             this.txtStockDate1.IsNumber = true;
             this.txtStockDate1.IsShop = false;
             this.txtStockDate1.IsTimemmss = false;
-            this.txtStockDate1.Length = 8;
+            this.txtStockDate1.Length = 10;
             this.txtStockDate1.Location = new System.Drawing.Point(142, 105);
-            this.txtStockDate1.MaxLength = 8;
+            this.txtStockDate1.MaxLength = 10;
             this.txtStockDate1.MoveNext = true;
             this.txtStockDate1.Name = "txtStockDate1";
             this.txtStockDate1.Size = new System.Drawing.Size(100, 19);
@@ -980,9 +989,9 @@
             this.txtStockDate2.IsNumber = true;
             this.txtStockDate2.IsShop = false;
             this.txtStockDate2.IsTimemmss = false;
-            this.txtStockDate2.Length = 8;
+            this.txtStockDate2.Length = 10;
             this.txtStockDate2.Location = new System.Drawing.Point(281, 105);
-            this.txtStockDate2.MaxLength = 8;
+            this.txtStockDate2.MaxLength = 10;
             this.txtStockDate2.MoveNext = true;
             this.txtStockDate2.Name = "txtStockDate2";
             this.txtStockDate2.Size = new System.Drawing.Size(100, 19);
@@ -1013,9 +1022,9 @@
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
             this.txtPurchaseDate1.IsTimemmss = false;
-            this.txtPurchaseDate1.Length = 8;
+            this.txtPurchaseDate1.Length = 10;
             this.txtPurchaseDate1.Location = new System.Drawing.Point(142, 176);
-            this.txtPurchaseDate1.MaxLength = 8;
+            this.txtPurchaseDate1.MaxLength = 10;
             this.txtPurchaseDate1.MoveNext = true;
             this.txtPurchaseDate1.Name = "txtPurchaseDate1";
             this.txtPurchaseDate1.Size = new System.Drawing.Size(100, 19);
@@ -1045,9 +1054,9 @@
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
             this.txtPurchaseDate2.IsTimemmss = false;
-            this.txtPurchaseDate2.Length = 8;
+            this.txtPurchaseDate2.Length = 10;
             this.txtPurchaseDate2.Location = new System.Drawing.Point(281, 176);
-            this.txtPurchaseDate2.MaxLength = 8;
+            this.txtPurchaseDate2.MaxLength = 10;
             this.txtPurchaseDate2.MoveNext = true;
             this.txtPurchaseDate2.Name = "txtPurchaseDate2";
             this.txtPurchaseDate2.Size = new System.Drawing.Size(100, 19);

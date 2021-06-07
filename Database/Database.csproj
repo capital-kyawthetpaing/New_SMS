@@ -62,6 +62,7 @@
     <Content Include="StoreProcedure\CheckNyuukaData.sql" />
     <Content Include="StoreProcedure\CheckPayCloseHistory.sql" />
     <Content Include="StoreProcedure\CheckPayPlanData.sql" />
+    <Content Include="StoreProcedure\CheckSalesData.sql" />
     <Content Include="StoreProcedure\CheckShippingData.sql" />
     <Content Include="StoreProcedure\CheckSyonin.sql" />
     <Content Include="StoreProcedure\Check_RegisteredMenu.sql" />

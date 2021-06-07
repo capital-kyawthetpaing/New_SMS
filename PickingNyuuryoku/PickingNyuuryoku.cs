@@ -790,6 +790,7 @@ namespace PickingNyuuryoku
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
+                this.Scr_Clr(0);
 
                 //起動時共通処理
                 base.StartProgram();
@@ -1726,7 +1727,7 @@ namespace PickingNyuuryoku
                         break;
 
                     default:
-                        F9Visible = false;
+                        //F9Visible = false;
                         break;
                 }
             }

@@ -89,6 +89,10 @@ namespace CKM_Controls
             取込種別,
             銀行口座,
             /// <summary>
+            /// SoukoType=3
+            /// </summary>
+            ピッキング倉庫,
+            /// <summary>
             /// All SoukoCD
             /// </summary>
             入荷倉庫,
@@ -481,6 +485,16 @@ namespace CKM_Controls
                     BindFirstData("SoukoCD", "SoukoName", dtSoukoSelectAll);
                     break;
 
+                case CboType.ピッキング倉庫:
+                    PickingNyuuryoku_BL pnbl = new PickingNyuuryoku_BL();
+                    M_Souko_Entity msoe0 = new M_Souko_Entity();
+                    msoe0.Operator = type; //mse.StoreCD;
+                    msoe0.ChangeDate = changeDate;
+                    msoe0.SoukoType = "3";
+                    msoe0.DeleteFlg = "0";
+                    DataTable dtPSouko = pnbl.M_Souko_BindForPicking(msoe0);
+                    BindCombo("SoukoCD", "SoukoName", dtPSouko);
+                    break;
                 case CboType.入荷倉庫:
                     NyuukaNyuuryoku_BL nnbl = new NyuukaNyuuryoku_BL();
                     M_Souko_Entity msoe = new M_Souko_Entity();

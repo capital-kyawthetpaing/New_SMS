@@ -44,8 +44,7 @@ namespace Search
 
             HeaderTitleText = ProNm;
             this.Text = ProNm;
-
-            CboSoukoCD.Bind(changeDate);
+            ChangeDate = changeDate;
 
             pnbl = new PickingNyuuryoku_BL();
         }
@@ -340,7 +339,11 @@ namespace Search
                 Scr_Clr();
                 detailControls[(int)EIndex.DayStart].Text = pnbl.GetDate();
                 detailControls[(int)EIndex.DayEnd].Text = pnbl.GetDate();
-                CboSoukoCD.SelectedValue = SoukoCD;
+                //CboSoukoCD.SelectedValue = SoukoCD;
+                CboSoukoCD.Bind(ChangeDate, OperatorCD);
+                if (CboSoukoCD.Items.Count>1)
+                    CboSoukoCD.SelectedIndex = 1;
+
                 F9Visible = false;
             }
             catch (Exception ex)
