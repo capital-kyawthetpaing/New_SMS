@@ -291,6 +291,12 @@ namespace NyuukaShoukai
                     }
                     
                 }
+                else
+                {
+                    nkskbl.ShowMessage("E128");
+                    dgvNyuukaShoukai.DataSource = string.Empty;
+                    cboWarehouse.Focus();
+                }
             }
         }
 
