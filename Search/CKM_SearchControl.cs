@@ -1461,7 +1461,9 @@ namespace Search
                     using (Search_PickingNO frmPickingNO = new Search_PickingNO(changedate))
                     {
                         frmPickingNO.ChangeDate = changedate;
-                        frmPickingNO.SoukoCD = Value1;
+                        frmPickingNO.OperatorCD = Value1;
+                            frmPickingNO.AllAvailableStores = Value2;
+                        //frmPickingNO.SoukoCD = Value1;
                         frmPickingNO.ShowDialog();
                         if (!frmPickingNO.flgCancel)
                         {
