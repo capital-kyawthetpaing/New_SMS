@@ -217,6 +217,7 @@ BEGIN
     DECLARE @ArrivePlanDate  date;
     DECLARE @Nissu  int;
     DECLARE @WRK_HoryuFLG tinyint;
+    DECLARE @ReturnFLG tinyint;
     
     --カーソルオープン
     OPEN CUR_Juchu;
@@ -279,12 +280,17 @@ BEGIN
                 ,'002'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
 		END
         
         --②要確認顧客
-        IF @WRK_HoryuFLG = 0 AND @ConfirmFLG = 1
+        IF @ConfirmFLG = 1
         BEGIN
             --D受注ワーク.要確認顧客 ＝ 1 の時
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
@@ -293,13 +299,17 @@ BEGIN
                 ,'003'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
 
         --③直送)住所不完全
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 1 AND @CHK_Address2 = 0 
+        IF @DirectFLG = 1 AND @CHK_Address2 = 0 
         BEGIN
             --D受注ワーク.直送FLG ＝ 1(:直送)　かつ
             --D受注ワーク.住所２ に数字(1,2,3,4,5,6,7,8,9,0のいずれか)が含まれていない時
@@ -309,13 +319,17 @@ BEGIN
                 ,'004'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                    
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                    
         END
         
         --④直送)郵便番号不整合
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 1 AND ISNULL(@Address1,'') <> ISNULL(@M_Address1,'') 
+        IF @DirectFLG = 1 AND ISNULL(@Address1,'') <> ISNULL(@M_Address1,'') 
         BEGIN
             --D受注ワーク.直送FLG ＝ 1(:直送)　かつ
             --D受注ワーク.住所１ <> D受注ワーク.住所１_Ｍ　の時
@@ -325,13 +339,17 @@ BEGIN
                 ,'005'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑤直送)先払い未入金（3万以上）
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 1 AND ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidAmount,0)+@JuchuuGaku >= 30000
+        IF @DirectFLG = 1 AND ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidAmount,0)+@JuchuuGaku >= 30000
         BEGIN
             --D受注ワーク.直送FLG ＝ 1(:直送)　かつ
             --D受注ワーク.設定値 ＝ 1　and D受注ワーク.入金状況区分 ＝ 0(未入金) and　D受注ワーク.未入金額 + D受注ワーク.受注総額 ≧ 30000　の時
@@ -341,12 +359,17 @@ BEGIN
                 ,'006'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑥直送)先払い未入金（3件以上）
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 1 AND ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidCount,0)+1 >= 3
+        IF @DirectFLG = 1 AND ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidCount,0)+1 >= 3
         BEGIN
             --D受注ワーク.直送FLG ＝ 1(:直送)　かつ
             --D受注ワーク.設定値 ＝ 1　and　受注ワーク.入金状況区分 ＝ 0(未入金) and　D受注ワーク.未入金件数 + 1 ≧ 3　の時
@@ -356,13 +379,17 @@ BEGIN
                 ,'007'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑦要確認商品
-        IF @WRK_HoryuFLG = 0 AND ISNULL(@ConfirmKBN,0) = 1
+        IF ISNULL(@ConfirmKBN,0) = 1
         BEGIN
         	--D受注ワーク.要確認商品 ＝ 1　の時
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
@@ -371,12 +398,17 @@ BEGIN
                 ,'008'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑧直送)カード決済不可	
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 1 AND @CardProgressKBN <> 0
+        IF @DirectFLG = 1 AND @CardProgressKBN <> 0
         BEGIN
             --D受注ワーク.直送FLG ＝ 1(:直送)　かつ
             --D受注ワーク.カード状況 <> 0　の時
@@ -386,14 +418,18 @@ BEGIN
                 ,'009'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                
         END
         
         
         --⑨直送)先払い未決済
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 1 AND ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0
+        IF @DirectFLG = 1 AND ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0
         BEGIN
             --D受注ワーク.直送FLG ＝ 1(:直送)　かつ
             --D受注ワーク.設定値 ＝ 1　and　D受注ワーク.入金状況区分 ＝ 0(未入金)　の時
@@ -403,9 +439,13 @@ BEGIN
                 ,'010'
                 ,@Operator 
                 ,@SYSDATETIME 
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                    
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                    
         END
         
         --⑩受注備考あり
@@ -426,9 +466,13 @@ BEGIN
                 ,'011'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑪同梱有無確認
@@ -443,7 +487,7 @@ BEGIN
             --D受注ステータス.同梱有無FLG ＝ 0
             SELECT NULL;
         END
-        ELSE IF @WRK_HoryuFLG = 0 
+        ELSE
         BEGIN
             --D受注ステータス.同梱有無FLGに「1」をセットしUpdate。
             UPDATE D_JuchuuStatus SET
@@ -459,9 +503,13 @@ BEGIN
                 ,'012'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑫スペック計測有無
@@ -476,7 +524,7 @@ BEGIN
             --D受注ステータス.スペック計測有無FLG ＝ 0
             SELECT NULL;
         END
-        ELSE IF @WRK_HoryuFLG = 0
+        ELSE 
         BEGIN
             --D受注ステータス.スペック計測有無FLGに「1」をセットしUpdate。
             UPDATE D_JuchuuStatus SET
@@ -492,9 +540,13 @@ BEGIN
                 ,'013'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                    
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                    
         END
         
         --⑬「のし」の有無確認
@@ -509,7 +561,7 @@ BEGIN
             --D受注ステータス.のし対象FLG ＝ 0
             SELECT NULL;
         END
-        ELSE IF @WRK_HoryuFLG = 0
+        ELSE
         BEGIN
             --D受注ステータス.のし対象FLGに「1」をセットしUpdate。
             UPDATE D_JuchuuStatus SET
@@ -525,9 +577,13 @@ BEGIN
                 ,'014'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                    
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                    
         END
         
         --⑭「ギフト」の有償確認
@@ -542,7 +598,7 @@ BEGIN
             --D受注ステータス.ギフト対象FLG ＝ 0
             SELECT NULL;
         END
-        ELSE IF @WRK_HoryuFLG = 0
+        ELSE
         BEGIN
             --D受注ステータス.ギフト対象FLGに「1」をセットしUpdate。
             UPDATE D_JuchuuStatus SET
@@ -558,13 +614,17 @@ BEGIN
                 ,'015'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑮依頼主≠発送先
-        IF @WRK_HoryuFLG = 0 AND ISNULL(@CustomerName,'') <> ISNULL(@DeliveryName,'')
+        IF ISNULL(@CustomerName,'') <> ISNULL(@DeliveryName,'')
         BEGIN
             --D受注ワーク.顧客名　＝　D受注ワーク.配送先名　の時
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
@@ -573,13 +633,17 @@ BEGIN
                 ,'016'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                    
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                    
         END
         
         --⑯楽天Kaola分チェック
-        IF @WRK_HoryuFLG = 0 AND ISNULL(@KaolaetcFLG,'') <> 0
+        IF ISNULL(@KaolaetcFLG,'') <> 0
         BEGIN
             --D受注ワーク.コアラ等FLG　＝　0　の時以外
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
@@ -588,13 +652,17 @@ BEGIN
                 ,'017'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-                                    
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END                                    
         END
         
         --⑰発送先が沖縄
-        IF @WRK_HoryuFLG = 0 AND ISNULL(@Zip,'') <> ''
+        IF ISNULL(@Zip,'') <> ''
         BEGIN
             --D受注ワーク.文字型１ IS NOT NULL　の時
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
@@ -603,12 +671,17 @@ BEGIN
                 ,'018'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
 
 		--⑱発送先が海外
-        IF @WRK_HoryuFLG = 0 AND CHARINDEX('都',@Address1) = 0 AND CHARINDEX('道',@Address1) = 0 
+        IF CHARINDEX('都',@Address1) = 0 AND CHARINDEX('道',@Address1) = 0 
            AND CHARINDEX('府',@Address1) = 0 AND CHARINDEX('県',@Address1) = 0 
         BEGIN
             --D受注ワーク.住所１ に「都」「道」「府」「県」の全ての文字が含まれない時
@@ -618,13 +691,17 @@ BEGIN
                 ,'019'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-             
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END             
         END
         
         --⑲回答納期先日付
-        IF @WRK_HoryuFLG = 0 AND @AnswerFLG = 1 AND @ArrivePlanDate IS NOT NULL
+        IF @AnswerFLG = 1 AND @ArrivePlanDate IS NOT NULL
            AND DATEDIFF(day,@JuchuuDate, @ArrivePlanDate) >= ISNULL(@Nissu,0)
         BEGIN
             --D受注ワーク.回答納期登録あり＝1 かつ D受注ワーク.入荷予定日 IS NOT NULL　の時
@@ -635,9 +712,13 @@ BEGIN
                 ,'020'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --⑳メールアドレスエラー
@@ -647,7 +728,7 @@ BEGIN
         END
         
         --21住所不完全
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 0 AND @CHK_Address2 = 0 
+        IF @DirectFLG = 0 AND @CHK_Address2 = 0 
         BEGIN
             --D受注ワーク.直送FLG ＝ 0(:直送ではない)　かつ
             --D受注ワーク.住所２ に数字(1,2,3,4,5,6,7,8,9,0のいずれか)が含まれていない時
@@ -657,13 +738,17 @@ BEGIN
                 ,'022'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --22郵便番号不整合
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 0 AND @Address1 <> ISNULL(@M_Address1,'') 
+        IF @DirectFLG = 0 AND @Address1 <> ISNULL(@M_Address1,'') 
         BEGIN
             --D受注ワーク.直送FLG ＝ 0(:直送ではない)　かつ
             --D受注ワーク.住所１ <> D受注ワーク.住所１_Ｍ　の時
@@ -673,13 +758,17 @@ BEGIN
                 ,'023'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --23先払い未入金（3万以上）
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 0 AND  ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidAmount,0)+@JuchuuGaku >= 30000
+        IF @DirectFLG = 0 AND  ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidAmount,0)+@JuchuuGaku >= 30000
         BEGIN
             --D受注ワーク.直送FLG ＝ 0(:直送ではない)　かつ
             --D受注ワーク.設定値 ＝ 1　and D受注ワーク.入金状況区分 ＝ 0(未入金) and　D受注ワーク.未入金額 + D受注ワーク.受注総額 ≧ 30000　の時
@@ -689,13 +778,17 @@ BEGIN
                 ,'024'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --24先払い未入金（3件以上）
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 0 AND  ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidCount,0)+1 >= 3
+        IF @DirectFLG = 0 AND  ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 AND ISNULL(@UnpaidCount,0)+1 >= 3
         BEGIN
             --D受注ワーク.直送FLG ＝ 0(:直送ではない)　かつ
             --D受注ワーク.設定値 ＝ 1　and　受注ワーク.入金状況区分 ＝ 0(未入金) and　D受注ワーク.未入金件数 + 1 ≧ 3　の時
@@ -705,13 +798,17 @@ BEGIN
                 ,'025'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --25カード決済不可
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 0 AND @CardProgressKBN <> 0
+        IF @DirectFLG = 0 AND @CardProgressKBN <> 0
         BEGIN
             --D受注ワーク.直送FLG ＝ 0(:直送ではない)　かつ
             --D受注ワーク.カード状況 <> 0　の時
@@ -721,13 +818,17 @@ BEGIN
                 ,'026'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --26先払い未決済
-        IF @WRK_HoryuFLG = 0 AND @DirectFLG = 0 AND  ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 
+        IF @DirectFLG = 0 AND  ISNULL(@SpecialFlg,0) = 1 AND @PaymentProgressKBN = 0 
         BEGIN
             --D受注ワーク.直送FLG ＝ 0(:直送ではない)　かつ
             --D受注ワーク.設定値 ＝ 1　and　D受注ワーク.入金状況区分 ＝ 0(未入金)　の時
@@ -737,9 +838,13 @@ BEGIN
                 ,'027'
                 ,@Operator 
                 ,@SYSDATETIME
-                ,@WRK_HoryuFLG OUTPUT
+                ,@ReturnFLG OUTPUT
                 ;
-
+            
+            IF @ReturnFLG = 1
+            BEGIN
+            	SET @WRK_HoryuFLG = 1;
+            END
         END
         
         --27
