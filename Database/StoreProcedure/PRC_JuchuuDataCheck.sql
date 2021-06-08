@@ -118,7 +118,8 @@ BEGIN
               ,(SELECT COUNT(D.address2)
                   from d_juchuu AS D
                  where D.Address2  LIKE '%[0-9]%'
-                   AND D.JuchuuNO = D.JuchuuNO) AS CHK_Address2            
+                   AND D.JuchuuNO = D.JuchuuNO) AS CHK_Address2
+              ,DH.MailAddress          
               ,MZ.Address1 AS M_Address1        --M郵便番号変換.住所１ as 住所１_Ｍ、           
               ,MZ.Address2 AS M_Address2        --M郵便番号変換.住所２ as 住所２_Ｍ、           
               ,DH.JuchuuGaku        --D受注.受注総額、          
@@ -191,6 +192,7 @@ BEGIN
     DECLARE @Address1   varchar(100);
     DECLARE @Address2   varchar(100);
     DECLARE @CHK_Address2 tinyint;
+    DECLARE @MailAddress  varchar(100);
     DECLARE @M_Address1   varchar(100);
     DECLARE @M_Address2   varchar(100);
     DECLARE @JuchuuGaku money;
@@ -231,6 +233,7 @@ BEGIN
         ,@Address1
         ,@Address2
         ,@CHK_Address2
+        ,@MailAddress
         ,@M_Address1
         ,@M_Address2
         ,@JuchuuGaku
@@ -458,7 +461,7 @@ BEGIN
             --D受注ワーク.受注コメントキャピタル is NULL
         	SELECT NULL;
         END
-        ELSE IF @WRK_HoryuFLG = 0
+        ELSE
         BEGIN
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
@@ -725,6 +728,8 @@ BEGIN
         IF @WRK_HoryuFLG = 0 
         BEGIN
         	SELECT NULL;
+        	
+        	
         END
         
         --21住所不完全
@@ -874,6 +879,7 @@ BEGIN
             ,@Address1
             ,@Address2
             ,@CHK_Address2
+            ,@MailAddress
             ,@M_Address1
             ,@M_Address2
             ,@JuchuuGaku
