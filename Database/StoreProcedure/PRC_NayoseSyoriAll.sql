@@ -228,9 +228,6 @@ BEGIN
     WHILE @@FETCH_STATUS = 0
     BEGIN
     -- ========= ループ内の実際の処理 ここから===*************************CUR_Stock
-        --次の行のデータを取得して変数へ値をセット
-        FETCH NEXT FROM CUR_Juchu
-        INTO @JuchuuNO,@CustomerName,@CustomerName2,@Tel11,@Tel12,@Tel13,@MailAddress,@Address1,@Address2 ;
         --受注ワークを1件リード
 
         SET @W_ERR = 0;
@@ -605,7 +602,11 @@ BEGIN
             
             --次の「1.受注ワークを1件リード」へ。
 		END
-        
+		
+        --次の行のデータを取得して変数へ値をセット
+        FETCH NEXT FROM CUR_Juchu
+        INTO @JuchuuNO,@CustomerName,@CustomerName2,@Tel11,@Tel12,@Tel13,@MailAddress,@Address1,@Address2 ;
+
     END     --LOOPの終わり***************************************CUR_Juchu
     
     --カーソルを閉じる
