@@ -59,17 +59,16 @@ BEGIN
 
     IF @@ROWCOUNT = 0
     BEGIN
-    	SET @WRK_HoryuFLG = 0
+        SET @WRK_HoryuFLG = 0
     END
     ELSE
     BEGIN
-    	SET @WRK_HoryuFLG = 1
+        SET @WRK_HoryuFLG = 1
     END
 
 END
 
 GO
-
 
 --  ======================================================================
 --       Program Call    受注データチェック処理
@@ -147,8 +146,8 @@ BEGIN
               ,DH.PaymentProgressKBN        --D受注.入金状況区分、          
               ,DH.CommentCustomer AS H_CommentCustomer      --D受注.受注コメント顧客 as 受注コメント顧客_Ｈ、           
               ,DH.CommentCapital AS H_CommentCapital        --D受注.受注コメントキャピタル as 受注コメントキャピタル_Ｈ、           
-              ,'DM.'CommentCustomer       --D受注明細.受注コメント顧客、          
-              ,'DM.'CommentCapital        --D受注明細.受注コメントキャピタル、            
+              ,DM.CommentCustomer       --D受注明細.受注コメント顧客、          
+              ,DM.CommentCapital        --D受注明細.受注コメントキャピタル、            
               ,DS.IncludeFLG            --D受注ステータス.同梱有無FLG、         
               ,DS.SpecFLG               --D受注ステータス.スペック計測有無FLG、         
               ,DS.NoshiFLG              --D受注ステータス.のし対象FLG、         
@@ -178,12 +177,12 @@ BEGIN
         LEFT OUTER JOIN M_MultiPorpose AS MM1   --※沖縄判断用のM汎用
           ON MM1.ID = 230 AND MM1.[Key] = DH.ZipCD1    
 
-        WHERE DH.JuchuuKBN = 1  --受注種別区分              
-          AND DH.CustomerCD IS NOT NULL
-          AND DM.DeliverySu <> DM.JuchuuSuu
-          --AND DM.CancelDate IS NULL
-          AND DH.DeleteDateTime IS NULL
-            ;
+       WHERE DH.JuchuuKBN = 1  --受注種別区分              
+         AND DH.CustomerCD IS NOT NULL
+         AND DM.DeliverySu <> DM.JuchuuSuu
+         AND DM.CancelDate IS NULL
+         AND DH.DeleteDateTime IS NULL
+           ;
             
     DECLARE @JuchuuNO varchar(11);
     DECLARE @AttentionFLG tinyint;
@@ -261,40 +260,6 @@ BEGIN
     WHILE @@FETCH_STATUS = 0
     BEGIN
     -- ========= ループ内の実際の処理 ここから===*************************CUR_Stock
-        --次の行のデータを取得して変数へ値をセット
-        FETCH NEXT FROM CUR_Juchu
-        INTO @JuchuuNO
-	        ,@AttentionFLG
-	        ,@ConfirmFLG
-	        ,@DirectFLG
-	        ,@Address1
-	        ,@Address2
-	        ,@CHK_Address2
-	        ,@M_Address1
-	        ,@M_Address2
-	        ,@JuchuuGaku
-	        ,@UnpaidAmount
-	        ,@UnpaidCount
-	        ,@ConfirmKBN
-	        ,@CardProgressKBN
-	        ,@SpecialFlg
-	        ,@PaymentProgressKBN
-	        ,@H_CommentCustomer
-	        ,@H_CommentCapital
-	        ,@CommentCustomer
-	        ,@CommentCapital
-	        ,@IncludeFLG
-	        ,@SpecFLG
-	        ,@NoshiFLG
-	        ,@GiftFLG
-	        ,@CustomerName
-	        ,@DeliveryName
-	        ,@KaolaetcFLG
-	        ,@Zip
-	        ,@JuchuuDate
-	        ,@AnswerFLG
-	        ,@ArrivePlanDate
-	        ,@Nissu;
 
         --1.受注ワークを1件リード
 
@@ -444,7 +409,7 @@ BEGIN
         END
         
         --⑩受注備考あり
-        IF @WRK_HoryuFLG = 0 AND ISNULL(@H_CommentCustomer,'') = '' AND ISNULL(@H_CommentCapital,'') = '' 
+        IF ISNULL(@H_CommentCustomer,'') = '' AND ISNULL(@H_CommentCapital,'') = '' 
            AND ISNULL(@CommentCustomer,'') = '' AND ISNULL(@CommentCapital,'') = '' 
         BEGIN
             --D受注ワーク.受注コメント顧客_Ｈ is NULL　かつ
@@ -453,7 +418,7 @@ BEGIN
             --D受注ワーク.受注コメントキャピタル is NULL
         	SELECT NULL;
         END
-        ELSE
+        ELSE IF @WRK_HoryuFLG = 0
         BEGIN
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
@@ -467,7 +432,7 @@ BEGIN
         END
         
         --⑪同梱有無確認
-        IF @WRK_HoryuFLG = 0 AND CHARINDEX('同梱',@H_CommentCustomer) = 0 AND CHARINDEX('同梱',@H_CommentCapital) = 0 
+        IF CHARINDEX('同梱',@H_CommentCustomer) = 0 AND CHARINDEX('同梱',@H_CommentCapital) = 0 
            AND CHARINDEX('同梱',@CommentCustomer) = 0 AND CHARINDEX('同梱',@CommentCapital) = 0 
            AND ISNULL(@IncludeFLG,0) = 0
         BEGIN
@@ -478,16 +443,16 @@ BEGIN
             --D受注ステータス.同梱有無FLG ＝ 0
             SELECT NULL;
         END
-        ELSE
+        ELSE IF @WRK_HoryuFLG = 0 
         BEGIN
-        	--D受注ステータス.同梱有無FLGに「1」をセットしUpdate。
-		    UPDATE D_JuchuuStatus SET
-		       [IncludeFLG] = 1
-		      ,[UpdateOperator] = @Operator
-		      ,[UpdateDateTime] = @SYSDATETIME
-		    WHERE JuchuuNO = @JuchuuNO
-		    ;
-		    
+            --D受注ステータス.同梱有無FLGに「1」をセットしUpdate。
+            UPDATE D_JuchuuStatus SET
+               [IncludeFLG] = 1
+              ,[UpdateOperator] = @Operator
+              ,[UpdateDateTime] = @SYSDATETIME
+            WHERE JuchuuNO = @JuchuuNO
+            ;
+            
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
                 @JuchuuNO
@@ -500,7 +465,7 @@ BEGIN
         END
         
         --⑫スペック計測有無
-        IF @WRK_HoryuFLG = 0 AND CHARINDEX('スペック計測',@H_CommentCustomer) = 0 AND CHARINDEX('スペック計測',@H_CommentCapital) = 0 
+        IF CHARINDEX('スペック計測',@H_CommentCustomer) = 0 AND CHARINDEX('スペック計測',@H_CommentCapital) = 0 
            AND CHARINDEX('スペック計測',@CommentCustomer) = 0 AND CHARINDEX('スペック計測',@CommentCapital) = 0 
            AND ISNULL(@SpecFLG,0) = 0
         BEGIN
@@ -511,16 +476,16 @@ BEGIN
             --D受注ステータス.スペック計測有無FLG ＝ 0
             SELECT NULL;
         END
-        ELSE
+        ELSE IF @WRK_HoryuFLG = 0
         BEGIN
             --D受注ステータス.スペック計測有無FLGに「1」をセットしUpdate。
-		    UPDATE D_JuchuuStatus SET
-		       [SpecFLG] = 1
-		      ,[UpdateOperator] = @Operator
-		      ,[UpdateDateTime] = @SYSDATETIME
-		    WHERE JuchuuNO = @JuchuuNO
-		    ;
-		    
+            UPDATE D_JuchuuStatus SET
+               [SpecFLG] = 1
+              ,[UpdateOperator] = @Operator
+              ,[UpdateDateTime] = @SYSDATETIME
+            WHERE JuchuuNO = @JuchuuNO
+            ;
+            
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
                 @JuchuuNO
@@ -533,7 +498,7 @@ BEGIN
         END
         
         --⑬「のし」の有無確認
-        IF @WRK_HoryuFLG = 0 AND CHARINDEX('のしあり',@H_CommentCustomer) = 0 AND CHARINDEX('のしあり',@H_CommentCapital) = 0 
+        IF CHARINDEX('のしあり',@H_CommentCustomer) = 0 AND CHARINDEX('のしあり',@H_CommentCapital) = 0 
            AND CHARINDEX('のしあり',@CommentCustomer) = 0 AND CHARINDEX('のしあり',@CommentCapital) = 0 
            AND ISNULL(@NoshiFLG,0) = 0
         BEGIN
@@ -544,16 +509,16 @@ BEGIN
             --D受注ステータス.のし対象FLG ＝ 0
             SELECT NULL;
         END
-        ELSE
+        ELSE IF @WRK_HoryuFLG = 0
         BEGIN
-        	--D受注ステータス.のし対象FLGに「1」をセットしUpdate。
-		    UPDATE D_JuchuuStatus SET
-		       [NoshiFLG] = 1
-		      ,[UpdateOperator] = @Operator
-		      ,[UpdateDateTime] = @SYSDATETIME
-		    WHERE JuchuuNO = @JuchuuNO
-		    ;
-		    
+            --D受注ステータス.のし対象FLGに「1」をセットしUpdate。
+            UPDATE D_JuchuuStatus SET
+               [NoshiFLG] = 1
+              ,[UpdateOperator] = @Operator
+              ,[UpdateDateTime] = @SYSDATETIME
+            WHERE JuchuuNO = @JuchuuNO
+            ;
+            
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
                 @JuchuuNO
@@ -566,7 +531,7 @@ BEGIN
         END
         
         --⑭「ギフト」の有償確認
-        IF @WRK_HoryuFLG = 0 AND CHARINDEX('ラッピング',@H_CommentCustomer) = 0 AND CHARINDEX('ラッピング',@H_CommentCapital) = 0 
+        IF CHARINDEX('ラッピング',@H_CommentCustomer) = 0 AND CHARINDEX('ラッピング',@H_CommentCapital) = 0 
            AND CHARINDEX('ラッピング',@CommentCustomer) = 0 AND CHARINDEX('ラッピング',@CommentCapital) = 0 
            AND ISNULL(@GiftFLG,0) = 0
         BEGIN
@@ -577,16 +542,16 @@ BEGIN
             --D受注ステータス.ギフト対象FLG ＝ 0
             SELECT NULL;
         END
-        ELSE
+        ELSE IF @WRK_HoryuFLG = 0
         BEGIN
-        	--D受注ステータス.ギフト対象FLGに「1」をセットしUpdate。
-		    UPDATE D_JuchuuStatus SET
-		       [GiftFLG] = 1
-		      ,[UpdateOperator] = @Operator
-		      ,[UpdateDateTime] = @SYSDATETIME
-		    WHERE JuchuuNO = @JuchuuNO
-		    ;
-		    
+            --D受注ステータス.ギフト対象FLGに「1」をセットしUpdate。
+            UPDATE D_JuchuuStatus SET
+               [GiftFLG] = 1
+              ,[UpdateOperator] = @Operator
+              ,[UpdateDateTime] = @SYSDATETIME
+            WHERE JuchuuNO = @JuchuuNO
+            ;
+            
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
                 @JuchuuNO
@@ -647,10 +612,6 @@ BEGIN
            AND CHARINDEX('府',@Address1) = 0 AND CHARINDEX('県',@Address1) = 0 
         BEGIN
             --D受注ワーク.住所１ に「都」「道」「府」「県」の全ての文字が含まれない時
-            SELECT NULL;
-        END
-        ELSE
-        BEGIN
             --上記Select件数が0件の時、テーブル転送仕様Ａに従ってD受注保留警告(D_JuchuuOnHold)のレコード追加。
             EXEC PRC_JuchuuDataCheck_Sub
                 @JuchuuNO
@@ -799,6 +760,41 @@ BEGIN
         ;
             
         --次の「1.受注ワークを1件リード」へ。
+        --次の行のデータを取得して変数へ値をセット
+        FETCH NEXT FROM CUR_Juchu
+        INTO @JuchuuNO
+            ,@AttentionFLG
+            ,@ConfirmFLG
+            ,@DirectFLG
+            ,@Address1
+            ,@Address2
+            ,@CHK_Address2
+            ,@M_Address1
+            ,@M_Address2
+            ,@JuchuuGaku
+            ,@UnpaidAmount
+            ,@UnpaidCount
+            ,@ConfirmKBN
+            ,@CardProgressKBN
+            ,@SpecialFlg
+            ,@PaymentProgressKBN
+            ,@H_CommentCustomer
+            ,@H_CommentCapital
+            ,@CommentCustomer
+            ,@CommentCapital
+            ,@IncludeFLG
+            ,@SpecFLG
+            ,@NoshiFLG
+            ,@GiftFLG
+            ,@CustomerName
+            ,@DeliveryName
+            ,@KaolaetcFLG
+            ,@Zip
+            ,@JuchuuDate
+            ,@AnswerFLG
+            ,@ArrivePlanDate
+            ,@Nissu;
+        
     END     --LOOPの終わり***************************************CUR_Juchu
     
     --カーソルを閉じる
