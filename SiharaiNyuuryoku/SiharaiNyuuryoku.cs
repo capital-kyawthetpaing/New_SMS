@@ -66,7 +66,7 @@ namespace SiharaiNyuuryoku
             ScStaff.ChangeDate = DateTime.Today.ToShortDateString();
             ScStaff.SelectData();
 
-            cboPaymentSourceAcc.Enabled = false;
+            //cboPaymentSourceAcc.Enabled = false;
             cboPaymentType.Enabled = false;
             txtBillSettleDate.Enabled = false;
 
@@ -95,7 +95,7 @@ namespace SiharaiNyuuryoku
         private void BindCombo()
         {
             cboPaymentType.Bind(string.Empty);
-            cboPaymentSourceAcc.Bind(string.Empty);
+            //cboPaymentSourceAcc.Bind(string.Empty);
         }
 
         public override void FunctionProcess(int index)
@@ -212,7 +212,7 @@ namespace SiharaiNyuuryoku
                 dpe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
                 dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
                 dpe.PayNo = ScPaymentNum.TxtCode.Text;
-                mke.KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString();
+                //mke.KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString();
                              
                 if (OperationMode == EOperationMode.INSERT)
                 {
@@ -275,7 +275,7 @@ namespace SiharaiNyuuryoku
                     {
                         cboPaymentType.SelectedValue = -1;
                     }
-                    cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
+                    //cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
                     txtBillSettleDate.Text = string.Empty;
                     dtpayplan.Columns.Add("colCheck", typeof(bool)); foreach (DataRow dr in dtpayplan.Rows) dr["colCheck"] = true;  ///PTK Addded
                     dgvPayment.DataSource = dtpayplan;
@@ -544,7 +544,7 @@ namespace SiharaiNyuuryoku
 
                             mke = new M_Kouza_Entity
                             {
-                                KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString(),
+                                //KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString(),
                                 BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
                                 BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
                                 Amount = lblPayGaku.Text.Replace(",", ""),
@@ -806,25 +806,25 @@ namespace SiharaiNyuuryoku
                     }
                 }
                
-                if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedValue.ToString()))
-                {
-                    sibl.ShowMessage("E102");
-                    cboPaymentSourceAcc.Focus();
-                    return false;
-                }
-                mke.ChangeDate = txtPaymentDate.Text;
-                DataTable dtkouza = new DataTable();
-                dtkouza = sibl.M_Kouza_SelectByDate(mke);
-                if (dtkouza.Rows.Count == 0)
-                {
-                    sibl.ShowMessage("E128");
-                    cboPaymentSourceAcc.Focus();
-                    return false;
-                }
-                else
-                {
-                    cboPaymentSourceAcc.SelectedValue = dtkouza.Rows[0]["KouzaCD"].ToString();
-                }
+                //if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedValue.ToString()))
+                //{
+                //    sibl.ShowMessage("E102");
+                //    cboPaymentSourceAcc.Focus();
+                //    return false;
+                //}
+                //mke.ChangeDate = txtPaymentDate.Text;
+                //DataTable dtkouza = new DataTable();
+                //dtkouza = sibl.M_Kouza_SelectByDate(mke);
+                //if (dtkouza.Rows.Count == 0)
+                //{
+                //    sibl.ShowMessage("E128");
+                //    cboPaymentSourceAcc.Focus();
+                //    return false;
+                //}
+                //else
+                //{
+                //    cboPaymentSourceAcc.SelectedValue = dtkouza.Rows[0]["KouzaCD"].ToString();
+                //}
                 if (string.IsNullOrWhiteSpace(txtBillSettleDate.Text))
                 {
                     sibl.ShowMessage("E102");
@@ -848,7 +848,7 @@ namespace SiharaiNyuuryoku
             btnF11Show.Enabled = false;
 
             cboPaymentType.Enabled = false;
-            cboPaymentSourceAcc.Enabled = false;
+            //cboPaymentSourceAcc.Enabled = false;
             txtBillSettleDate.Enabled = false;
 
             btnSelectAll.Enabled = true;
