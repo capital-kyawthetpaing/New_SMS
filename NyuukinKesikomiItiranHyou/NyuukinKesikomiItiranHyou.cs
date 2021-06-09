@@ -85,7 +85,7 @@ namespace NyuukinKesikomiItiranHyou
                         break;
                     }
             }
-            txtCollectDateF.Focus();
+           // txtCollectDateF.Focus();
         }
 
 
@@ -94,11 +94,19 @@ namespace NyuukinKesikomiItiranHyou
         {
             if (!RequireCheck(new Control[] { cboStoreAuthorizations }))
                 return false;
+
             if (!txtCollectDateF.DateCheck())
+            {
+                txtCollectDateF.Focus();
                 return false;
+            }
             if (!txtCollectDateT.DateCheck())
+            {
+                txtCollectDateT.Focus();
                 return false;
-            
+            }
+               
+
             //if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
             //{
             //    nkih_bl.ShowMessage("E103");
@@ -124,9 +132,16 @@ namespace NyuukinKesikomiItiranHyou
             }
 
             if (!txtInputDateF.DateCheck())
+            {
+                txtInputDateF.Focus();
                 return false;
+            }
+                
             if (!txtInputDateT.DateCheck())
+            {
+                txtInputDateT.Focus();
                 return false;
+            }
 
             if (!string.IsNullOrWhiteSpace(txtInputDateF.Text) && !string.IsNullOrWhiteSpace(txtInputDateT.Text))
             {
