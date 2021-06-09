@@ -607,6 +607,32 @@ namespace DL
 
             return ret;
         }
+        public bool JuchuuDataCheck_Exec(D_Juchuu_Entity dje)
+        {
+            string sp = "PRC_JuchuuDataCheck";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@Operator", SqlDbType.VarChar, dje.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dje.PC);
+
+            UseTransaction = true;
+
+            //OUTパラメータの追加
+            string outPutParam = "@OutErrNo";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
+            UseTransaction = true;
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                dje.ReturnFLG = outPutParam;
+
+            return ret;
+        }
         public bool DeleteTemporaryReserve(D_Juchuu_Entity de)
         {
             string sp = "DeleteTemporaryReserve";

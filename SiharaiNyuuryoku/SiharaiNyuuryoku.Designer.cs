@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSiharaiNyuuryoku));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -73,9 +75,7 @@
             this.cboPaymentType = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
-            this.cboPaymentSourceAcc = new CKM_Controls.CKM_ComboBox();
             this.btnReleaseAll = new CKM_Controls.CKM_Button();
             this.txtBillSettleDate = new CKM_Controls.CKM_TextBox();
             this.btnSelectAll = new CKM_Controls.CKM_Button();
@@ -156,9 +156,7 @@
             this.PanelDetail.Controls.Add(this.cboPaymentType);
             this.PanelDetail.Controls.Add(this.ckM_Label7);
             this.PanelDetail.Controls.Add(this.ckM_Label8);
-            this.PanelDetail.Controls.Add(this.ckM_Label9);
             this.PanelDetail.Controls.Add(this.ckM_Label10);
-            this.PanelDetail.Controls.Add(this.cboPaymentSourceAcc);
             this.PanelDetail.Controls.Add(this.btnReleaseAll);
             this.PanelDetail.Controls.Add(this.txtBillSettleDate);
             this.PanelDetail.Controls.Add(this.btnSelectAll);
@@ -259,9 +257,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvPayment.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvPayment.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -287,6 +286,14 @@
             this.colHontaiGaku10,
             this.colTaxGaku8,
             this.colTaxGaku10});
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPayment.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPayment.EnableHeadersVisualStyles = false;
             this.dgvPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPayment.Location = new System.Drawing.Point(35, 87);
@@ -519,6 +526,7 @@
             this.ScStaff.Size = new System.Drawing.Size(354, 27);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 1;
+            this.ScStaff.test = null;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -545,6 +553,7 @@
             this.txtPaymentDate.isMaxLengthErr = false;
             this.txtPaymentDate.IsNumber = true;
             this.txtPaymentDate.IsShop = false;
+            this.txtPaymentDate.IsTimemmss = false;
             this.txtPaymentDate.Length = 10;
             this.txtPaymentDate.Location = new System.Drawing.Point(131, 14);
             this.txtPaymentDate.Margin = new System.Windows.Forms.Padding(2);
@@ -555,6 +564,7 @@
             this.txtPaymentDate.TabIndex = 0;
             this.txtPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDate.UseColorSizMode = false;
             // 
             // cboPaymentType
             // 
@@ -610,24 +620,6 @@
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_Label9
-            // 
-            this.ckM_Label9.AutoSize = true;
-            this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label9.DefaultlabelSize = true;
-            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(411, 52);
-            this.ckM_Label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ckM_Label9.Name = "ckM_Label9";
-            this.ckM_Label9.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label9.TabIndex = 42;
-            this.ckM_Label9.Text = "支払元口座";
-            this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ckM_Label10
             // 
             this.ckM_Label10.AutoSize = true;
@@ -637,7 +629,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(768, 52);
+            this.ckM_Label10.Location = new System.Drawing.Point(442, 50);
             this.ckM_Label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(70, 12);
@@ -645,23 +637,6 @@
             this.ckM_Label10.Text = "手形決済日";
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboPaymentSourceAcc
-            // 
-            this.cboPaymentSourceAcc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboPaymentSourceAcc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboPaymentSourceAcc.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.銀行口座;
-            this.cboPaymentSourceAcc.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.cboPaymentSourceAcc.Flag = 0;
-            this.cboPaymentSourceAcc.FormattingEnabled = true;
-            this.cboPaymentSourceAcc.Length = 10;
-            this.cboPaymentSourceAcc.Location = new System.Drawing.Point(482, 49);
-            this.cboPaymentSourceAcc.Margin = new System.Windows.Forms.Padding(2);
-            this.cboPaymentSourceAcc.MaxLength = 5;
-            this.cboPaymentSourceAcc.MoveNext = true;
-            this.cboPaymentSourceAcc.Name = "cboPaymentSourceAcc";
-            this.cboPaymentSourceAcc.Size = new System.Drawing.Size(265, 20);
-            this.cboPaymentSourceAcc.TabIndex = 3;
             // 
             // btnReleaseAll
             // 
@@ -701,8 +676,9 @@
             this.txtBillSettleDate.isMaxLengthErr = false;
             this.txtBillSettleDate.IsNumber = true;
             this.txtBillSettleDate.IsShop = false;
+            this.txtBillSettleDate.IsTimemmss = false;
             this.txtBillSettleDate.Length = 10;
-            this.txtBillSettleDate.Location = new System.Drawing.Point(838, 50);
+            this.txtBillSettleDate.Location = new System.Drawing.Point(512, 48);
             this.txtBillSettleDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBillSettleDate.MaxLength = 10;
             this.txtBillSettleDate.MoveNext = true;
@@ -711,6 +687,7 @@
             this.txtBillSettleDate.TabIndex = 4;
             this.txtBillSettleDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBillSettleDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBillSettleDate.UseColorSizMode = false;
             // 
             // btnSelectAll
             // 
@@ -784,6 +761,7 @@
             this.txtDueDate2.isMaxLengthErr = false;
             this.txtDueDate2.IsNumber = true;
             this.txtDueDate2.IsShop = false;
+            this.txtDueDate2.IsTimemmss = false;
             this.txtDueDate2.Length = 10;
             this.txtDueDate2.Location = new System.Drawing.Point(274, 84);
             this.txtDueDate2.MaxLength = 10;
@@ -793,6 +771,7 @@
             this.txtDueDate2.TabIndex = 4;
             this.txtDueDate2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDueDate2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDueDate2.UseColorSizMode = false;
             this.txtDueDate2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDueDate2_KeyDown);
             // 
             // txtDueDate1
@@ -814,6 +793,7 @@
             this.txtDueDate1.isMaxLengthErr = false;
             this.txtDueDate1.IsNumber = true;
             this.txtDueDate1.IsShop = false;
+            this.txtDueDate1.IsTimemmss = false;
             this.txtDueDate1.Length = 10;
             this.txtDueDate1.Location = new System.Drawing.Point(130, 84);
             this.txtDueDate1.MaxLength = 10;
@@ -823,6 +803,7 @@
             this.txtDueDate1.TabIndex = 3;
             this.txtDueDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDueDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDueDate1.UseColorSizMode = false;
             // 
             // ckM_Label6
             // 
@@ -968,6 +949,7 @@
             this.ScPaymentNum.Size = new System.Drawing.Size(143, 32);
             this.ScPaymentNum.Stype = Search.CKM_SearchControl.SearchType.支払処理;
             this.ScPaymentNum.TabIndex = 1;
+            this.ScPaymentNum.test = null;
             this.ScPaymentNum.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScPaymentNum.UseChangeDate = false;
             this.ScPaymentNum.Value1 = null;
@@ -998,6 +980,7 @@
             this.ScPaymentProcessNum.Size = new System.Drawing.Size(143, 32);
             this.ScPaymentProcessNum.Stype = Search.CKM_SearchControl.SearchType.支払番号検索;
             this.ScPaymentProcessNum.TabIndex = 0;
+            this.ScPaymentProcessNum.test = null;
             this.ScPaymentProcessNum.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScPaymentProcessNum.UseChangeDate = false;
             this.ScPaymentProcessNum.Value1 = null;
@@ -1028,6 +1011,7 @@
             this.ScPayee.Size = new System.Drawing.Size(444, 32);
             this.ScPayee.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScPayee.TabIndex = 5;
+            this.ScPayee.test = null;
             this.ScPayee.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScPayee.UseChangeDate = false;
             this.ScPayee.Value1 = null;
@@ -1080,9 +1064,7 @@
         private CKM_Controls.CKM_ComboBox cboPaymentType;
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label8;
-        private CKM_Controls.CKM_Label ckM_Label9;
         private CKM_Controls.CKM_Label ckM_Label10;
-        private CKM_Controls.CKM_ComboBox cboPaymentSourceAcc;
         private CKM_Controls.CKM_Button btnReleaseAll;
         private CKM_Controls.CKM_TextBox txtBillSettleDate;
         private CKM_Controls.CKM_Button btnSelectAll;
