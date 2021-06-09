@@ -108,7 +108,8 @@ namespace Search
                 DeliveryName = detailControls[(int)EIndex.DeliveryName].Text,
                 PrintStaffCD =ScStaff.TxtCode.Text,
                 JuchuuNO = ScJuchuuNO.TxtCode.Text,
-                DeliverySoukoCD = CboSouko.SelectedValue.ToString().Equals("-1") ? string.Empty : CboSouko.SelectedValue.ToString(),
+                DeliverySoukoCD = CboSouko.SelectedIndex>0 ? CboSouko.SelectedValue.ToString() : string.Empty,
+                CarrierCD = CboCarrier.SelectedIndex > 0 ? CboCarrier.SelectedValue.ToString() : string.Empty,
             };
             if (ckM_CheckBox1.Checked)
                 die.Chk1 = 1;
