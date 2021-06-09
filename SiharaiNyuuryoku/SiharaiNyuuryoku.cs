@@ -316,6 +316,8 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("KouzaNO");
                             dt4.Columns.Remove("KouzaMeigi");
                             dt4.Columns.Remove("FeeKBN");
+                            dt4.Columns.Remove("KouzaCD");
+                            dt4.Columns.Remove("KouzaName");
                             dt4.Columns.Remove("Fee");
                             dt4.Columns.Remove("CashGaku");
                             dt4.Columns.Remove("OffsetGaku");
