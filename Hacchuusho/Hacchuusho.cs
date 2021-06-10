@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-
 using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
     
 namespace Hacchuusho
 {
@@ -313,7 +307,7 @@ namespace Hacchuusho
                         Report.SetDataSource(table);
                         Report.Refresh();
                         UpdateOrderD_04();
-                        bool result = OutputPDF(filePath, Report);
+                        bool result =  base.OutputPDF(filePath, Report);
 
                         //PDF出力が完了しました。
                         bbl.ShowMessage("I202");
