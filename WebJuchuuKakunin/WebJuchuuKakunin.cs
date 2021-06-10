@@ -47,8 +47,8 @@ namespace WebJuchuuKakunin
             DeliveryPlanDateTo,
             DeliveryDateFrom,
             DeliveryDateTo,
-            DeliveryNoFrom,
-            DeliveryNoTo,
+            InvoiceNOFrom,
+            InvoiceNOTo,
 
             SiteJuchuuNO,
             CboSyubetsu8,
@@ -166,13 +166,24 @@ namespace WebJuchuuKakunin
                 DeliveryPlanDateTo = detailControls[(int)EIndex.DeliveryPlanDateTo].Text,
                 DeliveryDateFrom = detailControls[(int)EIndex.DeliveryDateFrom].Text,
                 DeliveryDateTo = detailControls[(int)EIndex.DeliveryDateTo].Text,
-                DeliveryNoFrom = detailControls[(int)EIndex.DeliveryNoFrom].Text,
-                DeliveryNoTo = detailControls[(int)EIndex.DeliveryNoTo].Text,
+                InvoiceNOFrom = detailControls[(int)EIndex.InvoiceNOFrom].Text,
+                InvoiceNOTo = detailControls[(int)EIndex.InvoiceNOTo].Text,
                 SiteJuchuuNO = detailControls[(int)EIndex.SiteJuchuuNO].Text,
                 ComboBox8 = ckM_ComboBox8.SelectedIndex > 0 ? ckM_ComboBox8.SelectedValue.ToString() : "",
                 ComboBox7 = ckM_ComboBox7.SelectedIndex > 0 ? ckM_ComboBox7.SelectedValue.ToString() : "",
                 ComboBox6 = ckM_ComboBox6.SelectedIndex > 0 ? ckM_ComboBox6.SelectedValue.ToString() : "",
                 ComboBox5 = ckM_ComboBox5.SelectedIndex > 0 ? ckM_ComboBox5.SelectedValue.ToString() : "",
+                IncludeFLG=ChkIncludeFLG.Checked?"1":"0",
+                GiftFLG = ChkGiftFLG.Checked ? "1" : "0",
+                NoshiFLG = ChkNoshiFLG.Checked ? "1" : "0",
+                NouhinsyoFLG = ChkNouhinsyoFLG.Checked ? "1" : "0",
+                RyousyusyoFLG = ChkRyousyusyoFLG.Checked ? "1" : "0",
+                SonotoFLG = ChkSonotoFLG.Checked ? "1" : "0",
+                TelephoneContactKBN = ChkTelephoneContactKBN.Checked ? "1" : "0",
+                IndividualContactKBN = ChkIndividualContactKBN.Checked ? "1" : "0",
+                NoMailFLG = ChkNoMailFLG.Checked ? "1" : "0",
+                CancelFLG = ChkCancelReasonKBN.Checked ? "1" : "0",
+                ReturnFLG = ChkReturnFLG.Checked ? "1" : "0",
                 StoreCD = CboStoreCD.SelectedIndex > 0 ? CboStoreCD.SelectedValue.ToString():"",
                 InsertOperator = InOperatorCD,
             };
@@ -219,6 +230,8 @@ namespace WebJuchuuKakunin
                 GvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
+                Btn_NoSelect.Enabled = true;
+                Btn_SelectAll.Enabled = true;
 
                 //※明細部.メール不要＝「〇」の時、ロックしONに出来ないようにする。
 
@@ -344,7 +357,7 @@ namespace WebJuchuuKakunin
                  ,ckM_TextBox12, ckM_TextBox11, ckM_TextBox18, ckM_TextBox15
                  ,ckM_TextBox20,ckM_ComboBox8,ckM_ComboBox7,ckM_ComboBox6,ckM_ComboBox5
                 ,ChkIncludeFLG,ChkGiftFLG,ChkNoshiFLG,ChkNouhinsyoFLG,ChkRyousyusyoFLG
-                ,ChkSonotoFLG,ckM_CheckBox7,ckM_CheckBox8,ChkNoMailFLG,ChkCancelReasonKBN,ChkReturnFLG
+                ,ChkSonotoFLG,ChkTelephoneContactKBN,ChkIndividualContactKBN,ChkNoMailFLG,ChkCancelReasonKBN,ChkReturnFLG
                  };
 
             foreach (Control ctl in detailControls)
@@ -372,14 +385,14 @@ namespace WebJuchuuKakunin
             {
                 case (int)EIndex.JuchuuNOFrom:
                 case (int)EIndex.JuchuuNOTo:
-                case (int)EIndex.DeliveryNoFrom:
-                case (int)EIndex.DeliveryNoTo:
+                case (int)EIndex.InvoiceNOFrom:
+                case (int)EIndex.InvoiceNOTo:
 
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         return true;
 
                     //(From) ≧ (To)である場合Error
-                    if (index == (int)EIndex.JuchuuNOTo || index== (int)EIndex.DeliveryNoTo)
+                    if (index == (int)EIndex.JuchuuNOTo || index== (int)EIndex.InvoiceNOTo)
                     {
                         if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
@@ -578,6 +591,8 @@ namespace WebJuchuuKakunin
             
             GvDetail.DataSource = null;
             GvDetail.Enabled = false;
+            Btn_NoSelect.Enabled = false;
+            Btn_SelectAll.Enabled = false;
 
             Btn_F7.Enabled = false;
             Btn_F10.Enabled = false;
@@ -600,6 +615,9 @@ namespace WebJuchuuKakunin
         public override void FunctionProcess(int Index)
         {
             base.FunctionProcess(Index);
+
+            if (!ModeVisible)
+                return;
 
             switch (Index)
             {
