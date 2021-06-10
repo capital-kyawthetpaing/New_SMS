@@ -53,28 +53,6 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInputDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coICollectDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCollectNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCollectCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWebCollectTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaymentMethodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMailFuyo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMailSend = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMailDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMailSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIndividualContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelephoneContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCollectAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmZan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
@@ -126,8 +104,8 @@
             this.ChkReturnFLG = new CKM_Controls.CKM_CheckBox();
             this.ChkCancelReasonKBN = new CKM_Controls.CKM_CheckBox();
             this.ChkNoMailFLG = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox8 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox7 = new CKM_Controls.CKM_CheckBox();
+            this.ChkIndividualContactKBN = new CKM_Controls.CKM_CheckBox();
+            this.ChkTelephoneContactKBN = new CKM_Controls.CKM_CheckBox();
             this.ChkSonotoFLG = new CKM_Controls.CKM_CheckBox();
             this.ChkRyousyusyoFLG = new CKM_Controls.CKM_CheckBox();
             this.ChkNouhinsyoFLG = new CKM_Controls.CKM_CheckBox();
@@ -148,6 +126,55 @@
             this.Btn_NoSelect = new CKM_Controls.CKM_Button();
             this.Btn_SelectAll = new CKM_Controls.CKM_Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSiteJuchuuDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coIJuchuuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerKanaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOnHoldKbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentMethodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNoMailFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMailKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSendedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMailSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIndividualContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelephoneContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCollectAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmZan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
@@ -370,7 +397,7 @@
             this.CboStoreCD.MoveNext = false;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(280, 20);
-            this.CboStoreCD.TabIndex = 0;
+            this.CboStoreCD.TabIndex = 6;
             this.CboStoreCD.SelectedIndexChanged += new System.EventHandler(this.CboStoreCD_SelectedIndexChanged);
             // 
             // ckM_SearchControl2
@@ -489,7 +516,7 @@
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
             this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox2.TabIndex = 2;
+            this.ckM_TextBox2.TabIndex = 19;
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox2.UseColorSizMode = false;
@@ -508,7 +535,7 @@
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF11.Name = "btnSubF11";
             this.btnSubF11.Size = new System.Drawing.Size(115, 28);
-            this.btnSubF11.TabIndex = 10;
+            this.btnSubF11.TabIndex = 0;
             this.btnSubF11.Text = "表示(F11)";
             this.btnSubF11.UseVisualStyleBackColor = false;
             this.btnSubF11.Click += new System.EventHandler(this.BtnSubF11_Click);
@@ -557,7 +584,7 @@
             this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
             this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 1;
+            this.ckM_TextBox1.TabIndex = 18;
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox1.UseColorSizMode = false;
@@ -584,20 +611,47 @@
             this.Detail,
             this.Mail,
             this.colStoreName,
-            this.colInputDatetime,
-            this.coICollectDate,
-            this.colCollectNO,
-            this.colCustomerName,
-            this.colCollectCustomerCD,
-            this.colWebCollectTypeName,
+            this.colSiteJuchuuDateTime,
+            this.coIJuchuuDate,
+            this.colCustomerCD,
+            this.colCustomerKanaName,
+            this.colJuchuuNO,
+            this.colOnHoldKbn,
             this.colPaymentMethodName,
-            this.colMailFuyo,
-            this.colMailSend,
-            this.colMailDate,
+            this.colNoMailFLG,
+            this.colMailKBN,
+            this.colSendedDate,
             this.colMailSubject,
             this.colIndividualContactKBN,
             this.colTelephoneContactKBN,
             this.colStaff,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26,
+            this.Column27,
             this.colCollectAmount,
             this.colConfirmSource,
             this.colConfirmAmount,
@@ -624,202 +678,6 @@
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.CurrentCellChanged += new System.EventHandler(this.GvDetail_CurrentCellChanged);
-            // 
-            // Detail
-            // 
-            this.Detail.Frozen = true;
-            this.Detail.HeaderText = "詳細";
-            this.Detail.Name = "Detail";
-            this.Detail.ReadOnly = true;
-            this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Detail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Detail.Width = 50;
-            // 
-            // Mail
-            // 
-            this.Mail.DataPropertyName = "Mail";
-            this.Mail.Frozen = true;
-            this.Mail.HeaderText = "ﾒｰﾙ";
-            this.Mail.Name = "Mail";
-            this.Mail.ReadOnly = true;
-            this.Mail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Mail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Mail.Width = 30;
-            // 
-            // colStoreName
-            // 
-            this.colStoreName.DataPropertyName = "StoreName";
-            this.colStoreName.Frozen = true;
-            this.colStoreName.HeaderText = "ストア";
-            this.colStoreName.Name = "colStoreName";
-            this.colStoreName.ReadOnly = true;
-            this.colStoreName.Width = 150;
-            // 
-            // colInputDatetime
-            // 
-            this.colInputDatetime.DataPropertyName = "InputDatetime";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInputDatetime.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colInputDatetime.Frozen = true;
-            this.colInputDatetime.HeaderText = "サイト受注日時";
-            this.colInputDatetime.Name = "colInputDatetime";
-            this.colInputDatetime.ReadOnly = true;
-            this.colInputDatetime.Width = 120;
-            // 
-            // coICollectDate
-            // 
-            this.coICollectDate.DataPropertyName = "CollectDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.coICollectDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.coICollectDate.Frozen = true;
-            this.coICollectDate.HeaderText = "ｷｬﾋﾟﾀﾙ受注日";
-            this.coICollectDate.Name = "coICollectDate";
-            this.coICollectDate.ReadOnly = true;
-            // 
-            // colCollectNO
-            // 
-            this.colCollectNO.DataPropertyName = "CollectNO";
-            this.colCollectNO.Frozen = true;
-            this.colCollectNO.HeaderText = "顧客番号";
-            this.colCollectNO.Name = "colCollectNO";
-            this.colCollectNO.ReadOnly = true;
-            this.colCollectNO.Width = 90;
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
-            this.colCustomerName.Frozen = true;
-            this.colCustomerName.HeaderText = "顧客名（カナ）";
-            this.colCustomerName.Name = "colCustomerName";
-            this.colCustomerName.ReadOnly = true;
-            this.colCustomerName.Width = 170;
-            // 
-            // colCollectCustomerCD
-            // 
-            this.colCollectCustomerCD.DataPropertyName = "CollectCustomerCD";
-            this.colCollectCustomerCD.HeaderText = "受注番号";
-            this.colCollectCustomerCD.Name = "colCollectCustomerCD";
-            this.colCollectCustomerCD.ReadOnly = true;
-            // 
-            // colWebCollectTypeName
-            // 
-            this.colWebCollectTypeName.DataPropertyName = "WebCollectTypeName";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colWebCollectTypeName.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colWebCollectTypeName.HeaderText = "保留";
-            this.colWebCollectTypeName.Name = "colWebCollectTypeName";
-            this.colWebCollectTypeName.ReadOnly = true;
-            this.colWebCollectTypeName.Width = 90;
-            // 
-            // colPaymentMethodName
-            // 
-            this.colPaymentMethodName.DataPropertyName = "PaymentMethodName";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colPaymentMethodName.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colPaymentMethodName.HeaderText = "警告状況";
-            this.colPaymentMethodName.Name = "colPaymentMethodName";
-            this.colPaymentMethodName.ReadOnly = true;
-            this.colPaymentMethodName.Width = 80;
-            // 
-            // colMailFuyo
-            // 
-            this.colMailFuyo.HeaderText = "ﾒｰﾙ不要";
-            this.colMailFuyo.Name = "colMailFuyo";
-            this.colMailFuyo.ReadOnly = true;
-            this.colMailFuyo.Width = 80;
-            // 
-            // colMailSend
-            // 
-            this.colMailSend.HeaderText = "メール発送状況";
-            this.colMailSend.Name = "colMailSend";
-            this.colMailSend.ReadOnly = true;
-            // 
-            // colMailDate
-            // 
-            this.colMailDate.HeaderText = "メール日";
-            this.colMailDate.Name = "colMailDate";
-            this.colMailDate.ReadOnly = true;
-            // 
-            // colMailSubject
-            // 
-            this.colMailSubject.HeaderText = "メール件名（最新送付件名）";
-            this.colMailSubject.Name = "colMailSubject";
-            this.colMailSubject.ReadOnly = true;
-            this.colMailSubject.Width = 250;
-            // 
-            // colIndividualContactKBN
-            // 
-            this.colIndividualContactKBN.HeaderText = "個別連絡";
-            this.colIndividualContactKBN.Name = "colIndividualContactKBN";
-            this.colIndividualContactKBN.ReadOnly = true;
-            // 
-            // colTelephoneContactKBN
-            // 
-            this.colTelephoneContactKBN.HeaderText = "電話連絡";
-            this.colTelephoneContactKBN.Name = "colTelephoneContactKBN";
-            this.colTelephoneContactKBN.ReadOnly = true;
-            // 
-            // colStaff
-            // 
-            this.colStaff.DataPropertyName = "StaffName";
-            this.colStaff.HeaderText = "担当者";
-            this.colStaff.Name = "colStaff";
-            this.colStaff.ReadOnly = true;
-            // 
-            // colCollectAmount
-            // 
-            this.colCollectAmount.DataPropertyName = "CollectAmount";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.colCollectAmount.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colCollectAmount.HeaderText = "入金額";
-            this.colCollectAmount.Name = "colCollectAmount";
-            this.colCollectAmount.ReadOnly = true;
-            this.colCollectAmount.Width = 90;
-            // 
-            // colConfirmSource
-            // 
-            this.colConfirmSource.DataPropertyName = "ConfirmSource";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colConfirmSource.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colConfirmSource.HeaderText = "消込原資額";
-            this.colConfirmSource.Name = "colConfirmSource";
-            this.colConfirmSource.ReadOnly = true;
-            this.colConfirmSource.Width = 90;
-            // 
-            // colConfirmAmount
-            // 
-            this.colConfirmAmount.DataPropertyName = "ConfirmAmount";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.colConfirmAmount.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colConfirmAmount.HeaderText = "消込額";
-            this.colConfirmAmount.Name = "colConfirmAmount";
-            this.colConfirmAmount.ReadOnly = true;
-            this.colConfirmAmount.Width = 90;
-            // 
-            // colConfirmZan
-            // 
-            this.colConfirmZan.DataPropertyName = "ConfirmZan";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            this.colConfirmZan.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colConfirmZan.HeaderText = "消込残額";
-            this.colConfirmZan.Name = "colConfirmZan";
-            this.colConfirmZan.ReadOnly = true;
-            this.colConfirmZan.Width = 90;
-            // 
-            // colConfirmNO
-            // 
-            this.colConfirmNO.DataPropertyName = "ConfirmNO";
-            this.colConfirmNO.HeaderText = "消込番号";
-            this.colConfirmNO.Name = "colConfirmNO";
-            this.colConfirmNO.ReadOnly = true;
-            this.colConfirmNO.Visible = false;
             // 
             // ckM_Label6
             // 
@@ -865,7 +723,7 @@
             this.ckM_TextBox9.MoveNext = true;
             this.ckM_TextBox9.Name = "ckM_TextBox9";
             this.ckM_TextBox9.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox9.TabIndex = 4;
+            this.ckM_TextBox9.TabIndex = 21;
             this.ckM_TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox9.UseColorSizMode = false;
@@ -914,7 +772,7 @@
             this.ckM_TextBox10.MoveNext = true;
             this.ckM_TextBox10.Name = "ckM_TextBox10";
             this.ckM_TextBox10.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox10.TabIndex = 3;
+            this.ckM_TextBox10.TabIndex = 20;
             this.ckM_TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox10.UseColorSizMode = false;
@@ -931,7 +789,7 @@
             this.ckM_Label30.Location = new System.Drawing.Point(18, 8);
             this.ckM_Label30.Name = "ckM_Label30";
             this.ckM_Label30.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label30.TabIndex = 740;
+            this.ckM_Label30.TabIndex = 0;
             this.ckM_Label30.Text = "特記事項";
             this.ckM_Label30.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -958,7 +816,7 @@
             this.ScCustomer.SearchEnable = true;
             this.ScCustomer.Size = new System.Drawing.Size(634, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScCustomer.TabIndex = 6;
+            this.ScCustomer.TabIndex = 9;
             this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
@@ -980,7 +838,7 @@
             this.btnSubF3.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF3.Name = "btnSubF3";
             this.btnSubF3.Size = new System.Drawing.Size(115, 28);
-            this.btnSubF3.TabIndex = 741;
+            this.btnSubF3.TabIndex = 0;
             this.btnSubF3.Text = "受注取込(F3)";
             this.btnSubF3.UseVisualStyleBackColor = false;
             // 
@@ -998,7 +856,7 @@
             this.btnSubF4.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF4.Name = "btnSubF4";
             this.btnSubF4.Size = new System.Drawing.Size(115, 28);
-            this.btnSubF4.TabIndex = 742;
+            this.btnSubF4.TabIndex = 1;
             this.btnSubF4.Text = "名寄せのみ(F4)\r\n";
             this.btnSubF4.UseVisualStyleBackColor = false;
             // 
@@ -1017,7 +875,7 @@
             this.ckM_ComboBox1.MoveNext = false;
             this.ckM_ComboBox1.Name = "ckM_ComboBox1";
             this.ckM_ComboBox1.Size = new System.Drawing.Size(203, 20);
-            this.ckM_ComboBox1.TabIndex = 743;
+            this.ckM_ComboBox1.TabIndex = 2;
             this.ckM_ComboBox1.Text = "ＸＸＸＸＸＸＸＸＸＸＸＸ (999)";
             // 
             // ckM_Label2
@@ -1052,7 +910,7 @@
             this.ckM_ComboBox2.MoveNext = false;
             this.ckM_ComboBox2.Name = "ckM_ComboBox2";
             this.ckM_ComboBox2.Size = new System.Drawing.Size(203, 20);
-            this.ckM_ComboBox2.TabIndex = 745;
+            this.ckM_ComboBox2.TabIndex = 3;
             // 
             // ckM_Label4
             // 
@@ -1120,7 +978,7 @@
             this.ckM_ComboBox3.MoveNext = false;
             this.ckM_ComboBox3.Name = "ckM_ComboBox3";
             this.ckM_ComboBox3.Size = new System.Drawing.Size(203, 20);
-            this.ckM_ComboBox3.TabIndex = 747;
+            this.ckM_ComboBox3.TabIndex = 4;
             // 
             // ckM_Label9
             // 
@@ -1200,7 +1058,7 @@
             this.ckM_TextBox6.MoveNext = true;
             this.ckM_TextBox6.Name = "ckM_TextBox6";
             this.ckM_TextBox6.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox6.TabIndex = 758;
+            this.ckM_TextBox6.TabIndex = 17;
             this.ckM_TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox6.UseColorSizMode = false;
@@ -1232,7 +1090,7 @@
             this.ckM_TextBox7.MoveNext = true;
             this.ckM_TextBox7.Name = "ckM_TextBox7";
             this.ckM_TextBox7.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox7.TabIndex = 757;
+            this.ckM_TextBox7.TabIndex = 16;
             this.ckM_TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox7.UseColorSizMode = false;
@@ -1281,7 +1139,7 @@
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox3.TabIndex = 754;
+            this.ckM_TextBox3.TabIndex = 13;
             this.ckM_TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox3.UseColorSizMode = false;
@@ -1312,7 +1170,7 @@
             this.lblJuchuuDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblJuchuuDate.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuDate.Location = new System.Drawing.Point(410, 92);
+            this.lblJuchuuDate.Location = new System.Drawing.Point(475, 92);
             this.lblJuchuuDate.Name = "lblJuchuuDate";
             this.lblJuchuuDate.Size = new System.Drawing.Size(44, 12);
             this.lblJuchuuDate.TabIndex = 759;
@@ -1364,7 +1222,7 @@
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
             this.ckM_TextBox4.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox4.TabIndex = 756;
+            this.ckM_TextBox4.TabIndex = 15;
             this.ckM_TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox4.UseColorSizMode = false;
@@ -1396,7 +1254,7 @@
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
             this.ckM_TextBox5.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox5.TabIndex = 753;
+            this.ckM_TextBox5.TabIndex = 12;
             this.ckM_TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox5.UseColorSizMode = false;
@@ -1428,7 +1286,7 @@
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
             this.ckM_TextBox8.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox8.TabIndex = 755;
+            this.ckM_TextBox8.TabIndex = 14;
             this.ckM_TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox8.UseColorSizMode = false;
@@ -1494,7 +1352,7 @@
             this.ckM_TextBox11.MoveNext = true;
             this.ckM_TextBox11.Name = "ckM_TextBox11";
             this.ckM_TextBox11.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox11.TabIndex = 771;
+            this.ckM_TextBox11.TabIndex = 25;
             this.ckM_TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox11.UseColorSizMode = false;
@@ -1526,7 +1384,7 @@
             this.ckM_TextBox12.MoveNext = true;
             this.ckM_TextBox12.Name = "ckM_TextBox12";
             this.ckM_TextBox12.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox12.TabIndex = 770;
+            this.ckM_TextBox12.TabIndex = 24;
             this.ckM_TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox12.UseColorSizMode = false;
@@ -1592,7 +1450,7 @@
             this.ckM_TextBox13.MoveNext = true;
             this.ckM_TextBox13.Name = "ckM_TextBox13";
             this.ckM_TextBox13.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox13.TabIndex = 769;
+            this.ckM_TextBox13.TabIndex = 23;
             this.ckM_TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox13.UseColorSizMode = false;
@@ -1624,7 +1482,7 @@
             this.ckM_TextBox14.MoveNext = true;
             this.ckM_TextBox14.Name = "ckM_TextBox14";
             this.ckM_TextBox14.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox14.TabIndex = 768;
+            this.ckM_TextBox14.TabIndex = 22;
             this.ckM_TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox14.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox14.UseColorSizMode = false;
@@ -1656,7 +1514,7 @@
             this.txtJuchuuNOTo.MoveNext = true;
             this.txtJuchuuNOTo.Name = "txtJuchuuNOTo";
             this.txtJuchuuNOTo.Size = new System.Drawing.Size(100, 19);
-            this.txtJuchuuNOTo.TabIndex = 776;
+            this.txtJuchuuNOTo.TabIndex = 11;
             this.txtJuchuuNOTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtJuchuuNOTo.UseColorSizMode = false;
             // 
@@ -1687,7 +1545,7 @@
             this.txtJuchuuNOFrom.MoveNext = true;
             this.txtJuchuuNOFrom.Name = "txtJuchuuNOFrom";
             this.txtJuchuuNOFrom.Size = new System.Drawing.Size(100, 19);
-            this.txtJuchuuNOFrom.TabIndex = 775;
+            this.txtJuchuuNOFrom.TabIndex = 10;
             this.txtJuchuuNOFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtJuchuuNOFrom.UseColorSizMode = false;
             // 
@@ -1746,13 +1604,13 @@
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
             this.ckM_TextBox15.IsTimemmss = false;
-            this.ckM_TextBox15.Length = 11;
+            this.ckM_TextBox15.Length = 12;
             this.ckM_TextBox15.Location = new System.Drawing.Point(962, 129);
-            this.ckM_TextBox15.MaxLength = 11;
+            this.ckM_TextBox15.MaxLength = 12;
             this.ckM_TextBox15.MoveNext = true;
             this.ckM_TextBox15.Name = "ckM_TextBox15";
             this.ckM_TextBox15.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox15.TabIndex = 780;
+            this.ckM_TextBox15.TabIndex = 27;
             this.ckM_TextBox15.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox15.UseColorSizMode = false;
             // 
@@ -1777,13 +1635,13 @@
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.IsTimemmss = false;
-            this.ckM_TextBox18.Length = 11;
+            this.ckM_TextBox18.Length = 12;
             this.ckM_TextBox18.Location = new System.Drawing.Point(831, 129);
-            this.ckM_TextBox18.MaxLength = 11;
+            this.ckM_TextBox18.MaxLength = 12;
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
             this.ckM_TextBox18.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox18.TabIndex = 779;
+            this.ckM_TextBox18.TabIndex = 26;
             this.ckM_TextBox18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox18.UseColorSizMode = false;
             // 
@@ -1848,7 +1706,7 @@
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
             this.txtKanaName.Size = new System.Drawing.Size(242, 19);
-            this.txtKanaName.TabIndex = 783;
+            this.txtKanaName.TabIndex = 7;
             this.txtKanaName.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX30";
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtKanaName.UseColorSizMode = false;
@@ -1897,7 +1755,7 @@
             this.txtTel.MoveNext = true;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(100, 19);
-            this.txtTel.TabIndex = 785;
+            this.txtTel.TabIndex = 8;
             this.txtTel.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtTel.UseColorSizMode = false;
             // 
@@ -1925,7 +1783,7 @@
             this.ChkReturnFLG.Location = new System.Drawing.Point(974, 7);
             this.ChkReturnFLG.Name = "ChkReturnFLG";
             this.ChkReturnFLG.Size = new System.Drawing.Size(50, 16);
-            this.ChkReturnFLG.TabIndex = 797;
+            this.ChkReturnFLG.TabIndex = 0;
             this.ChkReturnFLG.Text = "返品";
             this.ChkReturnFLG.UseVisualStyleBackColor = true;
             // 
@@ -1936,7 +1794,7 @@
             this.ChkCancelReasonKBN.Location = new System.Drawing.Point(869, 7);
             this.ChkCancelReasonKBN.Name = "ChkCancelReasonKBN";
             this.ChkCancelReasonKBN.Size = new System.Drawing.Size(89, 16);
-            this.ChkCancelReasonKBN.TabIndex = 796;
+            this.ChkCancelReasonKBN.TabIndex = 11;
             this.ChkCancelReasonKBN.Text = "キャンセル";
             this.ChkCancelReasonKBN.UseVisualStyleBackColor = true;
             // 
@@ -1947,31 +1805,31 @@
             this.ChkNoMailFLG.Location = new System.Drawing.Point(764, 7);
             this.ChkNoMailFLG.Name = "ChkNoMailFLG";
             this.ChkNoMailFLG.Size = new System.Drawing.Size(89, 16);
-            this.ChkNoMailFLG.TabIndex = 795;
+            this.ChkNoMailFLG.TabIndex = 10;
             this.ChkNoMailFLG.Text = "メール不要";
             this.ChkNoMailFLG.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox8
+            // ChkIndividualContactKBN
             // 
-            this.ckM_CheckBox8.AutoSize = true;
-            this.ckM_CheckBox8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox8.Location = new System.Drawing.Point(672, 7);
-            this.ckM_CheckBox8.Name = "ckM_CheckBox8";
-            this.ckM_CheckBox8.Size = new System.Drawing.Size(76, 16);
-            this.ckM_CheckBox8.TabIndex = 794;
-            this.ckM_CheckBox8.Text = "個別連絡";
-            this.ckM_CheckBox8.UseVisualStyleBackColor = true;
+            this.ChkIndividualContactKBN.AutoSize = true;
+            this.ChkIndividualContactKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkIndividualContactKBN.Location = new System.Drawing.Point(672, 7);
+            this.ChkIndividualContactKBN.Name = "ChkIndividualContactKBN";
+            this.ChkIndividualContactKBN.Size = new System.Drawing.Size(76, 16);
+            this.ChkIndividualContactKBN.TabIndex = 9;
+            this.ChkIndividualContactKBN.Text = "個別連絡";
+            this.ChkIndividualContactKBN.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox7
+            // ChkTelephoneContactKBN
             // 
-            this.ckM_CheckBox7.AutoSize = true;
-            this.ckM_CheckBox7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox7.Location = new System.Drawing.Point(580, 7);
-            this.ckM_CheckBox7.Name = "ckM_CheckBox7";
-            this.ckM_CheckBox7.Size = new System.Drawing.Size(76, 16);
-            this.ckM_CheckBox7.TabIndex = 793;
-            this.ckM_CheckBox7.Text = "電話連絡";
-            this.ckM_CheckBox7.UseVisualStyleBackColor = true;
+            this.ChkTelephoneContactKBN.AutoSize = true;
+            this.ChkTelephoneContactKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkTelephoneContactKBN.Location = new System.Drawing.Point(580, 7);
+            this.ChkTelephoneContactKBN.Name = "ChkTelephoneContactKBN";
+            this.ChkTelephoneContactKBN.Size = new System.Drawing.Size(76, 16);
+            this.ChkTelephoneContactKBN.TabIndex = 8;
+            this.ChkTelephoneContactKBN.Text = "電話連絡";
+            this.ChkTelephoneContactKBN.UseVisualStyleBackColor = true;
             // 
             // ChkSonotoFLG
             // 
@@ -1980,7 +1838,7 @@
             this.ChkSonotoFLG.Location = new System.Drawing.Point(501, 7);
             this.ChkSonotoFLG.Name = "ChkSonotoFLG";
             this.ChkSonotoFLG.Size = new System.Drawing.Size(63, 16);
-            this.ChkSonotoFLG.TabIndex = 792;
+            this.ChkSonotoFLG.TabIndex = 7;
             this.ChkSonotoFLG.Text = "その他";
             this.ChkSonotoFLG.UseVisualStyleBackColor = true;
             // 
@@ -1991,7 +1849,7 @@
             this.ChkRyousyusyoFLG.Location = new System.Drawing.Point(422, 7);
             this.ChkRyousyusyoFLG.Name = "ChkRyousyusyoFLG";
             this.ChkRyousyusyoFLG.Size = new System.Drawing.Size(63, 16);
-            this.ChkRyousyusyoFLG.TabIndex = 791;
+            this.ChkRyousyusyoFLG.TabIndex = 6;
             this.ChkRyousyusyoFLG.Text = "領収書";
             this.ChkRyousyusyoFLG.UseVisualStyleBackColor = true;
             // 
@@ -2002,7 +1860,7 @@
             this.ChkNouhinsyoFLG.Location = new System.Drawing.Point(291, 7);
             this.ChkNouhinsyoFLG.Name = "ChkNouhinsyoFLG";
             this.ChkNouhinsyoFLG.Size = new System.Drawing.Size(115, 16);
-            this.ChkNouhinsyoFLG.TabIndex = 790;
+            this.ChkNouhinsyoFLG.TabIndex = 5;
             this.ChkNouhinsyoFLG.Text = "納品書・請求書";
             this.ChkNouhinsyoFLG.UseVisualStyleBackColor = true;
             // 
@@ -2013,7 +1871,7 @@
             this.ChkNoshiFLG.Location = new System.Drawing.Point(225, 7);
             this.ChkNoshiFLG.Name = "ChkNoshiFLG";
             this.ChkNoshiFLG.Size = new System.Drawing.Size(50, 16);
-            this.ChkNoshiFLG.TabIndex = 789;
+            this.ChkNoshiFLG.TabIndex = 3;
             this.ChkNoshiFLG.Text = "のし";
             this.ChkNoshiFLG.UseVisualStyleBackColor = true;
             // 
@@ -2024,7 +1882,7 @@
             this.ChkGiftFLG.Location = new System.Drawing.Point(146, 7);
             this.ChkGiftFLG.Name = "ChkGiftFLG";
             this.ChkGiftFLG.Size = new System.Drawing.Size(63, 16);
-            this.ChkGiftFLG.TabIndex = 788;
+            this.ChkGiftFLG.TabIndex = 2;
             this.ChkGiftFLG.Text = "ギフト";
             this.ChkGiftFLG.UseVisualStyleBackColor = true;
             // 
@@ -2035,7 +1893,7 @@
             this.ChkIncludeFLG.Location = new System.Drawing.Point(80, 7);
             this.ChkIncludeFLG.Name = "ChkIncludeFLG";
             this.ChkIncludeFLG.Size = new System.Drawing.Size(50, 16);
-            this.ChkIncludeFLG.TabIndex = 787;
+            this.ChkIncludeFLG.TabIndex = 1;
             this.ChkIncludeFLG.Text = "同梱";
             this.ChkIncludeFLG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ChkIncludeFLG.UseVisualStyleBackColor = true;
@@ -2067,7 +1925,7 @@
             this.ckM_TextBox20.MoveNext = true;
             this.ckM_TextBox20.Name = "ckM_TextBox20";
             this.ckM_TextBox20.Size = new System.Drawing.Size(187, 19);
-            this.ckM_TextBox20.TabIndex = 798;
+            this.ckM_TextBox20.TabIndex = 28;
             this.ckM_TextBox20.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.ckM_TextBox20.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox20.UseColorSizMode = false;
@@ -2104,7 +1962,7 @@
             this.ckM_ComboBox5.MoveNext = false;
             this.ckM_ComboBox5.Name = "ckM_ComboBox5";
             this.ckM_ComboBox5.Size = new System.Drawing.Size(140, 20);
-            this.ckM_ComboBox5.TabIndex = 803;
+            this.ckM_ComboBox5.TabIndex = 32;
             // 
             // ckM_Label27
             // 
@@ -2138,7 +1996,7 @@
             this.ckM_ComboBox6.MoveNext = false;
             this.ckM_ComboBox6.Name = "ckM_ComboBox6";
             this.ckM_ComboBox6.Size = new System.Drawing.Size(140, 20);
-            this.ckM_ComboBox6.TabIndex = 802;
+            this.ckM_ComboBox6.TabIndex = 31;
             // 
             // ckM_Label28
             // 
@@ -2172,7 +2030,7 @@
             this.ckM_ComboBox7.MoveNext = false;
             this.ckM_ComboBox7.Name = "ckM_ComboBox7";
             this.ckM_ComboBox7.Size = new System.Drawing.Size(140, 20);
-            this.ckM_ComboBox7.TabIndex = 801;
+            this.ckM_ComboBox7.TabIndex = 30;
             // 
             // ckM_Label29
             // 
@@ -2206,7 +2064,7 @@
             this.ckM_ComboBox8.MoveNext = false;
             this.ckM_ComboBox8.Name = "ckM_ComboBox8";
             this.ckM_ComboBox8.Size = new System.Drawing.Size(140, 20);
-            this.ckM_ComboBox8.TabIndex = 800;
+            this.ckM_ComboBox8.TabIndex = 29;
             // 
             // label30
             // 
@@ -2239,7 +2097,7 @@
             this.btnSaiSyuukei.Margin = new System.Windows.Forms.Padding(1);
             this.btnSaiSyuukei.Name = "btnSaiSyuukei";
             this.btnSaiSyuukei.Size = new System.Drawing.Size(115, 28);
-            this.btnSaiSyuukei.TabIndex = 808;
+            this.btnSaiSyuukei.TabIndex = 5;
             this.btnSaiSyuukei.Text = "再集計";
             this.btnSaiSyuukei.UseVisualStyleBackColor = false;
             this.btnSaiSyuukei.Click += new System.EventHandler(this.btnSaiSyuukei_Click);
@@ -2291,8 +2149,8 @@
             this.panel1.Controls.Add(this.ChkNouhinsyoFLG);
             this.panel1.Controls.Add(this.ChkRyousyusyoFLG);
             this.panel1.Controls.Add(this.ChkSonotoFLG);
-            this.panel1.Controls.Add(this.ckM_CheckBox7);
-            this.panel1.Controls.Add(this.ckM_CheckBox8);
+            this.panel1.Controls.Add(this.ChkTelephoneContactKBN);
+            this.panel1.Controls.Add(this.ChkIndividualContactKBN);
             this.panel1.Controls.Add(this.ChkNoMailFLG);
             this.panel1.Controls.Add(this.ChkCancelReasonKBN);
             this.panel1.Controls.Add(this.ChkReturnFLG);
@@ -2300,6 +2158,374 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1079, 27);
             this.panel1.TabIndex = 810;
+            // 
+            // Detail
+            // 
+            this.Detail.Frozen = true;
+            this.Detail.HeaderText = "詳細";
+            this.Detail.Name = "Detail";
+            this.Detail.ReadOnly = true;
+            this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Detail.Width = 50;
+            // 
+            // Mail
+            // 
+            this.Mail.DataPropertyName = "Mail";
+            this.Mail.Frozen = true;
+            this.Mail.HeaderText = "ﾒｰﾙ";
+            this.Mail.Name = "Mail";
+            this.Mail.ReadOnly = true;
+            this.Mail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Mail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Mail.Width = 30;
+            // 
+            // colStoreName
+            // 
+            this.colStoreName.DataPropertyName = "StoreName";
+            this.colStoreName.Frozen = true;
+            this.colStoreName.HeaderText = "ストア";
+            this.colStoreName.Name = "colStoreName";
+            this.colStoreName.ReadOnly = true;
+            this.colStoreName.Width = 150;
+            // 
+            // colSiteJuchuuDateTime
+            // 
+            this.colSiteJuchuuDateTime.DataPropertyName = "SiteJuchuuDateTime";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSiteJuchuuDateTime.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSiteJuchuuDateTime.Frozen = true;
+            this.colSiteJuchuuDateTime.HeaderText = "サイト受注日時";
+            this.colSiteJuchuuDateTime.Name = "colSiteJuchuuDateTime";
+            this.colSiteJuchuuDateTime.ReadOnly = true;
+            this.colSiteJuchuuDateTime.Width = 120;
+            // 
+            // coIJuchuuDate
+            // 
+            this.coIJuchuuDate.DataPropertyName = "JuchuuDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.coIJuchuuDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.coIJuchuuDate.Frozen = true;
+            this.coIJuchuuDate.HeaderText = "ｷｬﾋﾟﾀﾙ受注日";
+            this.coIJuchuuDate.Name = "coIJuchuuDate";
+            this.coIJuchuuDate.ReadOnly = true;
+            // 
+            // colCustomerCD
+            // 
+            this.colCustomerCD.DataPropertyName = "CustomerCD";
+            this.colCustomerCD.Frozen = true;
+            this.colCustomerCD.HeaderText = "顧客番号";
+            this.colCustomerCD.Name = "colCustomerCD";
+            this.colCustomerCD.ReadOnly = true;
+            this.colCustomerCD.Width = 90;
+            // 
+            // colCustomerKanaName
+            // 
+            this.colCustomerKanaName.DataPropertyName = "CustomerKanaName";
+            this.colCustomerKanaName.Frozen = true;
+            this.colCustomerKanaName.HeaderText = "顧客名（カナ）";
+            this.colCustomerKanaName.Name = "colCustomerKanaName";
+            this.colCustomerKanaName.ReadOnly = true;
+            this.colCustomerKanaName.Width = 170;
+            // 
+            // colJuchuuNO
+            // 
+            this.colJuchuuNO.DataPropertyName = "JuchuuNO";
+            this.colJuchuuNO.HeaderText = "受注番号";
+            this.colJuchuuNO.Name = "colJuchuuNO";
+            this.colJuchuuNO.ReadOnly = true;
+            // 
+            // colOnHoldKbn
+            // 
+            this.colOnHoldKbn.DataPropertyName = "OnHoldKbn";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colOnHoldKbn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colOnHoldKbn.HeaderText = "保留";
+            this.colOnHoldKbn.Name = "colOnHoldKbn";
+            this.colOnHoldKbn.ReadOnly = true;
+            this.colOnHoldKbn.Width = 40;
+            // 
+            // colPaymentMethodName
+            // 
+            this.colPaymentMethodName.DataPropertyName = "PaymentMethodName";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colPaymentMethodName.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colPaymentMethodName.HeaderText = "警告状況";
+            this.colPaymentMethodName.Name = "colPaymentMethodName";
+            this.colPaymentMethodName.ReadOnly = true;
+            this.colPaymentMethodName.Width = 80;
+            // 
+            // colNoMailFLG
+            // 
+            this.colNoMailFLG.DataPropertyName = "NoMailFLG";
+            this.colNoMailFLG.HeaderText = "ﾒｰﾙ不要";
+            this.colNoMailFLG.Name = "colNoMailFLG";
+            this.colNoMailFLG.ReadOnly = true;
+            this.colNoMailFLG.Width = 90;
+            // 
+            // colMailKBN
+            // 
+            this.colMailKBN.DataPropertyName = "MailKBN";
+            this.colMailKBN.HeaderText = "メール発送状況";
+            this.colMailKBN.Name = "colMailKBN";
+            this.colMailKBN.ReadOnly = true;
+            // 
+            // colSendedDate
+            // 
+            this.colSendedDate.DataPropertyName = "SendedDate";
+            this.colSendedDate.HeaderText = "メール日";
+            this.colSendedDate.Name = "colSendedDate";
+            this.colSendedDate.ReadOnly = true;
+            // 
+            // colMailSubject
+            // 
+            this.colMailSubject.DataPropertyName = "MailSubject";
+            this.colMailSubject.HeaderText = "メール件名（最新送付件名）";
+            this.colMailSubject.Name = "colMailSubject";
+            this.colMailSubject.ReadOnly = true;
+            this.colMailSubject.Width = 250;
+            // 
+            // colIndividualContactKBN
+            // 
+            this.colIndividualContactKBN.DataPropertyName = "IndividualContactKBN";
+            this.colIndividualContactKBN.HeaderText = "個別連絡";
+            this.colIndividualContactKBN.Name = "colIndividualContactKBN";
+            this.colIndividualContactKBN.ReadOnly = true;
+            // 
+            // colTelephoneContactKBN
+            // 
+            this.colTelephoneContactKBN.DataPropertyName = "TelephoneContactKBN";
+            this.colTelephoneContactKBN.HeaderText = "電話連絡";
+            this.colTelephoneContactKBN.Name = "colTelephoneContactKBN";
+            this.colTelephoneContactKBN.ReadOnly = true;
+            // 
+            // colStaff
+            // 
+            this.colStaff.DataPropertyName = "StaffName";
+            this.colStaff.HeaderText = "担当者";
+            this.colStaff.Name = "colStaff";
+            this.colStaff.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "受注状況";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "発注状況";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "入金方法";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "入金状況";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "出荷状況";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "着指定日 時刻";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "金額(税込)";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "入金日";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "発注日";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "直送";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 40;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "入荷予定日";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "入荷日";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "出荷予定日";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "分割";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Width = 40;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "出荷日";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "分割";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Width = 40;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "サイト受注番号";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "受注コメント(顧客)";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "受注コメント(キャピタル)";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "ﾌﾟﾚｾﾞﾝﾄ";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Width = 40;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "配送方法";
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "発注コメント(社外)";
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "発注コメント(社内)";
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "出荷コメント(社外)";
+            this.Column24.Name = "Column24";
+            this.Column24.ReadOnly = true;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "出荷コメント(社内)";
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "電話番号";
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "送り状番号";
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            // 
+            // colCollectAmount
+            // 
+            this.colCollectAmount.DataPropertyName = "CollectAmount";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colCollectAmount.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colCollectAmount.HeaderText = "入金額";
+            this.colCollectAmount.Name = "colCollectAmount";
+            this.colCollectAmount.ReadOnly = true;
+            this.colCollectAmount.Width = 90;
+            // 
+            // colConfirmSource
+            // 
+            this.colConfirmSource.DataPropertyName = "ConfirmSource";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colConfirmSource.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colConfirmSource.HeaderText = "消込原資額";
+            this.colConfirmSource.Name = "colConfirmSource";
+            this.colConfirmSource.ReadOnly = true;
+            this.colConfirmSource.Width = 90;
+            // 
+            // colConfirmAmount
+            // 
+            this.colConfirmAmount.DataPropertyName = "ConfirmAmount";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.colConfirmAmount.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colConfirmAmount.HeaderText = "消込額";
+            this.colConfirmAmount.Name = "colConfirmAmount";
+            this.colConfirmAmount.ReadOnly = true;
+            this.colConfirmAmount.Width = 90;
+            // 
+            // colConfirmZan
+            // 
+            this.colConfirmZan.DataPropertyName = "ConfirmZan";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N0";
+            this.colConfirmZan.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colConfirmZan.HeaderText = "消込残額";
+            this.colConfirmZan.Name = "colConfirmZan";
+            this.colConfirmZan.ReadOnly = true;
+            this.colConfirmZan.Width = 90;
+            // 
+            // colConfirmNO
+            // 
+            this.colConfirmNO.DataPropertyName = "ConfirmNO";
+            this.colConfirmNO.HeaderText = "消込番号";
+            this.colConfirmNO.Name = "colConfirmNO";
+            this.colConfirmNO.ReadOnly = true;
+            this.colConfirmNO.Visible = false;
             // 
             // WebJuchuuKakunin
             // 
@@ -2393,8 +2619,8 @@
         private CKM_Controls.CKM_CheckBox ChkReturnFLG;
         private CKM_Controls.CKM_CheckBox ChkCancelReasonKBN;
         private CKM_Controls.CKM_CheckBox ChkNoMailFLG;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox8;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox7;
+        private CKM_Controls.CKM_CheckBox ChkIndividualContactKBN;
+        private CKM_Controls.CKM_CheckBox ChkTelephoneContactKBN;
         private CKM_Controls.CKM_CheckBox ChkSonotoFLG;
         private CKM_Controls.CKM_CheckBox ChkRyousyusyoFLG;
         private CKM_Controls.CKM_CheckBox ChkNouhinsyoFLG;
@@ -2418,20 +2644,47 @@
         private System.Windows.Forms.DataGridViewButtonColumn Detail;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Mail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStoreName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInputDatetime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coICollectDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCollectNO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCollectCustomerCD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colWebCollectTypeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSiteJuchuuDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coIJuchuuDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerKanaName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colJuchuuNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOnHoldKbn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentMethodName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMailFuyo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMailSend;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMailDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNoMailFLG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMailKBN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSendedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMailSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIndividualContactKBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelephoneContactKBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCollectAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmAmount;

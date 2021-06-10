@@ -128,6 +128,7 @@ namespace NyuukinKesikomiItiranHyou
                 {
                     nkih_bl.ShowMessage("E104");
                     txtCollectDateT.Focus();
+                    return false;
                 }
             }
 
@@ -149,8 +150,17 @@ namespace NyuukinKesikomiItiranHyou
                 {
                     nkih_bl.ShowMessage("E104");
                     txtInputDateT.Focus();
+                    return false;
                 }
             }
+
+            if(string.IsNullOrWhiteSpace(txtCollectDateT.Text) && string.IsNullOrWhiteSpace(txtInputDateT.Text))
+            {
+                nkih_bl.ShowMessage("E180");
+                txtCollectDateT.Focus();
+                return false;
+            }
+
             if (!string.IsNullOrEmpty(ScCollectCustomerCD.Code))
             {
                 if (!ScCollectCustomerCD.IsExists())

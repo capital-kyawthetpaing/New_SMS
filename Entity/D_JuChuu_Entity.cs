@@ -130,17 +130,17 @@ namespace Entity
 
         //照会用Entity
         public string KanaName { get; set; }
-        public string VendorCD { get; set; }        
+        public string VendorCD { get; set; }
         public string JuchuuProcessNOFrom { get; set; }
         public string JuchuuProcessNOTo { get; set; }
         public string JuchuuNOFrom { get; set; }
         public string JuchuuNOTo { get; set; }
-        public string SalesDateFrom  { get; set; }
-        public string SalesDateTo  { get; set; }
-        public string BillingCloseDateFrom  { get; set; }
-        public string BillingCloseDateTo  { get; set; }
-        public string CollectClearDateFrom  { get; set; }
-        public string CollectClearDateTo  { get; set; }
+        public string SalesDateFrom { get; set; }
+        public string SalesDateTo { get; set; }
+        public string BillingCloseDateFrom { get; set; }
+        public string BillingCloseDateTo { get; set; }
+        public string CollectClearDateFrom { get; set; }
+        public string CollectClearDateTo { get; set; }
 
         public int ChkMihikiate { get; set; }
         public int ChkMiuriage { get; set; }
@@ -166,19 +166,28 @@ namespace Entity
         public string NyukinDateFrom { get; set; }
         public string NyukinDateTo { get; set; }
 
-    public string DecidedDeliveryDateFrom { get; set; }
+        public string DecidedDeliveryDateFrom { get; set; }
         public string DecidedDeliveryDateTo { get; set; }
         public string DeliveryPlanDateFrom { get; set; }
         public string DeliveryPlanDateTo { get; set; }
         public string DeliveryDateFrom { get; set; }
         public string DeliveryDateTo { get; set; }
-        public string DeliveryNoFrom { get; set; }
-        public string DeliveryNoTo { get; set; }
+        public string InvoiceNOFrom { get; set; }
+        public string InvoiceNOTo { get; set; }
         public string ComboBox8 { get; set; }//メール発送状況							
         public string ComboBox7 { get; set; }//警告状況							
         public string ComboBox6 { get; set; }//配送方法						
         public string ComboBox5 { get; set; }//入金状況					
 
+        public string IncludeFLG { get; set; }
+        public string GiftFLG { get; set; }
+        public string NoshiFLG { get; set; }
+        public string NouhinsyoFLG { get; set; }//SeikyuusyoFLG
+        public string RyousyusyoFLG { get; set; }
+        public string SonotoFLG { get; set; }
+
+
+        public string CancelFLG { get; set; }
 
     }
 }
