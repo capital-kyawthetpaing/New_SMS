@@ -90,6 +90,14 @@ namespace NyuukinItiranHyou
                     return false;
                 }
             }
+
+
+            if(string.IsNullOrWhiteSpace(paymentend.Text) && string.IsNullOrWhiteSpace(paymentinputend.Text))
+            {
+                bbl.ShowMessage("E180");
+                paymentend.Focus();
+                return false;
+            }
             return true;
         }
         private void SetRequireField()
