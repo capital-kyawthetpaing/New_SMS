@@ -205,42 +205,39 @@ namespace DL
                 { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuNOFrom } },
                 { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuNOTo } },
 
+                { "@SiteJuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SiteJuchuuDateFrom } },
+                { "@SiteJuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SiteJuchuuDateTo } },
                 { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuDateFrom } },
                 { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuDateTo } },
-                { "@SalesDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SalesDateFrom } },
-                { "@SalesDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SalesDateTo } },
-                { "@BillingCloseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.BillingCloseDateFrom } },
-                { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.BillingCloseDateTo } },
-                { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CollectClearDateFrom } },
-                { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CollectClearDateTo } },
+                { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.OrderDateFrom } },
+                { "@OrderDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.OrderDateTo } },
+                { "@NyukinDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.NyukinDateFrom } },
+                { "@NyukinDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.NyukinDateTo } },
 
-                { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMihikiate.ToString() } },
-                { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMiuriage.ToString() } },
-                { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMiseikyu.ToString() } },
-                { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMinyukin.ToString() } },
-                { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkAll.ToString() } },
+                { "@DecidedDeliveryDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.DecidedDeliveryDateFrom } },
+                { "@DecidedDeliveryDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.DecidedDeliveryDateTo } },
+                { "@DeliveryPlanDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.DeliveryPlanDateFrom } },
+                { "@DeliveryPlanDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.DeliveryPlanDateTo } },
+                { "@DeliveryDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.DeliveryDateFrom } },
+                { "@DeliveryDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.DeliveryDateTo } },
+                { "@InvoiceNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.InvoiceNOFrom } },
+                { "@InvoiceNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.InvoiceNOTo } },
+            
+                { "@SiteJuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.SiteJuchuuNO } },
 
-                { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkTujo.ToString() } },
-                { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkHenpin.ToString() } },
-                { "@ChkGaisho", new ValuePair { value1 = SqlDbType.Int, value2 = dje.ValGaisho.ToString() } },
-                { "@ChkTento", new ValuePair { value1 = SqlDbType.Int, value2 = dje.ValTento.ToString() } },
-                { "@ChkWeb", new ValuePair { value1 = SqlDbType.Int, value2 = dje.ValWeb.ToString() } },
 
-                { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMihachu.ToString() } },
-                { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkNokiKaito.ToString() } },
-                { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMinyuka.ToString() } },
-                { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkMisiire.ToString() } },
-                { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ChkHachuAll.ToString() } },
+                { "@IncludeFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.IncludeFLG } },
+                { "@GiftFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.GiftFLG } },
+                { "@NoshiFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.NoshiFLG } },
+                { "@NouhinsyoFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.NouhinsyoFLG } },
+                { "@RyousyusyoFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.RyousyusyoFLG } },
+                { "@SonotoFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.SonotoFLG } },
+                { "@TelephoneContactKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.TelephoneContactKBN } },
+                { "@IndividualContactKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.IndividualContactKBN } },
+                { "@NoMailFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.NoMailFLG } },
+                { "@CancelFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.CancelFLG } },
+                { "@ReturnFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dje.ReturnFLG } },
 
-                { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.CustomerName } },
-                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.VendorCD } },
-                { "@OrderName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.VendorName } },
-                { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Tel12 } },
-                { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Tel13 } },
-                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.StaffCD } },
-
-                { "@JuchuuProcessNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuProcessNOFrom } },
-                { "@JuchuuProcessNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuProcessNOTo } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.Operator} },
                 //{ "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
 
@@ -584,6 +581,32 @@ namespace DL
         public bool NayoseSyoriAll_Exec(D_Juchuu_Entity dje)
         {
             string sp = "PRC_NayoseSyoriAll";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@Operator", SqlDbType.VarChar, dje.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dje.PC);
+
+            UseTransaction = true;
+
+            //OUTパラメータの追加
+            string outPutParam = "@OutErrNo";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
+            UseTransaction = true;
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                dje.ReturnFLG = outPutParam;
+
+            return ret;
+        }
+        public bool JuchuuDataCheck_Exec(D_Juchuu_Entity dje)
+        {
+            string sp = "PRC_JuchuuDataCheck";
 
             command = new SqlCommand(sp, GetConnection());
             command.CommandType = CommandType.StoredProcedure;
