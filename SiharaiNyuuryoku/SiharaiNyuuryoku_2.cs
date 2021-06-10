@@ -197,6 +197,8 @@ namespace SiharaiNyuuryoku
                 txtAccNo.Text = dtSiharai2.Rows[0]["KouzaNO"].ToString();
                 txtMeigi.Text = dtSiharai2.Rows[0]["KouzaMeigi"].ToString();
                 txtFeeKBN.Text = dtSiharai2.Rows[0]["FeeKBN"].ToString();
+                SC_KouzaCD.TxtCode.Text= dtSiharai2.Rows[0]["KouzaCD"].ToString();
+                SC_KouzaCD.LabelText = dtSiharai2.Rows[0]["KouzaName"].ToString();
                 txtAmount.Text = dtSiharai2.Rows[0]["Fee"].ToString();
                 txtCash.Text = dtSiharai2.Rows[0]["CashGaku"].ToString();
                 txtOffsetGaku.Text = dtSiharai2.Rows[0]["OffsetGaku"].ToString();
@@ -252,12 +254,12 @@ namespace SiharaiNyuuryoku
                 txtElectronicRecordNo.Require(true);
                 txtSettlementDate2.Require(true);
             }
-            if(Convert.ToInt32(txtOther1.Text)>0)
+            if(Convert.ToInt32(txtOther1.Text)>=0)
             {
                 SC_HanyouKeyStart1.TxtCode.Require(true);
                 SC_HanyouKeyEnd1.TxtCode.Require(true);
             }
-            if (Convert.ToInt32(txtOther2.Text) > 0)
+            if (Convert.ToInt32(txtOther2.Text)>0)
             {
                 SC_HanyouKeyStart2.TxtCode.Require(true);
                 SC_HanyouKeyEnd2.TxtCode.Require(true);
@@ -295,14 +297,11 @@ namespace SiharaiNyuuryoku
                 if(ErrorCheck())
                     SendData();
             }
-                
-
         }
 
 
         public void SendData()
         {
-
             if(dtGdv.Rows.Count>0)
             {
                 DataRow[] tblROWS = dtGdv.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
@@ -329,7 +328,6 @@ namespace SiharaiNyuuryoku
             this.Close();
         }
 
-
         private void SetData()
         {
             dtSiharai2.Rows[0]["TransferGaku"] = txtTransferAmount.Text.ToString() ;
@@ -342,6 +340,8 @@ namespace SiharaiNyuuryoku
             dtSiharai2.Rows[0]["KouzaMeigi"] = txtMeigi.Text.ToString();
             dtSiharai2.Rows[0]["FeeKBN"] = txtFeeKBN.Text.ToString();
             dtSiharai2.Rows[0]["Fee"] = txtAmount.Text.ToString();
+            dtSiharai2.Rows[0]["KouzaCD"] = SC_KouzaCD.TxtCode.Text.ToString();
+            dtSiharai2.Rows[0]["KouzaName"] = SC_KouzaCD.LabelText.ToString();
             dtSiharai2.Rows[0]["CashGaku"] = txtCash.Text.ToString();
             dtSiharai2.Rows[0]["OffsetGaku"] = txtOffsetGaku.Text.ToString();
             dtSiharai2.Rows[0]["BillGaku"] = txtBill.Text.ToString();
@@ -379,6 +379,7 @@ namespace SiharaiNyuuryoku
             txtAccNo.Text = string.Empty;
             txtMeigi.Text = string.Empty;
             txtFeeKBN.Text = string.Empty;
+            SC_KouzaCD.Clear();
             txtAmount.Text = string.Empty;
             txtCash.Text = string.Empty;
             txtOffsetGaku.Text = string.Empty;
@@ -402,7 +403,7 @@ namespace SiharaiNyuuryoku
         /// <returns></returns>
         public bool ErrorCheck()
         {
-            if (Convert.ToInt32(txtTransferAmount.Text) > 0)
+            if (Convert.ToInt32(txtTransferAmount.Text) != 0)//> to != 2021/06/10
             {
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
                     return false;
@@ -429,12 +430,6 @@ namespace SiharaiNyuuryoku
 
                 if(!RequireCheck(new Control[] { txtKouzaKBN }))
                     return false;
-                //if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
-                //{
-                //    bbl.ShowMessage("E101");
-                //    txtKouzaKBN.Focus();
-                //    return false;
-                //}
                 if(txtKouzaKBN.Text != "1" )
                 {
                     if(txtKouzaKBN.Text != "2")
@@ -448,13 +443,6 @@ namespace SiharaiNyuuryoku
 
                 if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN })) 
                     return false;
-                //if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
-                //{
-                //    bbl.ShowMessage("E101");
-                //    txtFeeKBN.Focus();
-                //    return false;
-                //}
-
                 if(!txtFeeKBN.Text.Equals("1"))
                 {
                     if(!txtFeeKBN.Text.Equals("2"))
@@ -464,27 +452,38 @@ namespace SiharaiNyuuryoku
                         return false;
                     }
                 }
-
-                if (!RequireCheck(new Control[] {txtAmount }))
+                //ses
+                if (!RequireCheck(new Control[] { SC_KouzaCD.TxtCode }))
                     return false;
 
+                SC_KouzaCD.ChangeDate = DateTime.Today.ToShortDateString();
+                SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
+                if (!SC_KouzaCD.IsExists(1))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_KouzaCD.SetFocus(1);
+                    return false;
+                }
+                //ses
+                if (!RequireCheck(new Control[] {txtAmount }))
+                    return false;
             }
 
-            if (Convert.ToInt32(txtBill.Text) > 0)
+            if (Convert.ToInt32(txtBill.Text) != 0)//> to != 2021/06/10
             {
                 if (!RequireCheck(new Control[] { txtBillNo,txtBillDate}))
                     return false;
 
             }
 
-            if (Convert.ToInt32(txtElectronicBone.Text) > 0)
+            if (Convert.ToInt32(txtElectronicBone.Text) != 0)//> to != 2021/06/10
             {
                 if (!RequireCheck(new Control[] { txtElectronicRecordNo,txtSettlementDate2}))
                     return false;
 
             }
 
-            if (Convert.ToInt32(txtOther1.Text) > 0)
+            if (Convert.ToInt32(txtOther1.Text) != 0)//> to != 2021/06/10
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode }))
                     return false;
@@ -507,7 +506,7 @@ namespace SiharaiNyuuryoku
                 }
             }
 
-            if(Convert.ToInt32(txtOther2.Text)>0)
+            if(Convert.ToInt32(txtOther2.Text) != 0)//> to != 2021/06/10
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode }))
                     return false;
@@ -530,7 +529,6 @@ namespace SiharaiNyuuryoku
 
            return true;
         }
-
        
         #region Enter event of Search Control
         private void SC_HanyouKeyStart1_Enter(object sender, EventArgs e)
@@ -607,12 +605,29 @@ namespace SiharaiNyuuryoku
                     }
 
                 }
-                //else
-                //{
-                //    bbl.ShowMessage("E101");
-                //    SC_BankCD.SetFocus(1);
-                //}
+            }
+        }
+        private void SC_KouzaCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_KouzaCD.TxtCode.Text))
+                {
+                    SC_KouzaCD.ChangeDate = DateTime.Today.ToShortDateString();
+                    if (SC_KouzaCD.SelectData())
+                    {
+                        SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
+                        SC_KouzaCD.Value2 = SC_KouzaCD.LabelText;
 
+                        Select_KouzaFee();
+
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_KouzaCD.SetFocus(1);
+                    }
+                }
             }
         }
 
@@ -848,5 +863,6 @@ namespace SiharaiNyuuryoku
             }
         }
 
+       
     }
 }
