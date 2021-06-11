@@ -295,7 +295,7 @@ namespace SiharaiNyuuryoku
             if (Index + 1 == 12)
             {
                   if (ErrorCheck())
-                  if (bbl.ShowMessage("Q106") == DialogResult.Yes)
+                  if (bbl.ShowMessage("Q106") == DialogResult.Yes)//error message added by ses 2021/06/11
                   {
                      SendData();
                   }
@@ -402,6 +402,7 @@ namespace SiharaiNyuuryoku
             txtOther2.Text = string.Empty;
             SC_HanyouKeyEnd1.Clear();
             SC_HanyouKeyEnd2.Clear();
+            //ses added 2021/06/11
             dgvSearchPayment.ClearSelection();
             dgvSearchPayment.DataSource = null;
             lblPayPlanGaku.Text = string.Empty;
@@ -416,7 +417,7 @@ namespace SiharaiNyuuryoku
         /// <returns></returns>
         public bool ErrorCheck()
         {
-            if (Convert.ToInt64(txtTransferAmount.Text) != 0)//> to != 2021/06/10
+            if (Convert.ToInt64(txtTransferAmount.Text) != 0)//> to != 2021/06/10 SES changed
             {
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode }))
                     return false;
@@ -487,21 +488,19 @@ namespace SiharaiNyuuryoku
                     return false;
             }
 
-            if (Convert.ToInt32(txtBill.Text) != 0)//> to != 2021/06/10
+            if (Convert.ToInt32(txtBill.Text) != 0)//> to != 2021/06/10 SES changed
             {
                 if (!RequireCheck(new Control[] { txtBillNo,txtBillDate}))
                     return false;
-
             }
 
-            if (Convert.ToInt32(txtElectronicBone.Text) != 0)//> to != 2021/06/10
+            if (Convert.ToInt32(txtElectronicBone.Text) != 0)//> to != 2021/06/10 SES changed
             {
                 if (!RequireCheck(new Control[] { txtElectronicRecordNo,txtSettlementDate2}))
                     return false;
-
             }
 
-            if (Convert.ToInt32(txtOther1.Text) != 0)//> to != 2021/06/10
+            if (Convert.ToInt32(txtOther1.Text) != 0)//> to != 2021/06/10 SES changed
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode }))
                     return false;
@@ -524,7 +523,7 @@ namespace SiharaiNyuuryoku
                 }
             }
 
-            if (Convert.ToInt32(txtOther2.Text) != 0)//> to != 2021/06/10
+            if (Convert.ToInt32(txtOther2.Text) != 0)//> to != 2021/06/10 SES changed
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode }))
                     return false;
@@ -544,13 +543,12 @@ namespace SiharaiNyuuryoku
                     return false;
                 }
             }
-            //E195 error check added by ses
+            //E195 error check added by ses 2021/06/11
             if (Convert.ToInt64(txtTransferAmount.Text) != Convert.ToInt64(txtCash.Text + txtOffsetGaku.Text+ txtBill.Text + txtElectronicBone.Text + txtOther1.Text + txtOther2.Text))
             {
                 bbl.ShowMessage("E195");
                 txtTransferAmount.Focus();
             }
-
             return true;
         }
        
