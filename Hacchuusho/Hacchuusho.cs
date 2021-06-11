@@ -307,7 +307,15 @@ namespace Hacchuusho
                         Report.SetDataSource(table);
                         Report.Refresh();
                         UpdateOrderD_04();
-                        bool result =  base.OutputPDF(filePath, Report);
+                        try
+                        {
+                            bool result = base.OutputPDF(filePath, Report);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace.ToString());
+                            return;
+                        }
 
                         //PDF出力が完了しました。
                         bbl.ShowMessage("I202");
