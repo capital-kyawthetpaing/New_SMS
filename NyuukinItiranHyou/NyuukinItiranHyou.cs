@@ -72,26 +72,45 @@ namespace NyuukinItiranHyou
 
             if (!RequireCheck(new Control[] { cboStoreAuthorizations }))   //Store CBO
                 return false;
+            if(!paymentstart.DateCheck())
+            {
+                paymentstart.Focus();
+                return false;
+            }
+            if (!paymentend.DateCheck())
+            {
+                paymentend.Focus();
+                return false;
+            }
+
             if (!string.IsNullOrWhiteSpace(paymentstart.Text) && !string.IsNullOrWhiteSpace(paymentend.Text))  //payment
             {
                 if (Convert.ToInt32((paymentstart.Text.ToString().Replace("/", ""))) > Convert.ToInt32(paymentend.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                 {
-                    bbl.ShowMessage("E103");
-                    paymentstart.Focus();
+                    bbl.ShowMessage("E104");
+                    paymentend.Focus();
                     return false;
                 }
+            }
+            if (!paymentinputstart.DateCheck())
+            {
+                paymentinputstart.Focus();
+                return false;
+            }
+            if (!paymentinputend.DateCheck())
+            {
+                paymentinputend.Focus();
+                return false;
             }
             if (!string.IsNullOrWhiteSpace(paymentinputstart.Text) && !string.IsNullOrWhiteSpace(paymentinputend.Text))  // payment input
             {
                 if (Convert.ToInt32((paymentinputstart.Text.ToString().Replace("/", ""))) > Convert.ToInt32(paymentinputend.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                 {
-                    bbl.ShowMessage("E103");
-                    paymentinputstart.Focus();
+                    bbl.ShowMessage("E104");
+                    paymentinputend.Focus();
                     return false;
                 }
             }
-
-
             if(string.IsNullOrWhiteSpace(paymentend.Text) && string.IsNullOrWhiteSpace(paymentinputend.Text))
             {
                 bbl.ShowMessage("E180");
@@ -335,7 +354,7 @@ namespace NyuukinItiranHyou
                 {
                     if (Convert.ToInt32((paymentstart.Text.ToString().Replace("/", ""))) > Convert.ToInt32(paymentend.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                     {
-                        bbl.ShowMessage("E103");
+                        bbl.ShowMessage("E104");
                           paymentend.Focus();
                     }
                 }
@@ -350,7 +369,7 @@ namespace NyuukinItiranHyou
                 {
                     if (Convert.ToDateTime((paymentinputstart.Text.ToString())) > Convert.ToDateTime(paymentinputend.Text.ToString())) //対象期間(From)の方が大きい場合Error
                     {
-                        bbl.ShowMessage("E103");
+                        bbl.ShowMessage("E104");
                         paymentinputend.Focus();
                     }
                 }
