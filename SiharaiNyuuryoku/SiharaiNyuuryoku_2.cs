@@ -23,6 +23,7 @@ namespace SiharaiNyuuryoku
         DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
         M_Kouza_Entity mke = new M_Kouza_Entity();
+        Kouza_BL kbl = new Kouza_BL();
 
         public DataTable dtGdv = new DataTable();
         public DataTable dtDetails = new DataTable();
@@ -473,7 +474,6 @@ namespace SiharaiNyuuryoku
 
                 mke.ChangeDate = DateTime.Today.ToShortDateString();
                 mke.KouzaCD = SC_KouzaCD.TxtCode.Text;
-                Kouza_BL kbl = new Kouza_BL();
                 DataTable dtKouza = new DataTable();
                 dtKouza = kbl.M_Kouza_Select(mke);
                 if (dtKouza.Rows.Count == 0)
