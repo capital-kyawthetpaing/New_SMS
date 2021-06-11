@@ -67,7 +67,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(103, 18);
+            this.ckM_Label1.Location = new System.Drawing.Point(53, 29);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label1.TabIndex = 2;
@@ -106,7 +106,7 @@
             this.cboStoreAuthorizations.Flag = 0;
             this.cboStoreAuthorizations.FormattingEnabled = true;
             this.cboStoreAuthorizations.Length = 10;
-            this.cboStoreAuthorizations.Location = new System.Drawing.Point(1503, 18);
+            this.cboStoreAuthorizations.Location = new System.Drawing.Point(1505, 26);
             this.cboStoreAuthorizations.MaxLength = 10;
             this.cboStoreAuthorizations.MoveNext = true;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
@@ -122,7 +122,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(1468, 23);
+            this.ckM_Label7.Location = new System.Drawing.Point(1473, 29);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label7.TabIndex = 16;
@@ -139,7 +139,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(259, 46);
+            this.ckM_Label6.Location = new System.Drawing.Point(218, 60);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label6.TabIndex = 13;
@@ -156,7 +156,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(259, 17);
+            this.ckM_Label5.Location = new System.Drawing.Point(218, 30);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label5.TabIndex = 12;
@@ -179,7 +179,7 @@
             this.ScCollectCustomerCD.IsCopy = false;
             this.ScCollectCustomerCD.LabelText = "";
             this.ScCollectCustomerCD.LabelVisible = true;
-            this.ScCollectCustomerCD.Location = new System.Drawing.Point(150, 92);
+            this.ScCollectCustomerCD.Location = new System.Drawing.Point(100, 120);
             this.ScCollectCustomerCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCollectCustomerCD.Name = "ScCollectCustomerCD";
             this.ScCollectCustomerCD.NameWidth = 500;
@@ -205,11 +205,11 @@
             this.cboWebCollectType.Flag = 0;
             this.cboWebCollectType.FormattingEnabled = true;
             this.cboWebCollectType.Length = 10;
-            this.cboWebCollectType.Location = new System.Drawing.Point(150, 70);
+            this.cboWebCollectType.Location = new System.Drawing.Point(100, 90);
             this.cboWebCollectType.MaxLength = 10;
             this.cboWebCollectType.MoveNext = true;
             this.cboWebCollectType.Name = "cboWebCollectType";
-            this.cboWebCollectType.Size = new System.Drawing.Size(90, 20);
+            this.cboWebCollectType.Size = new System.Drawing.Size(300, 20);
             this.cboWebCollectType.TabIndex = 6;
             // 
             // txtInputDateT
@@ -233,7 +233,7 @@
             this.txtInputDateT.IsShop = false;
             this.txtInputDateT.IsTimemmss = false;
             this.txtInputDateT.Length = 10;
-            this.txtInputDateT.Location = new System.Drawing.Point(285, 42);
+            this.txtInputDateT.Location = new System.Drawing.Point(261, 58);
             this.txtInputDateT.MaxLength = 10;
             this.txtInputDateT.MoveNext = true;
             this.txtInputDateT.Name = "txtInputDateT";
@@ -265,7 +265,7 @@
             this.txtInputDateF.IsShop = false;
             this.txtInputDateF.IsTimemmss = false;
             this.txtInputDateF.Length = 10;
-            this.txtInputDateF.Location = new System.Drawing.Point(150, 42);
+            this.txtInputDateF.Location = new System.Drawing.Point(100, 58);
             this.txtInputDateF.MaxLength = 10;
             this.txtInputDateF.MoveNext = true;
             this.txtInputDateF.Name = "txtInputDateF";
@@ -296,7 +296,7 @@
             this.txtCollectDateT.IsShop = false;
             this.txtCollectDateT.IsTimemmss = false;
             this.txtCollectDateT.Length = 10;
-            this.txtCollectDateT.Location = new System.Drawing.Point(286, 14);
+            this.txtCollectDateT.Location = new System.Drawing.Point(261, 26);
             this.txtCollectDateT.MaxLength = 10;
             this.txtCollectDateT.MoveNext = true;
             this.txtCollectDateT.Name = "txtCollectDateT";
@@ -328,7 +328,7 @@
             this.txtCollectDateF.IsShop = false;
             this.txtCollectDateF.IsTimemmss = false;
             this.txtCollectDateF.Length = 10;
-            this.txtCollectDateF.Location = new System.Drawing.Point(150, 14);
+            this.txtCollectDateF.Location = new System.Drawing.Point(100, 26);
             this.txtCollectDateF.MaxLength = 10;
             this.txtCollectDateF.MoveNext = true;
             this.txtCollectDateF.Name = "txtCollectDateF";
@@ -347,7 +347,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(103, 101);
+            this.ckM_Label4.Location = new System.Drawing.Point(53, 128);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 5;
@@ -364,7 +364,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(90, 74);
+            this.ckM_Label3.Location = new System.Drawing.Point(40, 94);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label3.TabIndex = 4;
@@ -381,7 +381,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(77, 45);
+            this.ckM_Label2.Location = new System.Drawing.Point(27, 61);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label2.TabIndex = 3;
