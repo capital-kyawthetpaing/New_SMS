@@ -254,7 +254,7 @@ namespace KaitounoukiKakuninsho
                         Report.SetDataSource(table);
                         Report.Refresh();
 
-                        bool result = OutputPDF(filePath, Report);
+                        bool result = base.OutputPDF(filePath, Report);
                         
                         //PDF出力が完了しました。
                         bbl.ShowMessage("I202");

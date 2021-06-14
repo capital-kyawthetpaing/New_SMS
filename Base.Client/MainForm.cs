@@ -5,16 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using Entity;
 using CKM_Controls;
-using CrystalDecisions.Shared;
-using CrystalDecisions.ReportSource;
 using CrystalDecisions.CrystalReports.Engine;
 using System.Runtime.InteropServices; //EXCEL出力(必要)
-using Microsoft.Office.Interop;//EXCEL出力(必要)
 using Search;
 
 namespace Base.Client
@@ -1249,13 +1245,13 @@ namespace Base.Client
                 option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.PortableDocFormat;
                 option.FormatOptions = new CrystalDecisions.Shared.PdfRtfWordFormatOptions();
                 option.DestinationOptions = fileOption;
-
+                
                 // pdfとして外部ファイル出力を行う
                 report.Export();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + Environment.NewLine +ex.StackTrace.ToString() );
                 return false;
             }
             return true;
