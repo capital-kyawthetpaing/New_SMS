@@ -151,6 +151,7 @@
             this.sc_Customer.Size = new System.Drawing.Size(634, 28);
             this.sc_Customer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.sc_Customer.TabIndex = 4;
+            this.sc_Customer.test = null;
             this.sc_Customer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.sc_Customer.UseChangeDate = false;
             this.sc_Customer.Value1 = null;
@@ -236,6 +237,7 @@
             this.txtTargetdate.isMaxLengthErr = false;
             this.txtTargetdate.IsNumber = true;
             this.txtTargetdate.IsShop = false;
+            this.txtTargetdate.IsTimemmss = false;
             this.txtTargetdate.Length = 10;
             this.txtTargetdate.Location = new System.Drawing.Point(133, 29);
             this.txtTargetdate.MaxLength = 10;

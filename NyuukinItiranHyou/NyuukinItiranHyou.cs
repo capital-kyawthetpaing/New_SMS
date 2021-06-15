@@ -230,7 +230,9 @@ namespace NyuukinItiranHyou
                 {
                     if (table == null || table.Rows.Count == 0)
                     {
-                        MessageBox.Show("No data exists to print");
+                        //MessageBox.Show("No data exists to print");
+                        bbl.ShowMessage("E128");
+                        paymentstart.Focus();
                         return;
                     }
 
@@ -240,7 +242,7 @@ namespace NyuukinItiranHyou
                     switch (PrintMode)
                     {
                         case EPrintMode.DIRECT:
-                            ret = bbl.ShowMessage("Q202");
+                            ret = bbl.ShowMessage("Q201");
                             if (ret == DialogResult.Cancel)
                             {
                                 return;
