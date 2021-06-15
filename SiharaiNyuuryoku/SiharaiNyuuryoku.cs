@@ -366,16 +366,20 @@ namespace SiharaiNyuuryoku
                             for (int p = 0; p < dt4.Rows.Count; p++)
                             {
                                 Num = dt4.Rows[p]["Number"].ToString();
-                                de_e = new D_Exclusive_Entity()
+                                if(!string.IsNullOrWhiteSpace(Num))
                                 {
-                                    DataKBN = 9,
-                                    Number = Num,
-                                    Program = this.InProgramID,
-                                    Operator = this.InOperatorCD,
-                                    PC = this.InPcID
-                                };
+                                    de_e = new D_Exclusive_Entity()
+                                    {
+                                        DataKBN = 9,
+                                        Number = Num,
+                                        Program = this.InProgramID,
+                                        Operator = this.InOperatorCD,
+                                        PC = this.InPcID
+                                    };
 
-                                e_bl.D_Exclusive_Insert(de_e);
+                                    e_bl.D_Exclusive_Insert(de_e);
+                                }
+                               
                             }
                         }
                     //}                   
