@@ -14,8 +14,7 @@ using CKM_Controls;
 using System.Diagnostics;
 
 namespace MainMenu
-{
-   
+{ 
     public partial class TennicLogin : Form
     {
         Login_BL loginbl;
@@ -38,6 +37,7 @@ namespace MainMenu
             }
             else
                 ckM_Button3.Visible = false;
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
         private bool  CheckExistFormRunning()
         {
@@ -69,8 +69,7 @@ namespace MainMenu
                 Password=txtPassword.Text
             };
             return mse;
-        }
-
+        } 
         private void Tennic_MainMenu_Load(object sender, EventArgs e)
         {
             Iconic ic = new Iconic();
@@ -85,30 +84,16 @@ namespace MainMenu
                 }
             }
             loginbl = new Login_BL();
+
             Add_ButtonDesign();
             txtOperatorCD.Select();
             this.ActiveControl = txtOperatorCD;
             txtOperatorCD.Focus();
-        }
-
+            Control.CheckForIllegalCrossThreadCalls = false;
+        } 
         private void Tennic_MainMenu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                this.SelectNextControl(ActiveControl, true, true, true, true);
 
-            else if (e.KeyData == Keys.F1)
-            {
-                this.Close();
-                System.Environment.Exit(0);
-            }
-            else if (e.KeyData == Keys.F12)
-            {
-                Login_Click();
-            }
-            else if (e.KeyData == Keys.F11)
-            {
-                F11();
-            }
         }
 
         private void ckM_Button1_Click(object sender, EventArgs e)
@@ -136,11 +121,16 @@ namespace MainMenu
                     {
                         if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
                         {
-                            var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
+                            //loginbl.ShowMessage("S013");
+                            //txtOperatorCD.Select();
+                            //return;
+                        
+                        var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
                             Tennic_MainMenu menuForm = new Tennic_MainMenu(GetInfo().StaffCD, mseinfo);
-                            this.Hide();
-                            menuForm.ShowDialog();
-                            this.Close();
+                            this.Hide();   
+                            menuForm.Show();
+                            //this.Close();
+
                         }
                         else
                         {
@@ -173,18 +163,24 @@ namespace MainMenu
         }
         private void F11()
         {
-            if (ApplicationDeployment.IsNetworkDeployed)
+            var result = MessageBox.Show("サーバーから最新プログラムをダウンロードしますか？", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            this.Cursor = Cursors.WaitCursor;
+            try
             {
-                var result = MessageBox.Show("サーバーから最新プログラムをダウンロードしますか？", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    this.Cursor = Cursors.WaitCursor;
-                    FTPData ftp = new FTPData(Login_BL.SyncPath, "TennicLogin");
-                    ftp.UpdateSyncData();
-                    this.Cursor = Cursors.Default;
+                    backgroundWorker1.RunWorkerAsync();
                 }
-                ckM_Button1.Focus();
             }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+                return;
+            }
+            this.Cursor = Cursors.Default;
+
+            ckM_Button1.Focus();
         }
         private void ckM_Button2_MouseEnter(object sender, EventArgs e)
         {
@@ -221,5 +217,82 @@ namespace MainMenu
 
             
         }
+        protected string Maxcou = "";
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+            if (files.Count() == 0)
+            {
+                return;
+            }
+            progressBar1.Visible = true;
+            progressBar1.Maximum = 100;
+            progressBar1.Minimum = 0;
+            progressBar1.Value = 0;
+            int max = files.Count();
+            Maxcou = max.ToString();
+            int c = 0;
+            lblProgress.Text = "0 of " + max.ToString() + " Completed!";//
+            foreach (string file in files)
+            {
+                c++;
+                double cent = (c * 100) / max;
+                if (!backgroundWorker1.CancellationPending)
+                {
+                    backgroundWorker1.ReportProgress((int)cent);
+                }
+                lblProgress.Text = c.ToString() + " of " + max.ToString() + " Completed!";
+                lblProgress.Update();
+                FTPData ftp = new FTPData(Login_BL.SyncPath, "TennicLogin");
+                ftp.Download("", file, Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+            }
+            progressBar1.Enabled = progressBar1.Visible = false;
+            progressBar1.Text = "";
+            lblProgress.Text = "";
+            lblProgress.Update();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            lblcent.Text = "";
+            lblcent.Update();
+            MessageBox.Show("ダウンロードが終わりました", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            lblcent.Text = $"{e.ProgressPercentage} %";
+            lblcent.Update();
+            progressBar1.Value = e.ProgressPercentage;
+            progressBar1.Update();
+        }
+
+        private void TennicLogin_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+                if (ActiveControl.Name == "txtPassword" && e.KeyCode == Keys.Enter)
+                {
+                    ckM_Button1.Select();
+                    ckM_Button1.Focus();
+                    return;
+                }
+                if (e.KeyCode == Keys.Enter)
+                    this.SelectNextControl(ActiveControl, true, true, true, true);
+
+                else if (e.KeyData == Keys.F1)
+                {
+                    this.Close();
+                    System.Environment.Exit(0);
+                }
+                else if (e.KeyData == Keys.F12)
+                {
+                    Login_Click();
+                }
+                else if (e.KeyData == Keys.F11)
+                {
+                    F11();
+                }
+            }
+        
     }
 }

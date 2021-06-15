@@ -25,9 +25,12 @@ namespace SiharaiNyuuryoku
         M_Kouza_Entity mke = new M_Kouza_Entity();
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
+        Exclusive_BL e_bl = new Exclusive_BL();
+        D_Exclusive_Entity de_e = new D_Exclusive_Entity(); 
 
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
+        string Num = string.Empty;
 
         DataTable dtpayplan = new DataTable(); // data bind(insert mode) for Form1
         DataTable dtPay1 = new DataTable(); // data bind(update mode) for Form1
@@ -77,7 +80,7 @@ namespace SiharaiNyuuryoku
 
             BindCombo();
             SetRequireField();
-           
+            DeleteExclusive();
         }
 
         #region Funtion For FormLoad
@@ -108,10 +111,12 @@ namespace SiharaiNyuuryoku
                     break;
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
+                    DeleteExclusive();
                     F12Visible = true;
                     break;
                 case 4:
                     ChangeMode(EOperationMode.DELETE);
+                    DeleteExclusive();
                     F12Visible = true;
                     break;
                 case 5:
@@ -122,6 +127,7 @@ namespace SiharaiNyuuryoku
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         ChangeMode(OperationMode);
+                        DeleteExclusive();
                         ScPaymentProcessNum.SetFocus(1);
                     }
                     else
@@ -140,6 +146,24 @@ namespace SiharaiNyuuryoku
         }
 
         #endregion
+
+        private void DeleteExclusive()
+        {
+            de_e = GetExclusiveData();
+            e_bl.D_Exclusive_DeleteByKBN(de_e);
+        }
+
+        private D_Exclusive_Entity GetExclusiveData()
+        {
+            de_e = new D_Exclusive_Entity()
+            {
+                DataKBN = 9,
+                Program = this.InProgramID,
+                Operator = this.InOperatorCD,
+                PC = this.InPcID
+            };
+            return de_e;
+        }
 
         private void ChangeMode(EOperationMode OperationMode)
         {
@@ -193,6 +217,7 @@ namespace SiharaiNyuuryoku
 
         protected override void EndSec()
         {
+            DeleteExclusive();
             this.Close();
         }
 
@@ -338,7 +363,25 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("SubAccount2");
                             dt4.Columns.Remove("end2label");
 
-                    }
+                            for (int p = 0; p < dt4.Rows.Count; p++)
+                            {
+                                Num = dt4.Rows[p]["Number"].ToString();
+                                if(!string.IsNullOrWhiteSpace(Num))
+                                {
+                                    de_e = new D_Exclusive_Entity()
+                                    {
+                                        DataKBN = 9,
+                                        Number = Num,
+                                        Program = this.InProgramID,
+                                        Operator = this.InOperatorCD,
+                                        PC = this.InPcID
+                                    };
+
+                                    e_bl.D_Exclusive_Insert(de_e);
+                                }
+                               
+                            }
+                        }
                     //}                   
                 }
 

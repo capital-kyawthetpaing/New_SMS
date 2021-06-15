@@ -43,6 +43,7 @@ namespace MainMenu
                 ckM_Button3.Visible = false;
 
             Login_BL.Ver = label2.Text;
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
         private bool CheckExistFormRunning()
         {
@@ -105,7 +106,7 @@ namespace MainMenu
             loginbl = new Login_BL();
             txtOperatorCD.Focus();
             Add_ButtonDesign();
-           
+
             //if (Login_BL.Islocalized)
             //{
             //    //var DefaultFlg = loginbl.CheckDefault("1"); // MenuFlg
@@ -115,7 +116,7 @@ namespace MainMenu
             //    //        Setting(DefaultFlg);
             //    //}
             //}
-
+            Control.CheckForIllegalCrossThreadCalls = false;
 
         }
         private void ChangeFont_(DataTable df)
@@ -215,50 +216,23 @@ namespace MainMenu
         }
         private void F11()
         {
-            //if (ApplicationDeployment.IsNetworkDeployed)
-            //{
-            //    var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        this.Cursor = Cursors.WaitCursor;
-            //        FTPData ftp = new FTPData();
-            //        ftp.UpdateSyncData(Login_BL.SyncPath);
-            //        this.Cursor = Cursors.Default;
-            //        MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        // .. 
-            //    }
-            //    ckM_Button1.Focus();
-
-            //}
-            if (ApplicationDeployment.IsNetworkDeployed)
-            {
                 var result = MessageBox.Show("サーバーから最新プログラムをダウンロードしますか？", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
+         
                     this.Cursor = Cursors.WaitCursor;
-                    FTPData ftp = new FTPData(Login_BL.SyncPath, "MainmenuLogin");
                     try
                     {
                         if (result == DialogResult.Yes)
                         {
-                            this.Cursor = Cursors.WaitCursor;
-                            ftp.UpdateSyncData();
-                            this.Cursor = Cursors.Default;
+                            backgroundWorker1.RunWorkerAsync();
                         }
                     }
                     catch (Exception ex)
-                    {
-                        //MessageBox.Show(ex.StackTrace.ToString());
-                        MessageBox.Show(ex.StackTrace.ToString() + ftp.GetError() + Environment.NewLine + Login_BL.SyncPath);
+                    { 
                         this.Cursor = Cursors.Default;
                         return;
-                    }
-                   // MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                    } 
                     this.Cursor = Cursors.Default;
-                }
-            }
+                
             ckM_Button1.Focus();
         }
         private void Login_Click()
@@ -291,30 +265,26 @@ namespace MainMenu
                             var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
                             Main_Menu menuForm = new Main_Menu(GetInfo().StaffCD, mseinfo);
                             this.Hide();
-                            menuForm.ShowDialog();
-                            this.Close();
+                            menuForm.Show();
+                            //this.Close();
                         }
                         else
                         {
                             loginbl.ShowMessage("S018");
                             txtOperatorCD.Select();
-
                         }
-
                     }
                     else
                     {
                         loginbl.ShowMessage(mse.Rows[0]["MessageID"].ToString());
                         txtOperatorCD.Select();
                     }
-
                 }
                 else
                 {
                     loginbl.ShowMessage("E101");
                     txtOperatorCD.Select();
-                }
-
+                } 
             }
         }
 
@@ -378,6 +348,56 @@ namespace MainMenu
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+         protected string Maxcou = "";
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        { 
+            var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+            if (files.Count() == 0)
+            {
+                return;
+            }
+            progressBar1.Visible = true;
+            progressBar1.Maximum = 100;
+            progressBar1.Minimum = 0;
+            progressBar1.Value = 0;
+            int max = files.Count();
+            Maxcou = max.ToString();
+            int c = 0;
+            lblProgress.Text = "0 of " + max.ToString() + " Completed!";//
+            foreach (string file in files)
+            {
+                c++;
+                double cent = (c * 100) / max;
+                if (!backgroundWorker1.CancellationPending)
+                {
+                    backgroundWorker1.ReportProgress((int)cent);
+                }
+                lblProgress.Text = c.ToString() + " of " + max.ToString() + " Completed!";
+                lblProgress.Update();
+                FTPData ftp = new FTPData(Login_BL.SyncPath, "MainmenuLogin");
+                ftp.Download("", file, Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+            }
+            progressBar1.Enabled = progressBar1.Visible = false;
+            progressBar1.Text = "";
+            lblProgress.Text = "";
+            lblProgress.Update();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            lblcent.Text = "";
+            lblcent.Update();
+            MessageBox.Show("ダウンロードが終わりました", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            lblcent.Text = $"{e.ProgressPercentage} %";
+            lblcent.Update();
+            progressBar1.Value = e.ProgressPercentage;
+            progressBar1.Update();
         }
     }
 }

@@ -289,7 +289,7 @@ namespace MainMenu
             }
             return null;
         }
-        public   void Download(string cc,string file, string ftpuri, string UID, string PWD, string path)
+        public void Download(string cc,string file, string ftpuri, string UID, string PWD, string path)
         {
            // await Task.Run(() =>
            //{

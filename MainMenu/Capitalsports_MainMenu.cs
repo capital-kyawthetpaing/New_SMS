@@ -506,8 +506,8 @@ namespace MainMenu
             // this.Hide();
             CapitalsportsLogin hln = new CapitalsportsLogin(true);
             this.Hide();
-            hln.ShowDialog();
-            this.Close();
+            hln.Show();
+            //this.Close();
         }
         private void btnProcess_Click(object sender, EventArgs e)
         {
