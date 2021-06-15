@@ -23,14 +23,9 @@ namespace MainMenu
        static Login_BL lbl = new Login_BL();
         [STAThread]
         static void Main()
-        {
-
-
-         // var f=  IsInteger("1234567890123");
-
+        { 
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-           
+            Application.SetCompatibleTextRenderingDefault(false); 
             Application.Run(LoginFormName());
         }
         [DllImport("kernel32.dll")]

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-
 using BL;
 using Entity;
 using Base.Client;
@@ -253,11 +248,18 @@ namespace KaitounoukiKakuninsho
                         // 印字データをセット
                         Report.SetDataSource(table);
                         Report.Refresh();
-
+                    try
+                    {
                         bool result = base.OutputPDF(filePath, Report);
-                        
-                        //PDF出力が完了しました。
-                        bbl.ShowMessage("I202");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace.ToString());
+                        return;
+                    }
+                    //PDF出力が完了しました。
+                    bbl.ShowMessage("I202");
 
                         break;
                 }
