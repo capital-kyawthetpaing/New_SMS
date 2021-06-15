@@ -30,6 +30,7 @@ namespace SiharaiNyuuryoku
 
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
+        string Num = string.Empty;
 
         DataTable dtpayplan = new DataTable(); // data bind(insert mode) for Form1
         DataTable dtPay1 = new DataTable(); // data bind(update mode) for Form1
@@ -110,10 +111,12 @@ namespace SiharaiNyuuryoku
                     break;
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
+                    DeleteExclusive();
                     F12Visible = true;
                     break;
                 case 4:
                     ChangeMode(EOperationMode.DELETE);
+                    DeleteExclusive();
                     F12Visible = true;
                     break;
                 case 5:
@@ -360,8 +363,25 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("SubAccount2");
                             dt4.Columns.Remove("end2label");
 
-                    }
+                            for (int p = 0; p < dt4.Rows.Count; p++)
+                            {
+                                Num = dt4.Rows[p]["Number"].ToString();
+                                if(!string.IsNullOrWhiteSpace(Num))
+                                {
+                                    de_e = new D_Exclusive_Entity()
+                                    {
+                                        DataKBN = 9,
+                                        Number = Num,
+                                        Program = this.InProgramID,
+                                        Operator = this.InOperatorCD,
+                                        PC = this.InPcID
+                                    };
 
+                                    e_bl.D_Exclusive_Insert(de_e);
+                                }
+                               
+                            }
+                        }
                     //}                   
                 }
 
