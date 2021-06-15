@@ -539,8 +539,8 @@ namespace MainMenu
             ForceToClose();
                HaspoLogin hln = new HaspoLogin(true);
             this.Hide();
-            hln.ShowDialog();
-            this.Close();
+            hln.Show();
+            //this.Close();
         }
 
         private void Haspo_MainMenu_KeyDown(object sender, KeyEventArgs e)
@@ -554,11 +554,9 @@ namespace MainMenu
                 ForceToClose();
                    HaspoLogin hln = new HaspoLogin();
                 this.Hide();
-                hln.ShowDialog();
-                this.Close();
-
+                hln.Show ();
+                //this.Close(); 
             }
-
         }
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {

@@ -42,6 +42,8 @@
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
             this.lblProgress = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblcent = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -269,22 +271,36 @@
             // lblProgress
             // 
             this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblProgress.Location = new System.Drawing.Point(534, 398);
+            this.lblProgress.Location = new System.Drawing.Point(532, 340);
             this.lblProgress.Name = "lblProgress";
             this.lblProgress.Size = new System.Drawing.Size(200, 23);
             this.lblProgress.TabIndex = 33;
-            this.lblProgress.Text = "lblProgress";
             this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblProgress.Visible = false;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(430, 440);
+            this.progressBar1.Location = new System.Drawing.Point(428, 382);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(405, 23);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 42;
             this.progressBar1.Visible = false;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // lblcent
+            // 
+            this.lblcent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblcent.Location = new System.Drawing.Point(532, 423);
+            this.lblcent.Name = "lblcent";
+            this.lblcent.Size = new System.Drawing.Size(200, 23);
+            this.lblcent.TabIndex = 43;
+            this.lblcent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainmenuLogin
             // 
@@ -292,6 +308,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1193, 614);
+            this.Controls.Add(this.lblcent);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pictureBox1);
@@ -331,5 +348,7 @@
         private CKM_Controls.CKM_TextBox txtOperatorCD;
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label lblcent;
     }
 }
