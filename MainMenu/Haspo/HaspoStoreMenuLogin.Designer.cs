@@ -40,8 +40,10 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPassword = new CKM_Controls.CKM_TextBox();
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
-            this.lblProgress = new System.Windows.Forms.Label();
+            this.lblcent = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblProgress = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -265,25 +267,39 @@
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
             this.txtOperatorCD.UseColorSizMode = false;
             // 
-            // lblProgress
+            // lblcent
             // 
-            this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblProgress.Location = new System.Drawing.Point(531, 402);
-            this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(200, 23);
-            this.lblProgress.TabIndex = 38;
-            this.lblProgress.Text = "lblProgress";
-            this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblProgress.Visible = false;
+            this.lblcent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblcent.Location = new System.Drawing.Point(537, 422);
+            this.lblcent.Name = "lblcent";
+            this.lblcent.Size = new System.Drawing.Size(200, 23);
+            this.lblcent.TabIndex = 52;
+            this.lblcent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(433, 448);
+            this.progressBar1.Location = new System.Drawing.Point(433, 381);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(405, 23);
             this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 39;
+            this.progressBar1.TabIndex = 51;
             this.progressBar1.Visible = false;
+            // 
+            // lblProgress
+            // 
+            this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblProgress.Location = new System.Drawing.Point(537, 339);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(200, 23);
+            this.lblProgress.TabIndex = 50;
+            this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // HaspoStoreMenuLogin
             // 
@@ -291,6 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1207, 614);
+            this.Controls.Add(this.lblcent);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.ckM_Label2);
@@ -328,7 +345,9 @@
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox txtPassword;
         private CKM_Controls.CKM_TextBox txtOperatorCD;
-        private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.Label lblcent;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblProgress;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

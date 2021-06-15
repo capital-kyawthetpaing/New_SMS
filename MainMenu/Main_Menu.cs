@@ -652,8 +652,8 @@ namespace MainMenu
                 ForceToClose();
                   MainmenuLogin hln = new MainmenuLogin();
                 this.Hide();
-                hln.ShowDialog();
-                this.Close();
+                hln.Show();
+                //this.Close();
 
             }
         }
@@ -663,8 +663,8 @@ namespace MainMenu
             ForceToClose();
                MainmenuLogin hln = new MainmenuLogin(true);
             this.Hide();
-            hln.ShowDialog();
-            this.Close();
+            hln.Show();
+            //this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -55,7 +55,7 @@ namespace MainMenu.Haspo
             }
             else
                 ckM_Button3.Visible = false;
-
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         private static void SetAddRemoveProgramsIcon()
@@ -169,8 +169,8 @@ namespace MainMenu.Haspo
                             var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
                             HapoStore_MainMenu hapomainmenu = new HapoStore_MainMenu(GetInfo().StaffCD,mseinfo);
                             this.Hide();
-                            hapomainmenu.ShowDialog();
-                            this.Close();
+                            hapomainmenu.Show();
+                            //this.Close();
                         }
                         else
                         {
@@ -219,13 +219,22 @@ namespace MainMenu.Haspo
         private void F11()
         {
             var result = MessageBox.Show("サーバーから最新プログラムをダウンロードしますか？", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+
+            this.Cursor = Cursors.WaitCursor;
+            try
             {
-                this.Cursor = Cursors.WaitCursor;
-                FTPData ftp = new FTPData(Login_BL.SyncPath, "HaspoStoreMenuLogin");
-                ftp.UpdateSyncData();
-                this.Cursor = Cursors.Default;
+                if (result == DialogResult.Yes)
+                {
+                    backgroundWorker1.RunWorkerAsync();
+                }
             }
+            catch (Exception ex)
+            {
+                this.Cursor = Cursors.Default;
+                return;
+            }
+            this.Cursor = Cursors.Default;
+
             ckM_Button1.Focus();
         }
         private void  Async()
@@ -289,6 +298,55 @@ namespace MainMenu.Haspo
         {
             this.Close();
             System.Environment.Exit(0);
+        }
+        protected string Maxcou = "";
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+            if (files.Count() == 0)
+            {
+                return;
+            }
+            progressBar1.Visible = true;
+            progressBar1.Maximum = 100;
+            progressBar1.Minimum = 0;
+            progressBar1.Value = 0;
+            int max = files.Count();
+            Maxcou = max.ToString();
+            int c = 0;
+            lblProgress.Text = "0 of " + max.ToString() + " Completed!";//
+            foreach (string file in files)
+            {
+                c++;
+                double cent = (c * 100) / max;
+                if (!backgroundWorker1.CancellationPending)
+                {
+                    backgroundWorker1.ReportProgress((int)cent);
+                }
+                lblProgress.Text = c.ToString() + " of " + max.ToString() + " Completed!";
+                lblProgress.Update();
+                FTPData ftp = new FTPData(Login_BL.SyncPath, "HaspoStoreMenuLogin");
+                ftp.Download("", file, Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+            }
+            progressBar1.Enabled = progressBar1.Visible = false;
+            progressBar1.Text = "";
+            lblProgress.Text = "";
+            lblProgress.Update();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            lblcent.Text = "";
+            lblcent.Update();
+            MessageBox.Show("ダウンロードが終わりました", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            lblcent.Text = $"{e.ProgressPercentage} %";
+            lblcent.Update();
+            progressBar1.Value = e.ProgressPercentage;
+            progressBar1.Update();
         }
     }
 }
