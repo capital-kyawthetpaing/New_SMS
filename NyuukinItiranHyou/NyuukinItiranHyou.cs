@@ -58,8 +58,8 @@ namespace NyuukinItiranHyou
                 MessageBox.Show(ex.Message);
                 EndSec();
             }
-            cboStoreAuthorizations.Bind(string.Empty, "2");
-            cboStoreAuthorizations.SelectedValue = StoreCD;
+            cboStoreAuthorizations.Bind(string.Empty);
+            //cboStoreAuthorizations.SelectedValue = StoreCD;
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
             cbo_torikomi.Bind(date, data);
@@ -129,7 +129,7 @@ namespace NyuukinItiranHyou
             string date = DateTime.Today.ToShortDateString();
             try
             {
-                cboStoreAuthorizations.Bind(date, data);
+                cboStoreAuthorizations.Bind(string.Empty);
                 cbo_torikomi.Bind(date, data);
             }
             catch
@@ -181,8 +181,8 @@ namespace NyuukinItiranHyou
             search_customer.TxtCode.Text = "";
             search_customer.LabelText = "";
             rdb_one.Checked = true;
-            cboStoreAuthorizations.Bind(string.Empty, "2");
-            cboStoreAuthorizations.SelectedValue = StoreCD;
+            cboStoreAuthorizations.Bind(string.Empty);
+            //cboStoreAuthorizations.SelectedValue = StoreCD;
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
             cbo_torikomi.Bind(date, data);
