@@ -20,7 +20,7 @@ namespace ZaikoMotochouInsatsu
         ZaikoMotochouInsatsu_BL zmibl;
         
        // CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
-        Viewer vr;
+        Viewer1 vr;
         DataTable dtReport;
         M_SKU_Entity sku_data;
         D_MonthlyStock_Entity dms;
