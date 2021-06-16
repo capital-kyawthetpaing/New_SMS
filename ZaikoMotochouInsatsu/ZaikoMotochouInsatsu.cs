@@ -167,7 +167,7 @@ namespace ZaikoMotochouInsatsu
                                 if (DResult == DialogResult.Yes)
                                 {
                                     //印刷処理プレビュー
-                                    vr = new Viewer();
+                                    vr = new Viewer1();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
                                     // 印字データをセット
                                     zm_report.SetDataSource(dtReport);
