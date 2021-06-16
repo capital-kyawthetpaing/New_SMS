@@ -20,7 +20,7 @@ namespace ZaikoMotochouInsatsu
         ZaikoMotochouInsatsu_BL zmibl;
         
        // CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
-        Viewer vr;
+        Viewer1 vr;
         DataTable dtReport;
         M_SKU_Entity sku_data;
         D_MonthlyStock_Entity dms;
@@ -167,7 +167,7 @@ namespace ZaikoMotochouInsatsu
                                 if (DResult == DialogResult.Yes)
                                 {
                                     //印刷処理プレビュー
-                                    vr = new Viewer();
+                                    vr = new Viewer1();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
                                     // 印字データをセット
                                     zm_report.SetDataSource(dtReport);
