@@ -270,7 +270,7 @@ namespace Hacchuusho
                         if (ret == DialogResult.Yes)
                         {
                             //プレビュー
-                            var previewForm = new Viewer();
+                            var previewForm =new Viewer1();
                             previewForm.CrystalReportViewer1.ShowPrintButton = true;
                             previewForm.CrystalReportViewer1.ReportSource = Report;
                             UpdateOrderD_04();
