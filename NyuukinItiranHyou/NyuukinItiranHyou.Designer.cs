@@ -298,7 +298,7 @@
             // 
             this.cboStoreAuthorizations.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboStoreAuthorizations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboStoreAuthorizations.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗権限;
+            this.cboStoreAuthorizations.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStoreAuthorizations.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cboStoreAuthorizations.Flag = 0;
             this.cboStoreAuthorizations.FormattingEnabled = true;

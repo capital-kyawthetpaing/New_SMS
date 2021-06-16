@@ -6,6 +6,7 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace TanaoroshiHyou
 {
@@ -177,7 +178,7 @@ namespace TanaoroshiHyou
                         if (ret == DialogResult.Yes)
                         {
                             //プレビュー
-                            var previewForm = new Viewer();
+                            var previewForm = new Viewer1();
                             previewForm.CrystalReportViewer1.ShowPrintButton = true;
                             previewForm.CrystalReportViewer1.ReportSource = Report;
                             //previewForm.CrystalReportViewer1.Zoom(1);
@@ -213,7 +214,7 @@ namespace TanaoroshiHyou
                         Report.SetDataSource(table);
                         Report.Refresh();
 
-                        bool result = OutputPDF(filePath, Report);
+                        bool result = ChildOutputPDF(filePath, Report);
                         
                         //PDF出力が完了しました。
                         bbl.ShowMessage("I202");
@@ -232,7 +233,40 @@ namespace TanaoroshiHyou
             //更新後画面そのまま
             detailControls[0].Focus();
         }
+        public bool ChildOutputPDF(string filePath, ReportClass report)
+        {
+            // PDF形式でファイル出力
+            try
+            {
+                string fileName = "";
+                if (System.IO.Path.GetExtension(filePath).ToLower() != ".pdf")
+                {
+                    fileName = System.IO.Path.GetFileNameWithoutExtension(filePath) + ".pdf";
+                }
 
+                // 出力先ファイル名を指定
+                CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
+                fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
+                fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName;
+
+                // 外部ファイル出力をPDF出力として定義する
+                CrystalDecisions.Shared.ExportOptions option;
+                option = report.ExportOptions;
+                option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
+                option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.PortableDocFormat;
+                option.FormatOptions = new CrystalDecisions.Shared.PdfRtfWordFormatOptions();
+                option.DestinationOptions = fileOption;
+
+                // pdfとして外部ファイル出力を行う
+                report.Export();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace.ToString());
+                return false;
+            }
+            return true;
+        }
         /// <summary>
         /// HEAD部のコードチェック
         /// </summary>

@@ -58,8 +58,8 @@ namespace NyuukinItiranHyou
                 MessageBox.Show(ex.Message);
                 EndSec();
             }
-            cboStoreAuthorizations.Bind(string.Empty);
-            //cboStoreAuthorizations.SelectedValue = StoreCD;
+            cboStoreAuthorizations.Bind(string.Empty,"2");
+            cboStoreAuthorizations.SelectedValue = StoreCD;
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
             cbo_torikomi.Bind(date, data);
@@ -129,7 +129,7 @@ namespace NyuukinItiranHyou
             string date = DateTime.Today.ToShortDateString();
             try
             {
-                cboStoreAuthorizations.Bind(string.Empty);
+                cboStoreAuthorizations.Bind(string.Empty,"2");
                 cbo_torikomi.Bind(date, data);
             }
             catch
