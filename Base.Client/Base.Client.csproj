@@ -178,6 +178,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RequiredSource\CrystalDecisions.CrystalReports.Design.dll" />
+    <Content Include="RequiredSource\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="RequiredSource\CrystalDecisions.ReportSource.dll" />
+    <Content Include="RequiredSource\CrystalDecisions.Shared.dll" />
+    <Content Include="RequiredSource\CrystalDecisions.Windows.Forms.dll" />
     <Content Include="RequiredSource\CSControl.dll" />
     <Content Include="RequiredSource\Microsoft.PointOfService.dll" />
   </ItemGroup>
