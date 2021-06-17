@@ -326,6 +326,7 @@
             this.Text = "TennicMainMenuLogin";
             this.Load += new System.EventHandler(this.Tennic_MainMenu_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TennicLogin_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tennic_MainMenu_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TennicLogin_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

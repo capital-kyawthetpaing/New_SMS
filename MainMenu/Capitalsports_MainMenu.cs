@@ -507,7 +507,7 @@ namespace MainMenu
             CapitalsportsLogin hln = new CapitalsportsLogin(true);
             this.Hide();
             hln.Show();
-            //this.Close();
+            this.Close();
         }
         private void btnProcess_Click(object sender, EventArgs e)
         {
@@ -527,6 +527,7 @@ namespace MainMenu
                         try
                         {
                             ForceToclose();
+                            System.Environment.Exit(0);
                         }
                         catch { }
                         e.Cancel = false;
