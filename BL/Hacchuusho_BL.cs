@@ -108,13 +108,21 @@ namespace BL
         /// </summary>
         /// <param name="operatorID"></param>
         /// <param name="storeCD"></param>
-        /// <param name="staffCD"></param>
         /// <param name="orderCD"></param>
-        /// <param name="orderNO"></param>
         /// <returns></returns>
-        public bool PRC_Hacchuusho_Register(string operatorID, string storeCD, string staffCD, string orderCD, string orderNO)
+        public bool PRC_Hacchuusho_Register(string operatorID, string storeCD, string orderCD)
         {
-            return hacchuushoDL.PRC_Hacchuusho_Register(operatorID, storeCD,staffCD, orderCD, orderNO);
+            return hacchuushoDL.PRC_Hacchuusho_Register(operatorID, storeCD,orderCD);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="operatorID"></param>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public bool PRC_Hacchuusho_UpdatePrintDate(string operatorID, DataTable dt)
+        {
+            return hacchuushoDL.PRC_Hacchuusho_UpdatePrintDate(operatorID, dt);
         }
     }
 }

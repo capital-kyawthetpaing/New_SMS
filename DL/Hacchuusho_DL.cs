@@ -104,25 +104,43 @@ namespace DL
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="operationMode"></param>
         /// <param name="operatorID"></param>
-        /// <param name="pc"></param>
         /// <param name="storeCD"></param>
-        /// <param name="staffCD"></param>
-        /// <param name="hacchuuDate"></param>
-        /// <param name="dtTHacchuusho"></param>
+        /// <param name="orderCD"></param>
         /// <returns></returns>
-        public bool PRC_Hacchuusho_Register(string operatorID,string storeCD,string staffCD, string orderCD, string orderNO)
+        public bool PRC_Hacchuusho_Register(string operatorID,string storeCD,string orderCD)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@p_Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorID } },
                 { "@p_StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = storeCD} },
-                { "@p_StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = staffCD} },
                 { "@p_OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderCD} },
-                { "@p_OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderNO} },
             };
             return InsertUpdateDeleteData(dic, "PRC_Hacchuusho_Register");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="operatorID"></param>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public bool PRC_Hacchuusho_UpdatePrintDate(string operatorID, DataTable dt)
+        {
+            string sp = "PRC_Hacchuusho_UpdatePrintDate";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@p_Operator", SqlDbType.VarChar, operatorID);
+            AddParamForDataTable(command, "@p_tblHacchusho", SqlDbType.Structured, dt);
+
+            UseTransaction = true;
+
+            string outPutParam = "";    //未使用
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+
+            return ret;
         }
     }
 }
