@@ -433,6 +433,24 @@ namespace SiharaiNyuuryoku
             dpe.ProcessMode = "新規";
             if (sibl.D_Pay_Insert(dpe))
             {
+                for (int p = 0; p < dt4.Rows.Count; p++)
+                {
+                    Num = dt4.Rows[p]["Number"].ToString();
+                    if (!string.IsNullOrWhiteSpace(Num))
+                    {
+                        de_e = new D_Exclusive_Entity()
+                        {
+                            DataKBN = 9,
+                            Number = Num,
+                            Program = this.InProgramID,
+                            Operator = this.InOperatorCD,
+                            PC = this.InPcID
+                        };
+
+                        e_bl.D_Exclusive_DeleteForSiharai(de_e);
+                    }
+
+                }
                 Clear(PanelHeader);
                 Clear(PanelDetail);
                 txtDueDate1.Focus();
@@ -447,6 +465,16 @@ namespace SiharaiNyuuryoku
             dpe.ProcessMode = "修正";
             if (sibl.D_Pay_Update(dpe))
             {
+                de_e = new D_Exclusive_Entity()
+                {
+                    DataKBN = 9,
+                    Number = ScPaymentNum.TxtCode.Text,
+                    Program = this.InProgramID,
+                    Operator = this.InOperatorCD,
+                    PC = this.InPcID
+                };
+                e_bl.D_Exclusive_DeleteForSiharai(de_e);
+
                 Clear(PanelHeader);
                 Clear(PanelDetail);
                 txtDueDate1.Focus();
@@ -461,6 +489,16 @@ namespace SiharaiNyuuryoku
             dpe.ProcessMode = "削除";
             if (sibl.D_Pay_Delete(dpe))
             {
+                de_e = new D_Exclusive_Entity()
+                {
+                    DataKBN = 9,
+                    Number = ScPaymentNum.TxtCode.Text,
+                    Program = this.InProgramID,
+                    Operator = this.InOperatorCD,
+                    PC = this.InPcID
+                };
+                e_bl.D_Exclusive_DeleteForSiharai(de_e);
+
                 Clear(PanelHeader);
                 Clear(PanelDetail);
                 txtDueDate1.Focus();

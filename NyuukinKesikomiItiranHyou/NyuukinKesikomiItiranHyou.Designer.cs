@@ -106,11 +106,11 @@
             this.cboStoreAuthorizations.Flag = 0;
             this.cboStoreAuthorizations.FormattingEnabled = true;
             this.cboStoreAuthorizations.Length = 10;
-            this.cboStoreAuthorizations.Location = new System.Drawing.Point(1505, 26);
+            this.cboStoreAuthorizations.Location = new System.Drawing.Point(1419, 26);
             this.cboStoreAuthorizations.MaxLength = 10;
             this.cboStoreAuthorizations.MoveNext = true;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
-            this.cboStoreAuthorizations.Size = new System.Drawing.Size(121, 20);
+            this.cboStoreAuthorizations.Size = new System.Drawing.Size(260, 20);
             this.cboStoreAuthorizations.TabIndex = 3;
             // 
             // ckM_Label7
@@ -122,7 +122,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(1473, 29);
+            this.ckM_Label7.Location = new System.Drawing.Point(1387, 29);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label7.TabIndex = 16;
