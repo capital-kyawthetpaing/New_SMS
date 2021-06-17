@@ -116,6 +116,7 @@
             this.txtTargetDateTo.isMaxLengthErr = false;
             this.txtTargetDateTo.IsNumber = true;
             this.txtTargetDateTo.IsShop = false;
+            this.txtTargetDateTo.IsTimemmss = false;
             this.txtTargetDateTo.Length = 10;
             this.txtTargetDateTo.Location = new System.Drawing.Point(277, 19);
             this.txtTargetDateTo.MaxLength = 10;
@@ -156,6 +157,7 @@
             this.txtTargetDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetDateFrom.DecimalPlace = 0;
+            this.txtTargetDateFrom.Enabled = false;
             this.txtTargetDateFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtTargetDateFrom.IntegerPart = 0;
             this.txtTargetDateFrom.IsCorrectDate = true;
@@ -164,6 +166,7 @@
             this.txtTargetDateFrom.isMaxLengthErr = false;
             this.txtTargetDateFrom.IsNumber = true;
             this.txtTargetDateFrom.IsShop = false;
+            this.txtTargetDateFrom.IsTimemmss = false;
             this.txtTargetDateFrom.Length = 10;
             this.txtTargetDateFrom.Location = new System.Drawing.Point(113, 20);
             this.txtTargetDateFrom.MaxLength = 10;

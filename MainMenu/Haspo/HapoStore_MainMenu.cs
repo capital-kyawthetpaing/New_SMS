@@ -454,8 +454,8 @@ namespace MainMenu.Haspo
             ForceToClose();
             HaspoStoreMenuLogin hln = new HaspoStoreMenuLogin(true);
             this.Hide();
-            hln.ShowDialog();
-            this.Close();
+            hln.Show ();
+            //this.Close();
         }
         public void ForceToClose()
         {

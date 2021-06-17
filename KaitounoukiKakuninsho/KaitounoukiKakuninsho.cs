@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-
 using BL;
 using Entity;
 using Base.Client;
 using Search;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace KaitounoukiKakuninsho
 {
@@ -103,8 +99,41 @@ namespace KaitounoukiKakuninsho
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
         }
-       
 
+        public bool ChildOutputPDF(string filePath, ReportClass report)
+        {
+            // PDF形式でファイル出力
+            try
+            {
+                string fileName = "";
+                if (System.IO.Path.GetExtension(filePath).ToLower() != ".pdf")
+                {
+                    fileName = System.IO.Path.GetFileNameWithoutExtension(filePath) + ".pdf";
+                }
+
+                // 出力先ファイル名を指定
+                CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
+                fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
+                fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName;
+
+                // 外部ファイル出力をPDF出力として定義する
+                CrystalDecisions.Shared.ExportOptions option;
+                option = report.ExportOptions;
+                option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
+                option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.PortableDocFormat;
+                option.FormatOptions = new CrystalDecisions.Shared.PdfRtfWordFormatOptions();
+                option.DestinationOptions = fileOption;
+
+                // pdfとして外部ファイル出力を行う
+                report.Export();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace.ToString());
+                return false;
+            }
+            return true;
+        }
         private bool SelectAndInsertExclusive(string mitsumoriNo)
         {
             //DeleteExclusive();
@@ -220,7 +249,7 @@ namespace KaitounoukiKakuninsho
                         if (ret == DialogResult.Yes)
                         {
                             //プレビュー
-                            var previewForm = new Viewer();
+                            var previewForm = new Viewer1();
                             previewForm.CrystalReportViewer1.ShowPrintButton = true;
                             previewForm.CrystalReportViewer1.ReportSource = Report;
                             previewForm.ShowDialog();
@@ -253,11 +282,18 @@ namespace KaitounoukiKakuninsho
                         // 印字データをセット
                         Report.SetDataSource(table);
                         Report.Refresh();
+                    try
+                    {
+                        bool result = ChildOutputPDF(filePath, Report);
 
-                        bool result = base.OutputPDF(filePath, Report);
-                        
-                        //PDF出力が完了しました。
-                        bbl.ShowMessage("I202");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace.ToString());
+                        return;
+                    }
+                    //PDF出力が完了しました。
+                    bbl.ShowMessage("I202");
 
                         break;
                 }

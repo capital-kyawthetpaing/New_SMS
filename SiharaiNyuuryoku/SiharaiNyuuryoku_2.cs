@@ -22,6 +22,8 @@ namespace SiharaiNyuuryoku
         M_Kouza_Entity mkze = new M_Kouza_Entity();
         DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
+        M_Kouza_Entity mke = new M_Kouza_Entity();
+        Kouza_BL kbl = new Kouza_BL();
 
         public DataTable dtGdv = new DataTable();
         public DataTable dtDetails = new DataTable();
@@ -470,18 +472,18 @@ namespace SiharaiNyuuryoku
                 if (!RequireCheck(new Control[] { SC_KouzaCD.TxtCode }))
                     return false;
 
-                SC_KouzaCD.ChangeDate = DateTime.Today.ToShortDateString();
-                SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
-                if (!SC_KouzaCD.IsExists(1))
-                {
-                    SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
-                    SC_KouzaCD.Value2 = SC_KouzaCD.LabelText;
-                }
-                else
+                mke.ChangeDate = DateTime.Today.ToShortDateString();
+                mke.KouzaCD = SC_KouzaCD.TxtCode.Text;
+                DataTable dtKouza = new DataTable();
+                dtKouza = kbl.M_Kouza_Select(mke);
+                if (dtKouza.Rows.Count == 0)
                 {
                     bbl.ShowMessage("E128");
                     SC_KouzaCD.SetFocus(1);
-                    return false;
+                }
+                else
+                {
+                    SC_KouzaCD.LabelText = dtKouza.Rows[0]["KouzaName"].ToString();
                 }
                 //ses
                 if (!RequireCheck(new Control[] { txtAmount }))
@@ -629,25 +631,7 @@ namespace SiharaiNyuuryoku
                 }
             }
         }
-        private void SC_KouzaCD_CodeKeyDownEvent_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                SC_KouzaCD.ChangeDate = DateTime.Today.ToShortDateString();
-                SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
-                if (!SC_KouzaCD.IsExists(1))
-                {
-                    SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
-                    SC_KouzaCD.Value2 = SC_KouzaCD.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E128");
-                    SC_KouzaCD.SetFocus(1);
-                }
-            }
-        }
-
+       
         private void SC_BranchCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -674,6 +658,26 @@ namespace SiharaiNyuuryoku
                     SC_BranchCD.SetFocus(1);
                 }
 
+            }
+        }
+        private void SC_KouzaCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mke.ChangeDate = DateTime.Today.ToShortDateString();
+                mke.KouzaCD = SC_KouzaCD.TxtCode.Text;
+                Kouza_BL kbl = new Kouza_BL();
+                DataTable dtKouza = new DataTable();
+                dtKouza = kbl.M_Kouza_Select(mke);
+                if (dtKouza.Rows.Count == 0)
+                {
+                    bbl.ShowMessage("E128");
+                    SC_KouzaCD.SetFocus(1);
+                }
+                else
+                {
+                    SC_KouzaCD.LabelText = dtKouza.Rows[0]["KouzaName"].ToString();
+                }
             }
         }
 
@@ -879,6 +883,6 @@ namespace SiharaiNyuuryoku
             }
         }
 
-       
+        
     }
 }

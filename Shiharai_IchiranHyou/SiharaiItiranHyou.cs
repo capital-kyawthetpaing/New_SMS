@@ -43,7 +43,7 @@ namespace Shiharai_IchiranHyou
             base.Btn_F10.Text = "";
             base.Btn_F11.Text = "CSV(F11)";
             StartProgram();
-            SC_Payment.TxtCode.Require(true);
+            //SC_Payment.TxtCode.Require(true);    //closed by ETZ 2021/06/16
             //SetFuncKeyAll(this, "100001000011");
             
         }
@@ -207,8 +207,8 @@ namespace Shiharai_IchiranHyou
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { SC_Payment.TxtCode }))
-                return false;
+            //if (!RequireCheck(new Control[] { SC_Payment.TxtCode })) //closed by ETZ 2021/06/16
+            //    return false;
 
             if (!DateCheck())
             {

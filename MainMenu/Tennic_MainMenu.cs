@@ -484,20 +484,19 @@ namespace MainMenu
                 ForceToCLose();
                 TennicLogin tcl = new TennicLogin();
                 this.Hide();
-                tcl.ShowDialog();
-                this.Close();
+                tcl.Show();
+                //this.Close();
             }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ForceToCLose();
-            
+
             TennicLogin tcl = new TennicLogin(true);
-           this.Hide();
-            
-            tcl.ShowDialog();
-            this.Close();
+            this.Hide();
+            tcl.Show();
+            ///this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

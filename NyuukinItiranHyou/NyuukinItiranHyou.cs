@@ -58,7 +58,7 @@ namespace NyuukinItiranHyou
                 MessageBox.Show(ex.Message);
                 EndSec();
             }
-            cboStoreAuthorizations.Bind(string.Empty, "2");
+            cboStoreAuthorizations.Bind(string.Empty,"2");
             cboStoreAuthorizations.SelectedValue = StoreCD;
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
@@ -129,7 +129,7 @@ namespace NyuukinItiranHyou
             string date = DateTime.Today.ToShortDateString();
             try
             {
-                cboStoreAuthorizations.Bind(date, data);
+                cboStoreAuthorizations.Bind(string.Empty,"2");
                 cbo_torikomi.Bind(date, data);
             }
             catch
@@ -181,8 +181,8 @@ namespace NyuukinItiranHyou
             search_customer.TxtCode.Text = "";
             search_customer.LabelText = "";
             rdb_one.Checked = true;
-            cboStoreAuthorizations.Bind(string.Empty, "2");
-            cboStoreAuthorizations.SelectedValue = StoreCD;
+            cboStoreAuthorizations.Bind(string.Empty);
+            //cboStoreAuthorizations.SelectedValue = StoreCD;
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
             cbo_torikomi.Bind(date, data);
@@ -230,7 +230,9 @@ namespace NyuukinItiranHyou
                 {
                     if (table == null || table.Rows.Count == 0)
                     {
-                        MessageBox.Show("No data exists to print");
+                        //MessageBox.Show("No data exists to print");
+                        bbl.ShowMessage("E128");
+                        paymentstart.Focus();
                         return;
                     }
 
@@ -240,7 +242,7 @@ namespace NyuukinItiranHyou
                     switch (PrintMode)
                     {
                         case EPrintMode.DIRECT:
-                            ret = bbl.ShowMessage("Q202");
+                            ret = bbl.ShowMessage("Q201");
                             if (ret == DialogResult.Cancel)
                             {
                                 return;
