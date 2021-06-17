@@ -37,7 +37,7 @@ namespace MainMenu
             else
                 ckM_Button3.Visible = false;
             Control.CheckForIllegalCrossThreadCalls = false;
-
+            UpdatedFileList = null;
         }
         private bool CheckExistFormRunning()
         {
@@ -124,7 +124,7 @@ namespace MainMenu
                             var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
                             Haspo_MainMenu menuForm = new Haspo_MainMenu(GetInfo().StaffCD, mseinfo);
                             this.Hide();
-                            menuForm.Show();
+                            menuForm.ShowDialog();
                             //this.Close();
                         }
                         else
@@ -152,6 +152,32 @@ namespace MainMenu
         }
         private void HaspoLogin_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.C)
+            {
+                var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+                if (files.Count() == 0)
+                {
+                    MessageBox.Show("There is no available file on server!");
+                    return;
+                }
+                DataTable dt = new DataTable();
+                dt.Columns.Add("No", typeof(string));
+                dt.Columns.Add("Check", typeof(bool));
+                dt.Columns.Add("colFileName", typeof(string));
+                dt.Columns.Add("colFileExe", typeof(string));
+                dt.Columns.Add("colDate", typeof(string));
+                int k = 0;
+                foreach (var dr in files)
+                {
+                    k++;
+
+                    dt.Rows.Add(new object[] { k.ToString(), 1, dr.ToString().Split('.').FirstOrDefault(), dr.ToString(), "00:00:00" });
+                }
+                FrmList frm = new FrmList(dt);
+                frm.ShowDialog();
+                UpdatedFileList = frm.dt;
+
+            }
             if (e.KeyCode == Keys.Enter)
                 this.SelectNextControl(ActiveControl, true, true, true, true);
 
@@ -239,7 +265,7 @@ namespace MainMenu
 
             
         }
-
+        protected DataTable UpdatedFileList { get; set; }
         protected string Maxcou = "";
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -253,6 +279,21 @@ namespace MainMenu
             progressBar1.Minimum = 0;
             progressBar1.Value = 0;
             int max = files.Count();
+            List<string> strList = new List<string>();
+            if (UpdatedFileList != null)
+            {
+                max -= Convert.ToInt32(UpdatedFileList.Select("Check <> True").Count());
+
+                foreach (DataRow dr in UpdatedFileList.Select("Check <> False").CopyToDataTable().Rows)
+                {
+                    if (files.Contains(dr["colFileExe"].ToString()))
+                    {
+                        strList.Add(dr["colFileExe"].ToString());
+                    }
+                }
+                files = null;
+                files = strList.ToArray();
+            }
             Maxcou = max.ToString();
             int c = 0;
             lblProgress.Text = "0 of " + max.ToString() + " Completed!";//
@@ -288,6 +329,16 @@ namespace MainMenu
             lblcent.Update();
             progressBar1.Value = e.ProgressPercentage;
             progressBar1.Update();
+        }
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
     }
 }

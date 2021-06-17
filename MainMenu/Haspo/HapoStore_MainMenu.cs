@@ -455,7 +455,7 @@ namespace MainMenu.Haspo
             HaspoStoreMenuLogin hln = new HaspoStoreMenuLogin(true);
             this.Hide();
             hln.Show ();
-            //this.Close();
+            this.Close();
         }
         public void ForceToClose()
         {
@@ -491,6 +491,7 @@ namespace MainMenu.Haspo
                         try
                         {
                             ForceToclose();
+                            Environment.Exit(0);
                         }
                         catch { }
                         e.Cancel = false;
