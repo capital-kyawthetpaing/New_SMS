@@ -55,6 +55,11 @@ namespace BL
             return mdl.D_Exclusive_Delete(dee);
         }
 
+        public bool D_Exclusive_DeleteForSiharai(D_Exclusive_Entity dee)
+        {
+            return mdl.D_Exclusive_DeleteForSiharai(dee);
+        }
+
         public bool D_Exclusive_DeleteByKBN(D_Exclusive_Entity dee)
         {
             return mdl.D_Exclusive_DeleteByKBN(dee);
