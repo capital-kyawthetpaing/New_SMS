@@ -609,6 +609,7 @@
     <Content Include="StoreProcedure\PRC_Hacchuusho_M_AutorisationCheck.sql" />
     <Content Include="StoreProcedure\PRC_Hacchuusho_Register.sql" />
     <Content Include="StoreProcedure\PRC_Hacchuusho_SelectData.sql" />
+    <Content Include="StoreProcedure\PRC_Hacchuusho_UpdatePrintDate.sql" />
     <Content Include="StoreProcedure\PRC_HenpinNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_HikiateHenkouNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_IkkatuHacchuuNyuuryoku_Register.sql" />
