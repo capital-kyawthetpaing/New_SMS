@@ -335,7 +335,8 @@ namespace NyuukinKesikomiItiranHyou
                 InputDateFrom = txtInputDateF.Text,
                 InputDateTo = txtInputDateT.Text,
                 WebCollectType = cboWebCollectType.SelectedValue.ToString() == "-1" ? "": cboWebCollectType.SelectedValue.ToString(),
-                CollectCustomerCD = ScCollectCustomerCD.Code
+                CollectCustomerCD = ScCollectCustomerCD.Code,
+                StoreCD = cboStoreAuthorizations.SelectedValue.ToString()
             };
             return dce;
         }
