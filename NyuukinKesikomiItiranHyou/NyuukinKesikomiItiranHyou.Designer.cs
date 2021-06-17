@@ -110,7 +110,7 @@
             this.cboStoreAuthorizations.MaxLength = 10;
             this.cboStoreAuthorizations.MoveNext = true;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
-            this.cboStoreAuthorizations.Size = new System.Drawing.Size(260, 20);
+            this.cboStoreAuthorizations.Size = new System.Drawing.Size(262, 20);
             this.cboStoreAuthorizations.TabIndex = 3;
             // 
             // ckM_Label7
