@@ -179,5 +179,11 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CLL\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="CLL\CrystalDecisions.ReportSource.dll" />
+    <Content Include="CLL\CrystalDecisions.Shared.dll" />
+    <Content Include="CLL\CrystalDecisions.Windows.Forms.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
