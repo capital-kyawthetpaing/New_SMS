@@ -609,7 +609,12 @@ namespace MainMenu
                 BL.Base_BL bbl = new Base_BL();
                 if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 {
-                    ForceToClose();
+                    try
+                    {
+                        ForceToClose();
+                        System.Environment.Exit(0);
+                    }
+                    catch { }
                     e.Cancel = false;
                 }
                 else
@@ -653,7 +658,7 @@ namespace MainMenu
                   MainmenuLogin hln = new MainmenuLogin();
                 this.Hide();
                 hln.Show();
-                //this.Close();
+                this.Close();
 
             }
         }
@@ -664,7 +669,7 @@ namespace MainMenu
                MainmenuLogin hln = new MainmenuLogin(true);
             this.Hide();
             hln.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

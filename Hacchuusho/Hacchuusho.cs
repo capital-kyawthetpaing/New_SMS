@@ -255,8 +255,8 @@ namespace Hacchuusho
                         }
                         else
                         {
-                            //Q202 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                            ret = bbl.ShowMessage("Q202");
+                            //Q208 印刷の前にプレビューを行いますか。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                            ret = bbl.ShowMessage("Q208");
                             if (ret == DialogResult.Cancel)
                             {
                                 return;
@@ -273,7 +273,7 @@ namespace Hacchuusho
                             var previewForm =new Viewer1();
                             previewForm.CrystalReportViewer1.ShowPrintButton = true;
                             previewForm.CrystalReportViewer1.ReportSource = Report;
-                            UpdateOrderD_04();
+                            UpdateOrderD_04(table);
                             previewForm.ShowDialog();
                         }
                         else
@@ -287,7 +287,7 @@ namespace Hacchuusho
 
                             Report.PrintOptions.ApplyPageMargins(margin);
                             // プリンタに印刷
-                            UpdateOrderD_04();
+                            UpdateOrderD_04(table);
                             Report.PrintToPrinter(0, false, 0, 0);
                         }
                         break;
@@ -307,7 +307,7 @@ namespace Hacchuusho
                         // 印字データをセット
                         Report.SetDataSource(table);
                         Report.Refresh();
-                        UpdateOrderD_04();
+                        UpdateOrderD_04(table);
                         try
                         {
                             bool result =  ChildOutputPDF(filePath, Report);
@@ -324,18 +324,6 @@ namespace Hacchuusho
 
                         break;
                 }
-
-                //ログ出力
-                //L_Log_Entity le = new L_Log_Entity();
-                //le.InsertOperator = this.InOperatorCD;
-                //le.Program = this.InProgramID;
-                //le.PC = this.InPcID;
-                //le.OperateMode = null;
-                //le.KeyItem = this.ScHacchuuNO.TxtCode.Text;
-                //hsbl.L_Log_Insert(le);
-
-                //更新処理
-             //   hsbl.PRC_Hacchuusho_Register(this.InOperatorCD, this.CboStoreCD.SelectedValue.ToString(), this.ScStaff.TxtCode.Text, this.ScVendor.TxtCode.Text, this.ScHacchuuNO.TxtCode.Text);
             }
             finally
             {
@@ -379,8 +367,13 @@ namespace Hacchuusho
             }
             return true;
         }
-        private void UpdateOrderD_04()
+        private void UpdateOrderD_04(DataTable dt)
         {
+            //印刷日時更新
+            DataView dv = new DataView(dt);
+            DataTable dtOrderNO = dv.ToTable(false, "OrderNO");
+            hsbl.PRC_Hacchuusho_UpdatePrintDate(this.InOperatorCD, dtOrderNO);
+
             //ログ出力
             L_Log_Entity le = new L_Log_Entity();
             le.InsertOperator = this.InOperatorCD;
@@ -389,9 +382,6 @@ namespace Hacchuusho
             le.OperateMode = null;
             le.KeyItem = this.ScHacchuuNO.TxtCode.Text;
             hsbl.L_Log_Insert(le);
-
-         //   更新処理
-               hsbl.PRC_Hacchuusho_Register(this.InOperatorCD, this.CboStoreCD.SelectedValue.ToString(), this.ScStaff.TxtCode.Text, this.ScVendor.TxtCode.Text, this.ScHacchuuNO.TxtCode.Text);
         }
         /// <summary>
         /// handle f1 to f12 click event
@@ -882,6 +872,12 @@ namespace Hacchuusho
                 bbl.ShowMessage("E111");
                 chkInsatuShurui_Hacchhusho.Focus();
                 return null;
+            }
+
+            if (chkInsatuShurui_Cancel.Checked)
+            {
+                //キャンセルデータ作成
+                hsbl.PRC_Hacchuusho_Register(this.InOperatorCD, this.CboStoreCD.SelectedValue.ToString(), this.ScVendor.TxtCode.Text);
             }
 
             DataTable dt = hsbl.PRC_Hacchuusho_SelectData

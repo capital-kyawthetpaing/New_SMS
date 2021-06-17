@@ -282,7 +282,7 @@ namespace NyuukinItiranHyou
 
                                     System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
 
-                                    Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                    //Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
                                     System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
 
                                     Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;

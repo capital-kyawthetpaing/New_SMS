@@ -482,7 +482,12 @@ namespace MainMenu
                 BL.Base_BL bbl = new Base_BL();
                 if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 {
-                    ForceToClose();
+                    try
+                    {
+                        ForceToClose();
+                        System.Environment.Exit(0);
+                    }
+                    catch { }
                     e.Cancel = false;
                 }
                 else
@@ -540,7 +545,7 @@ namespace MainMenu
                HaspoLogin hln = new HaspoLogin(true);
             this.Hide();
             hln.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void Haspo_MainMenu_KeyDown(object sender, KeyEventArgs e)
