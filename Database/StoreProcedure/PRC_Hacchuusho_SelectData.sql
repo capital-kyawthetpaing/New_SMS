@@ -73,6 +73,7 @@ BEGIN
           ,Print5                           = MAIN.Print5            
           ,Print6                           = MAIN.Print6      
           ,InsatuShuruiKBN                  = MAIN.InsatuShuruiKBN  --1:通常発注、2:Net発注、3:直送発注、4:キャンセル発注
+          ,FirstOrderNO                     = MAIN.FirstOrderNO
 
     FROM (SELECT ShouninJoutai                    = CASE WHEN DODH.ApprovalStageFLG >= 9 THEN '' ELSE '※未承認※' END
                 ,OrderNO                          = DODH.OrderNO
@@ -113,6 +114,7 @@ BEGIN
                 ,Print5                           = MSTR.Print5 
                 ,Print6                           = MSTR.Print6 
                 ,InsatuShuruiKBN                  = SUB_InsatuShurui.Value
+                ,FirstOrderNO                     = DODD.FirstOrderNO
           
           FROM D_Order DODH
           LEFT JOIN D_OrderDetails DODD
@@ -174,7 +176,7 @@ BEGIN
                  OR (@p_InsatuTaishou_Saihakkou = 1 AND DODH.LastPrintDate IS NOT NULL))  
             AND (@p_HacchuuDateFrom IS NULL OR DODH.OrderDate >= @p_HacchuuDateFrom)
             AND (@p_HacchuuDateTo IS NULL OR DODH.OrderDate <= @p_HacchuuDateTo)
-            AND (@p_Staff IS NULL OR DODH.StaffCD = @p_Staff)
+            AND (@p_Staff IS NULL OR (SUB_InsatuShurui.Value = 4 OR DODH.StaffCD = @p_Staff))
             AND (@p_Vendor IS NULL OR DODH.OrderCD = @p_Vendor)
             AND ((@p_IsPrintMisshounin = 1 AND DODH.ApprovalStageFLG > 0)
                  OR 
