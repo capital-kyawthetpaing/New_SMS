@@ -44,5 +44,14 @@ BEGIN
 			where DeleteFlg = 0 
 			and (StoreKBN = 1 OR StoreKBN = 2)
 			order by StoreCD
+
+		end
+
+		if @Type = 4
+		begin
+			select * from F_Store(@ChangeDate) fs
+			where DeleteFlg = 0 
+			and StoreKBN != 3
+			order by StoreCD
 		end
 END

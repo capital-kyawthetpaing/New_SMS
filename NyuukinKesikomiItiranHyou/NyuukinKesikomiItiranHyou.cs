@@ -37,7 +37,7 @@ namespace NyuukinKesikomiItiranHyou
             Btn_F10.Text = string.Empty;
 
             //Bind ComboBoxes
-            cboStoreAuthorizations.Bind(string.Empty, "2");
+            cboStoreAuthorizations.Bind(string.Empty, "4");
             cboStoreAuthorizations.SelectedValue = StoreCD;
             cboWebCollectType.Bind(string.Empty);
         }
