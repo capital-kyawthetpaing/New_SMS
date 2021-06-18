@@ -4,6 +4,16 @@ begin
 end
 GO
 
+IF EXISTS (select * from sys.table_types where user_type_id = Type_id(N'T_Hacchuusho'))
+BEGIN
+    DROP TYPE [T_Hacchuusho]
+END
+
+CREATE TYPE [T_Hacchuusho] AS TABLE(
+	[OrderNO]     varchar(11) COLLATE database_default NULL
+)
+GO
+
 CREATE PROCEDURE PRC_Hacchuusho_UpdatePrintDate(
      @p_Operator        varchar(10)
     ,@p_tblHacchusho    T_Hacchuusho READONLY
