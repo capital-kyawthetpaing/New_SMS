@@ -80,7 +80,7 @@ namespace TempoRegiTorihikiReceipt
         /// BL
         /// </summary>
         TempoRegiTorihikiReceipt_BL bl = new TempoRegiTorihikiReceipt_BL();
-        Base.Client.Viewer vr = new Viewer();
+        //Base.Client.Viewer vr = new Viewer();
         /// <summary>
         /// 店舗ジャーナル印刷 コンストラクタ
         /// </summary>
