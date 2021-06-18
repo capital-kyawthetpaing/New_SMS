@@ -52,9 +52,11 @@
     <Reference Include="Base.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\bin\Debug\Base.Client.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
     </Reference>
     <Reference Include="BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\bin\Debug\BL.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="CKM_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
