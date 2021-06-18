@@ -147,7 +147,7 @@ namespace PickingList
                 {
                     dpe2 = new D_Picking_Entity
                     {
-                        SoukoCD = cboSouko.SelectedValue.ToString(),
+                        SoukoCD = cboSouko.SelectedValue.ToString(), 
                         PickingNO = ScPickingNo1.TxtCode.Text,
                         InsertOperator = InOperatorCD,
 
