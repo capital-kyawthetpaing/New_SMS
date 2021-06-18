@@ -37,7 +37,7 @@ namespace NyuukinKesikomiItiranHyou
             Btn_F10.Text = string.Empty;
 
             //Bind ComboBoxes
-            cboStoreAuthorizations.Bind(string.Empty, "2");
+            cboStoreAuthorizations.Bind(string.Empty, "4");
             cboStoreAuthorizations.SelectedValue = StoreCD;
             cboWebCollectType.Bind(string.Empty);
         }
@@ -335,7 +335,8 @@ namespace NyuukinKesikomiItiranHyou
                 InputDateFrom = txtInputDateF.Text,
                 InputDateTo = txtInputDateT.Text,
                 WebCollectType = cboWebCollectType.SelectedValue.ToString() == "-1" ? "": cboWebCollectType.SelectedValue.ToString(),
-                CollectCustomerCD = ScCollectCustomerCD.Code
+                CollectCustomerCD = ScCollectCustomerCD.Code,
+                StoreCD = cboStoreAuthorizations.SelectedValue.ToString()
             };
             return dce;
         }
