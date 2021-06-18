@@ -12,6 +12,7 @@ using CKM_Controls;
 using BL;
 using Search;
 using Entity;
+using System.Collections;
 
 namespace Shiharai_ShimeShori
 {
@@ -30,6 +31,8 @@ namespace Shiharai_ShimeShori
 
         DataTable payShime = new DataTable();
         DataTable payShimeCancel = new DataTable();
+        DataTable dtdup = new DataTable();
+
         public Shiharai_ShimeShori()
         {
             InitializeComponent();
@@ -145,20 +148,43 @@ namespace Shiharai_ShimeShori
                                 dpp_e.PayeeCD = payShime.Rows[p]["PayeeCD"].ToString();
 
                                 dtno = sss_bl.D_PayPlanValue_Select(dpp_e, "1");
-                                if (dtno.Rows.Count > 0)
+
+                                dtdup = new DataView(dtno).ToTable(false, "Number"); //pnz start
+
+                                ArrayList UniqueRecords = new ArrayList();
+                                ArrayList DuplicateRecords = new ArrayList();
+
+                                foreach (DataRow dRow in dtdup.Rows)
                                 {
-                                    Num = dtno.Rows[0]["Number"].ToString();
+                                    if (UniqueRecords.Contains(dRow["Number"]))
+                                        DuplicateRecords.Add(dRow);
+                                    else
+                                        UniqueRecords.Add(dRow["Number"]);
                                 }
-                                de_e = new D_Exclusive_Entity()
+
+                                foreach (DataRow dRow in DuplicateRecords)
                                 {
-                                    DataKBN = 9,
-                                    Number = Num,
-                                    Program = this.InProgramID,
-                                    Operator = this.InOperatorCD,
-                                    PC = this.InPcID
-                                };
-                                dTNo.Rows.Add(Num);
-                                e_bl.D_Exclusive_Insert(de_e);
+                                    dtdup.Rows.Remove(dRow);
+                                }
+
+                                if (dtdup.Rows.Count > 0)
+                                {
+                                    Num = dtdup.Rows[0]["Number"].ToString();
+                                }
+                                if (!string.IsNullOrWhiteSpace(Num))  //pnz end
+                                {
+                                    de_e = new D_Exclusive_Entity()
+                                    {
+                                        DataKBN = 9,
+                                        Number = Num,
+                                        Program = this.InProgramID,
+                                        Operator = this.InOperatorCD,
+                                        PC = this.InPcID
+                                    };
+                                    dTNo.Rows.Add(Num);
+                                    e_bl.D_Exclusive_Insert(de_e);
+                                }
+                                    
                             }
                        }   
                         if (bbl.ShowMessage("Q101") == DialogResult.Yes)
@@ -203,21 +229,45 @@ namespace Shiharai_ShimeShori
                             {
                                     dpp_e.PayeeCD = payShimeCancel.Rows[d]["PayeeCD"].ToString();
                                     dtpayno = sss_bl.D_PayPlanValue_Select(dpp_e, "2");
-                                    if (dtpayno.Rows.Count > 0)
+
+                                    dtdup = new DataView(dtpayno).ToTable(false, "PayCloseNo"); //pnz start
+
+                                    ArrayList UniqueRecords = new ArrayList();
+                                    ArrayList DuplicateRecords = new ArrayList();
+
+                                    foreach (DataRow dRow in dtdup.Rows)
                                     {
-                                        PayCloseNo = dtpayno.Rows[0]["PayCloseNo"].ToString();
+                                        if (UniqueRecords.Contains(dRow["PayCloseNo"]))
+                                            DuplicateRecords.Add(dRow);
+                                        else
+                                            UniqueRecords.Add(dRow["PayCloseNo"]);
                                     }
-                                    de_e = new D_Exclusive_Entity()
+
+                                    foreach (DataRow dRow in DuplicateRecords)
                                     {
-                                        DataKBN = 9,
-                                        Number = PayCloseNo,
-                                        Program = this.InProgramID,
-                                        Operator = this.InOperatorCD,
-                                        PC = this.InPcID
-                                    };
-                                    dTPayCloseNo.Rows.Add(PayCloseNo);
-                                    e_bl.D_Exclusive_Insert(de_e);
-                                }
+                                        dtdup.Rows.Remove(dRow);
+                                    }
+
+                                    for (int p = 0; p < dtdup.Rows.Count; p++) //pnz end
+                                    {
+                                        PayCloseNo = dtdup.Rows[0]["PayCloseNo"].ToString();
+                                        if (!string.IsNullOrWhiteSpace(Num))
+                                        {
+                                            de_e = new D_Exclusive_Entity()
+                                            {
+                                                DataKBN = 9,
+                                                Number = PayCloseNo,
+                                                Program = this.InProgramID,
+                                                Operator = this.InOperatorCD,
+                                                PC = this.InPcID
+                                            };
+                                            dTPayCloseNo.Rows.Add(PayCloseNo);
+                                            e_bl.D_Exclusive_Insert(de_e);
+                                        }
+
+                                    }
+
+                            }
                         }
 
                         if (bbl.ShowMessage("Q102") == DialogResult.Yes)
