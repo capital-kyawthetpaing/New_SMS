@@ -55,6 +55,23 @@ namespace DL
             return InsertUpdateDeleteData(dic, sp);
         }
 
+        public bool D_Exclusive_DeleteForSiharai(D_Exclusive_Entity dee)
+        {
+            string sp = "D_Exclusive_DeleteForSiharai";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@DataKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dee.DataKBN.ToString()  } },
+                { "@Number", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.Number } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.Operator } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.Program } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.PC } }
+            };
+
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
         /// <summary>
         /// </summary>
         /// <param name="dme"></param>

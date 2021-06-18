@@ -462,7 +462,12 @@ namespace MainMenu
                 BL.Base_BL bbl = new Base_BL();
                 if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 {
-                    ForceToCLose();
+                    try
+                    {
+                        ForceToCLose();
+                        System.Environment.Exit(0);
+                    }
+                    catch { }
                     e.Cancel = false;
                 }
                 else
@@ -485,7 +490,7 @@ namespace MainMenu
                 TennicLogin tcl = new TennicLogin();
                 this.Hide();
                 tcl.Show();
-                //this.Close();
+                this.Close();
             }
         }
 
@@ -496,7 +501,7 @@ namespace MainMenu
             TennicLogin tcl = new TennicLogin(true);
             this.Hide();
             tcl.Show();
-            ///this.Close();
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

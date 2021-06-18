@@ -150,7 +150,8 @@ namespace DL
                  { "@InputDateTimeF", new ValuePair { value1 = SqlDbType.Date, value2 = collect_data.InputDateFrom } },
                  { "@InputDateTimeT", new ValuePair { value1 = SqlDbType.Date, value2 = collect_data.InputDateTo } },
                  { "@WebCollectType", new ValuePair { value1 = SqlDbType.VarChar, value2 = collect_data.WebCollectType } },
-                 { "@CollectCustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = collect_data.CollectCustomerCD } }
+                 { "@CollectCustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = collect_data.CollectCustomerCD } },
+                 { "@Store", new ValuePair { value1 = SqlDbType.VarChar, value2 = collect_data.StoreCD } }
             };
             return SelectData(dic, sp);
         }
