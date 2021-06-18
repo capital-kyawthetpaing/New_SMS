@@ -58,7 +58,7 @@ namespace NyuukinItiranHyou
                 MessageBox.Show(ex.Message);
                 EndSec();
             }
-            cboStoreAuthorizations.Bind(string.Empty,"2");
+            cboStoreAuthorizations.Bind(string.Empty,"4");
             cboStoreAuthorizations.SelectedValue = StoreCD;
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
