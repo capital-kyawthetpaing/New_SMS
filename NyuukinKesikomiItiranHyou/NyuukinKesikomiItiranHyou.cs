@@ -12,6 +12,9 @@ using BL;
 using Entity;
 using CrystalDecisions.Shared;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Drawing.Text;
+using Microsoft.Win32;
 
 namespace NyuukinKesikomiItiranHyou
 {
@@ -28,10 +31,9 @@ namespace NyuukinKesikomiItiranHyou
             nkih_bl = new NyuukinKesikomiItiranHyou_BL();
             vr = new Viewer();
         }
-        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
-        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
-                                         string lpFileName);
+        
 
+       
         private void NyuukinKesikomiItiranHyou_Load(object sender, EventArgs e)
         {
             InProgramID = Application.ProductName;
@@ -45,8 +47,7 @@ namespace NyuukinKesikomiItiranHyou
             cboStoreAuthorizations.Bind(string.Empty, "4");
             cboStoreAuthorizations.SelectedValue = StoreCD;
             cboWebCollectType.Bind(string.Empty);
-            result = AddFontResource(@"Base.Client\Font\IDAutomationHC39M Code 39 Barcode.ttf");
-          //  error = Marshal.GetLastWin32Error();
+           
         }
 
         private void SetRequireField()
