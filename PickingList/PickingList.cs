@@ -24,9 +24,9 @@ namespace PickingList
         {
             InitializeComponent();
         }
-        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
-        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
-                                         string lpFileName);
+        //[DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
+        //public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
+        //                                 string lpFileName);
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
             InProgramID = "PickingList";
