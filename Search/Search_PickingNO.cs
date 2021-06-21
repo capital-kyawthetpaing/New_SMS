@@ -161,8 +161,9 @@ namespace Search
             bool exists = false;
             for (int i = 0; i < detailControls.Length; i++)
             {
-                if (i != (int)EIndex.SoukoCD &&  !string.IsNullOrWhiteSpace(detailControls[i].Text))
-                    exists = true;
+                ///2121/06/18 change for task 2837
+                //if (i != (int)EIndex.SoukoCD &&  !string.IsNullOrWhiteSpace(detailControls[i].Text))
+                //    exists = true;
 
                 if (CheckDetail(i) == false)
                 {
@@ -171,12 +172,12 @@ namespace Search
                 }
             }
 
-            if(!exists)
-            {
-                pnbl.ShowMessage("E111");
-                detailControls[0].Focus();
-                return;
-            }
+            //if(!exists)   ///2121/06/18 change for task 2837
+            //{
+            //    pnbl.ShowMessage("E111");
+            //    detailControls[0].Focus();
+            //    return;
+            //}
 
             dpe = GetSearchInfo();
             DataTable dt = pnbl.D_Picking_SelectAll(dpe);
