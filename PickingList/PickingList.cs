@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,11 +19,14 @@ namespace PickingList
         string todayDate = DateTime.Now.ToString("yyyy/MM/dd");  
         D_Picking_Entity dpe1,dpe2,dpe3,dpe4,dpe;
         PickingList_BL plbl;
+        int result = -1;
         public FrmPickingList() 
         {
             InitializeComponent();
         }
-
+        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
+        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
+                                         string lpFileName);
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
             InProgramID = "PickingList";
@@ -30,11 +34,21 @@ namespace PickingList
             this.SetFunctionLabel(EProMode.SHOW);
             this.SetFunctionLabel(EProMode.PRINT);
             plbl = new PickingList_BL();
-
+            int error = 0;
             StartProgram();
             PageloadBind();
             ModeVisible = false;
-
+            result = AddFontResource(@"D:\Project\New_SMS\Base.Client\Font\IDAutomationHC39M Code 39 Barcode.ttf");
+            error = Marshal.GetLastWin32Error();
+            //if (error != 0)
+            //{
+            //   // Console.WriteLine(new Win32Exception(error).Message);
+            //}
+            //else
+            //{
+            //    //Console.WriteLine((result == 0) ? "Font is already installed." :
+            //                                  //    "Font installed successfully.");
+            //}
             BindData();
             //SetRequiredField();
 
