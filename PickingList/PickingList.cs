@@ -638,15 +638,24 @@ namespace PickingList
                 if (!RequireCheck(new Control[] { ScPickingNo1.TxtCode }))
                     return false;
 
-                if (!string.IsNullOrWhiteSpace(txtDateTo1.Text))
+                if (!ScPickingNo1.IsExists(2))
                 {
-                    if (!ScPickingNo1.IsExists(2))
-                    {
-                        bbl.ShowMessage("E128");
-                        ScPickingNo1.SetFocus(1);
-                        return false;
-                    }
+                    bbl.ShowMessage("E128");
+                    ScPickingNo1.SetFocus(1);
+                    return false;
                 }
+                DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo1.TxtCode.Text);
+                if (dtPickingKBN.Rows[0]["PickingKBN"].ToString() == "2")
+                {
+                    bbl.ShowMessage("E279");
+                    ScPickingNo1.SetFocus(1);
+                    return false;
+                }
+
+                //if (!string.IsNullOrWhiteSpace(txtDateTo1.Text))
+                //{
+                    
+                //}
             }
 
             if (chkUnissued2.Checked == true)
@@ -677,19 +686,16 @@ namespace PickingList
                     ScPickingNo2.SetFocus(1);
                     return false;
                 }
+
+                DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo2.TxtCode.Text);
+                if (dtPickingKBN.Rows[0]["PickingKBN"].ToString() == "1")
+                {
+                    bbl.ShowMessage("E279");
+                    ScPickingNo2.SetFocus(1);
+                    return false;
+                }
             }
            
-
-            
-
-            //if (chkReissued2.Checked == true)
-            //    if (!ScPickingNo2.IsExists(2))
-            //    {
-            //        bbl.ShowMessage("E128");
-            //        return false;
-            //    }
-           
-
 
             return true;
         }
@@ -785,6 +791,13 @@ namespace PickingList
                         bbl.ShowMessage("E128");
                         ScPickingNo1.SetFocus(1);
                     }
+
+                    DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo1.TxtCode.Text);
+                    if (dtPickingKBN.Rows[0]["PickingKBN"].ToString()=="2")
+                    {
+                        bbl.ShowMessage("E279");
+                        ScPickingNo1.SetFocus(1);
+                    }
                 }
                 else
                 {
@@ -803,6 +816,12 @@ namespace PickingList
                     if (!ScPickingNo2.IsExists(2))
                     {
                         bbl.ShowMessage("E128");
+                        ScPickingNo2.SetFocus(1);
+                    }
+                    DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo2.TxtCode.Text);
+                    if (dtPickingKBN.Rows[0]["PickingKBN"].ToString() == "1")
+                    {
+                        bbl.ShowMessage("E279");
                         ScPickingNo2.SetFocus(1);
                     }
                 }
