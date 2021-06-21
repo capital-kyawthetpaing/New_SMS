@@ -356,6 +356,8 @@ namespace Hacchuusho {
             
             private global::System.Data.DataColumn columnSubPageNO;
             
+            private global::System.Data.DataColumn columnFirstOrderNO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTableHacchuushoDataTable() {
@@ -703,6 +705,14 @@ namespace Hacchuusho {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FirstOrderNOColumn {
+                get {
+                    return this.columnFirstOrderNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -777,7 +787,8 @@ namespace Hacchuusho {
                         string VendorKeishou_Onchuu, 
                         string NouhinsakiZipCD, 
                         decimal TyakuYoteiDate, 
-                        string SubPageNO) {
+                        string SubPageNO, 
+                        string FirstOrderNO) {
                 DataTableHacchuushoRow rowDataTableHacchuushoRow = ((DataTableHacchuushoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ShouninJoutai,
@@ -818,7 +829,8 @@ namespace Hacchuusho {
                         VendorKeishou_Onchuu,
                         NouhinsakiZipCD,
                         TyakuYoteiDate,
-                        SubPageNO};
+                        SubPageNO,
+                        FirstOrderNO};
                 rowDataTableHacchuushoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTableHacchuushoRow);
                 return rowDataTableHacchuushoRow;
@@ -880,6 +892,7 @@ namespace Hacchuusho {
                 this.columnNouhinsakiZipCD = base.Columns["NouhinsakiZipCD"];
                 this.columnTyakuYoteiDate = base.Columns["TyakuYoteiDate"];
                 this.columnSubPageNO = base.Columns["SubPageNO"];
+                this.columnFirstOrderNO = base.Columns["FirstOrderNO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -963,6 +976,8 @@ namespace Hacchuusho {
                 base.Columns.Add(this.columnTyakuYoteiDate);
                 this.columnSubPageNO = new global::System.Data.DataColumn("SubPageNO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubPageNO);
+                this.columnFirstOrderNO = new global::System.Data.DataColumn("FirstOrderNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstOrderNO);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1729,6 +1744,22 @@ namespace Hacchuusho {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string FirstOrderNO {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTableHacchuusho.FirstOrderNOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DataTableHacchuusho\' にある列 \'FirstOrderNO\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTableHacchuusho.FirstOrderNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsShouninJoutaiNull() {
                 return this.IsNull(this.tableDataTableHacchuusho.ShouninJoutaiColumn);
             }
@@ -2193,6 +2224,18 @@ namespace Hacchuusho {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSubPageNONull() {
                 this[this.tableDataTableHacchuusho.SubPageNOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFirstOrderNONull() {
+                return this.IsNull(this.tableDataTableHacchuusho.FirstOrderNOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFirstOrderNONull() {
+                this[this.tableDataTableHacchuusho.FirstOrderNOColumn] = global::System.Convert.DBNull;
             }
         }
         
