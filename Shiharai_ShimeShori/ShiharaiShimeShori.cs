@@ -149,12 +149,10 @@ namespace Shiharai_ShimeShori
 
                                 dtno = sss_bl.D_PayPlanValue_Select(dpp_e, "1");
 
-                                dtdup = new DataView(dtno).ToTable(false, "Number"); //pnz start
-
-                                ArrayList UniqueRecords = new ArrayList();
+                                ArrayList UniqueRecords = new ArrayList(); //pnz start
                                 ArrayList DuplicateRecords = new ArrayList();
 
-                                foreach (DataRow dRow in dtdup.Rows)
+                                foreach (DataRow dRow in dtno.Rows)
                                 {
                                     if (UniqueRecords.Contains(dRow["Number"]))
                                         DuplicateRecords.Add(dRow);
@@ -164,27 +162,27 @@ namespace Shiharai_ShimeShori
 
                                 foreach (DataRow dRow in DuplicateRecords)
                                 {
-                                    dtdup.Rows.Remove(dRow);
+                                    dtno.Rows.Remove(dRow);
                                 }
 
-                                if (dtdup.Rows.Count > 0)
+                                for (int i = 0; i < dtno.Rows.Count; i++)
                                 {
-                                    Num = dtdup.Rows[0]["Number"].ToString();
-                                }
-                                if (!string.IsNullOrWhiteSpace(Num))  //pnz end
-                                {
-                                    de_e = new D_Exclusive_Entity()
+                                    Num = dtno.Rows[i]["Number"].ToString();
+                                    if (!string.IsNullOrWhiteSpace(Num))  //pnz end
                                     {
-                                        DataKBN = 9,
-                                        Number = Num,
-                                        Program = this.InProgramID,
-                                        Operator = this.InOperatorCD,
-                                        PC = this.InPcID
-                                    };
-                                    dTNo.Rows.Add(Num);
-                                    e_bl.D_Exclusive_Insert(de_e);
+                                        de_e = new D_Exclusive_Entity()
+                                        {
+                                            DataKBN = 9,
+                                            Number = Num,
+                                            Program = this.InProgramID,
+                                            Operator = this.InOperatorCD,
+                                            PC = this.InPcID
+                                        };
+                                        dTNo.Rows.Add(Num);
+                                        e_bl.D_Exclusive_Insert(de_e);
+                                    }
                                 }
-                                    
+                                
                             }
                        }   
                         if (bbl.ShowMessage("Q101") == DialogResult.Yes)
@@ -202,7 +200,7 @@ namespace Shiharai_ShimeShori
                                     {
                                         check = true;
                                         de_e.DataKBN = 9;
-                                        if (dTNo.Rows.Count > 0)
+                                        for(int p = 0; p < dTNo.Rows.Count; p++)
                                         {
                                             de_e.Number = dTNo.Rows[i]["Number"].ToString();
                                             e_bl.D_Exclusive_Delete(de_e);
@@ -229,13 +227,11 @@ namespace Shiharai_ShimeShori
                             {
                                     dpp_e.PayeeCD = payShimeCancel.Rows[d]["PayeeCD"].ToString();
                                     dtpayno = sss_bl.D_PayPlanValue_Select(dpp_e, "2");
-
-                                    dtdup = new DataView(dtpayno).ToTable(false, "PayCloseNo"); //pnz start
-
-                                    ArrayList UniqueRecords = new ArrayList();
+    
+                                    ArrayList UniqueRecords = new ArrayList(); //pnz start
                                     ArrayList DuplicateRecords = new ArrayList();
 
-                                    foreach (DataRow dRow in dtdup.Rows)
+                                    foreach (DataRow dRow in dtpayno.Rows)
                                     {
                                         if (UniqueRecords.Contains(dRow["PayCloseNo"]))
                                             DuplicateRecords.Add(dRow);
@@ -248,7 +244,7 @@ namespace Shiharai_ShimeShori
                                         dtdup.Rows.Remove(dRow);
                                     }
 
-                                    for (int p = 0; p < dtdup.Rows.Count; p++) //pnz end
+                                    for (int p = 0; p < dtpayno.Rows.Count; p++) //pnz end
                                     {
                                         PayCloseNo = dtdup.Rows[0]["PayCloseNo"].ToString();
                                         if (!string.IsNullOrWhiteSpace(Num))

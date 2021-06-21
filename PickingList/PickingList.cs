@@ -34,12 +34,11 @@ namespace PickingList
             this.SetFunctionLabel(EProMode.SHOW);
             this.SetFunctionLabel(EProMode.PRINT);
             plbl = new PickingList_BL();
-            int error = 0;
             StartProgram();
             PageloadBind();
             ModeVisible = false;
-            result = AddFontResource(@"D:\Project\New_SMS\Base.Client\Font\IDAutomationHC39M Code 39 Barcode.ttf");
-            error = Marshal.GetLastWin32Error();
+           // result = AddFontResource(@"D:\Project\New_SMS\Base.Client\Font\IDAutomationHC39M Code 39 Barcode.ttf");
+           // error = Marshal.GetLastWin32Error();
             //if (error != 0)
             //{
             //   // Console.WriteLine(new Win32Exception(error).Message);

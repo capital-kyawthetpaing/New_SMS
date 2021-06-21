@@ -686,7 +686,6 @@
     <Content Include="StoreProcedure\Trg_Juchuu.sql" />
     <Content Include="StoreProcedure\Trg_Mitsumori.sql" />
     <Content Include="StoreProcedure\Trg_Order.sql" />
-    <Content Include="StoreProcedure\T_Hacchuusho.sql" />
     <Content Include="StoreProcedure\UPDATE_D_BillingDetails_7_9.sql" />
     <Content Include="StoreProcedure\UPDATE_D_Billing_6_9.sql" />
     <Content Include="StoreProcedure\UPDATE_D_CollectBillingDetails_11_9.sql" />
