@@ -53,6 +53,55 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSiteJuchuuDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coIJuchuuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerKanaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOnHoldKbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentMethodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNoMailFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMailKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSendedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMailSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIndividualContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelephoneContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCollectAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmZan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
@@ -126,75 +175,24 @@
             this.Btn_NoSelect = new CKM_Controls.CKM_Button();
             this.Btn_SelectAll = new CKM_Controls.CKM_Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSiteJuchuuDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coIJuchuuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerKanaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuchuuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOnHoldKbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaymentMethodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNoMailFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMailKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSendedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMailSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIndividualContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelephoneContactKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCollectAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmZan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScSKUCD = new Search.CKM_SearchControl();
+            this.ckM_LB_Skucd = new CKM_Controls.CKM_Label();
+            this.pnlJuchuu = new System.Windows.Forms.Panel();
+            this.lblCapitalJuchuuDate = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.panel1.SuspendLayout();
+            this.pnlJuchuu.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.lblCapitalJuchuuDate);
+            this.PanelHeader.Controls.Add(this.pnlJuchuu);
+            this.PanelHeader.Controls.Add(this.ckM_LB_Skucd);
             this.PanelHeader.Controls.Add(this.panel1);
             this.PanelHeader.Controls.Add(this.btnSaiSyuukei);
-            this.PanelHeader.Controls.Add(this.ckM_ComboBox5);
-            this.PanelHeader.Controls.Add(this.ckM_Label27);
-            this.PanelHeader.Controls.Add(this.ckM_ComboBox6);
-            this.PanelHeader.Controls.Add(this.ckM_Label28);
-            this.PanelHeader.Controls.Add(this.ckM_ComboBox7);
-            this.PanelHeader.Controls.Add(this.ckM_Label29);
-            this.PanelHeader.Controls.Add(this.ckM_ComboBox8);
-            this.PanelHeader.Controls.Add(this.label30);
-            this.PanelHeader.Controls.Add(this.ckM_TextBox20);
-            this.PanelHeader.Controls.Add(this.ckM_Label26);
             this.PanelHeader.Controls.Add(this.txtTel);
             this.PanelHeader.Controls.Add(this.ckM_Label3);
             this.PanelHeader.Controls.Add(this.txtKanaName);
@@ -249,8 +247,10 @@
             this.PanelHeader.Controls.Add(this.ckM_TextBox1);
             this.PanelHeader.Controls.Add(this.CboStoreCD);
             this.PanelHeader.Controls.Add(this.label4);
+            this.PanelHeader.Controls.Add(this.ScSKUCD);
             this.PanelHeader.Size = new System.Drawing.Size(1368, 244);
             this.PanelHeader.TabIndex = 0;
+            this.PanelHeader.Controls.SetChildIndex(this.ScSKUCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label4, 0);
             this.PanelHeader.Controls.SetChildIndex(this.CboStoreCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
@@ -305,18 +305,11 @@
             this.PanelHeader.Controls.SetChildIndex(this.txtKanaName, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtTel, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label26, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox20, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.label30, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_ComboBox8, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label29, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_ComboBox7, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label28, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_ComboBox6, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label27, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_ComboBox5, 0);
             this.PanelHeader.Controls.SetChildIndex(this.btnSaiSyuukei, 0);
             this.PanelHeader.Controls.SetChildIndex(this.panel1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_LB_Skucd, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.pnlJuchuu, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.lblCapitalJuchuuDate, 0);
             // 
             // PanelSearch
             // 
@@ -678,6 +671,375 @@
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.CurrentCellChanged += new System.EventHandler(this.GvDetail_CurrentCellChanged);
+            this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
+            // 
+            // Detail
+            // 
+            this.Detail.Frozen = true;
+            this.Detail.HeaderText = "詳細";
+            this.Detail.Name = "Detail";
+            this.Detail.ReadOnly = true;
+            this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Detail.Width = 50;
+            // 
+            // Mail
+            // 
+            this.Mail.DataPropertyName = "Mail";
+            this.Mail.Frozen = true;
+            this.Mail.HeaderText = "ﾒｰﾙ";
+            this.Mail.Name = "Mail";
+            this.Mail.ReadOnly = true;
+            this.Mail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Mail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Mail.Width = 30;
+            // 
+            // colStoreName
+            // 
+            this.colStoreName.DataPropertyName = "StoreName";
+            this.colStoreName.Frozen = true;
+            this.colStoreName.HeaderText = "ストア";
+            this.colStoreName.Name = "colStoreName";
+            this.colStoreName.ReadOnly = true;
+            this.colStoreName.Width = 150;
+            // 
+            // colSiteJuchuuDateTime
+            // 
+            this.colSiteJuchuuDateTime.DataPropertyName = "SiteJuchuuDateTime";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSiteJuchuuDateTime.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSiteJuchuuDateTime.Frozen = true;
+            this.colSiteJuchuuDateTime.HeaderText = "サイト受注日時";
+            this.colSiteJuchuuDateTime.Name = "colSiteJuchuuDateTime";
+            this.colSiteJuchuuDateTime.ReadOnly = true;
+            this.colSiteJuchuuDateTime.Width = 120;
+            // 
+            // coIJuchuuDate
+            // 
+            this.coIJuchuuDate.DataPropertyName = "JuchuuDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.coIJuchuuDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.coIJuchuuDate.Frozen = true;
+            this.coIJuchuuDate.HeaderText = "ｷｬﾋﾟﾀﾙ受注日";
+            this.coIJuchuuDate.Name = "coIJuchuuDate";
+            this.coIJuchuuDate.ReadOnly = true;
+            // 
+            // colCustomerCD
+            // 
+            this.colCustomerCD.DataPropertyName = "CustomerCD";
+            this.colCustomerCD.Frozen = true;
+            this.colCustomerCD.HeaderText = "顧客番号";
+            this.colCustomerCD.Name = "colCustomerCD";
+            this.colCustomerCD.ReadOnly = true;
+            this.colCustomerCD.Width = 90;
+            // 
+            // colCustomerKanaName
+            // 
+            this.colCustomerKanaName.DataPropertyName = "CustomerKanaName";
+            this.colCustomerKanaName.Frozen = true;
+            this.colCustomerKanaName.HeaderText = "顧客名（カナ）";
+            this.colCustomerKanaName.Name = "colCustomerKanaName";
+            this.colCustomerKanaName.ReadOnly = true;
+            this.colCustomerKanaName.Width = 170;
+            // 
+            // colJuchuuNO
+            // 
+            this.colJuchuuNO.DataPropertyName = "JuchuuNO";
+            this.colJuchuuNO.HeaderText = "受注番号";
+            this.colJuchuuNO.Name = "colJuchuuNO";
+            this.colJuchuuNO.ReadOnly = true;
+            // 
+            // colOnHoldKbn
+            // 
+            this.colOnHoldKbn.DataPropertyName = "OnHoldKbn";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colOnHoldKbn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colOnHoldKbn.HeaderText = "保留";
+            this.colOnHoldKbn.Name = "colOnHoldKbn";
+            this.colOnHoldKbn.ReadOnly = true;
+            this.colOnHoldKbn.Width = 40;
+            // 
+            // colPaymentMethodName
+            // 
+            this.colPaymentMethodName.DataPropertyName = "PaymentMethodName";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colPaymentMethodName.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colPaymentMethodName.HeaderText = "警告状況";
+            this.colPaymentMethodName.Name = "colPaymentMethodName";
+            this.colPaymentMethodName.ReadOnly = true;
+            this.colPaymentMethodName.Width = 80;
+            // 
+            // colNoMailFLG
+            // 
+            this.colNoMailFLG.DataPropertyName = "NoMailFLG";
+            this.colNoMailFLG.HeaderText = "ﾒｰﾙ不要";
+            this.colNoMailFLG.Name = "colNoMailFLG";
+            this.colNoMailFLG.ReadOnly = true;
+            this.colNoMailFLG.Width = 90;
+            // 
+            // colMailKBN
+            // 
+            this.colMailKBN.DataPropertyName = "MailKBN";
+            this.colMailKBN.HeaderText = "メール発送状況";
+            this.colMailKBN.Name = "colMailKBN";
+            this.colMailKBN.ReadOnly = true;
+            // 
+            // colSendedDate
+            // 
+            this.colSendedDate.DataPropertyName = "SendedDate";
+            this.colSendedDate.HeaderText = "メール日";
+            this.colSendedDate.Name = "colSendedDate";
+            this.colSendedDate.ReadOnly = true;
+            // 
+            // colMailSubject
+            // 
+            this.colMailSubject.DataPropertyName = "MailSubject";
+            this.colMailSubject.HeaderText = "メール件名（最新送付件名）";
+            this.colMailSubject.Name = "colMailSubject";
+            this.colMailSubject.ReadOnly = true;
+            this.colMailSubject.Width = 250;
+            // 
+            // colIndividualContactKBN
+            // 
+            this.colIndividualContactKBN.DataPropertyName = "IndividualContactKBN";
+            this.colIndividualContactKBN.HeaderText = "個別連絡";
+            this.colIndividualContactKBN.Name = "colIndividualContactKBN";
+            this.colIndividualContactKBN.ReadOnly = true;
+            // 
+            // colTelephoneContactKBN
+            // 
+            this.colTelephoneContactKBN.DataPropertyName = "TelephoneContactKBN";
+            this.colTelephoneContactKBN.HeaderText = "電話連絡";
+            this.colTelephoneContactKBN.Name = "colTelephoneContactKBN";
+            this.colTelephoneContactKBN.ReadOnly = true;
+            // 
+            // colStaff
+            // 
+            this.colStaff.DataPropertyName = "StaffName";
+            this.colStaff.HeaderText = "担当者";
+            this.colStaff.Name = "colStaff";
+            this.colStaff.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "受注状況";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "発注状況";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "入金方法";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "入金状況";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "出荷状況";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "着指定日 時刻";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "金額(税込)";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "入金日";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "発注日";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "直送";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 40;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "入荷予定日";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "入荷日";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "出荷予定日";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "分割";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Width = 40;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "出荷日";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "分割";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Width = 40;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "サイト受注番号";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "受注コメント(顧客)";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "受注コメント(キャピタル)";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "ﾌﾟﾚｾﾞﾝﾄ";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Width = 40;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "配送方法";
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "発注コメント(社外)";
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "発注コメント(社内)";
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "出荷コメント(社外)";
+            this.Column24.Name = "Column24";
+            this.Column24.ReadOnly = true;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "出荷コメント(社内)";
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "電話番号";
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "送り状番号";
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            // 
+            // colCollectAmount
+            // 
+            this.colCollectAmount.DataPropertyName = "CollectAmount";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colCollectAmount.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colCollectAmount.HeaderText = "入金額";
+            this.colCollectAmount.Name = "colCollectAmount";
+            this.colCollectAmount.ReadOnly = true;
+            this.colCollectAmount.Width = 90;
+            // 
+            // colConfirmSource
+            // 
+            this.colConfirmSource.DataPropertyName = "ConfirmSource";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colConfirmSource.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colConfirmSource.HeaderText = "消込原資額";
+            this.colConfirmSource.Name = "colConfirmSource";
+            this.colConfirmSource.ReadOnly = true;
+            this.colConfirmSource.Width = 90;
+            // 
+            // colConfirmAmount
+            // 
+            this.colConfirmAmount.DataPropertyName = "ConfirmAmount";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.colConfirmAmount.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colConfirmAmount.HeaderText = "消込額";
+            this.colConfirmAmount.Name = "colConfirmAmount";
+            this.colConfirmAmount.ReadOnly = true;
+            this.colConfirmAmount.Width = 90;
+            // 
+            // colConfirmZan
+            // 
+            this.colConfirmZan.DataPropertyName = "ConfirmZan";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N0";
+            this.colConfirmZan.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colConfirmZan.HeaderText = "消込残額";
+            this.colConfirmZan.Name = "colConfirmZan";
+            this.colConfirmZan.ReadOnly = true;
+            this.colConfirmZan.Width = 90;
+            // 
+            // colConfirmNO
+            // 
+            this.colConfirmNO.DataPropertyName = "ConfirmNO";
+            this.colConfirmNO.HeaderText = "消込番号";
+            this.colConfirmNO.Name = "colConfirmNO";
+            this.colConfirmNO.ReadOnly = true;
+            this.colConfirmNO.Visible = false;
             // 
             // ckM_Label6
             // 
@@ -1920,7 +2282,7 @@
             this.ckM_TextBox20.IsShop = false;
             this.ckM_TextBox20.IsTimemmss = false;
             this.ckM_TextBox20.Length = 30;
-            this.ckM_TextBox20.Location = new System.Drawing.Point(1179, 71);
+            this.ckM_TextBox20.Location = new System.Drawing.Point(96, 10);
             this.ckM_TextBox20.MaxLength = 30;
             this.ckM_TextBox20.MoveNext = true;
             this.ckM_TextBox20.Name = "ckM_TextBox20";
@@ -1939,7 +2301,7 @@
             this.ckM_Label26.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label26.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label26.Location = new System.Drawing.Point(1080, 75);
+            this.ckM_Label26.Location = new System.Drawing.Point(-2, 13);
             this.ckM_Label26.Name = "ckM_Label26";
             this.ckM_Label26.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label26.TabIndex = 799;
@@ -1957,7 +2319,7 @@
             this.ckM_ComboBox5.Flag = 0;
             this.ckM_ComboBox5.FormattingEnabled = true;
             this.ckM_ComboBox5.Length = 20;
-            this.ckM_ComboBox5.Location = new System.Drawing.Point(1179, 150);
+            this.ckM_ComboBox5.Location = new System.Drawing.Point(97, 90);
             this.ckM_ComboBox5.MaxLength = 10;
             this.ckM_ComboBox5.MoveNext = false;
             this.ckM_ComboBox5.Name = "ckM_ComboBox5";
@@ -1973,7 +2335,7 @@
             this.ckM_Label27.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label27.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label27.Location = new System.Drawing.Point(1119, 153);
+            this.ckM_Label27.Location = new System.Drawing.Point(37, 93);
             this.ckM_Label27.Name = "ckM_Label27";
             this.ckM_Label27.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label27.TabIndex = 807;
@@ -1991,7 +2353,7 @@
             this.ckM_ComboBox6.Flag = 0;
             this.ckM_ComboBox6.FormattingEnabled = true;
             this.ckM_ComboBox6.Length = 20;
-            this.ckM_ComboBox6.Location = new System.Drawing.Point(1179, 130);
+            this.ckM_ComboBox6.Location = new System.Drawing.Point(97, 70);
             this.ckM_ComboBox6.MaxLength = 10;
             this.ckM_ComboBox6.MoveNext = false;
             this.ckM_ComboBox6.Name = "ckM_ComboBox6";
@@ -2007,7 +2369,7 @@
             this.ckM_Label28.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label28.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label28.Location = new System.Drawing.Point(1119, 134);
+            this.ckM_Label28.Location = new System.Drawing.Point(37, 74);
             this.ckM_Label28.Name = "ckM_Label28";
             this.ckM_Label28.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label28.TabIndex = 806;
@@ -2025,7 +2387,7 @@
             this.ckM_ComboBox7.Flag = 0;
             this.ckM_ComboBox7.FormattingEnabled = true;
             this.ckM_ComboBox7.Length = 20;
-            this.ckM_ComboBox7.Location = new System.Drawing.Point(1179, 110);
+            this.ckM_ComboBox7.Location = new System.Drawing.Point(97, 50);
             this.ckM_ComboBox7.MaxLength = 10;
             this.ckM_ComboBox7.MoveNext = false;
             this.ckM_ComboBox7.Name = "ckM_ComboBox7";
@@ -2041,7 +2403,7 @@
             this.ckM_Label29.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label29.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label29.Location = new System.Drawing.Point(1119, 114);
+            this.ckM_Label29.Location = new System.Drawing.Point(37, 54);
             this.ckM_Label29.Name = "ckM_Label29";
             this.ckM_Label29.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label29.TabIndex = 805;
@@ -2059,7 +2421,7 @@
             this.ckM_ComboBox8.Flag = 0;
             this.ckM_ComboBox8.FormattingEnabled = true;
             this.ckM_ComboBox8.Length = 20;
-            this.ckM_ComboBox8.Location = new System.Drawing.Point(1179, 90);
+            this.ckM_ComboBox8.Location = new System.Drawing.Point(97, 30);
             this.ckM_ComboBox8.MaxLength = 10;
             this.ckM_ComboBox8.MoveNext = false;
             this.ckM_ComboBox8.Name = "ckM_ComboBox8";
@@ -2075,7 +2437,7 @@
             this.label30.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label30.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(1080, 95);
+            this.label30.Location = new System.Drawing.Point(-2, 33);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(96, 12);
             this.label30.TabIndex = 804;
@@ -2159,373 +2521,86 @@
             this.panel1.Size = new System.Drawing.Size(1079, 27);
             this.panel1.TabIndex = 810;
             // 
-            // Detail
-            // 
-            this.Detail.Frozen = true;
-            this.Detail.HeaderText = "詳細";
-            this.Detail.Name = "Detail";
-            this.Detail.ReadOnly = true;
-            this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Detail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Detail.Width = 50;
-            // 
-            // Mail
-            // 
-            this.Mail.DataPropertyName = "Mail";
-            this.Mail.Frozen = true;
-            this.Mail.HeaderText = "ﾒｰﾙ";
-            this.Mail.Name = "Mail";
-            this.Mail.ReadOnly = true;
-            this.Mail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Mail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Mail.Width = 30;
-            // 
-            // colStoreName
-            // 
-            this.colStoreName.DataPropertyName = "StoreName";
-            this.colStoreName.Frozen = true;
-            this.colStoreName.HeaderText = "ストア";
-            this.colStoreName.Name = "colStoreName";
-            this.colStoreName.ReadOnly = true;
-            this.colStoreName.Width = 150;
-            // 
-            // colSiteJuchuuDateTime
-            // 
-            this.colSiteJuchuuDateTime.DataPropertyName = "SiteJuchuuDateTime";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSiteJuchuuDateTime.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSiteJuchuuDateTime.Frozen = true;
-            this.colSiteJuchuuDateTime.HeaderText = "サイト受注日時";
-            this.colSiteJuchuuDateTime.Name = "colSiteJuchuuDateTime";
-            this.colSiteJuchuuDateTime.ReadOnly = true;
-            this.colSiteJuchuuDateTime.Width = 120;
-            // 
-            // coIJuchuuDate
-            // 
-            this.coIJuchuuDate.DataPropertyName = "JuchuuDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.coIJuchuuDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.coIJuchuuDate.Frozen = true;
-            this.coIJuchuuDate.HeaderText = "ｷｬﾋﾟﾀﾙ受注日";
-            this.coIJuchuuDate.Name = "coIJuchuuDate";
-            this.coIJuchuuDate.ReadOnly = true;
-            // 
-            // colCustomerCD
-            // 
-            this.colCustomerCD.DataPropertyName = "CustomerCD";
-            this.colCustomerCD.Frozen = true;
-            this.colCustomerCD.HeaderText = "顧客番号";
-            this.colCustomerCD.Name = "colCustomerCD";
-            this.colCustomerCD.ReadOnly = true;
-            this.colCustomerCD.Width = 90;
-            // 
-            // colCustomerKanaName
-            // 
-            this.colCustomerKanaName.DataPropertyName = "CustomerKanaName";
-            this.colCustomerKanaName.Frozen = true;
-            this.colCustomerKanaName.HeaderText = "顧客名（カナ）";
-            this.colCustomerKanaName.Name = "colCustomerKanaName";
-            this.colCustomerKanaName.ReadOnly = true;
-            this.colCustomerKanaName.Width = 170;
-            // 
-            // colJuchuuNO
-            // 
-            this.colJuchuuNO.DataPropertyName = "JuchuuNO";
-            this.colJuchuuNO.HeaderText = "受注番号";
-            this.colJuchuuNO.Name = "colJuchuuNO";
-            this.colJuchuuNO.ReadOnly = true;
-            // 
-            // colOnHoldKbn
-            // 
-            this.colOnHoldKbn.DataPropertyName = "OnHoldKbn";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colOnHoldKbn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colOnHoldKbn.HeaderText = "保留";
-            this.colOnHoldKbn.Name = "colOnHoldKbn";
-            this.colOnHoldKbn.ReadOnly = true;
-            this.colOnHoldKbn.Width = 40;
-            // 
-            // colPaymentMethodName
-            // 
-            this.colPaymentMethodName.DataPropertyName = "PaymentMethodName";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colPaymentMethodName.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colPaymentMethodName.HeaderText = "警告状況";
-            this.colPaymentMethodName.Name = "colPaymentMethodName";
-            this.colPaymentMethodName.ReadOnly = true;
-            this.colPaymentMethodName.Width = 80;
-            // 
-            // colNoMailFLG
-            // 
-            this.colNoMailFLG.DataPropertyName = "NoMailFLG";
-            this.colNoMailFLG.HeaderText = "ﾒｰﾙ不要";
-            this.colNoMailFLG.Name = "colNoMailFLG";
-            this.colNoMailFLG.ReadOnly = true;
-            this.colNoMailFLG.Width = 90;
-            // 
-            // colMailKBN
-            // 
-            this.colMailKBN.DataPropertyName = "MailKBN";
-            this.colMailKBN.HeaderText = "メール発送状況";
-            this.colMailKBN.Name = "colMailKBN";
-            this.colMailKBN.ReadOnly = true;
-            // 
-            // colSendedDate
-            // 
-            this.colSendedDate.DataPropertyName = "SendedDate";
-            this.colSendedDate.HeaderText = "メール日";
-            this.colSendedDate.Name = "colSendedDate";
-            this.colSendedDate.ReadOnly = true;
-            // 
-            // colMailSubject
-            // 
-            this.colMailSubject.DataPropertyName = "MailSubject";
-            this.colMailSubject.HeaderText = "メール件名（最新送付件名）";
-            this.colMailSubject.Name = "colMailSubject";
-            this.colMailSubject.ReadOnly = true;
-            this.colMailSubject.Width = 250;
-            // 
-            // colIndividualContactKBN
-            // 
-            this.colIndividualContactKBN.DataPropertyName = "IndividualContactKBN";
-            this.colIndividualContactKBN.HeaderText = "個別連絡";
-            this.colIndividualContactKBN.Name = "colIndividualContactKBN";
-            this.colIndividualContactKBN.ReadOnly = true;
-            // 
-            // colTelephoneContactKBN
-            // 
-            this.colTelephoneContactKBN.DataPropertyName = "TelephoneContactKBN";
-            this.colTelephoneContactKBN.HeaderText = "電話連絡";
-            this.colTelephoneContactKBN.Name = "colTelephoneContactKBN";
-            this.colTelephoneContactKBN.ReadOnly = true;
-            // 
-            // colStaff
-            // 
-            this.colStaff.DataPropertyName = "StaffName";
-            this.colStaff.HeaderText = "担当者";
-            this.colStaff.Name = "colStaff";
-            this.colStaff.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "受注状況";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "発注状況";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "入金方法";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "入金状況";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "出荷状況";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "着指定日 時刻";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "金額(税込)";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "入金日";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "発注日";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "直送";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 40;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "入荷予定日";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "入荷日";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "出荷予定日";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "分割";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 40;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "出荷日";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "分割";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 40;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "サイト受注番号";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "受注コメント(顧客)";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "受注コメント(キャピタル)";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "ﾌﾟﾚｾﾞﾝﾄ";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            this.Column20.Width = 40;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "配送方法";
-            this.Column21.Name = "Column21";
-            this.Column21.ReadOnly = true;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "発注コメント(社外)";
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "発注コメント(社内)";
-            this.Column23.Name = "Column23";
-            this.Column23.ReadOnly = true;
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "出荷コメント(社外)";
-            this.Column24.Name = "Column24";
-            this.Column24.ReadOnly = true;
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "出荷コメント(社内)";
-            this.Column25.Name = "Column25";
-            this.Column25.ReadOnly = true;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "電話番号";
-            this.Column26.Name = "Column26";
-            this.Column26.ReadOnly = true;
-            // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "送り状番号";
-            this.Column27.Name = "Column27";
-            this.Column27.ReadOnly = true;
-            // 
-            // colCollectAmount
-            // 
-            this.colCollectAmount.DataPropertyName = "CollectAmount";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.colCollectAmount.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colCollectAmount.HeaderText = "入金額";
-            this.colCollectAmount.Name = "colCollectAmount";
-            this.colCollectAmount.ReadOnly = true;
-            this.colCollectAmount.Width = 90;
-            // 
-            // colConfirmSource
-            // 
-            this.colConfirmSource.DataPropertyName = "ConfirmSource";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colConfirmSource.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colConfirmSource.HeaderText = "消込原資額";
-            this.colConfirmSource.Name = "colConfirmSource";
-            this.colConfirmSource.ReadOnly = true;
-            this.colConfirmSource.Width = 90;
-            // 
-            // colConfirmAmount
-            // 
-            this.colConfirmAmount.DataPropertyName = "ConfirmAmount";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.colConfirmAmount.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colConfirmAmount.HeaderText = "消込額";
-            this.colConfirmAmount.Name = "colConfirmAmount";
-            this.colConfirmAmount.ReadOnly = true;
-            this.colConfirmAmount.Width = 90;
-            // 
-            // colConfirmZan
-            // 
-            this.colConfirmZan.DataPropertyName = "ConfirmZan";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            this.colConfirmZan.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colConfirmZan.HeaderText = "消込残額";
-            this.colConfirmZan.Name = "colConfirmZan";
-            this.colConfirmZan.ReadOnly = true;
-            this.colConfirmZan.Width = 90;
-            // 
-            // colConfirmNO
-            // 
-            this.colConfirmNO.DataPropertyName = "ConfirmNO";
-            this.colConfirmNO.HeaderText = "消込番号";
-            this.colConfirmNO.Name = "colConfirmNO";
-            this.colConfirmNO.ReadOnly = true;
-            this.colConfirmNO.Visible = false;
+            // ScSKUCD
+            // 
+            this.ScSKUCD.AutoSize = true;
+            this.ScSKUCD.ChangeDate = "";
+            this.ScSKUCD.ChangeDateWidth = 100;
+            this.ScSKUCD.Code = "";
+            this.ScSKUCD.CodeWidth = 190;
+            this.ScSKUCD.CodeWidth1 = 190;
+            this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScSKUCD.DataCheck = false;
+            this.ScSKUCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScSKUCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScSKUCD.IsCopy = false;
+            this.ScSKUCD.LabelText = "";
+            this.ScSKUCD.LabelVisible = true;
+            this.ScSKUCD.Location = new System.Drawing.Point(520, 172);
+            this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
+            this.ScSKUCD.Name = "ScSKUCD";
+            this.ScSKUCD.NameWidth = 350;
+            this.ScSKUCD.SearchEnable = true;
+            this.ScSKUCD.Size = new System.Drawing.Size(574, 27);
+            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.ScSKUCD.TabIndex = 811;
+            this.ScSKUCD.test = null;
+            this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScSKUCD.UseChangeDate = false;
+            this.ScSKUCD.Value1 = null;
+            this.ScSKUCD.Value2 = null;
+            this.ScSKUCD.Value3 = null;
+            // 
+            // ckM_LB_Skucd
+            // 
+            this.ckM_LB_Skucd.AutoSize = true;
+            this.ckM_LB_Skucd.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_LB_Skucd.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_LB_Skucd.DefaultlabelSize = true;
+            this.ckM_LB_Skucd.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_LB_Skucd.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_LB_Skucd.ForeColor = System.Drawing.Color.Black;
+            this.ckM_LB_Skucd.Location = new System.Drawing.Point(478, 180);
+            this.ckM_LB_Skucd.Name = "ckM_LB_Skucd";
+            this.ckM_LB_Skucd.Size = new System.Drawing.Size(40, 12);
+            this.ckM_LB_Skucd.TabIndex = 812;
+            this.ckM_LB_Skucd.Text = "SKUCD";
+            this.ckM_LB_Skucd.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_LB_Skucd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlJuchuu
+            // 
+            this.pnlJuchuu.Controls.Add(this.ckM_ComboBox5);
+            this.pnlJuchuu.Controls.Add(this.ckM_Label27);
+            this.pnlJuchuu.Controls.Add(this.ckM_ComboBox6);
+            this.pnlJuchuu.Controls.Add(this.ckM_Label28);
+            this.pnlJuchuu.Controls.Add(this.ckM_TextBox20);
+            this.pnlJuchuu.Controls.Add(this.label30);
+            this.pnlJuchuu.Controls.Add(this.ckM_ComboBox7);
+            this.pnlJuchuu.Controls.Add(this.ckM_Label29);
+            this.pnlJuchuu.Controls.Add(this.ckM_Label26);
+            this.pnlJuchuu.Controls.Add(this.ckM_ComboBox8);
+            this.pnlJuchuu.Location = new System.Drawing.Point(1070, 58);
+            this.pnlJuchuu.Name = "pnlJuchuu";
+            this.pnlJuchuu.Size = new System.Drawing.Size(292, 113);
+            this.pnlJuchuu.TabIndex = 813;
+            // 
+            // lblCapitalJuchuuDate
+            // 
+            this.lblCapitalJuchuuDate.AutoSize = true;
+            this.lblCapitalJuchuuDate.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblCapitalJuchuuDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblCapitalJuchuuDate.DefaultlabelSize = true;
+            this.lblCapitalJuchuuDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblCapitalJuchuuDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblCapitalJuchuuDate.ForeColor = System.Drawing.Color.Black;
+            this.lblCapitalJuchuuDate.Location = new System.Drawing.Point(410, 92);
+            this.lblCapitalJuchuuDate.Name = "lblCapitalJuchuuDate";
+            this.lblCapitalJuchuuDate.Size = new System.Drawing.Size(109, 12);
+            this.lblCapitalJuchuuDate.TabIndex = 814;
+            this.lblCapitalJuchuuDate.Text = "キャピタル受注日";
+            this.lblCapitalJuchuuDate.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblCapitalJuchuuDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // WebJuchuuKakunin
             // 
@@ -2549,6 +2624,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlJuchuu.ResumeLayout(false);
+            this.pnlJuchuu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2690,6 +2767,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmZan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmNO;
+        private CKM_Controls.CKM_Label ckM_LB_Skucd;
+        private Search.CKM_SearchControl ScSKUCD;
+        private System.Windows.Forms.Panel pnlJuchuu;
+        private CKM_Controls.CKM_Label lblCapitalJuchuuDate;
     }
 }
 
