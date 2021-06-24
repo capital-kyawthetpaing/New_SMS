@@ -38,12 +38,7 @@ namespace ZaikoShoukai
             zaibl = new ZaikoShoukai_BL();
             dtData = new DataTable();
         }
-        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
-        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
-        string lpFileName);
-        // private const uint FR_PRIVATE = 0x10;
-        //  [DllImport("gdi32.dll")] static extern int AddFontResourceEx(string lpszFilename, uint fl, IntPtr pdv);
-        //   AddFontResourceEx("filename", FR_PRIVATE, IntPtr.Zero); </code> – Patrick Ribbing Apr 9 '17 at 19:32
+       
         private void ZaikoShoukai_Load(object sender, EventArgs e)
         {
             InProgramID = "ZaikoShoukai";
@@ -68,18 +63,7 @@ namespace ZaikoShoukai
             this.CB_Tagu4.AcceptKey = true;
             this.CB_Tagu5.AcceptKey = true;
             AddCol();
-            int result = -1;
             //GV_Zaiko.DisabledColumn("colSKUCD,商品名,カラー,サイズ,店舗名,SoukoName,棚番,現在庫,入荷予定,引当可能,メーカー,JANCD,colBrand,ITEM,メーカー商品CD,最速入荷日,基準在庫,販売定価,標準原価");
-            var fontDestination = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts), "IDAutomationHC39M Code 39 Barcode.ttf");
-           
-           if (!File.Exists(fontDestination))
-           {
-                string fileName = "IDAutomationHC39M Code 39 Barcode.ttf";
-                string path = Path.Combine(Environment.CurrentDirectory, @"Font\", fileName);
-                //System.IO.File.Copy(path, fontDestination);
-                // result = AddFontResourceEx(path, FR_PRIVATE, IntPtr.Zero);
-                result = AddFontResource(path);
-           }
         }
 
         protected override void EndSec()
