@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,13 +21,15 @@ namespace PickingList
         D_Picking_Entity dpe1,dpe2,dpe3,dpe4,dpe;
         PickingList_BL plbl;
         int result = -1;
+        
         public FrmPickingList() 
         {
             InitializeComponent();
         }
-        //[DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
-        //public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
-        //                                 string lpFileName);
+        //Barcode font 
+        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
+        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
+                                         string lpFileName);
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
             InProgramID = "PickingList";
@@ -37,17 +40,6 @@ namespace PickingList
             StartProgram();
             PageloadBind();
             ModeVisible = false;
-           // result = AddFontResource(@"D:\Project\New_SMS\Base.Client\Font\IDAutomationHC39M Code 39 Barcode.ttf");
-           // error = Marshal.GetLastWin32Error();
-            //if (error != 0)
-            //{
-            //   // Console.WriteLine(new Win32Exception(error).Message);
-            //}
-            //else
-            //{
-            //    //Console.WriteLine((result == 0) ? "Font is already installed." :
-            //                                  //    "Font installed successfully.");
-            //}
             BindData();
             //SetRequiredField();
 
@@ -57,6 +49,15 @@ namespace PickingList
             ScPickingNo1.Value2 = stores;
             ScPickingNo2.Value1 = InOperatorCD;
             ScPickingNo2.Value2 = stores;
+
+            //BarCode font Install
+            var fontDestination = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts), "IDAutomationHC39M Code 39 Barcode.ttf");
+            if (!File.Exists(fontDestination))
+            {
+                string fileName = "IDAutomationHC39M Code 39 Barcode.ttf";
+                string path = Path.Combine(Environment.CurrentDirectory, @"Font\", fileName);
+                result = AddFontResource(path);
+            }
         }
 
         public void PageloadBind()
