@@ -25,6 +25,7 @@ namespace FBDataSakusei_FBデータ作成
         D_FBData_Entity dfde = new D_FBData_Entity();
         DataTable dtgv = new DataTable();
         public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\file.txt";
+         
 
         public FrmFBDataSakusei_FBデータ作成()
         {
