@@ -212,6 +212,7 @@
     <Content Include="StoreProcedure\D_Pay_Update.sql" />
     <Content Include="StoreProcedure\D_Picking_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Picking_SelectData.sql" />
+    <Content Include="StoreProcedure\D_Picking_SelectToCheckPickingKBN.sql" />
     <Content Include="StoreProcedure\D_Picking_Update.sql" />
     <Content Include="StoreProcedure\D_Purchase_SearchselectAll.sql" />
     <Content Include="StoreProcedure\D_Purchase_Select.sql" />

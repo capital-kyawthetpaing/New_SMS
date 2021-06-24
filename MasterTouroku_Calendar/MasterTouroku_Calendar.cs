@@ -163,7 +163,7 @@ namespace MasterTouroku_Calendar
                     F8();
                     break;
                 case 12:
-                    Btn_F12.Focus();
+                    //Btn_F12.Focus();
                     F12();
                     break;
             }
@@ -392,6 +392,11 @@ namespace MasterTouroku_Calendar
                 }
 
             }
+        }
+
+        private void FrmMasterTouroku_Calendar_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }

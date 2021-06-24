@@ -321,6 +321,7 @@ namespace FBDataSakusei_FBデータ作成
                                 Clear(panel1);
                                 BindCombo();
                                 cboProcess.Focus();
+                                cboProcess.SelectedValue = 0;
                             }
 
                         }
@@ -351,7 +352,8 @@ namespace FBDataSakusei_FBデータ作成
                 else
                 {
                     bbl.ShowMessage("E200");
-                    cboProcess.Focus();                   
+                    cboProcess.Focus();
+                    cboProcess.SelectedValue = 0;
                 }
             }
         }

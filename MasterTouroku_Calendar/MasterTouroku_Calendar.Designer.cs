@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_Calendar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtMonth = new CKM_Controls.CKM_TextBox();
             this.PanelDetail = new System.Windows.Forms.Panel();
@@ -74,6 +74,14 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl0 = new System.Windows.Forms.Label();
             this.GvCalendar = new CKM_Controls.CKM_GridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -106,14 +114,6 @@
             this.Column30 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colFlag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMonth = new System.Windows.Forms.Label();
             this.PanelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvCalendar)).BeginInit();
             this.SuspendLayout();
@@ -166,6 +166,7 @@
             this.txtMonth.isMaxLengthErr = false;
             this.txtMonth.IsNumber = true;
             this.txtMonth.IsShop = false;
+            this.txtMonth.IsTimemmss = false;
             this.txtMonth.Length = 7;
             this.txtMonth.Location = new System.Drawing.Point(156, 38);
             this.txtMonth.MaxLength = 7;
@@ -175,6 +176,7 @@
             this.txtMonth.TabIndex = 1;
             this.txtMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMonth.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMonth.UseColorSizMode = false;
             this.txtMonth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonth_KeyDown);
             // 
             // PanelDetail
@@ -699,9 +701,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvCalendar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvCalendar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GvCalendar.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvCalendar.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -741,18 +744,11 @@
             this.Column30,
             this.Column31,
             this.colFlag});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvCalendar.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvCalendar.EnableHeadersVisualStyles = false;
             this.GvCalendar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvCalendar.Location = new System.Drawing.Point(373, 57);
             this.GvCalendar.Name = "GvCalendar";
+            this.GvCalendar.RowHeadersVisible = false;
             this.GvCalendar.RowHeight_ = 20;
             this.GvCalendar.RowTemplate.Height = 20;
             this.GvCalendar.Size = new System.Drawing.Size(936, 269);
@@ -761,6 +757,102 @@
             this.GvCalendar.UseSetting = true;
             this.GvCalendar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvCalendar_CellContentClick);
             this.GvCalendar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvCalendar_CellContentDoubleClick);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(243, 215);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(130, 22);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Ｆ元町店休日";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(243, 193);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(130, 22);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "三宮店休日";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(243, 171);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 22);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "江坂店休日";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(243, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 22);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "石橋店休日";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(243, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 22);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "豊中店休日";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(243, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 22);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "本社休日";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(243, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 21);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "銀行休日";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.lblMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMonth.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(243, 38);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(130, 46);
+            this.lblMonth.TabIndex = 2;
+            this.lblMonth.Text = "2019/06";
+            this.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Column1
             // 
@@ -917,7 +1009,7 @@
             // 
             // Column18
             // 
-            this.Column18.DataPropertyName = "19";
+            this.Column18.DataPropertyName = "18";
             this.Column18.FalseValue = "0";
             this.Column18.HeaderText = "18";
             this.Column18.Name = "Column18";
@@ -1048,102 +1140,6 @@
             this.colFlag.Name = "colFlag";
             this.colFlag.Visible = false;
             // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(243, 215);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 22);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Ｆ元町店休日";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(243, 193);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 22);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "三宮店休日";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(243, 171);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 22);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "江坂店休日";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(243, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 22);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "石橋店休日";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(243, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 22);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "豊中店休日";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(243, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 22);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "本社休日";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(243, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "銀行休日";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblMonth
-            // 
-            this.lblMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.lblMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMonth.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth.Location = new System.Drawing.Point(243, 38);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(130, 46);
-            this.lblMonth.TabIndex = 2;
-            this.lblMonth.Text = "2019/06";
-            this.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmMasterTouroku_Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1157,6 +1153,7 @@
             this.PanelHeaderHeight = 50;
             this.Text = "MasterTouroku_Calendar";
             this.Load += new System.EventHandler(this.FrmMasterTouroku_Calendar_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMasterTouroku_Calendar_KeyUp);
             this.Controls.SetChildIndex(this.PanelDetail, 0);
             this.PanelDetail.ResumeLayout(false);
             this.PanelDetail.PerformLayout();
