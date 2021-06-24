@@ -23,6 +23,8 @@ namespace MainMenu
        static Login_BL lbl = new Login_BL();
         [STAThread]
         static void Main()
+
+
         { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false); 
@@ -31,6 +33,10 @@ namespace MainMenu
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
 
+        //Barcode font install
+        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
+        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
+        string lpFileName);
         public static bool IsInteger(string value)
         {
             value = value.Replace("-", "");
@@ -118,8 +124,19 @@ namespace MainMenu
                 //FTPData ftp1 = new FTPData();
                 //ftp1.UpdateSyncData(path);
             }
-          //  else
-                //return;
+
+            //BarCode font Install
+            int result = -1;
+            var fontDestination = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts), "IDAutomationHC39M Code 39 Barcode.ttf");
+            if (!File.Exists(fontDestination))
+            {
+                string fileName = "IDAutomationHC39M Code 39 Barcode.ttf";
+                string barcodepath = Path.Combine(Environment.CurrentDirectory, @"Font\", fileName);
+                result = AddFontResource(path);
+            }
+
+            //  else
+            //return;
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
                 //FTPData ftp = new FTPData();
@@ -164,6 +181,8 @@ namespace MainMenu
                     Environment.Exit(0);
                 }
             }
+
+            
             return pgname;  
         }
     }
