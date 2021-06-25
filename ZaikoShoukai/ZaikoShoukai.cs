@@ -14,6 +14,7 @@ using ClosedXML.Excel;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace ZaikoShoukai
 {
@@ -37,6 +38,7 @@ namespace ZaikoShoukai
             zaibl = new ZaikoShoukai_BL();
             dtData = new DataTable();
         }
+       
         private void ZaikoShoukai_Load(object sender, EventArgs e)
         {
             InProgramID = "ZaikoShoukai";

@@ -157,8 +157,6 @@ namespace EDIKaitouNoukiTouroku
                     //CSVファイルの項目数チェック
                     if (colFields.Length != COL_COUNT)
                     {
-                        errNo = 1;
-
                         while (colFields.Count() > COL_COUNT)
                         {
                             colFields = colFields.Take(colFields.Count() - 1).ToArray();
@@ -168,10 +166,12 @@ namespace EDIKaitouNoukiTouroku
                         {
                             Array.Resize(ref colFields, colFields.Length + 1);
                             colFields[colFields.Length - 1] = null;
+                            errNo = 7;
                         }
                     }
 
-                    ErrCheck(colFields, ref errNo);
+                    if(errNo !=7)
+                        ErrCheck(colFields, ref errNo);
 
                     //最終項目にエラー番号をセット
                     Array.Resize(ref colFields, colFields.Length + 1);
@@ -233,8 +233,8 @@ namespace EDIKaitouNoukiTouroku
                         dee.OrderDetailsSu = dee.OrderDetailsSu + 1;
 
                         //CSVファイルの項目数チェック
-                        if (fieldData.Length != COL_COUNT)
-                            errNo = 1;
+                        if (fieldData.Length < COL_COUNT)
+                            errNo = 7;
 
 
                         while (fieldData.Count() > COL_COUNT)
@@ -257,7 +257,8 @@ namespace EDIKaitouNoukiTouroku
                             }
                         }
 
-                        ErrCheck(fieldData, ref errNo);
+                        if (errNo != 7)
+                            ErrCheck(fieldData, ref errNo);
 
                         //最終項目にエラー番号をセット
                         Array.Resize(ref fieldData, fieldData.Length + 1);
@@ -274,7 +275,7 @@ namespace EDIKaitouNoukiTouroku
                             dee.ErrorSu++; 
                         }
                     }
-                    if (errNo.Equals(1))
+                    if (errNo.Equals(7))
                     {
                         moveFile = false;
                     }

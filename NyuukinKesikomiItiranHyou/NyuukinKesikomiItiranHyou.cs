@@ -11,6 +11,10 @@ using Base.Client;
 using BL;
 using Entity;
 using CrystalDecisions.Shared;
+using System.Runtime.InteropServices;
+using System.IO;
+using System.Drawing.Text;
+using Microsoft.Win32;
 
 namespace NyuukinKesikomiItiranHyou
 {
@@ -20,13 +24,16 @@ namespace NyuukinKesikomiItiranHyou
         D_Collect_Entity dce;
         DataTable dtReport;
         Viewer vr;
+        int result = -1;
         public NyuukinKesikomiItiranHyou()
         {
             InitializeComponent();
             nkih_bl = new NyuukinKesikomiItiranHyou_BL();
             vr = new Viewer();
         }
+        
 
+       
         private void NyuukinKesikomiItiranHyou_Load(object sender, EventArgs e)
         {
             InProgramID = Application.ProductName;
@@ -40,6 +47,7 @@ namespace NyuukinKesikomiItiranHyou
             cboStoreAuthorizations.Bind(string.Empty, "4");
             cboStoreAuthorizations.SelectedValue = StoreCD;
             cboWebCollectType.Bind(string.Empty);
+           
         }
 
         private void SetRequireField()

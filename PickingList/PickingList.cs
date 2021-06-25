@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,10 +21,12 @@ namespace PickingList
         D_Picking_Entity dpe1,dpe2,dpe3,dpe4,dpe;
         PickingList_BL plbl;
         int result = -1;
+        
         public FrmPickingList() 
         {
             InitializeComponent();
         }
+        //Barcode font 
         [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
         public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
                                          string lpFileName);
@@ -34,21 +37,9 @@ namespace PickingList
             this.SetFunctionLabel(EProMode.SHOW);
             this.SetFunctionLabel(EProMode.PRINT);
             plbl = new PickingList_BL();
-            int error = 0;
             StartProgram();
             PageloadBind();
             ModeVisible = false;
-            result = AddFontResource(@"D:\Project\New_SMS\Base.Client\Font\IDAutomationHC39M Code 39 Barcode.ttf");
-            error = Marshal.GetLastWin32Error();
-            //if (error != 0)
-            //{
-            //   // Console.WriteLine(new Win32Exception(error).Message);
-            //}
-            //else
-            //{
-            //    //Console.WriteLine((result == 0) ? "Font is already installed." :
-            //                                  //    "Font installed successfully.");
-            //}
             BindData();
             //SetRequiredField();
 
@@ -58,6 +49,15 @@ namespace PickingList
             ScPickingNo1.Value2 = stores;
             ScPickingNo2.Value1 = InOperatorCD;
             ScPickingNo2.Value2 = stores;
+
+            //BarCode font Install
+            var fontDestination = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts), "IDAutomationHC39M Code 39 Barcode.ttf");
+            if (!File.Exists(fontDestination))
+            {
+                string fileName = "IDAutomationHC39M Code 39 Barcode.ttf";
+                string path = Path.Combine(Environment.CurrentDirectory, @"Font\", fileName);
+                result = AddFontResource(path);
+            }
         }
 
         public void PageloadBind()
@@ -638,15 +638,24 @@ namespace PickingList
                 if (!RequireCheck(new Control[] { ScPickingNo1.TxtCode }))
                     return false;
 
-                if (!string.IsNullOrWhiteSpace(txtDateTo1.Text))
+                if (!ScPickingNo1.IsExists(2))
                 {
-                    if (!ScPickingNo1.IsExists(2))
-                    {
-                        bbl.ShowMessage("E128");
-                        ScPickingNo1.SetFocus(1);
-                        return false;
-                    }
+                    bbl.ShowMessage("E128");
+                    ScPickingNo1.SetFocus(1);
+                    return false;
                 }
+                DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo1.TxtCode.Text);
+                if (dtPickingKBN.Rows[0]["PickingKBN"].ToString() == "2")
+                {
+                    bbl.ShowMessage("E279");
+                    ScPickingNo1.SetFocus(1);
+                    return false;
+                }
+
+                //if (!string.IsNullOrWhiteSpace(txtDateTo1.Text))
+                //{
+                    
+                //}
             }
 
             if (chkUnissued2.Checked == true)
@@ -677,19 +686,16 @@ namespace PickingList
                     ScPickingNo2.SetFocus(1);
                     return false;
                 }
+
+                DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo2.TxtCode.Text);
+                if (dtPickingKBN.Rows[0]["PickingKBN"].ToString() == "1")
+                {
+                    bbl.ShowMessage("E279");
+                    ScPickingNo2.SetFocus(1);
+                    return false;
+                }
             }
            
-
-            
-
-            //if (chkReissued2.Checked == true)
-            //    if (!ScPickingNo2.IsExists(2))
-            //    {
-            //        bbl.ShowMessage("E128");
-            //        return false;
-            //    }
-           
-
 
             return true;
         }
@@ -785,6 +791,13 @@ namespace PickingList
                         bbl.ShowMessage("E128");
                         ScPickingNo1.SetFocus(1);
                     }
+
+                    DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo1.TxtCode.Text);
+                    if (dtPickingKBN.Rows[0]["PickingKBN"].ToString()=="2")
+                    {
+                        bbl.ShowMessage("E279");
+                        ScPickingNo1.SetFocus(1);
+                    }
                 }
                 else
                 {
@@ -803,6 +816,12 @@ namespace PickingList
                     if (!ScPickingNo2.IsExists(2))
                     {
                         bbl.ShowMessage("E128");
+                        ScPickingNo2.SetFocus(1);
+                    }
+                    DataTable dtPickingKBN = plbl.Pickinglist_Select(ScPickingNo2.TxtCode.Text);
+                    if (dtPickingKBN.Rows[0]["PickingKBN"].ToString() == "1")
+                    {
+                        bbl.ShowMessage("E279");
                         ScPickingNo2.SetFocus(1);
                     }
                 }

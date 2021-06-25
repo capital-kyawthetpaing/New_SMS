@@ -25,6 +25,7 @@ namespace FBDataSakusei_FBデータ作成
         D_FBData_Entity dfde = new D_FBData_Entity();
         DataTable dtgv = new DataTable();
         public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\file.txt";
+         
 
         public FrmFBDataSakusei_FBデータ作成()
         {
@@ -321,6 +322,7 @@ namespace FBDataSakusei_FBデータ作成
                                 Clear(panel1);
                                 BindCombo();
                                 cboProcess.Focus();
+                                cboProcess.SelectedValue = 0;
                             }
 
                         }
@@ -351,7 +353,8 @@ namespace FBDataSakusei_FBデータ作成
                 else
                 {
                     bbl.ShowMessage("E200");
-                    cboProcess.Focus();                   
+                    cboProcess.Focus();
+                    cboProcess.SelectedValue = 0;
                 }
             }
         }

@@ -1,15 +1,19 @@
 
- BEGIN TRY 
- Drop Procedure dbo.D_EDIOrderDetails_SelectAll
-END try
-BEGIN CATCH END CATCH 
+
+/****** Object:  StoredProcedure [dbo].[D_EDIOrderDetails_SelectAll]    Script Date: 2021/06/24 19:11:54 ******/
+DROP PROCEDURE [dbo].[D_EDIOrderDetails_SelectAll]
+GO
+
+/****** Object:  StoredProcedure [dbo].[D_EDIOrderDetails_SelectAll]    Script Date: 2021/06/24 19:11:54 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 /****** Object:  StoredProcedure [D_EDIOrderDetails_SelectAll]    */
-CREATE PROCEDURE D_EDIOrderDetails_SelectAll(
+CREATE PROCEDURE [dbo].[D_EDIOrderDetails_SelectAll](
     -- Add the parameters for the stored procedure here
     @EDIImportNO  int,
     @ErrorKBN     TinyInt,
@@ -79,9 +83,7 @@ BEGIN
           
     INTO #TableForEDIKaitouNouki
     FROM D_EDIDetail AS DD
-    LEFT OUTER JOIN D_EDIOrderDetails AS DE
-    ON DE.OrderNO = DD.OrderNO
-    AND DE.OrderRows = DD.OrderRows
+    OUTER APPLY (Select * from D_EDIOrderDetails D1 where D1.EDIOrderNO = (Select max(EDIOrderNO) from D_EDIOrderDetails Where OrderNO = DD.OrderNO AND OrderRows = DD.OrderRows group by OrderNO,OrderRows) and D1.OrderNO = DD.OrderNO and D1.OrderRows = DD.OrderRows) as DE
     LEFT OUTER JOIN D_OrderDetails AS DM
     ON DM.OrderNO = DE.OrderNO
     AND DM.OrderRows = DE.OrderRows
@@ -89,14 +91,10 @@ BEGIN
     LEFT OUTER JOIN D_Order AS DH
     ON DH.OrderNO = DM.OrderNO
     AND DH.DeleteDatetime IS NULL
---    INNER JOIN D_EDI AS D
---    ON D.EDIImportNO = DD.EDIImportNO
     
     WHERE DD.EDIImportNO = @EDIImportNO
+	Order by DD.EDIImportNO,DD.EDIImportRows
     ;
---    ALTER TABLE [#TableForEDIKaitouNouki] ADD PRIMARY KEY CLUSTERED ([EDIImportNO], [EDIOrderNO], [EDIOrderRows])
---    WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
---    ;
 
     IF @ErrorKBN = 1 OR @ChkAnswer = 1 OR @ChkNoAnswer = 1
     BEGIN
@@ -137,3 +135,5 @@ BEGIN
 END
 
 GO
+
+

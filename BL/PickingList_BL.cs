@@ -18,6 +18,11 @@ namespace BL
             dpdl = new D_Picking_DL();
         }
 
+        public DataTable Pickinglist_Select(string PickingNO)
+        {
+            return dpdl.Pickinglist_Select(PickingNO);
+        }
+
         public DataTable PickingList_InsertUpdateSelect_Check1(D_Picking_Entity dpe)
         {
             return dpdl.PickingList_InsertUpdateSelect_Check1(dpe);

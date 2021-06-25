@@ -245,6 +245,17 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable D_Juchuu_SelectForWebHikiate(D_Juchuu_Entity dje)
+        {
+            string sp = "D_Juchuu_SelectForWebHikiate";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.JuchuuNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
         public DataTable BindForWebJuchuuKakunin(D_Juchuu_Entity de, int kbn)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>

@@ -32,6 +32,18 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        public DataTable Pickinglist_Select(string PickingNO)
+        {
+            string sp = "D_Picking_SelectToCheckPickingKBN";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Code", new ValuePair { value1 = SqlDbType.VarChar, value2 = PickingNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
+
         /// <summary>
         /// ピッキング入力更新処理
         /// PickingNyuuryokuより更新時に使用
