@@ -517,6 +517,7 @@
     <Content Include="StoreProcedure\M_SKU_CS_Pair.sql" />
     <Content Include="StoreProcedure\M_SKU_Export.sql" />
     <Content Include="StoreProcedure\M_Sku_henkouSelect.sql" />
+    <Content Include="StoreProcedure\M_SKU_JanCDHenkou_Select.sql" />
     <Content Include="StoreProcedure\M_SKU_Select.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAll.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAllForTempoRegiShohin.sql" />
