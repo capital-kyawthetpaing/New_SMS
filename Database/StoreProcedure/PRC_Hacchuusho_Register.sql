@@ -21,17 +21,24 @@ BEGIN
     DECLARE @CancelOrderProcessNO varchar(11)
 
 	--対象データ用一時テーブル
-	CREATE TABLE [dbo].[#tmpTargetKey](
+	CREATE TABLE #tmpTargetKey
+    (
 	     JuchuuNO	varchar(11) COLLATE database_default NOT NULL
-	    ,JuchuuRows	int
-	    ,OrderSEQ	int
+	    ,JuchuuRows	int NOT NULL
+	    ,OrderSEQ	int NOT NULL
 	    ,OrderNO	varchar(11) COLLATE database_default NULL
 	    ,OrderRows	int
 	    ,OrderCD	varchar(13) COLLATE database_default NULL
-	) ON [PRIMARY]
+	)
+    ALTER TABLE #tmpTargetKey ADD PRIMARY KEY CLUSTERED 	
+    (	
+	 JuchuuNO
+	,JuchuuRows
+	,OrderSEQ
+    )	
 
 	--対象データを一時テーブルに格納する
-	INSERT INTO [#tmpTargetKey]
+	INSERT INTO #tmpTargetKey
 	SELECT    
 	     DLOR.JuchuuNO
 	    ,DLOR.JuchuuRows
