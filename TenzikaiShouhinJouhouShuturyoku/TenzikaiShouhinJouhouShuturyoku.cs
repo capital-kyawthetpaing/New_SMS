@@ -45,6 +45,9 @@ namespace TenzikaiShouhinJouhouShuturyoku
             scBrandCDTo.CodeWidth = 65;
             scSegmentCDFrom.CodeWidth = 55;
             scSegmentCDTo.CodeWidth = 55;
+            lblSupplier.ForeColor = Color.Red;
+            ckM_Label1.ForeColor = Color.Red;
+            ckM_Label2.ForeColor = Color.Red;
         }
         public void BindCombo()
         {

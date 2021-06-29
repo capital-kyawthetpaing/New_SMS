@@ -98,7 +98,7 @@
             this.ckM_SearchControl1.IsCopy = false;
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
-            this.ckM_SearchControl1.Location = new System.Drawing.Point(99, 139);
+            this.ckM_SearchControl1.Location = new System.Drawing.Point(99, 138);
             this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
             this.ckM_SearchControl1.NameWidth = 180;
@@ -128,7 +128,7 @@
             this.scSegmentCDTo.IsCopy = false;
             this.scSegmentCDTo.LabelText = "";
             this.scSegmentCDTo.LabelVisible = false;
-            this.scSegmentCDTo.Location = new System.Drawing.Point(240, 110);
+            this.scSegmentCDTo.Location = new System.Drawing.Point(260, 109);
             this.scSegmentCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDTo.Name = "scSegmentCDTo";
             this.scSegmentCDTo.NameWidth = 250;
@@ -154,7 +154,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(208, 118);
+            this.ckM_Label7.Location = new System.Drawing.Point(219, 117);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label7.TabIndex = 13;
@@ -177,7 +177,7 @@
             this.scSegmentCDFrom.IsCopy = false;
             this.scSegmentCDFrom.LabelText = "";
             this.scSegmentCDFrom.LabelVisible = false;
-            this.scSegmentCDFrom.Location = new System.Drawing.Point(99, 110);
+            this.scSegmentCDFrom.Location = new System.Drawing.Point(99, 109);
             this.scSegmentCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDFrom.Name = "scSegmentCDFrom";
             this.scSegmentCDFrom.NameWidth = 250;
@@ -202,7 +202,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(226, 90);
+            this.ckM_Label6.Location = new System.Drawing.Point(249, 89);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label6.TabIndex = 11;
@@ -225,7 +225,7 @@
             this.scBrandCDTo.IsCopy = false;
             this.scBrandCDTo.LabelText = "";
             this.scBrandCDTo.LabelVisible = false;
-            this.scBrandCDTo.Location = new System.Drawing.Point(261, 82);
+            this.scBrandCDTo.Location = new System.Drawing.Point(285, 81);
             this.scBrandCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scBrandCDTo.Name = "scBrandCDTo";
             this.scBrandCDTo.NameWidth = 280;
@@ -256,7 +256,7 @@
             this.scBrandCDFrom.IsCopy = false;
             this.scBrandCDFrom.LabelText = "";
             this.scBrandCDFrom.LabelVisible = false;
-            this.scBrandCDFrom.Location = new System.Drawing.Point(99, 82);
+            this.scBrandCDFrom.Location = new System.Drawing.Point(99, 81);
             this.scBrandCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.scBrandCDFrom.Name = "scBrandCDFrom";
             this.scBrandCDFrom.NameWidth = 280;
@@ -279,8 +279,8 @@
             this.ckM_Label1.DefaultlabelSize = true;
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(200, 61);
+            this.ckM_Label1.ForeColor = System.Drawing.Color.Red;
+            this.ckM_Label1.Location = new System.Drawing.Point(225, 60);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label1.TabIndex = 8;
@@ -297,7 +297,7 @@
             this.cbo_Season.Flag = 0;
             this.cbo_Season.FormattingEnabled = true;
             this.cbo_Season.Length = 10;
-            this.cbo_Season.Location = new System.Drawing.Point(261, 56);
+            this.cbo_Season.Location = new System.Drawing.Point(285, 56);
             this.cbo_Season.MaxLength = 10;
             this.cbo_Season.MoveNext = true;
             this.cbo_Season.Name = "cbo_Season";
@@ -360,7 +360,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(39, 147);
+            this.ckM_Label5.Location = new System.Drawing.Point(39, 146);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 4;
@@ -377,7 +377,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(26, 118);
+            this.ckM_Label4.Location = new System.Drawing.Point(26, 117);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label4.TabIndex = 3;
@@ -410,8 +410,8 @@
             this.ckM_Label2.DefaultlabelSize = true;
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(52, 60);
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Red;
+            this.ckM_Label2.Location = new System.Drawing.Point(52, 61);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 1;
@@ -427,7 +427,7 @@
             this.lblSupplier.DefaultlabelSize = true;
             this.lblSupplier.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblSupplier.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.lblSupplier.ForeColor = System.Drawing.Color.Black;
+            this.lblSupplier.ForeColor = System.Drawing.Color.Red;
             this.lblSupplier.Location = new System.Drawing.Point(52, 33);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(44, 12);
