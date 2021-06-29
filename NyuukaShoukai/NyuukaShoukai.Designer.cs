@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNyuukaShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -462,7 +463,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(1276, 22);
+            this.ckM_Label15.Location = new System.Drawing.Point(1124, 22);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label15.TabIndex = 33;
@@ -623,7 +624,7 @@
             this.ScSupplier.IsCopy = false;
             this.ScSupplier.LabelText = "";
             this.ScSupplier.LabelVisible = true;
-            this.ScSupplier.Location = new System.Drawing.Point(1323, 12);
+            this.ScSupplier.Location = new System.Drawing.Point(1171, 12);
             this.ScSupplier.Margin = new System.Windows.Forms.Padding(0);
             this.ScSupplier.Name = "ScSupplier";
             this.ScSupplier.NameWidth = 310;
@@ -666,7 +667,7 @@
             this.dgvNyuukaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvNyuukaShoukai.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -693,6 +694,14 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
@@ -1122,7 +1131,7 @@
             // 
             this.panelcombo2.Controls.Add(this.ckM_Label16);
             this.panelcombo2.Controls.Add(this.cboSourceWH);
-            this.panelcombo2.Location = new System.Drawing.Point(1237, 56);
+            this.panelcombo2.Location = new System.Drawing.Point(1085, 49);
             this.panelcombo2.Name = "panelcombo2";
             this.panelcombo2.Size = new System.Drawing.Size(300, 40);
             this.panelcombo2.TabIndex = 13;
