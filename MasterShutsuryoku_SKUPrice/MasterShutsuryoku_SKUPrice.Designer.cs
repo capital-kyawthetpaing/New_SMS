@@ -269,7 +269,7 @@
             this.CK_UnApprove.Location = new System.Drawing.Point(1019, 252);
             this.CK_UnApprove.Name = "CK_UnApprove";
             this.CK_UnApprove.Size = new System.Drawing.Size(70, 16);
-            this.CK_UnApprove.TabIndex = 32;
+            this.CK_UnApprove.TabIndex = 31;
             this.CK_UnApprove.Text = " 未承認";
             this.CK_UnApprove.UseVisualStyleBackColor = true;
             // 
@@ -1468,7 +1468,7 @@
             this.panel4.Location = new System.Drawing.Point(120, 275);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(700, 25);
-            this.panel4.TabIndex = 31;
+            this.panel4.TabIndex = 34;
             // 
             // RB_Item
             // 
@@ -1477,7 +1477,7 @@
             this.RB_Item.Location = new System.Drawing.Point(53, 3);
             this.RB_Item.Name = "RB_Item";
             this.RB_Item.Size = new System.Drawing.Size(51, 16);
-            this.RB_Item.TabIndex = 0;
+            this.RB_Item.TabIndex = 33;
             this.RB_Item.TabStop = true;
             this.RB_Item.Text = "ITEM";
             this.RB_Item.UseVisualStyleBackColor = true;
@@ -1489,7 +1489,7 @@
             this.CK_suru.Location = new System.Drawing.Point(2, 4);
             this.CK_suru.Name = "CK_suru";
             this.CK_suru.Size = new System.Drawing.Size(50, 16);
-            this.CK_suru.TabIndex = 0;
+            this.CK_suru.TabIndex = 32;
             this.CK_suru.Text = "する";
             this.CK_suru.UseVisualStyleBackColor = true;
             this.CK_suru.CheckedChanged += new System.EventHandler(this.CK_suru_CheckedChanged);
@@ -1501,7 +1501,7 @@
             this.RB_makeritem.Location = new System.Drawing.Point(117, 4);
             this.RB_makeritem.Name = "RB_makeritem";
             this.RB_makeritem.Size = new System.Drawing.Size(115, 16);
-            this.RB_makeritem.TabIndex = 1;
+            this.RB_makeritem.TabIndex = 35;
             this.RB_makeritem.TabStop = true;
             this.RB_makeritem.Text = "メーカー商品CD";
             this.RB_makeritem.UseVisualStyleBackColor = true;
