@@ -18,13 +18,15 @@ namespace WebJuchuuKakunin
         private const string ProID = "WebJuchuuKakunin";
         private const string ProNm = "WEB受注確認";
         private const string WebJuchuu = "WebJuchuu.exe";//WEB受注入力
-
+        private const string Nayose = "NayoseSyoriAll.exe";//名寄せ処理_要注意顧客
+        private const string JuchuuTorikomi = "JuchuuTorikomi.exe";//受注取込
+        
         private enum EIndex : int
         {
-            Cbo1,
-            Cbo2,
-            Cbo3,
-            Cbo4,
+            CboJuchuu,
+            CboHacchuu,
+            CboShukka,
+            CboShukkaJ,
             StoreCD,
             CustomerKanaName,
             Tel,
@@ -114,7 +116,7 @@ namespace WebJuchuuKakunin
                 string ymd = wjbl.GetDate();
                 CboStoreCD.Bind(ymd);
 
-                for (int i = (int)EIndex.Cbo1; i <= (int)EIndex.Cbo4; i++)
+                for (int i = (int)EIndex.CboJuchuu; i <= (int)EIndex.CboShukkaJ; i++)
                 {
                       ((CKM_Controls.CKM_ComboBox)  detailControls[i]).Bind(ymd);                 
                     }
@@ -249,13 +251,29 @@ namespace WebJuchuuKakunin
         protected override void ExecSec()
         {
             //ボタン。押下時、変更モードでWEB受注入力を起動。
-            ExecF2( EOperationMode.UPDATE);
+            ExecF2(2);
         }
 
-        private void ExecF2(EOperationMode mode)
+        private void ExecF2(short kbn)
         {
+            string ExeName = "";
+
+            switch(kbn)
+            {
+                case 1:
+                case 2:
+                    ExeName = WebJuchuu;
+                    break;
+                case 3:
+                    ExeName = Nayose;
+                    break;
+                case 4:
+                    ExeName = JuchuuTorikomi;
+                    break;
+            }
+
             //WEB受注入力のプログラムを起動
-            System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName(WebJuchuu);
+            System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName(ExeName);
             if (hProcesses.Length > 0)
             {
                 try
@@ -277,13 +295,13 @@ namespace WebJuchuuKakunin
             string no = row.Cells["colCollectNO"].Value.ToString();
             string confirmNO = row.Cells["colConfirmNO"].Value.ToString();
 
-            if (mode.Equals( EOperationMode.INSERT))
+            if (kbn.Equals(1))
             {
                 //削除モードで、WEB受注確認を表示（売上単位）
                 //削除モード:値11, 明細.入金番号, 明細.入金消込番号
                 cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 11 " + no + " " + confirmNO;
             }
-            else if (mode.Equals(EOperationMode.UPDATE))
+            else if (kbn.Equals(2))
             {
                 //修正モードで、WEB受注確認を表示（売上単位）
                 //修正モード:値10, 明細.入金番号, 明細.入金消込番号
@@ -293,7 +311,7 @@ namespace WebJuchuuKakunin
             //EXEが存在しない時ｴﾗｰ
             // 実行モジュールと同一フォルダのファイルを取得
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + WebJuchuu;
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ExeName;
             if (System.IO.File.Exists(filePath))
             {
                 System.Diagnostics.Process.Start(filePath, cmdLine);
@@ -307,12 +325,14 @@ namespace WebJuchuuKakunin
         private void ExecF3()
         {
             //受注取込のプログラムを実行。
+            ExecF2(4);
 
             ExecF4();
         }
         private void ExecF4()
         {
             //名寄せ処理_要注意顧客のプログラムを実行。
+            ExecF2(3);
 
             //「再集計:F8」の処理を実行。
             ExecF8();
@@ -343,6 +363,14 @@ namespace WebJuchuuKakunin
 
                 bbl.ShowMessage("I001", "再集計");
             }
+
+        }
+        private void ExecMail()
+        {
+            //Select 明細部.ストア、明細部.顧客名(カナ)、明細部.メール発送状況																	
+            //→	メール文章編集･送信画面に表示用データとして保持
+
+            //メール文章編集･送信画面を起動
 
         }
 
@@ -626,7 +654,7 @@ namespace WebJuchuuKakunin
                         break;
                     }
                 case 1:     //F2:新規受注(F2)
-                    ExecF2( EOperationMode.INSERT);
+                    ExecF2( 1);
                     break;
                 case 2:     //F3:
                     ExecF3();
@@ -634,7 +662,7 @@ namespace WebJuchuuKakunin
                 case 3:     //F4:
                     ExecF4();
                     break;
-                case 4:     //F5:照会
+                case 4:     //F5:
                     {
                         break;
                     }
@@ -648,16 +676,17 @@ namespace WebJuchuuKakunin
 
                         break;
                     }
-                //case 6://F7:削除
-                //    ExecDetail(4);
-                //    break;
+                case 6://F7:メール
+                    ExecMail();
+                    break;
+
                 //case 7://F8:新規消込
                 //    ExecDetail(0);
                 //    break;
 
-                //case 9://F10:Excel
-                //    ExecExecel(1);
-                //    break;
+                case 9://F10:Excel
+                    ExecExcel();
+                    break;
 
                 case 11://F12:新規入金
                     //   //Ｑ２０５				
@@ -876,30 +905,37 @@ namespace WebJuchuuKakunin
                 case EOperationMode.INSERT:
                     ModeText = "受注";
                     btnChangeIkkatuHacchuuMode.Text = "商品モード";
-                    lblJuchuuDate.Text = "　　　　　受注日";
-                    panel1.Visible = true;
-
+               
+                    SetVisible(true);
                     GvDetail.Columns[(int)EColNo.Chk].HeaderText = "ﾒｰﾙ";
                     break;
 
                 case EOperationMode.UPDATE:
                     ModeText = "商品";
                     btnChangeIkkatuHacchuuMode.Text = "受注モード";
-                    lblJuchuuDate.Text = "キャピタル受注日";
-                    panel1.Visible = false;
 
+                    SetVisible(false);
                     GvDetail.Columns[(int)EColNo.Chk].HeaderText = "選択";
                     break;
             }
         }
+        private void SetVisible(bool enabled)
+        {
+            panel1.Visible = enabled;
+            pnlJuchuu.Visible = enabled;
+            lblJuchuuDate.Visible = enabled;
+
+            lblCapitalJuchuuDate.Visible = !enabled;
+            ScSKUCD.Visible = !enabled;
+        }
         private void ChangeCheck(bool check)
         {
             //明細部チェック
-            for (int RW = 0; RW <= GvDetail.Rows.Count-1; RW++)
+            for (int RW = 0; RW <= GvDetail.Rows.Count - 1; RW++)
             {
 
-                    //if (mGrid.g_MK_State[(int)ClsGridKaitouNouki.ColNO.Chk, RW].Cell_Enabled)
-                        GvDetail.Rows[RW].Cells["colChk"].Value = check;
+                //if (mGrid.g_MK_State[(int)ClsGridKaitouNouki.ColNO.Chk, RW].Cell_Enabled)
+                GvDetail.Rows[RW].Cells["colChk"].Value = check;
             }
         }
         private void ExecExcel()
@@ -965,6 +1001,35 @@ namespace WebJuchuuKakunin
         private void btnSaiSyuukei_Click(object sender, EventArgs e)
         {
             ExecF8();
+        }
+
+        private void GvDetail_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (GvDetail.CurrentRow != null && GvDetail.CurrentRow.Index >= 0)
+                {
+                    //引当変更：その明細がひとつ以上引当済の場合、引当状況を表示・変更する画面に移動。
+
+                    FrmHikiate frm = new FrmHikiate
+                    {
+                        JuchuuNO = GvDetail.CurrentRow.Cells["colJuchuuNO"].Value.ToString(),
+                        ChangeDate = GvDetail.CurrentRow.Cells["colJuchuuDate"].Value.ToString(),
+                        JanCD = GvDetail.CurrentRow.Cells["colJANCD"].Value.ToString(),
+                        SKUName = GvDetail.CurrentRow.Cells["colSKUName"].Value.ToString(),
+                        BrandName = GvDetail.CurrentRow.Cells["colBrandName"].Value.ToString()
+                    };
+
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+
         }
     }
 }

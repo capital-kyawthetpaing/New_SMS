@@ -23,6 +23,8 @@ namespace MainMenu
        static Login_BL lbl = new Login_BL();
         [STAThread]
         static void Main()
+
+
         { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false); 
@@ -31,6 +33,7 @@ namespace MainMenu
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
 
+       
         public static bool IsInteger(string value)
         {
             value = value.Replace("-", "");
@@ -118,8 +121,10 @@ namespace MainMenu
                 //FTPData ftp1 = new FTPData();
                 //ftp1.UpdateSyncData(path);
             }
-          //  else
-                //return;
+
+           
+            //  else
+            //return;
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
                 //FTPData ftp = new FTPData();
@@ -164,6 +169,8 @@ namespace MainMenu
                     Environment.Exit(0);
                 }
             }
+
+            
             return pgname;  
         }
     }

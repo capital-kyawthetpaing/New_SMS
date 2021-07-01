@@ -114,7 +114,7 @@ BEGIN
                 ,Print5                           = MSTR.Print5 
                 ,Print6                           = MSTR.Print6 
                 ,InsatuShuruiKBN                  = SUB_InsatuShurui.Value
-                ,FirstOrderNO                     = DODD.FirstOrderNO
+                ,FirstOrderNO                     = CASE WHEN SUB_InsatuShurui.Value = 4 THEN DODD.FirstOrderNO ELSE '' END
           
           FROM D_Order DODH
           LEFT JOIN D_OrderDetails DODD

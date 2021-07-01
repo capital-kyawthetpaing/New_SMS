@@ -686,6 +686,7 @@ namespace NyuukaShoukai
             if (!ChkArrival.Checked)
             {
                 cboSourceWH.Enabled = false;
+                cboSourceWH.SelectedValue = "-1";
             }
             else
             {
@@ -697,7 +698,9 @@ namespace NyuukaShoukai
         {
             if (!chkDelivery.Checked)
             {
-                ScSupplier.Enabled = false;            
+                ScSupplier.Enabled = false;
+                ScSupplier.TxtCode.Text = string.Empty;
+                ScSupplier.LabelText = string.Empty;
             }
             else
             {

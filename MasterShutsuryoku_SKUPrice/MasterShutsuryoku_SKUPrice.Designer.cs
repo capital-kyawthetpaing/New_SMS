@@ -128,7 +128,7 @@
             this.panel2.Location = new System.Drawing.Point(120, 173);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(500, 22);
-            this.panel2.TabIndex = 6;
+            this.panel2.TabIndex = 7;
             // 
             // ckM_LB_Multiseparate
             // 
@@ -228,7 +228,7 @@
             this.TB_MakerItem.MoveNext = true;
             this.TB_MakerItem.Name = "TB_MakerItem";
             this.TB_MakerItem.Size = new System.Drawing.Size(1470, 19);
-            this.TB_MakerItem.TabIndex = 8;
+            this.TB_MakerItem.TabIndex = 24;
             this.TB_MakerItem.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_MakerItem.UseColorSizMode = false;
             // 
@@ -258,7 +258,7 @@
             this.TB_Item.MoveNext = true;
             this.TB_Item.Name = "TB_Item";
             this.TB_Item.Size = new System.Drawing.Size(1470, 19);
-            this.TB_Item.TabIndex = 7;
+            this.TB_Item.TabIndex = 23;
             this.TB_Item.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_Item.UseColorSizMode = false;
             // 
@@ -269,7 +269,7 @@
             this.CK_UnApprove.Location = new System.Drawing.Point(1019, 252);
             this.CK_UnApprove.Name = "CK_UnApprove";
             this.CK_UnApprove.Size = new System.Drawing.Size(70, 16);
-            this.CK_UnApprove.TabIndex = 15;
+            this.CK_UnApprove.TabIndex = 31;
             this.CK_UnApprove.Text = " 未承認";
             this.CK_UnApprove.UseVisualStyleBackColor = true;
             // 
@@ -299,7 +299,7 @@
             this.TB_ApprovalDateT.MoveNext = true;
             this.TB_ApprovalDateT.Name = "TB_ApprovalDateT";
             this.TB_ApprovalDateT.Size = new System.Drawing.Size(100, 19);
-            this.TB_ApprovalDateT.TabIndex = 14;
+            this.TB_ApprovalDateT.TabIndex = 30;
             this.TB_ApprovalDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_ApprovalDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_ApprovalDateT.UseColorSizMode = false;
@@ -348,7 +348,7 @@
             this.TB_ApprovalDateF.MoveNext = true;
             this.TB_ApprovalDateF.Name = "TB_ApprovalDateF";
             this.TB_ApprovalDateF.Size = new System.Drawing.Size(100, 19);
-            this.TB_ApprovalDateF.TabIndex = 13;
+            this.TB_ApprovalDateF.TabIndex = 29;
             this.TB_ApprovalDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_ApprovalDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_ApprovalDateF.UseColorSizMode = false;
@@ -396,7 +396,7 @@
             this.TB_UpdateDateT.MoveNext = true;
             this.TB_UpdateDateT.Name = "TB_UpdateDateT";
             this.TB_UpdateDateT.Size = new System.Drawing.Size(100, 19);
-            this.TB_UpdateDateT.TabIndex = 12;
+            this.TB_UpdateDateT.TabIndex = 28;
             this.TB_UpdateDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_UpdateDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_UpdateDateT.UseColorSizMode = false;
@@ -446,7 +446,7 @@
             this.TB_UpdateDateF.MoveNext = true;
             this.TB_UpdateDateF.Name = "TB_UpdateDateF";
             this.TB_UpdateDateF.Size = new System.Drawing.Size(100, 19);
-            this.TB_UpdateDateF.TabIndex = 11;
+            this.TB_UpdateDateF.TabIndex = 27;
             this.TB_UpdateDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_UpdateDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_UpdateDateF.UseColorSizMode = false;
@@ -494,7 +494,7 @@
             this.TB_InsertDateT.MoveNext = true;
             this.TB_InsertDateT.Name = "TB_InsertDateT";
             this.TB_InsertDateT.Size = new System.Drawing.Size(100, 19);
-            this.TB_InsertDateT.TabIndex = 10;
+            this.TB_InsertDateT.TabIndex = 26;
             this.TB_InsertDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_InsertDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_InsertDateT.UseColorSizMode = false;
@@ -543,7 +543,7 @@
             this.TB_InsertDateF.MoveNext = true;
             this.TB_InsertDateF.Name = "TB_InsertDateF";
             this.TB_InsertDateF.Size = new System.Drawing.Size(100, 19);
-            this.TB_InsertDateF.TabIndex = 9;
+            this.TB_InsertDateF.TabIndex = 25;
             this.TB_InsertDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_InsertDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_InsertDateF.UseColorSizMode = false;
@@ -625,7 +625,7 @@
             this.TB_InstructionNo.MoveNext = true;
             this.TB_InstructionNo.Name = "TB_InstructionNo";
             this.TB_InstructionNo.Size = new System.Drawing.Size(307, 19);
-            this.TB_InstructionNo.TabIndex = 32;
+            this.TB_InstructionNo.TabIndex = 22;
             this.TB_InstructionNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_InstructionNo.UseColorSizMode = false;
             // 
@@ -660,7 +660,7 @@
             this.CB_Tag5.MoveNext = true;
             this.CB_Tag5.Name = "CB_Tag5";
             this.CB_Tag5.Size = new System.Drawing.Size(280, 20);
-            this.CB_Tag5.TabIndex = 31;
+            this.CB_Tag5.TabIndex = 21;
             // 
             // ckM_Label24
             // 
@@ -693,7 +693,7 @@
             this.CB_Tag4.MoveNext = true;
             this.CB_Tag4.Name = "CB_Tag4";
             this.CB_Tag4.Size = new System.Drawing.Size(280, 20);
-            this.CB_Tag4.TabIndex = 30;
+            this.CB_Tag4.TabIndex = 20;
             // 
             // ckM_Label23
             // 
@@ -726,7 +726,7 @@
             this.CB_Tag3.MoveNext = true;
             this.CB_Tag3.Name = "CB_Tag3";
             this.CB_Tag3.Size = new System.Drawing.Size(280, 20);
-            this.CB_Tag3.TabIndex = 29;
+            this.CB_Tag3.TabIndex = 19;
             // 
             // ckM_Label22
             // 
@@ -759,7 +759,7 @@
             this.CB_Tag2.MoveNext = true;
             this.CB_Tag2.Name = "CB_Tag2";
             this.CB_Tag2.Size = new System.Drawing.Size(280, 20);
-            this.CB_Tag2.TabIndex = 28;
+            this.CB_Tag2.TabIndex = 18;
             // 
             // ckM_Label21
             // 
@@ -792,7 +792,7 @@
             this.CB_Tag1.MoveNext = true;
             this.CB_Tag1.Name = "CB_Tag1";
             this.CB_Tag1.Size = new System.Drawing.Size(280, 20);
-            this.CB_Tag1.TabIndex = 27;
+            this.CB_Tag1.TabIndex = 17;
             // 
             // ckM_Label20
             // 
@@ -833,7 +833,7 @@
             this.SC_SportsCD.SearchEnable = true;
             this.SC_SportsCD.Size = new System.Drawing.Size(364, 27);
             this.SC_SportsCD.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.SC_SportsCD.TabIndex = 26;
+            this.SC_SportsCD.TabIndex = 16;
             this.SC_SportsCD.test = null;
             this.SC_SportsCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_SportsCD.UseChangeDate = false;
@@ -882,7 +882,7 @@
             this.SC_char1.SearchEnable = true;
             this.SC_char1.Size = new System.Drawing.Size(364, 27);
             this.SC_char1.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.SC_char1.TabIndex = 25;
+            this.SC_char1.TabIndex = 15;
             this.SC_char1.test = null;
             this.SC_char1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_char1.UseChangeDate = false;
@@ -923,7 +923,7 @@
             this.CB_PostageCD.MoveNext = true;
             this.CB_PostageCD.Name = "CB_PostageCD";
             this.CB_PostageCD.Size = new System.Drawing.Size(180, 20);
-            this.CB_PostageCD.TabIndex = 24;
+            this.CB_PostageCD.TabIndex = 14;
             // 
             // ckM_Label17
             // 
@@ -956,7 +956,7 @@
             this.CB_OrderAttention.MoveNext = true;
             this.CB_OrderAttention.Name = "CB_OrderAttention";
             this.CB_OrderAttention.Size = new System.Drawing.Size(180, 20);
-            this.CB_OrderAttention.TabIndex = 23;
+            this.CB_OrderAttention.TabIndex = 13;
             // 
             // ckM_Label14
             // 
@@ -989,7 +989,7 @@
             this.CB_NoticesCD.MoveNext = true;
             this.CB_NoticesCD.Name = "CB_NoticesCD";
             this.CB_NoticesCD.Size = new System.Drawing.Size(180, 20);
-            this.CB_NoticesCD.TabIndex = 22;
+            this.CB_NoticesCD.TabIndex = 12;
             // 
             // LB_Noitices
             // 
@@ -1022,7 +1022,7 @@
             this.CB_ReserveCD.MoveNext = true;
             this.CB_ReserveCD.Name = "CB_ReserveCD";
             this.CB_ReserveCD.Size = new System.Drawing.Size(180, 20);
-            this.CB_ReserveCD.TabIndex = 21;
+            this.CB_ReserveCD.TabIndex = 11;
             // 
             // LB_ReserveCD
             // 
@@ -1067,7 +1067,7 @@
             this.TB_Catalog.MoveNext = true;
             this.TB_Catalog.Name = "TB_Catalog";
             this.TB_Catalog.Size = new System.Drawing.Size(421, 19);
-            this.TB_Catalog.TabIndex = 20;
+            this.TB_Catalog.TabIndex = 10;
             this.TB_Catalog.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_Catalog.UseColorSizMode = false;
             // 
@@ -1102,7 +1102,7 @@
             this.CB_Season.MoveNext = true;
             this.CB_Season.Name = "CB_Season";
             this.CB_Season.Size = new System.Drawing.Size(180, 20);
-            this.CB_Season.TabIndex = 19;
+            this.CB_Season.TabIndex = 9;
             // 
             // LB_Season
             // 
@@ -1135,7 +1135,7 @@
             this.CB_Year.MoveNext = true;
             this.CB_Year.Name = "CB_Year";
             this.CB_Year.Size = new System.Drawing.Size(180, 20);
-            this.CB_Year.TabIndex = 18;
+            this.CB_Year.TabIndex = 8;
             // 
             // LB_Year
             // 
@@ -1468,7 +1468,7 @@
             this.panel4.Location = new System.Drawing.Point(120, 275);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(700, 25);
-            this.panel4.TabIndex = 17;
+            this.panel4.TabIndex = 34;
             // 
             // RB_Item
             // 
@@ -1477,7 +1477,7 @@
             this.RB_Item.Location = new System.Drawing.Point(53, 3);
             this.RB_Item.Name = "RB_Item";
             this.RB_Item.Size = new System.Drawing.Size(51, 16);
-            this.RB_Item.TabIndex = 1;
+            this.RB_Item.TabIndex = 33;
             this.RB_Item.TabStop = true;
             this.RB_Item.Text = "ITEM";
             this.RB_Item.UseVisualStyleBackColor = true;
@@ -1489,7 +1489,7 @@
             this.CK_suru.Location = new System.Drawing.Point(2, 4);
             this.CK_suru.Name = "CK_suru";
             this.CK_suru.Size = new System.Drawing.Size(50, 16);
-            this.CK_suru.TabIndex = 0;
+            this.CK_suru.TabIndex = 32;
             this.CK_suru.Text = "する";
             this.CK_suru.UseVisualStyleBackColor = true;
             this.CK_suru.CheckedChanged += new System.EventHandler(this.CK_suru_CheckedChanged);
@@ -1501,7 +1501,7 @@
             this.RB_makeritem.Location = new System.Drawing.Point(117, 4);
             this.RB_makeritem.Name = "RB_makeritem";
             this.RB_makeritem.Size = new System.Drawing.Size(115, 16);
-            this.RB_makeritem.TabIndex = 1;
+            this.RB_makeritem.TabIndex = 35;
             this.RB_makeritem.TabStop = true;
             this.RB_makeritem.Text = "メーカー商品CD";
             this.RB_makeritem.UseVisualStyleBackColor = true;
@@ -1518,7 +1518,7 @@
             this.ckM_Label35.Location = new System.Drawing.Point(238, 7);
             this.ckM_Label35.Name = "ckM_Label35";
             this.ckM_Label35.Size = new System.Drawing.Size(437, 12);
-            this.ckM_Label35.TabIndex = 3;
+            this.ckM_Label35.TabIndex = 2;
             this.ckM_Label35.Text = "検索された商品と同じITEM（メーカー商品CD）の商品も同時に出力する。";
             this.ckM_Label35.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

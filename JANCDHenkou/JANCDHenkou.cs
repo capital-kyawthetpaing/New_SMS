@@ -43,8 +43,9 @@ namespace JANCDHenkou
             Btn_F5.Text = string.Empty;
             Btn_F7.Text = string.Empty;
             Btn_F8.Text = string.Empty;
-            Btn_F10.Text = string.Empty;
-            Btn_F11.Text = "取込(F11)";
+            Btn_F10.Text = "取込(F10)";
+            //Btn_F11.Text = "取込(F11)";
+            Btn_F11.Text = string.Empty;
             Btn_F12.Text = "登録(F12)";
             ModeVisible = false;
             dtGenJanCD = CreateDatatable();
@@ -86,8 +87,8 @@ namespace JANCDHenkou
                         }
                     }
                     break;
-                case 11:
-                     F11();
+                case 10:
+                    F10();
                     break;
                 case 12:
                     F12();
@@ -153,7 +154,7 @@ namespace JANCDHenkou
             }
         }
 
-        private void F11()
+        private void F10()
         {
             OpenFileDialog op = new OpenFileDialog
             {
@@ -188,8 +189,6 @@ namespace JANCDHenkou
                     }
                 }
             }
-            
-           
         }
 
         private void F12()
@@ -208,12 +207,6 @@ namespace JANCDHenkou
                 }
             }
         }
-
-        private void BtnF11Show_Click(object sender, EventArgs e)
-        {
-            F11();
-        }
-
         private bool ErrorCheck()
         {
             DataTable dt  = dtGenJanCD;
@@ -313,7 +306,7 @@ namespace JANCDHenkou
                         dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"];
                     }
                     else
-                   {
+                    {
                         foreach (DataGridViewRow r in dgvJANCDHenkou.Rows)      //duplicate error
                         {
                             if (r.Index != e.RowIndex & !r.IsNewRow)
@@ -534,6 +527,11 @@ namespace JANCDHenkou
                 format);
                 j += 2;
             }
+        }
+
+        private void BtnF10Show_Click(object sender, EventArgs e)
+        {
+            F10();
         }
 
         private void dgvJANCDHenkou_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
