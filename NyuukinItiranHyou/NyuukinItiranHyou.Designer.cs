@@ -218,7 +218,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(27, 60);
+            this.ckM_Label3.Location = new System.Drawing.Point(27, 65);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label3.TabIndex = 63;
@@ -235,7 +235,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(216, 59);
+            this.ckM_Label5.Location = new System.Drawing.Point(216, 64);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label5.TabIndex = 61;
@@ -252,7 +252,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(217, 30);
+            this.ckM_Label4.Location = new System.Drawing.Point(217, 31);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label4.TabIndex = 60;
@@ -269,7 +269,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(53, 29);
+            this.ckM_Label2.Location = new System.Drawing.Point(53, 30);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 59;
@@ -331,7 +331,7 @@
             this.paymentinputend.IsShop = false;
             this.paymentinputend.IsTimemmss = false;
             this.paymentinputend.Length = 10;
-            this.paymentinputend.Location = new System.Drawing.Point(252, 57);
+            this.paymentinputend.Location = new System.Drawing.Point(252, 62);
             this.paymentinputend.MaxLength = 10;
             this.paymentinputend.MoveNext = true;
             this.paymentinputend.Name = "paymentinputend";
@@ -363,7 +363,7 @@
             this.paymentend.IsShop = false;
             this.paymentend.IsTimemmss = false;
             this.paymentend.Length = 10;
-            this.paymentend.Location = new System.Drawing.Point(252, 26);
+            this.paymentend.Location = new System.Drawing.Point(252, 27);
             this.paymentend.MaxLength = 10;
             this.paymentend.MoveNext = true;
             this.paymentend.Name = "paymentend";
@@ -395,7 +395,7 @@
             this.paymentinputstart.IsShop = false;
             this.paymentinputstart.IsTimemmss = false;
             this.paymentinputstart.Length = 10;
-            this.paymentinputstart.Location = new System.Drawing.Point(100, 57);
+            this.paymentinputstart.Location = new System.Drawing.Point(100, 62);
             this.paymentinputstart.MaxLength = 10;
             this.paymentinputstart.MoveNext = true;
             this.paymentinputstart.Name = "paymentinputstart";
@@ -426,7 +426,7 @@
             this.paymentstart.IsShop = false;
             this.paymentstart.IsTimemmss = false;
             this.paymentstart.Length = 10;
-            this.paymentstart.Location = new System.Drawing.Point(100, 26);
+            this.paymentstart.Location = new System.Drawing.Point(100, 27);
             this.paymentstart.MaxLength = 10;
             this.paymentstart.MoveNext = true;
             this.paymentstart.Name = "paymentstart";

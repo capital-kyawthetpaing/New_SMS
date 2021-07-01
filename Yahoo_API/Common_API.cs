@@ -34,8 +34,9 @@ namespace Yahoo_API
         string accessToken = string.Empty;
          DataTable YahooList, YahooDetail, YahooItem ;
         D_APIControl_Entity dae = new D_APIControl_Entity();
-        public string ShopName {
-            get;set;
+        public string ShopName
+        {
+            get; set;
         }
         //string storeCD = string.Empty;
         //string APIKey = string.Empty;
@@ -49,6 +50,7 @@ namespace Yahoo_API
         DateTime LastGetDateTime;
         public void Search_GetOrderDetail(D_APIControl_Entity DApiControl_entity)
         {
+          
             dae = DApiControl_entity;
             YahooItem = new DataTable();
             YahooDetail = new DataTable();
@@ -97,7 +99,7 @@ namespace Yahoo_API
                     string code = RedirectPath(url);
                     if (!String.IsNullOrWhiteSpace(code))
                     {
-                        GetNewRefreshToken(code);
+                        GetNewRefreshToken(code,api.ApplicationID0, api.YahooSecretKey);
                     }
                     res = false;
                 }
@@ -117,11 +119,8 @@ namespace Yahoo_API
 
         public string YahooAPIAuth(M_API_Entity api)
         {
-            //api.ApplicationID = "dj0zaiZpPTR4TTIzMWtNbzcxUyZzPWNvbnN1bWVyc2VjcmV0Jng9MDc-";
-            //api.YahooSecretKey = "08285f0c90ec9c0428edf248bcbd71b515bebec5";
             try
-            {
-                
+            { 
                 var postData = HttpUtility.ParseQueryString(string.Empty);
                 postData.Add(new NameValueCollection
                 {
@@ -156,7 +155,63 @@ namespace Yahoo_API
 
             }
         }
-
+        public   string GetNewRefreshToken(string code, string Id, string Key)
+        {
+            try
+            {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                string RefreshToken = "";
+                var postData = HttpUtility.ParseQueryString(string.Empty);
+                postData.Add(new NameValueCollection                {                    { "grant_type", "authorization_code" },                    { "redirect_uri", "http://shopping.geocities.jp/racket/index.html" },                    {"code",code}                });
+                var webRequest = (HttpWebRequest)WebRequest.Create("https://auth.login.yahoo.co.jp/yconnect/v1/token");
+                webRequest.Method = "POST";
+                webRequest.ContentType = "application/x-www-form-urlencoded";
+                String encoded = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(Id + ":" + Key));
+                webRequest.Headers.Add("Authorization", "Basic " + encoded);
+                using (var s = webRequest.GetRequestStream())
+                using (var sw = new StreamWriter(s))
+                    sw.Write(postData.ToString());
+                using (var webResponse = webRequest.GetResponse())
+                {
+                    var responseStream = webResponse.GetResponseStream();
+                    using (var reader = new StreamReader(responseStream))
+                    {
+                        var response = reader.ReadToEnd();
+                        var json = JObject.Parse(response);
+                        string accessToken = "";
+                        accessToken = json.Value<string>("access_token");
+                        RefreshToken = json.Value<string>("refresh_token");
+                         InsertRefreshTokenToShop(RefreshToken);
+                      //  YahooAPI_BL yab = new YahooAPI_BL();
+                        
+                    }
+                }
+                return "success";
+            }
+            catch (WebException e)
+            {
+                string error = "";
+                if (e.Response != null)
+                {
+                    using (var errorResponse = (HttpWebResponse)e.Response)
+                    {
+                        using (var reader = new StreamReader(errorResponse.GetResponseStream()))
+                        {
+                            error = reader.ReadToEnd();
+                            //TODO: use JSON.net to parse this string and look at the error message
+                            if (error.Contains("Error"))
+                            {
+                                XmlDocument xd = new XmlDocument();
+                                xd.LoadXml(error);
+                                error = xd.InnerText;
+                            }
+                        }
+                    }
+                }
+                return error;
+            }
+        }
         public static string RedirectPath(string url)
         {
             string line = "";
@@ -165,7 +220,8 @@ namespace Yahoo_API
 
             using (IWebDriver firefox = new FirefoxDriver(service, option, TimeSpan.FromMinutes(3)))
             {
-                string username = "capitalkmm"; string password = "capital1234";
+                  string username = "capitalkmm"; string password = "capital1234";
+                //string username = "fukuda_klug"; string password = "klug0013";
                 firefox.Url = url;
                 string title = firefox.Title;
                 firefox.FindElement(By.Name("login")).SendKeys(username);
@@ -202,7 +258,7 @@ namespace Yahoo_API
             return line;
 
         }
-        public string GetNewRefreshToken(string code)
+        public string GetNewRefreshToken_old(string code)
         {
             try
             {
@@ -215,7 +271,7 @@ namespace Yahoo_API
                 {
                     { "grant_type", "authorization_code" },
                     { "redirect_uri", "http://shopping.geocities.jp/racket/index.html" },
-                    {"code",code}
+                    {"code","["+code+"]"}
                 });
                 var webRequest = (HttpWebRequest)WebRequest.Create("https://auth.login.yahoo.co.jp/yconnect/v1/token");
                 webRequest.Method = "POST";
@@ -286,7 +342,6 @@ namespace Yahoo_API
         }
         public void SearOrder(M_API_Entity api) 
         {
-           
             if (api.TESTMode.Equals("1"))
                 countRequest = (HttpWebRequest)WebRequest.Create(string.Format("https://circus.shopping.yahooapis.jp/ShoppingWebService/V1/orderCount?seller_id={0}", api.SellerId));
             else
@@ -294,11 +349,13 @@ namespace Yahoo_API
             countRequest.Method = "GET";
             countRequest.ContentType = "application/x-www-form-urlencoded";
             countRequest.Headers.Add("Authorization", "Bearer " + accessToken);
-          
-            String encoded = Convert.ToBase64String(Encoding.GetEncoding("utf-8").GetBytes(api.ApplicationID + ":" + api.YahooSecretKey));
+           
+            //String encoded = Convert.ToBase64String(Encoding.GetEncoding("utf-8").GetBytes(api.ApplicationID + ":" + api.YahooSecretKey));
             try
             {
-                using (var countResponse = countRequest.GetResponse())
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                using (var countResponse = countRequest.GetResponse( ))
                 {
                     var responseStream = countResponse.GetResponseStream();
 
@@ -350,7 +407,7 @@ namespace Yahoo_API
                 string code = RedirectPath(url);
                 if (!String.IsNullOrWhiteSpace(code))
                 {
-                    GetNewRefreshToken(code);
+                    GetNewRefreshToken(code, api.ApplicationID , api.YahooSecretKey);
 
                 }
             }
