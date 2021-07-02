@@ -380,6 +380,11 @@ namespace ShukkaShoukai
                     InvoiceNO = CheckValue2(),
                 };
 
+                if (mshe.CarrierCD == "-1")
+                {
+                    mshe.CarrierCD = null;
+                }
+
                 dsde = new D_ShippingDetails_Entity
                 {
                     Number = SC_Order.TxtCode.Text,
@@ -392,6 +397,11 @@ namespace ShukkaShoukai
                 {
                     DeliverySoukoCD = cboDestinationWarehouse.SelectedValue.ToString(),
                 };
+
+                if (die.DeliverySoukoCD == "-1")
+                {
+                    die.DeliverySoukoCD = null;
+                }
 
                 dtSearch = skskbl.D_Shipping_Select(mshe, dsde, die);
                 if (dtSearch.Rows.Count > 0)
@@ -418,7 +428,7 @@ namespace ShukkaShoukai
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport, "test");
-
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
                                 wb.SaveAs(savedialog.FileName);
                                 skskbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
                             }
