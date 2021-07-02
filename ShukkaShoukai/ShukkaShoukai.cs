@@ -428,7 +428,7 @@ namespace ShukkaShoukai
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport, "test");
-                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+                                wb.Worksheet("test").Tables.FirstOrDefault().ShowAutoFilter = false;
                                 wb.SaveAs(savedialog.FileName);
                                 skskbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
                             }
