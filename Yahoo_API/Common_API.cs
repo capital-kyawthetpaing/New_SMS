@@ -163,7 +163,12 @@ namespace Yahoo_API
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 string RefreshToken = "";
                 var postData = HttpUtility.ParseQueryString(string.Empty);
-                postData.Add(new NameValueCollection                {                    { "grant_type", "authorization_code" },                    { "redirect_uri", "http://shopping.geocities.jp/racket/index.html" },                    {"code",code}                });
+                postData.Add(new NameValueCollection
+                {
+                    { "grant_type", "authorization_code" },
+                    { "redirect_uri", "http://shopping.geocities.jp/racket/index.html" },
+                    {"code",code}
+                });
                 var webRequest = (HttpWebRequest)WebRequest.Create("https://auth.login.yahoo.co.jp/yconnect/v1/token");
                 webRequest.Method = "POST";
                 webRequest.ContentType = "application/x-www-form-urlencoded";
@@ -354,7 +359,10 @@ namespace Yahoo_API
             try
             {
                 ServicePointManager.Expect100Continue = true;
+                //ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+
                 using (var countResponse = countRequest.GetResponse( ))
                 {
                     var responseStream = countResponse.GetResponseStream();
