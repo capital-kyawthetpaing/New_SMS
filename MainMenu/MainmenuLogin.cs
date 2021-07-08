@@ -212,7 +212,13 @@ namespace MainMenu
                 UpdatedFileList= frm.dt;
 
             }
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.P)
+            {
+                Prerequisity pre = new Prerequisity();
+                pre.Show();
+            }
+
+                if (e.KeyCode == Keys.Enter)
                 this.SelectNextControl(ActiveControl, true, true, true, true);
 
             else if (e.KeyData == Keys.F1)

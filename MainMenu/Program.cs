@@ -29,7 +29,7 @@ namespace MainMenu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(LoginFormName());
-            Application.Run(new Prerequisity());
+            Application.Run(LoginFormName());
         }
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
