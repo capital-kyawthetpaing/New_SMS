@@ -762,7 +762,7 @@
             this.colShippingDate.DataPropertyName = "ShippingDate";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colShippingDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colShippingDate.HeaderText = "出荷日";
+            this.colShippingDate.HeaderText = "   出荷日";
             this.colShippingDate.MaxInputLength = 8;
             this.colShippingDate.Name = "colShippingDate";
             this.colShippingDate.Width = 80;
@@ -820,7 +820,7 @@
             this.colShippingSu.DataPropertyName = "ShippingSu";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colShippingSu.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colShippingSu.HeaderText = "出荷数";
+            this.colShippingSu.HeaderText = "  出荷数";
             this.colShippingSu.MaxInputLength = 6;
             this.colShippingSu.Name = "colShippingSu";
             this.colShippingSu.Width = 60;
@@ -846,7 +846,7 @@
             this.colSalesDate.DataPropertyName = "SalesDate";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colSalesDate.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colSalesDate.HeaderText = "売上日";
+            this.colSalesDate.HeaderText = "   売上日";
             this.colSalesDate.MaxInputLength = 8;
             this.colSalesDate.Name = "colSalesDate";
             this.colSalesDate.Width = 80;
