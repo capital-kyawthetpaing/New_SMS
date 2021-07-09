@@ -50,7 +50,6 @@ namespace Rakuten_API
                         //JObject jObjectInfo = GetOrder("a");
                         //CreateGetOrderDataInfo(jObjectInfo,"1",1);
                         rakutenAPI_bl.Insert_GetOrderData(base_entity);
-
                     }
                 }
             }
@@ -71,7 +70,6 @@ namespace Rakuten_API
             string re = string.Empty;
             String startdate = @"""" + startDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
             String enddate = @"""" + endDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
-
             //re = @"{ ""orderProgressList"": [100 ],
             //         ""dateType"": 1,
             //           ""startDatetime"": " + startdate + @",
@@ -83,7 +81,6 @@ namespace Rakuten_API
             //                                  }
 
             //}";
-
             re = @"{ ""orderProgressList"": [100, 200, 300, 400, 500, 600, 700, 800, 900 ],
                      ""dateType"": 1,
                        ""startDatetime"": ""2019-07-10T16:58:46+0900"",
@@ -319,12 +316,11 @@ namespace Rakuten_API
                                 dtShippingDetail.Rows[rows]["InportSEQRows"] = seq;
                                 dtShippingDetail.Rows[rows]["orderNumber"] = String.IsNullOrWhiteSpace(order.SelectToken("orderNumber").ToString()) ? "null" : order.SelectToken("orderNumber").ToString();
                                 dtShippingDetail.Rows[rows]["basketRows"] = rowp + 1;
-                                dtShippingDetail.Rows[rows]["itemRows"] = rows + 1;
+                                dtShippingDetail.Rows[rows]["ShippingRows"] = rows + 1;//itemRow to shippingRow changed 2021/07/07
 
                                 foreach (string jsonstr in arrlstShippingDetail)
                                 {
-                                    SelectFromJSon(dtShippingDetail.Rows[rowj], shipping, jsonstr);
-
+                                    SelectFromJSon(dtShippingDetail.Rows[rows], shipping, jsonstr);
                                 }
                                 rows++;
                             }
@@ -379,8 +375,7 @@ namespace Rakuten_API
 
                             foreach (string jsonstr in arrlstChangeReason)
                             {
-                                SelectFromJSon(dtChangeReason.Rows[rowc], reason, jsonstr);
-
+                                SelectFromJSon(dtChangeReason.Rows[rowr], reason, jsonstr);//changed rowc to rowr by ses
                             }
                             rowr++;
                         }
@@ -391,8 +386,6 @@ namespace Rakuten_API
                     row++;
 
                 }
-
-
             }
             base_entity.dt1 = dtJuChuuList;
             base_entity.dt2 = dtShippingList;
@@ -695,6 +688,9 @@ namespace Rakuten_API
                 dtShippingDetail.Columns.Add("orderNumber", typeof(string));
                 dtShippingDetail.Columns.Add("basketRows", typeof(string));
                 dtShippingDetail.Columns.Add("ShippingRows", typeof(string));
+                //ses added 2021/07/08
+                foreach (string colname in arrlstShippingDetail)
+                    dtShippingDetail.Columns.Add(colname, typeof(string));
             }
         }
 
