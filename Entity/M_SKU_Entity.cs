@@ -111,6 +111,7 @@ namespace Entity
         public string UpdateDateTo { get; set; }
         public string ApprovalDateFrom { get; set; }
         public string ApprovalDateTo { get; set; }
+        public string NotApproved { get; set; }
 
         //Master用Entity
         public string BrandName { get; set; }

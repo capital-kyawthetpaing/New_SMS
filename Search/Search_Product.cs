@@ -245,6 +245,8 @@ namespace Search
                 mse.SearchFlg = "0";
             }
 
+            mse.NotApproved = ckM_CheckBox1.Checked ? "1" : "0";
+
             return mse;
         }
 
