@@ -54,11 +54,11 @@ BEGIN
     -- interfering with SELECT statements.
     SET NOCOUNT ON;
 
-    DECLARE @wChangeDate date
+    DECLARE @dChangeDate date
     IF ISDATE(@ChangeDate) = 0
-        SET @wChangeDate = CONVERT(date, '1900-1-1')
+        SET @dChangeDate = CONVERT(date, '1900-1-1')
     ELSE
-        SET @wChangeDate = CONVERT(date, @ChangeDate)
+        SET @dChangeDate = CONVERT(date, @ChangeDate)
 
     --------------------------------------------------------
     -- Expand a comma-separated string into a table variable
@@ -97,7 +97,7 @@ BEGIN
     (
          AdminNO            int	
         ,SKUCD              varchar(30)	    COLLATE database_default
-        ,ChangeDate         varchar(10)	    COLLATE database_default --,ChangeDate         date	
+        ,ChangeDate         varchar(10)	    COLLATE database_default --ChangeDate date	
         ,VariousFLG         tinyint	
         ,SKUName            varchar(100)    COLLATE database_default
         ,SKUShortName       varchar(40)	    COLLATE database_default
@@ -105,7 +105,7 @@ BEGIN
         ,ColorNO	        int	
         ,SizeNO	            int	
         ,JanCD	            varchar(13)	    COLLATE database_default
-        ,SetKBN             varchar(2)      COLLATE database_default --,SetKBN	            tinyint	
+        ,SetKBN             varchar(2)      COLLATE database_default --SetKBN tinyint	
         ,PresentKBN	        tinyint	
         ,SampleKBN	        tinyint	
         ,DiscountKBN	    tinyint	
@@ -142,12 +142,12 @@ BEGIN
         ,OrderPriceWithoutTax	money	
         ,CommentInStore	    varchar(300)	COLLATE database_default
         ,CommentOutStore	varchar(300)	COLLATE database_default
-        ,ApprovalDate	    varchar(10)	    COLLATE database_default --,ApprovalDate	date
+        ,ApprovalDate	    varchar(10)	    COLLATE database_default --ApprovalDate	date
         ,DeleteFlg	        tinyint	
         ,UsedFlg	        tinyint	
-        ,InsertOperator	    varchar(10)	    COLLATE database_default --,InsertDateTime	datetime
+        ,InsertOperator	    varchar(10)	    COLLATE database_default --InsertDateTime datetime
         ,InsertDateTime	    varchar(10)	    COLLATE database_default
-        ,UpdateOperator	    varchar(10)	    COLLATE database_default --,UpdateDateTime	datetime
+        ,UpdateOperator	    varchar(10)	    COLLATE database_default --UpdateDateTime datetime
         ,UpdateDateTime	    varchar(10)	    COLLATE database_default
 
         ,YearTerm           varchar(6)	    COLLATE database_default
@@ -162,7 +162,7 @@ BEGIN
     ---------------------------      
     IF ISNULL(@JanCD,'') <> ''
     BEGIN
-        -- use indexes.(JanCD)
+        -- use indexes(JanCD)
         INSERT INTO [#TableForSearchProduct]
         SELECT MS.AdminNO
               ,MS.SKUCD
@@ -225,7 +225,7 @@ BEGIN
               ,MI.InstructionsNO
               ,0 AS Check1  --備考用チェック
 
-        --from F_SKU(@wChangeDate) MS
+        --from F_SKU(@dChangeDate) MS
         FROM M_SKU MS
 
 	    CROSS APPLY
@@ -233,7 +233,7 @@ BEGIN
 		    SELECT TOP 1 s.ChangeDate
 		    FROM M_SKU s
 		    WHERE s.AdminNO = MS.AdminNO 
-            AND   s.ChangeDate <= @wChangeDate
+            AND   s.ChangeDate <= @dChangeDate
 		    ORDER BY s.ChangeDate DESC
 	    ) temp_Store
 
@@ -305,7 +305,7 @@ BEGIN
 
     ELSE IF ISNULL(@BrandCD,'') <> ''
     BEGIN
-        -- use indexes.(BrandCD)
+        -- use indexes(BrandCD)
         INSERT INTO [#TableForSearchProduct]
         SELECT MS.AdminNO
               ,MS.SKUCD
@@ -368,7 +368,7 @@ BEGIN
               ,MI.InstructionsNO
               ,0 AS Check1  --備考用チェック
           
-        --from F_SKU(@wChangeDate) MS
+        --from F_SKU(@dChangeDate) MS
         FROM M_SKU MS
 
 	    CROSS APPLY
@@ -376,7 +376,7 @@ BEGIN
 		    SELECT TOP 1 s.ChangeDate
 		    FROM M_SKU s
 		    WHERE s.AdminNO = MS.AdminNO 
-            AND   s.ChangeDate <= @wChangeDate
+            AND   s.ChangeDate <= @dChangeDate
 		    ORDER BY s.ChangeDate DESC
 	    ) temp_Store
 
@@ -511,7 +511,7 @@ BEGIN
               ,MI.InstructionsNO
               ,0 AS Check1  --備考用チェック
           
-        --from F_SKU(@wChangeDate) MS
+        --from F_SKU(@dChangeDate) MS
         FROM M_SKU MS
 
 	    CROSS APPLY
@@ -519,7 +519,7 @@ BEGIN
 		    SELECT TOP 1 s.ChangeDate
 		    FROM M_SKU s
 		    WHERE s.AdminNO = MS.AdminNO 
-            AND   s.ChangeDate <= @wChangeDate
+            AND   s.ChangeDate <= @dChangeDate
 		    ORDER BY s.ChangeDate DESC
 	    ) temp_Store
 
@@ -740,7 +740,7 @@ END --Only when "AND" is selected.
                   ,MI.CatalogNO
                   ,MI.InstructionsNO
             
-            FROM F_SKU(@wChangeDate) MS
+            FROM F_SKU(@dChangeDate) MS
             LEFT OUTER JOIN
                 (SELECT W.AdminNo
                 ,W.ChangeDate
@@ -833,7 +833,7 @@ END --Only when "AND" is selected.
                   ,MI.CatalogNO
                   ,MI.InstructionsNO
             
-            FROM F_SKU(@wChangeDate) MS
+            FROM F_SKU(@dChangeDate) MS
             LEFT OUTER JOIN
             (SELECT W.AdminNo
                 ,W.ChangeDate
