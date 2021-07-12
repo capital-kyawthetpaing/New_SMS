@@ -22,7 +22,7 @@ namespace BL
             DataTable dt = adl.MAPI_DRequest();
             ame.strMerchantId = dt.Rows[0]["SellerId"].ToString();
             ame.strMarketplaceId = dt.Rows[0]["MarketplaceId"].ToString();
-            ame.strMWSAuthToken = dt.Rows[0]["MWSAuthToken"].ToString();
+            ame.strMWSAuthToken = dt.Rows[0]["MWSAuthToke"].ToString();
             ame.strAccessKeyId = dt.Rows[0]["AccessKeyId"].ToString();
             ame.strSecretKeyId = dt.Rows[0]["ServiceSecret"].ToString();
             ame.APIKey = dt.Rows[0]["APIKey"].ToString();

@@ -120,6 +120,11 @@ namespace MainMenu
                 UpdatedFileList = frm.dt;
 
             }
+            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.P)
+            {
+                Prerequisity pre = new Prerequisity();
+                pre.Show();
+            }
         }
         protected DataTable UpdatedFileList { get; set; }
         private void ckM_Button1_Click(object sender, EventArgs e)

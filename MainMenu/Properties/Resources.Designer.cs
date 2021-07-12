@@ -173,6 +173,16 @@ namespace MainMenu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Close_2_icon {
+            get {
+                object obj = ResourceManager.GetObject("Close-2-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap cs {
             get {
                 object obj = ResourceManager.GetObject("cs", resourceCulture);
@@ -376,6 +386,16 @@ namespace MainMenu.Properties {
         public static System.Drawing.Bitmap ncl_1 {
             get {
                 object obj = ResourceManager.GetObject("ncl_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Ok_icon {
+            get {
+                object obj = ResourceManager.GetObject("Ok-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

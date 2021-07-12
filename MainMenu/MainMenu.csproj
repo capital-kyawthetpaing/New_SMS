@@ -84,13 +84,27 @@
     </Win32Resource>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dropbox.Api, Version=0.1.6157.19172, Culture=neutral, PublicKeyToken=310f0e82fbb45d01, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dropbox.Api.4.0.0\lib\net45\Dropbox.Api.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Microsoft.PointOfService, Version=1.14.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Base.Client\RequiredSource\Microsoft.PointOfService.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -162,6 +176,12 @@
       <DependentUpon>Main_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="NewlyModifiedLogicProgram.cs" />
+    <Compile Include="Prerequisity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prerequisity.Designer.cs">
+      <DependentUpon>Prerequisity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressBar.cs">
       <SubType>Form</SubType>
@@ -233,6 +253,9 @@
     <EmbeddedResource Include="Main_Menu.resx">
       <DependentUpon>Main_Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prerequisity.resx">
+      <DependentUpon>Prerequisity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProgressBar.resx">
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +287,7 @@
     <EmbeddedResource Include="Update_Sync.resx">
       <DependentUpon>Update_Sync.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="MainMenu_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -319,6 +343,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Ok-icon.png" />
     <None Include="Logos\haspoicon_fj7_icon.ico" />
     <Content Include="Haspo.ico" />
     <Content Include="logorktn_wIB_icon.ico" />
@@ -336,6 +361,7 @@
     <None Include="Resources\logo.png" />
     <None Include="Resources\Haspo.png" />
     <None Include="Resources\Haspo.ico" />
+    <None Include="Resources\Close-2-icon.png" />
     <Content Include="Resources\logo_mark_l5k_icon.ico" />
     <None Include="Resources\cs.PNG" />
     <None Include="Resources\ct.png" />

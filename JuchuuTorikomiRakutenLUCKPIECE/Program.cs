@@ -42,7 +42,7 @@ namespace JuchuuTorikomiRakutenLUCKPIECE
                     dtMulti = rakutenAPI_bl.M_MultiPorpose_SelectID(mmpe); // select columns from M_Multiporpose table
                 }
 
-                DApiControl_entity.APIKey = "2";
+                DApiControl_entity.APIKey = "23";
                 dtApiControl = rakutenAPI_bl.D_APIControl_Select(DApiControl_entity);
                 while (dtApiControl.Rows[0]["State"].ToString().Equals("0"))
                 {

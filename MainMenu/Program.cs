@@ -27,7 +27,8 @@ namespace MainMenu
 
         { 
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false); 
+            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(LoginFormName());
             Application.Run(LoginFormName());
         }
         [DllImport("kernel32.dll")]

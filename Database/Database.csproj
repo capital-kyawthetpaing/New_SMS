@@ -749,6 +749,7 @@
     <Content Include="StoreProcedure\_Ponpare_InsertAllDetails.sql" />
     <Content Include="StoreProcedure\_Ponpare_InsertRirekiDetail.sql" />
     <Content Include="StoreProcedure\_Ponpare_MAPI_DRequest.sql" />
+    <Content Include="StoreProcedure\_Select_Source.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

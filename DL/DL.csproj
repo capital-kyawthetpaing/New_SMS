@@ -198,6 +198,7 @@
     <Compile Include="ZaikoReplicaSyori_DL.cs" />
     <Compile Include="ZaikoShoukai_DL.cs" />
     <Compile Include="_Ponpare_DL.cs" />
+    <Compile Include="_Select_Source.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">

@@ -41,23 +41,24 @@ namespace Amazon__API
             aml = new Amazon__BL();
 
             ame = aml.MAPI_DRequest();
-            //string SellerId = CommonValue.strMerchantId;
-            //string MarketplaceId = CommonValue.strMarketplaceId;
-            //string AccessKeyId = CommonValue.strAccessKeyId;
-            //string SecretKeyId = CommonValue.strSecretKeyId;
-            //string ApplicationVersion = CommonValue.strApplicationVersion;
-            //string ApplicationName = CommonValue.strApplicationName;
-            //string MWSAuthToken = CommonValue.strMWSAuthToken;
+            //SellerId = CommonValue.strMerchantId;
+            //MarketplaceId = CommonValue.strMarketplaceId;
+            //AccessKeyId = CommonValue.strAccessKeyId;
+            //MWSAuthToken = CommonValue.strMWSAuthToken;
+            //SecretKeyId = CommonValue.strSecretKeyId;
+            //ApplicationVersion = CommonValue.strApplicationVersion;
+            //ApplicationName = CommonValue.strApplicationName;
             //string strbuff = string.Empty;
-             SellerId                            =ame.strMerchantId;
-             MarketplaceId                       = ame.strMarketplaceId;
-             AccessKeyId                         = ame.strAccessKeyId;
-             MWSAuthToken                        =  ame.strMWSAuthToken;
-             SecretKeyId                         = ame.strSecretKeyId;
+            SellerId = ame.strMerchantId;
+            MarketplaceId = ame.strMarketplaceId;
+            AccessKeyId = ame.strAccessKeyId;
+            MWSAuthToken = ame.strMWSAuthToken;
+            SecretKeyId = ame.strSecretKeyId;
+            ApplicationVersion = CommonValue.strApplicationVersion;
+            ApplicationName = CommonValue.strApplicationName;
             APIKey                               = ame.APIKey;
             StoreCD                              =ame.StoreCD;
-            string ApplicationVersion            = CommonValue.strApplicationVersion;
-            string ApplicationName               = CommonValue.strApplicationName;
+  
 
             DataTable strbuff = new DataTable();
            
@@ -125,7 +126,7 @@ namespace Amazon__API
 
             Insert_Items(client);
 
-            Console.Read();
+            //Console.Read();
 
 
             //
@@ -246,7 +247,7 @@ namespace Amazon__API
             if (aml.Amazon_InsertOrderItemDetails(ameDetails))
             {
                 Console.Write("All Items are Imported Successffully!!!");
-                Console.ReadLine();
+              //  Console.ReadLine();
             }
 
         }
