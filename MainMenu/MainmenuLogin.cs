@@ -184,18 +184,18 @@ namespace MainMenu
             mStream.Dispose();
             return bm;
         }
-        private void MainmenuLogin_KeyDown(object sender, KeyEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.C)
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Shift | Keys.C))
             {
                 var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 if (files.Count() == 0)
                 {
                     MessageBox.Show("There is no available file on server!");
-                    return;
+                    
                 }
                 DataTable dt = new DataTable();
-                dt.Columns.Add("No",typeof(string));
+                dt.Columns.Add("No", typeof(string));
                 dt.Columns.Add("Check", typeof(bool));
                 dt.Columns.Add("colFileName", typeof(string));
                 dt.Columns.Add("colFileExe", typeof(string));
@@ -204,21 +204,24 @@ namespace MainMenu
                 foreach (var dr in files)
                 {
                     k++;
-                    
-                    dt.Rows.Add(new object[] {k.ToString(),1,dr.ToString().Split('.').FirstOrDefault(), dr.ToString(),"00:00:00" } );
+
+                    dt.Rows.Add(new object[] { k.ToString(), 1, dr.ToString().Split('.').FirstOrDefault(), dr.ToString(), "00:00:00" });
                 }
                 FrmList frm = new FrmList(dt);
                 frm.ShowDialog();
-                UpdatedFileList= frm.dt;
+                UpdatedFileList = frm.dt;
 
             }
-            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.P)
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Shift | Keys.P))
             {
                 Prerequisity pre = new Prerequisity();
                 pre.Show();
-            }
-
-                if (e.KeyCode == Keys.Enter)
+            } 
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        private void MainmenuLogin_KeyDown(object sender, KeyEventArgs e)
+        { 
+            if (e.KeyCode == Keys.Enter)
                 this.SelectNextControl(ActiveControl, true, true, true, true);
 
             else if (e.KeyData == Keys.F1)

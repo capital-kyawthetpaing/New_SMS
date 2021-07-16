@@ -91,16 +91,16 @@ namespace MainMenu
             this.ActiveControl = txtOperatorCD;
             txtOperatorCD.Focus();
             Control.CheckForIllegalCrossThreadCalls = false;
-        } 
-        private void Tennic_MainMenu_KeyDown(object sender, KeyEventArgs e)
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.C)
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Shift | Keys.C))
             {
                 var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 if (files.Count() == 0)
                 {
                     MessageBox.Show("There is no available file on server!");
-                    return;
+
                 }
                 DataTable dt = new DataTable();
                 dt.Columns.Add("No", typeof(string));
@@ -120,11 +120,15 @@ namespace MainMenu
                 UpdatedFileList = frm.dt;
 
             }
-            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.P)
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Shift | Keys.P))
             {
                 Prerequisity pre = new Prerequisity();
                 pre.Show();
             }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        private void Tennic_MainMenu_KeyDown(object sender, KeyEventArgs e)
+        { 
         }
         protected DataTable UpdatedFileList { get; set; }
         private void ckM_Button1_Click(object sender, EventArgs e)

@@ -97,21 +97,7 @@ namespace MainMenu
             ckM_Button3.FlatAppearance.BorderColor = Color.White;
             
         }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-           //if (keyData == Keys.F1)
-           // {
-           //     this.Close();
-           //     System.Environment.Exit(0);
-              
-           // }
-           //else if (keyData ==Keys.F12)
-           // {
-           //     Login_Click();
-           // }
-      
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+       
         private bool ErrorCheck()
         {
             if (string.IsNullOrWhiteSpace(txtOperatorCD.Text))
@@ -139,15 +125,15 @@ namespace MainMenu
             };
             return mse;
         }
-        private void CapitalsportsLogin_KeyDown(object sender, KeyEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.C)
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Shift | Keys.C))
             {
                 var files = FTPData.GetFileList(Login_BL.SyncPath, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 if (files.Count() == 0)
                 {
                     MessageBox.Show("There is no available file on server!");
-                    return;
+
                 }
                 DataTable dt = new DataTable();
                 dt.Columns.Add("No", typeof(string));
@@ -167,11 +153,15 @@ namespace MainMenu
                 UpdatedFileList = frm.dt;
 
             }
-            if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.P)
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Shift | Keys.P))
             {
                 Prerequisity pre = new Prerequisity();
                 pre.Show();
             }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        private void CapitalsportsLogin_KeyDown(object sender, KeyEventArgs e)
+        { 
             if (e.KeyCode == Keys.Enter)
                 this.SelectNextControl(ActiveControl, true, true, true, true);
 
