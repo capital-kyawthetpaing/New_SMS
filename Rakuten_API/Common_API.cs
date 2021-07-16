@@ -68,23 +68,26 @@ namespace Rakuten_API
 
         public JObject SearOrder()
         {
-            string re = string.Empty;
-            String startdate = @"""" + startDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
-            String enddate = @"""" + endDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
+            string responseStr = "";
+            try
+            {
+                string re = string.Empty;
+                String startdate = @"""" + startDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
+                String enddate = @"""" + endDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
 
-            //re = @"{ ""orderProgressList"": [100 ],
-            //         ""dateType"": 1,
-            //           ""startDatetime"": " + startdate + @",
-            //            ""endDatetime"": " + enddate + @",
-            //        ""PaginationResponseModel"": {
-            //                                    ""requestRecordsAmount"":1000,
-            //                                    ""requestPage"": 1
+                //re = @"{ ""orderProgressList"": [100 ],
+                //         ""dateType"": 1,
+                //           ""startDatetime"": " + startdate + @",
+                //            ""endDatetime"": " + enddate + @",
+                //        ""PaginationResponseModel"": {
+                //                                    ""requestRecordsAmount"":1000,
+                //                                    ""requestPage"": 1
 
-            //                                  }
+                //                                  }
 
-            //}";
+                //}";
 
-            re = @"{ ""orderProgressList"": [100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+                re = @"{ ""orderProgressList"": [100, 200, 300, 400, 500, 600, 700, 800, 900 ],
                      ""dateType"": 1,
                        ""startDatetime"": ""2019-07-10T16:58:46+0900"",
                         ""endDatetime"": ""2019-07-30T22:58:46+0900"",
@@ -96,27 +99,33 @@ namespace Rakuten_API
 
 
                     }";
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.rms.rakuten.co.jp/es/2.0/order/searchOrder/");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.rms.rakuten.co.jp/es/2.0/order/searchOrder/");
 
-            Encoding encoding = Encoding.UTF8;
-            Byte[] bytes = encoding.GetBytes(re);
-            request.Accept = "application/json";
-            request.Method = "POST";
-            String encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(dtSecretKey.Rows[0]["ServiceSecret"].ToString() + ":" + dtSecretKey.Rows[0]["LicenseKey"].ToString()));
-            request.Headers.Add("Authorization", "ESA " + encoded);
-            request.ContentType = @"application/json; charset=utf-8";
-            Stream requestStream = request.GetRequestStream();
-            requestStream.Write(bytes, 0, bytes.Length);
-            requestStream.Close();
+                Encoding encoding = Encoding.UTF8;
+                Byte[] bytes = encoding.GetBytes(re);
+                request.Accept = "application/json";
+                request.Method = "POST";
+                String encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(dtSecretKey.Rows[0]["ServiceSecret"].ToString() + ":" + dtSecretKey.Rows[0]["LicenseKey"].ToString()));
+                request.Headers.Add("Authorization", "ESA " + encoded);
+                request.ContentType = @"application/json; charset=utf-8";
+                Stream requestStream = request.GetRequestStream();
+                requestStream.Write(bytes, 0, bytes.Length);
+                requestStream.Close();
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream responseStream = response.GetResponseStream();
-            string responseStr = new StreamReader(responseStream).ReadToEnd();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream responseStream = response.GetResponseStream();
+                  responseStr = new StreamReader(responseStream).ReadToEnd();
 
-            return JObject.Parse(responseStr);
+            }
+            catch (WebException ex)
+            {
+                StreamReader sr = new StreamReader(ex.Response.GetResponseStream());
+                var f = sr.ReadToEnd();//The remote server returned an error: (401) Unauthorized.
+            }
+            return JObject.Parse(responseStr );
 
         }
 
