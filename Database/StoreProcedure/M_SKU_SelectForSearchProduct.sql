@@ -85,6 +85,48 @@ BEGIN
         INSERT INTO @ItemList (Item) SELECT CONCAT('%',TRIM(Item),'%') FROM dbo.SplitString(@ITemCD , ',' )
     END
 
+    IF OBJECT_ID( N'[tempdb]..[#tmpSKUTag]', N'U' ) IS NOT NULL
+    BEGIN
+        DROP TABLE [#TableForSearchProduct];
+    END
+
+    --------------------------------
+    -- create temp table(M_SKUTag)
+    --------------------------------
+    CREATE TABLE #tmpSKUTag
+    (
+         AdminNO int not null
+        ,ChangeDate date not null
+        ,TagName1 varchar(20) collate database_default
+        ,TagName2 varchar(20) collate database_default
+        ,TagName3 varchar(20) collate database_default
+        ,TagName4 varchar(20) collate database_default
+        ,TagName5 varchar(20) collate database_default
+    )
+    ALTER table #tmpSKUTag ADD PRIMARY KEY CLUSTERED 
+    (
+         AdminNO asc
+        ,ChangeDate asc
+    )
+
+    INSERT INTO #tmpSKUTag
+    SELECT
+         W.AdminNo
+        ,W.ChangeDate
+        ,MAX(CASE WHEN RowNum=1 THEN  W.TagName ELSE NULL END) AS TagName1
+        ,MAX(CASE WHEN RowNum=2 THEN  W.TagName ELSE NULL END) AS TagName2
+        ,MAX(CASE WHEN RowNum=3 THEN  W.TagName ELSE NULL END) AS TagName3
+        ,MAX(CASE WHEN RowNum=4 THEN  W.TagName ELSE NULL END) AS TagName4
+        ,MAX(CASE WHEN RowNum=5 THEN  W.TagName ELSE NULL END) AS TagName5
+        FROM (SELECT AdminNO
+                    ,ChangeDate
+                    ,SEQ
+                    ,TagName
+                    ,ROW_NUMBER() OVER(PARTITION BY AdminNO, ChangeDate ORDER BY SEQ) AS RowNum
+                    FROM M_SKUTag
+        )AS W  
+        GROUP BY W.AdminNO, W.ChangeDate
+
     ---------------------------
     -- create temp table
     ---------------------------
@@ -184,11 +226,11 @@ BEGIN
               ,(SELECT top 1 A.VendorName FROM M_Vendor A WHERE A.VendorCD = MS.MainVendorCD AND A.ChangeDate <= MS.ChangeDate) AS VendorName
               ,MS.MakerVendorCD
               ,MS.BrandCD
-              ,(SELECT A.BrandName FROM M_Brand A WHERE A.BrandCD = MS.BrandCD) AS BrandName
+              ,MB.BrandName AS BrandName
               ,MS.MakerItem
               ,MS.TaniCD
               ,MS.SportsCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '202' AND A.[Key] = MS.SportsCD) AS SportsName
+              ,MPs.Char1 AS SportsName
 
               ,W.TagName1
               ,W.TagName2
@@ -198,11 +240,11 @@ BEGIN
               ,MS.ZaikoKBN
               ,MS.Rack
               ,MS.ReserveCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '311' AND A.[Key] = MS.ReserveCD) AS ReserveName
+              ,MPr.Char1 AS ReserveName
               ,MS.NoticesCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '310' AND A.[Key] = MS.NoticesCD) AS NoticesName
+              ,MPn.Char1 AS NoticesName
               ,MS.PostageCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '309' AND A.[Key] = MS.PostageCD) AS PostageName
+              ,MPp.Char1 AS PostageName
 
               ,MS.TaxRateFLG
               ,MS.PriceWithTax
@@ -230,36 +272,42 @@ BEGIN
 
 	    CROSS APPLY
 	    (
-		    SELECT TOP 1 s.ChangeDate
+		    SELECT TOP 1
+                 s.ChangeDate
 		    FROM M_SKU s
 		    WHERE s.AdminNO = MS.AdminNO 
             AND   s.ChangeDate <= @dChangeDate
 		    ORDER BY s.ChangeDate DESC
 	    ) temp_Store
-
-        LEFT OUTER JOIN
-        (SELECT W.AdminNo
-            ,W.ChangeDate
-            ,MAX(CASE WHEN RowNum=1 THEN  W.[TagName] ELSE NULL END) AS TagName1
-            ,MAX(CASE WHEN RowNum=2 THEN  W.[TagName] ELSE NULL END) AS TagName2
-            ,MAX(CASE WHEN RowNum=3 THEN  W.[TagName] ELSE NULL END) AS TagName3
-            ,MAX(CASE WHEN RowNum=4 THEN  W.[TagName] ELSE NULL END) AS TagName4
-            ,MAX(CASE WHEN RowNum=5 THEN  W.[TagName] ELSE NULL END) AS TagName5
-            FROM (
-                SELECT [AdminNO]
-                      ,[ChangeDate]
-                      ,T.[SEQ]
-                      ,T.[TagName]
-                      ,ROW_NUMBER() OVER(PARTITION BY T.[AdminNO], T.[ChangeDate] ORDER BY T.SEQ) AS RowNum
-                  FROM [dbo].[M_SKUTag] T
-                )AS W  
-		    GROUP BY W.AdminNo, W.ChangeDate
-        ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
-	
-        LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
-        LEFT OUTER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
-            ON MMI.AdminNO = MI.AdminNO AND MMI.ChangeDate = MI.ChangeDate AND MMI.SEQ = MI.SEQ
  
+        LEFT OUTER JOIN #tmpSKUTag AS W  
+        ON  W.AdminNo = MS.AdminNo
+        AND W.ChangeDate = MS.ChangeDate
+	
+        LEFT OUTER JOIN M_Brand MB
+        ON MB.BrandCD = MS.BrandCD
+        AND MB.DeleteFlg = 0
+
+        LEFT OUTER JOIN M_MultiPorpose MPs ON MPS.ID='202' and MPs.[Key] = MS.SportsCD
+        LEFT OUTER JOIN M_MultiPorpose MPr on MPS.ID='311' and MPr.[Key] = MS.ReserveCD
+        LEFT OUTER JOIN M_MultiPorpose MPn on MPS.ID='310' and MPn.[Key] = MS.NoticesCD
+        LEFT OUTER JOIN M_MultiPorpose MPp on MPS.ID='309' and MPp.[Key] = MS.PostageCD
+
+        OUTER APPLY 
+        (
+            SELECT TOP 1
+                 s.AdminNO
+                ,s.ChangeDate
+                ,s.YearTerm
+                ,s.Season
+                ,s.CatalogNO
+                ,s.InstructionsNO
+            FROM M_SKUInfo s 
+            WHERE s.AdminNO = MS.AdminNO
+            AND   s.ChangeDate = MS.ChangeDate
+            ORDER BY s.SEQ desc
+        ) as MI
+
         WHERE 
         (
            (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
@@ -327,11 +375,11 @@ BEGIN
               ,(SELECT top 1 A.VendorName FROM M_Vendor A WHERE A.VendorCD = MS.MainVendorCD AND A.ChangeDate <= MS.ChangeDate) AS VendorName
               ,MS.MakerVendorCD
               ,MS.BrandCD
-              ,(SELECT A.BrandName FROM M_Brand A WHERE A.BrandCD = MS.BrandCD) AS BrandName
+              ,MB.BrandName AS BrandName
               ,MS.MakerItem
               ,MS.TaniCD
               ,MS.SportsCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '202' AND A.[Key] = MS.SportsCD) AS SportsName
+              ,MPs.Char1 AS SportsName
 
               ,W.TagName1
               ,W.TagName2
@@ -341,11 +389,11 @@ BEGIN
               ,MS.ZaikoKBN
               ,MS.Rack
               ,MS.ReserveCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '311' AND A.[Key] = MS.ReserveCD) AS ReserveName
+              ,MPr.Char1 AS ReserveName
               ,MS.NoticesCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '310' AND A.[Key] = MS.NoticesCD) AS NoticesName
+              ,MPn.Char1 AS NoticesName
               ,MS.PostageCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '309' AND A.[Key] = MS.PostageCD) AS PostageName
+              ,MPp.Char1 AS PostageName
 
               ,MS.TaxRateFLG
               ,MS.PriceWithTax
@@ -380,28 +428,33 @@ BEGIN
 		    ORDER BY s.ChangeDate DESC
 	    ) temp_Store
 
-        LEFT OUTER JOIN
-        (SELECT W.AdminNo
-            ,W.ChangeDate
-            ,MAX(CASE WHEN RowNum=1 THEN  W.[TagName] ELSE NULL END) AS TagName1
-            ,MAX(CASE WHEN RowNum=2 THEN  W.[TagName] ELSE NULL END) AS TagName2
-            ,MAX(CASE WHEN RowNum=3 THEN  W.[TagName] ELSE NULL END) AS TagName3
-            ,MAX(CASE WHEN RowNum=4 THEN  W.[TagName] ELSE NULL END) AS TagName4
-            ,MAX(CASE WHEN RowNum=5 THEN  W.[TagName] ELSE NULL END) AS TagName5
-            FROM (
-                SELECT [AdminNO]
-                      ,[ChangeDate]
-                      ,T.[SEQ]
-                      ,T.[TagName]
-                      ,ROW_NUMBER() OVER(PARTITION BY T.[AdminNO], T.[ChangeDate] ORDER BY T.SEQ) AS RowNum
-                  FROM [dbo].[M_SKUTag] T
-                )AS W  
-		    GROUP BY W.AdminNo, W.ChangeDate
-        ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
+        LEFT OUTER JOIN #tmpSKUTag AS W  
+        ON  W.AdminNo = MS.AdminNo
+        AND W.ChangeDate = MS.ChangeDate
 	
-        LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
-        LEFT OUTER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
-            ON MMI.AdminNO = MI.AdminNO AND MMI.ChangeDate = MI.ChangeDate AND MMI.SEQ = MI.SEQ
+        LEFT OUTER JOIN M_Brand MB
+        ON MB.BrandCD = MS.BrandCD
+        AND MB.DeleteFlg = 0
+
+        LEFT OUTER JOIN M_MultiPorpose MPs ON MPS.ID='202' and MPs.[Key] = MS.SportsCD
+        LEFT OUTER JOIN M_MultiPorpose MPr on MPS.ID='311' and MPr.[Key] = MS.ReserveCD
+        LEFT OUTER JOIN M_MultiPorpose MPn on MPS.ID='310' and MPn.[Key] = MS.NoticesCD
+        LEFT OUTER JOIN M_MultiPorpose MPp on MPS.ID='309' and MPp.[Key] = MS.PostageCD
+
+        OUTER APPLY 
+        (
+            SELECT TOP 1
+                 s.AdminNO
+                ,s.ChangeDate
+                ,s.YearTerm
+                ,s.Season
+                ,s.CatalogNO
+                ,s.InstructionsNO
+            FROM M_SKUInfo s 
+            WHERE s.AdminNO = MS.AdminNO
+            AND   s.ChangeDate = MS.ChangeDate
+            ORDER BY s.SEQ desc
+        ) as MI
  
         WHERE 
         (
@@ -470,11 +523,11 @@ BEGIN
               ,(SELECT top 1 A.VendorName FROM M_Vendor A WHERE A.VendorCD = MS.MainVendorCD AND A.ChangeDate <= MS.ChangeDate) AS VendorName
               ,MS.MakerVendorCD
               ,MS.BrandCD
-              ,(SELECT A.BrandName FROM M_Brand A WHERE A.BrandCD = MS.BrandCD) AS BrandName
+              ,MB.BrandName AS BrandName
               ,MS.MakerItem
               ,MS.TaniCD
               ,MS.SportsCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '202' AND A.[Key] = MS.SportsCD) AS SportsName
+              ,MPs.Char1 AS SportsName
 
               ,W.TagName1
               ,W.TagName2
@@ -484,11 +537,11 @@ BEGIN
               ,MS.ZaikoKBN
               ,MS.Rack
               ,MS.ReserveCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '311' AND A.[Key] = MS.ReserveCD) AS ReserveName
+              ,MPr.Char1 AS ReserveName
               ,MS.NoticesCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '310' AND A.[Key] = MS.NoticesCD) AS NoticesName
+              ,MPn.Char1 AS NoticesName
               ,MS.PostageCD
-              ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '309' AND A.[Key] = MS.PostageCD) AS PostageName
+              ,MPp.Char1 AS PostageName
 
               ,MS.TaxRateFLG
               ,MS.PriceWithTax
@@ -523,28 +576,33 @@ BEGIN
 		    ORDER BY s.ChangeDate DESC
 	    ) temp_Store
 
-        LEFT OUTER JOIN
-        (SELECT W.AdminNo
-            ,W.ChangeDate
-            ,MAX(CASE WHEN RowNum=1 THEN  W.[TagName] ELSE NULL END) AS TagName1
-            ,MAX(CASE WHEN RowNum=2 THEN  W.[TagName] ELSE NULL END) AS TagName2
-            ,MAX(CASE WHEN RowNum=3 THEN  W.[TagName] ELSE NULL END) AS TagName3
-            ,MAX(CASE WHEN RowNum=4 THEN  W.[TagName] ELSE NULL END) AS TagName4
-            ,MAX(CASE WHEN RowNum=5 THEN  W.[TagName] ELSE NULL END) AS TagName5
-            FROM (
-                SELECT [AdminNO]
-                      ,[ChangeDate]
-                      ,T.[SEQ]
-                      ,T.[TagName]
-                      ,ROW_NUMBER() OVER(PARTITION BY T.[AdminNO], T.[ChangeDate] ORDER BY T.SEQ) AS RowNum
-                  FROM [dbo].[M_SKUTag] T
-                )AS W  
-		    GROUP BY W.AdminNo, W.ChangeDate
-        ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
+        LEFT OUTER JOIN #tmpSKUTag AS W  
+        ON  W.AdminNo = MS.AdminNo
+        AND W.ChangeDate = MS.ChangeDate
 	
-        LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
-        LEFT OUTER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
-            ON MMI.AdminNO = MI.AdminNO AND MMI.ChangeDate = MI.ChangeDate AND MMI.SEQ = MI.SEQ
+        LEFT OUTER JOIN M_Brand MB
+        ON MB.BrandCD = MS.BrandCD
+        AND MB.DeleteFlg = 0
+
+        LEFT OUTER JOIN M_MultiPorpose MPs ON MPS.ID='202' and MPs.[Key] = MS.SportsCD
+        LEFT OUTER JOIN M_MultiPorpose MPr on MPS.ID='311' and MPr.[Key] = MS.ReserveCD
+        LEFT OUTER JOIN M_MultiPorpose MPn on MPS.ID='310' and MPn.[Key] = MS.NoticesCD
+        LEFT OUTER JOIN M_MultiPorpose MPp on MPS.ID='309' and MPp.[Key] = MS.PostageCD
+
+        OUTER APPLY 
+        (
+            SELECT TOP 1
+                 s.AdminNO
+                ,s.ChangeDate
+                ,s.YearTerm
+                ,s.Season
+                ,s.CatalogNO
+                ,s.InstructionsNO
+            FROM M_SKUInfo s 
+            WHERE s.AdminNO = MS.AdminNO
+            AND   s.ChangeDate = MS.ChangeDate
+            ORDER BY s.SEQ desc
+        ) as MI
  
         WHERE 
         (
@@ -668,14 +726,16 @@ BEGIN
 END --Only when "AND" is selected.
 
 
-    CREATE NONCLUSTERED INDEX tmpTable_INDEX_1 ON #TableForSearchProduct
-    (
-        SKUCD asc
-    )
 
 	--ŠÖ˜AŒŸõ‚Ìê‡
     IF @SearchFlg = 1
     BEGIN
+
+        CREATE NONCLUSTERED INDEX tmpTable_INDEX_ITEM ON #TableForSearchProduct
+        (
+            ItemCD asc
+        )
+
         IF @ItemOrMaker = 0
         BEGIN
             -- Insert statements for procedure here
@@ -700,11 +760,11 @@ END --Only when "AND" is selected.
                   ,(SELECT top 1 A.VendorName FROM M_Vendor A WHERE A.VendorCD = MS.MainVendorCD AND A.ChangeDate <= MS.ChangeDate) AS VendorName
                   ,MS.MakerVendorCD
                   ,MS.BrandCD
-                  ,(SELECT A.BrandName FROM M_Brand A WHERE A.BrandCD = MS.BrandCD) AS BrandName
+                  ,MB.BrandName AS BrandName
                   ,MS.MakerItem
                   ,MS.TaniCD
                   ,MS.SportsCD
-                  ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '202' AND A.[Key] = MS.SportsCD) AS SportsName
+                  ,MPs.Char1 AS SportsName
                   ,W.TagName1
                   ,W.TagName2
                   ,W.TagName3
@@ -714,11 +774,11 @@ END --Only when "AND" is selected.
                   ,MS.ZaikoKBN
                   ,MS.Rack
                   ,MS.ReserveCD
-                  ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '311' AND A.[Key] = MS.ReserveCD) AS ReserveName
+                  ,MPr.Char1 AS ReserveName
                   ,MS.NoticesCD
-                  ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '310' AND A.[Key] = MS.NoticesCD) AS NoticesName
+                  ,MPn.Char1 AS NoticesName
                   ,MS.PostageCD
-                 ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '309' AND A.[Key] = MS.PostageCD) AS PostageName
+                  ,MPp.Char1 AS PostageName
 
                   ,MS.TaxRateFLG
                   ,MS.PriceWithTax
@@ -741,25 +801,34 @@ END --Only when "AND" is selected.
                   ,MI.InstructionsNO
             
             FROM F_SKU(@dChangeDate) MS
-            LEFT OUTER JOIN
-                (SELECT W.AdminNo
-                ,W.ChangeDate
-                ,MAX(CASE WHEN RowNum=1 THEN  W.[TagName] ELSE NULL END) AS TagName1
-                ,MAX(CASE WHEN RowNum=2 THEN  W.[TagName] ELSE NULL END) AS TagName2
-                ,MAX(CASE WHEN RowNum=3 THEN  W.[TagName] ELSE NULL END) AS TagName3
-                ,MAX(CASE WHEN RowNum=4 THEN  W.[TagName] ELSE NULL END) AS TagName4
-                ,MAX(CASE WHEN RowNum=5 THEN  W.[TagName] ELSE NULL END) AS TagName5
-                FROM (
-                    SELECT [AdminNO]
-                          ,[ChangeDate]
-                          ,T.[SEQ]
-                          ,T.[TagName]
-                          ,ROW_NUMBER() OVER(PARTITION BY T.[AdminNO], T.[ChangeDate] ORDER BY T.SEQ) AS RowNum
-                      FROM [dbo].[M_SKUTag] T
-                    )AS W  
-                GROUP BY W.AdminNo, W.ChangeDate
-            ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
-            LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
+
+            LEFT OUTER JOIN #tmpSKUTag AS W  
+            ON  W.AdminNo = MS.AdminNo
+            AND W.ChangeDate = MS.ChangeDate
+	
+            LEFT OUTER JOIN M_Brand MB
+            ON MB.BrandCD = MS.BrandCD
+            AND MB.DeleteFlg = 0
+
+            LEFT OUTER JOIN M_MultiPorpose MPs ON MPS.ID='202' and MPs.[Key] = MS.SportsCD
+            LEFT OUTER JOIN M_MultiPorpose MPr on MPS.ID='311' and MPr.[Key] = MS.ReserveCD
+            LEFT OUTER JOIN M_MultiPorpose MPn on MPS.ID='310' and MPn.[Key] = MS.NoticesCD
+            LEFT OUTER JOIN M_MultiPorpose MPp on MPS.ID='309' and MPp.[Key] = MS.PostageCD
+
+            OUTER APPLY 
+            (
+                SELECT TOP 1
+                     s.AdminNO
+                    ,s.ChangeDate
+                    ,s.YearTerm
+                    ,s.Season
+                    ,s.CatalogNO
+                    ,s.InstructionsNO
+                FROM M_SKUInfo s 
+                WHERE s.AdminNO = MS.AdminNO
+                AND   s.ChangeDate = MS.ChangeDate
+                ORDER BY s.SEQ desc
+            ) as MI
             
             WHERE EXISTS (SELECT MT.ItemCD
                 from #TableForSearchProduct AS MT
@@ -793,11 +862,11 @@ END --Only when "AND" is selected.
                   ,(SELECT top 1 A.VendorName FROM M_Vendor A WHERE A.VendorCD = MS.MainVendorCD AND A.ChangeDate <= MS.ChangeDate) AS VendorName
                   ,MS.MakerVendorCD
                   ,MS.BrandCD
-                  ,(SELECT A.BrandName FROM M_Brand A WHERE A.BrandCD = MS.BrandCD) AS BrandName
+                  ,MB.BrandName AS BrandName
                   ,MS.MakerItem
                   ,MS.TaniCD
                   ,MS.SportsCD
-                  ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '202' AND A.[Key] = MS.SportsCD) AS SportsName
+                  ,MPs.Char1 AS SportsName
                   ,W.TagName1
                   ,W.TagName2
                   ,W.TagName3
@@ -807,11 +876,11 @@ END --Only when "AND" is selected.
                   ,MS.ZaikoKBN
                   ,MS.Rack
                   ,MS.ReserveCD
-                  ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '311' AND A.[Key] = MS.ReserveCD) AS ReserveName
+                  ,MPr.Char1 AS ReserveName
                   ,MS.NoticesCD
-                  ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '310' AND A.[Key] = MS.NoticesCD) AS NoticesName
+                  ,MPn.Char1 AS NoticesName
                   ,MS.PostageCD
-                 ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID = '309' AND A.[Key] = MS.PostageCD) AS PostageName
+                  ,MPp.Char1 AS PostageName
 
                   ,MS.TaxRateFLG
                   ,MS.PriceWithTax
@@ -834,25 +903,34 @@ END --Only when "AND" is selected.
                   ,MI.InstructionsNO
             
             FROM F_SKU(@dChangeDate) MS
-            LEFT OUTER JOIN
-            (SELECT W.AdminNo
-                ,W.ChangeDate
-                ,MAX(CASE WHEN RowNum=1 THEN  W.[TagName] ELSE NULL END) AS TagName1
-                ,MAX(CASE WHEN RowNum=2 THEN  W.[TagName] ELSE NULL END) AS TagName2
-                ,MAX(CASE WHEN RowNum=3 THEN  W.[TagName] ELSE NULL END) AS TagName3
-                ,MAX(CASE WHEN RowNum=4 THEN  W.[TagName] ELSE NULL END) AS TagName4
-                ,MAX(CASE WHEN RowNum=5 THEN  W.[TagName] ELSE NULL END) AS TagName5
-                FROM (
-                    SELECT [AdminNO]
-                          ,[ChangeDate]
-                          ,T.[SEQ]
-                          ,T.[TagName]
-                          ,ROW_NUMBER() OVER(PARTITION BY T.[AdminNO], T.[ChangeDate] ORDER BY T.SEQ) AS RowNum
-                      FROM [dbo].[M_SKUTag] T
-                    )AS W  
-                GROUP BY W.AdminNo, W.ChangeDate
-            ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
-            LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
+
+            LEFT OUTER JOIN #tmpSKUTag AS W  
+            ON  W.AdminNo = MS.AdminNo
+            AND W.ChangeDate = MS.ChangeDate
+	
+            LEFT OUTER JOIN M_Brand MB
+            ON MB.BrandCD = MS.BrandCD
+            AND MB.DeleteFlg = 0
+
+            LEFT OUTER JOIN M_MultiPorpose MPs ON MPS.ID='202' and MPs.[Key] = MS.SportsCD
+            LEFT OUTER JOIN M_MultiPorpose MPr on MPS.ID='311' and MPr.[Key] = MS.ReserveCD
+            LEFT OUTER JOIN M_MultiPorpose MPn on MPS.ID='310' and MPn.[Key] = MS.NoticesCD
+            LEFT OUTER JOIN M_MultiPorpose MPp on MPS.ID='309' and MPp.[Key] = MS.PostageCD
+
+            OUTER APPLY 
+            (
+                SELECT TOP 1
+                     s.AdminNO
+                    ,s.ChangeDate
+                    ,s.YearTerm
+                    ,s.Season
+                    ,s.CatalogNO
+                    ,s.InstructionsNO
+                FROM M_SKUInfo s 
+                WHERE s.AdminNO = MS.AdminNO
+                AND   s.ChangeDate = MS.ChangeDate
+                ORDER BY s.SEQ desc
+            ) as MI
             
             WHERE EXISTS(SELECT MT.MakerItem
                 from #TableForSearchProduct AS MT
@@ -866,6 +944,11 @@ END --Only when "AND" is selected.
     END
     ELSE
     BEGIN
+        CREATE NONCLUSTERED INDEX tmpTable_INDEX_SKUCD ON #TableForSearchProduct
+        (
+            SKUCD asc
+        )
+
         SELECT top 1001 MS.*
         FROM #TableForSearchProduct AS MS
         ORDER BY MS.SKUCD
