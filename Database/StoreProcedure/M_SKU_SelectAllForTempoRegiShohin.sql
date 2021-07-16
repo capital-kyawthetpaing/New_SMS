@@ -203,7 +203,7 @@ BEGIN
                     AND   A.ITemCD = MS.ITemCD
                     AND   A.BrandCD=@BrandCD
 
-                    --AND   (@JanCD is null or A.JanCD = @JanCD)
+                    AND   (@JanCD is null or A.JanCD = @JanCD)
 				    AND   (@VendorCD is null  OR A.MainVendorCD=@VendorCD)
 				    AND   (@SportsCD is null  OR A.SportsCD=@SportsCD)
 				    AND   (@SKUName is null or A.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE A.SKUName END) + '%')
@@ -294,8 +294,8 @@ BEGIN
                     WHERE A.DeleteFlg = 0
                     AND   A.ITemCD = MS.ITemCD
 
-                    --AND   (@BrandCD is null  OR A.BrandCD=@BrandCD)
-                    --AND   (@JanCD is null or A.JanCD = @JanCD)
+                    AND   (@BrandCD is null  OR A.BrandCD=@BrandCD)
+                    AND   (@JanCD is null or A.JanCD = @JanCD)
 				    AND   (@VendorCD is null  OR A.MainVendorCD=@VendorCD)
 				    AND   (@SportsCD is null  OR A.SportsCD=@SportsCD)
 				    AND   (@SKUName is null or A.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE A.SKUName END) + '%')
