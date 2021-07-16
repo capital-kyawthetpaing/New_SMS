@@ -50,7 +50,6 @@ namespace Rakuten_API
                         //JObject jObjectInfo = GetOrder("a");
                         //CreateGetOrderDataInfo(jObjectInfo,"1",1);
                         rakutenAPI_bl.Insert_GetOrderData(base_entity);
-
                     }
                 }
             }
@@ -68,26 +67,21 @@ namespace Rakuten_API
 
         public JObject SearOrder()
         {
-            string responseStr = "";
-            try
-            {
-                string re = string.Empty;
-                String startdate = @"""" + startDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
-                String enddate = @"""" + endDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
+            string re = string.Empty;
+            String startdate = @"""" + startDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
+            String enddate = @"""" + endDate.ToString("yyyy-MM-dd'T'HH:mm:ssK").Remove(22, 1) + @"""";
+            //re = @"{ ""orderProgressList"": [100 ],
+            //         ""dateType"": 1,
+            //           ""startDatetime"": " + startdate + @",
+            //            ""endDatetime"": " + enddate + @",
+            //        ""PaginationResponseModel"": {
+            //                                    ""requestRecordsAmount"":1000,
+            //                                    ""requestPage"": 1
 
-                //re = @"{ ""orderProgressList"": [100 ],
-                //         ""dateType"": 1,
-                //           ""startDatetime"": " + startdate + @",
-                //            ""endDatetime"": " + enddate + @",
-                //        ""PaginationResponseModel"": {
-                //                                    ""requestRecordsAmount"":1000,
-                //                                    ""requestPage"": 1
+            //                                  }
 
-                //                                  }
-
-                //}";
-
-                re = @"{ ""orderProgressList"": [100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+            //}";
+            re = @"{ ""orderProgressList"": [100, 200, 300, 400, 500, 600, 700, 800, 900 ],
                      ""dateType"": 1,
                        ""startDatetime"": ""2019-07-10T16:58:46+0900"",
                         ""endDatetime"": ""2019-07-30T22:58:46+0900"",
@@ -99,33 +93,27 @@ namespace Rakuten_API
 
 
                     }";
-                ServicePointManager.Expect100Continue = true;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.rms.rakuten.co.jp/es/2.0/order/searchOrder/");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.rms.rakuten.co.jp/es/2.0/order/searchOrder/");
 
-                Encoding encoding = Encoding.UTF8;
-                Byte[] bytes = encoding.GetBytes(re);
-                request.Accept = "application/json";
-                request.Method = "POST";
-                String encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(dtSecretKey.Rows[0]["ServiceSecret"].ToString() + ":" + dtSecretKey.Rows[0]["LicenseKey"].ToString()));
-                request.Headers.Add("Authorization", "ESA " + encoded);
-                request.ContentType = @"application/json; charset=utf-8";
-                Stream requestStream = request.GetRequestStream();
-                requestStream.Write(bytes, 0, bytes.Length);
-                requestStream.Close();
+            Encoding encoding = Encoding.UTF8;
+            Byte[] bytes = encoding.GetBytes(re);
+            request.Accept = "application/json";
+            request.Method = "POST";
+            String encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(dtSecretKey.Rows[0]["ServiceSecret"].ToString() + ":" + dtSecretKey.Rows[0]["LicenseKey"].ToString()));
+            request.Headers.Add("Authorization", "ESA " + encoded);
+            request.ContentType = @"application/json; charset=utf-8";
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(bytes, 0, bytes.Length);
+            requestStream.Close();
 
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                Stream responseStream = response.GetResponseStream();
-                  responseStr = new StreamReader(responseStream).ReadToEnd();
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            string responseStr = new StreamReader(responseStream).ReadToEnd();
 
-            }
-            catch (WebException ex)
-            {
-                StreamReader sr = new StreamReader(ex.Response.GetResponseStream());
-                var f = sr.ReadToEnd();//The remote server returned an error: (401) Unauthorized.
-            }
-            return JObject.Parse(responseStr );
+            return JObject.Parse(responseStr);
 
         }
 
@@ -328,12 +316,11 @@ namespace Rakuten_API
                                 dtShippingDetail.Rows[rows]["InportSEQRows"] = seq;
                                 dtShippingDetail.Rows[rows]["orderNumber"] = String.IsNullOrWhiteSpace(order.SelectToken("orderNumber").ToString()) ? "null" : order.SelectToken("orderNumber").ToString();
                                 dtShippingDetail.Rows[rows]["basketRows"] = rowp + 1;
-                                dtShippingDetail.Rows[rows]["itemRows"] = rows + 1;
+                                dtShippingDetail.Rows[rows]["ShippingRows"] = rows + 1;//itemRow to shippingRow changed 2021/07/07
 
                                 foreach (string jsonstr in arrlstShippingDetail)
                                 {
-                                    SelectFromJSon(dtShippingDetail.Rows[rowj], shipping, jsonstr);
-
+                                    SelectFromJSon(dtShippingDetail.Rows[rows], shipping, jsonstr);
                                 }
                                 rows++;
                             }
@@ -388,8 +375,7 @@ namespace Rakuten_API
 
                             foreach (string jsonstr in arrlstChangeReason)
                             {
-                                SelectFromJSon(dtChangeReason.Rows[rowc], reason, jsonstr);
-
+                                SelectFromJSon(dtChangeReason.Rows[rowr], reason, jsonstr);//changed rowc to rowr by ses
                             }
                             rowr++;
                         }
@@ -400,8 +386,6 @@ namespace Rakuten_API
                     row++;
 
                 }
-
-
             }
             base_entity.dt1 = dtJuChuuList;
             base_entity.dt2 = dtShippingList;
@@ -704,6 +688,9 @@ namespace Rakuten_API
                 dtShippingDetail.Columns.Add("orderNumber", typeof(string));
                 dtShippingDetail.Columns.Add("basketRows", typeof(string));
                 dtShippingDetail.Columns.Add("ShippingRows", typeof(string));
+                //ses added 2021/07/08
+                foreach (string colname in arrlstShippingDetail)
+                    dtShippingDetail.Columns.Add(colname, typeof(string));
             }
         }
 

@@ -87,7 +87,7 @@
             this.ckM_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckM_Label1.FontBold = true;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(201, 13);
+            this.ckM_Label1.Location = new System.Drawing.Point(200, 13);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(220, 37);
             this.ckM_Label1.TabIndex = 5;
@@ -121,7 +121,7 @@
             this.lblMakerName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblMakerName.FontBold = true;
             this.lblMakerName.ForeColor = System.Drawing.Color.Black;
-            this.lblMakerName.Location = new System.Drawing.Point(451, 159);
+            this.lblMakerName.Location = new System.Drawing.Point(451, 157);
             this.lblMakerName.Name = "lblMakerName";
             this.lblMakerName.Size = new System.Drawing.Size(1150, 35);
             this.lblMakerName.TabIndex = 14;
@@ -150,7 +150,7 @@
             this.txtMakerCD.IsShop = false;
             this.txtMakerCD.IsTimemmss = false;
             this.txtMakerCD.Length = 13;
-            this.txtMakerCD.Location = new System.Drawing.Point(199, 155);
+            this.txtMakerCD.Location = new System.Drawing.Point(200, 153);
             this.txtMakerCD.MaxLength = 13;
             this.txtMakerCD.MoveNext = true;
             this.txtMakerCD.Name = "txtMakerCD";
@@ -170,7 +170,7 @@
             this.btnMaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaker.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnMaker.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnMaker.Location = new System.Drawing.Point(29, 153);
+            this.btnMaker.Location = new System.Drawing.Point(30, 153);
             this.btnMaker.Margin = new System.Windows.Forms.Padding(1);
             this.btnMaker.Name = "btnMaker";
             this.btnMaker.Size = new System.Drawing.Size(170, 46);
@@ -189,7 +189,7 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnShow.Location = new System.Drawing.Point(1683, 151);
+            this.btnShow.Location = new System.Drawing.Point(1683, 153);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(170, 46);
@@ -219,7 +219,7 @@
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.IsTimemmss = false;
             this.ckM_TextBox2.Length = 25;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(200, 99);
+            this.ckM_TextBox2.Location = new System.Drawing.Point(200, 101);
             this.ckM_TextBox2.MaxLength = 25;
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
@@ -238,7 +238,7 @@
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.FontBold = true;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(4, 102);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(4, 104);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(200, 35);
             this.ckmShop_Label4.TabIndex = 9;
@@ -249,7 +249,7 @@
             // 
             this.radioButton2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.radioButton2.ForeColor = System.Drawing.Color.Black;
-            this.radioButton2.Location = new System.Drawing.Point(328, 54);
+            this.radioButton2.Location = new System.Drawing.Point(328, 55);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(120, 43);
             this.radioButton2.TabIndex = 8;
@@ -262,7 +262,7 @@
             this.radioButton1.Checked = true;
             this.radioButton1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ForeColor = System.Drawing.Color.Black;
-            this.radioButton1.Location = new System.Drawing.Point(199, 54);
+            this.radioButton1.Location = new System.Drawing.Point(200, 55);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(120, 43);
             this.radioButton1.TabIndex = 7;
@@ -280,7 +280,7 @@
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.FontBold = true;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label3.Location = new System.Drawing.Point(41, 57);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(41, 58);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label3.TabIndex = 6;

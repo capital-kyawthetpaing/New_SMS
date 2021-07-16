@@ -112,6 +112,7 @@ namespace DL
                     { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
                     { "@SearchFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.SearchFlg } },
                     { "@ItemOrMaker", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.ItemOrMaker } },
+                    { "@NotApproved", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.NotApproved } },
                 };
 
             return SelectData(dic, sp);

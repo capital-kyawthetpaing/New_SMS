@@ -51,7 +51,6 @@ namespace JuchuuTorikomiRakutenRacketPlaza
                     Thread.Sleep(Convert.ToInt32(dtApiControl.Rows[0]["State"]) * 1000);
                     dtApiControl = rakutenAPI_bl.D_APIControl_Select(DApiControl_entity); // select columns from D_APIControl table
                 }
-
                 api.Search_GetOrderDetail(DApiControl_entity);
 
             }
