@@ -23,7 +23,7 @@ CREATE PROCEDURE M_SKU_SelectForSearchProduct(
     @ReserveCD varchar(3),
     @NoticesCD varchar(3),
     @PostageCD varchar(3),
-    @OrderAttentionCD varchar(3),
+    @OrderAttentionCD varchar(4),
     @SportsCD varchar(6),
     @TagName1 varchar(20),
     @TagName2 varchar(20),
@@ -87,7 +87,7 @@ BEGIN
 
     IF OBJECT_ID( N'[tempdb]..[#tmpSKUTag]', N'U' ) IS NOT NULL
     BEGIN
-        DROP TABLE [#TableForSearchProduct];
+        DROP TABLE [#tmpSKUTag];
     END
 
     --------------------------------
@@ -123,7 +123,10 @@ BEGIN
                     ,SEQ
                     ,TagName
                     ,ROW_NUMBER() OVER(PARTITION BY AdminNO, ChangeDate ORDER BY SEQ) AS RowNum
-                    FROM M_SKUTag
+                    FROM M_SKUTag A
+                    WHERE A.ChangeDate <= getdate()
+                    AND A.TagName IS NOT NULL
+                    AND EXISTS(SELECT * FROM M_SKU B WHERE B.AdminNO = A.AdminNO AND B.ChangeDate = A.ChangeDate)
         )AS W  
         GROUP BY W.AdminNO, W.ChangeDate
 
@@ -163,11 +166,11 @@ BEGIN
         ,SportsCD	        varchar(6)	    COLLATE database_default
         ,SportsName         varchar(100)	COLLATE database_default --M_MultiPorpose(202)
 
-        ,TagName1           varchar(10)	    COLLATE database_default
-        ,TagName2           varchar(10)	    COLLATE database_default
-        ,TagName3           varchar(10)	    COLLATE database_default
-        ,TagName4           varchar(10)	    COLLATE database_default
-        ,TagName5           varchar(10)	    COLLATE database_default
+        ,TagName1           varchar(20)	    COLLATE database_default
+        ,TagName2           varchar(20)	    COLLATE database_default
+        ,TagName3           varchar(20)	    COLLATE database_default
+        ,TagName4           varchar(20)	    COLLATE database_default
+        ,TagName5           varchar(20)	    COLLATE database_default
 
         ,ZaikoKBN	        tinyint	
         ,Rack	            varchar(10)	    COLLATE database_default
@@ -309,13 +312,11 @@ BEGIN
         ) as MI
 
         WHERE 
-        (
-           (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
-        OR (ISNULL(@TagName2,'') = '' OR W.TagName2 = @TagName2)
-        OR (ISNULL(@TagName3,'') = '' OR W.TagName3 = @TagName3)
-        OR (ISNULL(@TagName4,'') = '' OR W.TagName4 = @TagName4)
-        OR (ISNULL(@TagName5,'') = '' OR W.TagName5 = @TagName5)
-        )
+            (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
+        AND (ISNULL(@TagName2,'') = '' OR W.TagName2 = @TagName2)
+        AND (ISNULL(@TagName3,'') = '' OR W.TagName3 = @TagName3)
+        AND (ISNULL(@TagName4,'') = '' OR W.TagName4 = @TagName4)
+        AND (ISNULL(@TagName5,'') = '' OR W.TagName5 = @TagName5)
 
         AND MS.DeleteFlg = 0
         AND MS.ChangeDate <= @dChangeDate
@@ -329,6 +330,7 @@ BEGIN
         AND (ISNULL(@ReserveCD,'') = '' OR MS.ReserveCD = @ReserveCD)
         AND (ISNULL(@NoticesCD,'') = '' OR MS.NoticesCD = @NoticesCD)
         AND (ISNULL(@PostageCD,'') = '' OR MS.PostageCD = @PostageCD)
+        AND (ISNULL(@OrderAttentionCD,'') = '' OR MS.OrderAttentionCD = @OrderAttentionCD)
         AND (ISNULL(@SKUName,'') = '' OR MS.SKUName LIKE '%'+ @SKUName+'%')
 
         AND (ISNULL(@InputDateFrom,'') = '' OR MS.InsertDateTime >= CONVERT(datetime, @InputDateFrom))
@@ -351,7 +353,6 @@ BEGIN
         AND (ISNULL(@MakerItem,'')='' OR EXISTS(SELECT * FROM @MakerItemList s WHERE MS.MakerItem like s.Item))
         AND (ISNULL(@ITemCD,'')='' OR EXISTS(SELECT * FROM @ItemList s WHERE MS.ITemCD like s.Item))
     END
-
     ELSE IF ISNULL(@BrandCD,'') <> ''
     BEGIN
         -- use indexes(BrandCD)
@@ -458,13 +459,11 @@ BEGIN
         ) as MI
  
         WHERE 
-        (
-           (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
-        OR (ISNULL(@TagName2,'') = '' OR W.TagName2 = @TagName2)
-        OR (ISNULL(@TagName3,'') = '' OR W.TagName3 = @TagName3)
-        OR (ISNULL(@TagName4,'') = '' OR W.TagName4 = @TagName4)
-        OR (ISNULL(@TagName5,'') = '' OR W.TagName5 = @TagName5)
-        )
+            (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
+        AND (ISNULL(@TagName2,'') = '' OR W.TagName2 = @TagName2)
+        AND (ISNULL(@TagName3,'') = '' OR W.TagName3 = @TagName3)
+        AND (ISNULL(@TagName4,'') = '' OR W.TagName4 = @TagName4)
+        AND (ISNULL(@TagName5,'') = '' OR W.TagName5 = @TagName5)
 
         AND MS.DeleteFlg = 0
         AND MS.ChangeDate <= @dChangeDate -- Index‚ÌKey‚Ì‚½‚ß
@@ -480,6 +479,7 @@ BEGIN
         AND (ISNULL(@ReserveCD,'') = '' OR MS.ReserveCD = @ReserveCD)
         AND (ISNULL(@NoticesCD,'') = '' OR MS.NoticesCD = @NoticesCD)
         AND (ISNULL(@PostageCD,'') = '' OR MS.PostageCD = @PostageCD)
+        AND (ISNULL(@OrderAttentionCD,'') = '' OR MS.OrderAttentionCD = @OrderAttentionCD)
         AND (ISNULL(@SKUName,'') = '' OR MS.SKUName LIKE '%'+ @SKUName+'%')
 
         AND (ISNULL(@InputDateFrom,'') = '' OR MS.InsertDateTime >= CONVERT(datetime, @InputDateFrom))
@@ -607,13 +607,11 @@ BEGIN
         ) as MI
  
         WHERE 
-        (
-           (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
-        OR (ISNULL(@TagName2,'') = '' OR W.TagName2 = @TagName2)
-        OR (ISNULL(@TagName3,'') = '' OR W.TagName3 = @TagName3)
-        OR (ISNULL(@TagName4,'') = '' OR W.TagName4 = @TagName4)
-        OR (ISNULL(@TagName5,'') = '' OR W.TagName5 = @TagName5)
-        )
+            (ISNULL(@TagName1,'') = '' OR W.TagName1 = @TagName1)
+        AND (ISNULL(@TagName2,'') = '' OR W.TagName2 = @TagName2)
+        AND (ISNULL(@TagName3,'') = '' OR W.TagName3 = @TagName3)
+        AND (ISNULL(@TagName4,'') = '' OR W.TagName4 = @TagName4)
+        AND (ISNULL(@TagName5,'') = '' OR W.TagName5 = @TagName5)
 
         AND MS.DeleteFlg = 0
         AND MS.ChangeDate <= @dChangeDate -- Index‚ÌKey‚Ì‚½‚ß
@@ -627,6 +625,7 @@ BEGIN
         AND (ISNULL(@ReserveCD,'') = '' OR MS.ReserveCD = @ReserveCD)
         AND (ISNULL(@NoticesCD,'') = '' OR MS.NoticesCD = @NoticesCD)
         AND (ISNULL(@PostageCD,'') = '' OR MS.PostageCD = @PostageCD)
+        AND (ISNULL(@OrderAttentionCD,'') = '' OR MS.OrderAttentionCD = @OrderAttentionCD)
         AND (ISNULL(@SKUName,'') = '' OR MS.SKUName LIKE '%'+ @SKUName+'%')
 
         AND (ISNULL(@InputDateFrom,'') = '' OR MS.InsertDateTime >= CONVERT(datetime, @InputDateFrom))
