@@ -318,6 +318,7 @@ BEGIN
         )
 
         AND MS.DeleteFlg = 0
+        AND MS.ChangeDate <= @dChangeDate
         AND MS.ChangeDate = temp_Store.ChangeDate
         AND MS.JanCD = @JanCD
 
@@ -466,6 +467,7 @@ BEGIN
         )
 
         AND MS.DeleteFlg = 0
+        AND MS.ChangeDate <= @dChangeDate -- Index‚ÌKey‚Ì‚½‚ß
         AND MS.ChangeDate = temp_Store.ChangeDate
  
 	    AND (ISNULL(@JanCD,'') = '' OR MS.JanCD = @JanCD)
@@ -614,6 +616,7 @@ BEGIN
         )
 
         AND MS.DeleteFlg = 0
+        AND MS.ChangeDate <= @dChangeDate -- Index‚ÌKey‚Ì‚½‚ß
         AND MS.ChangeDate = temp_Store.ChangeDate
  
 	    AND (ISNULL(@JanCD,'') = '' OR MS.JanCD = @JanCD)
